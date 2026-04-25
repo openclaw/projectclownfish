@@ -1,0 +1,590 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-143810-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24943077025",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24943077025",
+  "head_sha": "3160a4e666957ca2e0f65fdc0a4d41ba982f99b1",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/ghcrawl-143810-autonomous-smoke.md",
+  "published_at": "2026-04-25T23:46:26.713Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/45982",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/45982",
+  "canonical_pr": null,
+  "summary": "Representative PR #45985 is now closed, but the provided live-state artifacts do not prove a landed canonical replacement on current main for the Ollama/encoding family. The cluster also contains several independent memory-lancedb PR families, plus unresolved competing agent-isolation PRs. The only high-confidence closeout is issue #41451 as a duplicate of issue #38797.",
+  "actions": [
+    {
+      "target": "#45985",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "reason": "Closed representative PR cannot serve as an open canonical path."
+    },
+    {
+      "target": "#56517",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#56532",
+      "candidate_fix": null,
+      "reason": "Superseded by the open replacement PR #56532."
+    },
+    {
+      "target": "#45982",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "reason": "Safest live canonical thread for the representative encoding-format/Ollama bug family."
+    },
+    {
+      "target": "#41670",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "reason": "Same theme, different subsystem; should remain open independently."
+    },
+    {
+      "target": "#45986",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "reason": "Overlapping fix exists, but conflicts, failing checks, and unrelated churn make auto-classification unsafe."
+    },
+    {
+      "target": "#46069",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "reason": "Competes for the same fix family, but the canonical PR choice remains unsafe."
+    },
+    {
+      "target": "#59048",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "reason": "Likely strongest surviving PR in the family, but failing checks prevent a safe canonical promotion or duplicate closeout."
+    },
+    {
+      "target": "#42531",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "reason": "Same area, different root cause."
+    },
+    {
+      "target": "#69707",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "reason": "Related embedding-provider compatibility work, but not the same defect."
+    },
+    {
+      "target": "#62741",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "reason": "Related file and subsystem, separate bug."
+    },
+    {
+      "target": "#38797",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#38797",
+      "candidate_fix": null,
+      "reason": "Live canonical issue for the per-agent isolation family."
+    },
+    {
+      "target": "#41451",
+      "action": "close_duplicate",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#38797",
+      "candidate_fix": null,
+      "reason": "High-confidence duplicate of the open canonical issue #38797."
+    },
+    {
+      "target": "#40578",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": "#38797",
+      "candidate_fix": null,
+      "reason": "Competing isolation design plus failing checks make canonical PR choice unclear."
+    },
+    {
+      "target": "#63726",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": "#38797",
+      "candidate_fix": null,
+      "reason": "Competing implementation and failing checks require maintainer choice."
+    },
+    {
+      "target": "#42083",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Distinct bug; should stay open independently."
+    },
+    {
+      "target": "#47285",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate feature family."
+    },
+    {
+      "target": "#56532",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#56532",
+      "candidate_fix": null,
+      "reason": "Clear open replacement canonical for the timeout/retry family."
+    },
+    {
+      "target": "#59130",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#59141",
+      "reason": "Covered by a candidate PR, but not safe to close in this run."
+    },
+    {
+      "target": "#59141",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": "#59130",
+      "candidate_fix": null,
+      "reason": "Broad code delta and incomplete validation evidence require human review."
+    },
+    {
+      "target": "#60177",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#65066",
+      "reason": "Clear candidate fix exists, but not landed."
+    },
+    {
+      "target": "#65066",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#65066",
+      "candidate_fix": null,
+      "reason": "Focused canonical PR for the doctor/status runtime-registration bug."
+    },
+    {
+      "target": "#63413",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate bug family."
+    },
+    {
+      "target": "#66913",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Distinct UX fix; should remain open independently."
+    },
+    {
+      "target": "#67952",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate CLI/data-listing improvement."
+    },
+    {
+      "target": "#68116",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate feature family."
+    },
+    {
+      "target": "#70040",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Possible overlap with closed CJK trigger work, but landed-state on main is not proven from the provided evidence."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 2,
+    "keep_canonical": 4,
+    "keep_related": 6,
+    "needs_human": 7,
+    "close_duplicate": 1,
+    "keep_independent": 6
+  },
+  "action_status_counts": {
+    "skipped": 2,
+    "planned": 17,
+    "blocked": 7
+  },
+  "apply_counts": {
+    "skipped": 25,
+    "blocked": 1
+  },
+  "needs_human": [
+    "Choose the canonical PR for the Ollama/encoding-format family among #45986, #46069, and #59048, with #41670 and #42531 as adjacent but not identical work; failing checks and conflicting scopes prevent safe auto-close routing.",
+    "Resolve the per-agent isolation family on canonical issue #38797; #40578 and #63726 pursue different designs and both have blockers, so canonical PR selection is unclear.",
+    "Review #59141 manually before treating #59130 as resolved; the diff is broad and the provided artifact does not show broad current CI coverage.",
+    "Verify whether the earlier closed Chinese/CJK trigger PRs (#16392 and/or #16672) landed on current main before classifying #70040 as duplicate or independent."
+  ],
+  "apply_actions": [
+    {
+      "target": "#45985",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#45985:keep_closed",
+      "reason": "action status is skipped",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#56517",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#56532",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#56517:keep_closed",
+      "reason": "action status is skipped",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#45982",
+      "action": "keep_canonical",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#45982:keep_canonical",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#41670",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#41670:keep_related",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#45986",
+      "action": "needs_human",
+      "status": "skipped",
+      "classification": "needs_human",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#45986:needs_human",
+      "reason": "action status is blocked",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#46069",
+      "action": "needs_human",
+      "status": "skipped",
+      "classification": "needs_human",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#46069:needs_human",
+      "reason": "action status is blocked",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#59048",
+      "action": "needs_human",
+      "status": "skipped",
+      "classification": "needs_human",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#59048:needs_human",
+      "reason": "action status is blocked",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#42531",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#42531:keep_related",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#69707",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#69707:keep_related",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#62741",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#45982",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#62741:keep_related",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#38797",
+      "action": "keep_canonical",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#38797",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#38797:keep_canonical",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#41451",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#38797",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#41451:close_duplicate:#38797",
+      "reason": "target is not listed in job candidates",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#40578",
+      "action": "needs_human",
+      "status": "skipped",
+      "classification": "needs_human",
+      "canonical": "#38797",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#40578:needs_human",
+      "reason": "action status is blocked",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#63726",
+      "action": "needs_human",
+      "status": "skipped",
+      "classification": "needs_human",
+      "canonical": "#38797",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#63726:needs_human",
+      "reason": "action status is blocked",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#42083",
+      "action": "keep_independent",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#42083:keep_independent",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#47285",
+      "action": "keep_independent",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#47285:keep_independent",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#56532",
+      "action": "keep_canonical",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#56532",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#56532:keep_canonical",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#59130",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#59141",
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#59130:keep_related:#59141",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#59141",
+      "action": "needs_human",
+      "status": "skipped",
+      "classification": "needs_human",
+      "canonical": "#59130",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#59141:needs_human",
+      "reason": "action status is blocked",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#60177",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#65066",
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#60177:keep_related:#65066",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#65066",
+      "action": "keep_canonical",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#65066",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#65066:keep_canonical",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#63413",
+      "action": "keep_independent",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#63413:keep_independent",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#66913",
+      "action": "keep_independent",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#66913:keep_independent",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#67952",
+      "action": "keep_independent",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#67952:keep_independent",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#68116",
+      "action": "keep_independent",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#68116:keep_independent",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#70040",
+      "action": "needs_human",
+      "status": "skipped",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143810-autonomous-smoke:#70040:needs_human",
+      "reason": "action status is blocked",
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}

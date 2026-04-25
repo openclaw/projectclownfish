@@ -2,84 +2,113 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-143810-autonomous-smoke"
 mode: "autonomous"
-run_id: "24939005515"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939005515"
-head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
-workflow_conclusion: "failure"
+run_id: "24943077025"
+run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24943077025"
+head_sha: "3160a4e666957ca2e0f65fdc0a4d41ba982f99b1"
+workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:09:32.130Z"
-canonical: "#45985"
-canonical_issue: null
-canonical_pr: "https://github.com/openclaw/openclaw/pull/45985"
-actions_total: 20
+published_at: "2026-04-25T23:46:26.713Z"
+canonical: "https://github.com/openclaw/openclaw/issues/45982"
+canonical_issue: "https://github.com/openclaw/openclaw/issues/45982"
+canonical_pr: null
+actions_total: 26
 apply_executed: 0
-apply_blocked: 0
-apply_skipped: 0
-needs_human_count: 6
+apply_blocked: 1
+apply_skipped: 25
+needs_human_count: 4
 ---
 
 # ghcrawl-143810-autonomous-smoke
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24939005515](https://github.com/openclaw/projectclownfish/actions/runs/24939005515)
+Run: [https://github.com/openclaw/projectclownfish/actions/runs/24943077025](https://github.com/openclaw/projectclownfish/actions/runs/24943077025)
 
-Workflow conclusion: failure
+Workflow conclusion: success
 
 Worker result: needs_human
 
-Canonical: #45985
+Canonical: https://github.com/openclaw/openclaw/issues/45982
 
 ## Summary
 
-Hydrated cluster state shows #45985 is still the historical representative PR for the float-encoding/Ollama fix, but the remaining open refs split across several independent memory-lancedb subfamilies. Because the per-agent-isolation family has no safe single canonical (#40578 vs #63726), several open candidates still have failing checks, and the job only allows high-confidence instant closeouts, this run returns needs_human with classification-only keep/needs_human actions and no planned close/comment/label mutations.
+Representative PR #45985 is now closed, but the provided live-state artifacts do not prove a landed canonical replacement on current main for the Ollama/encoding family. The cluster also contains several independent memory-lancedb PR families, plus unresolved competing agent-isolation PRs. The only high-confidence closeout is issue #41451 as a duplicate of issue #38797.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 20 |
+| Worker actions | 26 |
 | Applied executions | 0 |
-| Apply blocked | 0 |
-| Apply skipped | 0 |
-| Needs human | 6 |
+| Apply blocked | 1 |
+| Apply skipped | 25 |
+| Needs human | 4 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| _None_ |  |  |  |  |
+| #45985 | keep_closed | skipped | superseded | action status is skipped |
+| #56517 | keep_closed | skipped | superseded | action status is skipped |
+| #45982 | keep_canonical | skipped | canonical | action is not an auto-closure action |
+| #41670 | keep_related | skipped | related | action is not an auto-closure action |
+| #45986 | needs_human | skipped | needs_human | action status is blocked |
+| #46069 | needs_human | skipped | needs_human | action status is blocked |
+| #59048 | needs_human | skipped | needs_human | action status is blocked |
+| #42531 | keep_related | skipped | related | action is not an auto-closure action |
+| #69707 | keep_related | skipped | related | action is not an auto-closure action |
+| #62741 | keep_related | skipped | related | action is not an auto-closure action |
+| #38797 | keep_canonical | skipped | canonical | action is not an auto-closure action |
+| #41451 | close_duplicate | blocked | duplicate | target is not listed in job candidates |
+| #40578 | needs_human | skipped | needs_human | action status is blocked |
+| #63726 | needs_human | skipped | needs_human | action status is blocked |
+| #42083 | keep_independent | skipped | independent | action is not an auto-closure action |
+| #47285 | keep_independent | skipped | independent | action is not an auto-closure action |
+| #56532 | keep_canonical | skipped | canonical | action is not an auto-closure action |
+| #59130 | keep_related | skipped | fixed_by_candidate | action is not an auto-closure action |
+| #59141 | needs_human | skipped | needs_human | action status is blocked |
+| #60177 | keep_related | skipped | fixed_by_candidate | action is not an auto-closure action |
+| #65066 | keep_canonical | skipped | canonical | action is not an auto-closure action |
+| #63413 | keep_independent | skipped | independent | action is not an auto-closure action |
+| #66913 | keep_independent | skipped | independent | action is not an auto-closure action |
+| #67952 | keep_independent | skipped | independent | action is not an auto-closure action |
+| #68116 | keep_independent | skipped | independent | action is not an auto-closure action |
+| #70040 | needs_human | skipped | needs_human | action status is blocked |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #45985 | keep_closed | skipped | canonical | Historical representative is already closed; closed refs are evidence only and cannot receive close actions. |
-| #40578 | needs_human | blocked | needs_human | The per-agent isolation family has competing designs (#40578 vs #63726), and this draft PR still has failing checks. |
-| #41670 | needs_human | blocked | needs_human | Same general embedding-compatibility area, but failing checks prevent safe dedupe or supersede classification. |
-| #42083 | needs_human | blocked | needs_human | This is a distinct auto-capture bug fix, but failing checks require human review under the job policy. |
-| #42531 | keep_related | planned | related | Related embedding-dimension work, but not provably the same root cause as #45985 and not a safe duplicate close target. |
-| #45986 | needs_human | blocked | needs_human | Overlaps the closed historical fix #45985, but unrelated code churn and failing checks make auto-supersede unsafe. |
-| #46069 | needs_human | blocked | needs_human | High overlap with #45985, but failing checks mean the artifact does not support safe duplicate/supersede closure. |
-| #47285 | needs_human | blocked | needs_human | Separate feature work, but the failing check keeps it out of any safe autonomous close/supersede path. |
-| #56532 | keep_independent | planned | independent | Focused timeout/retry work with green checks; it should stay open and independent from the obsolete representative family. |
-| #59048 | needs_human | blocked | needs_human | Strongly related to #45985, but a failing check blocks any safe autonomous duplicate/supersede decision. |
-| #59141 | needs_human | blocked | needs_human | This is a broad code delta in a separate stale-recall family and requires human review by job policy. |
-| #62741 | needs_human | blocked | needs_human | Small distinct bug fix, but failing checks require human handling. |
-| #63413 | keep_independent | planned | independent | Separate CLI input-validation fix with sufficiently green evidence; it should remain open and independent. |
-| #63726 | needs_human | blocked | needs_human | This is the second competing implementation for the #38797 family, and its failing checks force human selection of the canonical path. |
-| #65066 | keep_independent | planned | independent | Focused green fix for a different issue family; it should remain open and independent. |
-| #66913 | keep_independent | planned | independent | Separate UX fix with green checks; it should stay open and independent. |
-| #67952 | keep_independent | planned | independent | Independent CLI behavior change with green checks; no safe relation to the obsolete representative beyond shared module area. |
-| #68116 | keep_independent | planned | independent | Separate feature work with green checks; it should remain open and independent. |
-| #69707 | keep_related | planned | related | Related to the embedding-dimensions family, but not safely duplicative from the provided artifact, so it should stay open. |
-| #70040 | keep_related | planned | related | Same functional area as earlier closed Chinese-trigger work, but not safely classifiable as a duplicate from the provided evidence. |
+| #45985 | keep_closed | skipped | superseded | Closed representative PR cannot serve as an open canonical path. |
+| #56517 | keep_closed | skipped | superseded | Superseded by the open replacement PR #56532. |
+| #45982 | keep_canonical | planned | canonical | Safest live canonical thread for the representative encoding-format/Ollama bug family. |
+| #41670 | keep_related | planned | related | Same theme, different subsystem; should remain open independently. |
+| #45986 | needs_human | blocked | needs_human | Overlapping fix exists, but conflicts, failing checks, and unrelated churn make auto-classification unsafe. |
+| #46069 | needs_human | blocked | needs_human | Competes for the same fix family, but the canonical PR choice remains unsafe. |
+| #59048 | needs_human | blocked | needs_human | Likely strongest surviving PR in the family, but failing checks prevent a safe canonical promotion or duplicate closeout. |
+| #42531 | keep_related | planned | related | Same area, different root cause. |
+| #69707 | keep_related | planned | related | Related embedding-provider compatibility work, but not the same defect. |
+| #62741 | keep_related | planned | related | Related file and subsystem, separate bug. |
+| #38797 | keep_canonical | planned | canonical | Live canonical issue for the per-agent isolation family. |
+| #41451 | close_duplicate | planned | duplicate | High-confidence duplicate of the open canonical issue #38797. |
+| #40578 | needs_human | blocked | needs_human | Competing isolation design plus failing checks make canonical PR choice unclear. |
+| #63726 | needs_human | blocked | needs_human | Competing implementation and failing checks require maintainer choice. |
+| #42083 | keep_independent | planned | independent | Distinct bug; should stay open independently. |
+| #47285 | keep_independent | planned | independent | Separate feature family. |
+| #56532 | keep_canonical | planned | canonical | Clear open replacement canonical for the timeout/retry family. |
+| #59130 | keep_related | planned | fixed_by_candidate | Covered by a candidate PR, but not safe to close in this run. |
+| #59141 | needs_human | blocked | needs_human | Broad code delta and incomplete validation evidence require human review. |
+| #60177 | keep_related | planned | fixed_by_candidate | Clear candidate fix exists, but not landed. |
+| #65066 | keep_canonical | planned | canonical | Focused canonical PR for the doctor/status runtime-registration bug. |
+| #63413 | keep_independent | planned | independent | Separate bug family. |
+| #66913 | keep_independent | planned | independent | Distinct UX fix; should remain open independently. |
+| #67952 | keep_independent | planned | independent | Separate CLI/data-listing improvement. |
+| #68116 | keep_independent | planned | independent | Separate feature family. |
+| #70040 | needs_human | blocked | needs_human | Possible overlap with closed CJK trigger work, but landed-state on main is not proven from the provided evidence. |
 
 ## Needs Human
 
-- No single live open canonical replaces closed representative #45985; the hydrated open refs span several independent memory-lancedb topics.
-- Per-agent isolation work is split between #40578 and #63726 for issue #38797, with materially different designs and no safe autonomous canonical choice.
-- Open PRs with failing checks require human review under the job policy: #40578, #41670, #42083, #45986, #46069, #47285, #59048, #62741, and #63726.
-- #59141 is a broad behavior change (size:L, 489 additions) and falls under require_human_for:broad_code_delta.
-- Potential closeout against already-closed representative #45985 is not emitted because there is no verified live open canonical replacement and allow_post_merge_close is false.
-- The provided artifact does not include full review-thread bodies for bot findings, so no merge/supersede/close action was treated as safe beyond non-mutating classification.
+- Choose the canonical PR for the Ollama/encoding-format family among #45986, #46069, and #59048, with #41670 and #42531 as adjacent but not identical work; failing checks and conflicting scopes prevent safe auto-close routing.
+- Resolve the per-agent isolation family on canonical issue #38797; #40578 and #63726 pursue different designs and both have blockers, so canonical PR selection is unclear.
+- Review #59141 manually before treating #59130 as resolved; the diff is broad and the provided artifact does not show broad current CI coverage.
+- Verify whether the earlier closed Chinese/CJK trigger PRs (#16392 and/or #16672) landed on current main before classifying #70040 as duplicate or independent.
