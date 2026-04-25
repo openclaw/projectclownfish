@@ -10,6 +10,10 @@ Allowed read commands include:
 - `gh pr diff`
 - `gh api` read endpoints
 
+For every listed open candidate, fetch live GitHub state and include `target_kind` and `target_updated_at` from GitHub in its action. If live state cannot be fetched, the item must be `needs_human` with `target_updated_at: null`.
+
+Evidence must come from GitHub issue/PR data, GitHub PR checks/diffs, or the job file. Do not cite external websites or mirrors.
+
 For each item, decide one action:
 
 - keep canonical

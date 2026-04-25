@@ -19,6 +19,8 @@ Before action:
 - read `instructions/closure-policy.md`;
 - read `instructions/merge-policy.md`;
 - fetch live state with `gh issue view`, `gh pr view`, `gh pr checks`, and `gh pr diff` as needed.
+- use GitHub and the local job/repo artifacts as evidence; do not use web search, third-party mirrors, blogs, or copied issue pages as evidence.
+- if `gh` cannot fetch a listed item, mark that item `needs_human`; do not replace GitHub evidence with non-GitHub sources.
 
 Execution guard:
 
