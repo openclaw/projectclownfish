@@ -62,6 +62,7 @@
               "keep_canonical",
               "keep_related",
               "keep_independent",
+              "keep_closed",
               "merge_candidate",
               "merge_canonical",
               "fix_needed",

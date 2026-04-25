@@ -17,6 +17,8 @@ const HYDRATE_COMMENTS = process.env.CLOWNFISH_HYDRATE_COMMENTS === "1";
 const args = parseArgs(process.argv.slice(2));
 const jobPath = args._[0];
 const offline = Boolean(args.offline);
+const hydrateClusterRefs =
+  Boolean(args["hydrate-cluster-refs"]) || process.env.CLOWNFISH_HYDRATE_CLUSTER_REFS === "1";
 
 if (!jobPath) {
   console.error("usage: node scripts/plan-cluster.mjs <job.md> [--run-dir dir] [--offline]");
@@ -37,11 +39,12 @@ const runDir = args["run-dir"]
   : makeRunDir(job, `${job.frontmatter.mode}-cluster-plan`);
 fs.mkdirSync(runDir, { recursive: true });
 
-const seedRefs = uniqueRefs([
+const primaryRefs = [
   ...(job.frontmatter.canonical ?? []),
   ...(job.frontmatter.candidates ?? []),
-  ...(job.frontmatter.cluster_refs ?? []),
-].map((ref) => normalizeRef(job.frontmatter.repo, ref)));
+].map((ref) => normalizeRef(job.frontmatter.repo, ref));
+const contextRefs = (job.frontmatter.cluster_refs ?? []).map((ref) => normalizeRef(job.frontmatter.repo, ref));
+const seedRefs = uniqueRefs(hydrateClusterRefs ? [...primaryRefs, ...contextRefs] : primaryRefs);
 
 const externalRefs = seedRefs.filter((ref) => ref.repo !== job.frontmatter.repo);
 const seedNumbers = seedRefs
@@ -93,11 +96,13 @@ const plan = {
   scope: {
     seed_refs: seedRefs.map(formatNormalizedRef),
     linked_refs: [...linkedRefs.values()].map(formatNormalizedRef).sort(),
+    context_refs: uniqueRefs(contextRefs).map(formatNormalizedRef).sort(),
     external_refs: externalRefs.map(formatNormalizedRef).sort(),
     expansion_policy:
       MAX_LINKED_REFS > 0
         ? "Hydrates job-provided refs and a bounded number of first-hop refs linked from those items."
         : "Hydrates job-provided refs only; first-hop linked refs are recorded but not expanded by default.",
+    hydrate_cluster_refs: hydrateClusterRefs,
     max_linked_refs: MAX_LINKED_REFS,
     hydrate_comments: HYDRATE_COMMENTS,
   },
@@ -105,6 +110,7 @@ const plan = {
   canonical_candidates: canonicalCandidates(itemList, job),
   safety_gates: [
     "re-fetch live state before every close/comment/label/merge/fix action",
+    "closed context refs are evidence only; do not emit closure actions for already-closed refs",
     "stop with needs_human when canonical choice is unclear",
     "stop with needs_human when checks fail, conflicts exist, or cluster state changes",
     "preserve contributor credit in every closeout comment",

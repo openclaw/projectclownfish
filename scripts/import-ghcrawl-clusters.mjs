@@ -10,9 +10,16 @@ const clusterIds = args._.map((value) => Number(value)).filter(Boolean);
 const repo = String(args.repo ?? "openclaw/openclaw");
 const dbPath = path.resolve(String(args.db ?? path.join(os.homedir(), ".config", "ghcrawl", "ghcrawl.db")));
 const outDir = path.resolve(String(args.out ?? path.join(repoRoot(), "jobs", repo.split("/")[0])));
+const mode = String(args.mode ?? "plan");
+const suffix = typeof args.suffix === "string" ? args.suffix : "";
+const allowInstantClose = Boolean(args["allow-instant-close"]);
 
 if (clusterIds.length === 0) {
-  console.error("usage: node scripts/import-ghcrawl-clusters.mjs <cluster-id> [...] [--repo owner/repo] [--db path] [--out dir]");
+  console.error("usage: node scripts/import-ghcrawl-clusters.mjs <cluster-id> [...] [--repo owner/repo] [--db path] [--out dir] [--mode plan|autonomous] [--suffix name] [--allow-instant-close]");
+  process.exit(2);
+}
+if (!["plan", "execute", "autonomous"].includes(mode)) {
+  console.error("mode must be plan, execute, or autonomous");
   process.exit(2);
 }
 
@@ -61,15 +68,16 @@ for (const clusterId of clusterIds) {
   const pullRequestCount = members.filter((member) => member.kind === "pull_request").length;
   const latestUpdatedAt = members.map((member) => member.updated_at).sort().at(-1);
   const slug = slugify(representative.title || `cluster-${clusterId}`);
-  const filePath = path.join(outDir, `ghcrawl-${clusterId}-${slug}.md`);
-  const clusterSlug = `ghcrawl-${clusterId}-${slug}`;
+  const fileStem = suffix ? `ghcrawl-${clusterId}-${slugify(suffix)}` : `ghcrawl-${clusterId}-${slug}`;
+  const filePath = path.join(outDir, `${fileStem}.md`);
+  const clusterSlug = suffix ? `ghcrawl-${clusterId}-${slugify(suffix)}` : `ghcrawl-${clusterId}-${slug}`;
   const canonical = representative.number ? [`#${representative.number}`] : [];
 
   const markdown = [
     "---",
     `repo: ${repo}`,
     `cluster_id: ${clusterSlug}`,
-    "mode: plan",
+    `mode: ${mode}`,
     "allowed_actions:",
     "  - comment",
     "  - label",
@@ -90,6 +98,14 @@ for (const clusterId of clusterIds) {
     ...yamlList(openMembers.map((member) => `#${member.number}`)),
     "cluster_refs:",
     ...yamlList(members.map((member) => `#${member.number}`)),
+    ...(mode === "autonomous" || mode === "execute"
+      ? [
+          `allow_instant_close: ${allowInstantClose ? "true" : "false"}`,
+          "allow_fix_pr: false",
+          "allow_merge: false",
+          "allow_post_merge_close: false",
+        ]
+      : []),
     `canonical_hint: ${quoteYaml(canonicalHint(representative))}`,
     `notes: ${quoteYaml(`Generated from ghcrawl run cluster ${clusterId} on ${new Date().toISOString().slice(0, 10)}.`)}`,
     "---",
@@ -113,7 +129,7 @@ for (const clusterId of clusterIds) {
     "",
     "## Goal",
     "",
-    "Classify the open candidate issues and PRs in read-only plan mode. Do not close anything. If the representative is closed, report whether another open item should become the live canonical. If the cluster contains multiple root causes, split them in the action matrix instead of forcing a single duplicate family.",
+    goalText(mode),
     "",
     "## Member Inventory",
     "",
@@ -162,6 +178,13 @@ function canonicalHint(representative) {
     return `ghcrawl representative #${representative.number} is open; worker must verify it is still the best live canonical.`;
   }
   return `ghcrawl representative #${representative.number} is ${representative.state}; worker must verify whether an open canonical should replace it.`;
+}
+
+function goalText(mode) {
+  if (mode === "plan") {
+    return "Classify the open candidate issues and PRs in read-only plan mode. Do not close anything. If the representative is closed, report whether another open item should become the live canonical. If the cluster contains multiple root causes, split them in the action matrix instead of forcing a single duplicate family.";
+  }
+  return "Run one live autonomous classification pass. Classify open candidates only, verify live GitHub state, choose the current canonical issue or PR if the representative is obsolete, and emit only high-confidence planned close/comment/label actions. Closed context refs are evidence only and must not receive close actions.";
 }
 
 function bulletList(members) {

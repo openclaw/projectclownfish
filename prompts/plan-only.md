@@ -22,11 +22,12 @@ For each item, decide one action:
 - close fixed by candidate
 - keep related
 - keep independent
+- keep closed
 - merge candidate
 - fix needed
 - needs human
 
-Use closure actions only for targets that are open in live GitHub state. If a listed candidate is already closed, do not emit `close_duplicate`, `close_superseded`, or `close_fixed_by_candidate`; use a non-mutating action such as `keep_related`, `keep_independent`, or `needs_human` with evidence that it is already closed.
+Use closure actions only for targets that are open in live GitHub state. If a listed candidate is already closed, do not emit `close_duplicate`, `close_superseded`, or `close_fixed_by_candidate`; use `keep_closed` with `status: "skipped"` and evidence that it is already closed.
 
 Use the same action fields as execute mode when possible: `classification`, `target_kind`, `target_updated_at`, `canonical`, `duplicate_of`, `candidate_fix`, `evidence`, and a stable `idempotency_key`. In plan mode these are recommendations only.
 

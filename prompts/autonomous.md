@@ -7,6 +7,7 @@ Scope:
 - Start only from refs in the job file and refs linked from those item bodies, comments, review threads, closing refs, commits, or PR descriptions.
 - Do not run broad GitHub search unless the job explicitly says so.
 - Use the provided cluster preflight artifact and fix artifact as your starting inventory.
+- Treat closed context refs as evidence, not targets. Do not emit close actions for them.
 - If the cluster changed materially since preflight, return `needs_human`.
 
 Before drive mode:
@@ -27,6 +28,7 @@ Instant close actions:
 
 - Emit `close_duplicate`, `close_superseded`, or `close_fixed_by_candidate` only for high-confidence covered items.
 - Emit close actions with `status: "planned"` only. Do not use `executed`; execution is recorded by the applicator after it posts the comment and closes the item.
+- Never emit close actions for targets whose live state is closed. If a closed target needs to appear in the matrix, use `keep_closed` with `status: "skipped"`.
 - Include `target_updated_at`, `target_kind`, `canonical` or `candidate_fix`, contributor-credit preserving `comment`, evidence, and a stable `idempotency_key`.
 - In action fields, `canonical`, `duplicate_of`, and `candidate_fix` must be explicit refs like `#61741`. Do not put a year, timestamp fragment, unrelated number, or only a prose URL in those fields.
 - Leave independent or unclear reports open as `keep_independent`, `keep_related`, or `needs_human`.

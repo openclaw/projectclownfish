@@ -7,7 +7,7 @@ The runner applies safe closure actions after your JSON passes validation. Your 
 For each target action, include:
 
 - `target`: issue/PR ref like `#123`
-- `action`: one of `keep_canonical`, `keep_related`, `keep_independent`, `merge_candidate`, `fix_needed`, `needs_human`, `close_duplicate`, `close_superseded`, or `close_fixed_by_candidate`
+- `action`: one of `keep_canonical`, `keep_related`, `keep_independent`, `keep_closed`, `merge_candidate`, `fix_needed`, `needs_human`, `close_duplicate`, `close_superseded`, or `close_fixed_by_candidate`
 - `classification`: one of `canonical`, `duplicate`, `related`, `superseded`, `independent`, `fixed_by_candidate`, or `needs_human`
 - `target_kind`: `issue` or `pull_request`
 - `target_updated_at`: the live GitHub `updatedAt`/`updated_at` value you fetched for the target
@@ -23,5 +23,6 @@ The applicator only auto-closes:
 - items clearly covered by a candidate fix with `candidate_fix`.
 
 Everything else should be `planned` as non-mutating or escalated as `needs_human`. Do not use `executed`; Projectclownfish records execution only after the applicator safely replays a planned mutation.
+Already-closed refs are non-mutating evidence only. Use `keep_closed` with `status: "skipped"` if they must appear in the action matrix.
 
 Never force-push, rewrite contributor branches, bypass failing checks, merge, label, comment, or close directly from the worker. Return structured JSON only.
