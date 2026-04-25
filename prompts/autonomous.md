@@ -11,12 +11,13 @@ Scope:
 
 Before drive mode:
 
-1. Fetch current `main` for the target repo and decide whether the behavior is already fixed, obsolete, or still real.
+1. Fetch current `main` for the target repo when recommending a fix, merge, `fixed_by_candidate`, or post-merge closeout. For pure issue-dedupe against a still-open canonical issue, prove the canonical issue and duplicate targets are live and current instead of claiming current `main` behavior is fixed.
 2. Hydrate every provided and linked issue/PR with bodies, comments, labels, state, checks, review state, linked closing refs, and touched files when available.
 3. For every canonical or candidate PR, fetch review comments and issue comments from review bots including Greptile, Codex, Asile, CodeRabbit, Copilot, and similar automated reviewers.
 4. Address every actionable bot review finding in the fix path, or mark the item `needs_human` with the exact unresolved comment/blocker. Do not treat a PR as merge-ready while an actionable bot finding is unresolved.
 5. Classify each item as `canonical`, `duplicate`, `related`, `superseded`, `independent`, `fixed_by_candidate`, or `needs_human`.
 6. Identify the canonical path:
+   - still-open canonical issue for pure duplicate routing;
    - already merged PR/commit on `main`;
    - open PR that is mergeable or repairable;
    - new fix PR needed because the bug is real and no viable PR exists.

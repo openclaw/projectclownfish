@@ -271,7 +271,8 @@ function buildFixArtifact(plan, job) {
           : "Post-merge closure disabled by job frontmatter.",
     },
     required_validation: [
-      "prove current main behavior",
+      "prove current main behavior before fix, merge, fixed-by-candidate, or post-merge closeout actions",
+      "for pure issue-dedupe closeout, prove the canonical issue and duplicate targets are live and current",
       "hydrate every provided and linked item before classification",
       "fetch Greptile, Codex, Asile, CodeRabbit, Copilot, and similar review-bot comments for every canonical or candidate PR",
       "address each actionable review-bot finding or mark the item needs_human with the unresolved blocker",
