@@ -19,6 +19,7 @@ I am keeping the canonical thread open there so fixes, validation, and follow-up
 
 Never close:
 
+- an item that is already closed in live GitHub state;
 - unclear root cause;
 - unique reproduction detail;
 - unique affected platform/version;

@@ -126,6 +126,9 @@ function applyAction({ job, result, action, dryRun, allowMissingUpdatedAt }) {
   };
 
   if (!target) return { ...base, status: "failed", reason: "target must look like #123" };
+  if (action.status !== "planned") {
+    return { ...base, status: "skipped", reason: `action status is ${action.status}` };
+  }
   if (!CLOSE_ACTIONS.has(actionName)) {
     return { ...base, status: "skipped", reason: "action is not an auto-closure action" };
   }
