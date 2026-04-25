@@ -63,6 +63,8 @@ The workflow uses Node 24 and logs Codex in with `OPENAI_API_KEY`, while also pa
 
 Runs for the same job path and mode share a concurrency group. Different cluster jobs can still run in parallel.
 
+Live preflight hydrates job-provided refs by default and records linked refs without expanding them. Set `CLOWNFISH_MAX_LINKED_REFS` above `0` only for small clusters that need first-hop context. Set `CLOWNFISH_HYDRATE_COMMENTS=1` only when comment bodies are necessary evidence; normal scale runs use issue/PR metadata, body excerpts, PR files, and PR checks.
+
 ## Token Strategy
 
 Prefer a fine-grained token or GitHub App token.

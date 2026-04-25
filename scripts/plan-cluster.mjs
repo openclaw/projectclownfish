@@ -11,7 +11,8 @@ import {
   validateJob,
 } from "./lib.mjs";
 
-const MAX_LINKED_REFS = Number(process.env.CLOWNFISH_MAX_LINKED_REFS ?? 25);
+const MAX_LINKED_REFS = Number(process.env.CLOWNFISH_MAX_LINKED_REFS ?? 0);
+const HYDRATE_COMMENTS = process.env.CLOWNFISH_HYDRATE_COMMENTS === "1";
 
 const args = parseArgs(process.argv.slice(2));
 const jobPath = args._[0];
@@ -94,8 +95,11 @@ const plan = {
     linked_refs: [...linkedRefs.values()].map(formatNormalizedRef).sort(),
     external_refs: externalRefs.map(formatNormalizedRef).sort(),
     expansion_policy:
-      "Autonomous mode may hydrate only job-provided refs and first-hop refs linked from those items.",
+      MAX_LINKED_REFS > 0
+        ? "Hydrates job-provided refs and a bounded number of first-hop refs linked from those items."
+        : "Hydrates job-provided refs only; first-hop linked refs are recorded but not expanded by default.",
     max_linked_refs: MAX_LINKED_REFS,
+    hydrate_comments: HYDRATE_COMMENTS,
   },
   items: itemList.map((item) => summarizeItem(item, job)),
   canonical_candidates: canonicalCandidates(itemList, job),
@@ -128,7 +132,7 @@ console.log(
 
 function hydrateItem(repo, number) {
   const issue = ghJson(["api", `repos/${repo}/issues/${number}`]);
-  const comments = ghPaged(`repos/${repo}/issues/${number}/comments`);
+  const comments = HYDRATE_COMMENTS ? ghPaged(`repos/${repo}/issues/${number}/comments`) : [];
   const pullRequest = issue.pull_request ? ghJson(["api", `repos/${repo}/pulls/${number}`]) : null;
   const files = pullRequest ? ghPaged(`repos/${repo}/pulls/${number}/files`) : [];
   const commits = pullRequest ? ghPaged(`repos/${repo}/pulls/${number}/commits`) : [];
@@ -150,6 +154,7 @@ function hydrateItem(repo, number) {
     closed_at: issue.closed_at,
     body: issue.body ?? "",
     body_excerpt: excerpt(issue.body),
+    comments_count: issue.comments ?? comments.length,
     comments: comments.map((comment) => ({
       author: comment.user?.login,
       author_association: comment.author_association,
@@ -203,7 +208,7 @@ function summarizeItem(item, job) {
     updated_at: item.updated_at,
     closed_at: item.closed_at,
     body_excerpt: item.body_excerpt,
-    comments_count: item.comments.length,
+    comments_count: item.comments_count ?? item.comments.length,
     classification_hint: classificationHint(item, job),
     pull_request: item.pull_request
       ? {
