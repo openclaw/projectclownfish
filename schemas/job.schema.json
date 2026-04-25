@@ -58,6 +58,9 @@
     "allow_instant_close": {
       "type": "boolean"
     },
+    "allow_low_signal_pr_close": {
+      "type": "boolean"
+    },
     "allow_fix_pr": {
       "type": "boolean"
     },
@@ -72,6 +75,10 @@
     },
     "target_checkout": {
       "type": "string"
+    },
+    "triage_policy": {
+      "type": "string",
+      "enum": ["low_signal_prs"]
     },
     "notes": {
       "type": "string"

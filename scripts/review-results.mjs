@@ -3,7 +3,14 @@ import fs from "node:fs";
 import path from "node:path";
 import { parseArgs, repoRoot } from "./lib.mjs";
 
-const CLOSE_ACTIONS = new Set(["close", "close_duplicate", "close_superseded", "close_fixed_by_candidate"]);
+const CLOSE_ACTIONS = new Set([
+  "close",
+  "close_duplicate",
+  "close_superseded",
+  "close_fixed_by_candidate",
+  "close_low_signal",
+  "close_low_signal",
+]);
 const MUTATING_ACTIONS = new Set([
   "close",
   "close_duplicate",
@@ -114,7 +121,14 @@ function reviewResult(resultPath) {
       if (action.status !== "planned") failures.push(`${target} close action status must be planned`);
       const canonicalRef = normalizeRef(action.canonical ?? action.duplicate_of);
       const candidateRef = normalizeRef(action.candidate_fix ?? action.fixed_by ?? action.fix_candidate);
-      if (!canonicalRef && !candidateRef) {
+      if (name === "close_low_signal") {
+        if (action.classification !== "low_signal") {
+          failures.push(`${target} low-signal close action must use low_signal classification`);
+        }
+        if (action.target_kind !== "pull_request") {
+          failures.push(`${target} low-signal close action must target a pull request`);
+        }
+      } else if (!canonicalRef && !candidateRef) {
         failures.push(`${target} close action missing canonical/duplicate/candidate target`);
       }
       if (canonicalRef) {

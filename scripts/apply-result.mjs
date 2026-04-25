@@ -11,8 +11,9 @@ const CLOSE_ACTIONS = new Set([
   "close_duplicate",
   "close_superseded",
   "close_fixed_by_candidate",
+  "close_low_signal",
 ]);
-const CLOSE_CLASSIFICATIONS = new Set(["duplicate", "superseded", "fixed_by_candidate"]);
+const CLOSE_CLASSIFICATIONS = new Set(["duplicate", "superseded", "fixed_by_candidate", "low_signal"]);
 
 const args = parseArgs(process.argv.slice(2));
 const jobPath = args._[0];
@@ -149,11 +150,15 @@ function applyAction({ job, result, action, dryRun, allowMissingUpdatedAt }) {
     return {
       ...base,
       status: "blocked",
-      reason: "auto-closure requires duplicate, superseded, or fixed_by_candidate classification",
+      reason: "auto-closure requires duplicate, superseded, fixed_by_candidate, or low_signal classification",
     };
   }
   if (!job.frontmatter.candidates.map(normalizeIssueRef).includes(target)) {
     return { ...base, status: "blocked", reason: "target is not listed in job candidates" };
+  }
+  if (classification === "low_signal" || actionName === "close_low_signal") {
+    const lowSignalBlock = validateLowSignalIntent({ job, action, actionName, classification });
+    if (lowSignalBlock) return { ...base, status: "blocked", reason: lowSignalBlock };
   }
   if ((classification === "duplicate" || classification === "superseded") && !canonical) {
     return { ...base, status: "blocked", reason: "closure requires canonical or duplicate_of" };
@@ -181,6 +186,18 @@ function applyAction({ job, result, action, dryRun, allowMissingUpdatedAt }) {
       reason: `target author association is ${authorAssociation}`,
       live_state: live.state,
     };
+  }
+  if (classification === "low_signal") {
+    const lowSignalBlock = validateLowSignalLiveState(result.repo, target, live, kind);
+    if (lowSignalBlock) {
+      return {
+        ...base,
+        status: "blocked",
+        reason: lowSignalBlock,
+        live_state: live.state,
+        live_updated_at: live.updated_at,
+      };
+    }
   }
 
   const expectedUpdatedAt = action.target_updated_at ?? action.live_updated_at;
@@ -256,10 +273,12 @@ function normalizeIssueRef(value, expectedRepo = "") {
 
 function normalizeClassification(action) {
   const raw = String(action.classification ?? action.close_reason ?? action.reason ?? "").toLowerCase();
+  if (raw.includes("low_signal") || raw.includes("low-signal") || raw.includes("low signal")) return "low_signal";
   if (raw.includes("fixed") || raw.includes("candidate")) return "fixed_by_candidate";
   if (raw.includes("superseded") || raw.includes("supersede")) return "superseded";
   if (raw.includes("duplicate") || raw.includes("dupe")) return "duplicate";
   if (action.action === "close_fixed_by_candidate") return "fixed_by_candidate";
+  if (action.action === "close_low_signal") return "low_signal";
   if (action.action === "close_superseded") return "superseded";
   if (action.action === "close_duplicate") return "duplicate";
   return raw;
@@ -297,6 +316,10 @@ function renderCloseComment({ action, classification, result, target, live }) {
     lines.push(
       `This is covered by candidate fix #${candidateFix}. I'm closing this thread so validation and follow-up stay attached to that fix path.`,
     );
+  } else if (classification === "low_signal") {
+    lines.push(
+      "This falls under the low-signal PR cleanup policy: the PR does not currently present a reviewable OpenClaw fix with maintainer signal, current validation, or a focused product path. Please reopen from a clean branch with a scoped summary, linked issue or rationale, and validation if this is still needed.",
+    );
   } else {
     lines.push(reason);
   }
@@ -319,13 +342,67 @@ function closeReasonText(classification) {
       return "superseded by the canonical candidate";
     case "fixed_by_candidate":
       return "covered by the candidate fix";
+    case "low_signal":
+      return "low-signal PR cleanup";
     default:
       return "closed by projectclownfish";
   }
 }
 
+function validateLowSignalIntent({ job, action, actionName, classification }) {
+  if (job.frontmatter.triage_policy !== "low_signal_prs") {
+    return "low-signal close requires triage_policy: low_signal_prs";
+  }
+  if (job.frontmatter.allow_low_signal_pr_close !== true) {
+    return "low-signal close requires allow_low_signal_pr_close: true";
+  }
+  if (actionName !== "close_low_signal" || classification !== "low_signal") {
+    return "low-signal close requires close_low_signal action and low_signal classification";
+  }
+  if (action.target_kind !== "pull_request") {
+    return "low-signal close requires pull_request target_kind";
+  }
+  return "";
+}
+
+function validateLowSignalLiveState(repo, target, live, kind) {
+  if (kind !== "pull_request") return "low-signal cleanup may only close pull requests";
+  if (hasSecuritySignal(live)) return "security-sensitive target requires human triage";
+  if (Array.isArray(live.assignees) && live.assignees.length > 0) {
+    return "assigned PR has maintainer/human signal";
+  }
+
+  const pullRequest = fetchPullRequest(repo, target);
+  if ((pullRequest.requested_reviewers ?? []).length > 0 || (pullRequest.requested_teams ?? []).length > 0) {
+    return "requested reviewers or teams indicate active review signal";
+  }
+
+  const maintainerComments = ghPaged(`repos/${repo}/issues/${target}/comments`).filter((comment) =>
+    MAINTAINER_AUTHOR_ASSOCIATIONS.has(normalizeAuthorAssociation(comment.author_association)),
+  );
+  if (maintainerComments.length > 0) return "maintainer issue comment blocks low-signal auto-close";
+
+  const maintainerReviews = ghPaged(`repos/${repo}/pulls/${target}/reviews`).filter((review) =>
+    MAINTAINER_AUTHOR_ASSOCIATIONS.has(normalizeAuthorAssociation(review.author_association)),
+  );
+  if (maintainerReviews.length > 0) return "maintainer PR review blocks low-signal auto-close";
+
+  return "";
+}
+
+function hasSecuritySignal(issue) {
+  const text = [issue.title, issue.body, ...(issue.labels ?? []).map((label) => label.name ?? label)]
+    .join("\n")
+    .toLowerCase();
+  return /\b(security|vulnerability|secret|credential|cve|ghsa)\b/.test(text);
+}
+
 function fetchIssue(repo, number) {
   return ghJson(["api", `repos/${repo}/issues/${number}`]);
+}
+
+function fetchPullRequest(repo, number) {
+  return ghJson(["api", `repos/${repo}/pulls/${number}`]);
 }
 
 function findExistingComment(repo, number, marker, body) {

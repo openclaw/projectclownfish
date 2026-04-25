@@ -74,6 +74,7 @@
               "close_duplicate",
               "close_superseded",
               "close_fixed_by_candidate",
+              "close_low_signal",
               "label",
               "comment"
             ]
@@ -93,6 +94,7 @@
               "superseded",
               "independent",
               "fixed_by_candidate",
+              "low_signal",
               "needs_human",
               null
             ]

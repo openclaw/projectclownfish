@@ -24,9 +24,18 @@ Before drive mode:
    - new fix PR needed because the bug is real and no viable PR exists.
 7. Do not emit closure actions until the canonical path is explicit.
 
+Low-signal PR cleanup:
+
+- Use this path only when the job sets `triage_policy: low_signal_prs` and includes the low-signal PR policy.
+- Emit `close_low_signal` only for open pull requests with boringly clear low-signal evidence from `instructions/low-signal-prs.md`.
+- Use `classification: "low_signal"` and `target_kind: "pull_request"`.
+- Do not require `canonical`, `duplicate_of`, or `candidate_fix` for `close_low_signal`; set them to `null`.
+- Never close security-sensitive PRs, maintainer-authored/maintainer-reviewed PRs, assigned PRs, focused bug fixes, or PRs with active author/maintainer signal.
+- If the PR needs technical correctness judgment beyond the low-signal category, return `needs_human`.
+
 Instant close actions:
 
-- Emit `close_duplicate`, `close_superseded`, or `close_fixed_by_candidate` only for high-confidence covered items.
+- Emit `close_duplicate`, `close_superseded`, `close_fixed_by_candidate`, or `close_low_signal` only for high-confidence covered items.
 - Emit close actions with `status: "planned"` only. Do not use `executed`; execution is recorded by the applicator after it posts the comment and closes the item.
 - Never emit close actions for targets whose live state is closed. If a closed target needs to appear in the matrix, use `keep_closed` with `status: "skipped"`.
 - Include `target_updated_at`, `target_kind`, `canonical` or `candidate_fix`, contributor-credit preserving `comment`, evidence, and a stable `idempotency_key`.

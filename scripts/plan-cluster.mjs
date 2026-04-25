@@ -89,6 +89,7 @@ const plan = {
   repo: job.frontmatter.repo,
   cluster_id: job.frontmatter.cluster_id,
   mode: job.frontmatter.mode,
+  triage_policy: job.frontmatter.triage_policy ?? null,
   source_job: job.relativePath,
   generated_at: new Date().toISOString(),
   offline,
@@ -142,6 +143,7 @@ function hydrateItem(repo, number) {
   const pullRequest = issue.pull_request ? ghJson(["api", `repos/${repo}/pulls/${number}`]) : null;
   const files = pullRequest ? ghPaged(`repos/${repo}/pulls/${number}/files`) : [];
   const commits = pullRequest ? ghPaged(`repos/${repo}/pulls/${number}/commits`) : [];
+  const reviews = pullRequest ? ghPaged(`repos/${repo}/pulls/${number}/reviews`) : [];
   const checks = pullRequest ? ghPrChecks(repo, number) : [];
 
   return {
@@ -192,6 +194,13 @@ function hydrateItem(repo, number) {
             message: firstLine(commit.commit?.message),
             author: commit.author?.login ?? commit.commit?.author?.name,
           })),
+          reviews: reviews.map((review) => ({
+            author: review.user?.login,
+            author_association: review.author_association,
+            state: review.state,
+            submitted_at: review.submitted_at,
+            body_excerpt: excerpt(review.body),
+          })),
           checks,
         }
       : null,
@@ -230,6 +239,7 @@ function summarizeItem(item, job) {
           deletions: item.pull_request.deletions,
           files: item.pull_request.files,
           commits: item.pull_request.commits,
+          reviews: item.pull_request.reviews,
           checks: item.pull_request.checks,
         }
       : null,
@@ -246,6 +256,7 @@ function buildFixArtifact(plan, job) {
     target_checkout: job.frontmatter.target_checkout ?? null,
     permissions: {
       allow_instant_close: job.frontmatter.allow_instant_close === true,
+      allow_low_signal_pr_close: job.frontmatter.allow_low_signal_pr_close === true,
       allow_fix_pr: job.frontmatter.allow_fix_pr === true,
       allow_merge: job.frontmatter.allow_merge === true,
       allow_post_merge_close: job.frontmatter.allow_post_merge_close === true,
@@ -259,6 +270,10 @@ function buildFixArtifact(plan, job) {
       hint: item.classification_hint,
     })),
     drive_plan: {
+      low_signal_pr_close:
+        job.frontmatter.allow_low_signal_pr_close === true
+          ? "Worker may emit close_low_signal only for open pull requests that satisfy instructions/low-signal-prs.md, have no maintainer signal, and include live target_updated_at."
+          : "Low-signal PR closeout disabled by job frontmatter.",
       instant_close:
         job.frontmatter.allow_instant_close === true
           ? "Worker may emit close_duplicate, close_superseded, or close_fixed_by_candidate actions only with live target_updated_at and canonical/candidate evidence."
@@ -308,6 +323,9 @@ function classificationHint(item, job) {
   const canonicalNumbers = new Set((job.frontmatter.canonical ?? []).map((ref) => normalizeRef(job.frontmatter.repo, ref).number));
   if (canonicalNumbers.has(item.number)) return "canonical_hint";
   if (item.state !== "open") return "already_closed";
+  if (job.frontmatter.triage_policy === "low_signal_prs" && item.kind === "pull_request") {
+    return "low_signal_pr_candidate";
+  }
   if (item.kind === "pull_request" && item.pull_request?.draft === false) return "open_pr_candidate";
   if (item.kind === "pull_request") return "draft_pr_candidate";
   return "open_issue_candidate";

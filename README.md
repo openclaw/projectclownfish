@@ -12,6 +12,14 @@ Allowed automated close reasons:
 - superseded by a clear canonical thread
 - fixed by a specific candidate fix
 
+Manual backlog-cleanup jobs may also use
+[`instructions/low-signal-prs.md`](instructions/low-signal-prs.md) for
+drive-by PRs that are clearly blank-template, docs-only discoverability churn,
+test-only coverage spam, refactor-only noise, third-party capabilities that
+belong on ClawHub, risky unapproved infra, or dirty branches. This policy is
+opt-in per job and should return `needs_human` for plausible bug fixes or
+anything with active maintainer signal.
+
 Everything else stays open or is escalated for maintainer review.
 
 ## Status
@@ -124,6 +132,12 @@ Build an offline autonomous artifact:
 
 ```bash
 npm run build-fix-artifact -- jobs/openclaw/autonomous-example.md --offline
+```
+
+Stage low-signal PR sweep jobs from local ghcrawl data:
+
+```bash
+npm run import-low-signal -- --limit 20 --batch-size 5 --mode autonomous --sort stale
 ```
 
 Find the latest failed cluster jobs that have not already been superseded by a later success:

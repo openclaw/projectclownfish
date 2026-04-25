@@ -118,6 +118,7 @@ export function validateJob(job) {
   }
   for (const key of [
     "allow_instant_close",
+    "allow_low_signal_pr_close",
     "allow_fix_pr",
     "allow_merge",
     "allow_post_merge_close",
@@ -126,7 +127,7 @@ export function validateJob(job) {
       errors.push(`${key} must be true or false`);
     }
   }
-  for (const key of ["canonical_hint", "target_checkout"]) {
+  for (const key of ["canonical_hint", "target_checkout", "triage_policy"]) {
     if (fm[key] !== undefined && typeof fm[key] !== "string") {
       errors.push(`${key} must be a string`);
     }
@@ -164,6 +165,9 @@ export function renderPrompt(job, requestedMode, context = {}) {
     readText("instructions/closure-policy.md"),
     "## Merge policy",
     readText("instructions/merge-policy.md"),
+    ...(job.frontmatter.triage_policy === "low_signal_prs"
+      ? ["## Low-signal PR policy", readText("instructions/low-signal-prs.md")]
+      : []),
     "## Job file",
     "```md",
     job.raw.trim(),

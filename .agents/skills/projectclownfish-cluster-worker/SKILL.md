@@ -75,9 +75,11 @@ Use repo scripts and prompts as the control plane:
 
 - `schemas/codex-result.schema.json`: what Codex may emit.
 - `prompts/worker-system.md`, `prompts/autonomous.md`, `prompts/execute.md`, `prompts/plan-only.md`: worker behavior.
+- `instructions/low-signal-prs.md`: opt-in manual backlog cleanup policy for random docs churn, blank-template PRs, test-only spam, third-party capability PRs that belong on ClawHub, risky infra drive-bys, and dirty branches.
 - `scripts/review-results.mjs`: deterministic artifact gate.
 - `scripts/plan-cluster.mjs`: what gets hydrated into the prompt.
 - `scripts/apply-result.mjs`: deterministic mutation gate.
+- `scripts/import-ghcrawl-low-signal-prs.mjs`: local ghcrawl open-PR scanner for opt-in low-signal cleanup jobs.
 - `.github/workflows/cluster-worker.yml`: runner behavior and env capture.
 
 After tuning, run:
@@ -164,6 +166,25 @@ gh variable set CLOWNFISH_ALLOW_EXECUTE --repo openclaw/projectclownfish --body 
 Important: after dispatch, already-started runs keep the write gate they captured. If a new bug is found, cancel those runs.
 
 For plan-only scaling, keep write gate off and dispatch with `--mode plan` or `--dry-run` where appropriate.
+
+## Low-Signal PR Sweeps
+
+Use this only for manual backlog cleanup and random drive-by PR triage. It is not dedupe and it must stay separate from duplicate/superseded/fixed-by-candidate closeouts.
+
+Generate staged jobs from local ghcrawl data:
+
+```bash
+npm run import-low-signal -- --limit 20 --batch-size 5 --mode autonomous --sort stale
+```
+
+Generated jobs set `triage_policy: low_signal_prs` and `allow_low_signal_pr_close: true`. The worker may emit `close_low_signal` only for open pull requests that pass `instructions/low-signal-prs.md`.
+
+Before live dispatch:
+
+- inspect the generated job candidates;
+- commit and push the jobs so Actions can read them;
+- dispatch 1-2 canaries first;
+- review artifacts before scaling the next batches.
 
 ## Self-Heal Failed Jobs
 

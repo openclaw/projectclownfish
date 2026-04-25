@@ -18,6 +18,7 @@ Before action:
 - read `instructions/dedupe.md`;
 - read `instructions/closure-policy.md`;
 - read `instructions/merge-policy.md`;
+- read `instructions/low-signal-prs.md` when the job explicitly asks for manual backlog cleanup, low-signal PR triage, garbage PR review, or drive-by PR cleanup;
 - when a cluster preflight artifact is provided, treat its `items[*].updated_at`, state, kind, labels, body excerpt, comments count, PR files, PR checks, and linked refs as the live GitHub state fetched for this run;
 - classify the hydrated canonical and open candidate items; closed context refs are historical evidence only unless they are explicitly hydrated as primary items;
 - use `gh issue view`, `gh pr view`, `gh pr checks`, and `gh pr diff` only when the provided artifact is missing an item or a detail required for a safe classification;
