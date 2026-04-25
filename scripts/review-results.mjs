@@ -74,6 +74,9 @@ function reviewResult(resultPath) {
   if (!result.cluster_id) failures.push("result.cluster_id is required");
   if (!result.mode) failures.push("result.mode is required");
   if (!plan) failures.push("missing cluster-plan.json preflight artifact");
+  if (result.status === "executed") {
+    failures.push("worker result status must not be executed; only the applicator records execution");
+  }
 
   const actions = Array.isArray(result.actions) ? result.actions : [];
   for (const action of actions) {
@@ -97,8 +100,8 @@ function reviewResult(resultPath) {
       failures.push(`${target} evidence contains non-GitHub external URL`);
     }
 
-    if (result.mode === "plan" && action.status === "executed") {
-      failures.push(`${target} has executed status in plan mode`);
+    if (action.status === "executed") {
+      failures.push(`${target} action status must not be executed; only the applicator records execution`);
     }
     if (result.mode === "plan" && MUTATING_ACTIONS.has(name) && action.status !== "planned") {
       failures.push(`${target} mutating recommendation is not planned-only`);

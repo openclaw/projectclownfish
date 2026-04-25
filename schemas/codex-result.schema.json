@@ -18,7 +18,7 @@
   "additionalProperties": false,
   "properties": {
     "status": {
-      "enum": ["planned", "executed", "needs_human", "blocked", "failed"]
+      "enum": ["planned", "needs_human", "blocked", "failed"]
     },
     "repo": {
       "type": "string"
@@ -78,7 +78,7 @@
             ]
           },
           "status": {
-            "enum": ["planned", "executed", "skipped", "blocked", "failed"]
+            "enum": ["planned", "skipped", "blocked", "failed"]
           },
           "idempotency_key": {
             "type": "string"

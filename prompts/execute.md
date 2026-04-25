@@ -22,6 +22,6 @@ The applicator only auto-closes:
 - superseded items with a clear surviving canonical candidate;
 - items clearly covered by a candidate fix with `candidate_fix`.
 
-Everything else should be `planned` as non-mutating or escalated as `needs_human`.
+Everything else should be `planned` as non-mutating or escalated as `needs_human`. Do not use `executed`; Projectclownfish records execution only after the applicator safely replays a planned mutation.
 
 Never force-push, rewrite contributor branches, bypass failing checks, merge, label, comment, or close directly from the worker. Return structured JSON only.

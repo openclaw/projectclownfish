@@ -28,6 +28,7 @@ Execution guard:
 - In `plan` mode, do not mutate GitHub.
 - In `execute` mode, do not mutate GitHub directly; emit structured actions for the applicator.
 - In `autonomous` mode, do not mutate GitHub directly; emit structured actions and fix artifacts for Projectclownfish scripts to apply.
+- Never mark the overall result or an action as `executed`; only the deterministic applicator may record executed mutations after replaying a `planned` action.
 - Closure actions are only valid for targets that are open in live GitHub state.
 - If any safety condition is not met, return `needs_human`.
 
