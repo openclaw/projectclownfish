@@ -1,0 +1,354 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-143793-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24943078775",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24943078775",
+  "head_sha": "3160a4e666957ca2e0f65fdc0a4d41ba982f99b1",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/ghcrawl-143793-autonomous-smoke.md",
+  "published_at": "2026-04-25T23:27:50.194Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/70678",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/70678",
+  "canonical_pr": null,
+  "summary": "Using the provided preflight artifact as live GitHub state for this run, #70678 is the current canonical issue replacing closed child #62258. No other open candidate has direct duplicate evidence strong enough for instant close; they remain open as related subfamilies. Human follow-up is still required for draft PR #71466 and the compound mixed-symptom report in #66917.",
+  "actions": [
+    {
+      "target": "#70678",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Open issue #70678 is the surviving canonical thread for the quiet-session 30-minute status-499 reconnect watchdog family."
+    },
+    {
+      "target": "#62258",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Closed representative #62258 is historical evidence only and has been superseded by open canonical issue #70678."
+    },
+    {
+      "target": "#45474",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Distinct inbound-delivery and 440/401 auth-loop report; keep open as related, not duplicate."
+    },
+    {
+      "target": "#46518",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "QR-pairing silent-failure report; keep open as related."
+    },
+    {
+      "target": "#47367",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "QR-not-showing handshake-timeout report; keep open as related."
+    },
+    {
+      "target": "#49057",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "No-active-listener failures tied to 440/401 logout flaps; keep open as related."
+    },
+    {
+      "target": "#50684",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "503 reconnect-window message-loss report; keep open as related."
+    },
+    {
+      "target": "#51111",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "QR/device_removed auth-loop report; keep open as related."
+    },
+    {
+      "target": "#61744",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Mixed discovery-empty and 499 reconnect symptoms; keep open as related."
+    },
+    {
+      "target": "#63410",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Persistent 408 timeout-loop report; keep open as related."
+    },
+    {
+      "target": "#63855",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Stale-socket silent-message-loss report; keep open as related."
+    },
+    {
+      "target": "#66917",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Compound mixed-root-cause report; not safe to collapse into the #70678 canonical thread without human split/triage."
+    },
+    {
+      "target": "#66920",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Group-inbound-loss-after-408-cycles report; keep open as related."
+    },
+    {
+      "target": "#70856",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Windows-specific 408/stall/no-active-listener report; keep open as related."
+    },
+    {
+      "target": "#71466",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Draft candidate fix is informative for canonical selection but not safe to use as a fixed-by path or merge recommendation in this autonomous smoke run."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_closed": 1,
+    "keep_related": 11,
+    "needs_human": 2
+  },
+  "action_status_counts": {
+    "planned": 12,
+    "skipped": 1,
+    "blocked": 2
+  },
+  "apply_counts": {
+    "skipped": 15
+  },
+  "needs_human": [
+    "PR #71466 is draft and the provided artifact does not include the review-thread/bot-review hydration required to rely on it for fixed-by-candidate or merge decisions.",
+    "Issue #66917 bundles multiple subfamilies (408 keepalive timeouts, 499 creds-churn, and group inbound loss) and should be split or triaged by a maintainer instead of being auto-closed."
+  ],
+  "apply_actions": [
+    {
+      "target": "#70678",
+      "action": "keep_canonical",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143793-autonomous-smoke:#70678:keep_canonical:2026-04-25T07:37:51Z",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#62258",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143793-autonomous-smoke:#62258:keep_closed:2026-04-25T07:38:23Z",
+      "reason": "action status is skipped",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#45474",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143793-autonomous-smoke:#45474:keep_related:2026-03-30T21:15:56Z",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#46518",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143793-autonomous-smoke:#46518:keep_related:2026-03-14T20:00:14Z",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#47367",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143793-autonomous-smoke:#47367:keep_related:2026-03-18T13:01:59Z",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#49057",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143793-autonomous-smoke:#49057:keep_related:2026-03-30T21:18:55Z",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#50684",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143793-autonomous-smoke:#50684:keep_related:2026-03-30T21:20:52Z",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#51111",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143793-autonomous-smoke:#51111:keep_related:2026-04-16T20:48:12Z",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#61744",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143793-autonomous-smoke:#61744:keep_related:2026-04-06T07:51:13Z",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#63410",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143793-autonomous-smoke:#63410:keep_related:2026-04-08T22:44:20Z",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#63855",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143793-autonomous-smoke:#63855:keep_related:2026-04-09T16:48:20Z",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#66917",
+      "action": "needs_human",
+      "status": "skipped",
+      "classification": "needs_human",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143793-autonomous-smoke:#66917:needs_human:2026-04-15T01:38:43Z",
+      "reason": "action status is blocked",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#66920",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143793-autonomous-smoke:#66920:keep_related:2026-04-15T01:42:11Z",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#70856",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "idempotency_key": "ghcrawl-143793-autonomous-smoke:#70856:keep_related:2026-04-24T01:19:57Z",
+      "reason": "action is not an auto-closure action",
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#71466",
+      "action": "needs_human",
+      "status": "skipped",
+      "classification": "needs_human",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "idempotency_key": "ghcrawl-143793-autonomous-smoke:#71466:needs_human:2026-04-25T07:40:44Z",
+      "reason": "action status is blocked",
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}

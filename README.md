@@ -38,14 +38,14 @@ Last dashboard update: Apr 25, 2026, 23:27 UTC
 | Cancelled runs | 0 |
 | Executed close actions | 16 |
 | Blocked apply actions | 1 |
-| Skipped apply actions | 295 |
-| Needs-human entries | 79 |
+| Skipped apply actions | 304 |
+| Needs-human entries | 81 |
 
 Recent cluster runs:
 
 | Cluster | Workflow | Worker | Executed | Blocked | Needs human | Run |
 | --- | --- | --- | ---: | ---: | ---: | --- |
-| [ghcrawl-143811-autonomous-smoke](results/openclaw/ghcrawl-143811-autonomous-smoke.md) | success | planned | 0 | 0 | 0 | [24943076135](https://github.com/openclaw/projectclownfish/actions/runs/24943076135) |
+| [ghcrawl-143793-autonomous-smoke](results/openclaw/ghcrawl-143793-autonomous-smoke.md) | success | needs_human | 0 | 0 | 2 | [24943078775](https://github.com/openclaw/projectclownfish/actions/runs/24943078775) |
 | [ghcrawl-143821-autonomous-smoke](results/openclaw/ghcrawl-143821-autonomous-smoke.md) | success | needs_human | 0 | 0 | 3 | [24939012932](https://github.com/openclaw/projectclownfish/actions/runs/24939012932) |
 | [ghcrawl-143820-autonomous-smoke](results/openclaw/ghcrawl-143820-autonomous-smoke.md) | success | planned | 0 | 0 | 0 | [24939012263](https://github.com/openclaw/projectclownfish/actions/runs/24939012263) |
 | [ghcrawl-143819-autonomous-smoke](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | success | planned | 5 | 0 | 0 | [24939011554](https://github.com/openclaw/projectclownfish/actions/runs/24939011554) |
