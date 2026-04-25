@@ -13,6 +13,7 @@
     "worker": "node scripts/run-worker.mjs",
     "apply-result": "node scripts/apply-result.mjs",
     "dispatch": "node scripts/dispatch-jobs.mjs",
+    "self-heal": "node scripts/self-heal-failed-runs.mjs",
     "publish-result": "node scripts/publish-result.mjs",
     "review-results": "node scripts/review-results.mjs"
   },

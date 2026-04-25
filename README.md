@@ -126,6 +126,18 @@ Build an offline autonomous artifact:
 npm run build-fix-artifact -- jobs/openclaw/autonomous-example.md --offline
 ```
 
+Find the latest failed cluster jobs that have not already been superseded by a later success:
+
+```bash
+npm run self-heal
+```
+
+Retry those failed jobs once. This briefly opens the execution gate, waits for the dispatched workers to start, records the self-heal ledger, and closes the gate again:
+
+```bash
+npm run self-heal -- --execute --open-execute-window --max-jobs 5 --runner ubuntu-latest
+```
+
 ## Checks
 
 ```bash

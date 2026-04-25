@@ -165,6 +165,28 @@ Important: after dispatch, already-started runs keep the write gate they capture
 
 For plan-only scaling, keep write gate off and dispatch with `--mode plan` or `--dry-run` where appropriate.
 
+## Self-Heal Failed Jobs
+
+Use self-heal after reviewing the failed artifacts and tuning obvious deterministic guardrail issues.
+
+Dry-run candidate selection:
+
+```bash
+npm run self-heal
+```
+
+This selects only the latest failed run per source job, skips jobs that have a later success, and skips jobs already retried in `results/self-heal.json`.
+
+Live one-attempt retry:
+
+```bash
+npm run self-heal -- --execute --open-execute-window --max-jobs 5 --runner ubuntu-latest
+```
+
+The local live path temporarily sets `CLOWNFISH_ALLOW_EXECUTE=1`, dispatches the retry jobs, waits until the new runs have started, records the ledger, and resets `CLOWNFISH_ALLOW_EXECUTE=0`.
+
+If using the manual `self-heal failed clusters` workflow, keep it dry-run by default. For execute mode, open the execution gate before triggering it or it should fail before dispatching write-mode jobs.
+
 ## Ramp Decision
 
 Say "safe to ramp" only when all are true:

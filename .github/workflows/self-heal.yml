@@ -1,0 +1,74 @@
+name: self-heal failed clusters
+
+on:
+  workflow_dispatch:
+    inputs:
+      execute:
+        description: "Dispatch retry jobs instead of printing candidates"
+        required: true
+        default: false
+        type: boolean
+      max_jobs:
+        description: "Maximum failed latest jobs to retry"
+        required: true
+        default: "5"
+        type: string
+      runner:
+        description: "Runner label for retried cluster workers"
+        required: true
+        default: ubuntu-latest
+        type: string
+
+permissions:
+  contents: write
+  actions: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  self-heal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Self-heal failed cluster runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          args=(--max-jobs "${{ inputs.max_jobs }}" --runner "${{ inputs.runner }}")
+          if [ "${{ inputs.execute }}" = "true" ]; then
+            args+=(--execute)
+          fi
+          npm run self-heal -- "${args[@]}"
+
+      - name: Commit self-heal ledger
+        if: ${{ inputs.execute }}
+        run: |
+          if [ ! -f results/self-heal.json ]; then
+            echo "No self-heal ledger"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/self-heal.json
+          if git diff --cached --quiet; then
+            echo "No self-heal changes"
+            exit 0
+          fi
+          git commit -m "chore: record self-heal dispatch"
+          for attempt in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            git fetch origin main
+            git rebase -X theirs origin/main
+          done
+          git push

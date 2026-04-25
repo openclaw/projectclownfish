@@ -79,6 +79,7 @@ function reviewResult(resultPath) {
   }
 
   const actions = Array.isArray(result.actions) ? result.actions : [];
+  const closeActions = [];
   for (const action of actions) {
     const name = String(action.action ?? "");
     actionCounts[name] = (actionCounts[name] ?? 0) + 1;
@@ -107,6 +108,7 @@ function reviewResult(resultPath) {
       failures.push(`${target} mutating recommendation is not planned-only`);
     }
     if (CLOSE_ACTIONS.has(name)) {
+      closeActions.push(action);
       if (!item) failures.push(`${target} close action missing preflight item`);
       if (item && item.state !== "open") failures.push(`${target} close action targets ${item.state} item`);
       if (action.status !== "planned") failures.push(`${target} close action status must be planned`);
@@ -129,9 +131,21 @@ function reviewResult(resultPath) {
   }
 
   if (result.canonical) {
-    const canonical = itemByRef.get(normalizeRef(result.canonical));
+    const canonicalRef = normalizeRef(result.canonical);
+    const canonical = itemByRef.get(canonicalRef);
     if (!canonical) warnings.push(`canonical ${result.canonical} was not in preflight`);
-    if (canonical && canonical.state !== "open") failures.push(`canonical ${result.canonical} is ${canonical.state}`);
+    if (canonical && canonical.state !== "open") {
+      const usedByCloseAction = closeActions.some((action) => {
+        const actionCanonical = normalizeRef(action.canonical ?? action.duplicate_of);
+        const actionCandidate = normalizeRef(action.candidate_fix ?? action.fixed_by ?? action.fix_candidate);
+        return actionCanonical === canonicalRef || actionCandidate === canonicalRef;
+      });
+      if (usedByCloseAction) {
+        failures.push(`canonical ${result.canonical} is ${canonical.state}`);
+      } else {
+        warnings.push(`canonical ${result.canonical} is ${canonical.state}; treating as historical evidence only`);
+      }
+    }
   }
   if ((result.needs_human ?? []).length > 0 && result.status === "planned") {
     warnings.push("planned result includes needs_human entries");
