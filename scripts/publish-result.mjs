@@ -209,15 +209,6 @@ function updateDashboard() {
     skipped: sum(records, (record) => record.apply_counts?.skipped ?? 0),
     needsHuman: sum(records, (record) => record.needs_human?.length ?? 0),
   };
-  const recent = [...records]
-    .sort((left, right) => String(right.published_at).localeCompare(String(left.published_at)))
-    .slice(0, 20)
-    .map((record) => {
-      const link = markdownLink(record.cluster_id, `results/${record.repo.split("/")[0]}/${slug(record.cluster_id)}.md`);
-      const run = record.run_url ? markdownLink(record.run_id ?? "run", record.run_url) : (record.run_id ?? "");
-      return `| ${link} | ${record.workflow_conclusion || "unknown"} | ${record.result_status || "unknown"} | ${record.apply_counts?.executed ?? 0} | ${record.apply_counts?.blocked ?? 0} | ${record.needs_human?.length ?? 0} | ${run} |`;
-    })
-    .join("\n");
   const dashboard = `## Dashboard
 
 Last dashboard update: ${formatTimestamp(new Date().toISOString())}
@@ -234,12 +225,6 @@ ${DASHBOARD_START}
 | Blocked apply actions | ${totals.blocked} |
 | Skipped apply actions | ${totals.skipped} |
 | Needs-human entries | ${totals.needsHuman} |
-
-Recent cluster runs:
-
-| Cluster | Workflow | Worker | Executed | Blocked | Needs human | Run |
-| --- | --- | --- | ---: | ---: | ---: | --- |
-${recent || "| _None_ |  |  |  |  |  |  |"}
 ${DASHBOARD_END}`;
 
   let updated;
