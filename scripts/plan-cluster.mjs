@@ -263,7 +263,7 @@ function buildFixArtifact(plan, job) {
           : "Worker may identify canonical fixes but must not plan a fix PR.",
       merge:
         job.frontmatter.allow_merge === true
-          ? "Worker may recommend merge_canonical only after checks, review state, conflicts, and changelog are clean."
+          ? "Worker may recommend merge_canonical only after checks, review state, review-bot comments, conflicts, and changelog are clean."
           : "Merge recommendations must stay non-mutating.",
       post_merge_close:
         job.frontmatter.allow_post_merge_close === true
@@ -273,6 +273,8 @@ function buildFixArtifact(plan, job) {
     required_validation: [
       "prove current main behavior",
       "hydrate every provided and linked item before classification",
+      "fetch Greptile, Codex, Asile, CodeRabbit, Copilot, and similar review-bot comments for every canonical or candidate PR",
+      "address each actionable review-bot finding or mark the item needs_human with the unresolved blocker",
       "show canonical URL or explain needs_human",
       "include targeted tests and changelog plan for fix artifacts",
       "include full GitHub URLs in closure rationale",

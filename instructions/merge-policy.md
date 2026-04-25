@@ -6,6 +6,7 @@ Safe-ish merge candidate:
 
 - tests pass or maintainer explicitly accepts risk;
 - actionable review comments have been addressed or explicitly blocked;
+- automated review bot comments have been addressed or explicitly blocked, including Greptile, Codex, Asile, CodeRabbit, Copilot, and similar reviewers;
 - branch is current with `main` or has been rebased/refreshed;
 - no conflicts;
 - small focused diff;
@@ -25,5 +26,6 @@ For fix work:
 - only create a fix PR when the job allows `fix` or `raise_pr`;
 - keep the patch tiny;
 - refactor only when it makes the fix narrower or removes review blockers;
+- inspect review-bot findings before final validation and include the addressed/blocked result in evidence;
 - run the repo's narrow tests;
 - include links to the cluster and canonical issue.

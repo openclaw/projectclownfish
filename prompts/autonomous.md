@@ -13,12 +13,14 @@ Before drive mode:
 
 1. Fetch current `main` for the target repo and decide whether the behavior is already fixed, obsolete, or still real.
 2. Hydrate every provided and linked issue/PR with bodies, comments, labels, state, checks, review state, linked closing refs, and touched files when available.
-3. Classify each item as `canonical`, `duplicate`, `related`, `superseded`, `independent`, `fixed_by_candidate`, or `needs_human`.
-4. Identify the canonical path:
+3. For every canonical or candidate PR, fetch review comments and issue comments from review bots including Greptile, Codex, Asile, CodeRabbit, Copilot, and similar automated reviewers.
+4. Address every actionable bot review finding in the fix path, or mark the item `needs_human` with the exact unresolved comment/blocker. Do not treat a PR as merge-ready while an actionable bot finding is unresolved.
+5. Classify each item as `canonical`, `duplicate`, `related`, `superseded`, `independent`, `fixed_by_candidate`, or `needs_human`.
+6. Identify the canonical path:
    - already merged PR/commit on `main`;
    - open PR that is mergeable or repairable;
    - new fix PR needed because the bug is real and no viable PR exists.
-5. Do not emit closure actions until the canonical path is explicit.
+7. Do not emit closure actions until the canonical path is explicit.
 
 Instant close actions:
 
@@ -36,6 +38,7 @@ Merge and post-merge close:
 
 - Recommend `merge_canonical` only when checks, review state, conflicts, changelog, and validation are clean.
 - Before recommending a merge, review actionable PR comments, address required changes or state why they are blocked, prefer a narrower refactor over broad churn, and rebase against current `main` when the branch is stale.
+- Bot review comments count as required review comments. Greptile, Codex, Asile, CodeRabbit, Copilot, and similar automated reviewer findings must be addressed, proven non-actionable, or escalated.
 - After a canonical PR lands, reclassify duplicate closeout against the landed PR or commit instead of assuming the pre-merge plan is still valid.
 - Recommend `post_merge_close` only after a canonical fix is merged or already present on current `main`.
 - Preserve contributor credit in all closeout comments.

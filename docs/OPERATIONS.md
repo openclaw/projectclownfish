@@ -50,7 +50,7 @@ Autonomous workers receive those artifacts in the prompt. They can emit instant 
 
 They still must not mutate GitHub directly. Missing checkout, failing checks, conflicts, unclear canonical choice, or stale item state means `needs_human`.
 
-When a canonical PR exists, autonomous follow-through must not skip the maintainer loop. The required path is: review current PR state, inspect actionable review comments, address findings or mark them blocked, rebase/refactor to the narrowest safe change, run targeted validation, confirm changelog/credit, then only recommend merge after checks and review state are clean. After the PR lands, rerun duplicate classification against the landed PR/commit before recommending closeout.
+When a canonical PR exists, autonomous follow-through must not skip the maintainer loop. The required path is: review current PR state, inspect actionable review comments, inspect review-bot comments from Greptile, Codex, Asile, CodeRabbit, Copilot, and similar reviewers, address findings or mark them blocked, rebase/refactor to the narrowest safe change, run targeted validation, confirm changelog/credit, then only recommend merge after checks and review state are clean. After the PR lands, rerun duplicate classification against the landed PR/commit before recommending closeout.
 
 ## Runner Strategy
 
