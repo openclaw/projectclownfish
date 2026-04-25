@@ -26,25 +26,26 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 25, 2026, 23:09 UTC
+Last dashboard update: Apr 25, 2026, 23:27 UTC
 
 <!-- projectclownfish-dashboard:start -->
 | Metric | Count |
 | --- | ---: |
 | Cluster reports | 27 |
-| Published runs | 30 |
-| Successful runs | 24 |
+| Published runs | 31 |
+| Successful runs | 25 |
 | Failed runs | 6 |
 | Cancelled runs | 0 |
 | Executed close actions | 16 |
 | Blocked apply actions | 1 |
-| Skipped apply actions | 289 |
+| Skipped apply actions | 295 |
 | Needs-human entries | 79 |
 
 Recent cluster runs:
 
 | Cluster | Workflow | Worker | Executed | Blocked | Needs human | Run |
 | --- | --- | --- | ---: | ---: | ---: | --- |
+| [ghcrawl-143811-autonomous-smoke](results/openclaw/ghcrawl-143811-autonomous-smoke.md) | success | planned | 0 | 0 | 0 | [24943076135](https://github.com/openclaw/projectclownfish/actions/runs/24943076135) |
 | [ghcrawl-143821-autonomous-smoke](results/openclaw/ghcrawl-143821-autonomous-smoke.md) | success | needs_human | 0 | 0 | 3 | [24939012932](https://github.com/openclaw/projectclownfish/actions/runs/24939012932) |
 | [ghcrawl-143820-autonomous-smoke](results/openclaw/ghcrawl-143820-autonomous-smoke.md) | success | planned | 0 | 0 | 0 | [24939012263](https://github.com/openclaw/projectclownfish/actions/runs/24939012263) |
 | [ghcrawl-143819-autonomous-smoke](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | success | planned | 5 | 0 | 0 | [24939011554](https://github.com/openclaw/projectclownfish/actions/runs/24939011554) |
@@ -64,7 +65,6 @@ Recent cluster runs:
 | [ghcrawl-143804-autonomous-smoke](results/openclaw/ghcrawl-143804-autonomous-smoke.md) | success | needs_human | 1 | 0 | 3 | [24939000666](https://github.com/openclaw/projectclownfish/actions/runs/24939000666) |
 | [ghcrawl-143803-autonomous-smoke](results/openclaw/ghcrawl-143803-autonomous-smoke.md) | success | needs_human | 0 | 0 | 3 | [24938999617](https://github.com/openclaw/projectclownfish/actions/runs/24938999617) |
 | [ghcrawl-143801-autonomous-smoke](results/openclaw/ghcrawl-143801-autonomous-smoke.md) | failure | needs_human | 0 | 0 | 6 | [24938998594](https://github.com/openclaw/projectclownfish/actions/runs/24938998594) |
-| [ghcrawl-143795-autonomous-smoke](results/openclaw/ghcrawl-143795-autonomous-smoke.md) | success | needs_human | 0 | 0 | 6 | [24938997703](https://github.com/openclaw/projectclownfish/actions/runs/24938997703) |
 <!-- projectclownfish-dashboard:end -->
 
 ## How It Works
