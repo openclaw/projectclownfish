@@ -59,6 +59,10 @@ Use Blacksmith labels for bulk planning/execution once the workflow is stable:
 npm run dispatch -- jobs/openclaw/cluster-*.md --mode plan --runner blacksmith-4vcpu-ubuntu-2404
 ```
 
+The workflow uses Node 24 and logs Codex in with `OPENAI_API_KEY`, while also passing `CODEX_API_KEY` to `codex exec`. Set `CODEX_API_KEY` to the same value unless you intentionally separate CI auth.
+
+Runs for the same job path and mode share a concurrency group. Different cluster jobs can still run in parallel.
+
 ## Token Strategy
 
 Prefer a fine-grained token or GitHub App token.

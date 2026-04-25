@@ -58,12 +58,15 @@ gh workflow run cluster-worker.yml \
   -f runner=blacksmith-4vcpu-ubuntu-2404
 ```
 
+The workflow queues duplicate runs for the same job path and mode instead of running them concurrently.
+
 ## Secrets
 
 Required for real worker runs:
 
 - `CLOWNFISH_GH_TOKEN`: GitHub token with the narrowest possible repo scope.
 - `OPENAI_API_KEY`: OpenAI API key for Codex CLI when the runner does not already have auth.
+- `CODEX_API_KEY`: same key for `codex exec` auth. The workflow falls back to `OPENAI_API_KEY` when this is unset, but setting both matches Codex CI behavior.
 
 Optional:
 
