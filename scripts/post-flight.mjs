@@ -9,6 +9,8 @@ const CLEAN_MERGE_STATES = new Set(["CLEAN", "HAS_HOOKS"]);
 const FIX_PR_ACTIONS = new Set(["open_fix_pr", "repair_contributor_branch"]);
 const FIX_PR_READY_STATUSES = new Set(["opened", "pushed"]);
 const DEFAULT_IGNORED_CHECKS = ["auto-response", "Labeler", "Stale"];
+const POST_FLIGHT_WAIT_MS = numberEnv("CLOWNFISH_POST_FLIGHT_WAIT_MS", 10 * 60 * 1000);
+const POST_FLIGHT_POLL_MS = numberEnv("CLOWNFISH_POST_FLIGHT_POLL_MS", 15 * 1000);
 
 const args = parseArgs(process.argv.slice(2));
 const jobPath = args._[0];
@@ -100,30 +102,44 @@ function finalizeFixPr(action) {
   const policyBlock = validateMergePolicy();
   if (policyBlock) return { ...base, status: "blocked", pr: `#${parsed.number}`, reason: policyBlock };
 
-  const pull = fetchPullRequest(result.repo, parsed.number);
-  const view = fetchPullRequestView(result.repo, parsed.number);
-  const prBase = { ...base, pr: `#${parsed.number}`, title: view.title ?? pull.title ?? null };
-  const mergedAt = pull.merged_at ?? view.mergedAt ?? null;
-  if (mergedAt) {
-    return {
-      ...prBase,
-      status: "executed",
-      reason: "already merged",
-      merged_at: mergedAt,
-      merge_commit_sha: pull.merge_commit_sha ?? view.mergeCommit?.oid ?? null,
-    };
-  }
+  const deadline = Date.now() + POST_FLIGHT_WAIT_MS;
+  let pull;
+  let view;
+  let prBase;
+  let mergeBlock = "";
+  let waitedMs = 0;
+  for (;;) {
+    pull = fetchPullRequest(result.repo, parsed.number);
+    view = fetchPullRequestView(result.repo, parsed.number);
+    prBase = { ...base, pr: `#${parsed.number}`, title: view.title ?? pull.title ?? null };
+    const mergedAt = pull.merged_at ?? view.mergedAt ?? null;
+    if (mergedAt) {
+      return {
+        ...prBase,
+        status: "executed",
+        reason: "already merged",
+        merged_at: mergedAt,
+        merge_commit_sha: pull.merge_commit_sha ?? view.mergeCommit?.oid ?? null,
+        waited_ms: waitedMs,
+      };
+    }
 
-  const mergeBlock = validateMergeableFixPr({ pull, view, preflight: action.merge_preflight });
-  if (mergeBlock) {
-    return {
-      ...prBase,
-      status: "blocked",
-      reason: mergeBlock,
-      mergeable: view.mergeable ?? null,
-      merge_state_status: view.mergeStateStatus ?? null,
-      review_decision: view.reviewDecision ?? null,
-    };
+    mergeBlock = validateMergeableFixPr({ pull, view, preflight: action.merge_preflight });
+    if (!mergeBlock) break;
+    if (dryRun || !shouldWaitForMergeReadiness({ mergeBlock, view }) || Date.now() >= deadline) {
+      return {
+        ...prBase,
+        status: "blocked",
+        reason: mergeBlock,
+        mergeable: view.mergeable ?? null,
+        merge_state_status: view.mergeStateStatus ?? null,
+        review_decision: view.reviewDecision ?? null,
+        waited_ms: waitedMs,
+      };
+    }
+    const sleepFor = Math.min(POST_FLIGHT_POLL_MS, Math.max(0, deadline - Date.now()));
+    sleepMs(sleepFor);
+    waitedMs += sleepFor;
   }
 
   if (dryRun) {
@@ -132,6 +148,7 @@ function finalizeFixPr(action) {
       status: "planned",
       reason: "dry run",
       merge_method: "squash",
+      waited_ms: waitedMs,
     };
   }
 
@@ -144,6 +161,7 @@ function finalizeFixPr(action) {
     merged_at: merged.merged_at ?? null,
     merge_commit_sha: merged.merge_commit_sha ?? null,
     merge_method: "squash",
+    waited_ms: waitedMs,
   };
 }
 
@@ -227,6 +245,26 @@ function validateStatusChecks(checks) {
   }
   if (blockers.length > 0) return `checks are not clean: ${blockers.slice(0, 5).join(", ")}`;
   return "";
+}
+
+function shouldWaitForMergeReadiness({ mergeBlock, view }) {
+  const message = String(mergeBlock ?? "").toLowerCase();
+  if (message.includes("mergeable state is unknown")) return true;
+  if (message.includes("merge state status is unknown")) return true;
+  if (message.includes("merge state status is unstable")) return hasPendingChecks(view.statusCheckRollup ?? []);
+  if (message.includes("checks are not clean")) return hasPendingChecks(view.statusCheckRollup ?? []);
+  return false;
+}
+
+function hasPendingChecks(checks) {
+  const ignored = ignoredCheckNames();
+  return (checks ?? []).some((check) => {
+    const name = String(check.name ?? check.context ?? "unknown check");
+    if (ignored.has(name)) return false;
+    const status = String(check.status ?? check.state ?? "").toUpperCase();
+    const conclusion = String(check.conclusion ?? "").toUpperCase();
+    return !["COMPLETED", "SUCCESS"].includes(status) && !PASSING_CHECK_CONCLUSIONS.has(conclusion);
+  });
 }
 
 function ignoredCheckNames() {
@@ -383,4 +421,10 @@ function shouldRetryGh(error) {
 
 function sleepMs(milliseconds) {
   Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, milliseconds);
+}
+
+function numberEnv(name, fallback) {
+  const value = Number(process.env[name] ?? fallback);
+  if (!Number.isFinite(value) || value < 0) return fallback;
+  return value;
 }
