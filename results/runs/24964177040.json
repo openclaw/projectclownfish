@@ -1,0 +1,235 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165995-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24964177040",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24964177040",
+  "head_sha": "38f70877c94ad408c7816548e9dafe09a3dd4328",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165995-agentic-merge.md",
+  "published_at": "2026-04-26T18:50:55.625Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/43556",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/43556",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/69170",
+  "summary": "Canonical issue #43556 remains the best live issue for the sessions_spawn runtime=subagent ACP-only streamTo failure. The previous representative #59390 and implementation PR #68397 are closed, and the only open PR #69170 is repairable but not merge-ready because it is a schema-hint-only branch with failing checks. Plan a credited repair/fix path before closing remaining open duplicates.",
+  "actions": [
+    {
+      "target": "#43556",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Best surviving canonical issue after #59390 closed."
+    },
+    {
+      "target": "#69170",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Repairable candidate branch, but merge is blocked until it is updated to the full fix, rebased, validated, and reviewed."
+    },
+    {
+      "target": "cluster:ghcrawl-165995-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "A canonical fix path is needed before duplicate closeout because require_fix_before_close is true."
+    },
+    {
+      "target": "cluster:ghcrawl-165995-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Build a repair artifact for the open contributor PR instead of merging or closing while checks fail."
+    },
+    {
+      "target": "#56326",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Blocked on canonical fix path or fix PR due require_fix_before_close."
+    },
+    {
+      "target": "#61724",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Blocked on canonical fix path or fix PR due require_fix_before_close."
+    },
+    {
+      "target": "#63120",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Blocked on canonical fix path or fix PR due require_fix_before_close."
+    },
+    {
+      "target": "#64714",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Blocked on canonical fix path or fix PR due require_fix_before_close."
+    },
+    {
+      "target": "#67248",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Blocked on canonical fix path or fix PR due require_fix_before_close."
+    },
+    {
+      "target": "#59225",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Related schema-design follow-up, not a duplicate close target for this cluster."
+    },
+    {
+      "target": "#53370",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Closed refs are historical evidence only."
+    },
+    {
+      "target": "#56193",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Closed refs are historical evidence only."
+    },
+    {
+      "target": "#59390",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Closed representative is obsolete as canonical."
+    },
+    {
+      "target": "#60965",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Closed refs are historical evidence only."
+    },
+    {
+      "target": "#68275",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Closed refs are historical evidence only."
+    },
+    {
+      "target": "#69166",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Closed refs are historical evidence only."
+    },
+    {
+      "target": "#47115",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Closed PR is useful historical credit, not a mutation target."
+    },
+    {
+      "target": "#55483",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Closed PR is useful historical credit, not a mutation target."
+    },
+    {
+      "target": "#65282",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Closed PR is source-credit evidence for the fix artifact."
+    },
+    {
+      "target": "#68397",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Best historical implementation, but closed and unmergeable by worker; preserve credit in repair/fix artifact."
+    },
+    {
+      "target": "#69203",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Closed PR is related source-credit evidence only."
+    },
+    {
+      "target": "#66719",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Closed related context only."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "close_duplicate": 5,
+    "keep_related": 1,
+    "keep_closed": 12
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "blocked": 5,
+    "skipped": 12
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
