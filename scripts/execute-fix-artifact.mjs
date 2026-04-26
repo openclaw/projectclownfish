@@ -1832,12 +1832,45 @@ function commitCheckpointIfNeeded({ targetDir, message }) {
 }
 
 function pushRecoverableBranch({ targetDir, branch }) {
-  const remoteSha = remoteBranchSha({ targetDir, branch });
-  const args = remoteSha
-    ? ["push", `--force-with-lease=refs/heads/${branch}:${remoteSha}`, "origin", `HEAD:${branch}`]
-    : ["push", "origin", `HEAD:${branch}`];
-  run("git", args, { cwd: targetDir });
-  run("git", ["fetch", "origin", `${branch}:refs/remotes/origin/${branch}`], { cwd: targetDir });
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    const remoteSha = remoteBranchSha({ targetDir, branch });
+    const args = remoteSha
+      ? ["push", `--force-with-lease=refs/heads/${branch}:${remoteSha}`, "origin", `HEAD:${branch}`]
+      : ["push", "origin", `HEAD:${branch}`];
+    const pushed = spawnSync("git", args, {
+      cwd: targetDir,
+      env: process.env,
+      encoding: "utf8",
+    });
+    if (pushed.status === 0) {
+      fetchRemoteRecoverableBranch({ targetDir, branch });
+      return;
+    }
+
+    const detail = `${pushed.stderr ?? ""}\n${pushed.stdout ?? ""}`.trim();
+    if (!isRecoverablePushRejection(detail)) throw new Error(detail);
+
+    fetchRemoteRecoverableBranch({ targetDir, branch });
+    const remoteRef = `refs/remotes/origin/${branch}`;
+    if (isAncestor({ targetDir, ancestor: "HEAD", descendant: remoteRef })) return;
+    if (!isAncestor({ targetDir, ancestor: remoteRef, descendant: "HEAD" })) {
+      try {
+        run("git", ["rebase", remoteRef], { cwd: targetDir });
+      } catch (error) {
+        spawnSync("git", ["rebase", "--abort"], { cwd: targetDir, env: process.env, encoding: "utf8" });
+        throw new Error(`recoverable branch ${branch} diverged during push: ${compactText(error.message, 1200)}`);
+      }
+    }
+  }
+  throw new Error(`recoverable branch ${branch} push was rejected after retrying against the latest remote tip`);
+}
+
+function fetchRemoteRecoverableBranch({ targetDir, branch }) {
+  run("git", ["fetch", "origin", `+refs/heads/${branch}:refs/remotes/origin/${branch}`], { cwd: targetDir });
+}
+
+function isRecoverablePushRejection(detail) {
+  return /(?:non-fast-forward|fetch first|stale info|would clobber existing tag|rejected)/i.test(detail);
 }
 
 function findOpenPullRequestForBranch(branch, cwd) {
