@@ -1,0 +1,178 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-207044-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24969057401",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24969057401",
+  "head_sha": "0e4564f671623de117a9abb4813b36a385aecd45",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-207044-agentic-merge.md",
+  "published_at": "2026-04-26T23:04:27.010Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/46721",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/46703",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/46721",
+  "summary": "Hydrated state shows no security-sensitive items. #46721 is the best canonical path for the local-timezone filename bug and is narrow enough to repair on the contributor branch, but it is not merge-ready because mergeability is unknown, one macOS check is cancelled, and there is no clean latest Codex /review for head 44ee9786bd86065d58489f2ba06d633f3d881f40. Related open PRs #44123, #50584, and #62298 address different session-memory subproblems and should stay open as related/non-canonical work. Closeout for #46703 is blocked until #46721 lands.",
+  "actions": [
+    {
+      "target": "#38478",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#46721",
+      "candidate_fix": null,
+      "reason": "Already closed; historical related context only."
+    },
+    {
+      "target": "#40418",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#46721",
+      "candidate_fix": null,
+      "reason": "Related memory feature scope, not a duplicate of the timezone filename bug."
+    },
+    {
+      "target": "#44060",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46721",
+      "candidate_fix": null,
+      "reason": "Already closed and superseded by later session-date work; not a live target."
+    },
+    {
+      "target": "#44123",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#46721",
+      "candidate_fix": null,
+      "reason": "Distinct related bug and currently not merge-ready; keep open for separate repair/review."
+    },
+    {
+      "target": "#45607",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#46721",
+      "candidate_fix": null,
+      "reason": "Already closed; evidence for adjacent filename-convention discussions only."
+    },
+    {
+      "target": "#46687",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#46721",
+      "candidate_fix": null,
+      "reason": "Already closed; not a live closeout target."
+    },
+    {
+      "target": "#46703",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#46721",
+      "candidate_fix": "#46721",
+      "reason": "Closeout blocked on canonical fix path #46721 landing."
+    },
+    {
+      "target": "#46721",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#46721",
+      "candidate_fix": "#46721",
+      "reason": "Best canonical path, but merge must wait for branch refresh, validation, and clean Codex /review."
+    },
+    {
+      "target": "#50584",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#46721",
+      "candidate_fix": null,
+      "reason": "Related broad feature PR; not the canonical narrow fix for #46703."
+    },
+    {
+      "target": "#61384",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#46721",
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation target."
+    },
+    {
+      "target": "#62298",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#46721",
+      "candidate_fix": null,
+      "reason": "Related but separate filename-convention PR with unresolved review/check blockers; keep open outside the #46721 canonical path."
+    },
+    {
+      "target": "cluster:ghcrawl-207044-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#46721",
+      "candidate_fix": "#46721",
+      "reason": "Canonical PR is useful but not merge-ready; prepare an auditable repair/validation plan preserving contributor credit."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 5,
+    "keep_related": 4,
+    "close_fixed_by_candidate": 1,
+    "keep_canonical": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 5,
+    "planned": 6,
+    "blocked": 1
+  },
+  "apply_counts": {
+    "skipped": 1,
+    "executed": 1
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#46703",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#46721",
+      "candidate_fix": "#46721",
+      "title": null,
+      "idempotency_key": "ghcrawl-207044-agentic-merge:#46703:close_fixed_by_candidate-blocked-on-46721",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#72408",
+      "action": "merge_canonical",
+      "status": "executed",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(hooks): use local timezone for session-memory filenames",
+      "idempotency_key": null,
+      "reason": "merged by ProjectClownfish post-flight",
+      "merged_at": "2026-04-26T23:04:10Z",
+      "merge_commit_sha": "97e64196a01d533ac5898bff91e557262ef63a92",
+      "live_state": "merged",
+      "live_updated_at": null
+    }
+  ]
+}
