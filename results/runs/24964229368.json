@@ -1,0 +1,180 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165999-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24964229368",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24964229368",
+  "head_sha": "38f70877c94ad408c7816548e9dafe09a3dd4328",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165999-agentic-merge.md",
+  "published_at": "2026-04-26T18:52:51.299Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/57256",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/57256",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/59685",
+  "summary": "Classified the memory-status false-negative cluster into two live subfamilies: #57256/#59685 is the canonical OpenClaw status/live-gateway runtime path, while #44426 remains the separate doctor gateway timeout false-warning tracker. No GitHub mutations are executed here. Duplicate closeouts are blocked until the canonical fix path is refreshed and validated.",
+  "actions": [
+    {
+      "target": "#57256",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#57256",
+      "candidate_fix": "#59685",
+      "reason": "Best surviving canonical issue for the status/live-gateway memory runtime false-negative family."
+    },
+    {
+      "target": "#59685",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#57256",
+      "candidate_fix": "#59685",
+      "reason": "Canonical repairable contributor PR, but merge preflight is incomplete."
+    },
+    {
+      "target": "cluster:ghcrawl-165999-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#57256",
+      "candidate_fix": "#59685",
+      "reason": "Build a repair artifact for the canonical contributor PR before any duplicate closeout or merge recommendation."
+    },
+    {
+      "target": "#56968",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#57256",
+      "candidate_fix": "#59685",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#60819",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#57256",
+      "candidate_fix": "#59685",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#62599",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#57256",
+      "candidate_fix": "#59685",
+      "reason": "Related to the canonical status false-negative family, but not a high-confidence duplicate closeout."
+    },
+    {
+      "target": "#44426",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#44426",
+      "candidate_fix": null,
+      "reason": "Separate open canonical issue for the doctor timeout false-warning subfamily."
+    },
+    {
+      "target": "#44932",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#44426",
+      "candidate_fix": null,
+      "reason": "Already-closed refs must not receive close actions."
+    },
+    {
+      "target": "#68171",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#44426",
+      "candidate_fix": null,
+      "reason": "Already-closed refs must not receive close actions."
+    },
+    {
+      "target": "#46576",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#44426",
+      "candidate_fix": null,
+      "reason": "Closed PR is historical evidence for the #44426 subfamily, not a live mutation target."
+    },
+    {
+      "target": "#59894",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#57256",
+      "candidate_fix": null,
+      "reason": "Already-closed refs must not receive close actions."
+    },
+    {
+      "target": "#59942",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#60177",
+      "candidate_fix": "#65066",
+      "reason": "Already-closed refs must not receive close actions."
+    },
+    {
+      "target": "#60177",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": "#65066",
+      "reason": "Already-closed refs must not receive close actions."
+    },
+    {
+      "target": "#62585",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed linked context is evidence only."
+    },
+    {
+      "target": "#64183",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#56968",
+      "candidate_fix": "#59685",
+      "reason": "Already-closed refs must not receive close actions."
+    },
+    {
+      "target": "#65066",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#57256",
+      "candidate_fix": "#65066",
+      "reason": "Useful related PR for a narrower bundled plugin issue; keep open outside this cluster's canonical path."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 3,
+    "build_fix_artifact": 1,
+    "close_fixed_by_candidate": 2,
+    "keep_related": 2,
+    "keep_closed": 8
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "blocked": 2,
+    "skipped": 8
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
