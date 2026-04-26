@@ -1,0 +1,209 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165992-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24946286642",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24946286642",
+  "head_sha": "ee69c4d548d49371436383ab0781ed7138b9e5c0",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165992-agentic-merge.md",
+  "published_at": "2026-04-26T02:42:13.238Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/41985",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/41985",
+  "canonical_pr": null,
+  "summary": "Selected #41985 as the live canonical tracker for the still-unresolved non-image WebChat/Control UI upload gap. Planned duplicate closeout only for the narrowest high-confidence duplicates (#41992, #30759, #48700), kept broader or recently maintainer-kept siblings open as related, and emitted a narrow fix artifact because current main is still image-only end to end and no hydrated PR exists. Opening a fix PR is blocked in this run because the artifact provides no target checkout.",
+  "actions": [
+    {
+      "target": "#41985",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Best surviving live tracker for the unresolved non-image WebChat/Control UI upload gap."
+    },
+    {
+      "target": "#36440",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already-closed image-upload precursor; keep as historical evidence only."
+    },
+    {
+      "target": "#51045",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already-closed image-only bugfix; keep as historical evidence only."
+    },
+    {
+      "target": "#30389",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Broader WebChat UX umbrella with unique model-picker and capability-menu scope."
+    },
+    {
+      "target": "#30759",
+      "action": "close_duplicate",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Narrow document-upload subset of the canonical generic non-image upload request."
+    },
+    {
+      "target": "#41992",
+      "action": "close_duplicate",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Near-identical same-reporter duplicate of the canonical issue."
+    },
+    {
+      "target": "#43242",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Same family as the canonical issue, but recent maintainer keep-open intent makes conservative non-mutation safer."
+    },
+    {
+      "target": "#47933",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Overlapping upload request with additional download behavior not cleanly covered by the canonical issue."
+    },
+    {
+      "target": "#48700",
+      "action": "close_duplicate",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Office-document subset of the canonical non-image upload request with no distinct remaining work."
+    },
+    {
+      "target": "#56298",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Same attachment family, but recent maintainer keep-open intent and mixed image-plus-file scope make conservative non-mutation safer."
+    },
+    {
+      "target": "#56344",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Same family, but its referenced implementation path is not hydrated and cannot support a safe closeout decision."
+    },
+    {
+      "target": "#63094",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Related report on the same gap, framed as a broken button after partial rollout, with fresh maintainer keep-open intent."
+    },
+    {
+      "target": "#67622",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Same upload family with extra workflow emphasis and fresh maintainer keep-open intent."
+    },
+    {
+      "target": "#69185",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Implementation-focused follow-up with broader arbitrary-file and configuration scope than the canonical issue."
+    },
+    {
+      "target": "#69447",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "High-value implementation and root-cause evidence for the same gap; keep open as related technical context."
+    },
+    {
+      "target": "#70438",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Configuration/design follow-up for the same product area, not a pure duplicate of the canonical request."
+    },
+    {
+      "target": "#41985",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "The bug/feature gap is still real on main and there is no viable canonical PR to merge or repair."
+    },
+    {
+      "target": "#41985",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "A new fix PR is the explicit canonical path, and the bounded implementation plan can be generated from the artifact."
+    },
+    {
+      "target": "#41985",
+      "action": "open_fix_pr",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Implementation is blocked by missing target checkout, even though the new-fix-PR path is otherwise clear."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_closed": 2,
+    "keep_related": 10,
+    "close_duplicate": 3,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "open_fix_pr": 1
+  },
+  "action_status_counts": {
+    "planned": 16,
+    "skipped": 2,
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
