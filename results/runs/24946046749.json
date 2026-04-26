@@ -1,0 +1,27 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-166016-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24946046749",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24946046749",
+  "head_sha": "56bccb0db44200da8fc6f4a81252127a5c0e77d5",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "failed",
+  "source_job": "jobs/openclaw/ghcrawl-166016-agentic-merge.md",
+  "published_at": "2026-04-26T02:45:16.994Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Codex worker timed out after 1800000ms",
+  "actions": [],
+  "action_counts": {},
+  "action_status_counts": {},
+  "apply_counts": {},
+  "needs_human": [
+    "Codex worker timed out after 1800000ms"
+  ],
+  "apply_actions": []
+}
