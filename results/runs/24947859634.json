@@ -1,0 +1,115 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-166002-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24947859634",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24947859634",
+  "head_sha": "43d96e8f84d5f66f270ea7e7ca7220dc196492a6",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-166002-agentic-merge.md",
+  "published_at": "2026-04-26T04:28:22.198Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/65184",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/65184",
+  "canonical_pr": null,
+  "summary": "Kept #65184 as the live canonical issue. No new close or merge actions are safe in this autonomous pass: `require_fix_before_close` blocks further duplicate closeout until a fix exists, #42051 is a related but broken PR with unresolved bot findings and a failing `check` job, and #52293 must be quarantined as security-sensitive. The remaining open issues split into related false-unavailable variants (#39673, #44417, #63561), a same-family but not yet proven-identical root/systemd variant (#54517), and an independent node-service-name bug (#68287).",
+  "actions": [
+    {
+      "target": "#65184",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#65184",
+      "candidate_fix": null,
+      "reason": "Real live canonical bug; closeout of other items must wait for an actual fix path because `require_fix_before_close` is enabled."
+    },
+    {
+      "target": "#65184",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#65184",
+      "candidate_fix": null,
+      "reason": "No merge-ready canonical PR exists, so emit a narrow new-fix artifact instead of closing related items."
+    },
+    {
+      "target": "#52293",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine only this PR and keep it out of canonical/merge/fix decisions for the non-security cluster."
+    },
+    {
+      "target": "#42051",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65184",
+      "candidate_fix": null,
+      "reason": "Useful contributor context for later repair or credit, but not merge-ready and not strong enough to replace #65184 as the canonical path."
+    },
+    {
+      "target": "#39673",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65184",
+      "candidate_fix": null,
+      "reason": "Keep open as a distinct current-main bus-unavailable variant in the same Linux gateway/systemd family."
+    },
+    {
+      "target": "#44417",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65184",
+      "candidate_fix": null,
+      "reason": "Keep open as a related sudo-user detection issue rather than deduping it into the canonical enable-path bug."
+    },
+    {
+      "target": "#54517",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65184",
+      "candidate_fix": null,
+      "reason": "Same symptom family, but the hydrated record does not prove an exact duplicate of #65184 strongly enough to close it in this run."
+    },
+    {
+      "target": "#63561",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65184",
+      "candidate_fix": null,
+      "reason": "Keep open as a related detection/status bug until a distinct fix or dedupe proof exists."
+    },
+    {
+      "target": "#68287",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent bug with a different service name and product surface; it should be handled outside this cluster's canonical path."
+    }
+  ],
+  "action_counts": {
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "route_security": 1,
+    "keep_related": 5,
+    "keep_independent": 1
+  },
+  "action_status_counts": {
+    "planned": 9
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
