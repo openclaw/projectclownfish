@@ -1,0 +1,132 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-199262-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24968696258",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24968696258",
+  "head_sha": "1272d43f652c86e62c569a4c5e592f0a3c419e85",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-199262-agentic-merge.md",
+  "published_at": "2026-04-26T22:44:47.881Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72038",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72038",
+  "summary": "Classified the hydrated cluster without direct GitHub mutation. #72038 is the only non-security open PR that is clean enough for a planned merge. #39213 remains useful but blocked from merge by unresolved review-bot findings and needs a narrow repair pass. #63695 and linked #72392 are quarantined for central security handling. Closed refs are historical/context only.",
+  "actions": [
+    {
+      "target": "#39213",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Useful related contributor PR, but not merge-ready because actionable bot review findings remain unresolved."
+    },
+    {
+      "target": "#41105",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no action needed."
+    },
+    {
+      "target": "#63695",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route exact security-sensitive item to central OpenClaw security triage and continue unrelated non-security classification."
+    },
+    {
+      "target": "#71554",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already merged/closed; no closure action is valid."
+    },
+    {
+      "target": "#72038",
+      "action": "merge_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72038",
+      "candidate_fix": null,
+      "reason": "Canonical merge path for the stale-preview fresh-final subcase is clean in the hydrated artifact."
+    },
+    {
+      "target": "#72392",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route exact security-sensitive linked PR to central OpenClaw security triage."
+    },
+    {
+      "target": "cluster:ghcrawl-199262-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "A narrow repair artifact is needed for the #39213 subcase before any merge or closeout decisions."
+    }
+  ],
+  "action_counts": {
+    "keep_related": 1,
+    "keep_closed": 2,
+    "route_security": 2,
+    "merge_canonical": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "skipped": 2
+  },
+  "apply_counts": {
+    "executed": 1,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#72038",
+      "action": "merge_canonical",
+      "status": "executed",
+      "classification": "canonical",
+      "canonical": "#72038",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-199262-agentic-merge:#72038:merge_canonical:2026-04-26T18-36-02Z",
+      "reason": "merged by projectclownfish",
+      "merged_at": "2026-04-26T22:44:31Z",
+      "merge_commit_sha": "a08b65a90a454fbfe2ea4025f5bcdab08640d983",
+      "live_state": "merged",
+      "live_updated_at": "2026-04-26T18:36:02Z"
+    },
+    {
+      "target": "#72392",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(telegram): align final-only drafts with real partials",
+      "idempotency_key": null,
+      "reason": "merge state status is UNSTABLE",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
