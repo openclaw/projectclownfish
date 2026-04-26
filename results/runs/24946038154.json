@@ -1,0 +1,156 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-166002-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24946038154",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24946038154",
+  "head_sha": "56bccb0db44200da8fc6f4a81252127a5c0e77d5",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-166002-agentic-merge.md",
+  "published_at": "2026-04-26T02:25:42.215Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/65184",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/65184",
+  "canonical_pr": null,
+  "summary": "Kept #65184 as the live canonical issue for the narrow gateway-install enable-time `openclaw-gateway.service does not exist` family, planned one safe duplicate close for #54429, left broader or platform-distinct Linux systemd reports open as related, and split #68287 out as independent. A new fix PR is still the likely path, but opening it is blocked in this artifact-only run because `target_checkout` is null and current-main behavior was not re-proven from code.",
+  "actions": [
+    {
+      "target": "#65184",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#65184",
+      "candidate_fix": null,
+      "reason": "Best surviving canonical for the gateway-install missing-unit failure family in this cluster."
+    },
+    {
+      "target": "#39673",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Same subsystem and command family, but a different still-open user-bus failure mode."
+    },
+    {
+      "target": "#42025",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65184",
+      "candidate_fix": null,
+      "reason": "Likely same symptom family as #65184, but the Amazon Linux environment is distinct enough to keep open as related."
+    },
+    {
+      "target": "#44070",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related Linux systemd install problem with a different daemon-reload/DBus failure signature."
+    },
+    {
+      "target": "#44417",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Potentially overlapping helper-layer bug, but distinct reproduction and failure signature warrant keeping it open as related."
+    },
+    {
+      "target": "#54429",
+      "action": "close_duplicate",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#65184",
+      "candidate_fix": null,
+      "reason": "High-confidence duplicate of the canonical missing-unit gateway-install report."
+    },
+    {
+      "target": "#54517",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65184",
+      "candidate_fix": null,
+      "reason": "Same family as #65184, but it contains potentially useful diagnostic detail that should remain open."
+    },
+    {
+      "target": "#57188",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical evidence only; no action beyond acknowledging that the live target is already closed."
+    },
+    {
+      "target": "#63561",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Distinct still-open user-systemd detection problem; keep open as related."
+    },
+    {
+      "target": "#68287",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent node-service bug with a separate fix path."
+    },
+    {
+      "target": "#65184",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#65184",
+      "candidate_fix": null,
+      "reason": "The canonical issue still needs a focused fix path."
+    },
+    {
+      "target": "#65184",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#65184",
+      "candidate_fix": null,
+      "reason": "Produce a narrow artifact for a new fix PR rather than leaving the canonical issue without an implementation path."
+    },
+    {
+      "target": "#65184",
+      "action": "open_fix_pr",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#65184",
+      "candidate_fix": null,
+      "reason": "Implementation is blocked by missing checkout and missing code-level validation against current main."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 6,
+    "close_duplicate": 1,
+    "keep_closed": 1,
+    "keep_independent": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "open_fix_pr": 1
+  },
+  "action_status_counts": {
+    "planned": 11,
+    "skipped": 1,
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
