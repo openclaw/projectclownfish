@@ -249,7 +249,7 @@ function reviewResult(resultPath) {
 function isClusterScopedFixAction(action, result) {
   const name = String(action.action ?? "");
   const target = String(action.target ?? "");
-  return FIX_ACTIONS.has(name) && target === `cluster:${result.cluster_id}`;
+  return FIX_ACTIONS.has(name) && (target === `cluster:${result.cluster_id}` || target === result.cluster_id);
 }
 
 function isFixFirstBlockedCloseAction(action, hasClusterFixPath) {
