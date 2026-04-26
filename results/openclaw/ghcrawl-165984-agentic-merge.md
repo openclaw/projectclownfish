@@ -2,12 +2,12 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-165984-agentic-merge"
 mode: "autonomous"
-run_id: "24947179377"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24947179377"
-head_sha: "cc7e2b9deb213893d18c0bcca95afccd476be4c1"
+run_id: "24951167373"
+run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24951167373"
+head_sha: "1c2b50546310a7bf795122f8ecd5e9631af76299"
 workflow_conclusion: "failure"
 result_status: "failed"
-published_at: "2026-04-26T03:54:11.932Z"
+published_at: "2026-04-26T07:39:14.405Z"
 canonical: null
 canonical_issue: null
 canonical_pr: null
@@ -22,7 +22,7 @@ needs_human_count: 1
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24947179377](https://github.com/openclaw/projectclownfish/actions/runs/24947179377)
+Run: [https://github.com/openclaw/projectclownfish/actions/runs/24951167373](https://github.com/openclaw/projectclownfish/actions/runs/24951167373)
 
 Workflow conclusion: failure
 
@@ -32,7 +32,7 @@ Canonical: unknown
 
 ## Summary
 
-Codex worker timed out after 1800000ms
+Codex worker timed out after 600000ms
 
 ## Impact
 
@@ -58,4 +58,4 @@ Codex worker timed out after 1800000ms
 
 ## Needs Human
 
-- Codex worker timed out after 1800000ms
+- Codex worker timed out after 600000ms
