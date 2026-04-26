@@ -1,0 +1,86 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-207023-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24969045916",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24969045916",
+  "head_sha": "0e4564f671623de117a9abb4813b36a385aecd45",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-207023-agentic-merge.md",
+  "published_at": "2026-04-26T22:50:35.046Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/57306",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/57306",
+  "canonical_pr": null,
+  "summary": "All job-provided candidates were already closed in the hydrated preflight state before this autonomous pass. No GitHub mutations are planned. The representative #57306 is no longer an open canonical issue; maintainer closeout comments on #57306, #57900, #58305, #58539, and #65519 already record current-main implementation evidence for the subagent model-selection and LiveSessionModelSwitchError fixes. The linked security-sensitive #49491 is quarantined only as a security route item and does not block non-security classification.",
+  "actions": [
+    {
+      "target": "#57306",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#57306",
+      "candidate_fix": null,
+      "reason": "Representative issue is already closed with maintainer-provided implemented-on-main evidence."
+    },
+    {
+      "target": "#57900",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#57306",
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on current main; no mutation available or needed."
+    },
+    {
+      "target": "#58305",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#57306",
+      "candidate_fix": null,
+      "reason": "Already closed with implemented-on-main evidence for the same subagent model initialization failure family."
+    },
+    {
+      "target": "#58539",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#57306",
+      "candidate_fix": null,
+      "reason": "Already closed with current-main and changelog evidence covering the reported failure."
+    },
+    {
+      "target": "#65519",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#57306",
+      "candidate_fix": null,
+      "reason": "Already closed with implemented-on-main evidence for the same subagent model override behavior."
+    },
+    {
+      "target": "#49491",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine the exact security-sensitive linked ref only; continue non-security classification."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 5,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "skipped": 5,
+    "planned": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
