@@ -1,0 +1,150 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165992-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24946031675",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24946031675",
+  "head_sha": "56bccb0db44200da8fc6f4a81252127a5c0e77d5",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165992-agentic-merge.md",
+  "published_at": "2026-04-26T02:25:08.810Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/41985",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/41985",
+  "canonical_pr": null,
+  "summary": "Using the hydrated 2026-04-26 preflight artifact, #41985 remains the safest live canonical umbrella for the unresolved non-image WebChat/Control UI upload gap. Planned only one high-confidence duplicate close (#41992), kept the remaining open items as related scope or implementation threads, and emitted a new-fix artifact because no viable canonical PR was hydrated for merge or repair.",
+  "actions": [
+    {
+      "target": "#41985",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Canonical issue remains open and the feature gap is still real on current main."
+    },
+    {
+      "target": "#41985",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "No hydrated canonical PR exists; provide a narrow new-fix plan instead of speculating about an unhydrated branch."
+    },
+    {
+      "target": "#41992",
+      "action": "close_duplicate",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "High-confidence same-author duplicate with no unique remaining scope beyond #41985."
+    },
+    {
+      "target": "#30389",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Broader WebChat UX umbrella, not a clean duplicate of the file-upload canonical."
+    },
+    {
+      "target": "#30759",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Same family, but it carries document-specific behavior and follow-up detail worth preserving while no fix PR exists."
+    },
+    {
+      "target": "#43242",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Safe non-mutating classification; maintainer signal supports keeping it open until the canonical fix lands."
+    },
+    {
+      "target": "#47933",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Related feature-family issue with extra download scope, not a safe instant duplicate close."
+    },
+    {
+      "target": "#48700",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Specific office-file follow-up within the same family; keep open conservatively."
+    },
+    {
+      "target": "#56298",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Mixed fixed-and-unfixed scope makes related classification safer than instant duplicate closure."
+    },
+    {
+      "target": "#63094",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Useful reproduction-detail thread for the current silent-failure behavior."
+    },
+    {
+      "target": "#67622",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Related workflow thread with extra preview/use-case detail."
+    },
+    {
+      "target": "#69185",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Broader arbitrary-file/config design follow-up in the same family."
+    },
+    {
+      "target": "#69447",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Keep as a related technical thread; not safe to close while it still carries concrete root-cause detail."
+    }
+  ],
+  "action_counts": {
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "close_duplicate": 1,
+    "keep_related": 10
+  },
+  "action_status_counts": {
+    "planned": 13
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
