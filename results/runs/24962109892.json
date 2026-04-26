@@ -1,0 +1,444 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165980-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24962109892",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24962109892",
+  "head_sha": "0a093014e04049c913f3bb009311325943e11e03",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165980-agentic-merge.md",
+  "published_at": "2026-04-26T17:13:33.403Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/69303",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/69303",
+  "canonical_pr": null,
+  "summary": "Representative #58549 is already closed, so it is no longer the live canonical. Hydrated linked issue #69303 is the best current canonical for the inbound message_id replay after provider/runtime failure. No merge is safe: there is no canonical PR, #49980 is unrelated and has failing checks plus an unresolved Greptile test finding. Plan a narrow credited fix artifact for #69303, keep adjacent reliability subfamilies open, route security-sensitive refs only, and block duplicate closeout until the canonical fix PR exists or lands because require_fix_before_close is enabled.",
+  "actions": [
+    {
+      "target": "#1",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked PR is out of scope for backlog dedupe or merge automation."
+    },
+    {
+      "target": "#60646",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item must be quarantined to central OpenClaw security handling only."
+    },
+    {
+      "target": "#69303",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Best live canonical for the original #58549 family after #58549 was closed."
+    },
+    {
+      "target": "cluster:ghcrawl-165980-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "A narrow fix PR is needed before duplicate closeout because require_fix_before_close is enabled."
+    },
+    {
+      "target": "cluster:ghcrawl-165980-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Artifact gives the deterministic fix executor a narrow, credited implementation plan."
+    },
+    {
+      "target": "#64606",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Duplicate is clear enough to queue, but closure is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#40125",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related context-pressure UX work, not a duplicate of the canonical inbound dedupe bug."
+    },
+    {
+      "target": "#43661",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Keep open as a related replay-safety subfamily with unique compaction-timeout evidence."
+    },
+    {
+      "target": "#49864",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": "#49980",
+      "reason": "Independent linked Telegram configuration bug."
+    },
+    {
+      "target": "#49980",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Unrelated PR is not mergeable through this cluster and has unresolved bot/check blockers."
+    },
+    {
+      "target": "#50040",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related outbound delivery subfamily; leave open for a separate fix path."
+    },
+    {
+      "target": "#53895",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related outbound queue/recovery work should remain open."
+    },
+    {
+      "target": "#58443",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related duplicate-delivery family with unique non-canonical reproduction paths; not safe to close as a pure duplicate."
+    },
+    {
+      "target": "#68232",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related Telegram reliability issue with a distinct hot-reload state-retention root cause."
+    },
+    {
+      "target": "#68494",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related broad reliability report with multiple unique root causes."
+    },
+    {
+      "target": "#69147",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related Telegram polling liveness issue, not a duplicate of inbound dedupe replay."
+    },
+    {
+      "target": "#70623",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related multi-channel reliability report with remaining Discord work."
+    },
+    {
+      "target": "#71066",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related polling transport issue with distinct network-path evidence."
+    },
+    {
+      "target": "#71429",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related outbound/hot-reload reliability issue requiring separate regression and queue wiring."
+    },
+    {
+      "target": "#41753",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#49272",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#50065",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#55727",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#57410",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#57738",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#57743",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#58064",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#58549",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Original representative is obsolete and already closed."
+    },
+    {
+      "target": "#58611",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#58788",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#59113",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#59132",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#59833",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#59951",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#60088",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#60202",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#60400",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#61195",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#61222",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#61273",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#61470",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#61575",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#61712",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#65701",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    },
+    {
+      "target": "#70744",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No mutation allowed for closed targets."
+    }
+  ],
+  "action_counts": {
+    "route_security": 2,
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "close_duplicate": 1,
+    "keep_related": 11,
+    "keep_independent": 2,
+    "keep_closed": 26
+  },
+  "action_status_counts": {
+    "planned": 18,
+    "blocked": 1,
+    "skipped": 26
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
