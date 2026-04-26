@@ -18,6 +18,7 @@ const dryRun = Boolean(args["dry-run"] || process.env.CLOWNFISH_FIX_DRY_RUN === 
 const model = String(args.model ?? process.env.CLOWNFISH_MODEL ?? "gpt-5.4");
 const codexTimeoutMs = Number(process.env.CLOWNFISH_FIX_CODEX_TIMEOUT_MS ?? 10 * 60 * 1000);
 const codexPreflightTimeoutMs = Number(process.env.CLOWNFISH_FIX_PREFLIGHT_TIMEOUT_MS ?? 2 * 60 * 1000);
+const codexReasoningEffort = String(process.env.CLOWNFISH_CODEX_REASONING_EFFORT ?? "medium");
 const maxEditAttempts = Math.max(1, Number(process.env.CLOWNFISH_FIX_EDIT_ATTEMPTS ?? 3));
 const maxReviewAttempts = Math.max(1, Number(process.env.CLOWNFISH_CODEX_REVIEW_ATTEMPTS ?? 2));
 const resolveReviewThreads = process.env.CLOWNFISH_RESOLVE_REVIEW_THREADS !== "0";
@@ -28,6 +29,8 @@ const codexWriteNetworkAccess = parseBooleanEnv(
   process.env.CLOWNFISH_CODEX_WRITE_NETWORK_ACCESS,
   process.env.GITHUB_ACTIONS === "true",
 );
+let workRoot = "";
+let targetDir = "";
 
 if (!jobPath) {
   console.error("usage: node scripts/execute-fix-artifact.mjs <job.md> [result.json] [--latest] [--dry-run]");
@@ -124,11 +127,11 @@ if (securityBlock) {
   process.exit(0);
 }
 
-const workRoot =
+workRoot =
   typeof args["work-dir"] === "string"
     ? path.resolve(args["work-dir"])
     : fs.mkdtempSync(path.join(os.tmpdir(), "projectclownfish-fix-"));
-const targetDir =
+targetDir =
   typeof args["target-dir"] === "string"
     ? path.resolve(args["target-dir"])
     : path.join(workRoot, result.repo.replace("/", "-"));
@@ -336,6 +339,8 @@ function editValidatePrepareMerge({ fixArtifact, targetDir, branch, mode, fallba
         ...codexWriteSandboxConfigArgs(),
         "-c",
         'approval_policy="never"',
+        "-c",
+        `model_reasoning_effort=${JSON.stringify(codexReasoningEffort)}`,
         "--output-last-message",
         summaryPath,
         "--ephemeral",
@@ -434,17 +439,61 @@ function buildRepositoryContext({ fixArtifact, targetDir }) {
     .split("\n")
     .map((line) => line.trim())
     .filter(Boolean);
-  const candidates = scoreRepositoryFiles({ files, fixArtifact })
-    .slice(0, 80)
-    .map((entry) => `${entry.file} (${entry.score})`);
+  const scoredCandidates = scoreRepositoryFiles({ files, fixArtifact }).slice(0, 80);
+  const candidates = scoredCandidates.map((entry) => `${entry.file} (${entry.score})`);
+  const snippets = buildRepositorySnippets({ targetDir, candidates: scoredCandidates.slice(0, 12), fixArtifact });
   const packageScripts = readPackageScripts(targetDir);
   return [
     `candidate_files (${candidates.length}):`,
     ...(candidates.length > 0 ? candidates : ["none matched; use rg across the repo to find the real implementation files"]),
     "",
+    "candidate_file_excerpts:",
+    snippets || "none; inspect candidate files directly before editing",
+    "",
     `validation_commands: ${(fixArtifact.validation_commands ?? []).join(" ; ")}`,
     `package_scripts: ${packageScripts.join(", ") || "none"}`,
   ].join("\n");
+}
+
+function buildRepositorySnippets({ targetDir, candidates, fixArtifact }) {
+  const tokens = discoveryTokens(fixArtifact).slice(0, 40);
+  const out = [];
+  for (const candidate of candidates) {
+    const pathname = path.join(targetDir, candidate.file);
+    if (!fs.existsSync(pathname)) continue;
+    const stat = fs.statSync(pathname);
+    if (!stat.isFile() || stat.size > 220_000) continue;
+    const content = fs.readFileSync(pathname, "utf8");
+    const excerpt = focusedFileExcerpt(content, tokens);
+    if (!excerpt) continue;
+    out.push(`--- ${candidate.file} ---\n${excerpt}`);
+    if (out.join("\n\n").length > 18_000) break;
+  }
+  return out.join("\n\n").slice(0, 18_000);
+}
+
+function focusedFileExcerpt(content, tokens) {
+  const lines = content.split(/\r?\n/);
+  const matched = new Set();
+  const lowerTokens = tokens.map((token) => token.toLowerCase()).filter((token) => token.length >= 4);
+  for (let index = 0; index < lines.length; index += 1) {
+    const lower = lines[index].toLowerCase();
+    if (lowerTokens.some((token) => lower.includes(token))) {
+      for (let line = Math.max(0, index - 8); line <= Math.min(lines.length - 1, index + 18); line += 1) {
+        matched.add(line);
+      }
+    }
+  }
+  const selected = matched.size > 0 ? [...matched].sort((a, b) => a - b) : lines.map((_, index) => index).slice(0, 80);
+  const rendered = [];
+  let previous = -2;
+  for (const line of selected) {
+    if (line !== previous + 1) rendered.push("...");
+    rendered.push(`${line + 1}: ${lines[line]}`);
+    previous = line;
+    if (rendered.join("\n").length > 3_200) break;
+  }
+  return rendered.join("\n");
 }
 
 function scoreRepositoryFiles({ files, fixArtifact }) {
@@ -561,6 +610,8 @@ function runCodexWritePreflight() {
       ...codexWriteSandboxConfigArgs(),
       "-c",
       'approval_policy="never"',
+      "-c",
+      `model_reasoning_effort=${JSON.stringify(codexReasoningEffort)}`,
       "--output-last-message",
       summaryPath,
       "--ephemeral",
@@ -689,6 +740,8 @@ function runCodexReview({ fixArtifact, targetDir, mode, attempt }) {
       "read-only",
       "-c",
       'approval_policy="never"',
+      "-c",
+      `model_reasoning_effort=${JSON.stringify(codexReasoningEffort)}`,
       "--output-schema",
       schemaPath,
       "--output-last-message",
@@ -745,6 +798,8 @@ function runCodexReviewFix({ fixArtifact, targetDir, mode, review, attempt }) {
       ...codexWriteSandboxConfigArgs(),
       "-c",
       'approval_policy="never"',
+      "-c",
+      `model_reasoning_effort=${JSON.stringify(codexReasoningEffort)}`,
       "--output-last-message",
       path.join(workRoot, `${mode}-codex-review-fix-${attempt}.md`),
       "--ephemeral",
@@ -1137,8 +1192,27 @@ function writeReport(report, resultPath) {
     typeof args.report === "string"
       ? path.resolve(args.report)
       : path.join(path.dirname(resultPath), "fix-execution-report.json");
+  const debugDir = copyFixDebugArtifacts(path.dirname(reportPath));
+  if (debugDir) {
+    report.debug_artifacts = path.relative(repoRoot(), debugDir);
+  }
   fs.writeFileSync(reportPath, `${JSON.stringify(report, null, 2)}\n`);
   console.log(JSON.stringify(report, null, 2));
+}
+
+function copyFixDebugArtifacts(reportDir) {
+  if (!workRoot || !fs.existsSync(workRoot)) return "";
+  const debugDir = path.join(reportDir, "fix-executor-debug");
+  let copied = 0;
+  for (const entry of fs.readdirSync(workRoot, { withFileTypes: true })) {
+    if (!entry.isFile()) continue;
+    if (!/\.(jsonl|stderr\.log|md|json)$/i.test(entry.name)) continue;
+    if (entry.name === "replacement-pr-body.md") continue;
+    fs.mkdirSync(debugDir, { recursive: true });
+    fs.copyFileSync(path.join(workRoot, entry.name), path.join(debugDir, entry.name));
+    copied += 1;
+  }
+  return copied > 0 ? debugDir : "";
 }
 
 function ghAuthSetupGit(cwd) {

@@ -18,6 +18,7 @@ const mode = args.mode ?? "plan";
 const dryRun = Boolean(args["dry-run"] || process.env.CLOWNFISH_DRY_RUN === "1");
 const model = args.model ?? process.env.CLOWNFISH_MODEL ?? "gpt-5.4";
 const codexTimeoutMs = Number(process.env.CLOWNFISH_CODEX_TIMEOUT_MS ?? 15 * 60 * 1000);
+const codexReasoningEffort = String(process.env.CLOWNFISH_CODEX_REASONING_EFFORT ?? "medium");
 
 if (!jobPath) {
   console.error("usage: node scripts/run-worker.mjs <job.md> --mode plan|execute|autonomous [--dry-run]");
@@ -109,6 +110,8 @@ const codexArgs = [
   "read-only",
   "-c",
   'approval_policy="never"',
+  "-c",
+  `model_reasoning_effort=${JSON.stringify(codexReasoningEffort)}`,
   "--output-schema",
   path.join(repoRoot(), "schemas", "codex-result.schema.json"),
   "--output-last-message",
