@@ -1,0 +1,365 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165984-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24955731567",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24955731567",
+  "head_sha": "efee58d37c471ee523051d48da9996141f112888",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165984-agentic-merge.md",
+  "published_at": "2026-04-26T11:49:06.854Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/70678",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/70678",
+  "canonical_pr": null,
+  "summary": "Classified the WhatsApp reliability cluster using the hydrated preflight artifact. #70678 is the best live canonical issue for the quiet-session 30 minute WhatsApp watchdog loop; #71466 is the closest fix PR but is draft, dirty, uneditable by automation, and has required validation skipped, so the safe path is a replacement fix artifact that credits #71466 and preserves #63939 as related context. No merge or close is ready because require_fix_before_close blocks closeout until the replacement fix PR exists or lands.",
+  "actions": [
+    {
+      "target": "#70678",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Best live canonical for the remaining quiet WhatsApp watchdog bug."
+    },
+    {
+      "target": "#53698",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Close is blocked on the canonical fix path or fix PR because require_fix_before_close is true."
+    },
+    {
+      "target": "#65215",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Close is blocked on the canonical fix path or fix PR because require_fix_before_close is true."
+    },
+    {
+      "target": "#45474",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Related WhatsApp reliability report with unique reproduction details; not safe to close as a pure duplicate."
+    },
+    {
+      "target": "#48390",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Related but not a high-confidence duplicate."
+    },
+    {
+      "target": "#49305",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Related WhatsApp lifecycle bug with distinct root cause and recovery path."
+    },
+    {
+      "target": "#58481",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Different platform-level transport failure; should not be closed in this cluster."
+    },
+    {
+      "target": "#61788",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Related connection reliability issue with distinct timing and reproduction."
+    },
+    {
+      "target": "#63855",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Related but has unique message-loss scope."
+    },
+    {
+      "target": "#64296",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Related WhatsApp WebSocket timeout issue; keep open for separate handling."
+    },
+    {
+      "target": "#66920",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Related but not duplicate; likely follow-up subcluster with group reliability."
+    },
+    {
+      "target": "#67986",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Related reliability report, but not a duplicate of the canonical watchdog issue."
+    },
+    {
+      "target": "#70856",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Related but has Windows/decryption-specific evidence."
+    },
+    {
+      "target": "#63939",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Useful related config PR; do not close before the canonical fix path lands and maintainers decide whether config remains useful."
+    },
+    {
+      "target": "#71466",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Close is blocked on the replacement canonical fix path or fix PR because require_fix_before_close is true."
+    },
+    {
+      "target": "cluster:ghcrawl-165984-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "A narrow replacement fix PR is needed before duplicate/superseded closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-165984-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Replacement artifact is the safe autonomous path."
+    },
+    {
+      "target": "cluster:ghcrawl-165984-agentic-merge",
+      "action": "open_fix_pr",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Open a credited replacement fix PR after the fix artifact validates."
+    },
+    {
+      "target": "#67816",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine exact security-sensitive open PR; continue unrelated non-security classification."
+    },
+    {
+      "target": "#49293",
+      "action": "route_security",
+      "status": "skipped",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; recorded as quarantined context only."
+    },
+    {
+      "target": "#65427",
+      "action": "route_security",
+      "status": "skipped",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; recorded as quarantined context only."
+    },
+    {
+      "target": "#67815",
+      "action": "route_security",
+      "status": "skipped",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; recorded as quarantined context only."
+    },
+    {
+      "target": "#49057",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#50684",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#51111",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#55138",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#58408",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#61663",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#61744",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#63410",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#63854",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#63925",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#66917",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#66965",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#70463",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#70608",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_duplicate": 2,
+    "keep_related": 10,
+    "keep_independent": 1,
+    "close_superseded": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "open_fix_pr": 1,
+    "route_security": 4,
+    "keep_closed": 14
+  },
+  "action_status_counts": {
+    "planned": 16,
+    "blocked": 3,
+    "skipped": 17
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
