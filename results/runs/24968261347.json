@@ -1,0 +1,121 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-199263-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24968261347",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24968261347",
+  "head_sha": "35f872793b4de7748d72852e171a8fc84e506e12",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-199263-agentic-merge.md",
+  "published_at": "2026-04-26T22:23:44.776Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/42001",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/41545",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/42001",
+  "summary": "Hydrated preflight shows one open root issue, three non-security overlapping PRs, and one security-sensitive PR. The current representative #41718 is not usable as canonical because it is explicitly security-sensitive and includes an unrelated memory-lancedb change plus failing extension checks. Keep #41545 as the canonical issue and #42001 as the best repairable canonical PR path; do not merge or close yet because the canonical PR still needs current-main refresh, validation, and a clean Codex /review. Route only #41718 to central security handling.",
+  "actions": [
+    {
+      "target": "#41545",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41545",
+      "candidate_fix": "#42001",
+      "reason": "Canonical issue remains open for the root user-visible regression until the repairable PR path is validated and landed."
+    },
+    {
+      "target": "#41546",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#41545",
+      "candidate_fix": "#42001",
+      "reason": "Superseded closeout is blocked by require_fix_before_close until the canonical repair path #42001 is validated and merged."
+    },
+    {
+      "target": "#41552",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#41545",
+      "candidate_fix": "#42001",
+      "reason": "Superseded closeout is blocked by require_fix_before_close until the canonical repair path #42001 is validated and merged."
+    },
+    {
+      "target": "#41718",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PR is quarantined to central OpenClaw security handling; ProjectClownfish should not close, merge, label, comment on, or fix this item."
+    },
+    {
+      "target": "#42001",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41545",
+      "candidate_fix": "#42001",
+      "reason": "Best current non-security repairable canonical PR path, but not merge-ready without current-main refresh, validation, and clean Codex /review."
+    },
+    {
+      "target": "cluster:ghcrawl-199263-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#41545",
+      "candidate_fix": "#42001",
+      "reason": "Build a repair artifact for the canonical PR path so the executor can refresh, validate, run /review, address any findings, and then allow post-merge closeout in a later pass."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 2,
+    "close_superseded": 2,
+    "route_security": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "blocked": 2
+  },
+  "apply_counts": {
+    "skipped": 2
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#41546",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#41545",
+      "candidate_fix": "#42001",
+      "title": null,
+      "idempotency_key": "ghcrawl-199263-agentic-merge:#41546:close_superseded:2026-04-26T04:37:31Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#41552",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#41545",
+      "candidate_fix": "#42001",
+      "title": null,
+      "idempotency_key": "ghcrawl-199263-agentic-merge:#41552:close_superseded:2026-04-26T04:37:35Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
