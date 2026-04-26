@@ -2,16 +2,16 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-165998-agentic-merge"
 mode: "autonomous"
-run_id: "24951662272"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24951662272"
-head_sha: "6415dec173e0f2859db51958e43ea7fb9bdb2d3c"
+run_id: "24964236283"
+run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24964236283"
+head_sha: "38f70877c94ad408c7816548e9dafe09a3dd4328"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-26T07:58:58.533Z"
+published_at: "2026-04-26T18:56:33.346Z"
 canonical: "https://github.com/openclaw/openclaw/pull/40571"
 canonical_issue: null
 canonical_pr: "https://github.com/openclaw/openclaw/pull/40571"
-actions_total: 16
+actions_total: 19
 apply_executed: 0
 apply_blocked: 0
 apply_skipped: 0
@@ -22,7 +22,7 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24951662272](https://github.com/openclaw/projectclownfish/actions/runs/24951662272)
+Run: [https://github.com/openclaw/projectclownfish/actions/runs/24964236283](https://github.com/openclaw/projectclownfish/actions/runs/24964236283)
 
 Workflow conclusion: success
 
@@ -32,13 +32,13 @@ Canonical: https://github.com/openclaw/openclaw/pull/40571
 
 ## Summary
 
-Hydrated live state shows an over-broad cluster with multiple distinct cron subfamilies rather than one closable duplicate set. `#40571` remains the best live canonical for the omitted-agent autofill/tooling slice, while `#42245`, `#44412`, and `#59069` are separate surviving canonicals for their own narrower slices. No close, merge, or fix-opening action is safe from the provided artifact because the relevant PRs either still have failing checks, unresolved review-bot findings, or lack an explicit landed canonical ref needed for auditable main-based closeout.
+Classified the hydrated cluster without GitHub mutation. The cluster is over-broad: #40571 remains the best canonical path for the agentId auto-fill bug but is not merge-ready; Telegram thread/topic PRs are related subfamilies with unresolved checks or bot findings; #43469 is quarantined as security-sensitive linked work. No close or merge actions are safe before the canonical fix path is repaired and validated.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 16 |
+| Worker actions | 19 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
 | Apply skipped | 0 |
@@ -54,22 +54,25 @@ Hydrated live state shows an over-broad cluster with multiple distinct cron subf
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #40571 | keep_canonical | planned | canonical | Best surviving canonical for the cron-tool omitted-agent autofill bug; keep open, do not merge from this run. |
-| #42196 | keep_related | planned | fixed_by_candidate | Issue is not a duplicate of `#40571`; it is covered by its own open candidate PR `#42245` and should stay open until that path is validated. |
-| #42245 | keep_canonical | planned | canonical | Best surviving canonical for the warn-on-missing-agent CLI slice; related to but not duplicative of `#40571`. |
-| #43469 | keep_independent | planned | independent | Independent security-scanner work; not part of the cron cluster beyond incidental linkage. |
-| #43695 | keep_closed | skipped | related | Historical evidence for the Telegram topic-delivery slice; already closed and not a target for mutation. |
-| #43808 | keep_related | planned | related | Same Telegram topic-delivery family, but no safe close or merge path is proven from the hydrated artifact. |
-| #44240 | keep_closed | skipped | related | Historical evidence for adjacent Telegram topic handling; already closed. |
-| #44270 | keep_related | planned | fixed_by_candidate | Issue is not resolved on the artifact’s current canonical path; it stays open behind candidate PR `#44412`. |
-| #44325 | keep_closed | skipped | superseded | Closed historical superseded PR; do not emit any further close action. |
-| #44351 | keep_closed | skipped | superseded | Closed historical superseded PR; preserve as evidence only. |
-| #44412 | keep_canonical | planned | canonical | Best surviving canonical for the Telegram direct-thread cron inference slice, but not merge-ready. |
-| #49704 | keep_related | planned | related | Related Telegram topic-delivery work, but no auditable close or merge recommendation is safe from this artifact. |
-| #54307 | keep_related | planned | related | Related omitted-agent routing work, but not the same root cause or code path as `#40571`. |
-| #58893 | keep_independent | planned | independent | Independent reminder-delivery semantics change; keep outside duplicate cleanup. |
-| #59069 | keep_canonical | planned | canonical | Best surviving canonical for Telegram topic-target normalization, but keep open until review findings are resolved. |
-| #64708 | keep_related | planned | related | Related later edge-case attempt in the same module, but clearly not the surviving canonical patch. |
+| #40571 | keep_canonical | planned | canonical | Best canonical for the agentId auto-fill subfamily, but keep only; repair and validation are required before merge or closeout. |
+| #42196 | keep_related | planned | related | Related agent-routing UX issue, not a true duplicate of the #40571 auto-fill bug. |
+| #42245 | keep_related | planned | related | Useful related PR for the --agent warning issue, but not the canonical fix for this cluster and not merge-ready. |
+| #43469 | route_security | planned | security_sensitive | Quarantine this exact linked security-scanner PR; it is unrelated to the cron maintenance cluster. |
+| #43695 | keep_closed | skipped | fixed_by_candidate | Closed context evidence only; no closure action is valid. |
+| #43808 | keep_related | planned | related | Related Telegram topic-delivery PR, not a duplicate of the agentId canonical path. |
+| #44240 | keep_closed | skipped | fixed_by_candidate | Closed context evidence only; no closure action is valid. |
+| #44270 | keep_related | planned | related | Related Telegram direct-thread inference bug; keep open until the #44412 subfamily is repaired and validated. |
+| #44325 | keep_closed | skipped | superseded | Already closed and superseded by #44412; no further action. |
+| #44351 | keep_closed | skipped | superseded | Already closed and superseded by #44412; no further action. |
+| #44412 | keep_related | planned | related | Canonical for a related Telegram direct-thread subfamily, but not the cluster canonical and not merge-ready. |
+| #49704 | keep_related | planned | related | Related Telegram forum-topic delivery PR with unresolved review and failing checks; keep open. |
+| #54307 | keep_closed | skipped | fixed_by_candidate | Already closed; useful historical evidence for agentId behavior only. |
+| #58893 | keep_related | planned | related | Related cron reminder delivery work, but too broad and draft; keep open outside this canonical path. |
+| #59069 | keep_related | planned | related | Potentially useful Telegram topic-target PR, but unresolved bot review prevents merge or closeout. |
+| #64708 | keep_related | planned | related | Related Telegram topic-thread PR with hard review blockers and failing checks; keep open. |
+| cluster:ghcrawl-165998-agentic-merge | fix_needed | planned |  | Repair #40571, rebase if needed, validate with OpenClaw's changed-check lane, run /review, then reconsider merge and duplicate closeout. |
+| cluster:ghcrawl-165998-agentic-merge | build_fix_artifact | planned |  | Emit a repair artifact for the canonical contributor branch instead of merging or closing anything in this run. |
+| cluster:ghcrawl-165998-agentic-merge | open_fix_pr | blocked |  | Target checkout unavailable in the artifact; do not pretend to patch or open a PR from this worker. |
 
 ## Needs Human
 
