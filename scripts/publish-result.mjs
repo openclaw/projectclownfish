@@ -5,13 +5,15 @@ import { parseArgs, repoRoot } from "./lib.mjs";
 
 const DASHBOARD_START = "<!-- projectclownfish-dashboard:start -->";
 const DASHBOARD_END = "<!-- projectclownfish-dashboard:end -->";
-const APPLICATOR_ACTIONS = new Set([
+const CLOSE_APPLICATOR_ACTIONS = new Set([
   "close",
   "close_duplicate",
   "close_superseded",
   "close_fixed_by_candidate",
   "close_low_signal",
 ]);
+const MERGE_APPLICATOR_ACTIONS = new Set(["merge_candidate", "merge_canonical"]);
+const APPLICATOR_ACTIONS = new Set([...CLOSE_APPLICATOR_ACTIONS, ...MERGE_APPLICATOR_ACTIONS]);
 
 const args = parseArgs(process.argv.slice(2));
 const inputs = args._.length > 0 ? args._ : [path.join(repoRoot(), ".projectclownfish", "runs")];
@@ -205,35 +207,118 @@ function updateDashboard() {
   if (!fs.existsSync(readmePath)) return;
   const readme = fs.readFileSync(readmePath, "utf8");
   const records = readRunRecords();
-  const latestByCluster = latestClusterRecords(records);
-  const applyRows = latestByCluster.flatMap((record) => (record.apply_actions ?? []).filter(isApplicatorAction));
+  const latestByCluster = latestClusterRecords(records).sort(sortNewestRecordFirst);
+  const applyRows = latestByCluster.flatMap((record) =>
+    (record.apply_actions ?? []).filter(isApplicatorAction).map((action) => ({ record, action })),
+  );
+  const executedRows = applyRows.filter((row) => row.action.status === "executed");
+  const closedRows = executedRows.filter((row) => CLOSE_APPLICATOR_ACTIONS.has(String(row.action.action ?? "")));
+  const mergedRows = executedRows.filter((row) => MERGE_APPLICATOR_ACTIONS.has(String(row.action.action ?? "")));
+  const blockedRows = applyRows.filter((row) => row.action.status === "blocked");
+  const skippedRows = applyRows.filter((row) => row.action.status === "skipped");
+  const needsHumanRows = latestByCluster.filter((record) => (record.needs_human ?? []).length > 0);
+  const cleanClusters = latestByCluster.filter(
+    (record) =>
+      record.workflow_conclusion === "success" &&
+      (record.needs_human ?? []).length === 0 &&
+      (record.apply_actions ?? []).every((action) => !["blocked", "failed"].includes(action.status)),
+  );
+  const workerActions = latestByCluster.flatMap((record) => record.actions ?? []);
+  const workflowState =
+    latestByCluster.some((record) => record.workflow_conclusion === "failure")
+      ? "Failed clusters need inspection"
+      : blockedRows.length > 0
+        ? "Blocked actions need triage"
+        : needsHumanRows.length > 0
+          ? "Human review needed"
+          : "Clean";
   const totals = {
     clusters: latestByCluster.length,
     runs: records.length,
     success: latestByCluster.filter((record) => record.workflow_conclusion === "success").length,
     failure: latestByCluster.filter((record) => record.workflow_conclusion === "failure").length,
     cancelled: latestByCluster.filter((record) => record.workflow_conclusion === "cancelled").length,
-    executed: applyRows.filter((action) => action.status === "executed").length,
-    blocked: applyRows.filter((action) => action.status === "blocked").length,
-    skipped: applyRows.filter((action) => action.status === "skipped").length,
-    needsHumanClusters: latestByCluster.filter((record) => (record.needs_human ?? []).length > 0).length,
+    cleanClusters: cleanClusters.length,
+    closed: closedRows.length,
+    merged: mergedRows.length,
+    blocked: blockedRows.length,
+    skipped: skippedRows.length,
+    needsHumanClusters: needsHumanRows.length,
   };
   const dashboard = `## Dashboard
 
 Last dashboard update: ${formatTimestamp(new Date().toISOString())}
 
 ${DASHBOARD_START}
+### Workflow Status
+
+Updated: ${formatTimestamp(new Date().toISOString())}
+
+State: ${workflowState}
+
+Scope: ${totals.clusters} latest cluster reports from ${totals.runs} run attempts. Dashboard totals use the latest report per cluster, not every retry.
+
+### Cluster Health
+
 | Metric | Count |
 | --- | ---: |
-| Cluster reports | ${totals.clusters} |
-| Published runs | ${totals.runs} |
 | Latest successful clusters | ${totals.success} |
 | Latest failed clusters | ${totals.failure} |
 | Latest cancelled clusters | ${totals.cancelled} |
-| Executed close actions | ${totals.executed} |
-| Blocked apply actions | ${totals.blocked} |
-| Skipped apply actions | ${totals.skipped} |
+| Clean completed clusters | ${totals.cleanClusters} |
 | Needs-human clusters | ${totals.needsHumanClusters} |
+| Run attempts archived | ${totals.runs} |
+
+### Action Outcomes
+
+| Metric | Count |
+| --- | ---: |
+| Completed close actions | ${totals.closed} |
+| Merged PRs | ${totals.merged} |
+| Duplicate closes | ${countRows(closedRows, (row) => row.action.classification === "duplicate")} |
+| Superseded closes | ${countRows(closedRows, (row) => row.action.classification === "superseded")} |
+| Fixed-by-candidate closes | ${countRows(closedRows, (row) => row.action.classification === "fixed_by_candidate")} |
+| Low-signal PR closes | ${countRows(closedRows, (row) => row.action.classification === "low_signal")} |
+| Blocked mutation attempts | ${totals.blocked} |
+| Skipped mutation attempts | ${totals.skipped} |
+
+### Worker Decision Breakdown
+
+| Decision | Count |
+| --- | ---: |
+${renderCountRows(countBy(workerActions, (action) => String(action.action ?? "unknown")), [
+  "close_duplicate",
+  "close_superseded",
+  "close_fixed_by_candidate",
+  "close_low_signal",
+  "merge_candidate",
+  "merge_canonical",
+  "fix_needed",
+  "build_fix_artifact",
+  "needs_human",
+  "keep_canonical",
+  "keep_related",
+  "keep_independent",
+  "keep_closed",
+])}
+
+### Completed Close/Merge Ledger
+
+| Target | Outcome | Cluster | Reason | Run |
+| --- | --- | --- | --- | --- |
+${renderActionLedger([...closedRows, ...mergedRows].slice(0, 25))}
+
+### Blocked Actions
+
+| Target | Action | Cluster | Reason | Run |
+| --- | --- | --- | --- | --- |
+${renderBlockedRows(blockedRows.slice(0, 20))}
+
+### Needs Human Clusters
+
+| Cluster | Reason | Run |
+| --- | --- | --- |
+${renderNeedsHumanRows(needsHumanRows.slice(0, 20))}
 ${DASHBOARD_END}`;
 
   let updated;
@@ -254,9 +339,11 @@ function writeAggregateApplyReport() {
     (record.apply_actions ?? [])
       .filter(isApplicatorAction)
       .map((action) => ({
+        repo: record.repo,
         run_id: record.run_id,
         run_url: record.run_url,
         cluster_id: record.cluster_id,
+        published_at: record.published_at,
         ...action,
       })),
   );
@@ -356,6 +443,119 @@ function sanitizeApplyAction(action) {
 
 function isApplicatorAction(action) {
   return APPLICATOR_ACTIONS.has(String(action?.action ?? ""));
+}
+
+function sortNewestRecordFirst(left, right) {
+  return String(right.published_at ?? "").localeCompare(String(left.published_at ?? ""));
+}
+
+function countRows(rows, predicate) {
+  return rows.filter(predicate).length;
+}
+
+function renderCountRows(counts, preferredOrder) {
+  const keys = [
+    ...preferredOrder.filter((key) => counts[key]),
+    ...Object.keys(counts)
+      .filter((key) => !preferredOrder.includes(key))
+      .sort(),
+  ];
+  return keys.length > 0
+    ? keys.map((key) => `| ${formatActionLabel(key)} | ${counts[key]} |`).join("\n")
+    : "| _None_ | 0 |";
+}
+
+function renderActionLedger(rows) {
+  if (rows.length === 0) return "| _None_ |  |  |  |  |";
+  return rows
+    .map(({ record, action }) =>
+      [
+        markdownTableLink(action.target ?? "", githubItemUrl(record.repo, action.target)),
+        formatActionLabel(action.action),
+        markdownTableLink(record.cluster_id, clusterReportPath(record)),
+        tableCell(action.reason || closeReasonFromAction(action)),
+        markdownTableLink(record.run_id || "run", record.run_url),
+      ].join(" | "),
+    )
+    .map((row) => `| ${row} |`)
+    .join("\n");
+}
+
+function renderBlockedRows(rows) {
+  if (rows.length === 0) return "| _None_ |  |  |  |  |";
+  return rows
+    .map(({ record, action }) =>
+      [
+        markdownTableLink(action.target ?? "", githubItemUrl(record.repo, action.target)),
+        formatActionLabel(action.action),
+        markdownTableLink(record.cluster_id, clusterReportPath(record)),
+        tableCell(action.reason || "blocked"),
+        markdownTableLink(record.run_id || "run", record.run_url),
+      ].join(" | "),
+    )
+    .map((row) => `| ${row} |`)
+    .join("\n");
+}
+
+function renderNeedsHumanRows(records) {
+  if (records.length === 0) return "| _None_ |  |  |";
+  return records
+    .map((record) =>
+      [
+        markdownTableLink(record.cluster_id, clusterReportPath(record)),
+        tableCell(firstNeedsHumanReason(record)),
+        markdownTableLink(record.run_id || "run", record.run_url),
+      ].join(" | "),
+    )
+    .map((row) => `| ${row} |`)
+    .join("\n");
+}
+
+function firstNeedsHumanReason(record) {
+  const first = record.needs_human?.[0];
+  if (first) return truncate(first, 140);
+  return truncate(record.summary || "needs human review", 140);
+}
+
+function closeReasonFromAction(action) {
+  if (action.classification === "duplicate") return "duplicate close";
+  if (action.classification === "superseded") return "superseded close";
+  if (action.classification === "fixed_by_candidate") return "fixed by candidate";
+  if (action.classification === "low_signal") return "low-signal PR cleanup";
+  return "completed";
+}
+
+function formatActionLabel(value) {
+  const text = String(value ?? "")
+    .replaceAll("_", " ")
+    .replace(/\bpr\b/gi, "PR");
+  return text ? text[0].toUpperCase() + text.slice(1) : "Unknown";
+}
+
+function githubItemUrl(repo, ref) {
+  const number = String(ref ?? "").replace(/^#/, "");
+  if (!/^\d+$/.test(number) || !repo) return "";
+  return `https://github.com/${repo}/issues/${number}`;
+}
+
+function clusterReportPath(record) {
+  const owner = String(record.repo ?? "").split("/")[0] || "openclaw";
+  return `results/${owner}/${slug(record.cluster_id)}.md`;
+}
+
+function markdownTableLink(label, url) {
+  const safeLabel = tableCell(label || "unknown");
+  return url ? `[${safeLabel}](${url})` : safeLabel;
+}
+
+function tableCell(value) {
+  return truncate(String(value ?? "").replaceAll("|", "\\|").replace(/\s+/g, " ").trim(), 140);
+}
+
+function truncate(value, maxLength) {
+  const text = String(value ?? "");
+  if (text.length <= maxLength) return text;
+  return `${text.slice(0, maxLength - 3)}...`;
 }
 
 function countBy(values, keyFn) {

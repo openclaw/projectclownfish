@@ -34,20 +34,105 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 26, 2026, 00:02 UTC
+Last dashboard update: Apr 26, 2026, 00:04 UTC
 
 <!-- projectclownfish-dashboard:start -->
+### Workflow Status
+
+Updated: Apr 26, 2026, 00:04 UTC
+
+State: Blocked actions need triage
+
+Scope: 27 latest cluster reports from 34 run attempts. Dashboard totals use the latest report per cluster, not every retry.
+
+### Cluster Health
+
 | Metric | Count |
 | --- | ---: |
-| Cluster reports | 27 |
-| Published runs | 34 |
 | Latest successful clusters | 27 |
 | Latest failed clusters | 0 |
 | Latest cancelled clusters | 0 |
-| Executed close actions | 16 |
-| Blocked apply actions | 2 |
-| Skipped apply actions | 0 |
+| Clean completed clusters | 7 |
 | Needs-human clusters | 20 |
+| Run attempts archived | 34 |
+
+### Action Outcomes
+
+| Metric | Count |
+| --- | ---: |
+| Completed close actions | 16 |
+| Merged PRs | 0 |
+| Duplicate closes | 16 |
+| Superseded closes | 0 |
+| Fixed-by-candidate closes | 0 |
+| Low-signal PR closes | 0 |
+| Blocked mutation attempts | 2 |
+| Skipped mutation attempts | 0 |
+
+### Worker Decision Breakdown
+
+| Decision | Count |
+| --- | ---: |
+| Close duplicate | 24 |
+| Close superseded | 1 |
+| Needs human | 62 |
+| Keep canonical | 28 |
+| Keep related | 135 |
+| Keep independent | 36 |
+| Keep closed | 112 |
+
+### Completed Close/Merge Ledger
+
+| Target | Outcome | Cluster | Reason | Run |
+| --- | --- | --- | --- | --- |
+| [#67029](https://github.com/openclaw/openclaw/issues/67029) | Close duplicate | [ghcrawl-143819-autonomous-smoke](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | duplicate of the canonical thread | [24939011554](https://github.com/openclaw/projectclownfish/actions/runs/24939011554) |
+| [#69886](https://github.com/openclaw/openclaw/issues/69886) | Close duplicate | [ghcrawl-143819-autonomous-smoke](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | duplicate of the canonical thread | [24939011554](https://github.com/openclaw/projectclownfish/actions/runs/24939011554) |
+| [#70353](https://github.com/openclaw/openclaw/issues/70353) | Close duplicate | [ghcrawl-143819-autonomous-smoke](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | duplicate of the canonical thread | [24939011554](https://github.com/openclaw/projectclownfish/actions/runs/24939011554) |
+| [#70395](https://github.com/openclaw/openclaw/issues/70395) | Close duplicate | [ghcrawl-143819-autonomous-smoke](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | duplicate of the canonical thread | [24939011554](https://github.com/openclaw/projectclownfish/actions/runs/24939011554) |
+| [#71133](https://github.com/openclaw/openclaw/issues/71133) | Close duplicate | [ghcrawl-143819-autonomous-smoke](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | duplicate of the canonical thread | [24939011554](https://github.com/openclaw/projectclownfish/actions/runs/24939011554) |
+| [#70180](https://github.com/openclaw/openclaw/issues/70180) | Close duplicate | [ghcrawl-143816-autonomous-smoke](results/openclaw/ghcrawl-143816-autonomous-smoke.md) | duplicate of the canonical thread | [24939009401](https://github.com/openclaw/projectclownfish/actions/runs/24939009401) |
+| [#65832](https://github.com/openclaw/openclaw/issues/65832) | Close duplicate | [ghcrawl-143816-autonomous-smoke](results/openclaw/ghcrawl-143816-autonomous-smoke.md) | duplicate of the canonical thread | [24939009401](https://github.com/openclaw/projectclownfish/actions/runs/24939009401) |
+| [#66758](https://github.com/openclaw/openclaw/issues/66758) | Close duplicate | [ghcrawl-143816-autonomous-smoke](results/openclaw/ghcrawl-143816-autonomous-smoke.md) | duplicate of the canonical thread | [24939009401](https://github.com/openclaw/projectclownfish/actions/runs/24939009401) |
+| [#67406](https://github.com/openclaw/openclaw/issues/67406) | Close duplicate | [ghcrawl-143816-autonomous-smoke](results/openclaw/ghcrawl-143816-autonomous-smoke.md) | duplicate of the canonical thread | [24939009401](https://github.com/openclaw/projectclownfish/actions/runs/24939009401) |
+| [#50541](https://github.com/openclaw/openclaw/issues/50541) | Close duplicate | [ghcrawl-143815-autonomous-smoke](results/openclaw/ghcrawl-143815-autonomous-smoke.md) | duplicate of the canonical thread | [24939008778](https://github.com/openclaw/projectclownfish/actions/runs/24939008778) |
+| [#50691](https://github.com/openclaw/openclaw/issues/50691) | Close duplicate | [ghcrawl-143815-autonomous-smoke](results/openclaw/ghcrawl-143815-autonomous-smoke.md) | duplicate of the canonical thread | [24939008778](https://github.com/openclaw/projectclownfish/actions/runs/24939008778) |
+| [#64750](https://github.com/openclaw/openclaw/issues/64750) | Close duplicate | [ghcrawl-143814-autonomous-smoke](results/openclaw/ghcrawl-143814-autonomous-smoke.md) | duplicate of the canonical thread | [24939007967](https://github.com/openclaw/projectclownfish/actions/runs/24939007967) |
+| [#65153](https://github.com/openclaw/openclaw/issues/65153) | Close duplicate | [ghcrawl-143805-autonomous-smoke](results/openclaw/ghcrawl-143805-autonomous-smoke.md) | duplicate of the canonical thread | [24939001644](https://github.com/openclaw/projectclownfish/actions/runs/24939001644) |
+| [#70373](https://github.com/openclaw/openclaw/issues/70373) | Close duplicate | [ghcrawl-143804-autonomous-smoke](results/openclaw/ghcrawl-143804-autonomous-smoke.md) | duplicate of the canonical thread | [24939000666](https://github.com/openclaw/projectclownfish/actions/runs/24939000666) |
+| [#65285](https://github.com/openclaw/openclaw/issues/65285) | Close duplicate | [ghcrawl-143799-autonomous-smoke](results/openclaw/ghcrawl-143799-autonomous-smoke.md) | duplicate of the canonical thread | [24937679258](https://github.com/openclaw/projectclownfish/actions/runs/24937679258) |
+| [#69920](https://github.com/openclaw/openclaw/issues/69920) | Close duplicate | [ghcrawl-143799-autonomous-smoke](results/openclaw/ghcrawl-143799-autonomous-smoke.md) | duplicate of the canonical thread | [24937679258](https://github.com/openclaw/projectclownfish/actions/runs/24937679258) |
+
+### Blocked Actions
+
+| Target | Action | Cluster | Reason | Run |
+| --- | --- | --- | --- | --- |
+| [#41451](https://github.com/openclaw/openclaw/issues/41451) | Close duplicate | [ghcrawl-143810-autonomous-smoke](results/openclaw/ghcrawl-143810-autonomous-smoke.md) | target is not listed in job candidates | [24943077025](https://github.com/openclaw/projectclownfish/actions/runs/24943077025) |
+| [#54475](https://github.com/openclaw/openclaw/issues/54475) | Close superseded | [ghcrawl-143818-autonomous-smoke](results/openclaw/ghcrawl-143818-autonomous-smoke.md) | closure requires canonical or duplicate_of | [24939010877](https://github.com/openclaw/projectclownfish/actions/runs/24939010877) |
+
+### Needs Human Clusters
+
+| Cluster | Reason | Run |
+| --- | --- | --- |
+| [ghcrawl-143810-autonomous-smoke](results/openclaw/ghcrawl-143810-autonomous-smoke.md) | Choose the canonical PR for the Ollama/encoding-format family among #45986, #46069, and #59048, with #41670 and #42531 as adjacent but no... | [24943077025](https://github.com/openclaw/projectclownfish/actions/runs/24943077025) |
+| [ghcrawl-143801-autonomous-smoke](results/openclaw/ghcrawl-143801-autonomous-smoke.md) | No single open canonical replaces closed representative #50020. The hydrated refs split into at least five root-cause families: Telegram ... | [24943078008](https://github.com/openclaw/projectclownfish/actions/runs/24943078008) |
+| [ghcrawl-143793-autonomous-smoke](results/openclaw/ghcrawl-143793-autonomous-smoke.md) | PR #71466 is draft and the provided artifact does not include the review-thread/bot-review hydration required to rely on it for fixed-by-... | [24943078775](https://github.com/openclaw/projectclownfish/actions/runs/24943078775) |
+| [ghcrawl-143821-autonomous-smoke](results/openclaw/ghcrawl-143821-autonomous-smoke.md) | Representative #59951 was already closed in live state on 2026-04-25T13:21:06Z, so the job's hinted canonical is obsolete. | [24939012932](https://github.com/openclaw/projectclownfish/actions/runs/24939012932) |
+| [ghcrawl-143818-autonomous-smoke](results/openclaw/ghcrawl-143818-autonomous-smoke.md) | Cluster 143818 is over-broad: the open PRs span distinct auth, timeout, retry, keepalive, logging, diagnostics, and Mattermost subproblem... | [24939010877](https://github.com/openclaw/projectclownfish/actions/runs/24939010877) |
+| [ghcrawl-143817-autonomous-smoke](results/openclaw/ghcrawl-143817-autonomous-smoke.md) | Canonical path for the representative stale-socket restart crash is unresolved across open #58216, open #61134, and closed #58988; the ar... | [24939010238](https://github.com/openclaw/projectclownfish/actions/runs/24939010238) |
+| [ghcrawl-143816-autonomous-smoke](results/openclaw/ghcrawl-143816-autonomous-smoke.md) | Candidate PR review threads and bot comments for #51150 and #71458 were not present in the provided artifact, and no supplemental gh hydr... | [24939009401](https://github.com/openclaw/projectclownfish/actions/runs/24939009401) |
+| [ghcrawl-143814-autonomous-smoke](results/openclaw/ghcrawl-143814-autonomous-smoke.md) | #61970 stays open because its 2026.4.5 video-specific path may overlap the media-drop regression family or a separate media-type/path issue. | [24939007967](https://github.com/openclaw/projectclownfish/actions/runs/24939007967) |
+| [ghcrawl-143813-autonomous-smoke](results/openclaw/ghcrawl-143813-autonomous-smoke.md) | PR #59386 cannot be auto-classified beyond needs_human: CI is failing, the diff is broad and unrelated, and the provided artifact lacks t... | [24939007176](https://github.com/openclaw/projectclownfish/actions/runs/24939007176) |
+| [ghcrawl-143809-autonomous-smoke](results/openclaw/ghcrawl-143809-autonomous-smoke.md) | Job frontmatter canonical #68605 is obsolete in live state; PR #68641 is the best live canonical path for the history-persistence regress... | [24939004802](https://github.com/openclaw/projectclownfish/actions/runs/24939004802) |
+| [ghcrawl-143808-autonomous-smoke](results/openclaw/ghcrawl-143808-autonomous-smoke.md) | Use #66875 as the surviving open canonical issue for the recent Control UI history-reload race, but leave #42751 and #60930 open because ... | [24939004182](https://github.com/openclaw/projectclownfish/actions/runs/24939004182) |
+| [ghcrawl-143807-autonomous-smoke](results/openclaw/ghcrawl-143807-autonomous-smoke.md) | No single live canonical replaces closed representative #48144; the hydrated set spans independent input-history, /model-subcommand, node... | [24939003369](https://github.com/openclaw/projectclownfish/actions/runs/24939003369) |
+| [ghcrawl-143806-autonomous-smoke](results/openclaw/ghcrawl-143806-autonomous-smoke.md) | Safe instant closeout is blocked for likely duplicates such as #38437 and #49412 because the provided artifact includes comment counts bu... | [24939002551](https://github.com/openclaw/projectclownfish/actions/runs/24939002551) |
+| [ghcrawl-143805-autonomous-smoke](results/openclaw/ghcrawl-143805-autonomous-smoke.md) | Open canonical #62560 remains unresolved; no open code-fix PR exists in this cluster and this job disallows fix or merge actions. | [24939001644](https://github.com/openclaw/projectclownfish/actions/runs/24939001644) |
+| [ghcrawl-143804-autonomous-smoke](results/openclaw/ghcrawl-143804-autonomous-smoke.md) | Review #65994's 6-comment thread before duplicate closure; the provided artifact shows it is likely covered by #68508 but does not includ... | [24939000666](https://github.com/openclaw/projectclownfish/actions/runs/24939000666) |
+| [ghcrawl-143803-autonomous-smoke](results/openclaw/ghcrawl-143803-autonomous-smoke.md) | Canonical drift: job frontmatter named #57812 as the open canonical, but the preflight artifact shows #57812 closed on 2026-04-25T12:19:1... | [24938999617](https://github.com/openclaw/projectclownfish/actions/runs/24938999617) |
+| [ghcrawl-143795-autonomous-smoke](results/openclaw/ghcrawl-143795-autonomous-smoke.md) | The provided live state does not support a single clean canonical for the whole cluster. #50141 is the strongest surviving representative... | [24938997703](https://github.com/openclaw/projectclownfish/actions/runs/24938997703) |
+| [ghcrawl-143800-autonomous-smoke](results/openclaw/ghcrawl-143800-autonomous-smoke.md) | #64831 bundles inconsistent cron execution, chat-triggered exec instability, approval timing, Node OOMs, and missing catch-up delivery; i... | [24937905618](https://github.com/openclaw/projectclownfish/actions/runs/24937905618) |
+| [ghcrawl-143799-autonomous-smoke](results/openclaw/ghcrawl-143799-autonomous-smoke.md) | Decide whether #62754 and #63220 intentionally track a separate pi-agent-core abort/timeout bug or whether one should supersede the other... | [24937679258](https://github.com/openclaw/projectclownfish/actions/runs/24937679258) |
+| [ghcrawl-143800-bug-cron-announce-delivery-reports-success-but-messages-never-ar](results/openclaw/ghcrawl-143800-bug-cron-announce-delivery-reports-success-but-messages-never-ar.md) | #62777 mixes failureAlert suppression with channel-prefix stripping, so it does not reduce cleanly to one canonical family from the provi... | [24936634921](https://github.com/openclaw/projectclownfish/actions/runs/24936634921) |
 <!-- projectclownfish-dashboard:end -->
 
 ## How It Works
