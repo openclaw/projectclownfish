@@ -1,0 +1,131 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-207046-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24969058743",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24969058743",
+  "head_sha": "0e4564f671623de117a9abb4813b36a385aecd45",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-207046-agentic-merge.md",
+  "published_at": "2026-04-26T23:20:12.917Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/59743",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/59743",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/59795",
+  "summary": "Hydrated state shows #59743 is the live canonical bug report and #59795 is the best repairable contributor PR, but no PR is merge-ready. #59795 still has an unresolved Codex P1 review finding and a failing checks-node-test check. #59752 and #59787 overlap the same media-only same-target reply-suppression bug but are superseded by the #59795 repair path; closeout is blocked until the repair lands because require_fix_before_close is enabled. #44391 is related cross-target dedupe work with broad unrelated changes and unresolved failures, so it should remain open outside this fix path.",
+  "actions": [
+    {
+      "target": "#59743",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#59743",
+      "candidate_fix": "#59795",
+      "reason": "This is the live canonical issue for the user-visible bug; it should stay open until a repaired fix PR lands."
+    },
+    {
+      "target": "#59795",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#59743",
+      "candidate_fix": "#59795",
+      "reason": "Best repairable contributor PR, but not merge-ready until the same-target sentText predicate is fixed, checks are rerun, and review findings are resolved."
+    },
+    {
+      "target": "#59752",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#59743",
+      "candidate_fix": "#59795",
+      "reason": "Superseded by the #59795 repair path, but closure is blocked until the canonical fix path exists on main."
+    },
+    {
+      "target": "#59787",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#59743",
+      "candidate_fix": "#59795",
+      "reason": "Superseded by the #59795 repair path, but closure is blocked until the canonical fix path exists on main."
+    },
+    {
+      "target": "#44391",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#59743",
+      "candidate_fix": null,
+      "reason": "Related cross-target dedupe work should remain open as a separate follow-up cluster; it should not be closed or merged as part of the media-only same-target fix."
+    },
+    {
+      "target": "cluster:ghcrawl-207046-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#59743",
+      "candidate_fix": "#59795",
+      "reason": "Repair the best useful contributor PR before any merge or superseded closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-207046-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#59743",
+      "candidate_fix": "#59795",
+      "reason": "A narrow repair artifact is needed for ProjectClownfish execution."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 2,
+    "close_superseded": 2,
+    "keep_related": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "blocked": 2
+  },
+  "apply_counts": {
+    "skipped": 2
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#59752",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#59743",
+      "candidate_fix": "#59795",
+      "title": null,
+      "idempotency_key": "ghcrawl-207046-agentic-merge:#59752:close_superseded:2026-04-05T07:59:02Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#59787",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#59743",
+      "candidate_fix": "#59795",
+      "title": null,
+      "idempotency_key": "ghcrawl-207046-agentic-merge:#59787:close_superseded:2026-04-03T02:20:43Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
