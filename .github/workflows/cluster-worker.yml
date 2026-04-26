@@ -186,14 +186,17 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Cache Codex CLI and npm downloads
+      - name: Cache Codex CLI, npm, and target pnpm downloads
         uses: actions/cache@v5
         with:
           path: |
             ~/.npm
+            ~/.cache/node/corepack
+            ~/.local/share/pnpm/store
             ~/.projectclownfish/codex
-          key: ${{ runner.os }}-node24-codex-${{ env.CODEX_CLI_VERSION }}-v1
+          key: ${{ runner.os }}-node24-codex-${{ env.CODEX_CLI_VERSION }}-target-pnpm-v1
           restore-keys: |
+            ${{ runner.os }}-node24-codex-${{ env.CODEX_CLI_VERSION }}-target-pnpm-
             ${{ runner.os }}-node24-codex-
 
       - name: Install Codex CLI

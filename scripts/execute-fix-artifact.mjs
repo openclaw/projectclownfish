@@ -24,6 +24,7 @@ const maxReviewAttempts = Math.max(1, Number(process.env.CLOWNFISH_CODEX_REVIEW_
 const resolveReviewThreads = process.env.CLOWNFISH_RESOLVE_REVIEW_THREADS !== "0";
 const skipCodexWritePreflight = process.env.CLOWNFISH_SKIP_CODEX_WRITE_PREFLIGHT === "1";
 const allowExpensiveValidation = process.env.CLOWNFISH_ALLOW_EXPENSIVE_VALIDATION === "1";
+const installTargetDeps = process.env.CLOWNFISH_INSTALL_TARGET_DEPS !== "0";
 const defaultCodexWriteSandbox = process.env.GITHUB_ACTIONS === "true" ? "danger-full-access" : "workspace-write";
 const codexWriteSandbox = String(process.env.CLOWNFISH_CODEX_WRITE_SANDBOX ?? defaultCodexWriteSandbox);
 const defaultCodexReviewSandbox = process.env.GITHUB_ACTIONS === "true" ? "danger-full-access" : "read-only";
@@ -211,6 +212,7 @@ function executeRepairBranch({ fixArtifact, targetDir }) {
   const branch = safeBranchName(`projectclownfish/repair-${result.cluster_id}-${sourcePr.number}`);
   run("git", ["fetch", `https://github.com/${pull.head.repo.full_name}.git`, `${pull.head.ref}:${branch}`], { cwd: targetDir });
   run("git", ["checkout", branch], { cwd: targetDir });
+  prepareTargetToolchain(targetDir);
 
   const prep = editValidatePrepareMerge({ fixArtifact, targetDir, branch, mode: "repair" });
   prep.merge_preflight.target = `#${sourcePr.number}`;
@@ -252,6 +254,7 @@ function executeReplacementBranch({ fixArtifact, targetDir, supersedeSources, fa
   run("git", ["fetch", "origin", baseBranch], { cwd: targetDir });
   const branch = replacementBranchName(result.cluster_id);
   const branchState = checkoutRecoverableReplacementBranch({ targetDir, branch, baseBranch });
+  prepareTargetToolchain(targetDir);
 
   if (!dryRun) ghAuthSetupGit(targetDir);
   const prep = editValidatePrepareMerge({
@@ -1083,6 +1086,41 @@ function ensureTargetCheckout(repo, targetDir) {
   }
   const status = run("git", ["status", "--porcelain"], { cwd: targetDir }).trim();
   if (status) throw new Error(`target checkout has uncommitted changes: ${targetDir}`);
+}
+
+function prepareTargetToolchain(cwd) {
+  if (!installTargetDeps) return;
+  const packagePath = path.join(cwd, "package.json");
+  if (!fs.existsSync(packagePath)) return;
+
+  const packageJson = JSON.parse(fs.readFileSync(packagePath, "utf8"));
+  const packageManager = String(packageJson.packageManager ?? "pnpm@10.33.0");
+  if (!packageManager.startsWith("pnpm@")) {
+    throw new Error(`unsupported target package manager: ${packageManager}`);
+  }
+
+  const validationEnv = targetValidationEnv();
+  run(
+    "node",
+    [
+      "-e",
+      "const major = Number(process.versions.node.split('.')[0]); if (major < 22) { console.error(`Node ${process.version} is too old for target validation`); process.exit(1); }",
+    ],
+    { cwd, env: validationEnv },
+  );
+  run("corepack", ["enable"], { cwd, env: validationEnv });
+  run("corepack", ["prepare", packageManager, "--activate"], { cwd, env: validationEnv });
+  run(
+    "pnpm",
+    [
+      "install",
+      "--frozen-lockfile",
+      "--prefer-offline",
+      "--config.engine-strict=false",
+      "--config.enable-pre-post-scripts=true",
+    ],
+    { cwd, env: validationEnv },
+  );
 }
 
 function setupGitIdentity(cwd) {
