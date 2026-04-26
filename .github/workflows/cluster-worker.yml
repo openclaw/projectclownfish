@@ -39,9 +39,6 @@ concurrency:
   group: projectclownfish-${{ inputs.job }}-${{ inputs.mode }}
   cancel-in-progress: false
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-
 jobs:
   cluster:
     runs-on: ${{ inputs.runner }}
@@ -58,9 +55,9 @@ jobs:
       CLOWNFISH_MAX_REVIEW_COMMENTS_PER_PR: ${{ vars.CLOWNFISH_MAX_REVIEW_COMMENTS_PER_PR || '50' }}
       CLOWNFISH_MODEL: ${{ inputs.model }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: "24"
 
@@ -115,7 +112,7 @@ jobs:
 
       - name: Upload worker artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: projectclownfish-${{ github.run_id }}-${{ github.run_attempt }}
           path: |

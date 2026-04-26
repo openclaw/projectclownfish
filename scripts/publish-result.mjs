@@ -234,6 +234,16 @@ function updateDashboard() {
         : needsHumanRows.length > 0
           ? "Human review needed"
           : "Clean";
+  const mutationRows = applyRows.filter((row) =>
+    ["executed", "blocked", "skipped"].includes(String(row.action.status ?? "")),
+  );
+  const duplicateCloses = countRows(closedRows, (row) => row.action.classification === "duplicate");
+  const supersededCloses = countRows(closedRows, (row) => row.action.classification === "superseded");
+  const fixedByCandidateCloses = countRows(
+    closedRows,
+    (row) => row.action.classification === "fixed_by_candidate",
+  );
+  const lowSignalCloses = countRows(closedRows, (row) => row.action.classification === "low_signal");
   const totals = {
     clusters: latestByCluster.length,
     runs: records.length,
@@ -252,6 +262,11 @@ function updateDashboard() {
     blocked: blockedRows.length,
     skipped: skippedRows.length,
     needsHumanClusters: needsHumanRows.length,
+    mutationAttempts: mutationRows.length,
+    duplicateCloses,
+    supersededCloses,
+    fixedByCandidateCloses,
+    lowSignalCloses,
   };
   const dashboard = `## Dashboard
 
@@ -262,26 +277,34 @@ State: ${workflowState}
 
 Scope: ${totals.clusters} latest cluster reports. Run attempts are tracked as audit history only.
 
-| Metric | Count |
-| --- | ---: |
-| Latest clusters reviewed | ${totals.clusters} |
-| Clean completed clusters | ${totals.cleanClusters} |
-| Needs-human clusters | ${totals.needsHumanClusters} |
-| Latest successful clusters | ${totals.success} |
-| Latest failed clusters | ${totals.failure} |
-| Latest cancelled clusters | ${totals.cancelled} |
-| Run attempts archived | ${totals.runs} |
-| Canonical/fix PRs tracked | ${totals.trackedPrs} |
-| Merged PRs | ${totals.mergedPrs} |
-| Open PRs tracked | ${totals.openTrackedPrs} |
-| Closed unmerged PRs tracked | ${totals.closedUnmergedTrackedPrs} |
-| Completed close actions | ${totals.closed} |
-| Duplicate closes | ${countRows(closedRows, (row) => row.action.classification === "duplicate")} |
-| Superseded closes | ${countRows(closedRows, (row) => row.action.classification === "superseded")} |
-| Fixed-by-candidate closes | ${countRows(closedRows, (row) => row.action.classification === "fixed_by_candidate")} |
-| Low-signal PR closes | ${countRows(closedRows, (row) => row.action.classification === "low_signal")} |
-| Blocked mutation attempts | ${totals.blocked} |
-| Skipped mutation attempts | ${totals.skipped} |
+| Metric | Count | Rate |
+| --- | ---: | ---: |
+${renderMetricRow("Latest clusters reviewed", totals.clusters, "100%")}
+${renderMetricRow("Clean completed clusters", totals.cleanClusters, percent(totals.cleanClusters, totals.clusters))}
+${renderMetricRow("Needs-human clusters", totals.needsHumanClusters, percent(totals.needsHumanClusters, totals.clusters))}
+${renderMetricRow("Latest successful clusters", totals.success, percent(totals.success, totals.clusters))}
+${renderMetricRow("Latest failed clusters", totals.failure, percent(totals.failure, totals.clusters))}
+${renderMetricRow("Latest cancelled clusters", totals.cancelled, percent(totals.cancelled, totals.clusters))}
+${renderMetricRow("Run attempts archived", totals.runs, "audit")}
+${renderMetricRow("Distinct PRs touched", totals.trackedPrs, "100%")}
+${renderMetricRow("Merged PRs", totals.mergedPrs, percent(totals.mergedPrs, totals.trackedPrs))}
+${renderMetricRow("Open PRs tracked", totals.openTrackedPrs, percent(totals.openTrackedPrs, totals.trackedPrs))}
+${renderMetricRow(
+  "Closed unmerged PRs tracked",
+  totals.closedUnmergedTrackedPrs,
+  percent(totals.closedUnmergedTrackedPrs, totals.trackedPrs),
+)}
+${renderMetricRow("Completed close actions", totals.closed, percent(totals.closed, totals.mutationAttempts))}
+${renderMetricRow("Duplicate closes", totals.duplicateCloses, percent(totals.duplicateCloses, totals.closed))}
+${renderMetricRow("Superseded closes", totals.supersededCloses, percent(totals.supersededCloses, totals.closed))}
+${renderMetricRow(
+  "Fixed-by-candidate closes",
+  totals.fixedByCandidateCloses,
+  percent(totals.fixedByCandidateCloses, totals.closed),
+)}
+${renderMetricRow("Low-signal PR closes", totals.lowSignalCloses, percent(totals.lowSignalCloses, totals.closed))}
+${renderMetricRow("Blocked mutation attempts", totals.blocked, percent(totals.blocked, totals.mutationAttempts))}
+${renderMetricRow("Skipped mutation attempts", totals.skipped, percent(totals.skipped, totals.mutationAttempts))}
 
 ### Recent Merges
 
@@ -445,47 +468,70 @@ function renderRecentMergeRows(rows) {
 function buildTrackedPrRows(records) {
   const byPull = new Map();
   for (const record of records) {
-    const canonical = parseGithubPullRef(record.repo, record.canonical_pr);
-    if (canonical) {
-      addTrackedPrRow(byPull, {
-        record,
-        repo: canonical.repo,
-        number: canonical.number,
-        title: null,
-        assumedMerged: false,
-        merged_at: null,
-        source: "canonical_pr",
-      });
-    }
+    addTrackedPrRef(byPull, record, record.canonical_pr, { source: "canonical_pr", explicitPull: true });
+    addTrackedPrRef(byPull, record, record.canonical, { source: "canonical", explicitPull: isPullUrl(record.canonical) });
 
-    for (const action of record.apply_actions ?? []) {
-      if (!MERGE_APPLICATOR_ACTIONS.has(String(action.action ?? ""))) continue;
-      const pull =
-        parseGithubPullRef(record.repo, action.target) ??
-        parseGithubPullRef(record.repo, action.candidate_fix) ??
-        parseGithubPullRef(record.repo, action.canonical);
-      if (!pull) continue;
-      addTrackedPrRow(byPull, {
-        record,
-        repo: pull.repo,
-        number: pull.number,
-        title: action.title ?? action.target_title ?? action.pr_title ?? null,
-        assumedMerged: action.status === "executed",
+    for (const action of [...(record.actions ?? []), ...(record.apply_actions ?? [])]) {
+      const actionName = String(action.action ?? "");
+      const title = action.title ?? action.target_title ?? action.pr_title ?? null;
+      addTrackedPrRef(byPull, record, action.target, {
+        source: "target",
+        explicitPull: false,
+        title,
+        assumedMerged: MERGE_APPLICATOR_ACTIONS.has(actionName) && action.status === "executed",
         merged_at: action.merged_at ?? null,
-        source: "merge_action",
+      });
+      addTrackedPrRef(byPull, record, action.canonical, {
+        source: "canonical",
+        explicitPull: isPullUrl(action.canonical),
+        title,
+      });
+      addTrackedPrRef(byPull, record, action.candidate_fix, {
+        source: "candidate_fix",
+        explicitPull: isPullUrl(action.candidate_fix),
+        title,
       });
     }
   }
 
-  return [...byPull.values()].map(hydrateTrackedPrRow).sort(sortNewestPrRowFirst);
+  return hydrateTrackedPrRows([...byPull.values()]).sort(sortNewestPrRowFirst);
+}
+
+function addTrackedPrRef(byPull, record, value, options = {}) {
+  const pull = parseGithubPullRef(record.repo, value);
+  if (!pull) return;
+  addTrackedPrRow(byPull, {
+    record,
+    repo: pull.repo,
+    number: pull.number,
+    title: options.title ?? null,
+    assumedMerged: Boolean(options.assumedMerged),
+    merged_at: options.merged_at ?? null,
+    sources: new Set([options.source ?? "ref"]),
+    explicitPull: Boolean(options.explicitPull),
+  });
 }
 
 function addTrackedPrRow(byPull, row) {
   const key = `${row.repo}#${row.number}`;
   const previous = byPull.get(key);
   if (!previous || preferTrackedPrRow(row, previous)) {
-    byPull.set(key, row);
+    byPull.set(key, mergeTrackedPrRows(row, previous));
+  } else if (previous) {
+    byPull.set(key, mergeTrackedPrRows(previous, row));
   }
+}
+
+function mergeTrackedPrRows(primary, secondary) {
+  if (!secondary) return primary;
+  return {
+    ...primary,
+    title: primary.title ?? secondary.title ?? null,
+    assumedMerged: Boolean(primary.assumedMerged || secondary.assumedMerged),
+    merged_at: primary.merged_at ?? secondary.merged_at ?? null,
+    sources: new Set([...(primary.sources ?? []), ...(secondary.sources ?? [])]),
+    explicitPull: Boolean(primary.explicitPull || secondary.explicitPull),
+  };
 }
 
 function preferTrackedPrRow(candidate, current) {
@@ -494,18 +540,24 @@ function preferTrackedPrRow(candidate, current) {
   return String(candidate.record.published_at ?? "").localeCompare(String(current.record.published_at ?? "")) > 0;
 }
 
-function hydrateTrackedPrRow(row) {
-  const info = githubPullInfo(row.repo, row.number);
-  const merged = Boolean(row.assumedMerged || row.merged_at || info?.merged);
-  const state = merged ? "merged" : info?.state ?? "tracked";
-  return {
-    ...row,
-    title: row.title ?? info?.title ?? `PR #${row.number}`,
-    url: info?.html_url ?? githubPullUrl(row.repo, row.number),
-    state,
-    merged,
-    merged_at: row.merged_at ?? info?.merged_at ?? null,
-  };
+function hydrateTrackedPrRows(rows) {
+  const infoByPull = githubPullInfo(rows);
+  return rows
+    .map((row) => {
+      const info = infoByPull.get(`${row.repo}#${row.number}`);
+      if (!info && !row.explicitPull) return null;
+      const merged = Boolean(row.assumedMerged || row.merged_at || info?.merged);
+      const state = merged ? "merged" : normalizePullState(info?.state) ?? "tracked";
+      return {
+        ...row,
+        title: row.title ?? info?.title ?? `PR #${row.number}`,
+        url: info?.html_url ?? githubPullUrl(row.repo, row.number),
+        state,
+        merged,
+        merged_at: row.merged_at ?? info?.merged_at ?? null,
+      };
+    })
+    .filter(Boolean);
 }
 
 function sortNewestPrRowFirst(left, right) {
@@ -514,33 +566,74 @@ function sortNewestPrRowFirst(left, right) {
   );
 }
 
-function githubPullInfo(repo, number) {
-  if (!repo || !number) return null;
-  const key = `${repo}#${number}`;
-  if (PR_INFO_CACHE.has(key)) return PR_INFO_CACHE.get(key);
+function githubPullInfo(rows) {
+  const byRepo = new Map();
+  for (const row of rows) {
+    if (!row.repo || !row.number) continue;
+    const key = `${row.repo}#${row.number}`;
+    if (PR_INFO_CACHE.has(key)) continue;
+    const numbers = byRepo.get(row.repo) ?? new Set();
+    numbers.add(String(row.number));
+    byRepo.set(row.repo, numbers);
+  }
+
+  for (const [repo, numbers] of byRepo) {
+    for (const batch of chunks([...numbers], 50)) {
+      for (const [key, info] of githubPullInfoBatch(repo, batch)) {
+        PR_INFO_CACHE.set(key, info);
+      }
+      for (const number of batch) {
+        const key = `${repo}#${number}`;
+        if (!PR_INFO_CACHE.has(key)) PR_INFO_CACHE.set(key, null);
+      }
+    }
+  }
+
+  return new Map(rows.map((row) => [`${row.repo}#${row.number}`, PR_INFO_CACHE.get(`${row.repo}#${row.number}`)]));
+}
+
+function githubPullInfoBatch(repo, numbers) {
+  const [owner, name] = String(repo).split("/");
+  if (!owner || !name || numbers.length === 0) return new Map();
+  const fields = numbers
+    .map(
+      (number, index) =>
+        `p${index}: pullRequest(number: ${Number(number)}) { number title state merged mergedAt url }`,
+    )
+    .join("\n");
+  const query = `query { repository(owner: ${JSON.stringify(owner)}, name: ${JSON.stringify(name)}) { ${fields} } }`;
+  const body = runGhGraphql(query);
+  if (!body) return new Map();
+  const data = JSON.parse(body);
+  const repository = data?.data?.repository ?? {};
+  const out = new Map();
+  numbers.forEach((number, index) => {
+    const info = repository[`p${index}`];
+    if (!info) return;
+    out.set(`${repo}#${number}`, {
+      html_url: info.url ?? githubPullUrl(repo, number),
+      merged: Boolean(info.merged),
+      merged_at: info.mergedAt ?? null,
+      state: normalizePullState(info.state),
+      title: info.title ?? null,
+    });
+  });
+  return out;
+}
+
+function runGhGraphql(query) {
+  const env = { ...process.env };
+  if (!env.GH_TOKEN && env.CLOWNFISH_READ_GH_TOKEN) env.GH_TOKEN = env.CLOWNFISH_READ_GH_TOKEN;
+  if (!env.GH_TOKEN && env.GITHUB_TOKEN) env.GH_TOKEN = env.GITHUB_TOKEN;
   try {
-    const env = { ...process.env };
-    if (!env.GH_TOKEN && env.CLOWNFISH_READ_GH_TOKEN) env.GH_TOKEN = env.CLOWNFISH_READ_GH_TOKEN;
-    if (!env.GH_TOKEN && env.GITHUB_TOKEN) env.GH_TOKEN = env.GITHUB_TOKEN;
-    const body = execFileSync("gh", ["api", `repos/${repo}/pulls/${number}`], {
+    return execFileSync("gh", ["api", "graphql", "-f", `query=${query}`], {
       encoding: "utf8",
       env,
-      maxBuffer: 1024 * 1024,
+      maxBuffer: 8 * 1024 * 1024,
       stdio: ["ignore", "pipe", "ignore"],
     });
-    const info = JSON.parse(body);
-    const normalized = {
-      html_url: info.html_url ?? githubPullUrl(repo, number),
-      merged: Boolean(info.merged),
-      merged_at: info.merged_at ?? null,
-      state: info.state ?? null,
-      title: info.title ?? null,
-    };
-    PR_INFO_CACHE.set(key, normalized);
-    return normalized;
-  } catch {
-    PR_INFO_CACHE.set(key, null);
-    return null;
+  } catch (error) {
+    return error.stdout || error.output?.[1]?.toString() || "";
   }
 }
 
@@ -556,10 +649,36 @@ function parseGithubPullRef(defaultRepo, value) {
   return null;
 }
 
+function isPullUrl(value) {
+  return /github\.com\/[^/\s]+\/[^/\s]+\/pull\/\d+/.test(String(value ?? ""));
+}
+
+function normalizePullState(state) {
+  if (!state) return null;
+  return String(state).toLowerCase();
+}
+
 function githubPullUrl(repo, ref) {
   const number = String(ref ?? "").replace(/^#/, "");
   if (!/^\d+$/.test(number) || !repo) return "";
   return `https://github.com/${repo}/pull/${number}`;
+}
+
+function renderMetricRow(metric, count, rate) {
+  return `| ${tableCell(metric)} | ${count} | ${tableCell(rate)} |`;
+}
+
+function percent(count, total) {
+  if (!total) return "0.0%";
+  return `${((Number(count) / Number(total)) * 100).toFixed(1)}%`;
+}
+
+function chunks(values, size) {
+  const out = [];
+  for (let index = 0; index < values.length; index += size) {
+    out.push(values.slice(index, index + size));
+  }
+  return out;
 }
 
 function clusterReportPath(record) {
