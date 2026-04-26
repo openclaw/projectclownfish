@@ -115,6 +115,12 @@ function findLatestResultPath() {
   return candidates[0].path;
 }
 
+function readFixExecutionReport() {
+  const reportPath = path.join(path.dirname(resultPath), "fix-execution-report.json");
+  if (!fs.existsSync(reportPath)) return null;
+  return JSON.parse(fs.readFileSync(reportPath, "utf8"));
+}
+
 function applyAction({ job, result, action, dryRun, allowMissingUpdatedAt }) {
   const target = normalizeIssueRef(action.target, result.repo);
   const actionName = String(action.action ?? "");
@@ -167,6 +173,8 @@ function applyCloseAction({
 }) {
   const closePolicyBlock = validateClosePolicy({ job, actionName });
   if (closePolicyBlock) return { ...base, status: "blocked", reason: closePolicyBlock };
+  const fixFirstBlock = validateFixFirstClose({ job, result, actionName });
+  if (fixFirstBlock) return { ...base, status: "blocked", reason: fixFirstBlock };
   if (!CLOSE_CLASSIFICATIONS.has(classification)) {
     return {
       ...base,
@@ -412,6 +420,25 @@ function validateClosePolicy({ job, actionName }) {
     return "instant close requires allow_instant_close: true";
   }
   return "";
+}
+
+function validateFixFirstClose({ job, result, actionName }) {
+  if (job.frontmatter.require_fix_before_close !== true) return "";
+  if (["close_low_signal", "post_merge_close"].includes(actionName)) return "";
+
+  const priorMerge = report.actions.some(
+    (entry) => MERGE_ACTIONS.has(entry.action) && entry.status === "executed",
+  );
+  if (priorMerge) return "";
+
+  const fixReport = readFixExecutionReport(result);
+  const fixLanded = (fixReport?.actions ?? []).some((entry) =>
+    ["open_fix_pr", "repair_contributor_branch"].includes(String(entry.action ?? "")) &&
+    ["opened", "pushed"].includes(String(entry.status ?? "")),
+  );
+  if (fixLanded) return "";
+
+  return "close requires ProjectClownfish fix PR opened/pushed or merge executed first";
 }
 
 function validateMergePolicy({ job, action }) {

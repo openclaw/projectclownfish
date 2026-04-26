@@ -127,6 +127,7 @@ export function validateJob(job) {
     "allow_fix_pr",
     "allow_merge",
     "allow_post_merge_close",
+    "require_fix_before_close",
     "security_sensitive",
   ]) {
     if (fm[key] !== undefined && typeof fm[key] !== "boolean") {

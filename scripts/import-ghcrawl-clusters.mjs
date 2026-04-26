@@ -141,6 +141,7 @@ for (const clusterId of clusterIds) {
           `allow_fix_pr: ${allowFixPr ? "true" : "false"}`,
           `allow_merge: ${allowMerge ? "true" : "false"}`,
           `allow_post_merge_close: ${allowPostMergeClose ? "true" : "false"}`,
+          `require_fix_before_close: ${allowFixPr || allowMerge ? "true" : "false"}`,
         ]
       : []),
     `canonical_hint: ${quoteYaml(canonicalHint(representative))}`,

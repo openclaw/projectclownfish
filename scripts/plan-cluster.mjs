@@ -359,6 +359,7 @@ function buildFixArtifact(plan, job) {
       allow_fix_pr: job.frontmatter.allow_fix_pr === true,
       allow_merge: job.frontmatter.allow_merge === true,
       allow_post_merge_close: job.frontmatter.allow_post_merge_close === true,
+      require_fix_before_close: job.frontmatter.require_fix_before_close === true,
     },
     canonical_candidates: plan.canonical_candidates,
     item_matrix: plan.items.map((item) => ({
@@ -390,6 +391,10 @@ function buildFixArtifact(plan, job) {
         job.frontmatter.allow_post_merge_close === true
           ? "After canonical fix confirmation, worker may emit post_merge_close closeout actions for covered refs."
           : "Post-merge closure disabled by job frontmatter.",
+      fix_first_close:
+        job.frontmatter.require_fix_before_close === true
+          ? "Do not emit close actions until ProjectClownfish has opened/pushed a fix PR or merged a canonical PR in this run."
+          : "Close actions may run independently when their own safety gates pass.",
     },
     required_validation: [
       "stop and route security-sensitive clusters to central OpenClaw security handling",
