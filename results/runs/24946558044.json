@@ -1,0 +1,164 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165986-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24946558044",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24946558044",
+  "head_sha": "31f153a47dca02dd784156ba246a0d9568c5e9bc",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165986-agentic-merge.md",
+  "published_at": "2026-04-26T02:58:39.807Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/19929",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/19929",
+  "canonical_pr": null,
+  "summary": "#58004 is closed and obsolete as a live canonical. #19929 is the clearest open canonical for the remaining non-direct shared-session gap; the direct-DM continuity subfamily is already closed as implemented on main, no open mergeable PR exists, and #20078 is closed prior art only, so this run emits no close/merge actions and instead prepares a credited replacement fix artifact.",
+  "actions": [
+    {
+      "target": "#19929",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Best live canonical for the still-open non-direct shared-session design work."
+    },
+    {
+      "target": "#19929",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "The feature gap remains real on current main and no live canonical PR exists."
+    },
+    {
+      "target": "#19929",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#19929",
+      "candidate_fix": "#20078",
+      "reason": "Prepare a narrow replacement-fix plan that credits #20078 without trying to reuse its closed branch."
+    },
+    {
+      "target": "#19929",
+      "action": "open_fix_pr",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#19929",
+      "candidate_fix": "#20078",
+      "reason": "A replacement PR should be opened from the generated fix artifact, but implementation is blocked in this run by the missing target checkout."
+    },
+    {
+      "target": "#7524",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Overlapping but still intentionally kept open as a narrower tracker."
+    },
+    {
+      "target": "#11665",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Different root cause and should not be deduped into the cross-channel shared-session cluster."
+    },
+    {
+      "target": "#14850",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Same problem family, but current maintainer guidance keeps this narrower binding-focused request open."
+    },
+    {
+      "target": "#20078",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Useful contributor prior art, but it must be replaced by a new credited fix path rather than reopened or merged as-is."
+    },
+    {
+      "target": "#46514",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Adjacent collaboration/history problem, not part of the current shared-session canonical path."
+    },
+    {
+      "target": "#51691",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related continuity UX request, but not a safe duplicate close from the provided artifact."
+    },
+    {
+      "target": "#51805",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Same area, but unique privacy/filtering semantics make instant dedupe unsafe."
+    },
+    {
+      "target": "#52504",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related cross-surface continuity request, but not the same root cause as the canonical shared-session routing issue."
+    },
+    {
+      "target": "#52683",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate product feature area from same-agent cross-channel session continuity."
+    },
+    {
+      "target": "#68628",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Mixed-scope report; related to continuity, but not a clean duplicate of the already-implemented DM continuity family."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "open_fix_pr": 1,
+    "keep_related": 6,
+    "keep_independent": 3,
+    "keep_closed": 1
+  },
+  "action_status_counts": {
+    "planned": 12,
+    "blocked": 1,
+    "skipped": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
