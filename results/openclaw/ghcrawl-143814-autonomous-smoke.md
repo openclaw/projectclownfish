@@ -2,75 +2,65 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-143814-autonomous-smoke"
 mode: "autonomous"
-run_id: "24939007967"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939007967"
-head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
+run_id: "24947174956"
+run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24947174956"
+head_sha: "cc7e2b9deb213893d18c0bcca95afccd476be4c1"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-26T01:36:05.637Z"
-canonical: "https://github.com/openclaw/openclaw/issues/63816"
-canonical_issue: "https://github.com/openclaw/openclaw/issues/63816"
-canonical_pr: null
-actions_total: 14
-apply_executed: 1
+published_at: "2026-04-26T03:29:18.695Z"
+canonical: "https://github.com/openclaw/openclaw/pull/64492"
+canonical_issue: null
+canonical_pr: "https://github.com/openclaw/openclaw/pull/64492"
+actions_total: 6
+apply_executed: 0
 apply_blocked: 0
 apply_skipped: 0
-needs_human_count: 3
+needs_human_count: 1
 ---
 
 # ghcrawl-143814-autonomous-smoke
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24939007967](https://github.com/openclaw/projectclownfish/actions/runs/24939007967)
+Run: [https://github.com/openclaw/projectclownfish/actions/runs/24947174956](https://github.com/openclaw/projectclownfish/actions/runs/24947174956)
 
 Workflow conclusion: success
 
 Worker result: needs_human
 
-Canonical: https://github.com/openclaw/openclaw/issues/63816
+Canonical: https://github.com/openclaw/openclaw/pull/64492
 
 ## Summary
 
-Selected #63816 as the surviving open canonical for the narrow 2026.4.9 WhatsApp `--media` false-success cluster. One open issue (#64750) is a safe planned duplicate close against that canonical, but #61970 and #63169 stay open because their earlier-version/video/group-chat paths are not clean instant-close duplicates from the provided evidence. Closed PRs #64394 and #66117 remain historical evidence only; no landed fix on current `main` is proven here.
+Hydrated evidence makes this a non-mutating cluster. The artifact explicitly marks linked refs #63160, #63479, and #63505 as security-sensitive and says no ProjectClownfish mutation is allowed. The representative issue #64132 is already closed, and no open canonical issue survives; the strongest landed canonical anchor in hydrated comments is merged PR #64492, which maintainers cite when closing #62399 and #63126, while later Apr 25 closeouts say current main 7b943667a0b6b55e1d611afa508107659cc6643f already covers the outbound-media family. #59174 is independent, #61970 and #63169 fit the fixed-by-candidate family, and #63816 stays related because the compacted artifact excerpt available in this run does not expose enough hydrated detail to prove duplicate scope.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 14 |
-| Applied executions | 1 |
+| Worker actions | 6 |
+| Applied executions | 0 |
 | Apply blocked | 0 |
 | Apply skipped | 0 |
-| Needs human | 3 |
+| Needs human | 1 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #64750 | close_duplicate | executed | duplicate | duplicate of the canonical thread |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #63816 | keep_canonical | planned | canonical | Best surviving open issue for the current WhatsApp outbound-media false-success cluster. |
-| #64750 | close_duplicate | planned | duplicate | High-confidence duplicate of the surviving canonical; no unique remaining work beyond #63816. |
-| #63169 | keep_related | planned | related | Likely same symptom family, but the earlier 2026.4.8 group-chat path is not a clean instant-close duplicate from the provided evidence. |
-| #61970 | keep_related | planned | related | Same area and symptom family, but the earlier 2026.4.5 video-specific path could still involve distinct work. |
-| #59174 | keep_independent | planned | independent | Independent inbound/reference-parsing bug, outside this outbound-media cluster. |
-| #64132 | keep_closed | skipped | duplicate | Already closed historical representative; do not emit a new close action. |
-| #66090 | keep_closed | skipped | duplicate | Already closed duplicate; historical evidence only. |
-| #65451 | keep_closed | skipped | related | Already closed related report with a restart-specific reproduction path. |
-| #60315 | keep_closed | skipped | related | Already closed related issue; not the same root cause because the CLI path works in the reporter's repro. |
-| #62214 | keep_closed | skipped | related | Already closed historical root-cause evidence for an earlier regression in the same area. |
-| #62399 | keep_closed | skipped | related | Already closed earlier regression analysis; useful context, not an action target. |
-| #64394 | keep_closed | skipped | related | Historical fix attempt only; not safe to claim a landed fix from the provided evidence. |
-| #66117 | keep_closed | skipped | related | Historical fix attempt only; not safe to claim a landed fix from the provided evidence. |
-| #4362 | keep_closed | skipped | independent | Independent historical issue; unrelated to WhatsApp media attachment drops. |
+| #59174 | keep_independent | planned | independent | Inbound reply-image visibility is a different scope from the outbound attachment-send regression, so this issue should stay open and independent. |
+| #61970 | keep_related | planned | fixed_by_candidate | This report matches the landed outbound-media fix family anchored by #64492, but ProjectClownfish must keep it non-mutating because the hydrated cluster contains security-sensitive linked PRs. |
+| #63169 | keep_related | planned | fixed_by_candidate | This is the same outbound-media silent-drop family and is best classified as covered by the landed fix path, but automated closeout is blocked by the cluster security boundary. |
+| #63816 | keep_related | planned | related | It is clearly in the outbound-media family, but policy forbids closing on title similarity alone; keep it open as related. |
+| #64132 | keep_closed | skipped | fixed_by_candidate | The historical representative is closed; the surviving canonical path is the landed fix PR, not a still-open issue. |
+| #63505 | needs_human | blocked | needs_human | Open linked PR #63505 is inside the security boundary, so ProjectClownfish must stop cluster mutation and hand this path to central OpenClaw security triage. |
 
 ## Needs Human
 
-- #61970 stays open because its 2026.4.5 video-specific path may overlap the media-drop regression family or a separate media-type/path issue.
-- #63169 stays open because its 2026.4.8 group-chat reproduction is likely related but not a clean instant-close duplicate from the provided evidence.
-- No landed fix on current main is proven from the provided artifacts; closed PRs #64394 and #66117 remain historical evidence only.
+- Security boundary: hydrated refs #63160, #63479, and #63505 are marked security-sensitive in the cluster artifact; no ProjectClownfish mutation is allowed for this cluster until central OpenClaw security triage handles those refs.
