@@ -1,0 +1,168 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-166004-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24962942730",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24962942730",
+  "head_sha": "c6a011e689cd5c31e8b8008fb1626f775ad148df",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-166004-agentic-merge.md",
+  "published_at": "2026-04-26T17:43:27.850Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/60429",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/60429",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/42546",
+  "summary": "Hydrated state shows the representative #60429 is now closed as implemented on current main. The only still-open job candidate is #41330, which is covered by the same iMessage outbound/self-echo fix path documented in #42546 and the later maintainer closeouts. Security-sensitive linked PR #38440 is quarantined only; all other closed refs are kept closed as historical evidence.",
+  "actions": [
+    {
+      "target": "#1649",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed; no ProjectClownfish close action is valid."
+    },
+    {
+      "target": "#32166",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#32166",
+      "candidate_fix": "#38440",
+      "reason": "Earlier canonical tracker is already closed and should remain historical evidence."
+    },
+    {
+      "target": "#38440",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PR is outside ProjectClownfish backlog cleanup and must be routed to central OpenClaw security handling."
+    },
+    {
+      "target": "#41330",
+      "action": "close_fixed_by_candidate",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "The only open non-security target is covered by current-main fix evidence and a concrete candidate/closeout path; require_fix_before_close is satisfied because the fix is already present on main per hydrated maintainer evidence."
+    },
+    {
+      "target": "#42546",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Useful contributor PR is already closed as implemented/stale; no mutation is needed."
+    },
+    {
+      "target": "#47830",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#60429",
+      "candidate_fix": "#38440",
+      "reason": "Already closed related regression context; no close action is valid."
+    },
+    {
+      "target": "#58695",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed as implemented; no mutation is valid."
+    },
+    {
+      "target": "#58794",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed as implemented; no mutation is valid."
+    },
+    {
+      "target": "#59354",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed as implemented; no mutation is valid."
+    },
+    {
+      "target": "#59363",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed as implemented; no mutation is valid."
+    },
+    {
+      "target": "#60045",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed as implemented; no mutation is valid."
+    },
+    {
+      "target": "#60429",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Representative issue remains the canonical issue for this cluster family, but it is already closed as implemented."
+    },
+    {
+      "target": "#60525",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed as implemented; no mutation is valid."
+    },
+    {
+      "target": "#60940",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed as implemented; no mutation is valid."
+    },
+    {
+      "target": "#65420",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed as implemented; no mutation is valid."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 13,
+    "route_security": 1,
+    "close_fixed_by_candidate": 1
+  },
+  "action_status_counts": {
+    "skipped": 13,
+    "planned": 2
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
