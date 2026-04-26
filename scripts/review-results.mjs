@@ -109,7 +109,7 @@ function reviewResult(resultPath) {
     actionCounts[name] = (actionCounts[name] ?? 0) + 1;
     const target = String(action.target ?? "");
     const item = itemByRef.get(target);
-    const clusterScopedFixAction = isClusterScopedFixAction(action, result);
+    const clusterScopedAction = isClusterScopedAction(action, result);
 
     if (!target) failures.push("action missing target");
     if (target.includes(",")) failures.push(`${target} action target must be a single ref, not a comma-separated list`);
@@ -118,9 +118,9 @@ function reviewResult(resultPath) {
     if (!Array.isArray(action.evidence) || action.evidence.length === 0) {
       failures.push(`${target} missing evidence`);
     }
-    if (!clusterScopedFixAction && !action.target_kind) failures.push(`${target} missing target_kind`);
-    if (!clusterScopedFixAction && !action.target_updated_at) failures.push(`${target} missing target_updated_at`);
-    if (!clusterScopedFixAction && item && action.target_updated_at && item.updated_at !== action.target_updated_at) {
+    if (!clusterScopedAction && !action.target_kind) failures.push(`${target} missing target_kind`);
+    if (!clusterScopedAction && !action.target_updated_at) failures.push(`${target} missing target_updated_at`);
+    if (!clusterScopedAction && item && action.target_updated_at && item.updated_at !== action.target_updated_at) {
       failures.push(`${target} target_updated_at does not match preflight`);
     }
     if (evidenceHasExternalUrl(action.evidence ?? [])) {
@@ -182,7 +182,9 @@ function reviewResult(resultPath) {
       if (canonicalRef) {
         const canonicalItem = itemByRef.get(canonicalRef);
         if (!canonicalItem) failures.push(`${target} close action canonical ${canonicalRef} missing preflight item`);
-        if (canonicalRef === normalizeRef(target)) failures.push(`${target} close action canonical points at itself`);
+        if (canonicalRef === normalizeRef(target) && !allowsSelfCanonicalCurrentMainCloseout(action)) {
+          failures.push(`${target} close action canonical points at itself`);
+        }
       }
       if (candidateRef) {
         const candidateItem = itemByRef.get(candidateRef);
@@ -250,17 +252,26 @@ function reviewResult(resultPath) {
   };
 }
 
-function isClusterScopedFixAction(action, result) {
+function isClusterScopedAction(action, result) {
   const name = String(action.action ?? "");
   const target = String(action.target ?? "");
-  return FIX_ACTIONS.has(name) && (target === `cluster:${result.cluster_id}` || target === result.cluster_id);
+  return (FIX_ACTIONS.has(name) || name === "needs_human") && (target === `cluster:${result.cluster_id}` || target === result.cluster_id);
 }
 
 function isFixFirstBlockedCloseAction(action, hasClusterFixPath) {
   if (action.status !== "blocked") return false;
   if (!hasClusterFixPath) return false;
   const text = [action.reason, action.comment, action.idempotency_key, ...(action.evidence ?? [])].join("\n");
-  return /fix[- ]first|blocked-by-fix-first|requires? a fix|requires? ProjectClownfish fix|fix PR|fix path|canonical fix (?:path|landing|lands?)|merged canonical fix|replacement PR|replacement fix|pending .*fix|after .*fix .*lands?|open_fix_pr|build_fix_artifact/i.test(text);
+  return /fix[- ]first|blocked-by-fix-first|requires? a fix|requires? ProjectClownfish fix|fix PR|fix path|canonical fix (?:path|landing|lands?)|canonical repair (?:path|landing|lands?)|merged canonical fix|replacement PR|replacement fix|pending .*fix|after .*fix .*lands?|open_fix_pr|build_fix_artifact/i.test(text);
+}
+
+function allowsSelfCanonicalCurrentMainCloseout(action) {
+  if (action.action !== "close_fixed_by_candidate" && action.action !== "post_merge_close") return false;
+  if (action.classification && action.classification !== "fixed_by_candidate") return false;
+  const candidateRef = normalizeRef(action.candidate_fix ?? action.fixed_by ?? action.fix_candidate);
+  if (candidateRef) return false;
+  const text = [action.reason, action.comment, action.idempotency_key, ...(action.evidence ?? [])].join("\n");
+  return /\b(current main|already fixed|already covered|fixed-by-current-main|main already)\b/i.test(text);
 }
 
 function validateMergePreflight(mergePreflight, mergeActions, failures) {
