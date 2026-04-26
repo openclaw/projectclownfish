@@ -1,0 +1,208 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165992-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24949933043",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24949933043",
+  "head_sha": "c9d2c6f0ba71660f544f3ac6b6c4d8c4ec12b853",
+  "workflow_conclusion": "cancelled",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165992-agentic-merge.md",
+  "published_at": "2026-04-26T06:23:20.102Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/41985",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/41985",
+  "canonical_pr": null,
+  "summary": "#41985 remains the maintainer-trusted canonical issue for the still-open Control UI/WebChat non-image attachment gap. Current main at 40e5d9adc7690e8127f5c06799b3a57f16a1e466 is still image-only for uploads, so this run plans a narrow fix artifact, defers new duplicate closures under fix-before-close, keeps broader follow-ups open as related, and leaves already-closed historical items unchanged.",
+  "actions": [
+    {
+      "target": "#41985",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Maintainer trust and live artifact state both point to #41985 as the best surviving canonical issue for the remaining non-image attachment gap."
+    },
+    {
+      "target": "#41985",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "The bug/feature gap is still real on current main, no hydrated PR is available to repair or merge, and the canonical issue still needs an implementation path."
+    },
+    {
+      "target": "#41985",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "A narrow new fix plan is the safest canonical path because the issue is real, contributor credit is unaffected, and there is no viable hydrated PR to repair."
+    },
+    {
+      "target": "#41985",
+      "action": "open_fix_pr",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Opening the fix PR is blocked by missing checkout/branch material, so this run can only emit the fix artifact and leave implementation to the applicator path."
+    },
+    {
+      "target": "#30389",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "This is related to the canonical upload gap but not a true duplicate because it still tracks distinct model-picker and capability-menu work."
+    },
+    {
+      "target": "#30759",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "This is a true duplicate of the canonical non-image attachment gap, but it should stay open for now because the cluster forbids new duplicate closes before the fix path exists."
+    },
+    {
+      "target": "#47933",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "This belongs to the same product area but retains unique download scope, so it should remain open as related rather than be collapsed into the canonical issue."
+    },
+    {
+      "target": "#48700",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "The office-document request does not introduce a different root cause from #41985; it is a duplicate that should remain open until the canonical fix path exists."
+    },
+    {
+      "target": "#56344",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "This is the same underlying non-image attachment gap as #41985, but the mentioned PR cannot be credited as the candidate fix from the provided artifact."
+    },
+    {
+      "target": "#69185",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "This is related but not safely duplicate because its arbitrary archive/binary scope and staging/config behavior exceed the narrow canonical fix."
+    },
+    {
+      "target": "#69447",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "This is a sharper technical duplicate of the canonical non-image attachment bug, not a separate feature thread."
+    },
+    {
+      "target": "#70438",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "This is related follow-up scope about attachment handling policy and configurability, not the same duplicate as the baseline end-to-end support gap."
+    },
+    {
+      "target": "#36440",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented; keep it closed and use it only as evidence that the remaining gap is specifically non-image attachments."
+    },
+    {
+      "target": "#41992",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Already closed as a duplicate of the canonical issue; no further action is valid."
+    },
+    {
+      "target": "#43242",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Already closed as a duplicate of the canonical issue; no further action is valid."
+    },
+    {
+      "target": "#51045",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented; keep it closed and treat it as historical evidence for partial progress on the broader attachment family."
+    },
+    {
+      "target": "#56298",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Already closed as a duplicate of the canonical issue; no further action is valid."
+    },
+    {
+      "target": "#63094",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Already closed as a duplicate of the canonical issue; no further action is valid."
+    },
+    {
+      "target": "#67622",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Already closed as a duplicate of the canonical issue; no further action is valid."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "open_fix_pr": 1,
+    "keep_related": 8,
+    "keep_closed": 7
+  },
+  "action_status_counts": {
+    "planned": 11,
+    "blocked": 1,
+    "skipped": 7
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
