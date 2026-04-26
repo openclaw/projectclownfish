@@ -19,6 +19,7 @@ const APPLICATOR_ACTIONS = new Set([...CLOSE_APPLICATOR_ACTIONS, ...MERGE_APPLIC
 const POST_FLIGHT_MERGE_ACTIONS = new Set(["finalize_fix_pr"]);
 const PR_INFO_CACHE = new Map();
 const ISSUE_INFO_CACHE = new Map();
+const archivedClusters = readArchivedClusters();
 
 const args = parseArgs(process.argv.slice(2));
 const inputs = args._.length > 0 ? args._ : [path.join(repoRoot(), ".projectclownfish", "runs")];
@@ -218,7 +219,9 @@ function updateDashboard() {
   if (!fs.existsSync(readmePath)) return;
   const readme = fs.readFileSync(readmePath, "utf8");
   const records = readRunRecords();
-  const latestByCluster = latestClusterRecords(records).sort(sortNewestRecordFirst);
+  const allLatestByCluster = latestClusterRecords(records).sort(sortNewestRecordFirst);
+  const latestByCluster = allLatestByCluster.filter((record) => !archivedClusters.has(record.cluster_id));
+  const archivedLatestByCluster = allLatestByCluster.filter((record) => archivedClusters.has(record.cluster_id));
   const trackedPrRows = buildTrackedPrRows(records);
   const latestApplyRows = latestByCluster.flatMap((record) =>
     (record.apply_actions ?? []).filter(isApplicatorAction).map((action) => ({ record, action })),
@@ -262,6 +265,7 @@ function updateDashboard() {
   const lowSignalCloses = countRows(closedRows, (row) => row.action.classification === "low_signal");
   const totals = {
     clusters: latestByCluster.length,
+    archivedClusters: archivedLatestByCluster.length,
     runs: records.length,
     success: latestByCluster.filter((record) => record.workflow_conclusion === "success").length,
     failure: latestByCluster.filter((record) => record.workflow_conclusion === "failure").length,
@@ -291,11 +295,12 @@ Last dashboard update: ${formatTimestamp(new Date().toISOString())}
 ${DASHBOARD_START}
 State: ${workflowState}
 
-Scope: ${totals.clusters} latest cluster reports. Run attempts are tracked as audit history only.
+Scope: ${totals.clusters} active latest cluster reports. ${totals.archivedClusters} policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
 ${renderMetricRow("Latest clusters reviewed", totals.clusters, "100%")}
+${renderMetricRow("Policy-archived clusters", totals.archivedClusters, "audit")}
 ${renderMetricRow("Clean completed clusters", totals.cleanClusters, percent(totals.cleanClusters, totals.clusters))}
 ${renderMetricRow("Needs-human clusters", totals.needsHumanClusters, percent(totals.needsHumanClusters, totals.clusters))}
 ${renderMetricRow("Latest successful clusters", totals.success, percent(totals.success, totals.clusters))}
@@ -366,6 +371,14 @@ function readRunRecords() {
     .filter((name) => name.endsWith(".json"))
     .map((name) => readJson(path.join(dir, name)))
     .sort((left, right) => String(left.run_id ?? "").localeCompare(String(right.run_id ?? "")));
+}
+
+function readArchivedClusters() {
+  const filePath = path.join(repoRoot(), "results", "archived-clusters.json");
+  if (!fs.existsSync(filePath)) return new Set();
+  const data = readJson(filePath);
+  const rows = Array.isArray(data) ? data : data.archived_clusters;
+  return new Set((Array.isArray(rows) ? rows : []).map((row) => String(row.cluster_id ?? row)).filter(Boolean));
 }
 
 function latestClusterRecords(records) {

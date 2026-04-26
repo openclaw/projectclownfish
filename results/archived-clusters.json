@@ -1,0 +1,9 @@
+{
+  "archived_clusters": [
+    {
+      "cluster_id": "ghcrawl-165992-agentic-merge",
+      "archived_at": "2026-04-26T23:25:00Z",
+      "reason": "Broad WebChat file-upload feature cluster is no longer in autonomous ProjectClownfish scope; keep historical run/action audit, but exclude this stale failed latest attempt from health stats."
+    }
+  ]
+}
