@@ -184,6 +184,7 @@ try {
 }
 
 report.status = outcome.status;
+if (outcome.reason && !report.reason) report.reason = outcome.reason;
 report.actions.push(outcome);
 writeReport(report, resultPath);
 
