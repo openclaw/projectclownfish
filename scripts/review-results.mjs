@@ -103,7 +103,7 @@ function reviewResult(resultPath) {
   const closeActions = [];
   const fixActions = [];
   const mergeActions = [];
-  const hasClusterFixPath = actions.some((action) => isClusterScopedFixAction(action, result) && ["planned", "blocked"].includes(action.status));
+  const hasFixPath = actions.some((action) => FIX_ACTIONS.has(String(action.action ?? "")) && ["planned", "blocked"].includes(action.status));
   for (const action of actions) {
     const name = String(action.action ?? "");
     actionCounts[name] = (actionCounts[name] ?? 0) + 1;
@@ -154,7 +154,7 @@ function reviewResult(resultPath) {
       closeActions.push(action);
       if (!item) failures.push(`${target} close action missing preflight item`);
       if (item && item.state !== "open") failures.push(`${target} close action targets ${item.state} item`);
-      if (action.status !== "planned" && !isFixFirstBlockedCloseAction(action, hasClusterFixPath)) {
+      if (action.status !== "planned" && !isFixFirstBlockedCloseAction(action, hasFixPath)) {
         failures.push(`${target} close action status must be planned or fix-first blocked`);
       }
       const canonicalRef = normalizeRef(action.canonical ?? action.duplicate_of);
