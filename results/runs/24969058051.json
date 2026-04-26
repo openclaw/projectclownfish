@@ -1,0 +1,98 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-207045-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24969058051",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24969058051",
+  "head_sha": "0e4564f671623de117a9abb4813b36a385aecd45",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-207045-agentic-merge.md",
+  "published_at": "2026-04-26T23:06:21.306Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/44319",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/44319",
+  "summary": "Hydrated state shows this ghcrawl cluster is over-broad: #44319 is the canonical repairable PR for provider-prefixed model extra params, while #45395, #46607, #67843, and linked #65909 are separate agent/provider issues. No merge or close is safe in this worker result: #44319 needs branch repair and validation, #46607 must be quarantined for security review based on hydrated review comments, and #67843 has an unresolved P1 Codex bot finding despite passing checks.",
+  "actions": [
+    {
+      "target": "#44319",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#44319",
+      "candidate_fix": "#44319",
+      "reason": "Canonical PR is useful and editable, but not merge-ready; repair the contributor branch before any merge or post-merge closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-207045-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#44319",
+      "candidate_fix": "#44319",
+      "reason": "Build a repair artifact for the canonical contributor PR; no direct GitHub mutation is performed by the worker."
+    },
+    {
+      "target": "#45395",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#44319",
+      "candidate_fix": null,
+      "reason": "Separate provider payload bug in the same agents area; keep open for its own review path."
+    },
+    {
+      "target": "#46601",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed before this worker run; no action planned."
+    },
+    {
+      "target": "#46607",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route only #46607 to central OpenClaw security handling; do not merge, close, comment, or open a fix PR for this item via ProjectClownfish."
+    },
+    {
+      "target": "#65909",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": "#67843",
+      "reason": "Related linked issue with a partial candidate fix, not a duplicate or closeout target."
+    },
+    {
+      "target": "#67843",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate partial fix with unresolved bot review blocker; keep open for its own review or split path."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "build_fix_artifact": 1,
+    "keep_related": 3,
+    "keep_closed": 1,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "skipped": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
