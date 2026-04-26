@@ -83,11 +83,9 @@ for (const clusterId of clusterIds) {
     hasSecuritySignalText(member.title, member.body, safeJson(member.labels_json)),
   );
   const securitySensitive = securitySensitiveMembers.length > 0;
-  const nonSecurityOpenMembers = members.filter(
-    (member) => member.state === "open" && !securitySensitiveMembers.includes(member),
-  );
-  if (securitySensitive && nonSecurityOpenMembers.length === 0 && skipSecurity) {
-    console.error(`skip security-sensitive cluster: ${clusterId} ${members[0].representative_title ?? ""}`);
+  if (securitySensitive && skipSecurity) {
+    const refs = securitySensitiveMembers.map((member) => `#${member.number}`).join(", ");
+    console.error(`skip security-sensitive cluster: ${clusterId} ${members[0].representative_title ?? ""} (${refs})`);
     continue;
   }
 
