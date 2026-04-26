@@ -1,0 +1,150 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-166004-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24963469942",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24963469942",
+  "head_sha": "7e80ff4413a6e06bbc516f34992499a4b74ee92d",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-166004-agentic-merge.md",
+  "published_at": "2026-04-26T18:09:35.920Z",
+  "canonical": "https://github.com/openclaw/openclaw/tree/6b6dcafcee9ca86385b7c1ee2442752314d50257",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/60429",
+  "canonical_pr": null,
+  "summary": "Representative #60429 is no longer live; it was closed as implemented after current-main verification. The only still-open job candidate is #41330, and the hydrated artifact shows it is covered by the same current-main iMessage outbound echo fix family and the closed #42546 review path. Security-sensitive linked PR #38440 is quarantined only; already-closed refs are kept closed and are not closure targets.",
+  "actions": [
+    {
+      "target": "#38440",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine the security-sensitive linked PR to central OpenClaw security handling; do not mutate it through ProjectClownfish."
+    },
+    {
+      "target": "#41330",
+      "action": "post_merge_close",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "The canonical fix path is explicit and already present on current main; #41330 has no unique remaining reproduction beyond the covered iMessage outbound echo path."
+    },
+    {
+      "target": "#58695",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#58794",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#59354",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#59363",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#60045",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#60429",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Representative is already closed as implemented; keep it as historical canonical evidence, not a mutation target."
+    },
+    {
+      "target": "#60525",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#60940",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#65420",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed; no close action is valid."
+    }
+  ],
+  "action_counts": {
+    "route_security": 1,
+    "post_merge_close": 1,
+    "keep_closed": 9
+  },
+  "action_status_counts": {
+    "planned": 2,
+    "skipped": 9
+  },
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#41330",
+      "action": "post_merge_close",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "title": null,
+      "idempotency_key": "ghcrawl-166004-agentic-merge:#41330:post_merge_close:2026-04-05T00:02:57Z",
+      "reason": "candidate fix is not merged",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
