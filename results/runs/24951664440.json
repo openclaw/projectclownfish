@@ -1,0 +1,112 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-166011-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24951664440",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24951664440",
+  "head_sha": "6415dec173e0f2859db51958e43ea7fb9bdb2d3c",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-166011-agentic-merge.md",
+  "published_at": "2026-04-26T07:58:45.535Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/61130",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/61130",
+  "summary": "Cluster is over-broad: most open PRs are distinct Control UI localization follow-ups, not duplicates. Kept #61130 as the live family anchor for the seeded cluster, classified #61119 as superseded by #61130, and left all other open PRs open as related because they target different surfaces. No close, merge, or fix mutation is safe in this run because require_fix_before_close is enabled and the only clear superseded candidate still depends on an unmerged canonical PR; merge is also blocked by failing checks and missing clean merge preflight.",
+  "actions": [
+    {
+      "target": "#39692",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open as related, not duplicate. This PR covers a broader stale i18n slice with unique remaining work, but it is not merge-ready from the hydrated artifact."
+    },
+    {
+      "target": "#52776",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open as related. The PR has unique shell localization scope and should not be closed as a duplicate of the command-palette slice."
+    },
+    {
+      "target": "#61073",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open as related. It is a separate localization follow-up for the Instances screen and should remain open pending normal PR validation."
+    },
+    {
+      "target": "#61080",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open as related. It addresses a different Control UI surface and has useful contributor work."
+    },
+    {
+      "target": "#61092",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open as related. This is a distinct skills-page localization PR, not a duplicate of the seeded canonical candidate."
+    },
+    {
+      "target": "#61104",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open as related. It is a separate agent-tools localization slice with useful code, but not merge-ready."
+    },
+    {
+      "target": "#61112",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open as related. It is a separate markdown-sidebar localization change and should not be deduped away."
+    },
+    {
+      "target": "#61119",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#61130",
+      "candidate_fix": "#61130",
+      "reason": "Classify as superseded by #61130, but keep it open in this result because closure is blocked until the canonical PR lands or a replacement fix is opened/pushed in-run."
+    },
+    {
+      "target": "#61130",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#61130",
+      "candidate_fix": null,
+      "reason": "Keep as the live canonical family anchor for this cluster, but do not recommend merge or closeouts from the current hydrated state."
+    }
+  ],
+  "action_counts": {
+    "keep_related": 8,
+    "keep_canonical": 1
+  },
+  "action_status_counts": {
+    "planned": 9
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}

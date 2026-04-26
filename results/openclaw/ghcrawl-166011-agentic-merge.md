@@ -2,47 +2,47 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-166011-agentic-merge"
 mode: "autonomous"
-run_id: "24951171353"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24951171353"
-head_sha: "1c2b50546310a7bf795122f8ecd5e9631af76299"
-workflow_conclusion: "failure"
-result_status: "failed"
-published_at: "2026-04-26T07:38:55.937Z"
-canonical: null
+run_id: "24951664440"
+run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24951664440"
+head_sha: "6415dec173e0f2859db51958e43ea7fb9bdb2d3c"
+workflow_conclusion: "success"
+result_status: "planned"
+published_at: "2026-04-26T07:58:45.535Z"
+canonical: "https://github.com/openclaw/openclaw/pull/61130"
 canonical_issue: null
-canonical_pr: null
-actions_total: 0
+canonical_pr: "https://github.com/openclaw/openclaw/pull/61130"
+actions_total: 9
 apply_executed: 0
 apply_blocked: 0
 apply_skipped: 0
-needs_human_count: 1
+needs_human_count: 0
 ---
 
 # ghcrawl-166011-agentic-merge
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24951171353](https://github.com/openclaw/projectclownfish/actions/runs/24951171353)
+Run: [https://github.com/openclaw/projectclownfish/actions/runs/24951664440](https://github.com/openclaw/projectclownfish/actions/runs/24951664440)
 
-Workflow conclusion: failure
+Workflow conclusion: success
 
-Worker result: failed
+Worker result: planned
 
-Canonical: unknown
+Canonical: https://github.com/openclaw/openclaw/pull/61130
 
 ## Summary
 
-Codex worker timed out after 600000ms
+Cluster is over-broad: most open PRs are distinct Control UI localization follow-ups, not duplicates. Kept #61130 as the live family anchor for the seeded cluster, classified #61119 as superseded by #61130, and left all other open PRs open as related because they target different surfaces. No close, merge, or fix mutation is safe in this run because require_fix_before_close is enabled and the only clear superseded candidate still depends on an unmerged canonical PR; merge is also blocked by failing checks and missing clean merge preflight.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 0 |
+| Worker actions | 9 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
 | Apply skipped | 0 |
-| Needs human | 1 |
+| Needs human | 0 |
 
 ## Apply Actions
 
@@ -54,8 +54,16 @@ Codex worker timed out after 600000ms
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| _None_ |  |  |  |  |
+| #39692 | keep_related | planned | related | Keep open as related, not duplicate. This PR covers a broader stale i18n slice with unique remaining work, but it is not merge-ready from the hydrated artifact. |
+| #52776 | keep_related | planned | related | Keep open as related. The PR has unique shell localization scope and should not be closed as a duplicate of the command-palette slice. |
+| #61073 | keep_related | planned | related | Keep open as related. It is a separate localization follow-up for the Instances screen and should remain open pending normal PR validation. |
+| #61080 | keep_related | planned | related | Keep open as related. It addresses a different Control UI surface and has useful contributor work. |
+| #61092 | keep_related | planned | related | Keep open as related. This is a distinct skills-page localization PR, not a duplicate of the seeded canonical candidate. |
+| #61104 | keep_related | planned | related | Keep open as related. It is a separate agent-tools localization slice with useful code, but not merge-ready. |
+| #61112 | keep_related | planned | related | Keep open as related. It is a separate markdown-sidebar localization change and should not be deduped away. |
+| #61119 | keep_related | planned | superseded | Classify as superseded by #61130, but keep it open in this result because closure is blocked until the canonical PR lands or a replacement fix is opened/pushed in-run. |
+| #61130 | keep_canonical | planned | canonical | Keep as the live canonical family anchor for this cluster, but do not recommend merge or closeouts from the current hydrated state. |
 
 ## Needs Human
 
-- Codex worker timed out after 600000ms
+- none
