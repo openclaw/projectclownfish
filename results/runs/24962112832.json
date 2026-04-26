@@ -1,0 +1,240 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-166000-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24962112832",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24962112832",
+  "head_sha": "0a093014e04049c913f3bb009311325943e11e03",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-166000-agentic-merge.md",
+  "published_at": "2026-04-26T17:03:50.322Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/49430",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/47558",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/49430",
+  "summary": "Classified the hydrated cluster without direct GitHub mutation. #45228 is quarantined as security-sensitive per the preflight artifact. The live non-security canonical path is to repair the narrow #47558 documentation-fix family via #49430/fix artifact before any duplicate or superseded closeout. Broad or unrelated PRs are kept open or blocked from closure until the canonical fix path exists.",
+  "actions": [
+    {
+      "target": "#30658",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#45228",
+      "candidate_fix": null,
+      "reason": "Historical closed evidence only."
+    },
+    {
+      "target": "#44298",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent linked context."
+    },
+    {
+      "target": "#45228",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route only #45228 to central OpenClaw security handling."
+    },
+    {
+      "target": "#46078",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#45228",
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation."
+    },
+    {
+      "target": "#47558",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#47558",
+      "candidate_fix": "#49430",
+      "reason": "Canonical issue for the six-inaccuracies documentation family."
+    },
+    {
+      "target": "#47935",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#49430",
+      "candidate_fix": "#49430",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#49404",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#49430",
+      "candidate_fix": "#49430",
+      "reason": "Historical closed evidence only."
+    },
+    {
+      "target": "#49430",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#49430",
+      "candidate_fix": "#49430",
+      "reason": "Best non-security repairable canonical PR for #47558."
+    },
+    {
+      "target": "#56157",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#49430",
+      "candidate_fix": "#49430",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#56162",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#45228",
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation."
+    },
+    {
+      "target": "#56163",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#49430",
+      "candidate_fix": null,
+      "reason": "Related docs-cleanup work but not a true duplicate of the sub-agent docs canonical path."
+    },
+    {
+      "target": "#56286",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": "#56319",
+      "reason": "Independent follow-up cluster."
+    },
+    {
+      "target": "#56319",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": "#56319",
+      "reason": "Independent Telegram bug PR; not safe to merge or close as part of this docs cluster."
+    },
+    {
+      "target": "#56685",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#45228",
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation."
+    },
+    {
+      "target": "#59658",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#49430",
+      "candidate_fix": "#49430",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "cluster:ghcrawl-166000-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#49430",
+      "candidate_fix": "#49430",
+      "reason": "A repair/fix artifact is needed before merge or closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-166000-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#49430",
+      "candidate_fix": "#49430",
+      "reason": "Prepare an auditable fix path without direct mutation from the worker."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 6,
+    "route_security": 1,
+    "keep_canonical": 2,
+    "close_superseded": 3,
+    "keep_related": 1,
+    "keep_independent": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 6,
+    "planned": 8,
+    "blocked": 3
+  },
+  "apply_counts": {
+    "skipped": 3
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#47935",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#49430",
+      "candidate_fix": "#49430",
+      "title": null,
+      "idempotency_key": "ghcrawl-166000-agentic-merge:#47935:close_superseded_by_49430_blocked",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#56157",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#49430",
+      "candidate_fix": "#49430",
+      "title": null,
+      "idempotency_key": "ghcrawl-166000-agentic-merge:#56157:close_superseded_by_49430_blocked",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#59658",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#49430",
+      "candidate_fix": "#49430",
+      "title": null,
+      "idempotency_key": "ghcrawl-166000-agentic-merge:#59658:close_superseded_by_49430_blocked",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
