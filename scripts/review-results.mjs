@@ -32,6 +32,7 @@ const MUTATING_ACTIONS = new Set([
   "open_fix_pr",
   "post_merge_close",
 ]);
+const FIX_ACTIONS = new Set(["fix_needed", "build_fix_artifact", "open_fix_pr"]);
 
 const args = parseArgs(process.argv.slice(2));
 const inputs = args._;
@@ -107,6 +108,7 @@ function reviewResult(resultPath) {
     actionCounts[name] = (actionCounts[name] ?? 0) + 1;
     const target = String(action.target ?? "");
     const item = itemByRef.get(target);
+    const clusterScopedFixAction = isClusterScopedFixAction(action, result);
 
     if (!target) failures.push("action missing target");
     if (!name) failures.push(`${target || "unknown target"} missing action`);
@@ -114,9 +116,9 @@ function reviewResult(resultPath) {
     if (!Array.isArray(action.evidence) || action.evidence.length === 0) {
       failures.push(`${target} missing evidence`);
     }
-    if (!action.target_kind) failures.push(`${target} missing target_kind`);
-    if (!action.target_updated_at) failures.push(`${target} missing target_updated_at`);
-    if (item && action.target_updated_at && item.updated_at !== action.target_updated_at) {
+    if (!clusterScopedFixAction && !action.target_kind) failures.push(`${target} missing target_kind`);
+    if (!clusterScopedFixAction && !action.target_updated_at) failures.push(`${target} missing target_updated_at`);
+    if (!clusterScopedFixAction && item && action.target_updated_at && item.updated_at !== action.target_updated_at) {
       failures.push(`${target} target_updated_at does not match preflight`);
     }
     if (evidenceHasExternalUrl(action.evidence ?? [])) {
@@ -184,7 +186,7 @@ function reviewResult(resultPath) {
         if (candidateRef === normalizeRef(target)) failures.push(`${target} close action candidate points at itself`);
       }
     }
-    if (["fix_needed", "build_fix_artifact", "open_fix_pr"].includes(name)) {
+    if (FIX_ACTIONS.has(name)) {
       fixActions.push(action);
     }
     if (MERGE_ACTIONS.has(name)) {
@@ -239,6 +241,12 @@ function reviewResult(resultPath) {
     failures,
     warnings,
   };
+}
+
+function isClusterScopedFixAction(action, result) {
+  const name = String(action.action ?? "");
+  const target = String(action.target ?? "");
+  return FIX_ACTIONS.has(name) && target === `cluster:${result.cluster_id}`;
 }
 
 function validateMergePreflight(mergePreflight, mergeActions, failures) {
