@@ -1,0 +1,231 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-143819-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24947177145",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24947177145",
+  "head_sha": "cc7e2b9deb213893d18c0bcca95afccd476be4c1",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-143819-autonomous-smoke.md",
+  "published_at": "2026-04-26T03:28:47.591Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/68252",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/68252",
+  "canonical_pr": null,
+  "summary": "Kept #68252 as the live canonical issue for the missing operator.admin narrative-cleanup family. Remaining open refs are mixed-scope or adjacent reports (#65963, #66801, #67152, #68562, #69187, #69543) or related feature work (#67058, #67689), so no additional close, merge, or fix mutations are safe from the hydrated artifact.",
+  "actions": [
+    {
+      "target": "#65653",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical implemented closeout; no further action is valid on a closed target."
+    },
+    {
+      "target": "#65654",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "low_signal",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as low-signal/non-actionable."
+    },
+    {
+      "target": "#65963",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Mixed cleanup and product-scope issue; not a safe duplicate closeout against #68252."
+    },
+    {
+      "target": "#66358",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#67023",
+      "reason": "Already closed as implemented by the earlier merged leak-fix path."
+    },
+    {
+      "target": "#66801",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Partially overlaps the canonical bug, but it also carries a distinct cron wiring regression."
+    },
+    {
+      "target": "#67023",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical merged fix evidence only; not a live target and not the best canonical path for this cluster."
+    },
+    {
+      "target": "#67029",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#68252",
+      "candidate_fix": null,
+      "reason": "Already closed as a duplicate of the live canonical issue."
+    },
+    {
+      "target": "#67058",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related UI follow-up, not a duplicate or closeable bug report in this cluster."
+    },
+    {
+      "target": "#67152",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Adjacent bug family; should stay open rather than be deduped into the operator.admin canonical."
+    },
+    {
+      "target": "#67689",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related feature work; not a safe dedupe or fix-close target in this cluster."
+    },
+    {
+      "target": "#67730",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical implemented closeout; closed targets cannot receive further closure actions."
+    },
+    {
+      "target": "#68074",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on main; historical evidence only."
+    },
+    {
+      "target": "#68252",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#68252",
+      "candidate_fix": null,
+      "reason": "Best surviving live canonical for the operator.admin cleanup-failure duplicate family."
+    },
+    {
+      "target": "#68562",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open with the adjacent request-scoped warning subfamily rather than collapsing it into #68252."
+    },
+    {
+      "target": "#69187",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Broader mixed-symptom report; keep open rather than over-deduping."
+    },
+    {
+      "target": "#69543",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related symptom family, but not safe to close from this artifact without a hydrated fix ref."
+    },
+    {
+      "target": "#69886",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#68252",
+      "candidate_fix": null,
+      "reason": "Already closed as a duplicate of the live canonical issue."
+    },
+    {
+      "target": "#69918",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical implemented closeout; no further action is valid on a closed target."
+    },
+    {
+      "target": "#70353",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#68252",
+      "candidate_fix": null,
+      "reason": "Already closed as a duplicate of the live canonical issue."
+    },
+    {
+      "target": "#70395",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#68252",
+      "candidate_fix": null,
+      "reason": "Already closed as a duplicate of the live canonical issue."
+    },
+    {
+      "target": "#70402",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical implemented closeout; closed targets cannot receive further closure actions."
+    },
+    {
+      "target": "#71133",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#68252",
+      "candidate_fix": null,
+      "reason": "Already closed as a duplicate of the live canonical issue."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 13,
+    "keep_related": 8,
+    "keep_canonical": 1
+  },
+  "action_status_counts": {
+    "skipped": 13,
+    "planned": 9
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
