@@ -1,0 +1,181 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165992-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24962128775",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24962128775",
+  "head_sha": "0a093014e04049c913f3bb009311325943e11e03",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165992-agentic-merge.md",
+  "published_at": "2026-04-26T17:25:42.228Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/41985",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/41985",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/70947",
+  "summary": "Hydrated state shows #41985 remains the open canonical issue for generic WebChat/Control UI file upload, with #70947 as the useful but not merge-ready canonical fix PR. No GitHub mutations are safe yet: #70947 has unresolved Codex review findings and failing extension checks, so merge and fix-first duplicate closeout are blocked pending branch repair.",
+  "actions": [
+    {
+      "target": "#41985",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "Best open issue canonical for the remaining generic WebChat/Control UI non-image file upload family."
+    },
+    {
+      "target": "#70947",
+      "action": "keep_canonical",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "Canonical fix candidate, but merge is blocked until the contributor branch is repaired, review findings are addressed, and failing checks are resolved or proven unrelated."
+    },
+    {
+      "target": "cluster:ghcrawl-165992-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "A narrow fix path exists, but #70947 is not merge-ready."
+    },
+    {
+      "target": "cluster:ghcrawl-165992-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "Prepare a guarded repair artifact for ProjectClownfish fix execution."
+    },
+    {
+      "target": "#30389",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "Overlaps the file-upload canonical family but has additional model/skill menu scope, so it should not be closed as a duplicate."
+    },
+    {
+      "target": "#30759",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "Related document-upload sub-scope with extraction requirements; keep open unless maintainers intentionally consolidate it."
+    },
+    {
+      "target": "#47933",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "Upload portion overlaps #41985/#70947, but download behavior is unique remaining scope."
+    },
+    {
+      "target": "#48700",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "Close is blocked on the canonical fix path or fix PR; do not apply until #70947 is repaired/merged or an equivalent fix PR exists."
+    },
+    {
+      "target": "#70438",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "Related configuration/product-policy follow-up, not a duplicate of the base upload support tracker."
+    },
+    {
+      "target": "#41992",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "Already closed in hydrated state; closed refs must not receive close actions."
+    },
+    {
+      "target": "#43242",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "Already closed in hydrated state; closed refs must not receive close actions."
+    },
+    {
+      "target": "#56298",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "Already closed in hydrated state; closed refs must not receive close actions."
+    },
+    {
+      "target": "#63094",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "Already closed in hydrated state; closed refs must not receive close actions."
+    },
+    {
+      "target": "#67622",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "Already closed in hydrated state; closed refs must not receive close actions."
+    },
+    {
+      "target": "#69185",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "Already closed in hydrated state; closed refs must not receive close actions."
+    },
+    {
+      "target": "#69447",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#41985",
+      "candidate_fix": "#70947",
+      "reason": "Already closed in hydrated state; closed refs must not receive close actions."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_related": 4,
+    "close_duplicate": 1,
+    "keep_closed": 7
+  },
+  "action_status_counts": {
+    "planned": 7,
+    "blocked": 2,
+    "skipped": 7
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
