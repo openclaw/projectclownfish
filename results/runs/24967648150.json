@@ -1,0 +1,252 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-191457-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24967648150",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24967648150",
+  "head_sha": "01fa925f61ac1b119e00e26750f65ff1e80c9a87",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-191457-agentic-merge.md",
+  "published_at": "2026-04-26T21:52:47.374Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/64663",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/64663",
+  "summary": "Hydrated preflight shows the representative #64663 is still the best non-security canonical for the exec-approvals symlinked OPENCLAW_HOME family, but merge is blocked by failing checks, unresolved bot-review history, and no clean Codex /review preflight. Security-sensitive open PRs are quarantined individually. Workspace-bootstrap symlink refs and OPENCLAW_STATE_DIR-only refs are related follow-up families and should stay open. A narrow repair artifact is needed for #64663 before any closeout because require_fix_before_close is enabled.",
+  "actions": [
+    {
+      "target": "#64663",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#64663",
+      "candidate_fix": "#64663",
+      "reason": "Canonical classification only; merge is blocked until the branch is repaired, checks pass, bot findings are resolved, and /review passes."
+    },
+    {
+      "target": "cluster:ghcrawl-191457-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#64663",
+      "candidate_fix": "#64663",
+      "reason": "Repair the canonical contributor branch #64663 first, preserving contributor credit and borrowing only clearly relevant lessons from related hydrated PRs."
+    },
+    {
+      "target": "cluster:ghcrawl-191457-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#64663",
+      "candidate_fix": "#64663",
+      "reason": "Canonical PR #64663 needs automated repair before merge or duplicate/superseded closeout can be planned."
+    },
+    {
+      "target": "#38981",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine this trust-boundary feature PR to central OpenClaw security triage; do not close, merge, or use it as an automated canonical path."
+    },
+    {
+      "target": "#40230",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route only this security-sensitive PR to central security handling while continuing unrelated classifications."
+    },
+    {
+      "target": "#62938",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route this exec-approvals hardening PR to central security handling; do not close or merge from this worker."
+    },
+    {
+      "target": "#64473",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine the boundary-path relaxation PR to central security triage."
+    },
+    {
+      "target": "#38650",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#64663",
+      "candidate_fix": null,
+      "reason": "Different root cause/surface from the canonical exec-approvals path check."
+    },
+    {
+      "target": "#52522",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#64663",
+      "candidate_fix": null,
+      "reason": "Related symlink UX issue, but not a duplicate or superseded candidate for #64663."
+    },
+    {
+      "target": "#65736",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#64663",
+      "candidate_fix": "#65736",
+      "reason": "Keep as related state-dir work; do not merge or close without resolving bot comments and running /review."
+    },
+    {
+      "target": "#68417",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#64663",
+      "candidate_fix": "#68417",
+      "reason": "Related candidate, not safe to merge or close in this pass."
+    },
+    {
+      "target": "#38622",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#64663",
+      "candidate_fix": null,
+      "reason": "Keep open as a related follow-up issue, not a duplicate of #64663."
+    },
+    {
+      "target": "#40210",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#64663",
+      "candidate_fix": null,
+      "reason": "Related workspace-bootstrap symlink family; no closeout against exec-approvals canonical."
+    },
+    {
+      "target": "#62917",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#64663",
+      "candidate_fix": "#65736",
+      "reason": "Close is blocked on the canonical fix path or fix PR because require_fix_before_close is enabled."
+    },
+    {
+      "target": "#64472",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#64663",
+      "candidate_fix": null,
+      "reason": "Keep open as related non-security issue while routing its security-sensitive PR separately."
+    },
+    {
+      "target": "#51277",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#64663",
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation."
+    },
+    {
+      "target": "#39",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": "#64663",
+      "candidate_fix": null,
+      "reason": "Already closed historical context; no mutation."
+    },
+    {
+      "target": "#42363",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": "#64663",
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation."
+    },
+    {
+      "target": "#51275",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed security-sensitive context; no mutation."
+    },
+    {
+      "target": "#64050",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "security_sensitive",
+      "canonical": "#64663",
+      "candidate_fix": null,
+      "reason": "Already closed/merged context; no mutation."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "route_security": 4,
+    "keep_related": 7,
+    "close_fixed_by_candidate": 1,
+    "keep_closed": 5
+  },
+  "action_status_counts": {
+    "planned": 14,
+    "blocked": 1,
+    "skipped": 5
+  },
+  "apply_counts": {
+    "skipped": 1,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#62917",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#64663",
+      "candidate_fix": "#65736",
+      "title": null,
+      "idempotency_key": "ghcrawl-191457-agentic-merge:#62917:close_fixed_by_candidate:v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#72377",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix: allow trusted exec approvals home symlinks",
+      "idempotency_key": null,
+      "reason": "merge state status is UNSTABLE",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
