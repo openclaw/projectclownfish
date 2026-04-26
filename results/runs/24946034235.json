@@ -1,0 +1,146 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165996-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24946034235",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24946034235",
+  "head_sha": "56bccb0db44200da8fc6f4a81252127a5c0e77d5",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/ghcrawl-165996-agentic-merge.md",
+  "published_at": "2026-04-26T02:20:26.859Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/38806",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/38806",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/38808",
+  "summary": "Selected #38806 as the best live canonical issue and #38808 as the best non-security canonical PR for the Feishu P2P direct-message thread regression. Split the over-broad cluster into related reply-thread PRs (#39507, #40147), independent Feishu fixes/features, and the security-boundary PR #38996. Because the preflight artifact marks #38996 as security-sensitive and explicitly says no ProjectClownfish mutation is allowed for this cluster, this result emits only non-mutating classifications and routes the cluster for human/security follow-up.",
+  "actions": [
+    {
+      "target": "#38806",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#38806",
+      "candidate_fix": null,
+      "reason": "Best surviving canonical issue thread for the live P2P DM thread regression."
+    },
+    {
+      "target": "#38808",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#38808",
+      "candidate_fix": null,
+      "reason": "Best surviving non-security PR for the canonical #38806 bug, but no merge action is recommended in this run because cluster mutations are blocked and the artifact does not include a clean Codex /review preflight."
+    },
+    {
+      "target": "#38996",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Mixed security/non-security PR; ProjectClownfish must not close, comment on, merge, or otherwise mutate this item."
+    },
+    {
+      "target": "#39507",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Distinct but related Feishu reply-thread semantics bug; keep open as a separate related track."
+    },
+    {
+      "target": "#40147",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Overlapping reply-routing work in the same area, but not a safe or clearer canonical path than the existing split related items."
+    },
+    {
+      "target": "#42296",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate Feishu media-context bug, not part of the P2P thread canonical family."
+    },
+    {
+      "target": "#44118",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#42228",
+      "reason": "This behavior appears already shipped on current main and covered by #42228, but the cluster security boundary blocks ProjectClownfish closeout in this run."
+    },
+    {
+      "target": "#47961",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate feature work with unresolved review risk; leave open independently."
+    },
+    {
+      "target": "#55521",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate feature with clear unresolved regressions; not a canonical or closeout candidate for this cluster."
+    },
+    {
+      "target": "#67068",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; retained only as historical evidence for the thread-metadata subfamily."
+    },
+    {
+      "target": "#67069",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#67068",
+      "reason": "The behavior is already covered on current main via #67068, but the cluster security boundary blocks ProjectClownfish closeout in this run."
+    },
+    {
+      "target": "#67783",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate Feishu typing-indicator fix; leave open independently."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 2,
+    "needs_human": 1,
+    "keep_related": 2,
+    "keep_independent": 6,
+    "keep_closed": 1
+  },
+  "action_status_counts": {
+    "planned": 10,
+    "blocked": 1,
+    "skipped": 1
+  },
+  "apply_counts": {},
+  "needs_human": [
+    "Security boundary: #38996 is hydrated as security-sensitive because it also carries the #38757 plaintext-secret persistence fix. Route this cluster to central OpenClaw security triage before any ProjectClownfish close/comment/label/merge action."
+  ],
+  "apply_actions": []
+}
