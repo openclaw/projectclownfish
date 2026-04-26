@@ -381,7 +381,7 @@ function buildFixArtifact(plan, job) {
           : "Disabled by job frontmatter.",
       canonical_fix:
         job.frontmatter.allow_fix_pr === true
-          ? "If no viable canonical PR exists, first repair a useful contributor PR when maintainer_can_modify is true. If it is false or unsafe, emit fix_needed plus build_fix_artifact/open_fix_pr with narrow files, tests, changelog, and credit plan."
+          ? "If no viable canonical PR exists, first repair a useful contributor PR when maintainer_can_modify is true. If it is false, draft/unmergeable, stale, unsafe, or too broad, replace it with fix_needed plus build_fix_artifact/open_fix_pr using repair_strategy=replace_uneditable_branch, narrow files, tests, changelog, branch_update_blockers, and source PR credit. Do not ask whether to wait when fix PRs are allowed."
           : "Worker may identify canonical fixes but must not plan a fix PR.",
       merge:
         job.frontmatter.allow_merge === true

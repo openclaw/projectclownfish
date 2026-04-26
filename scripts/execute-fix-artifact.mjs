@@ -86,15 +86,19 @@ if (result.mode !== job.frontmatter.mode) {
   throw new Error(`result mode ${result.mode} does not match job mode ${job.frontmatter.mode}`);
 }
 
-const plannedFixActions = (result.actions ?? []).filter(
-  (action) => FIX_ACTIONS.has(String(action.action ?? "")) && action.status === "planned",
-);
+const rawFixArtifact = result.fix_artifact;
+const executableFixArtifact = executableReplacementFixArtifact(rawFixArtifact, result);
+const promotedReplacement = executableFixArtifact !== rawFixArtifact;
+const plannedFixActions = (result.actions ?? []).filter((action) => isExecutableFixAction(action, promotedReplacement));
 const report = {
   repo: result.repo,
   cluster_id: result.cluster_id,
   dry_run: dryRun,
   result_path: path.relative(repoRoot(), resultPath),
   executed_at: new Date().toISOString(),
+  policy_override: promotedReplacement
+    ? "promoted needs_human uneditable-source fix artifact to replace_uneditable_branch"
+    : null,
   actions: [],
 };
 
@@ -105,7 +109,7 @@ if (plannedFixActions.length === 0) {
   process.exit(0);
 }
 
-const repairStrategy = String(result.fix_artifact?.repair_strategy ?? "");
+const repairStrategy = String(executableFixArtifact?.repair_strategy ?? "");
 if (NON_EXECUTABLE_REPAIR_STRATEGIES.has(repairStrategy)) {
   report.status = "skipped";
   report.reason = `fix_artifact.repair_strategy ${repairStrategy} is not executable`;
@@ -119,7 +123,7 @@ if (NON_EXECUTABLE_REPAIR_STRATEGIES.has(repairStrategy)) {
   process.exit(0);
 }
 
-const fixArtifact = validateFixArtifact(result.fix_artifact);
+const fixArtifact = validateFixArtifact(executableFixArtifact);
 const securityBlock = validateFixSecurityScope({ job, resultPath, fixArtifact, plannedFixActions });
 if (securityBlock) {
   report.status = "skipped";
@@ -203,6 +207,56 @@ function isBlockedFixError(error) {
   return /Codex produced no target repo changes|Codex \/review did not pass|Codex (?:fix worker|review-fix worker|\/review) timed out|Codex (?:fix worker|review-fix worker|\/review) failed|validation command failed/i.test(
     String(error?.message ?? error),
   );
+}
+
+function isExecutableFixAction(action, promotedReplacement) {
+  if (!FIX_ACTIONS.has(String(action.action ?? ""))) return false;
+  if (action.status === "planned") return true;
+  if (!promotedReplacement || action.status !== "blocked") return false;
+  return ["fix_needed", "build_fix_artifact", "open_fix_pr"].includes(String(action.action ?? ""));
+}
+
+function executableReplacementFixArtifact(fixArtifact, workerResult) {
+  if (!shouldPromoteNeedsHumanReplacement(fixArtifact, workerResult)) return fixArtifact;
+  return {
+    ...fixArtifact,
+    repair_strategy: "replace_uneditable_branch",
+    branch_update_blockers: uniqueStrings([
+      ...(fixArtifact.branch_update_blockers ?? []),
+      "ProjectClownfish policy: useful uneditable or unsafe source PRs are replaced with a narrow credited PR when fix execution is explicitly enabled.",
+    ]),
+    credit_notes: uniqueStrings([
+      ...(fixArtifact.credit_notes ?? []),
+      ...fixArtifact.source_prs.map((source) => `Replacement preserves source PR credit: ${source}`),
+    ]),
+  };
+}
+
+function shouldPromoteNeedsHumanReplacement(fixArtifact, workerResult) {
+  if (!fixArtifact || typeof fixArtifact !== "object") return false;
+  if (fixArtifact.repair_strategy !== "needs_human") return false;
+  if (!Array.isArray(fixArtifact.source_prs) || fixArtifact.source_prs.length === 0) return false;
+  if (!fixArtifact.source_prs.every((source) => parsePullRequestUrl(source)?.repo === workerResult.repo)) return false;
+
+  const text = [
+    fixArtifact.summary,
+    fixArtifact.pr_body,
+    ...(fixArtifact.branch_update_blockers ?? []),
+    ...(fixArtifact.credit_notes ?? []),
+    ...(workerResult.needs_human ?? []),
+    ...(workerResult.actions ?? []).map((action) => `${action.action ?? ""} ${action.status ?? ""} ${action.reason ?? ""}`),
+  ].join("\n");
+  const hasReplacementDecision = /replace(?:ment)?(?: PR| fix| path)?|open a replacement|cannot safely update/i.test(text);
+  const hasUneditableOrUnsafeSource =
+    /maintainer_can_modify\s*=\s*false|uneditable|cannot safely update|branch is unsafe|draft|mergeability unknown|checks? (?:are )?(?:skipped|failing)/i.test(
+      text,
+    );
+  const hasBlockedFixAction = (workerResult.actions ?? []).some(
+    (action) =>
+      ["fix_needed", "build_fix_artifact", "open_fix_pr"].includes(String(action.action ?? "")) &&
+      action.status === "blocked",
+  );
+  return hasReplacementDecision && hasUneditableOrUnsafeSource && hasBlockedFixAction;
 }
 
 function executeRepairBranch({ fixArtifact, targetDir }) {
@@ -301,8 +355,9 @@ function executeReplacementBranch({ fixArtifact, targetDir, supersedeSources, fa
     ? prepareReviewThreadsForMerge({ repo: result.repo, number: prNumber, targetDir })
     : { status: "blocked", reason: "replacement PR URL did not include a PR number" };
 
-  if (supersedeSources) {
-    for (const source of fixArtifact.source_prs ?? []) {
+  const supersededSources = supersedeSources ? supersededReplacementSources(fixArtifact) : [];
+  if (supersededSources.length > 0) {
+    for (const source of supersededSources) {
       const parsed = parsePullRequestUrl(source);
       if (!parsed || parsed.repo !== result.repo) continue;
       const comment = [
@@ -330,7 +385,7 @@ function executeReplacementBranch({ fixArtifact, targetDir, supersedeSources, fa
     checkpoint_commits: prep.checkpoint_commits,
     merge_preflight: prep.merge_preflight,
     review_threads: threadResolution,
-    superseded_sources: supersedeSources ? fixArtifact.source_prs ?? [] : [],
+    superseded_sources: supersededSources,
   };
 }
 
@@ -993,6 +1048,24 @@ function replacementPrBody(fixArtifact, fallbackReason) {
   ];
   if (fallbackReason) lines.push(`- Repair fallback: ${fallbackReason}`);
   return `${lines.join("\n")}\n`;
+}
+
+function supersededReplacementSources(fixArtifact) {
+  if (Array.isArray(fixArtifact.supersede_source_prs) && fixArtifact.supersede_source_prs.length > 0) {
+    return fixArtifact.supersede_source_prs.filter((source) => parsePullRequestUrl(source)?.repo === result.repo);
+  }
+
+  const blockerText = (fixArtifact.branch_update_blockers ?? []).join("\n");
+  const directUneditableSources = (fixArtifact.source_prs ?? []).filter((source) => {
+    const parsed = parsePullRequestUrl(source);
+    if (!parsed || parsed.repo !== result.repo) return false;
+    const sourcePattern = new RegExp(`(?:#|pull/)${parsed.number}(?!\\d)[\\s\\S]{0,220}`, "i");
+    const sourceBlocker = blockerText.match(sourcePattern)?.[0] ?? "";
+    return /maintainer_can_modify\s*=\s*false|uneditable|cannot safely update|branch is unsafe|mergeability unknown/i.test(
+      sourceBlocker,
+    );
+  });
+  return directUneditableSources.length > 0 ? directUneditableSources : (fixArtifact.source_prs ?? []).slice(0, 1);
 }
 
 function validateFixArtifact(fixArtifact) {

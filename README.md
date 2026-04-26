@@ -130,7 +130,7 @@ Full worker prompts, Codex transcripts, and raw artifacts stay in GitHub Actions
 - `needs_human`: only product-direction, trust-boundary, canonical-choice, merge-path, or contributor-credit decisions that remain unclear after the hydrated artifact and single-item review/check/decide pass.
 - Automated reviewer feedback must be cleared during autonomous PR work. Greptile, Codex, Asile, CodeRabbit, Copilot, and similar bot comments must be addressed, proven non-actionable, or escalated before any merge or post-merge closeout recommendation.
 - Merge preflight: no PR can merge until security issues are cleared, comments are resolved, Codex `/review` has passed, findings are addressed, and changed-surface validation is clean.
-- Repair ladder: make the useful contributor PR mergeable when its branch is maintainer-editable; otherwise replace it with a narrow credited fix PR plan, close/supersede the uneditable PR only after that replacement path is explicit, and carry contributor credit into the PR body and changelog plan.
+- Repair ladder: make the useful contributor PR mergeable when its branch is maintainer-editable; otherwise replace draft, stale, unmergeable, uneditable, or unsafe branches with a narrow credited fix PR. When fix PR mode is enabled, "wait or replace" is already answered: replace, preserve credit, then supersede only the source PR that could not be safely updated.
 
 ## Local Run
 
