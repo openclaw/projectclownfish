@@ -1,0 +1,177 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-199253-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24968256691",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24968256691",
+  "head_sha": "ca0a88e67e5debd868d492727ed94b15a8da7f88",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-199253-agentic-merge.md",
+  "published_at": "2026-04-26T22:11:00.840Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/34574",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/34574",
+  "canonical_pr": null,
+  "summary": "Hydrated preflight shows #62775 is security-sensitive and must be routed only. The best non-security canonical path is the still-open exec loop-detection issue #34574, but none of the open contributor PRs are merge-ready: #52759, #56403, and #70877 have failing checks and unresolved bot findings, while #68673 is a related update_plan loop-normalization PR with a distinct scope and an unresolved latest bot finding. Plan a narrow credited replacement fix PR for #34574 and block superseded closeouts until that PR exists.",
+  "actions": [
+    {
+      "target": "#34574",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#34574",
+      "candidate_fix": null,
+      "reason": "Use #34574 as the non-security canonical issue for the narrow exec/no-progress loop-detection fix path."
+    },
+    {
+      "target": "#62775",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route #62775 to central OpenClaw security handling; do not close, merge, comment on, or use it as a fix source in ProjectClownfish."
+    },
+    {
+      "target": "#52126",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#34574",
+      "candidate_fix": null,
+      "reason": "Historical evidence only; keep closed and do not mutate."
+    },
+    {
+      "target": "#52759",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#34574",
+      "candidate_fix": null,
+      "reason": "Blocked by require_fix_before_close until the credited replacement fix PR for #34574 is opened."
+    },
+    {
+      "target": "#56403",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#34574",
+      "candidate_fix": null,
+      "reason": "Blocked by require_fix_before_close until the credited replacement fix PR for #34574 is opened."
+    },
+    {
+      "target": "#70877",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#34574",
+      "candidate_fix": null,
+      "reason": "Blocked by require_fix_before_close until the credited replacement fix PR for #34574 is opened."
+    },
+    {
+      "target": "#68673",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#34574",
+      "candidate_fix": null,
+      "reason": "Related loop-detection subcluster; keep open for a separate repair/merge decision rather than close it into #34574."
+    },
+    {
+      "target": "cluster:ghcrawl-199253-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#34574",
+      "candidate_fix": null,
+      "reason": "A narrow credited replacement fix is needed for #34574 before superseded PR closeouts or post-merge closeout can proceed."
+    },
+    {
+      "target": "cluster:ghcrawl-199253-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#34574",
+      "candidate_fix": null,
+      "reason": "Prepare a deterministic replacement PR plan that preserves contributor credit and addresses the actionable bot findings."
+    },
+    {
+      "target": "cluster:ghcrawl-199253-agentic-merge",
+      "action": "open_fix_pr",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#34574",
+      "candidate_fix": null,
+      "reason": "Open the credited replacement fix PR after the executor builds, validates, and reviews the narrow patch."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "route_security": 1,
+    "keep_closed": 1,
+    "close_superseded": 3,
+    "keep_related": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "open_fix_pr": 1
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "skipped": 1,
+    "blocked": 3
+  },
+  "apply_counts": {
+    "skipped": 3
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#52759",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#34574",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-199253-agentic-merge:#52759:close_superseded:v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#56403",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#34574",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-199253-agentic-merge:#56403:close_superseded:v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#70877",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#34574",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-199253-agentic-merge:#70877:close_superseded:v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
