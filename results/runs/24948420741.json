@@ -1,0 +1,251 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165992-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24948420741",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24948420741",
+  "head_sha": "9d33319999e848f71b8ec6d00e05ced29698d081",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165992-agentic-merge.md",
+  "published_at": "2026-04-26T05:01:32.940Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/41985",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/41985",
+  "canonical_pr": null,
+  "summary": "Kept #41985 as the live canonical issue for the remaining non-image WebChat/Control UI attachment gap. #30389 stays related because it also tracks model-selection and skill/capability-menu work, five cluster siblings are already closed to #41985, and the remaining open duplicates cannot be closed in this run because `require_fix_before_close` blocks duplicate closeout until a canonical fix PR exists; this result therefore emits a narrow new-fix artifact and marks PR creation as blocked on missing checkout/branch context.",
+  "actions": [
+    {
+      "target": "#41985",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Best live canonical for the remaining generic non-image WebChat/Control UI attachment work."
+    },
+    {
+      "target": "#41985",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "The bug remains real on current main and no viable canonical PR exists in the hydrated artifact."
+    },
+    {
+      "target": "#41985",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "A narrow fix artifact is the safest autonomous next step for the canonical issue."
+    },
+    {
+      "target": "#41985",
+      "action": "open_fix_pr",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Implementation is blocked on missing checkout/branch context; only the fix artifact can be emitted in this run."
+    },
+    {
+      "target": "#30389",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Overlaps the attachment family but still contains distinct model-selection and skill/capability-menu work, so it is related rather than a true duplicate."
+    },
+    {
+      "target": "#30759",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Clear duplicate of #41985, but closeout is blocked by the fix-first policy because no canonical fix PR exists yet."
+    },
+    {
+      "target": "#47933",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "The report falls into the same generic non-image attachment family tracked by #41985, but this run cannot close it before a fix PR exists."
+    },
+    {
+      "target": "#48700",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "The issue is a straightforward duplicate of the canonical file-upload request, but closure is policy-blocked until a fix PR exists."
+    },
+    {
+      "target": "#69185",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Duplicate classification is clear, but the job's fix-first-close gate blocks the close action."
+    },
+    {
+      "target": "#69447",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "The issue is a high-confidence duplicate with useful diagnostic detail, but policy blocks closeout until a fix PR exists."
+    },
+    {
+      "target": "#41992",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Already closed as a duplicate of #41985; no further mutation is allowed."
+    },
+    {
+      "target": "#43242",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Already closed as a duplicate of #41985; no further mutation is allowed."
+    },
+    {
+      "target": "#56298",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Already closed as a duplicate of #41985; no further mutation is allowed."
+    },
+    {
+      "target": "#63094",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Already closed as a duplicate of #41985; no further mutation is allowed."
+    },
+    {
+      "target": "#67622",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Already closed as a duplicate of #41985; no further mutation is allowed."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "open_fix_pr": 1,
+    "keep_related": 1,
+    "close_duplicate": 5,
+    "keep_closed": 5
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "blocked": 6,
+    "skipped": 5
+  },
+  "apply_counts": {
+    "skipped": 5
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#30759",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-165992-agentic-merge-30759-close-duplicate-to-41985-v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#47933",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-165992-agentic-merge-47933-close-duplicate-to-41985-v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#48700",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-165992-agentic-merge-48700-close-duplicate-to-41985-v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#69185",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-165992-agentic-merge-69185-close-duplicate-to-41985-v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#69447",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-165992-agentic-merge-69447-close-duplicate-to-41985-v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
