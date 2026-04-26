@@ -1,0 +1,171 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165994-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24962939634",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24962939634",
+  "head_sha": "c6a011e689cd5c31e8b8008fb1626f775ad148df",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165994-agentic-merge.md",
+  "published_at": "2026-04-26T17:59:32.803Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/43589",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/43589",
+  "summary": "Classified the hydrated cluster without GitHub mutation. The cluster is over-broad: #43589 is the best repairable canonical path for the chokidar glob/watch-root family but is not merge-ready, #71497 is a separate draft canonical for stale persisted skills snapshots, and #41858 must be routed to security. No merge or close action is recommended because fix-first closeout is enabled and no canonical fix has landed in this run.",
+  "actions": [
+    {
+      "target": "#43589",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#43589",
+      "candidate_fix": "#43589",
+      "reason": "Canonical for the watcher-glob subfamily, but merge is blocked until review-bot findings are repaired and validation is rerun."
+    },
+    {
+      "target": "cluster:ghcrawl-165994-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#43589",
+      "candidate_fix": "#43589",
+      "reason": "A canonical fix path exists, but it requires branch repair before merge or duplicate closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-165994-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#43589",
+      "candidate_fix": "#43589",
+      "reason": "Build a narrow repair artifact for the watcher-glob family."
+    },
+    {
+      "target": "#41858",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item is out of scope for backlog cleanup automation."
+    },
+    {
+      "target": "#41655",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#43589",
+      "candidate_fix": null,
+      "reason": "Related watcher work, but not a true duplicate and not safe to merge or close before the canonical fix is repaired."
+    },
+    {
+      "target": "#51733",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep as related follow-up skill-root work rather than closing or merging in this cluster."
+    },
+    {
+      "target": "#54927",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#43589",
+      "candidate_fix": null,
+      "reason": "Related useful work, but failing checks and unresolved bot findings block merge or fixed-by-candidate closeout."
+    },
+    {
+      "target": "#66617",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#43589",
+      "candidate_fix": null,
+      "reason": "Keep open as related; broad delta and unresolved review/check risk block merge or closeout."
+    },
+    {
+      "target": "#69663",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#56915",
+      "candidate_fix": "#69663",
+      "reason": "Related subcluster candidate, but failing checks block merge and fixed-by-candidate closeout."
+    },
+    {
+      "target": "#56915",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#56915",
+      "candidate_fix": "#69663",
+      "reason": "Keep open as the canonical issue for the nested skill scanner subfamily."
+    },
+    {
+      "target": "#71497",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#71497",
+      "candidate_fix": "#71497",
+      "reason": "Canonical for the stale persisted skills snapshot subfamily, but draft status and skipped checks block merge."
+    },
+    {
+      "target": "#43056",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical evidence only."
+    },
+    {
+      "target": "#48500",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71497",
+      "candidate_fix": "#71497",
+      "reason": "Historical evidence only."
+    },
+    {
+      "target": "#49125",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71497",
+      "candidate_fix": "#71497",
+      "reason": "Historical evidence only."
+    },
+    {
+      "target": "#55495",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71497",
+      "candidate_fix": "#71497",
+      "reason": "Historical evidence only."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "route_security": 1,
+    "keep_related": 6,
+    "keep_closed": 4
+  },
+  "action_status_counts": {
+    "planned": 11,
+    "skipped": 4
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
