@@ -17,9 +17,11 @@ const latest = Boolean(args.latest);
 const dryRun = Boolean(args["dry-run"] || process.env.CLOWNFISH_FIX_DRY_RUN === "1");
 const model = String(args.model ?? process.env.CLOWNFISH_MODEL ?? "gpt-5.4");
 const codexTimeoutMs = Number(process.env.CLOWNFISH_FIX_CODEX_TIMEOUT_MS ?? 45 * 60 * 1000);
+const codexPreflightTimeoutMs = Number(process.env.CLOWNFISH_FIX_PREFLIGHT_TIMEOUT_MS ?? 2 * 60 * 1000);
 const maxEditAttempts = Math.max(1, Number(process.env.CLOWNFISH_FIX_EDIT_ATTEMPTS ?? 3));
 const maxReviewAttempts = Math.max(1, Number(process.env.CLOWNFISH_CODEX_REVIEW_ATTEMPTS ?? 2));
 const resolveReviewThreads = process.env.CLOWNFISH_RESOLVE_REVIEW_THREADS !== "0";
+const skipCodexWritePreflight = process.env.CLOWNFISH_SKIP_CODEX_WRITE_PREFLIGHT === "1";
 const defaultCodexWriteSandbox = process.env.GITHUB_ACTIONS === "true" ? "danger-full-access" : "workspace-write";
 const codexWriteSandbox = String(process.env.CLOWNFISH_CODEX_WRITE_SANDBOX ?? defaultCodexWriteSandbox);
 const codexWriteNetworkAccess = parseBooleanEnv(
@@ -130,9 +132,26 @@ const targetDir =
   typeof args["target-dir"] === "string"
     ? path.resolve(args["target-dir"])
     : path.join(workRoot, result.repo.replace("/", "-"));
+fs.mkdirSync(workRoot, { recursive: true });
 
 ensureTargetCheckout(result.repo, targetDir);
 setupGitIdentity(targetDir);
+
+const writePreflight = runCodexWritePreflight();
+report.preflight = writePreflight;
+if (writePreflight.status === "blocked") {
+  report.status = "blocked";
+  report.reason = writePreflight.reason;
+  report.actions.push({
+    action: "execute_fix",
+    status: "blocked",
+    repair_strategy: fixArtifact.repair_strategy,
+    reason: writePreflight.reason,
+    evidence: writePreflight.evidence,
+  });
+  writeReport(report, resultPath);
+  process.exit(0);
+}
 
 let outcome;
 try {
@@ -502,6 +521,106 @@ function readTextIfExists(filePath) {
 function compactText(value, maxLength) {
   const text = String(value ?? "").replace(/\s+/g, " ").trim();
   return text.length > maxLength ? `${text.slice(0, maxLength - 3)}...` : text;
+}
+
+function runCodexWritePreflight() {
+  if (skipCodexWritePreflight) {
+    return {
+      status: "skipped",
+      reason: "CLOWNFISH_SKIP_CODEX_WRITE_PREFLIGHT=1",
+      sandbox: codexWriteSandbox,
+    };
+  }
+
+  const smokeDir = fs.mkdtempSync(path.join(workRoot, "codex-write-preflight-"));
+  const summaryPath = path.join(workRoot, "codex-write-preflight-summary.md");
+  const expectedPath = path.join(smokeDir, "preflight.txt");
+  const prompt = [
+    "You are running a ProjectClownfish Codex write preflight.",
+    "",
+    "Create or overwrite `preflight.txt` in the current directory with exactly:",
+    "",
+    "ok",
+    "",
+    "Do not inspect environment variables, credentials, tokens, or secrets.",
+    "Do not call gh, git push, open PRs, or mutate anything outside the current directory.",
+  ].join("\n");
+  const child = spawnSync(
+    "codex",
+    [
+      "exec",
+      "--cd",
+      smokeDir,
+      "--model",
+      model,
+      "--sandbox",
+      codexWriteSandbox,
+      ...codexWriteSandboxConfigArgs(),
+      "-c",
+      'approval_policy="never"',
+      "--output-last-message",
+      summaryPath,
+      "--ephemeral",
+      "--json",
+      "-",
+    ],
+    {
+      cwd: smokeDir,
+      input: prompt,
+      encoding: "utf8",
+      env: codexEnv(),
+      timeout: codexPreflightTimeoutMs,
+      maxBuffer: 16 * 1024 * 1024,
+    },
+  );
+  fs.writeFileSync(path.join(workRoot, "codex-write-preflight.jsonl"), child.stdout ?? "");
+  if (child.stderr) fs.writeFileSync(path.join(workRoot, "codex-write-preflight.stderr.log"), child.stderr);
+
+  if (child.error?.code === "ETIMEDOUT") {
+    return blockedCodexWritePreflight(
+      `Codex write preflight timed out after ${codexPreflightTimeoutMs}ms`,
+      child.stderr || child.stdout,
+    );
+  }
+  if (child.status !== 0) {
+    return blockedCodexWritePreflight("Codex write preflight failed", child.stderr || child.stdout);
+  }
+  const written = readTextIfExists(expectedPath).trim();
+  if (written !== "ok") {
+    return blockedCodexWritePreflight(
+      "Codex write preflight did not create the expected file",
+      readTextIfExists(summaryPath) || child.stderr || child.stdout,
+    );
+  }
+  return {
+    status: "passed",
+    sandbox: codexWriteSandbox,
+    timeout_ms: codexPreflightTimeoutMs,
+    evidence: [`Codex wrote ${path.basename(expectedPath)} in an isolated preflight directory.`],
+  };
+}
+
+function blockedCodexWritePreflight(reason, detail) {
+  const failureClass = classifyCodexFailure(detail);
+  return {
+    status: "blocked",
+    reason: `${reason}: ${compactText(detail || "no Codex output", 900)}`,
+    failure_class: failureClass,
+    sandbox: codexWriteSandbox,
+    timeout_ms: codexPreflightTimeoutMs,
+    evidence: [`Codex write preflight failed before target repo mutation; class=${failureClass}`],
+  };
+}
+
+function classifyCodexFailure(detail) {
+  const text = String(detail ?? "");
+  if (/bwrap|loopback|uid map|sandbox wrapper|sandbox startup|operation not permitted/i.test(text)) {
+    return "sandbox_unavailable";
+  }
+  if (/auth|login|api key|401|403|unauthorized|forbidden/i.test(text)) {
+    return "auth_unavailable";
+  }
+  return "codex_unavailable";
 }
 
 function codexWriteSandboxConfigArgs() {
@@ -1030,9 +1149,14 @@ function codexEnv() {
   const env = { ...process.env };
   delete env.GH_TOKEN;
   delete env.GITHUB_TOKEN;
+  delete env.OPENCLAW_GH_TOKEN;
   delete env.CLOWNFISH_GH_TOKEN;
   delete env.CLOWNFISH_READ_GH_TOKEN;
   delete env.CLOWNFISH_CODEX_GH_TOKEN;
+  if (process.env.GITHUB_ACTIONS === "true") {
+    delete env.OPENAI_API_KEY;
+    delete env.CODEX_API_KEY;
+  }
   return env;
 }
 
