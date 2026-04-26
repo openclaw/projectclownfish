@@ -1,0 +1,220 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165986-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24967323236",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24967323236",
+  "head_sha": "ae34d7fa97f22c0718d8951257577db708e4735f",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165986-agentic-merge.md",
+  "published_at": "2026-04-26T21:22:36.149Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/19929",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/19929",
+  "canonical_pr": null,
+  "summary": "Representative #58004 is already closed and is no longer the live canonical. The best live canonical is #19929 for selective shared sessions across group/channel/thread chats. No close, merge, or post-merge closeout is safe in this run because require_fix_before_close is enabled and no viable merged or merge-ready fix exists. #52504 is security-sensitive and is routed only to central security handling.",
+  "actions": [
+    {
+      "target": "#19929",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Best surviving live canonical for the unfixed non-direct shared-session family."
+    },
+    {
+      "target": "#14850",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Related non-direct session-unification request with unique route-binding details."
+    },
+    {
+      "target": "#7524",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Focused group-to-main tracker related to the canonical channel/group/thread shared-session family."
+    },
+    {
+      "target": "#51805",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Related group/DM continuity request with unique per-identity privacy constraints."
+    },
+    {
+      "target": "#51691",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Related but broader real-time synchronization feature, not a duplicate of #19929."
+    },
+    {
+      "target": "#46514",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent cross-agent history problem."
+    },
+    {
+      "target": "#11665",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent webhook persistent-session bug/feature gap."
+    },
+    {
+      "target": "#50875",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Related DM identity-resolution PR, not the canonical group/channel/thread session fix."
+    },
+    {
+      "target": "#20078",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Closed historical contributor PR; no close or merge action is valid."
+    },
+    {
+      "target": "#39049",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Closed broad plugin/context-engine work, not a current canonical PR."
+    },
+    {
+      "target": "#40986",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation valid."
+    },
+    {
+      "target": "#52504",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item routed to central OpenClaw security handling only."
+    },
+    {
+      "target": "#57977",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical DM-continuity report."
+    },
+    {
+      "target": "#58004",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Representative drifted closed; kept only as historical evidence."
+    },
+    {
+      "target": "#59355",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical DM-continuity report."
+    },
+    {
+      "target": "#59585",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed and independent from the remaining canonical issue."
+    },
+    {
+      "target": "#60255",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical session-reuse report."
+    },
+    {
+      "target": "#68628",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical named-agent continuity report."
+    },
+    {
+      "target": "cluster:ghcrawl-165986-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "A fix path is needed for the live canonical, but closeout is blocked until a fix PR exists or lands."
+    },
+    {
+      "target": "cluster:ghcrawl-165986-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "blocked",
+      "classification": null,
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Build a credited replacement plan, but do not open an executable broad fix PR in this run."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 5,
+    "keep_independent": 2,
+    "keep_closed": 9,
+    "route_security": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 10,
+    "skipped": 9,
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [
+    "Split the #19929 implementation into narrower maintainer-approved subscopes before ProjectClownfish opens a replacement fix PR: core session-key contract, route binding/config schema, outbound/thread behavior, and channel-specific regression/docs updates."
+  ],
+  "apply_actions": []
+}
