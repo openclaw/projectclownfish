@@ -1,0 +1,210 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165986-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24964944123",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24964944123",
+  "head_sha": "4eed51d5136f37af20370b4671e83d57dae21d5e",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165986-agentic-merge.md",
+  "published_at": "2026-04-26T19:24:26.612Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/19929",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/19929",
+  "canonical_pr": null,
+  "summary": "Hydrated state shows the hinted canonical #58004 is already closed as implemented for direct-message cross-surface continuity. The best live canonical for the remaining unfixed non-direct group/channel/thread shared-session routing family is #19929. No merge is safe: the only useful PR evidence, #20078, is closed unmerged, dirty, maintainer_can_modify=false, and has a failing check, so the safe path is a narrow credited replacement fix artifact. No close actions are emitted because require_fix_before_close is true and no replacement fix PR exists yet. Security-sensitive #52504 is quarantined only for central security handling.",
+  "actions": [
+    {
+      "target": "#19929",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Best live canonical issue for the unresolved non-direct group/channel/thread shared-session routing work."
+    },
+    {
+      "target": "cluster:ghcrawl-165986-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Real feature gap remains and should be fixed through a narrow replacement PR rather than merged from an unsafe/closed contributor branch."
+    },
+    {
+      "target": "cluster:ghcrawl-165986-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Build a credited replacement fix plan for the #19929 family."
+    },
+    {
+      "target": "cluster:ghcrawl-165986-agentic-merge",
+      "action": "open_fix_pr",
+      "status": "blocked",
+      "classification": null,
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Implementation is blocked in this worker context because no target checkout is available; the structured fix artifact is ready for the guarded fix executor."
+    },
+    {
+      "target": "#14850",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Related unfixed config/routing surface, not safe to close before a canonical fix path lands."
+    },
+    {
+      "target": "#7524",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Related narrower groupScope tracker; keep open until the broader shared-session fix defines whether it covers this exact contract."
+    },
+    {
+      "target": "#51805",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Related group/DM per-identity continuity work with unique privacy semantics."
+    },
+    {
+      "target": "#51691",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Related multi-surface continuity request, but not a true duplicate of selective group/channel/thread session routing."
+    },
+    {
+      "target": "#46514",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Related channel-history problem with a different root cause and trust model."
+    },
+    {
+      "target": "#11665",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent webhook persistent-session feature; do not fold into this cluster's canonical path."
+    },
+    {
+      "target": "#52504",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route this item to central OpenClaw security handling; no ProjectClownfish mutation."
+    },
+    {
+      "target": "#20078",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Closed contributor PR is useful source material but non-viable for automation; replacement fix must credit demarlik01 and the PR URL."
+    },
+    {
+      "target": "#40986",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical evidence; no action required."
+    },
+    {
+      "target": "#57977",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical evidence for already-implemented direct-message continuity."
+    },
+    {
+      "target": "#58004",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Representative is obsolete for the remaining open group/channel/thread shared-session work."
+    },
+    {
+      "target": "#59355",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical evidence; no action required."
+    },
+    {
+      "target": "#59585",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed identity-context report is resolved by existing bootstrap behavior, not part of this open routing fix."
+    },
+    {
+      "target": "#60255",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical evidence for already-supported session reuse semantics."
+    },
+    {
+      "target": "#68628",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical evidence; no action required."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "open_fix_pr": 1,
+    "keep_related": 5,
+    "keep_independent": 1,
+    "route_security": 1,
+    "keep_closed": 8
+  },
+  "action_status_counts": {
+    "planned": 10,
+    "blocked": 1,
+    "skipped": 8
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
