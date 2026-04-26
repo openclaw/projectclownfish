@@ -1,0 +1,173 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165992-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24948147346",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24948147346",
+  "head_sha": "1dc18b25de3f99125db012360920613dc3512ce2",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165992-agentic-merge.md",
+  "published_at": "2026-04-26T04:36:32.986Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/41985",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/41985",
+  "canonical_pr": null,
+  "summary": "Issue #41985 remains the live canonical tracker for the still-open non-image Control UI/WebChat attachment gap. Broader umbrella/follow-up issues stay open as related, narrow duplicates are close-ready but blocked by the fix-first-close policy, and a new-fix artifact is emitted because no hydrated PR exists and the worker has no target checkout.",
+  "actions": [
+    {
+      "target": "#41985",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Best surviving canonical issue: it is still open, was the canonical hint, and live maintainer duplicate-close comments already route narrower reports here."
+    },
+    {
+      "target": "#41985",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "The remaining bug is real on current main and there is no viable hydrated PR to merge or repair."
+    },
+    {
+      "target": "#41985",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "A narrow new-fix plan is required because the canonical issue is still open and no viable PR path is available in the hydrated cluster state."
+    },
+    {
+      "target": "#41985",
+      "action": "open_fix_pr",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Implementation is mechanically blocked by the missing target checkout, not by maintainer ambiguity."
+    },
+    {
+      "target": "#30389",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Broader WebChat UX umbrella than #41985; attachment support overlaps, but model/skill selection remains separate unresolved product work."
+    },
+    {
+      "target": "#30759",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "High-confidence duplicate of #41985, but closeout is blocked because this cluster requires a fix PR or merged canonical fix before closing duplicates."
+    },
+    {
+      "target": "#41992",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Already closed; historical duplicate only."
+    },
+    {
+      "target": "#43242",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Already closed; historical duplicate only."
+    },
+    {
+      "target": "#47933",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Same area, but broader scope because local file download behavior is not resolved by the current canonical upload issue alone."
+    },
+    {
+      "target": "#48700",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "High-confidence duplicate of #41985, but closeout is blocked because this cluster requires a fix PR or merged canonical fix before closing duplicates."
+    },
+    {
+      "target": "#56298",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Already closed; historical duplicate only."
+    },
+    {
+      "target": "#63094",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Already closed; historical duplicate only."
+    },
+    {
+      "target": "#67622",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Already closed; historical duplicate only."
+    },
+    {
+      "target": "#69185",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Same family, but broader arbitrary-file and policy/config scope means it should stay open as a related follow-up rather than be closed in this run."
+    },
+    {
+      "target": "#69447",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "High-confidence duplicate of #41985 with stronger technical detail, but closeout is blocked because this cluster requires a fix PR or merged canonical fix before closing duplicates."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "open_fix_pr": 1,
+    "keep_related": 3,
+    "close_duplicate": 3,
+    "keep_closed": 5
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "blocked": 4,
+    "skipped": 5
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
