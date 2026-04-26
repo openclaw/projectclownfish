@@ -1,0 +1,107 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-143815-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24947175620",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24947175620",
+  "head_sha": "cc7e2b9deb213893d18c0bcca95afccd476be4c1",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-143815-autonomous-smoke.md",
+  "published_at": "2026-04-26T03:27:48.141Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/49180",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/49180",
+  "canonical_pr": null,
+  "summary": "Live canonical shifts from closed representative #45835 to open issue #49180. Candidate refs #50541 and #50691 are already closed as duplicates of #49180. Remaining open candidates #49758, #50606, #51016, and #51495 stay open as related because each adds materially different Telegram, TUI, SecretRef, or auto-pairing scope details, so no further close/comment action is high-confidence from this artifact. No mutating ProjectClownfish action is planned in this run.",
+  "actions": [
+    {
+      "target": "#49180",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#49180",
+      "candidate_fix": null,
+      "reason": "Use #49180 as the current canonical issue because it is the only surviving open thread that maintainers are already routing duplicate reports into."
+    },
+    {
+      "target": "#45835",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#49180",
+      "candidate_fix": null,
+      "reason": "The original representative is already closed, so the live canonical role must move to an open issue."
+    },
+    {
+      "target": "#50541",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#49180",
+      "candidate_fix": null,
+      "reason": "Already-closed duplicate; no further ProjectClownfish action is valid."
+    },
+    {
+      "target": "#50691",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#49180",
+      "candidate_fix": null,
+      "reason": "Already-closed duplicate; no further ProjectClownfish action is valid."
+    },
+    {
+      "target": "#49758",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#49180",
+      "candidate_fix": null,
+      "reason": "Same symptom family, but broader Telegram and health-reporting scope makes this a related follow-up rather than a safe duplicate closeout."
+    },
+    {
+      "target": "#50606",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#49180",
+      "candidate_fix": null,
+      "reason": "Keep open as related because the TUI-specific path is not cleanly proven as the same root cause as #49180."
+    },
+    {
+      "target": "#51016",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#49180",
+      "candidate_fix": null,
+      "reason": "Keep open as related because the SecretRef-backed credential-resolution path is materially narrower than the generic #49180 reproduction."
+    },
+    {
+      "target": "#51495",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#49180",
+      "candidate_fix": null,
+      "reason": "Keep open as related because the auto-approved pairing lifecycle may represent a narrower sub-path that is not safe to collapse into #49180 from current evidence."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_closed": 3,
+    "keep_related": 4
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "skipped": 3
+  },
+  "apply_counts": {},
+  "needs_human": [
+    "Security boundary: #48986 is marked security-sensitive in the preflight artifact (`security_boundary.security_sensitive_items`). Do not derive or replay any ProjectClownfish mutation from that report; keep it routed to central OpenClaw security triage only."
+  ],
+  "apply_actions": []
+}

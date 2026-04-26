@@ -2,27 +2,27 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-143815-autonomous-smoke"
 mode: "autonomous"
-run_id: "24939008778"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939008778"
-head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
+run_id: "24947175620"
+run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24947175620"
+head_sha: "cc7e2b9deb213893d18c0bcca95afccd476be4c1"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-26T01:36:05.638Z"
+published_at: "2026-04-26T03:27:48.141Z"
 canonical: "https://github.com/openclaw/openclaw/issues/49180"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/49180"
 canonical_pr: null
-actions_total: 13
-apply_executed: 2
+actions_total: 8
+apply_executed: 0
 apply_blocked: 0
 apply_skipped: 0
-needs_human_count: 0
+needs_human_count: 1
 ---
 
 # ghcrawl-143815-autonomous-smoke
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24939008778](https://github.com/openclaw/projectclownfish/actions/runs/24939008778)
+Run: [https://github.com/openclaw/projectclownfish/actions/runs/24947175620](https://github.com/openclaw/projectclownfish/actions/runs/24947175620)
 
 Workflow conclusion: success
 
@@ -32,43 +32,37 @@ Canonical: https://github.com/openclaw/openclaw/issues/49180
 
 ## Summary
 
-Using the provided preflight artifact as the live GitHub state for this run, I replaced closed representative #45835 with open issue #49180 as the surviving canonical thread for the 2026.3.13 local loopback `status` / `gateway probe` missing-`operator.read` regression. I planned high-confidence duplicate closeouts for #50541 and #50691 only, and kept #49758, #50606, #51016, #51495, and linked #51396 open because each carries broader or narrower scope-specific work that is not safe to collapse from the artifact alone. No PR, merge, or fix actions are allowed or needed in this job.
+Live canonical shifts from closed representative #45835 to open issue #49180. Candidate refs #50541 and #50691 are already closed as duplicates of #49180. Remaining open candidates #49758, #50606, #51016, and #51495 stay open as related because each adds materially different Telegram, TUI, SecretRef, or auto-pairing scope details, so no further close/comment action is high-confidence from this artifact. No mutating ProjectClownfish action is planned in this run.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 13 |
-| Applied executions | 2 |
+| Worker actions | 8 |
+| Applied executions | 0 |
 | Apply blocked | 0 |
 | Apply skipped | 0 |
-| Needs human | 0 |
+| Needs human | 1 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #50541 | close_duplicate | executed | duplicate | duplicate of the canonical thread |
-| #50691 | close_duplicate | executed | duplicate | duplicate of the canonical thread |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #49180 | keep_canonical | planned | canonical | Best surviving open canonical issue for the cluster after the original representative #45835 was closed. |
-| #45835 | keep_closed | skipped | superseded | Closed historical representative only; #49180 is the current open canonical thread. |
-| #50541 | close_duplicate | planned | duplicate | High-confidence duplicate of the surviving canonical issue #49180. |
-| #50691 | close_duplicate | planned | duplicate | High-confidence duplicate of the surviving canonical issue #49180. |
-| #49758 | keep_related | planned | related | Same regression family, but broader diagnostics scope than the canonical issue. |
-| #50606 | keep_related | planned | related | Related auth/scope regression, but framed as a narrower suspected cause rather than a pure duplicate symptom report. |
-| #51016 | keep_related | planned | related | Same symptom family, but materially different token-resolution/device-identity reproduction path. |
-| #51495 | keep_related | planned | related | Related local operator-scope regression with unique pairing-specific reproduction details. |
-| #51396 | keep_related | planned | related | Same scope-handling subsystem, but different client class, scope, and user-visible failure. |
-| #49305 | keep_independent | planned | independent | Independent linked issue outside this cluster's root-cause family. |
-| #49311 | keep_independent | planned | independent | Independent linked issue outside this cluster's scope. |
-| #49236 | keep_closed | skipped | independent | Closed unrelated linked issue; historical evidence only. |
-| #49297 | keep_closed | skipped | independent | Closed unrelated linked issue; historical evidence only. |
+| #49180 | keep_canonical | planned | canonical | Use #49180 as the current canonical issue because it is the only surviving open thread that maintainers are already routing duplicate reports into. |
+| #45835 | keep_closed | skipped | superseded | The original representative is already closed, so the live canonical role must move to an open issue. |
+| #50541 | keep_closed | skipped | duplicate | Already-closed duplicate; no further ProjectClownfish action is valid. |
+| #50691 | keep_closed | skipped | duplicate | Already-closed duplicate; no further ProjectClownfish action is valid. |
+| #49758 | keep_related | planned | related | Same symptom family, but broader Telegram and health-reporting scope makes this a related follow-up rather than a safe duplicate closeout. |
+| #50606 | keep_related | planned | related | Keep open as related because the TUI-specific path is not cleanly proven as the same root cause as #49180. |
+| #51016 | keep_related | planned | related | Keep open as related because the SecretRef-backed credential-resolution path is materially narrower than the generic #49180 reproduction. |
+| #51495 | keep_related | planned | related | Keep open as related because the auto-approved pairing lifecycle may represent a narrower sub-path that is not safe to collapse into #49180 from current evidence. |
 
 ## Needs Human
 
-- none
+- Security boundary: #48986 is marked security-sensitive in the preflight artifact (`security_boundary.security_sensitive_items`). Do not derive or replay any ProjectClownfish mutation from that report; keep it routed to central OpenClaw security triage only.
