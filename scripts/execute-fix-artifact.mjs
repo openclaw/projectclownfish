@@ -7,6 +7,7 @@ import { assertAllowedOwner, hasSecuritySignalText, parseArgs, parseJob, repoRoo
 
 const FIX_ACTIONS = new Set(["fix_needed", "build_fix_artifact", "open_fix_pr"]);
 const REPAIR_STRATEGIES = new Set(["repair_contributor_branch", "replace_uneditable_branch", "new_fix_pr"]);
+const NON_EXECUTABLE_REPAIR_STRATEGIES = new Set(["already_fixed_on_main", "needs_human"]);
 const DEFAULT_BASE_BRANCH = "main";
 
 const args = parseArgs(process.argv.slice(2));
@@ -80,6 +81,20 @@ const report = {
 if (plannedFixActions.length === 0) {
   report.status = "skipped";
   report.reason = "no planned fix actions";
+  writeReport(report, resultPath);
+  process.exit(0);
+}
+
+const repairStrategy = String(result.fix_artifact?.repair_strategy ?? "");
+if (NON_EXECUTABLE_REPAIR_STRATEGIES.has(repairStrategy)) {
+  report.status = "skipped";
+  report.reason = `fix_artifact.repair_strategy ${repairStrategy} is not executable`;
+  report.actions.push({
+    action: "execute_fix",
+    status: "skipped",
+    repair_strategy: repairStrategy,
+    reason: "worker marked the fix path as non-executable; closure actions may still apply",
+  });
   writeReport(report, resultPath);
   process.exit(0);
 }
