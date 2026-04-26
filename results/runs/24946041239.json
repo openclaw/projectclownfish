@@ -1,0 +1,127 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-166006-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24946041239",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24946041239",
+  "head_sha": "56bccb0db44200da8fc6f4a81252127a5c0e77d5",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/ghcrawl-166006-agentic-merge.md",
+  "published_at": "2026-04-26T02:19:34.565Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/54527",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/54381",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/54527",
+  "summary": "PR #54527 remains the canonical date-roll fix path for the stale subsystem file-logger bug, but this cluster contains security-sensitive PR #62458, so no mutating ProjectClownfish actions are emitted. The remaining PRs are classified non-mutating as superseded, related, or independent, and a blocked repair artifact is included for rebasing and finishing #54527.",
+  "actions": [
+    {
+      "target": "#54527",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#54527",
+      "candidate_fix": null,
+      "reason": "Keep #54527 as the surviving canonical PR for the midnight date-roll bug while repair work is planned separately."
+    },
+    {
+      "target": "#54527",
+      "action": "build_fix_artifact",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#54527",
+      "candidate_fix": null,
+      "reason": "Canonical repair is plan-only in this run because the target branch checkout is unavailable and the branch needs manual rebase/changelog work."
+    },
+    {
+      "target": "#37549",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#54527",
+      "candidate_fix": null,
+      "reason": "Superseded by the narrower canonical repair path in #54527."
+    },
+    {
+      "target": "#54589",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#54527",
+      "candidate_fix": null,
+      "reason": "Alternative same-family fix; keep open as related while #54527 remains the maintainer-preferred canonical path."
+    },
+    {
+      "target": "#62349",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#54527",
+      "candidate_fix": null,
+      "reason": "Weaker generation-based duplicate with unresolved correctness review and failing checks."
+    },
+    {
+      "target": "#62449",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#54527",
+      "candidate_fix": null,
+      "reason": "Same symptom family, but a broader logger-transport approach with unresolved regressions; not the canonical path."
+    },
+    {
+      "target": "#62458",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PR; route to central OpenClaw security handling and do not mutate from ProjectClownfish."
+    },
+    {
+      "target": "#62482",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#54527",
+      "candidate_fix": null,
+      "reason": "Same bug family, but broader than the canonical path and lacking artifact proof that earlier review concerns were fully resolved."
+    },
+    {
+      "target": "#65804",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#54527",
+      "candidate_fix": null,
+      "reason": "Overlapping fix idea, but not the chosen canonical path because of hot-path regression risk."
+    },
+    {
+      "target": "#67206",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate bundled-config regression cluster; keep it independent from the date-roll stale-file PR family."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "build_fix_artifact": 1,
+    "keep_related": 6,
+    "needs_human": 1,
+    "keep_independent": 1
+  },
+  "action_status_counts": {
+    "planned": 8,
+    "blocked": 2
+  },
+  "apply_counts": {},
+  "needs_human": [
+    "Route #62458 to central OpenClaw security handling: the hydrated Aisle review flags a Medium CWE-400 performance-DoS issue, and the preflight security boundary explicitly forbids ProjectClownfish mutation while that item remains in scope."
+  ],
+  "apply_actions": []
+}
