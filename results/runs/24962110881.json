@@ -1,0 +1,169 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165991-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24962110881",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24962110881",
+  "head_sha": "0a093014e04049c913f3bb009311325943e11e03",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165991-agentic-merge.md",
+  "published_at": "2026-04-26T17:02:56.339Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/66875",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/66875",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/66997",
+  "summary": "Hydrated state shows the representative #66597 is already closed as implemented. The narrow optimistic user-message flicker family is covered by merged PR #66997 and later current-main follow-up evidence, while #66875 remains the best open issue for broader residual chat final/session.message/sessions.changed race symptoms. No merge or close mutations are recommended in this pass: all duplicate/fixed items are already closed, #51497 is related but not the same root cause, and security-sensitive linked refs #1 and #3 are quarantined only.",
+  "actions": [
+    {
+      "target": "#1",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked ref is out of scope for ProjectClownfish backlog cleanup and must be routed to central OpenClaw security handling."
+    },
+    {
+      "target": "#3",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked ref is quarantined without mutating the item."
+    },
+    {
+      "target": "#44491",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#66875",
+      "candidate_fix": null,
+      "reason": "Already closed; no closure action is valid, and the report is related rather than a remaining duplicate target."
+    },
+    {
+      "target": "#49777",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#66875",
+      "candidate_fix": null,
+      "reason": "Already closed; keep as related historical evidence."
+    },
+    {
+      "target": "#51497",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#66875",
+      "candidate_fix": null,
+      "reason": "Related WebChat/session history area, but not a true duplicate of the optimistic message flicker family; leave open for separate persistence investigation."
+    },
+    {
+      "target": "#66176",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented; no close action is valid."
+    },
+    {
+      "target": "#66274",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented; no close action is valid."
+    },
+    {
+      "target": "#66597",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Representative is obsolete because it is already closed; #66875 is the best remaining open issue for broader residual symptoms."
+    },
+    {
+      "target": "#66598",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed duplicate/fixed item; no closure action is valid."
+    },
+    {
+      "target": "#66762",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented; no close action is valid."
+    },
+    {
+      "target": "#66875",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Best surviving open canonical issue for residual broader WebChat race symptoms; leave open rather than closing against a narrower landed fix."
+    },
+    {
+      "target": "#67028",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented; no close action is valid."
+    },
+    {
+      "target": "#67081",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented; no close action is valid."
+    },
+    {
+      "target": "#67412",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented; no close action is valid."
+    },
+    {
+      "target": "#67582",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented; no close action is valid."
+    }
+  ],
+  "action_counts": {
+    "route_security": 2,
+    "keep_closed": 11,
+    "keep_related": 1,
+    "keep_canonical": 1
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "skipped": 11
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
