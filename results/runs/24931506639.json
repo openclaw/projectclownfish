@@ -1,0 +1,131 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-143790-discord-health-monitor-restart-crashes-gateway-with-max-reconnec",
+  "mode": "plan",
+  "run_id": "24931506639",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24931506639",
+  "head_sha": "9545956f6378b1fee5e100ac52da014bcba5047b",
+  "workflow_conclusion": "success",
+  "workflow_status": "completed",
+  "workflow_created_at": "2026-04-25T13:01:49Z",
+  "workflow_updated_at": "2026-04-25T13:06:12Z",
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-143790-discord-health-monitor-restart-crashes-gateway-with-max-reconnec.md",
+  "published_at": "2026-04-26T01:27:46.149Z",
+  "canonical": "#61124",
+  "canonical_issue": "#61124",
+  "canonical_pr": null,
+  "summary": "Representative #56184 is closed in live state, so #61124 is the clearest open replacement canonical for the Discord health-monitor Max reconnect attempts (0) crash family. #57111, #57195, #57291, and #57666 are already-closed duplicates of that family; #38596, #41354, and #57731 remain related stale-socket instability reports; #59927 remains related rather than safe to collapse; and #53168 and #64201 are independent crash families.",
+  "actions": [
+    {
+      "target": "#38596",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open as a related Discord socket-stability report, not as the canonical crash issue."
+    },
+    {
+      "target": "#41354",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open as related stale-socket or disconnect-loop work rather than deduping into the Max reconnect attempts (0) crash family."
+    },
+    {
+      "target": "#53168",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "This is a separate gateway crash family and should not be closed or tracked under the Discord health-monitor canonical."
+    },
+    {
+      "target": "#57111",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#61124",
+      "candidate_fix": null,
+      "reason": "Already closed in live state; semantically a duplicate of #61124, so no close action is valid in this plan."
+    },
+    {
+      "target": "#57195",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#61124",
+      "candidate_fix": null,
+      "reason": "Already closed in live state; treat as an already-resolved duplicate record of the #61124 canonical family."
+    },
+    {
+      "target": "#57291",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#61124",
+      "candidate_fix": null,
+      "reason": "Already closed in live state; no mutating duplicate-close recommendation is valid."
+    },
+    {
+      "target": "#57666",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#61124",
+      "candidate_fix": null,
+      "reason": "Already closed in live state; preserve it as a closed duplicate of #61124 rather than planning any further action."
+    },
+    {
+      "target": "#57731",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed, but it belongs to the broader stale-socket instability family rather than the canonical Max reconnect attempts (0) crash thread."
+    },
+    {
+      "target": "#59927",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Leave open as related work; it is not safe to collapse into the canonical thread without stronger evidence that the root cause is identical."
+    },
+    {
+      "target": "#61124",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#61124",
+      "candidate_fix": null,
+      "reason": "Promote #61124 as the live canonical replacement for the closed representative #56184."
+    },
+    {
+      "target": "#64201",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "This is a separate reload or loopback connection failure and should stay outside the Discord crash canonical."
+    }
+  ],
+  "action_counts": {
+    "keep_related": 8,
+    "keep_independent": 2,
+    "keep_canonical": 1
+  },
+  "action_status_counts": {
+    "planned": 11
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}

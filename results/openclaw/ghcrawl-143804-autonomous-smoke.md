@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939000666"
 head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:09:32.107Z"
+published_at: "2026-04-26T01:27:46.229Z"
 canonical: "https://github.com/openclaw/openclaw/issues/68508"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/68508"
 canonical_pr: null
 actions_total: 23
 apply_executed: 1
 apply_blocked: 0
-apply_skipped: 22
+apply_skipped: 0
 needs_human_count: 3
 ---
 
@@ -41,36 +41,14 @@ Using the provided preflight artifact as live GitHub state, #68508 remains the b
 | Worker actions | 23 |
 | Applied executions | 1 |
 | Apply blocked | 0 |
-| Apply skipped | 22 |
+| Apply skipped | 0 |
 | Needs human | 3 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #55049 | keep_related | skipped | related | action is not an auto-closure action |
-| #58287 | keep_related | skipped | related | action is not an auto-closure action |
-| #61433 | keep_related | skipped | related | action is not an auto-closure action |
-| #62306 | keep_related | skipped | related | action is not an auto-closure action |
-| #62418 | keep_related | skipped | related | action is not an auto-closure action |
-| #65131 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #65315 | keep_closed | skipped | related | action status is skipped |
-| #65994 | needs_human | skipped | needs_human | action status is blocked |
-| #66343 | keep_closed | skipped | independent | action status is skipped |
-| #66648 | keep_closed | skipped | related | action status is skipped |
-| #66814 | keep_related | skipped | related | action is not an auto-closure action |
-| #67238 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #67267 | keep_related | skipped | related | action is not an auto-closure action |
-| #67364 | keep_related | skipped | related | action is not an auto-closure action |
-| #67527 | keep_closed | skipped | duplicate | action status is skipped |
-| #68094 | keep_closed | skipped | related | action status is skipped |
-| #68508 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #68992 | keep_closed | skipped | duplicate | action status is skipped |
-| #69037 | keep_closed | skipped | related | action status is skipped |
-| #70289 | keep_closed | skipped | related | action status is skipped |
 | #70373 | close_duplicate | executed | duplicate | duplicate of the canonical thread |
-| #70458 | keep_closed | skipped | duplicate | action status is skipped |
-| #70732 | keep_related | skipped | related | action is not an auto-closure action |
 
 ## Worker Action Matrix
 

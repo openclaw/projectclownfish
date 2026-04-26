@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939002551"
 head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:09:32.115Z"
+published_at: "2026-04-26T01:27:46.237Z"
 canonical: "https://github.com/openclaw/openclaw/issues/42099"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/42099"
 canonical_pr: "https://github.com/openclaw/openclaw/pull/42192"
 actions_total: 10
 apply_executed: 0
 apply_blocked: 0
-apply_skipped: 10
+apply_skipped: 0
 needs_human_count: 3
 ---
 
@@ -41,23 +41,14 @@ Representative #48605 is already closed. #42099 is the best live canonical issue
 | Worker actions | 10 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
-| Apply skipped | 10 |
+| Apply skipped | 0 |
 | Needs human | 3 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #42099 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #42192 | needs_human | skipped | needs_human | action status is blocked |
-| #38437 | needs_human | skipped | duplicate | action status is blocked |
-| #45603 | keep_related | skipped | related | action is not an auto-closure action |
-| #45776 | keep_related | skipped | related | action is not an auto-closure action |
-| #47429 | keep_related | skipped | related | action is not an auto-closure action |
-| #49412 | needs_human | skipped | duplicate | action status is blocked |
-| #53938 | keep_related | skipped | related | action is not an auto-closure action |
-| #60620 | keep_related | skipped | related | action is not an auto-closure action |
-| #48605 | keep_closed | skipped | superseded | action status is skipped |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 

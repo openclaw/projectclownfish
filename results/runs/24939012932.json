@@ -7,9 +7,11 @@
   "head_sha": "7db1f986bd485f7b71752bc77e40097172d6b6ef",
   "workflow_conclusion": "success",
   "workflow_status": "completed",
+  "workflow_created_at": "2026-04-25T19:38:54Z",
+  "workflow_updated_at": "2026-04-25T19:47:34Z",
   "result_status": "needs_human",
   "source_job": "jobs/openclaw/ghcrawl-143821-autonomous-smoke.md",
-  "published_at": "2026-04-25T23:09:32.154Z",
+  "published_at": "2026-04-26T01:27:46.310Z",
   "canonical": "https://github.com/openclaw/openclaw/issues/58443",
   "canonical_issue": "https://github.com/openclaw/openclaw/issues/58443",
   "canonical_pr": null,
@@ -91,98 +93,11 @@
     "blocked": 2,
     "skipped": 1
   },
-  "apply_counts": {
-    "skipped": 7
-  },
+  "apply_counts": {},
   "needs_human": [
     "Representative #59951 was already closed in live state on 2026-04-25T13:21:06Z, so the job's hinted canonical is obsolete.",
     "#58443 is the best surviving umbrella, but open refs #46674, #61222, and #69303 still describe materially different inbound-duplication paths; auto-closing them under #58443 would ignore unique reproductions and suspected root causes.",
     "Open candidate #64606 is outbound duplicate-send behavior and #53895 is outbound retry-queue work, so this cluster likely needs follow-up split jobs rather than further autonomous closeout."
   ],
-  "apply_actions": [
-    {
-      "target": "#58443",
-      "action": "keep_canonical",
-      "status": "skipped",
-      "classification": "canonical",
-      "canonical": "#58443",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143821-autonomous-smoke:#58443:keep_canonical:2026-04-22T19:46:32Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#46674",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "needs_human",
-      "canonical": "#58443",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143821-autonomous-smoke:#46674:needs_human:2026-03-25T18:45:59Z",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#61222",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#58443",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143821-autonomous-smoke:#61222:keep_related:2026-04-05T11:38:58Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#69303",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "needs_human",
-      "canonical": "#58443",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143821-autonomous-smoke:#69303:needs_human:2026-04-23T18:40:45Z",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#64606",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#58443",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143821-autonomous-smoke:#64606:keep_related:2026-04-11T03:11:40Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#53895",
-      "action": "keep_independent",
-      "status": "skipped",
-      "classification": "independent",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143821-autonomous-smoke:#53895:keep_independent:2026-04-23T20:05:10Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#59951",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "superseded",
-      "canonical": "#58443",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143821-autonomous-smoke:#59951:keep_closed:2026-04-25T13:21:06Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    }
-  ]
+  "apply_actions": []
 }

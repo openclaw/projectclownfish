@@ -1,0 +1,166 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-143796-telegram-polling-stall",
+  "mode": "plan",
+  "run_id": "24931170014",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24931170014",
+  "head_sha": "e6fc44c785086090541174c0309c5ed6ca780083",
+  "workflow_conclusion": "success",
+  "workflow_status": "completed",
+  "workflow_created_at": "2026-04-25T12:42:53Z",
+  "workflow_updated_at": "2026-04-25T12:49:53Z",
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-143796-smoke.md",
+  "published_at": "2026-04-26T01:27:46.135Z",
+  "canonical": "#69147",
+  "canonical_issue": "#69147",
+  "canonical_pr": null,
+  "summary": "Planned split into six open issue families. #69147 should replace closed representative #63516 for the intermittent Telegram long-poll stall family. Other open canonicals should remain separate: #71066 for transport or fetch-fallback no-poll failures, #67034 for multi-account stall avalanches, #62031 for restart/init silent Telegram failure, #60400 for the 2026.4.2 all-channel empty-table regression, and #58064 for LaunchAgent cross-channel restart failure. No safe auto-closures are recommended because the remaining open reports retain distinct platform, version, supervisor, or scope details.",
+  "actions": [
+    {
+      "target": "#69147",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#69147",
+      "candidate_fix": null,
+      "reason": "Best live replacement for closed representative #63516."
+    },
+    {
+      "target": "#50174",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69147",
+      "candidate_fix": null,
+      "reason": "Related stall symptom, but Windows-specific transport errors and Discord instability make auto-closure unsafe."
+    },
+    {
+      "target": "#60088",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69147",
+      "candidate_fix": null,
+      "reason": "Same degraded-reply family, but the first-message-specific reproduction is too narrow for duplicate closure."
+    },
+    {
+      "target": "#67034",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#67034",
+      "candidate_fix": null,
+      "reason": "Distinct high-concurrency stall family with no broader open issue covering the same synchronized 16-account failure mode."
+    },
+    {
+      "target": "#71066",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#71066",
+      "candidate_fix": null,
+      "reason": "Best open anchor for current transport or fetch-fallback no-poll failures."
+    },
+    {
+      "target": "#59833",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#71066",
+      "candidate_fix": null,
+      "reason": "Related no-poll transport family, but the WSL2 startup signature differs from #71066."
+    },
+    {
+      "target": "#62031",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#62031",
+      "candidate_fix": null,
+      "reason": "Best open canonical for Telegram-specific restart or init silent-failure reports spanning v2026.3.24+."
+    },
+    {
+      "target": "#55727",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#62031",
+      "candidate_fix": null,
+      "reason": "Same silent-start family, but early 2026.3.24 behavior should stay open until maintainers confirm full coverage by #62031."
+    },
+    {
+      "target": "#64178",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#62031",
+      "candidate_fix": null,
+      "reason": "Likely same silent-start family, but later-version confirmation makes auto-closure unsafe."
+    },
+    {
+      "target": "#60400",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#60400",
+      "candidate_fix": null,
+      "reason": "Best open canonical for the 2026.4.2 all-channel startup regression."
+    },
+    {
+      "target": "#60646",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#60400",
+      "candidate_fix": null,
+      "reason": "Same regression family, but Linux plus WhatsApp scope makes auto-closure unsafe."
+    },
+    {
+      "target": "#61195",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#60400",
+      "candidate_fix": null,
+      "reason": "Related 2026.4.2 startup regression, but the fresh-boot angle is worth preserving."
+    },
+    {
+      "target": "#61273",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#60400",
+      "candidate_fix": null,
+      "reason": "Related 2026.4.2 startup regression, but it carries its own platform and version confirmation."
+    },
+    {
+      "target": "#58064",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#58064",
+      "candidate_fix": null,
+      "reason": "Best open canonical for LaunchAgent-specific cross-channel restart failures."
+    },
+    {
+      "target": "#61712",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#58064",
+      "candidate_fix": null,
+      "reason": "Same LaunchAgent restart family, but narrower Telegram-only report."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 6,
+    "keep_related": 9
+  },
+  "action_status_counts": {
+    "planned": 15
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}

@@ -1,0 +1,93 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-143798-bug-managed-browser-and-user-browser-attach-both-fail-on-macos-d",
+  "mode": "plan",
+  "run_id": "24931326064",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24931326064",
+  "head_sha": "75185936126d75ebb182e229f44f6cda4edd81cd",
+  "workflow_conclusion": "success",
+  "workflow_status": "completed",
+  "workflow_created_at": "2026-04-25T12:51:47Z",
+  "workflow_updated_at": "2026-04-25T12:57:03Z",
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/ghcrawl-143798-bug-managed-browser-and-user-browser-attach-both-fail-on-macos-d.md",
+  "published_at": "2026-04-26T01:27:46.146Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Using the provided preflight artifact as live GitHub state, the cluster has changed materially since job generation: #47879, #48037, and #62706 are already closed. The only still-open listed candidate, #48867, is a separate Android Termux stdin-parent-death failure. Because representative #65125 is also closed and hydrated PR candidate #51732 is closed, dirty, and has a failing check, this run cannot name a safe live canonical from the hydrated set.",
+  "actions": [
+    {
+      "target": "#65125",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "The representative issue is closed and no hydrated open successor in the same macOS managed-browser/existing-session attach family is available to promote as the live canonical."
+    },
+    {
+      "target": "#51732",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "#51732 is not a safe canonical fix path for this plan because it is closed, not mergeable, has a failing check, and exceeds the job's human-review gates."
+    },
+    {
+      "target": "#47879",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed in live state; this is related Chrome MCP configuration work, not the same root cause as the representative failure family."
+    },
+    {
+      "target": "#48037",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed in live state; this is related feature/configuration scope, not the same root cause as the representative failure family."
+    },
+    {
+      "target": "#62706",
+      "action": "keep_related",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed in live state; this is a related attach-path bug, but it is distinct from the representative macOS/browser attach family."
+    },
+    {
+      "target": "#48867",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open and independent; it should not replace #65125 as canonical for this cluster because it is a separate Android/Termux failure family."
+    }
+  ],
+  "action_counts": {
+    "needs_human": 2,
+    "keep_related": 3,
+    "keep_independent": 1
+  },
+  "action_status_counts": {
+    "blocked": 2,
+    "skipped": 3,
+    "planned": 1
+  },
+  "apply_counts": {},
+  "needs_human": [
+    "Cluster changed materially since job generation: #47879, #48037, and #62706 were listed as open candidates but are already closed in the preflight live state.",
+    "Representative #65125 is closed, and the only remaining open listed candidate (#48867) is a different Android Termux failure, so no safe live canonical exists in the hydrated set.",
+    "Canonical PR candidate #51732 is closed, mergeable=false, mergeable_state=dirty, has 13 changed files, and includes a failing check, so the job's human gates block using it as the canonical fix path.",
+    "If maintainers want a new live canonical for the #65125 family, linked refs such as #65379/#65401 need hydration in a follow-up cluster before that choice is made."
+  ],
+  "apply_actions": []
+}

@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939010877"
 head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:09:32.146Z"
+published_at: "2026-04-26T01:27:46.301Z"
 canonical: "https://github.com/openclaw/openclaw/pull/52142"
 canonical_issue: null
 canonical_pr: "https://github.com/openclaw/openclaw/pull/52142"
 actions_total: 12
 apply_executed: 0
 apply_blocked: 1
-apply_skipped: 11
+apply_skipped: 0
 needs_human_count: 3
 ---
 
@@ -41,25 +41,14 @@ Selected #52142 as the safest live canonical for the loopback handshake-timeout 
 | Worker actions | 12 |
 | Applied executions | 0 |
 | Apply blocked | 1 |
-| Apply skipped | 11 |
+| Apply skipped | 0 |
 | Needs human | 3 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #48950 | keep_related | skipped | related | action is not an auto-closure action |
-| #49751 | needs_human | skipped | needs_human | action status is blocked |
-| #51172 | keep_related | skipped | related | action is not an auto-closure action |
-| #52142 | keep_canonical | skipped | canonical | action is not an auto-closure action |
 | #54475 | close_superseded | blocked | superseded | closure requires canonical or duplicate_of |
-| #54774 | keep_related | skipped | related | action is not an auto-closure action |
-| #56668 | keep_related | skipped | related | action is not an auto-closure action |
-| #57621 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #60536 | keep_related | skipped | related | action is not an auto-closure action |
-| #62060 | needs_human | skipped | needs_human | action status is blocked |
-| #65641 | keep_related | skipped | related | action is not an auto-closure action |
-| #66297 | needs_human | skipped | needs_human | action status is blocked |
 
 ## Worker Action Matrix
 

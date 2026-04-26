@@ -1,0 +1,187 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-143796-telegram-polling-stall",
+  "mode": "plan",
+  "run_id": "24930717721",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24930717721",
+  "head_sha": "eb05a6773eb0f62c5cd07701a38477c18c9ce588",
+  "workflow_conclusion": "success",
+  "workflow_status": "completed",
+  "workflow_created_at": "2026-04-25T12:17:57Z",
+  "workflow_updated_at": "2026-04-25T12:21:25Z",
+  "result_status": "needs_human",
+  "source_job": null,
+  "published_at": "2026-04-26T01:27:46.132Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Plan mode could not safely classify this cluster because the worker cannot execute the required shell/gh reads (bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted). Without live GitHub state, #63516 cannot be revalidated and every listed open candidate must be escalated.",
+  "actions": [
+    {
+      "target": "#63516",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub revalidation was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#50174",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#55727",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#58064",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#58230",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#59833",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#60088",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#60400",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#60646",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#61195",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#61273",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#61712",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#62031",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#64178",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#67034",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#69147",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    },
+    {
+      "target": "#71066",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live GitHub fetch was required but could not be performed because the worker shell/gh runner fails before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted."
+    }
+  ],
+  "action_counts": {
+    "needs_human": 17
+  },
+  "action_status_counts": {
+    "planned": 17
+  },
+  "apply_counts": {},
+  "needs_human": [
+    "Worker shell/gh execution is failing before command start: bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted.",
+    "Live GitHub state could not be fetched for #63516, #50174, #55727, #58064, #58230, #59833, #60088, #60400, #60646, #61195, #61273, #61712, #62031, #64178, #67034, #69147, and #71066.",
+    "The local representative canonical is #63516 and is already closed in the job context; a rerun with working gh access or human review is required to confirm the live canonical and classify the cluster safely."
+  ],
+  "apply_actions": []
+}

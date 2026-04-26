@@ -7,9 +7,11 @@
   "head_sha": "7db1f986bd485f7b71752bc77e40097172d6b6ef",
   "workflow_conclusion": "success",
   "workflow_status": "completed",
+  "workflow_created_at": "2026-04-25T19:38:51Z",
+  "workflow_updated_at": "2026-04-25T19:47:49Z",
   "result_status": "planned",
   "source_job": "jobs/openclaw/ghcrawl-143820-autonomous-smoke.md",
-  "published_at": "2026-04-25T23:09:32.151Z",
+  "published_at": "2026-04-26T01:27:46.308Z",
   "canonical": "https://github.com/openclaw/openclaw/issues/43119",
   "canonical_issue": "https://github.com/openclaw/openclaw/issues/43119",
   "canonical_pr": null,
@@ -152,178 +154,7 @@
     "planned": 9,
     "skipped": 5
   },
-  "apply_counts": {
-    "skipped": 14
-  },
+  "apply_counts": {},
   "needs_human": [],
-  "apply_actions": [
-    {
-      "target": "#43119",
-      "action": "keep_canonical",
-      "status": "skipped",
-      "classification": "canonical",
-      "canonical": "#43119",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143820-autonomous-smoke|#43119|keep_canonical|2026-03-11T11:04:55Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#17298",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#43119",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143820-autonomous-smoke|#17298|keep_related|2026-03-19T11:26:52Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#38439",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143820-autonomous-smoke|#38439|keep_related|2026-04-21T04:32:02Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#41201",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143820-autonomous-smoke|#41201|keep_related|2026-03-27T02:39:33Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#45703",
-      "action": "keep_independent",
-      "status": "skipped",
-      "classification": "independent",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143820-autonomous-smoke|#45703|keep_independent|2026-03-17T02:24:59Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#45755",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#43119",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143820-autonomous-smoke|#45755|keep_related|2026-03-17T02:25:09Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#46909",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#43119",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143820-autonomous-smoke|#46909|keep_related|2026-03-15T05:37:51Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#53380",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143820-autonomous-smoke|#53380|keep_related|2026-03-24T04:28:21Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#68248",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143820-autonomous-smoke|#68248|keep_related|2026-04-17T19:07:12Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#45045",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "already closed in live state; historical representative only.",
-      "canonical": "#43119",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143820-autonomous-smoke|#45045|keep_closed|2026-04-25T00:00:55Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#59438",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "already closed in live state; evidence only.",
-      "canonical": "#43119",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143820-autonomous-smoke|#59438|keep_closed|2026-04-25T13:06:21Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#60348",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "already closed in live state; evidence only.",
-      "canonical": "#43119",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143820-autonomous-smoke|#60348|keep_closed|2026-04-25T13:34:49Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#61025",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "already closed in live state; separate historical bug only.",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143820-autonomous-smoke|#61025|keep_closed|2026-04-25T13:51:57Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#70700",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "already closed in live state; historical evidence only.",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143820-autonomous-smoke|#70700|keep_closed|2026-04-25T19:26:57Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    }
-  ]
+  "apply_actions": []
 }

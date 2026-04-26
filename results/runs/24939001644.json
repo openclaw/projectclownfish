@@ -7,9 +7,11 @@
   "head_sha": "7db1f986bd485f7b71752bc77e40097172d6b6ef",
   "workflow_conclusion": "success",
   "workflow_status": "completed",
+  "workflow_created_at": "2026-04-25T19:38:14Z",
+  "workflow_updated_at": "2026-04-25T19:44:53Z",
   "result_status": "planned",
   "source_job": "jobs/openclaw/ghcrawl-143805-autonomous-smoke.md",
-  "published_at": "2026-04-25T23:09:32.109Z",
+  "published_at": "2026-04-26T01:27:46.233Z",
   "canonical": "https://github.com/openclaw/openclaw/issues/62560",
   "canonical_issue": "https://github.com/openclaw/openclaw/issues/62560",
   "canonical_pr": null,
@@ -145,7 +147,6 @@
     "skipped": 7
   },
   "apply_counts": {
-    "skipped": 12,
     "executed": 1
   },
   "needs_human": [
@@ -154,160 +155,19 @@
   ],
   "apply_actions": [
     {
-      "target": "#62560",
-      "action": "keep_canonical",
-      "status": "skipped",
-      "classification": "canonical",
-      "canonical": "#62560",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143805-autonomous-smoke:#62560:keep_canonical:2026-04-07T15:12:34Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
       "target": "#65153",
       "action": "close_duplicate",
       "status": "executed",
       "classification": "duplicate",
       "canonical": "#62560",
       "candidate_fix": null,
+      "title": null,
       "idempotency_key": "ghcrawl-143805-autonomous-smoke:#65153:close_duplicate:#62560:2026-04-12T04:34:31Z",
       "reason": "duplicate of the canonical thread",
+      "merged_at": null,
+      "merge_commit_sha": null,
       "live_state": "closed",
       "live_updated_at": "2026-04-12T04:34:31Z"
-    },
-    {
-      "target": "#44980",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#62560",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143805-autonomous-smoke:#44980:keep_related:2026-04-08T18:49:26Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#45799",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#62560",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143805-autonomous-smoke:#45799:keep_related:2026-03-17T02:25:21Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#60472",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#62560",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143805-autonomous-smoke:#60472:keep_related:2026-04-03T18:29:22Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#54959",
-      "action": "keep_independent",
-      "status": "skipped",
-      "classification": "independent",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143805-autonomous-smoke:#54959:keep_independent:2026-04-13T16:30:28Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#61782",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "superseded",
-      "canonical": "#62560",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143805-autonomous-smoke:#61782:keep_closed:2026-04-25T14:14:01Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#58508",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#62560",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143805-autonomous-smoke:#58508:keep_closed:2026-04-25T12:39:31Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#60468",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "duplicate",
-      "canonical": "#62560",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143805-autonomous-smoke:#60468:keep_closed:2026-04-25T13:38:33Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#60483",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#62560",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143805-autonomous-smoke:#60483:keep_closed:2026-04-25T13:39:06Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#62539",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "duplicate",
-      "canonical": "#62560",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143805-autonomous-smoke:#62539:keep_closed:2026-04-25T14:38:45Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#44182",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#62560",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143805-autonomous-smoke:#44182:keep_closed:2026-04-25T07:24:29Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#62312",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#62560",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143805-autonomous-smoke:#62312:keep_closed:2026-04-07T19:29:29Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
     }
   ]
 }

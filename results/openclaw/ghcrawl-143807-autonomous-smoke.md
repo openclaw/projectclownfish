@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939003369"
 head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:09:32.120Z"
+published_at: "2026-04-26T01:27:46.241Z"
 canonical: null
 canonical_issue: null
 canonical_pr: null
 actions_total: 16
 apply_executed: 0
 apply_blocked: 0
-apply_skipped: 16
+apply_skipped: 0
 needs_human_count: 4
 ---
 
@@ -41,29 +41,14 @@ Closed representative #48144 no longer maps to a single live canonical path. The
 | Worker actions | 16 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
-| Apply skipped | 16 |
+| Apply skipped | 0 |
 | Needs human | 4 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #48144 | keep_closed | skipped | related | action status is skipped |
-| #38702 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #38709 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #46894 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #46895 | needs_human | skipped | needs_human | action status is blocked |
-| #47069 | needs_human | skipped | needs_human | action status is blocked |
-| #50847 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #50871 | needs_human | skipped | needs_human | action status is blocked |
-| #50970 | needs_human | skipped | needs_human | action status is blocked |
-| #51027 | needs_human | skipped | needs_human | action status is blocked |
-| #51051 | needs_human | skipped | needs_human | action status is blocked |
-| #51053 | needs_human | skipped | needs_human | action status is blocked |
-| #51126 | keep_closed | skipped | related | action status is skipped |
-| #51270 | needs_human | skipped | needs_human | action status is blocked |
-| #65772 | needs_human | skipped | needs_human | action status is blocked |
-| #68557 | keep_related | skipped | related | action is not an auto-closure action |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 

@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24943077025"
 head_sha: "3160a4e666957ca2e0f65fdc0a4d41ba982f99b1"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:46:26.713Z"
+published_at: "2026-04-26T01:27:46.319Z"
 canonical: "https://github.com/openclaw/openclaw/issues/45982"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/45982"
 canonical_pr: null
 actions_total: 26
 apply_executed: 0
 apply_blocked: 1
-apply_skipped: 25
+apply_skipped: 0
 needs_human_count: 4
 ---
 
@@ -41,39 +41,14 @@ Representative PR #45985 is now closed, but the provided live-state artifacts do
 | Worker actions | 26 |
 | Applied executions | 0 |
 | Apply blocked | 1 |
-| Apply skipped | 25 |
+| Apply skipped | 0 |
 | Needs human | 4 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #45985 | keep_closed | skipped | superseded | action status is skipped |
-| #56517 | keep_closed | skipped | superseded | action status is skipped |
-| #45982 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #41670 | keep_related | skipped | related | action is not an auto-closure action |
-| #45986 | needs_human | skipped | needs_human | action status is blocked |
-| #46069 | needs_human | skipped | needs_human | action status is blocked |
-| #59048 | needs_human | skipped | needs_human | action status is blocked |
-| #42531 | keep_related | skipped | related | action is not an auto-closure action |
-| #69707 | keep_related | skipped | related | action is not an auto-closure action |
-| #62741 | keep_related | skipped | related | action is not an auto-closure action |
-| #38797 | keep_canonical | skipped | canonical | action is not an auto-closure action |
 | #41451 | close_duplicate | blocked | duplicate | target is not listed in job candidates |
-| #40578 | needs_human | skipped | needs_human | action status is blocked |
-| #63726 | needs_human | skipped | needs_human | action status is blocked |
-| #42083 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #47285 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #56532 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #59130 | keep_related | skipped | fixed_by_candidate | action is not an auto-closure action |
-| #59141 | needs_human | skipped | needs_human | action status is blocked |
-| #60177 | keep_related | skipped | fixed_by_candidate | action is not an auto-closure action |
-| #65066 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #63413 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #66913 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #67952 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #68116 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #70040 | needs_human | skipped | needs_human | action status is blocked |
 
 ## Worker Action Matrix
 

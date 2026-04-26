@@ -7,9 +7,11 @@
   "head_sha": "30ab2327f6f8b0ff0fe89a5e798b06494ef7e237",
   "workflow_conclusion": "success",
   "workflow_status": "completed",
+  "workflow_created_at": "2026-04-25T18:40:59Z",
+  "workflow_updated_at": "2026-04-25T18:47:29Z",
   "result_status": "executed",
   "source_job": "jobs/openclaw/ghcrawl-143800-autonomous-smoke.md",
-  "published_at": "2026-04-25T23:09:32.094Z",
+  "published_at": "2026-04-26T01:27:46.185Z",
   "canonical": "https://github.com/openclaw/openclaw/issues/69594",
   "canonical_issue": "https://github.com/openclaw/openclaw/issues/69594",
   "canonical_pr": null,
@@ -142,168 +144,9 @@
     "executed": 12,
     "blocked": 1
   },
-  "apply_counts": {
-    "skipped": 13
-  },
+  "apply_counts": {},
   "needs_human": [
     "#64831 bundles inconsistent cron execution, chat-triggered exec instability, approval timing, Node OOMs, and missing catch-up delivery; it needs maintainer triage or issue-splitting before any dedupe/close action."
   ],
-  "apply_actions": [
-    {
-      "target": "#69594",
-      "action": "keep_canonical",
-      "status": "skipped",
-      "classification": "canonical",
-      "canonical": "#69594",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143800-autonomous-smoke|#69594|keep_canonical|2026-04-21T04:34:55Z",
-      "reason": "action status is executed",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#41129",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#69594",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143800-autonomous-smoke|#41129|keep_related|2026-04-24T21:04:48Z",
-      "reason": "action status is executed",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#46899",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143800-autonomous-smoke|#46899|keep_related|2026-03-15T05:06:19Z",
-      "reason": "action status is executed",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#64751",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143800-autonomous-smoke|#64751|keep_related|2026-04-24T10:52:32Z",
-      "reason": "action status is executed",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#62777",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143800-autonomous-smoke|#62777|keep_related|2026-04-15T11:29:16Z",
-      "reason": "action status is executed",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#67602",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143800-autonomous-smoke|#67602|keep_related|2026-04-17T07:56:41Z",
-      "reason": "action status is executed",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#64831",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "needs_human",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143800-autonomous-smoke|#64831|needs_human|2026-04-11T14:18:00Z",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#57491",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143800-autonomous-smoke|#57491|keep_related|2026-04-25T12:10:17Z",
-      "reason": "action status is executed",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#57601",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143800-autonomous-smoke|#57601|keep_related|2026-04-25T12:13:24Z",
-      "reason": "action status is executed",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#57867",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143800-autonomous-smoke|#57867|keep_related|2026-04-25T12:20:29Z",
-      "reason": "action status is executed",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#60845",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143800-autonomous-smoke|#60845|keep_related|2026-04-25T13:46:37Z",
-      "reason": "action status is executed",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#60921",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143800-autonomous-smoke|#60921|keep_related|2026-04-25T13:48:28Z",
-      "reason": "action status is executed",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#67196",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143800-autonomous-smoke|#67196|keep_related|2026-04-25T18:03:28Z",
-      "reason": "action status is executed",
-      "live_state": null,
-      "live_updated_at": null
-    }
-  ]
+  "apply_actions": []
 }

@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24938999617"
 head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:09:32.105Z"
+published_at: "2026-04-26T01:27:46.224Z"
 canonical: null
 canonical_issue: "https://github.com/openclaw/openclaw/issues/57812"
 canonical_pr: null
 actions_total: 38
 apply_executed: 0
 apply_blocked: 0
-apply_skipped: 38
+apply_skipped: 0
 needs_human_count: 3
 ---
 
@@ -41,51 +41,14 @@ Returned needs_human. The preflight artifact shows the representative canonical 
 | Worker actions | 38 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
-| Apply skipped | 38 |
+| Apply skipped | 0 |
 | Needs human | 3 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #6966 | keep_related | skipped | related | action is not an auto-closure action |
-| #19249 | keep_closed | skipped | related | action status is skipped |
-| #21717 | keep_closed | skipped | related | action status is skipped |
-| #22364 | keep_closed | skipped | related | action status is skipped |
-| #24064 | keep_closed | skipped | related | action status is skipped |
-| #24424 | keep_closed | skipped | related | action status is skipped |
-| #44919 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #44935 | keep_related | skipped | related | action is not an auto-closure action |
-| #44941 | keep_related | skipped | related | action is not an auto-closure action |
-| #45834 | keep_closed | skipped | related | action status is skipped |
-| #55118 | keep_closed | skipped | related | action status is skipped |
-| #57471 | keep_related | skipped | related | action is not an auto-closure action |
-| #57812 | keep_closed | skipped | canonical | action status is skipped |
-| #57906 | keep_closed | skipped | related | action status is skipped |
-| #57961 | keep_closed | skipped | duplicate | action status is skipped |
-| #58045 | keep_closed | skipped | duplicate | action status is skipped |
-| #58069 | keep_closed | skipped | duplicate | action status is skipped |
-| #58213 | keep_closed | skipped | duplicate | action status is skipped |
-| #58232 | keep_closed | skipped | duplicate | action status is skipped |
-| #58288 | keep_closed | skipped | duplicate | action status is skipped |
-| #58303 | keep_closed | skipped | duplicate | action status is skipped |
-| #58308 | keep_closed | skipped | duplicate | action status is skipped |
-| #58392 | keep_closed | skipped | duplicate | action status is skipped |
-| #58496 | keep_closed | skipped | duplicate | action status is skipped |
-| #58510 | keep_closed | skipped | duplicate | action status is skipped |
-| #58531 | keep_closed | skipped | duplicate | action status is skipped |
-| #58532 | keep_closed | skipped | duplicate | action status is skipped |
-| #58556 | keep_closed | skipped | duplicate | action status is skipped |
-| #58578 | keep_closed | skipped | duplicate | action status is skipped |
-| #58600 | keep_closed | skipped | duplicate | action status is skipped |
-| #59213 | keep_closed | skipped | duplicate | action status is skipped |
-| #59252 | keep_closed | skipped | duplicate | action status is skipped |
-| #59303 | keep_closed | skipped | related | action status is skipped |
-| #59861 | keep_closed | skipped | duplicate | action status is skipped |
-| #59928 | keep_closed | skipped | related | action status is skipped |
-| #65676 | keep_closed | skipped | duplicate | action status is skipped |
-| #66530 | keep_closed | skipped | related | action status is skipped |
-| #66951 | keep_closed | skipped | independent | action status is skipped |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 

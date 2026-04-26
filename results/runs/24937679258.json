@@ -7,9 +7,11 @@
   "head_sha": "71faa495f89c028a67e9031c6b9e43359a89ecaa",
   "workflow_conclusion": "success",
   "workflow_status": "completed",
+  "workflow_created_at": "2026-04-25T18:29:12Z",
+  "workflow_updated_at": "2026-04-25T18:35:05Z",
   "result_status": "planned",
   "source_job": "jobs/openclaw/ghcrawl-143799-autonomous-smoke.md",
-  "published_at": "2026-04-25T23:09:32.087Z",
+  "published_at": "2026-04-26T01:27:46.174Z",
   "canonical": "https://github.com/openclaw/openclaw/issues/61741",
   "canonical_issue": "https://github.com/openclaw/openclaw/issues/61741",
   "canonical_pr": null,
@@ -81,7 +83,6 @@
     "blocked": 2
   },
   "apply_counts": {
-    "skipped": 4,
     "executed": 2
   },
   "needs_human": [
@@ -90,64 +91,19 @@
   ],
   "apply_actions": [
     {
-      "target": "#61741",
-      "action": "keep_canonical",
-      "status": "skipped",
-      "classification": "canonical",
-      "canonical": "#61741",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143799-autonomous-smoke:#61741:keep_canonical:2026-04-10T17:28:15Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#62754",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "needs_human",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143799-autonomous-smoke:#62754:needs_human:2026-04-07T23:23:32Z",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#63220",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "needs_human",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143799-autonomous-smoke:#63220:needs_human:2026-04-08T15:26:22Z",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
       "target": "#65285",
       "action": "close_duplicate",
       "status": "executed",
       "classification": "duplicate",
       "canonical": "#61741",
       "candidate_fix": null,
+      "title": null,
       "idempotency_key": "ghcrawl-143799-autonomous-smoke:#65285:close_duplicate:#61741:2026-04-12T16:11:09Z",
       "reason": "duplicate of the canonical thread",
+      "merged_at": null,
+      "merge_commit_sha": null,
       "live_state": "closed",
       "live_updated_at": "2026-04-12T16:11:09Z"
-    },
-    {
-      "target": "#65983",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#61741",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143799-autonomous-smoke:#65983:keep_related:#61741:2026-04-13T14:27:17Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
     },
     {
       "target": "#69920",
@@ -156,8 +112,11 @@
       "classification": "duplicate",
       "canonical": "#61741",
       "candidate_fix": null,
+      "title": null,
       "idempotency_key": "ghcrawl-143799-autonomous-smoke:#69920:close_duplicate:#61741:2026-04-22T01:29:17Z",
       "reason": "duplicate of the canonical thread",
+      "merged_at": null,
+      "merge_commit_sha": null,
       "live_state": "closed",
       "live_updated_at": "2026-04-22T01:29:17Z"
     }

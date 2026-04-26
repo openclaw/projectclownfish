@@ -7,9 +7,11 @@
   "head_sha": "7db1f986bd485f7b71752bc77e40097172d6b6ef",
   "workflow_conclusion": "success",
   "workflow_status": "completed",
+  "workflow_created_at": "2026-04-25T19:38:22Z",
+  "workflow_updated_at": "2026-04-25T19:44:15Z",
   "result_status": "needs_human",
   "source_job": "jobs/openclaw/ghcrawl-143808-autonomous-smoke.md",
-  "published_at": "2026-04-25T23:09:32.123Z",
+  "published_at": "2026-04-26T01:27:46.246Z",
   "canonical": "https://github.com/openclaw/openclaw/issues/66875",
   "canonical_issue": "https://github.com/openclaw/openclaw/issues/66875",
   "canonical_pr": null,
@@ -81,87 +83,12 @@
     "planned": 3,
     "blocked": 1
   },
-  "apply_counts": {
-    "skipped": 6
-  },
+  "apply_counts": {},
   "needs_human": [
     "Use #66875 as the surviving open canonical issue for the recent Control UI history-reload race, but leave #42751 and #60930 open because the provided evidence does not prove they are true duplicates.",
     "Do not treat PR #67037 as merge-ready or fixed-by-candidate: bot-review comments are not hydrated, only label workflows are present in checks, and the diff is broad.",
     "Review the relationship between closed PR #66997 and open PR #67037 before choosing the canonical fix path; both touch the same UI reload problem but the artifacts do not explain why the smaller green PR was closed.",
     "No target checkout is available in the fix artifact, so this run cannot prove current-main behavior for transport or reconnect reports such as #60930."
   ],
-  "apply_actions": [
-    {
-      "target": "#39743",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "historical representative only; no close action is valid because the item is already closed.",
-      "canonical": "#66875",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143808-autonomous-smoke:#39743:keep_closed:2026-04-24T20:33:47Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#66875",
-      "action": "keep_canonical",
-      "status": "skipped",
-      "classification": "canonical",
-      "canonical": "#66875",
-      "candidate_fix": "#67037",
-      "idempotency_key": "ghcrawl-143808-autonomous-smoke:#66875:keep_canonical:2026-04-17T09:01:25Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#42751",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#66875",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143808-autonomous-smoke:#42751:keep_related:2026-03-11T03:37:57Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#60930",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#66875",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143808-autonomous-smoke:#60930:keep_related:2026-04-04T15:50:12Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#66997",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "fixed_by_candidate",
-      "canonical": "#66875",
-      "candidate_fix": "#67037",
-      "idempotency_key": "ghcrawl-143808-autonomous-smoke:#66997:keep_closed:2026-04-15T09:01:00Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#67037",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "needs_human",
-      "canonical": "#66875",
-      "candidate_fix": "#67037",
-      "idempotency_key": "ghcrawl-143808-autonomous-smoke:#67037:needs_human:2026-04-23T10:48:27Z",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    }
-  ]
+  "apply_actions": []
 }

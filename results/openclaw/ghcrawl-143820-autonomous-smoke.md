@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939012263"
 head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-25T23:09:32.151Z"
+published_at: "2026-04-26T01:27:46.308Z"
 canonical: "https://github.com/openclaw/openclaw/issues/43119"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/43119"
 canonical_pr: null
 actions_total: 14
 apply_executed: 0
 apply_blocked: 0
-apply_skipped: 14
+apply_skipped: 0
 needs_human_count: 0
 ---
 
@@ -41,27 +41,14 @@ Using the embedded 2026-04-25 preflight artifact as live GitHub state, the close
 | Worker actions | 14 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
-| Apply skipped | 14 |
+| Apply skipped | 0 |
 | Needs human | 0 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #43119 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #17298 | keep_related | skipped | related | action is not an auto-closure action |
-| #38439 | keep_related | skipped | related | action is not an auto-closure action |
-| #41201 | keep_related | skipped | related | action is not an auto-closure action |
-| #45703 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #45755 | keep_related | skipped | related | action is not an auto-closure action |
-| #46909 | keep_related | skipped | related | action is not an auto-closure action |
-| #53380 | keep_related | skipped | related | action is not an auto-closure action |
-| #68248 | keep_related | skipped | related | action is not an auto-closure action |
-| #45045 | keep_closed | skipped | already closed in live state; historical representative only. | action status is skipped |
-| #59438 | keep_closed | skipped | already closed in live state; evidence only. | action status is skipped |
-| #60348 | keep_closed | skipped | already closed in live state; evidence only. | action status is skipped |
-| #61025 | keep_closed | skipped | already closed in live state; separate historical bug only. | action status is skipped |
-| #70700 | keep_closed | skipped | already closed in live state; historical evidence only. | action status is skipped |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 

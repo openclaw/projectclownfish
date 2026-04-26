@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939001644"
 head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-25T23:09:32.109Z"
+published_at: "2026-04-26T01:27:46.233Z"
 canonical: "https://github.com/openclaw/openclaw/issues/62560"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/62560"
 canonical_pr: null
 actions_total: 13
 apply_executed: 1
 apply_blocked: 0
-apply_skipped: 12
+apply_skipped: 0
 needs_human_count: 2
 ---
 
@@ -41,26 +41,14 @@ Selected open issue #62560 as the replacement canonical for the closed represent
 | Worker actions | 13 |
 | Applied executions | 1 |
 | Apply blocked | 0 |
-| Apply skipped | 12 |
+| Apply skipped | 0 |
 | Needs human | 2 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #62560 | keep_canonical | skipped | canonical | action is not an auto-closure action |
 | #65153 | close_duplicate | executed | duplicate | duplicate of the canonical thread |
-| #44980 | keep_related | skipped | related | action is not an auto-closure action |
-| #45799 | keep_related | skipped | related | action is not an auto-closure action |
-| #60472 | keep_related | skipped | related | action is not an auto-closure action |
-| #54959 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #61782 | keep_closed | skipped | superseded | action status is skipped |
-| #58508 | keep_closed | skipped | related | action status is skipped |
-| #60468 | keep_closed | skipped | duplicate | action status is skipped |
-| #60483 | keep_closed | skipped | related | action status is skipped |
-| #62539 | keep_closed | skipped | duplicate | action status is skipped |
-| #44182 | keep_closed | skipped | related | action status is skipped |
-| #62312 | keep_closed | skipped | related | action status is skipped |
 
 ## Worker Action Matrix
 

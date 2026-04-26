@@ -1,0 +1,173 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-143794-bug-macos-openclaw-gateway-restart-fails-when-invoked-from-agent",
+  "mode": "plan",
+  "run_id": "24931325652",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24931325652",
+  "head_sha": "75185936126d75ebb182e229f44f6cda4edd81cd",
+  "workflow_conclusion": "success",
+  "workflow_status": "completed",
+  "workflow_created_at": "2026-04-25T12:51:45Z",
+  "workflow_updated_at": "2026-04-25T12:59:27Z",
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/ghcrawl-143794-bug-macos-openclaw-gateway-restart-fails-when-invoked-from-agent.md",
+  "published_at": "2026-04-26T01:27:46.142Z",
+  "canonical": "#67335",
+  "canonical_issue": "#67335",
+  "canonical_pr": null,
+  "summary": "The preflight live state no longer matches the job exactly: listed candidates #57104 and #57379 are already closed, the remaining candidates span multiple families, and #64052 is still mixed/ambiguous. For the main macOS launchd-lifecycle outage family, #67335 is the safest open replacement canonical for closed #40306, but execute-mode closure should wait for a split review.",
+  "actions": [
+    {
+      "target": "#40089",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67335",
+      "candidate_fix": null,
+      "reason": "Specific restart/update manifestation of the broader macOS LaunchAgent-removal family that #67335 now best represents."
+    },
+    {
+      "target": "#46466",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Install-context eligibility for launchctl bootstrap is separate from the restart/unload regression family in this cluster."
+    },
+    {
+      "target": "#53475",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67335",
+      "candidate_fix": null,
+      "reason": "Same launchd service-availability family, but the reported on-demand-only respawn behavior is narrower than the broader lifecycle-removal canonical."
+    },
+    {
+      "target": "#53742",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Installer secret persistence is a separate security/configuration family and should not be deduped into the restart/unload canonical."
+    },
+    {
+      "target": "#54861",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67335",
+      "candidate_fix": null,
+      "reason": "Auto-update rapid-restart outage is a related manifestation of the same macOS LaunchAgent lifecycle instability, but not safe to collapse into a duplicate from the artifact alone."
+    },
+    {
+      "target": "#57104",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live state drift: this candidate is no longer open, so no safe plan action should be inferred from the stale candidate list."
+    },
+    {
+      "target": "#57379",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live state drift: this candidate is no longer open, so no safe plan action should be inferred from the stale candidate list."
+    },
+    {
+      "target": "#58254",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67335",
+      "candidate_fix": null,
+      "reason": "Related macOS auto-update reproduction with useful version-specific evidence; keep open rather than collapsing it into a duplicate."
+    },
+    {
+      "target": "#60885",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67335",
+      "candidate_fix": null,
+      "reason": "Specific launchd template/race diagnosis for the same macOS availability failure family tracked by #67335."
+    },
+    {
+      "target": "#61340",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Linux systemd secret persistence is outside the macOS LaunchAgent restart/unload family and should be handled separately."
+    },
+    {
+      "target": "#63562",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67335",
+      "candidate_fix": null,
+      "reason": "The outage belongs to the same family as #67335, but the report is broader and should stay related rather than be deduped."
+    },
+    {
+      "target": "#64052",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Safe dedupe is unclear from the artifact alone because the report mixes multiple failure families and could still contain unique work."
+    },
+    {
+      "target": "#67335",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#67335",
+      "candidate_fix": null,
+      "reason": "Safest live open replacement for closed #40306 and the best umbrella thread for the remaining macOS launchd lifecycle outage family."
+    },
+    {
+      "target": "#70612",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Later-version secret-embedding regression belongs with installer secret-hygiene follow-up work, not the main restart/unload canonical."
+    },
+    {
+      "target": "#71060",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67335",
+      "candidate_fix": null,
+      "reason": "Specific stop/restart drain-time path inside the broader lifecycle-removal family; keep as a related diagnostic thread."
+    }
+  ],
+  "action_counts": {
+    "keep_related": 7,
+    "keep_independent": 4,
+    "needs_human": 3,
+    "keep_canonical": 1
+  },
+  "action_status_counts": {
+    "planned": 12,
+    "blocked": 3
+  },
+  "apply_counts": {},
+  "needs_human": [
+    "Listed candidates #57104 and #57379 are already closed in the preflight live state, so the cluster changed materially after job generation.",
+    "The current candidate set spans multiple families: macOS launchd lifecycle/removal (#67335 and related), installer secret persistence (#53742/#61340/#70612), and headless install context (#46466). Any execute-mode closure plan should be split by family first.",
+    "#64052 mixes launchd lifecycle breakage with embedded-token/install symptoms, so artifact-only evidence is not enough for safe dedupe."
+  ],
+  "apply_actions": []
+}

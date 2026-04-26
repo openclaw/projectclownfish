@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939008778"
 head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-25T23:09:32.139Z"
+published_at: "2026-04-26T01:27:46.285Z"
 canonical: "https://github.com/openclaw/openclaw/issues/49180"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/49180"
 canonical_pr: null
 actions_total: 13
 apply_executed: 2
 apply_blocked: 0
-apply_skipped: 11
+apply_skipped: 0
 needs_human_count: 0
 ---
 
@@ -41,26 +41,15 @@ Using the provided preflight artifact as the live GitHub state for this run, I r
 | Worker actions | 13 |
 | Applied executions | 2 |
 | Apply blocked | 0 |
-| Apply skipped | 11 |
+| Apply skipped | 0 |
 | Needs human | 0 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #49180 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #45835 | keep_closed | skipped | superseded | action status is skipped |
 | #50541 | close_duplicate | executed | duplicate | duplicate of the canonical thread |
 | #50691 | close_duplicate | executed | duplicate | duplicate of the canonical thread |
-| #49758 | keep_related | skipped | related | action is not an auto-closure action |
-| #50606 | keep_related | skipped | related | action is not an auto-closure action |
-| #51016 | keep_related | skipped | related | action is not an auto-closure action |
-| #51495 | keep_related | skipped | related | action is not an auto-closure action |
-| #51396 | keep_related | skipped | related | action is not an auto-closure action |
-| #49305 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #49311 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #49236 | keep_closed | skipped | independent | action status is skipped |
-| #49297 | keep_closed | skipped | independent | action status is skipped |
 
 ## Worker Action Matrix
 

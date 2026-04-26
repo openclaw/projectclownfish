@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939009401"
 head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:09:32.141Z"
+published_at: "2026-04-26T01:27:46.293Z"
 canonical: "https://github.com/openclaw/openclaw/issues/33185"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/33185"
 canonical_pr: null
 actions_total: 12
 apply_executed: 4
 apply_blocked: 0
-apply_skipped: 8
+apply_skipped: 0
 needs_human_count: 4
 ---
 
@@ -41,25 +41,17 @@ Canonical live issue is #33185. High-confidence duplicate closeouts are availabl
 | Worker actions | 12 |
 | Applied executions | 4 |
 | Apply blocked | 0 |
-| Apply skipped | 8 |
+| Apply skipped | 0 |
 | Needs human | 4 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #33185 | keep_canonical | skipped | canonical | action is not an auto-closure action |
 | #70180 | close_duplicate | executed | duplicate | duplicate of the canonical thread |
 | #65832 | close_duplicate | executed | duplicate | duplicate of the canonical thread |
 | #66758 | close_duplicate | executed | duplicate | duplicate of the canonical thread |
 | #67406 | close_duplicate | executed | duplicate | duplicate of the canonical thread |
-| #38816 | keep_related | skipped | related | action is not an auto-closure action |
-| #48234 | keep_related | skipped | related | action is not an auto-closure action |
-| #64111 | keep_related | skipped | related | action is not an auto-closure action |
-| #65431 | keep_related | skipped | related | action is not an auto-closure action |
-| #69648 | keep_related | skipped | related | action is not an auto-closure action |
-| #51150 | needs_human | skipped | needs_human | action status is blocked |
-| #71458 | needs_human | skipped | needs_human | action status is blocked |
 
 ## Worker Action Matrix
 

@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939007967"
 head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:09:32.137Z"
+published_at: "2026-04-26T01:27:46.282Z"
 canonical: "https://github.com/openclaw/openclaw/issues/63816"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/63816"
 canonical_pr: null
 actions_total: 14
 apply_executed: 1
 apply_blocked: 0
-apply_skipped: 13
+apply_skipped: 0
 needs_human_count: 3
 ---
 
@@ -41,27 +41,14 @@ Selected #63816 as the surviving open canonical for the narrow 2026.4.9 WhatsApp
 | Worker actions | 14 |
 | Applied executions | 1 |
 | Apply blocked | 0 |
-| Apply skipped | 13 |
+| Apply skipped | 0 |
 | Needs human | 3 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #63816 | keep_canonical | skipped | canonical | action is not an auto-closure action |
 | #64750 | close_duplicate | executed | duplicate | duplicate of the canonical thread |
-| #63169 | keep_related | skipped | related | action is not an auto-closure action |
-| #61970 | keep_related | skipped | related | action is not an auto-closure action |
-| #59174 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #64132 | keep_closed | skipped | duplicate | action status is skipped |
-| #66090 | keep_closed | skipped | duplicate | action status is skipped |
-| #65451 | keep_closed | skipped | related | action status is skipped |
-| #60315 | keep_closed | skipped | related | action status is skipped |
-| #62214 | keep_closed | skipped | related | action status is skipped |
-| #62399 | keep_closed | skipped | related | action status is skipped |
-| #64394 | keep_closed | skipped | related | action status is skipped |
-| #66117 | keep_closed | skipped | related | action status is skipped |
-| #4362 | keep_closed | skipped | independent | action status is skipped |
 
 ## Worker Action Matrix
 

@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24943078775"
 head_sha: "3160a4e666957ca2e0f65fdc0a4d41ba982f99b1"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:27:50.194Z"
+published_at: "2026-04-26T01:27:46.329Z"
 canonical: "https://github.com/openclaw/openclaw/issues/70678"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/70678"
 canonical_pr: null
 actions_total: 15
 apply_executed: 0
 apply_blocked: 0
-apply_skipped: 15
+apply_skipped: 0
 needs_human_count: 2
 ---
 
@@ -41,28 +41,14 @@ Using the provided preflight artifact as live GitHub state for this run, #70678 
 | Worker actions | 15 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
-| Apply skipped | 15 |
+| Apply skipped | 0 |
 | Needs human | 2 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #70678 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #62258 | keep_closed | skipped | superseded | action status is skipped |
-| #45474 | keep_related | skipped | related | action is not an auto-closure action |
-| #46518 | keep_related | skipped | related | action is not an auto-closure action |
-| #47367 | keep_related | skipped | related | action is not an auto-closure action |
-| #49057 | keep_related | skipped | related | action is not an auto-closure action |
-| #50684 | keep_related | skipped | related | action is not an auto-closure action |
-| #51111 | keep_related | skipped | related | action is not an auto-closure action |
-| #61744 | keep_related | skipped | related | action is not an auto-closure action |
-| #63410 | keep_related | skipped | related | action is not an auto-closure action |
-| #63855 | keep_related | skipped | related | action is not an auto-closure action |
-| #66917 | needs_human | skipped | needs_human | action status is blocked |
-| #66920 | keep_related | skipped | related | action is not an auto-closure action |
-| #70856 | keep_related | skipped | related | action is not an auto-closure action |
-| #71466 | needs_human | skipped | needs_human | action status is blocked |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 

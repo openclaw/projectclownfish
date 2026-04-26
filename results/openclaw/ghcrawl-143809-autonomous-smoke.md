@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939004802"
 head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:09:32.125Z"
+published_at: "2026-04-26T01:27:46.266Z"
 canonical: "https://github.com/openclaw/openclaw/pull/68641"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/68605"
 canonical_pr: "https://github.com/openclaw/openclaw/pull/68641"
 actions_total: 8
 apply_executed: 0
 apply_blocked: 0
-apply_skipped: 8
+apply_skipped: 0
 needs_human_count: 4
 ---
 
@@ -41,21 +41,14 @@ Selected PR #68641 as the live canonical path for the closed representative issu
 | Worker actions | 8 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
-| Apply skipped | 8 |
+| Apply skipped | 0 |
 | Needs human | 4 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #68641 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #68605 | keep_closed | skipped | fixed_by_candidate | action status is skipped |
-| #45077 | needs_human | skipped | needs_human | action status is blocked |
-| #50779 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #51728 | needs_human | skipped | fixed_by_candidate | action status is blocked |
-| #62371 | keep_related | skipped | related | action is not an auto-closure action |
-| #65281 | keep_related | skipped | related | action is not an auto-closure action |
-| #67927 | needs_human | skipped | fixed_by_candidate | action status is blocked |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 

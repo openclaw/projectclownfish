@@ -7,9 +7,11 @@
   "head_sha": "7db1f986bd485f7b71752bc77e40097172d6b6ef",
   "workflow_conclusion": "success",
   "workflow_status": "completed",
+  "workflow_created_at": "2026-04-25T19:38:44Z",
+  "workflow_updated_at": "2026-04-25T19:47:54Z",
   "result_status": "needs_human",
   "source_job": "jobs/openclaw/ghcrawl-143817-autonomous-smoke.md",
-  "published_at": "2026-04-25T23:09:32.144Z",
+  "published_at": "2026-04-26T01:27:46.298Z",
   "canonical": null,
   "canonical_issue": null,
   "canonical_pr": null,
@@ -107,9 +109,7 @@
     "skipped": 1,
     "planned": 2
   },
-  "apply_counts": {
-    "skipped": 9
-  },
+  "apply_counts": {},
   "needs_human": [
     "Canonical path for the representative stale-socket restart crash is unresolved across open #58216, open #61134, and closed #58988; the artifact does not prove whether #58988 landed on main at main sha 8f49c59d6daf3332df19e7c5ec8f3f354d307e42.",
     "#58216 failing checks block autonomous canonicalization: build-smoke, check-additional, build-artifacts, check, checks-fast-contracts-protocol.",
@@ -117,114 +117,5 @@
     "#40624 overlaps #41027 but includes unrelated package/secrets/node-host churn plus failed checks, so autonomous supersede/closeout would risk losing contributor work.",
     "#41354 remains an ambiguous symptom report that could map to #41030, #45712, or #51252 and should be triaged manually or in a follow-up cluster."
   ],
-  "apply_actions": [
-    {
-      "target": "#58216",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "needs_human",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143817-autonomous-smoke:#58216:needs_human:v1",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#61134",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "needs_human",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143817-autonomous-smoke:#61134:needs_human:v1",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#58988",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "historical evidence only; closed refs must not receive close actions in this run.",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143817-autonomous-smoke:#58988:keep_closed:v1",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#40624",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "needs_human",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143817-autonomous-smoke:#40624:needs_human:v1",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#41027",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143817-autonomous-smoke:#41027:keep_related:v1",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#41030",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143817-autonomous-smoke:#41030:keep_related:v1",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#45712",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143817-autonomous-smoke:#45712:needs_human:v1",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#51252",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143817-autonomous-smoke:#51252:needs_human:v1",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#41354",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "needs_human",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143817-autonomous-smoke:#41354:needs_human:v1",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    }
-  ]
+  "apply_actions": []
 }

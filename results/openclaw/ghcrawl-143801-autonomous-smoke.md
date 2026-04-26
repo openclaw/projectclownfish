@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24943078008"
 head_sha: "3160a4e666957ca2e0f65fdc0a4d41ba982f99b1"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:44:56.679Z"
+published_at: "2026-04-26T01:27:46.324Z"
 canonical: "https://github.com/openclaw/openclaw/pull/50020"
 canonical_issue: null
 canonical_pr: "https://github.com/openclaw/openclaw/pull/50020"
 actions_total: 30
 apply_executed: 0
 apply_blocked: 0
-apply_skipped: 30
+apply_skipped: 0
 needs_human_count: 5
 ---
 
@@ -41,43 +41,14 @@ Historical representative #50020 is closed, and the hydrated refs do not reduce 
 | Worker actions | 30 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
-| Apply skipped | 30 |
+| Apply skipped | 0 |
 | Needs human | 5 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #40571 | needs_human | skipped | independent | action status is blocked |
-| #43469 | needs_human | skipped | independent | action status is blocked |
-| #43695 | keep_closed | skipped | related | action status is skipped |
-| #43767 | keep_closed | skipped | related | action status is skipped |
-| #43808 | needs_human | skipped | related | action status is blocked |
-| #44240 | keep_closed | skipped | related | action status is skipped |
-| #44270 | needs_human | skipped | needs_human | action status is blocked |
-| #44325 | needs_human | skipped | superseded | action status is blocked |
-| #44351 | needs_human | skipped | superseded | action status is blocked |
-| #44412 | needs_human | skipped | needs_human | action status is blocked |
-| #49572 | keep_closed | skipped | related | action status is skipped |
-| #49704 | needs_human | skipped | related | action status is blocked |
-| #50020 | keep_closed | skipped | canonical | action status is skipped |
-| #56572 | keep_closed | skipped | related | action status is skipped |
-| #56624 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #57136 | keep_closed | skipped | related | action status is skipped |
-| #57367 | keep_closed | skipped | related | action status is skipped |
-| #57470 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #58304 | keep_closed | skipped | related | action status is skipped |
-| #58318 | keep_closed | skipped | related | action status is skipped |
-| #58893 | needs_human | skipped | independent | action status is blocked |
-| #59020 | needs_human | skipped | related | action status is blocked |
-| #59069 | keep_related | skipped | related | action is not an auto-closure action |
-| #61291 | keep_closed | skipped | related | action status is skipped |
-| #64708 | needs_human | skipped | related | action status is blocked |
-| #65176 | needs_human | skipped | independent | action status is blocked |
-| #65179 | needs_human | skipped | superseded | action status is blocked |
-| #67398 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #68555 | needs_human | skipped | related | action status is blocked |
-| #70619 | keep_closed | skipped | related | action status is skipped |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 

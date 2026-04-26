@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24937679258"
 head_sha: "71faa495f89c028a67e9031c6b9e43359a89ecaa"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-25T23:09:32.087Z"
+published_at: "2026-04-26T01:27:46.174Z"
 canonical: "https://github.com/openclaw/openclaw/issues/61741"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/61741"
 canonical_pr: null
 actions_total: 6
 apply_executed: 2
 apply_blocked: 0
-apply_skipped: 4
+apply_skipped: 0
 needs_human_count: 2
 ---
 
@@ -41,18 +41,14 @@ Using the provided preflight artifact as live GitHub state, #61917 is closed and
 | Worker actions | 6 |
 | Applied executions | 2 |
 | Apply blocked | 0 |
-| Apply skipped | 4 |
+| Apply skipped | 0 |
 | Needs human | 2 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #61741 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #62754 | needs_human | skipped | needs_human | action status is blocked |
-| #63220 | needs_human | skipped | needs_human | action status is blocked |
 | #65285 | close_duplicate | executed | duplicate | duplicate of the canonical thread |
-| #65983 | keep_related | skipped | related | action is not an auto-closure action |
 | #69920 | close_duplicate | executed | duplicate | duplicate of the canonical thread |
 
 ## Worker Action Matrix

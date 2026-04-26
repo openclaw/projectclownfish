@@ -7,9 +7,11 @@
   "head_sha": "7db1f986bd485f7b71752bc77e40097172d6b6ef",
   "workflow_conclusion": "success",
   "workflow_status": "completed",
+  "workflow_created_at": "2026-04-25T19:38:16Z",
+  "workflow_updated_at": "2026-04-25T19:49:25Z",
   "result_status": "needs_human",
   "source_job": "jobs/openclaw/ghcrawl-143806-autonomous-smoke.md",
-  "published_at": "2026-04-25T23:09:32.115Z",
+  "published_at": "2026-04-26T01:27:46.237Z",
   "canonical": "https://github.com/openclaw/openclaw/issues/42099",
   "canonical_issue": "https://github.com/openclaw/openclaw/issues/42099",
   "canonical_pr": "https://github.com/openclaw/openclaw/pull/42192",
@@ -117,134 +119,11 @@
     "blocked": 3,
     "skipped": 1
   },
-  "apply_counts": {
-    "skipped": 10
-  },
+  "apply_counts": {},
   "needs_human": [
     "Safe instant closeout is blocked for likely duplicates such as #38437 and #49412 because the provided artifact includes comment counts but not issue comment bodies, so active maintainer discussion or unique unresolved details cannot be ruled out.",
     "Open PR #42192 is the best candidate fix, but autonomous mode requires hydrated review threads, bot findings, and a non-unknown mergeability check before it can be treated as merge-ready or used for fixed_by_candidate closeout.",
     "The cluster mixes the false duplicate-ID warning path (#42099 family) with a separate double-initialization/load family (#45776, #47429, #60620, plus broader #53938). Those should remain open or be split into a follow-up cluster instead of being auto-closed under #42099."
   ],
-  "apply_actions": [
-    {
-      "target": "#42099",
-      "action": "keep_canonical",
-      "status": "skipped",
-      "classification": "canonical",
-      "canonical": "#42099",
-      "candidate_fix": "#42192",
-      "idempotency_key": "ghcrawl-143806-autonomous-smoke:#42099:keep_canonical:2026-03-10T13:41:54Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#42192",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "needs_human",
-      "canonical": "#42099",
-      "candidate_fix": "#42192",
-      "idempotency_key": "ghcrawl-143806-autonomous-smoke:#42192:needs_human:2026-03-24T20:16:20Z",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#38437",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "duplicate",
-      "canonical": "#42099",
-      "candidate_fix": "#42192",
-      "idempotency_key": "ghcrawl-143806-autonomous-smoke:#38437:needs_human:2026-04-21T04:32:00Z",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#45603",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143806-autonomous-smoke:#45603:keep_related:2026-03-17T02:24:41Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#45776",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143806-autonomous-smoke:#45776:keep_related:2026-03-24T08:32:52Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#47429",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143806-autonomous-smoke:#47429:keep_related:2026-03-17T20:48:58Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#49412",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "duplicate",
-      "canonical": "#42099",
-      "candidate_fix": "#42192",
-      "idempotency_key": "ghcrawl-143806-autonomous-smoke:#49412:needs_human:2026-03-24T14:48:09Z",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#53938",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143806-autonomous-smoke:#53938:keep_related:2026-04-16T20:49:24Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#60620",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": null,
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143806-autonomous-smoke:#60620:keep_related:2026-04-04T01:07:35Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#48605",
-      "action": "keep_closed",
-      "status": "skipped",
-      "classification": "superseded",
-      "canonical": "#42099",
-      "candidate_fix": "#42192",
-      "idempotency_key": "ghcrawl-143806-autonomous-smoke:#48605:keep_closed:2026-04-25T03:38:21Z",
-      "reason": "action status is skipped",
-      "live_state": null,
-      "live_updated_at": null
-    }
-  ]
+  "apply_actions": []
 }

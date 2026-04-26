@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939010238"
 head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:09:32.144Z"
+published_at: "2026-04-26T01:27:46.298Z"
 canonical: null
 canonical_issue: null
 canonical_pr: null
 actions_total: 9
 apply_executed: 0
 apply_blocked: 0
-apply_skipped: 9
+apply_skipped: 0
 needs_human_count: 5
 ---
 
@@ -41,22 +41,14 @@ Using the supplied preflight artifact as live GitHub state, no close/comment/lab
 | Worker actions | 9 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
-| Apply skipped | 9 |
+| Apply skipped | 0 |
 | Needs human | 5 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #58216 | needs_human | skipped | needs_human | action status is blocked |
-| #61134 | needs_human | skipped | needs_human | action status is blocked |
-| #58988 | keep_closed | skipped | historical evidence only; closed refs must not receive close actions in this run. | action status is skipped |
-| #40624 | needs_human | skipped | needs_human | action status is blocked |
-| #41027 | keep_related | skipped | related | action is not an auto-closure action |
-| #41030 | keep_related | skipped | related | action is not an auto-closure action |
-| #45712 | needs_human | skipped | related | action status is blocked |
-| #51252 | needs_human | skipped | related | action status is blocked |
-| #41354 | needs_human | skipped | needs_human | action status is blocked |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 

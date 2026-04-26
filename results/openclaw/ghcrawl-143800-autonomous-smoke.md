@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24937905618"
 head_sha: "30ab2327f6f8b0ff0fe89a5e798b06494ef7e237"
 workflow_conclusion: "success"
 result_status: "executed"
-published_at: "2026-04-25T23:09:32.094Z"
+published_at: "2026-04-26T01:27:46.185Z"
 canonical: "https://github.com/openclaw/openclaw/issues/69594"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/69594"
 canonical_pr: null
 actions_total: 13
 apply_executed: 0
 apply_blocked: 0
-apply_skipped: 13
+apply_skipped: 0
 needs_human_count: 1
 ---
 
@@ -41,26 +41,14 @@ Selected open issue #69594 as the live canonical replacement for closed represen
 | Worker actions | 13 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
-| Apply skipped | 13 |
+| Apply skipped | 0 |
 | Needs human | 1 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #69594 | keep_canonical | skipped | canonical | action status is executed |
-| #41129 | keep_related | skipped | related | action status is executed |
-| #46899 | keep_related | skipped | related | action status is executed |
-| #64751 | keep_related | skipped | related | action status is executed |
-| #62777 | keep_related | skipped | related | action status is executed |
-| #67602 | keep_related | skipped | related | action status is executed |
-| #64831 | needs_human | skipped | needs_human | action status is blocked |
-| #57491 | keep_related | skipped | related | action status is executed |
-| #57601 | keep_related | skipped | related | action status is executed |
-| #57867 | keep_related | skipped | related | action status is executed |
-| #60845 | keep_related | skipped | related | action status is executed |
-| #60921 | keep_related | skipped | related | action status is executed |
-| #67196 | keep_related | skipped | related | action status is executed |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 

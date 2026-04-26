@@ -7,9 +7,11 @@
   "head_sha": "7db1f986bd485f7b71752bc77e40097172d6b6ef",
   "workflow_conclusion": "success",
   "workflow_status": "completed",
+  "workflow_created_at": "2026-04-25T19:38:41Z",
+  "workflow_updated_at": "2026-04-25T19:58:04Z",
   "result_status": "needs_human",
   "source_job": "jobs/openclaw/ghcrawl-143816-autonomous-smoke.md",
-  "published_at": "2026-04-25T23:09:32.141Z",
+  "published_at": "2026-04-26T01:27:46.293Z",
   "canonical": "https://github.com/openclaw/openclaw/issues/33185",
   "canonical_issue": "https://github.com/openclaw/openclaw/issues/33185",
   "canonical_pr": null,
@@ -135,7 +137,6 @@
     "blocked": 2
   },
   "apply_counts": {
-    "skipped": 8,
     "executed": 4
   },
   "needs_human": [
@@ -146,26 +147,17 @@
   ],
   "apply_actions": [
     {
-      "target": "#33185",
-      "action": "keep_canonical",
-      "status": "skipped",
-      "classification": "canonical",
-      "canonical": "#33185",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143816-autonomous-smoke:#33185:keep_canonical:2026-04-25T07:25:45Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
       "target": "#70180",
       "action": "close_duplicate",
       "status": "executed",
       "classification": "duplicate",
       "canonical": "#33185",
       "candidate_fix": null,
+      "title": null,
       "idempotency_key": "ghcrawl-143816-autonomous-smoke:#70180:close_duplicate:#33185:2026-04-25T07:25:46Z",
       "reason": "duplicate of the canonical thread",
+      "merged_at": null,
+      "merge_commit_sha": null,
       "live_state": "closed",
       "live_updated_at": "2026-04-25T07:25:46Z"
     },
@@ -176,8 +168,11 @@
       "classification": "duplicate",
       "canonical": "#33185",
       "candidate_fix": null,
+      "title": null,
       "idempotency_key": "ghcrawl-143816-autonomous-smoke:#65832:close_duplicate:#33185:2026-04-13T09:15:11Z",
       "reason": "duplicate of the canonical thread",
+      "merged_at": null,
+      "merge_commit_sha": null,
       "live_state": "closed",
       "live_updated_at": "2026-04-13T09:15:11Z"
     },
@@ -188,8 +183,11 @@
       "classification": "duplicate",
       "canonical": "#33185",
       "candidate_fix": null,
+      "title": null,
       "idempotency_key": "ghcrawl-143816-autonomous-smoke:#66758:close_duplicate:#33185:2026-04-14T19:25:32Z",
       "reason": "duplicate of the canonical thread",
+      "merged_at": null,
+      "merge_commit_sha": null,
       "live_state": "closed",
       "live_updated_at": "2026-04-14T19:25:32Z"
     },
@@ -200,94 +198,13 @@
       "classification": "duplicate",
       "canonical": "#33185",
       "candidate_fix": null,
+      "title": null,
       "idempotency_key": "ghcrawl-143816-autonomous-smoke:#67406:close_duplicate:#33185:2026-04-22T17:36:07Z",
       "reason": "duplicate of the canonical thread",
+      "merged_at": null,
+      "merge_commit_sha": null,
       "live_state": "closed",
       "live_updated_at": "2026-04-22T17:36:07Z"
-    },
-    {
-      "target": "#38816",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#33185",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143816-autonomous-smoke:#38816:keep_related:2026-04-22T04:40:33Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#48234",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#33185",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143816-autonomous-smoke:#48234:keep_related:2026-03-30T21:17:15Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#64111",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#33185",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143816-autonomous-smoke:#64111:keep_related:2026-04-15T03:15:50Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#65431",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#33185",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143816-autonomous-smoke:#65431:keep_related:2026-04-21T04:38:30Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#69648",
-      "action": "keep_related",
-      "status": "skipped",
-      "classification": "related",
-      "canonical": "#33185",
-      "candidate_fix": null,
-      "idempotency_key": "ghcrawl-143816-autonomous-smoke:#69648:keep_related:2026-04-22T07:50:15Z",
-      "reason": "action is not an auto-closure action",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#51150",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "needs_human",
-      "canonical": "#33185",
-      "candidate_fix": "#51150",
-      "idempotency_key": "ghcrawl-143816-autonomous-smoke:#51150:needs_human:2026-04-25T08:05:29Z",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
-    },
-    {
-      "target": "#71458",
-      "action": "needs_human",
-      "status": "skipped",
-      "classification": "needs_human",
-      "canonical": "#33185",
-      "candidate_fix": "#71458",
-      "idempotency_key": "ghcrawl-143816-autonomous-smoke:#71458:needs_human:2026-04-25T07:25:33Z",
-      "reason": "action status is blocked",
-      "live_state": null,
-      "live_updated_at": null
     }
   ]
 }

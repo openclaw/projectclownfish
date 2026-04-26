@@ -41,26 +41,26 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 26, 2026, 00:55 UTC
+Last dashboard update: Apr 26, 2026, 01:27 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Blocked actions need triage
 
-Scope: 27 latest cluster reports. Run attempts are tracked as audit history only.
+Scope: 32 latest cluster reports. Run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 27 | 100% |
-| Clean completed clusters | 7 | 25.9% |
-| Needs-human clusters | 20 | 74.1% |
-| Latest successful clusters | 27 | 100.0% |
+| Latest clusters reviewed | 32 | 100% |
+| Clean completed clusters | 10 | 31.3% |
+| Needs-human clusters | 22 | 68.8% |
+| Latest successful clusters | 32 | 100.0% |
 | Latest failed clusters | 0 | 0.0% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 34 | audit |
-| Distinct PRs touched | 110 | 100% |
-| ProjectClownfish merged PRs | 0 | 0.0% |
-| Open PRs tracked | 86 | 78.2% |
-| Closed unmerged PRs tracked | 18 | 16.4% |
+| Run attempts archived | 45 | audit |
+| Distinct PRs touched | 112 | 100% |
+| ProjectClownfish-tracked merged PRs | 6 | 5.4% |
+| Open PRs tracked | 86 | 76.8% |
+| Closed unmerged PRs tracked | 20 | 17.9% |
 | Completed close actions | 16 | 88.9% |
 | Duplicate closes | 16 | 100.0% |
 | Superseded closes | 0 | 0.0% |
@@ -69,11 +69,39 @@ Scope: 27 latest cluster reports. Run attempts are tracked as audit history only
 | Blocked mutation attempts | 2 | 11.1% |
 | Skipped mutation attempts | 0 | 0.0% |
 
-### Recent ProjectClownfish Merges
+### Recent ProjectClownfish-Tracked Merges
+
+These are PRs referenced by ProjectClownfish run artifacts that GitHub now reports as merged. Explicit applicator merge actions are also counted when emitted.
 
 | PR | Title | Merged | Cluster | Report | Run |
 | --- | --- | --- | --- | --- | --- |
-| _None yet_ |  |  |  |  |  |
+| [#67023](https://github.com/openclaw/openclaw/pull/67023) | fix(memory-core): prevent dreaming-narrative session leaks (#66358) | Apr 20, 2026, 22:41 UTC | [ghcrawl-143819-autonomous-smoke](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | [24939011554](https://github.com/openclaw/projectclownfish/actions/runs/24939011554) |
+| [#66997](https://github.com/openclaw/openclaw/pull/66997) | fix(ui): skip chat history reload during active sends to prevent mess… | Apr 15, 2026, 08:56 UTC | [ghcrawl-143808-autonomous-smoke](results/openclaw/ghcrawl-143808-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143808-autonomous-smoke.md) | [24939004182](https://github.com/openclaw/projectclownfish/actions/runs/24939004182) |
+| [#65427](https://github.com/openclaw/openclaw/pull/65427) | refactor(whatsapp): centralize account connection lifecycle | Apr 12, 2026, 18:24 UTC | [ghcrawl-143793-autonomous-smoke](results/openclaw/ghcrawl-143793-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143793-autonomous-smoke.md) | [24937904802](https://github.com/openclaw/projectclownfish/actions/runs/24937904802) |
+| [#64394](https://github.com/openclaw/openclaw/pull/64394) | Fix WhatsApp media sends when mediaUrl is empty but mediaUrls is populated | Apr 12, 2026, 15:58 UTC | [ghcrawl-143814-autonomous-smoke](results/openclaw/ghcrawl-143814-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143814-autonomous-smoke.md) | [24939007967](https://github.com/openclaw/projectclownfish/actions/runs/24939007967) |
+| [#64713](https://github.com/openclaw/openclaw/pull/64713) | fix(auth): stop forcing unsupported Codex OAuth scopes | Apr 11, 2026, 09:08 UTC | [ghcrawl-143811-autonomous-smoke](results/openclaw/ghcrawl-143811-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143811-autonomous-smoke.md) | [24943076135](https://github.com/openclaw/projectclownfish/actions/runs/24943076135) |
+| [#62312](https://github.com/openclaw/openclaw/pull/62312) | fix(gateway): stop SSRF guard rejecting operator-configured proxy hostnames | Apr 7, 2026, 19:22 UTC | [ghcrawl-143805-autonomous-smoke](results/openclaw/ghcrawl-143805-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143805-autonomous-smoke.md) | [24939001644](https://github.com/openclaw/projectclownfish/actions/runs/24939001644) |
+
+### Latest ProjectClownfish Closures
+
+| Target | Type | Title | Closed | Action | Cluster | Report | Run |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [#67406](https://github.com/openclaw/openclaw/issues/67406) | issue | image tool doesn't recognise Ollama cloud vision models | Apr 25, 2026, 19:58 UTC | close_duplicate | [ghcrawl-143816-autonomous-smoke](results/openclaw/ghcrawl-143816-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143816-autonomous-smoke.md) | [24939009401](https://github.com/openclaw/projectclownfish/actions/runs/24939009401) |
+| [#66758](https://github.com/openclaw/openclaw/issues/66758) | issue | Image tool fails with 'Unknown model' for all ollama/ provider models despite #59943 fix | Apr 25, 2026, 19:57 UTC | close_duplicate | [ghcrawl-143816-autonomous-smoke](results/openclaw/ghcrawl-143816-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143816-autonomous-smoke.md) | [24939009401](https://github.com/openclaw/projectclownfish/actions/runs/24939009401) |
+| [#65832](https://github.com/openclaw/openclaw/issues/65832) | issue | [Bug]: image tool fails with custom provider — ModelRegistry doesn't recognize custom providers from models.json | Apr 25, 2026, 19:57 UTC | close_duplicate | [ghcrawl-143816-autonomous-smoke](results/openclaw/ghcrawl-143816-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143816-autonomous-smoke.md) | [24939009401](https://github.com/openclaw/projectclownfish/actions/runs/24939009401) |
+| [#70180](https://github.com/openclaw/openclaw/issues/70180) | issue | Bug: Image tool reports 'Unknown model' for all custom providers | Apr 25, 2026, 19:57 UTC | close_duplicate | [ghcrawl-143816-autonomous-smoke](results/openclaw/ghcrawl-143816-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143816-autonomous-smoke.md) | [24939009401](https://github.com/openclaw/projectclownfish/actions/runs/24939009401) |
+| [#71133](https://github.com/openclaw/openclaw/issues/71133) | issue | memory-core: narrative session cleanup fails with missing scope: operator.admin | Apr 25, 2026, 19:53 UTC | close_duplicate | [ghcrawl-143819-autonomous-smoke](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | [24939011554](https://github.com/openclaw/projectclownfish/actions/runs/24939011554) |
+| [#70395](https://github.com/openclaw/openclaw/issues/70395) | issue | memory-core dreaming cleanup requires operator.admin and logs failure despite successful promotion | Apr 25, 2026, 19:53 UTC | close_duplicate | [ghcrawl-143819-autonomous-smoke](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | [24939011554](https://github.com/openclaw/projectclownfish/actions/runs/24939011554) |
+| [#70353](https://github.com/openclaw/openclaw/issues/70353) | issue | memory-core: dreaming subagent lacks operator.admin to delete its own session | Apr 25, 2026, 19:53 UTC | close_duplicate | [ghcrawl-143819-autonomous-smoke](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | [24939011554](https://github.com/openclaw/projectclownfish/actions/runs/24939011554) |
+| [#69886](https://github.com/openclaw/openclaw/issues/69886) | issue | memory-core narrative session cleanup fails with missing scope: operator.admin | Apr 25, 2026, 19:53 UTC | close_duplicate | [ghcrawl-143819-autonomous-smoke](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | [24939011554](https://github.com/openclaw/projectclownfish/actions/runs/24939011554) |
+| [#67029](https://github.com/openclaw/openclaw/issues/67029) | issue | [Bug]: memory-core dreaming: narrative session cleanup fails with missing scope operator.admin | Apr 25, 2026, 19:53 UTC | close_duplicate | [ghcrawl-143819-autonomous-smoke](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | [24939011554](https://github.com/openclaw/projectclownfish/actions/runs/24939011554) |
+| [#50691](https://github.com/openclaw/openclaw/issues/50691) | issue | openclaw status reports missing operator.read while gateway is healthy; gateway probe times out on same loopback endpoint | Apr 25, 2026, 19:46 UTC | close_duplicate | [ghcrawl-143815-autonomous-smoke](results/openclaw/ghcrawl-143815-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143815-autonomous-smoke.md) | [24939008778](https://github.com/openclaw/projectclownfish/actions/runs/24939008778) |
+| [#50541](https://github.com/openclaw/openclaw/issues/50541) | issue | [Bug]: CLI cannot connect to Gateway (missing scope: operator.read) - Downgrade to 2026.3.11 works | Apr 25, 2026, 19:46 UTC | close_duplicate | [ghcrawl-143815-autonomous-smoke](results/openclaw/ghcrawl-143815-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143815-autonomous-smoke.md) | [24939008778](https://github.com/openclaw/projectclownfish/actions/runs/24939008778) |
+| [#70373](https://github.com/openclaw/openclaw/issues/70373) | issue | Control UI shows async exec system events inline as if authored by the user | Apr 25, 2026, 19:45 UTC | close_duplicate | [ghcrawl-143804-autonomous-smoke](results/openclaw/ghcrawl-143804-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143804-autonomous-smoke.md) | [24939000666](https://github.com/openclaw/projectclownfish/actions/runs/24939000666) |
+| [#65153](https://github.com/openclaw/openclaw/issues/65153) | issue | [Bug] Telegram media download blocked - resolves to private IP | Apr 25, 2026, 19:44 UTC | close_duplicate | [ghcrawl-143805-autonomous-smoke](results/openclaw/ghcrawl-143805-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143805-autonomous-smoke.md) | [24939001644](https://github.com/openclaw/projectclownfish/actions/runs/24939001644) |
+| [#64750](https://github.com/openclaw/openclaw/issues/64750) | issue | WhatsApp message.send returns success but drops attachments and delivers text only | Apr 25, 2026, 19:44 UTC | close_duplicate | [ghcrawl-143814-autonomous-smoke](results/openclaw/ghcrawl-143814-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143814-autonomous-smoke.md) | [24939007967](https://github.com/openclaw/projectclownfish/actions/runs/24939007967) |
+| [#69920](https://github.com/openclaw/openclaw/issues/69920) | issue | Unhandled promise rejection: Agent listener invoked outside active run | Apr 25, 2026, 18:35 UTC | close_duplicate | [ghcrawl-143799-autonomous-smoke](results/openclaw/ghcrawl-143799-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143799-autonomous-smoke.md) | [24937679258](https://github.com/openclaw/projectclownfish/actions/runs/24937679258) |
+| [#65285](https://github.com/openclaw/openclaw/issues/65285) | issue | Gateway crashes with "Agent listener invoked outside active run" | Apr 25, 2026, 18:35 UTC | close_duplicate | [ghcrawl-143799-autonomous-smoke](results/openclaw/ghcrawl-143799-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143799-autonomous-smoke.md) | [24937679258](https://github.com/openclaw/projectclownfish/actions/runs/24937679258) |
 <!-- projectclownfish-dashboard:end -->
 
 ## How It Works

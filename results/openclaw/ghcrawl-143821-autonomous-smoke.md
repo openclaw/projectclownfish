@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939012932"
 head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:09:32.154Z"
+published_at: "2026-04-26T01:27:46.310Z"
 canonical: "https://github.com/openclaw/openclaw/issues/58443"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/58443"
 canonical_pr: null
 actions_total: 7
 apply_executed: 0
 apply_blocked: 0
-apply_skipped: 7
+apply_skipped: 0
 needs_human_count: 3
 ---
 
@@ -41,20 +41,14 @@ Using the embedded cluster preflight artifact as live GitHub state, #59951 is al
 | Worker actions | 7 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
-| Apply skipped | 7 |
+| Apply skipped | 0 |
 | Needs human | 3 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #58443 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #46674 | needs_human | skipped | needs_human | action status is blocked |
-| #61222 | keep_related | skipped | related | action is not an auto-closure action |
-| #69303 | needs_human | skipped | needs_human | action status is blocked |
-| #64606 | keep_related | skipped | related | action is not an auto-closure action |
-| #53895 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #59951 | keep_closed | skipped | superseded | action status is skipped |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 

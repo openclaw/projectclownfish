@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24938997703"
 head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:09:32.099Z"
+published_at: "2026-04-26T01:27:46.212Z"
 canonical: "https://github.com/openclaw/openclaw/pull/50141"
 canonical_issue: null
 canonical_pr: "https://github.com/openclaw/openclaw/pull/50141"
 actions_total: 18
 apply_executed: 0
 apply_blocked: 0
-apply_skipped: 18
+apply_skipped: 0
 needs_human_count: 6
 ---
 
@@ -41,31 +41,14 @@ Representative PR #46954 is closed. PR #50141 is the strongest live successor in
 | Worker actions | 18 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
-| Apply skipped | 18 |
+| Apply skipped | 0 |
 | Needs human | 6 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #46954 | keep_closed | skipped | related | action status is skipped |
-| #41955 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #43211 | keep_related | skipped | related | action is not an auto-closure action |
-| #48666 | needs_human | skipped | needs_human | action status is blocked |
-| #48671 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #48714 | keep_related | skipped | related | action is not an auto-closure action |
-| #50141 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #50193 | keep_related | skipped | related | action is not an auto-closure action |
-| #50767 | keep_closed | skipped | related | action status is skipped |
-| #51737 | needs_human | skipped | needs_human | action status is blocked |
-| #54101 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #54105 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #59681 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #59932 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #62100 | keep_related | skipped | related | action is not an auto-closure action |
-| #66655 | keep_independent | skipped | independent | action is not an auto-closure action |
-| #68927 | keep_related | skipped | related | action is not an auto-closure action |
-| #69029 | needs_human | skipped | needs_human | action status is blocked |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 

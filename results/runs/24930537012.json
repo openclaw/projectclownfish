@@ -1,0 +1,180 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-143796-telegram-polling-stall",
+  "mode": "plan",
+  "run_id": "24930537012",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24930537012",
+  "head_sha": "73ec2f3c5954e3d5eb276016be19104c8c52fa58",
+  "workflow_conclusion": "success",
+  "workflow_status": "completed",
+  "workflow_created_at": "2026-04-25T12:07:19Z",
+  "workflow_updated_at": "2026-04-25T12:15:59Z",
+  "result_status": "planned",
+  "source_job": null,
+  "published_at": "2026-04-26T01:27:46.130Z",
+  "canonical": "#69147",
+  "canonical_issue": "#69147",
+  "canonical_pr": null,
+  "summary": "Plan only. Recommended live canonical replacement for closed #63516: #69147 from the provided open-candidate set. Verified live pages show a distinct startup/init subfamily on 2026.3.24-2026.4.2 with empty Channels tables, no `[telegram]` startup logs, LaunchAgent/restart failures, and a linked PR #60700 on #60646, so bulk duplicate closure across the whole cluster would be unsafe. ([github.com](https://github.com/openclaw/openclaw/issues/59833))",
+  "actions": [
+    {
+      "target": "#69147",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#69147",
+      "candidate_fix": null,
+      "reason": "Best live canonical candidate for the runtime long-poll stall family; keep it open and route only clearly matching runtime-stall reports here."
+    },
+    {
+      "target": "#50174",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69147",
+      "candidate_fix": null,
+      "reason": "Windows-specific periodic stall plus Discord restart churn adds meaningful scope beyond the canonical runtime-stall thread; keep separate but related."
+    },
+    {
+      "target": "#55727",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Broader 2026.3.24 channel-registration/init regression, not the intermittent runtime stall tracked by the canonical thread."
+    },
+    {
+      "target": "#58064",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "LaunchAgent restart/init bug affects Discord and Telegram together; keep as related startup/init family."
+    },
+    {
+      "target": "#58230",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Crash-loop-on-startup is a different failure mode than the canonical intermittent runtime stall."
+    },
+    {
+      "target": "#59833",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Startup stall on WSL2 belongs to the startup/init family, not the canonical intermittent runtime-stall family."
+    },
+    {
+      "target": "#60088",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#69147",
+      "candidate_fix": null,
+      "reason": "This looks like the closest pure runtime-stall duplicate, but I could not retrieve live `updated_at` or the full issue body, so duplicate closure should wait for a fresh GitHub re-fetch."
+    },
+    {
+      "target": "#60400",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "All-channels 2026.4.2 startup failure is broader than Telegram long-poll stalls; keep related."
+    },
+    {
+      "target": "#60646",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#60700",
+      "reason": "Likely fixed by candidate PR #60700, but PR state/checks were not fetched in this run, so keep for manual validation instead of auto-closing."
+    },
+    {
+      "target": "#61195",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Fresh-boot provider start failure belongs to the startup/init family."
+    },
+    {
+      "target": "#61273",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Version-specific 2026.4.2 init failure overlaps the startup family but lacks enough live detail here to dedupe safely."
+    },
+    {
+      "target": "#61712",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Restart/init failure belongs to the startup subfamily, not the canonical runtime-stall thread."
+    },
+    {
+      "target": "#62031",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Representative of the restart-init subfamily; keep related rather than collapsing into the runtime-stall canonical."
+    },
+    {
+      "target": "#64178",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Later-version channel-load regression is closer to startup/init or plugin-load issues than to intermittent runtime stalls."
+    },
+    {
+      "target": "#67034",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Multi-account avalanche/conflict behavior is a separate root-cause family; keep related."
+    },
+    {
+      "target": "#71066",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Title points to a polling/init failure near the startup family; do not fold into the runtime-stall canonical without a full live re-fetch."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 13,
+    "needs_human": 2
+  },
+  "action_status_counts": {
+    "planned": 16
+  },
+  "apply_counts": {},
+  "needs_human": [
+    "Re-fetch live GitHub JSON for any closure candidates to populate `target_updated_at`; this run could not retrieve authoritative issue timestamps via `gh`.",
+    "Fetch PR #60700 state, checks, and mergeability before converting #60646 from `needs_human` to any fixed-by-candidate or merge-related action.",
+    "Consider splitting follow-up work into at least three clusters: runtime long-poll stalls, startup/init/channel-registration failures, and multi-account conflict/avalanche issues."
+  ],
+  "apply_actions": []
+}

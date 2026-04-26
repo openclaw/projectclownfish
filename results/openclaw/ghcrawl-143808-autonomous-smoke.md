@@ -7,14 +7,14 @@ run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24939004182"
 head_sha: "7db1f986bd485f7b71752bc77e40097172d6b6ef"
 workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-25T23:09:32.123Z"
+published_at: "2026-04-26T01:27:46.246Z"
 canonical: "https://github.com/openclaw/openclaw/issues/66875"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/66875"
 canonical_pr: null
 actions_total: 6
 apply_executed: 0
 apply_blocked: 0
-apply_skipped: 6
+apply_skipped: 0
 needs_human_count: 4
 ---
 
@@ -41,19 +41,14 @@ Canonical: https://github.com/openclaw/openclaw/issues/66875
 | Worker actions | 6 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
-| Apply skipped | 6 |
+| Apply skipped | 0 |
 | Needs human | 4 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #39743 | keep_closed | skipped | historical representative only; no close action is valid because the item is already closed. | action status is skipped |
-| #66875 | keep_canonical | skipped | canonical | action is not an auto-closure action |
-| #42751 | keep_related | skipped | related | action is not an auto-closure action |
-| #60930 | keep_related | skipped | related | action is not an auto-closure action |
-| #66997 | keep_closed | skipped | fixed_by_candidate | action status is skipped |
-| #67037 | needs_human | skipped | needs_human | action status is blocked |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 
