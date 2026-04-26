@@ -1,0 +1,124 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-207026-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24969204817",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24969204817",
+  "head_sha": "d5a3a535b30ec2bdeb7aeba7cfcf9df500fa72cd",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-207026-agentic-merge.md",
+  "published_at": "2026-04-26T22:59:54.058Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/63169",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/63169",
+  "canonical_pr": null,
+  "summary": "Hydrated artifact shows no security-sensitive items. #63169 remains the best open canonical issue for the WhatsApp outbound media-delivery regression family. #61970 is a high-confidence duplicate of #63169, but closeout is blocked by require_fix_before_close because no hydrated canonical fix PR or merged candidate is available for #63169 in this run. Already-closed refs are retained as historical evidence only.",
+  "actions": [
+    {
+      "target": "#63169",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "Best surviving canonical issue for the ordinary WhatsApp outbound media attachment delivery regression family."
+    },
+    {
+      "target": "#61970",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "True duplicate of #63169, but closeout must wait for a hydrated canonical fix path or merged fix evidence."
+    },
+    {
+      "target": "#60315",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "Already closed; retained only as historical fixed-context evidence."
+    },
+    {
+      "target": "#62214",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "Already closed; retained as historical evidence for the WhatsApp media sendMedia routing fix."
+    },
+    {
+      "target": "#62399",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "Already closed; retained as historical fixed-context evidence."
+    },
+    {
+      "target": "#65451",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "Already closed; retained as historical fixed-context evidence."
+    },
+    {
+      "target": "#66090",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "Already closed; retained as historical fixed-context evidence."
+    },
+    {
+      "target": "#66117",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "Already closed superseded contributor PR; useful only as historical context and review-bot evidence."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_duplicate": 1,
+    "keep_closed": 6
+  },
+  "action_status_counts": {
+    "planned": 1,
+    "blocked": 1,
+    "skipped": 6
+  },
+  "apply_counts": {
+    "skipped": 1
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#61970",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-207026-agentic-merge:#61970:close_duplicate_of_63169:2026-04-07T01:42:36Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}

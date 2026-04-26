@@ -2,19 +2,19 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-207026-agentic-merge"
 mode: "autonomous"
-run_id: "24969136831"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24969136831"
-head_sha: "954e3ac4580f330255b90e541b805287d2731ff4"
-workflow_conclusion: "failure"
+run_id: "24969204817"
+run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24969204817"
+head_sha: "d5a3a535b30ec2bdeb7aeba7cfcf9df500fa72cd"
+workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-26T22:55:53.363Z"
+published_at: "2026-04-26T22:59:54.058Z"
 canonical: "https://github.com/openclaw/openclaw/issues/63169"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/63169"
 canonical_pr: null
 actions_total: 8
 apply_executed: 0
 apply_blocked: 0
-apply_skipped: 0
+apply_skipped: 1
 needs_human_count: 0
 ---
 
@@ -22,9 +22,9 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24969136831](https://github.com/openclaw/projectclownfish/actions/runs/24969136831)
+Run: [https://github.com/openclaw/projectclownfish/actions/runs/24969204817](https://github.com/openclaw/projectclownfish/actions/runs/24969204817)
 
-Workflow conclusion: failure
+Workflow conclusion: success
 
 Worker result: planned
 
@@ -32,7 +32,7 @@ Canonical: https://github.com/openclaw/openclaw/issues/63169
 
 ## Summary
 
-Hydrated preflight shows no security-sensitive items and no mergeable/open PR. #63169 remains the best open canonical issue for the WhatsApp media-send success-without-attachment family. #61970 is a high-confidence duplicate of #63169, but closeout is blocked by require_fix_before_close because no hydrated merged candidate PR is available to use as candidate_fix. Closed refs are kept as historical evidence only.
+Hydrated artifact shows no security-sensitive items. #63169 remains the best open canonical issue for the WhatsApp outbound media-delivery regression family. #61970 is a high-confidence duplicate of #63169, but closeout is blocked by require_fix_before_close because no hydrated canonical fix PR or merged candidate is available for #63169 in this run. Already-closed refs are retained as historical evidence only.
 
 ## Impact
 
@@ -41,27 +41,27 @@ Hydrated preflight shows no security-sensitive items and no mergeable/open PR. #
 | Worker actions | 8 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
-| Apply skipped | 0 |
+| Apply skipped | 1 |
 | Needs human | 0 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| _None_ |  |  |  |  |
+| #61970 | close_duplicate | skipped | duplicate | action status is blocked |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #63169 | keep_canonical | planned | canonical | Best surviving open canonical thread for this cluster's WhatsApp outbound media delivery failure. |
-| #61970 | close_duplicate | blocked | duplicate | Duplicate closeout is clear but blocked on the canonical fix path or a hydrated merged fix PR. |
-| #60315 | keep_closed | skipped | related | Closed historical context only. |
-| #62214 | keep_closed | skipped | fixed_by_candidate | Closed historical fixed context; linked fix PR refs are not hydrated primary items for candidate_fix. |
-| #62399 | keep_closed | skipped | fixed_by_candidate | Closed historical fixed context only. |
-| #65451 | keep_closed | skipped | related | Closed related context only. |
-| #66090 | keep_closed | skipped | fixed_by_candidate | Closed historical fixed context only. |
-| #66117 | keep_closed | skipped | superseded | Closed superseded contributor PR; credit is preserved in historical comments and no mutation is valid. |
+| #63169 | keep_canonical | planned | canonical | Best surviving canonical issue for the ordinary WhatsApp outbound media attachment delivery regression family. |
+| #61970 | close_duplicate | blocked | duplicate | True duplicate of #63169, but closeout must wait for a hydrated canonical fix path or merged fix evidence. |
+| #60315 | keep_closed | skipped | fixed_by_candidate | Already closed; retained only as historical fixed-context evidence. |
+| #62214 | keep_closed | skipped | fixed_by_candidate | Already closed; retained as historical evidence for the WhatsApp media sendMedia routing fix. |
+| #62399 | keep_closed | skipped | fixed_by_candidate | Already closed; retained as historical fixed-context evidence. |
+| #65451 | keep_closed | skipped | fixed_by_candidate | Already closed; retained as historical fixed-context evidence. |
+| #66090 | keep_closed | skipped | fixed_by_candidate | Already closed; retained as historical fixed-context evidence. |
+| #66117 | keep_closed | skipped | superseded | Already closed superseded contributor PR; useful only as historical context and review-bot evidence. |
 
 ## Needs Human
 

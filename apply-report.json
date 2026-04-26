@@ -2918,5 +2918,25 @@
     "merge_commit_sha": null,
     "live_state": null,
     "live_updated_at": null
+  },
+  {
+    "repo": "openclaw/openclaw",
+    "run_id": "24969204817",
+    "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24969204817",
+    "cluster_id": "ghcrawl-207026-agentic-merge",
+    "published_at": "2026-04-26T22:59:54.058Z",
+    "target": "#61970",
+    "action": "close_duplicate",
+    "status": "skipped",
+    "classification": "duplicate",
+    "canonical": "#63169",
+    "candidate_fix": null,
+    "title": null,
+    "idempotency_key": "ghcrawl-207026-agentic-merge:#61970:close_duplicate_of_63169:2026-04-07T01:42:36Z",
+    "reason": "action status is blocked",
+    "merged_at": null,
+    "merge_commit_sha": null,
+    "live_state": null,
+    "live_updated_at": null
   }
 ]
