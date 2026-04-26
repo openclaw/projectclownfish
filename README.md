@@ -51,15 +51,15 @@ Scope: 59 latest cluster reports. Run attempts are tracked as audit history only
 | Metric | Count | Rate |
 | --- | ---: | ---: |
 | Latest clusters reviewed | 59 | 100% |
-| Clean completed clusters | 21 | 35.6% |
-| Needs-human clusters | 34 | 57.6% |
+| Clean completed clusters | 22 | 37.3% |
+| Needs-human clusters | 33 | 55.9% |
 | Latest successful clusters | 55 | 93.2% |
 | Latest failed clusters | 4 | 6.8% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 137 | audit |
-| Distinct PRs touched | 248 | 100% |
-| Open PRs tracked | 147 | 59.3% |
-| Closed unmerged PRs tracked | 87 | 35.1% |
+| Run attempts archived | 138 | audit |
+| Distinct PRs touched | 249 | 100% |
+| Open PRs tracked | 148 | 59.4% |
+| Closed unmerged PRs tracked | 87 | 34.9% |
 | Completed close actions | 22 | 31.0% |
 | Completed merge actions | 0 | 0.0% |
 | Duplicate closes | 22 | 100.0% |

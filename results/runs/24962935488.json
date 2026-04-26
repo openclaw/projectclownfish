@@ -1,0 +1,396 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165982-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24962935488",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24962935488",
+  "head_sha": "c6a011e689cd5c31e8b8008fb1626f775ad148df",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165982-agentic-merge.md",
+  "published_at": "2026-04-26T17:52:51.855Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/45222",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/45222",
+  "canonical_pr": null,
+  "summary": "Autonomous classification only. The representative #45222 is now closed as implemented on current main, so no merge or instant close is safe from this run. The remaining open refs split into health-summary drift, loopback/probe symptoms, Windows/macOS/systemd restart subfamilies, and security-quarantined PRs. A narrow new fix artifact is planned for the clearest unfixed subfamily: health --json channel runtime/tokenSource drift across Discord, Telegram, and Slack.",
+  "actions": [
+    {
+      "target": "#45222",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Representative canonical is already closed; closed refs are evidence only."
+    },
+    {
+      "target": "#1",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked ref is quarantined to central OpenClaw security handling."
+    },
+    {
+      "target": "#47222",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PR is quarantined; no mutation planned."
+    },
+    {
+      "target": "#47981",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive open PR is out of ProjectClownfish mutation scope."
+    },
+    {
+      "target": "#63651",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive open PR is quarantined to central OpenClaw security handling."
+    },
+    {
+      "target": "#44354",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Keep open and cover via planned health-summary fix artifact."
+    },
+    {
+      "target": "#46494",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Keep open and cover via planned health-summary fix artifact."
+    },
+    {
+      "target": "#59287",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Keep open and cover via planned health-summary fix artifact."
+    },
+    {
+      "target": "cluster:ghcrawl-165982-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Build a narrow new fix for health --json channel runtime/tokenSource reconciliation."
+    },
+    {
+      "target": "cluster:ghcrawl-165982-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Prepare deterministic fix PR plan without mutating GitHub directly."
+    },
+    {
+      "target": "#48360",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Related, but not safe to close as duplicate."
+    },
+    {
+      "target": "#51469",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Related follow-up; fixed-on-main #45222 does not fully cover the reported cold-start case."
+    },
+    {
+      "target": "#52336",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Related gateway close symptom, but not proven duplicate or fixed."
+    },
+    {
+      "target": "#53168",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Related, but root cause and fix coverage remain distinct."
+    },
+    {
+      "target": "#68944",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Related handshake symptom; not a duplicate of fixed #45222."
+    },
+    {
+      "target": "#52487",
+      "action": "fix_needed",
+      "status": "blocked",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": "#52487",
+      "reason": "Useful contributor PR, but merge is blocked on review-bot resolution and required /review preflight."
+    },
+    {
+      "target": "#57971",
+      "action": "fix_needed",
+      "status": "blocked",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": "#57971",
+      "reason": "Useful contributor PR, but merge/fixed-by closeout is blocked on failing checks and unresolved test update."
+    },
+    {
+      "target": "#66735",
+      "action": "fix_needed",
+      "status": "blocked",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": "#66735",
+      "reason": "Useful contributor PR, but merge is blocked on actionable review-bot findings and missing clean /review preflight."
+    },
+    {
+      "target": "#68853",
+      "action": "fix_needed",
+      "status": "blocked",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": "#68853",
+      "reason": "Useful contributor PR, but merge is blocked by checks/preflight requirements."
+    },
+    {
+      "target": "#69056",
+      "action": "fix_needed",
+      "status": "blocked",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": "#69056",
+      "reason": "Useful contributor PR, but merge is blocked on review-bot resolution and required preflight."
+    },
+    {
+      "target": "#56284",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related Windows restart follow-up; keep open."
+    },
+    {
+      "target": "#57967",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": "#57971",
+      "reason": "Covered by a non-merge-ready PR; keep open until PR is repaired or replaced."
+    },
+    {
+      "target": "#63491",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related but over-broad mixed Windows restart/health report; keep open."
+    },
+    {
+      "target": "#64201",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related restart subfamily; keep open."
+    },
+    {
+      "target": "#68493",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related but distinct Windows restart recovery issue."
+    },
+    {
+      "target": "#44518",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Closed PR; no action."
+    },
+    {
+      "target": "#46869",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed PR; no action."
+    },
+    {
+      "target": "#48766",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Closed issue; no action."
+    },
+    {
+      "target": "#49180",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed issue; no action."
+    },
+    {
+      "target": "#49758",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed issue; no action."
+    },
+    {
+      "target": "#51016",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Closed issue; no action."
+    },
+    {
+      "target": "#51357",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Closed issue; no action."
+    },
+    {
+      "target": "#51679",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Closed issue; no action."
+    },
+    {
+      "target": "#53877",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed issue; no action."
+    },
+    {
+      "target": "#59333",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed issue; no action."
+    },
+    {
+      "target": "#61554",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Closed issue; no action."
+    },
+    {
+      "target": "#64476",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed issue; no action."
+    },
+    {
+      "target": "#67416",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed issue; no action."
+    },
+    {
+      "target": "#67544",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed issue; no action."
+    },
+    {
+      "target": "#69057",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#69056",
+      "reason": "Closed issue; no action."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 16,
+    "route_security": 4,
+    "keep_related": 13,
+    "fix_needed": 6,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 16,
+    "planned": 19,
+    "blocked": 5
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
