@@ -7,12 +7,15 @@ import { parseArgs, parseJob, repoRoot, validateJob } from "./lib.mjs";
 
 const DEFAULT_REPO = "openclaw/projectclownfish";
 const DEFAULT_WORKFLOW = "cluster-worker.yml";
+const DEFAULT_RUNNER = process.env.CLOWNFISH_WORKER_RUNNER ?? "blacksmith-4vcpu-ubuntu-2404";
+const DEFAULT_EXECUTION_RUNNER = process.env.CLOWNFISH_EXECUTION_RUNNER ?? "blacksmith-16vcpu-ubuntu-2404";
 const QUEUED_STATUSES = new Set(["queued", "requested", "waiting", "pending"]);
 
 const args = parseArgs(process.argv.slice(2));
 const repo = String(args.repo ?? DEFAULT_REPO);
 const workflow = String(args.workflow ?? DEFAULT_WORKFLOW);
-const runner = String(args.runner ?? "ubuntu-latest");
+const runner = String(args.runner ?? DEFAULT_RUNNER);
+const executionRunner = String(args["execution-runner"] ?? args.execution_runner ?? DEFAULT_EXECUTION_RUNNER);
 const model = String(args.model ?? process.env.CLOWNFISH_MODEL ?? "gpt-5.5");
 const execute = Boolean(args.execute || args.live);
 const openExecuteWindow = Boolean(args["open-execute-window"] || args.live);
@@ -25,7 +28,7 @@ const resolved = requestedRunId
 
 if (!resolved.source_job) {
   console.error(
-    "usage: node scripts/requeue-job.mjs <job.md|run-id> [--mode plan|execute|autonomous] [--execute] [--open-execute-window] [--runner label] [--model model]",
+    "usage: node scripts/requeue-job.mjs <job.md|run-id> [--mode plan|execute|autonomous] [--execute] [--open-execute-window] [--runner label] [--execution-runner label] [--model model]",
   );
   process.exit(2);
 }
@@ -51,6 +54,7 @@ const summary = {
   source_job: job.relativePath,
   mode,
   runner,
+  execution_runner: executionRunner,
   model,
 };
 
@@ -144,6 +148,8 @@ function dispatchJob(jobPath, mode) {
       `mode=${mode}`,
       "-f",
       `runner=${runner}`,
+      "-f",
+      `execution_runner=${executionRunner}`,
       "-f",
       `model=${model}`,
     ],

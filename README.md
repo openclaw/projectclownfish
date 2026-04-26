@@ -115,9 +115,9 @@ Codex does not receive a GitHub token during classification. The runner prefligh
 
 Merge is deliberately harder than closeout. A merge action must include `merge_preflight` proving security clearance, resolved human comments, resolved review-bot findings, a passed Codex `/review`, addressed review findings, and clean validation commands. The fix executor runs an agentic edit/review loop before it writes a fix PR: edit, validate, Codex `/review`, address findings, revalidate, and resolve PR review threads when permitted. The applicator also checks live unresolved GitHub review threads immediately before merge.
 
-Replacement fix work uses a recoverable target branch named `clownfish/<cluster-id>`. The executor resumes that branch if it already exists and pushes checkpoint commits after agent edits and review-fix edits, then opens or updates the PR only after validation and Codex `/review` pass.
+Replacement fix work uses a recoverable target branch named `clownfish/<cluster-id>`. The executor resumes that branch if it already exists and pushes checkpoint commits after agent edits and review-fix edits, then opens or updates the PR only after validation and Codex `/review` pass. If `/review` still blocks the merge after retries, the run writes a blocked fix report and leaves the checkpoint branch recoverable instead of losing the patch.
 
-Runs for the same job path and mode are queued instead of running concurrently. The workflow uses Node 24 and `ubuntu-latest` for ClawSweeper parity; other hosted runners are opt-in.
+Runs for the same job path and mode are queued instead of running concurrently. The workflow uses Node 24, `blacksmith-4vcpu-ubuntu-2404` for cluster planning/review, and `blacksmith-16vcpu-ubuntu-2404` for fix/apply execution. Fix validation is pinned to OpenClaw's fast changed-lane posture by default: targeted tests and `pnpm check:changed` are allowed, while broad `pnpm check`, full tests, live, docker, and e2e validation collapse to `pnpm check:changed` unless `CLOWNFISH_ALLOW_EXPENSIVE_VALIDATION=1` is explicitly set.
 
 Full worker prompts, Codex transcripts, and raw artifacts stay in GitHub Actions. The committed ledger keeps only the cluster summary, run URL, action counts, apply outcomes, closed targets, and needs-human entries.
 
@@ -166,14 +166,18 @@ npm run requeue -- 24947178021
 # Requeue one reviewed job/run into the live queue. This briefly opens both
 # write gates when the job is execute/autonomous, waits for the run to start,
 # then closes the gates.
-npm run requeue -- 24947178021 --execute --open-execute-window --runner ubuntu-latest
+npm run requeue -- 24947178021 --execute --open-execute-window \
+  --runner blacksmith-4vcpu-ubuntu-2404 \
+  --execution-runner blacksmith-16vcpu-ubuntu-2404
 
 # Execute a reviewed fix artifact locally. Requires both execution gates and a write token.
 CLOWNFISH_ALLOW_EXECUTE=1 CLOWNFISH_ALLOW_FIX_PR=1 npm run execute-fix -- jobs/openclaw/cluster-example.md --latest --dry-run
 
 # Retry failed jobs once. This briefly opens the execution gate, waits for the
 # dispatched workers to start, records the self-heal ledger, and closes the gate.
-npm run self-heal -- --execute --open-execute-window --max-jobs 5 --runner ubuntu-latest
+npm run self-heal -- --execute --open-execute-window --max-jobs 5 \
+  --runner blacksmith-4vcpu-ubuntu-2404 \
+  --execution-runner blacksmith-16vcpu-ubuntu-2404
 ```
 
 ## Checks

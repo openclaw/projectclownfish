@@ -97,7 +97,8 @@ Current autonomy posture:
 - For `openclaw/openclaw` fix artifacts, validation commands must use repo-native `pnpm` lanes such as `pnpm test:serial <path-or-filter...>`, `pnpm -s vitest run <files>`, and `pnpm check:changed`; `npm run validate` is not a valid target-repo gate.
 - Let `execute-fix-artifact` run the agentic merge-prep loop for fix PRs: edit, validate, Codex `/review`, address findings, revalidate, then resolve review threads when `CLOWNFISH_RESOLVE_REVIEW_THREADS=1`.
 - Replacement fix PR execution must use the recoverable target branch `clownfish/<cluster-id>`. If that branch already exists, resume it instead of starting from scratch. After agent edits and review-fix edits, commit and push checkpoint commits to that branch before expensive validation/review gates so a timed-out run can be requeued without losing the patch. Do not open the PR until validation and Codex `/review` pass.
-- Fix execution should provide Codex actual repo-discovery context before editing; repeated "no target repo changes" means tune `scripts/execute-fix-artifact.mjs` before replaying more jobs. GitHub Actions may block Codex bwrap write sandboxes, so write-mode fix execution defaults to `danger-full-access` there after tokens are stripped from the Codex environment. A Codex write preflight must fail fast before the expensive repair loop if sandbox/auth/write access is broken; do not wait through multi-attempt edits to discover startup failures. Keep canary execution bounded: default worker timeout is 30 minutes, fix Codex timeout is 30 minutes, preflight timeout is 2 minutes, Codex model is `gpt-5.5`, and Codex reasoning effort is `medium`. Worker timeout/failure must write a blocked result artifact and keep the workflow reporting path alive. Fix executor runs must copy Codex debug logs into the run artifact so timeout failures are inspectable.
+- Fix execution should provide Codex actual repo-discovery context before editing; repeated "no target repo changes" means tune `scripts/execute-fix-artifact.mjs` before replaying more jobs. GitHub Actions may block Codex bwrap write/review sandboxes, so write-mode and review execution default to `danger-full-access` there after tokens are stripped from the Codex environment. A Codex write preflight must fail fast before the expensive repair loop if sandbox/auth/write access is broken; do not wait through multi-attempt edits to discover startup failures. Keep canary execution bounded: default worker timeout is 30 minutes, fix Codex timeout is 30 minutes, preflight timeout is 2 minutes, Codex model is `gpt-5.5`, and Codex reasoning effort is `medium`. Worker timeout/failure and exhausted `/review` attempts must write blocked artifacts and keep the workflow reporting path alive. Fix executor runs must copy Codex debug logs into the run artifact so timeout failures are inspectable.
+- Match OpenClaw's CI fast lane for fix validation. Use `blacksmith-4vcpu-ubuntu-2404` for cluster planning/review and `blacksmith-16vcpu-ubuntu-2404` for fix/apply execution. The executor sets `OPENCLAW_LOCAL_CHECK=0`, allows targeted tests and `pnpm check:changed`, and collapses broad `pnpm check`, full tests, live, docker, and e2e validation to `pnpm check:changed` unless `CLOWNFISH_ALLOW_EXPENSIVE_VALIDATION=1` is explicitly set.
 - Prefer `keep_related`, `keep_independent`, `keep_closed`, `fix_needed`, `route_security`, and subcluster notes over blanket `needs_human`.
 - Use `needs_human` only for the exact maintainer decision still unresolved after hydrated evidence is reviewed.
 
@@ -192,7 +193,9 @@ gh variable set CLOWNFISH_ALLOW_FIX_PR --repo openclaw/projectclownfish --body 1
 npm run dispatch -- \
   jobs/openclaw/ghcrawl-ID1-autonomous-smoke.md \
   jobs/openclaw/ghcrawl-ID2-autonomous-smoke.md \
-  --mode autonomous --runner ubuntu-latest
+  --mode autonomous \
+  --runner blacksmith-4vcpu-ubuntu-2404 \
+  --execution-runner blacksmith-16vcpu-ubuntu-2404
 gh variable set CLOWNFISH_ALLOW_EXECUTE --repo openclaw/projectclownfish --body 0
 gh variable set CLOWNFISH_ALLOW_FIX_PR --repo openclaw/projectclownfish --body 0
 ```
@@ -203,7 +206,9 @@ Single-job requeue after calibration:
 
 ```bash
 npm run requeue -- 24947178021
-npm run requeue -- 24947178021 --execute --open-execute-window --runner ubuntu-latest
+npm run requeue -- 24947178021 --execute --open-execute-window \
+  --runner blacksmith-4vcpu-ubuntu-2404 \
+  --execution-runner blacksmith-16vcpu-ubuntu-2404
 ```
 
 Use a run id when you want to replay the same source job from an artifact, or a
@@ -246,7 +251,9 @@ This selects only the latest failed run per source job, skips jobs that have a l
 Live one-attempt retry:
 
 ```bash
-npm run self-heal -- --execute --open-execute-window --max-jobs 5 --runner ubuntu-latest
+npm run self-heal -- --execute --open-execute-window --max-jobs 5 \
+  --runner blacksmith-4vcpu-ubuntu-2404 \
+  --execution-runner blacksmith-16vcpu-ubuntu-2404
 ```
 
 The local live path temporarily sets `CLOWNFISH_ALLOW_EXECUTE=1`, dispatches the retry jobs, waits until the new runs have started, records the ledger, and resets `CLOWNFISH_ALLOW_EXECUTE=0`.

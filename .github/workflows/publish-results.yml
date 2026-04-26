@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
@@ -33,9 +33,17 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           RUN_ID: ${{ github.event.workflow_run.id }}
+          RUN_ATTEMPT: ${{ github.event.workflow_run.run_attempt }}
         run: |
+          set -euo pipefail
+          rm -rf artifacts
           mkdir -p artifacts
+          final_artifact="projectclownfish-${RUN_ID}-${RUN_ATTEMPT:-1}"
+          if gh run download "$RUN_ID" --repo "$GITHUB_REPOSITORY" --name "$final_artifact" --dir artifacts; then
+            exit 0
+          fi
           gh run download "$RUN_ID" --repo "$GITHUB_REPOSITORY" --dir artifacts
+          find artifacts -type d -name 'projectclownfish-worker-*' -prune -exec rm -rf {} +
 
       - name: Publish and commit result ledger
         env:

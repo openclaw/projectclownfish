@@ -23,12 +23,16 @@ const maxEditAttempts = Math.max(1, Number(process.env.CLOWNFISH_FIX_EDIT_ATTEMP
 const maxReviewAttempts = Math.max(1, Number(process.env.CLOWNFISH_CODEX_REVIEW_ATTEMPTS ?? 2));
 const resolveReviewThreads = process.env.CLOWNFISH_RESOLVE_REVIEW_THREADS !== "0";
 const skipCodexWritePreflight = process.env.CLOWNFISH_SKIP_CODEX_WRITE_PREFLIGHT === "1";
+const allowExpensiveValidation = process.env.CLOWNFISH_ALLOW_EXPENSIVE_VALIDATION === "1";
 const defaultCodexWriteSandbox = process.env.GITHUB_ACTIONS === "true" ? "danger-full-access" : "workspace-write";
 const codexWriteSandbox = String(process.env.CLOWNFISH_CODEX_WRITE_SANDBOX ?? defaultCodexWriteSandbox);
+const defaultCodexReviewSandbox = process.env.GITHUB_ACTIONS === "true" ? "danger-full-access" : "read-only";
+const codexReviewSandbox = String(process.env.CLOWNFISH_CODEX_REVIEW_SANDBOX ?? defaultCodexReviewSandbox);
 const codexWriteNetworkAccess = parseBooleanEnv(
   process.env.CLOWNFISH_CODEX_WRITE_NETWORK_ACCESS,
   process.env.GITHUB_ACTIONS === "true",
 );
+const codexReviewNetworkAccess = parseBooleanEnv(process.env.CLOWNFISH_CODEX_REVIEW_NETWORK_ACCESS, false);
 let workRoot = "";
 let targetDir = "";
 
@@ -192,7 +196,7 @@ report.actions.push(outcome);
 writeReport(report, resultPath);
 
 function isBlockedFixError(error) {
-  return /Codex produced no target repo changes|Codex (?:fix worker|review-fix worker|\/review) timed out|Codex (?:fix worker|review-fix worker|\/review) failed|validation command failed/i.test(
+  return /Codex produced no target repo changes|Codex \/review did not pass|Codex (?:fix worker|review-fix worker|\/review) timed out|Codex (?:fix worker|review-fix worker|\/review) failed|validation command failed/i.test(
     String(error?.message ?? error),
   );
 }
@@ -736,8 +740,16 @@ function classifyCodexFailure(detail) {
 }
 
 function codexWriteSandboxConfigArgs() {
-  if (codexWriteSandbox !== "workspace-write") return [];
-  return ["-c", `sandbox_workspace_write.network_access=${codexWriteNetworkAccess ? "true" : "false"}`];
+  return codexWorkspaceSandboxConfigArgs(codexWriteSandbox, codexWriteNetworkAccess);
+}
+
+function codexReviewSandboxConfigArgs() {
+  return codexWorkspaceSandboxConfigArgs(codexReviewSandbox, codexReviewNetworkAccess);
+}
+
+function codexWorkspaceSandboxConfigArgs(sandbox, networkAccess) {
+  if (sandbox !== "workspace-write") return [];
+  return ["-c", `sandbox_workspace_write.network_access=${networkAccess ? "true" : "false"}`];
 }
 
 function parseBooleanEnv(value, fallback) {
@@ -800,7 +812,8 @@ function runCodexReview({ fixArtifact, targetDir, mode, attempt, baseBranch = DE
       "--model",
       model,
       "--sandbox",
-      "read-only",
+      codexReviewSandbox,
+      ...codexReviewSandboxConfigArgs(),
       "-c",
       'approval_policy="never"',
       "-c",
@@ -1078,16 +1091,25 @@ function setupGitIdentity(cwd) {
 }
 
 function runAllowedValidationCommands(commands, cwd, baseBranch = DEFAULT_BASE_BRANCH) {
+  const validationEnv = targetValidationEnv();
   for (const command of commands) {
     const resolvedCommands = resolveAllowedValidationCommands(command, cwd, baseBranch);
     for (const parts of resolvedCommands) {
       try {
-        run(parts[0], parts.slice(1), { cwd });
+        run(parts[0], parts.slice(1), { cwd, env: validationEnv });
       } catch (error) {
         throw new Error(`validation command failed (${parts.join(" ")}): ${compactText(error.message, 1200)}`);
       }
     }
   }
+}
+
+function targetValidationEnv() {
+  return {
+    ...process.env,
+    CI: process.env.CI ?? "true",
+    OPENCLAW_LOCAL_CHECK: process.env.OPENCLAW_LOCAL_CHECK ?? "0",
+  };
 }
 
 function resolveAllowedValidationCommands(command, cwd, baseBranch = DEFAULT_BASE_BRANCH) {
@@ -1100,14 +1122,28 @@ function resolveAllowedValidationCommands(command, cwd, baseBranch = DEFAULT_BAS
   }
   if (parts[0] === "pnpm") {
     const commandStart = parts[1] === "-s" || parts[1] === "--silent" ? 2 : 1;
-    if (parts[commandStart] === "vitest" && parts[commandStart + 1] === "run") {
+    const pnpmScript = parts[commandStart];
+    if (isExpensivePnpmValidation(parts, commandStart)) {
+      return [["pnpm", "check:changed"]];
+    }
+    if (pnpmScript === "vitest" && parts[commandStart + 1] === "run") {
       return normalizePathValidationCommand(["pnpm", "test:serial", ...parts.slice(commandStart + 2)], cwd, baseBranch);
     }
-    if (parts[1] === "test" || parts[1] === "test:serial") {
-      return normalizePathValidationCommand(parts, cwd, baseBranch);
+    if (pnpmScript === "test" || pnpmScript === "test:serial") {
+      return normalizePathValidationCommand(["pnpm", pnpmScript, ...parts.slice(commandStart + 1)], cwd, baseBranch);
     }
   }
   return [parts];
+}
+
+function isExpensivePnpmValidation(parts, commandStart) {
+  if (allowExpensiveValidation) return false;
+  const script = String(parts[commandStart] ?? "");
+  if (script === "check" || script === "test:all") return true;
+  if (script === "test" || script === "test:serial") {
+    return !parts.slice(commandStart + 1).some(looksLikePathArgument);
+  }
+  return /^(?:test:(?:e2e|live|docker|install:e2e|parallels)(?::|$)|qa:e2e$|android:test:integration$)/.test(script);
 }
 
 function normalizePathValidationCommand(parts, cwd, baseBranch = DEFAULT_BASE_BRANCH) {

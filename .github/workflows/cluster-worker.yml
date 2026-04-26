@@ -17,9 +17,14 @@ on:
           - execute
           - autonomous
       runner:
-        description: "Runner label, e.g. ubuntu-latest or a Blacksmith label"
+        description: "Runner label for cluster planning/review work"
         required: true
-        default: ubuntu-latest
+        default: blacksmith-4vcpu-ubuntu-2404
+        type: string
+      execution_runner:
+        description: "Runner label for fix/apply execution work"
+        required: true
+        default: blacksmith-16vcpu-ubuntu-2404
         type: string
       model:
         description: "Codex model"
@@ -41,8 +46,12 @@ concurrency:
 
 jobs:
   cluster:
+    name: Plan and review cluster
     runs-on: ${{ inputs.runner }}
     timeout-minutes: 90
+    outputs:
+      allow_execute: ${{ steps.capture_gates.outputs.allow_execute }}
+      allow_fix_pr: ${{ steps.capture_gates.outputs.allow_fix_pr }}
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       CODEX_API_KEY: ${{ secrets.CODEX_API_KEY || secrets.OPENAI_API_KEY }}
@@ -56,14 +65,19 @@ jobs:
       CLOWNFISH_MAX_REVIEW_COMMENTS_PER_PR: ${{ vars.CLOWNFISH_MAX_REVIEW_COMMENTS_PER_PR || '50' }}
       CLOWNFISH_CODEX_TIMEOUT_MS: ${{ vars.CLOWNFISH_CODEX_TIMEOUT_MS || '1800000' }}
       CLOWNFISH_CODEX_REASONING_EFFORT: ${{ vars.CLOWNFISH_CODEX_REASONING_EFFORT || 'medium' }}
-      CLOWNFISH_CODEX_REVIEW_ATTEMPTS: ${{ vars.CLOWNFISH_CODEX_REVIEW_ATTEMPTS || '2' }}
-      CLOWNFISH_FIX_CODEX_TIMEOUT_MS: ${{ vars.CLOWNFISH_FIX_CODEX_TIMEOUT_MS || '1800000' }}
-      CLOWNFISH_FIX_PREFLIGHT_TIMEOUT_MS: ${{ vars.CLOWNFISH_FIX_PREFLIGHT_TIMEOUT_MS || '120000' }}
-      CLOWNFISH_RESOLVE_REVIEW_THREADS: ${{ vars.CLOWNFISH_RESOLVE_REVIEW_THREADS || '1' }}
       CLOWNFISH_MODEL: ${{ inputs.model || vars.CLOWNFISH_MODEL || 'gpt-5.5' }}
       CODEX_CLI_VERSION: ${{ vars.CLOWNFISH_CODEX_CLI_VERSION || '0.125.0' }}
+      OPENCLAW_LOCAL_CHECK: "0"
     steps:
       - uses: actions/checkout@v5
+
+      - name: Capture execution gates
+        id: capture_gates
+        run: |
+          {
+            echo "allow_execute=${CLOWNFISH_ALLOW_EXECUTE}"
+            echo "allow_fix_pr=${CLOWNFISH_ALLOW_FIX_PR}"
+          } >> "$GITHUB_OUTPUT"
 
       - uses: actions/setup-node@v5
         with:
@@ -128,20 +142,102 @@ jobs:
             npm run review-results -- .projectclownfish/runs
           fi
 
+      - name: Upload worker transfer artifacts
+        if: ${{ (inputs.mode == 'execute' || inputs.mode == 'autonomous') && !inputs.dry_run }}
+        uses: actions/upload-artifact@v5
+        with:
+          name: projectclownfish-worker-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .projectclownfish/runs
+          if-no-files-found: warn
+
+      - name: Upload final worker artifacts
+        if: ${{ !((inputs.mode == 'execute' || inputs.mode == 'autonomous') && !inputs.dry_run) }}
+        uses: actions/upload-artifact@v5
+        with:
+          name: projectclownfish-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            .projectclownfish/runs/**
+          if-no-files-found: warn
+
+  execute:
+    name: Execute and apply cluster actions
+    needs: cluster
+    if: ${{ needs.cluster.result == 'success' && (inputs.mode == 'execute' || inputs.mode == 'autonomous') && !inputs.dry_run }}
+    runs-on: ${{ inputs.execution_runner }}
+    timeout-minutes: 45
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      CODEX_API_KEY: ${{ secrets.CODEX_API_KEY || secrets.OPENAI_API_KEY }}
+      CLOWNFISH_ALLOWED_OWNER: ${{ vars.CLOWNFISH_ALLOWED_OWNER || 'openclaw' }}
+      CLOWNFISH_ALLOW_EXECUTE: ${{ needs.cluster.outputs.allow_execute || '0' }}
+      CLOWNFISH_ALLOW_FIX_PR: ${{ needs.cluster.outputs.allow_fix_pr || '0' }}
+      CLOWNFISH_CODEX_REASONING_EFFORT: ${{ vars.CLOWNFISH_CODEX_REASONING_EFFORT || 'medium' }}
+      CLOWNFISH_CODEX_REVIEW_ATTEMPTS: ${{ vars.CLOWNFISH_CODEX_REVIEW_ATTEMPTS || '2' }}
+      CLOWNFISH_FIX_CODEX_TIMEOUT_MS: ${{ vars.CLOWNFISH_FIX_CODEX_TIMEOUT_MS || '1800000' }}
+      CLOWNFISH_FIX_PREFLIGHT_TIMEOUT_MS: ${{ vars.CLOWNFISH_FIX_PREFLIGHT_TIMEOUT_MS || '120000' }}
+      CLOWNFISH_RESOLVE_REVIEW_THREADS: ${{ vars.CLOWNFISH_RESOLVE_REVIEW_THREADS || '1' }}
+      CLOWNFISH_MODEL: ${{ inputs.model || vars.CLOWNFISH_MODEL || 'gpt-5.5' }}
+      CODEX_CLI_VERSION: ${{ vars.CLOWNFISH_CODEX_CLI_VERSION || '0.125.0' }}
+      OPENCLAW_LOCAL_CHECK: "0"
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+
+      - name: Cache Codex CLI and npm downloads
+        uses: actions/cache@v5
+        with:
+          path: |
+            ~/.npm
+            ~/.projectclownfish/codex
+          key: ${{ runner.os }}-node24-codex-${{ env.CODEX_CLI_VERSION }}-v1
+          restore-keys: |
+            ${{ runner.os }}-node24-codex-
+
+      - name: Install Codex CLI
+        run: |
+          set -euo pipefail
+          npm config set prefix "$HOME/.projectclownfish/codex"
+          npm config set cache "$HOME/.npm"
+          echo "$HOME/.projectclownfish/codex/bin" >> "$GITHUB_PATH"
+          export PATH="$HOME/.projectclownfish/codex/bin:$PATH"
+
+          if ! command -v codex >/dev/null 2>&1 || ! codex --version | grep -Fq "$CODEX_CLI_VERSION"; then
+            npm install -g "@openai/codex@$CODEX_CLI_VERSION" --prefer-offline --no-audit --no-fund
+          fi
+          codex --version
+
+      - name: Authenticate Codex
+        run: |
+          test -n "${OPENAI_API_KEY:-}"
+          test -n "${CODEX_API_KEY:-}"
+          printenv OPENAI_API_KEY | codex login --with-api-key >/dev/null
+
+      - name: Download worker artifacts
+        uses: actions/download-artifact@v5
+        with:
+          name: projectclownfish-worker-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .projectclownfish/runs
+
+      - name: Validate job
+        run: npm run validate:job -- "${{ inputs.job }}"
+
       - name: Execute credited fix artifact
-        if: ${{ (inputs.mode == 'execute' || inputs.mode == 'autonomous') && !inputs.dry_run && env.CLOWNFISH_ALLOW_EXECUTE == '1' && env.CLOWNFISH_ALLOW_FIX_PR == '1' }}
+        if: ${{ env.CLOWNFISH_ALLOW_EXECUTE == '1' && env.CLOWNFISH_ALLOW_FIX_PR == '1' }}
         timeout-minutes: 30
         env:
           GH_TOKEN: ${{ secrets.CLOWNFISH_GH_TOKEN }}
         run: npm run execute-fix -- "${{ inputs.job }}" --latest
 
       - name: Apply safe closure actions
-        if: ${{ (inputs.mode == 'execute' || inputs.mode == 'autonomous') && !inputs.dry_run }}
+        if: ${{ env.CLOWNFISH_ALLOW_EXECUTE == '1' }}
         env:
           GH_TOKEN: ${{ secrets.CLOWNFISH_GH_TOKEN }}
         run: npm run apply-result -- "${{ inputs.job }}" --latest
 
-      - name: Upload worker artifacts
+      - name: Upload final worker artifacts
         if: always()
         uses: actions/upload-artifact@v5
         with:

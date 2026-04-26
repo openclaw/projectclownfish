@@ -16,7 +16,12 @@ on:
       runner:
         description: "Runner label for retried cluster workers"
         required: true
-        default: ubuntu-latest
+        default: blacksmith-4vcpu-ubuntu-2404
+        type: string
+      execution_runner:
+        description: "Runner label for retried fix/apply execution work"
+        required: true
+        default: blacksmith-16vcpu-ubuntu-2404
         type: string
 
 permissions:
@@ -25,7 +30,7 @@ permissions:
 
 jobs:
   self-heal:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
@@ -40,7 +45,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          args=(--max-jobs "${{ inputs.max_jobs }}" --runner "${{ inputs.runner }}")
+          args=(--max-jobs "${{ inputs.max_jobs }}" --runner "${{ inputs.runner }}" --execution-runner "${{ inputs.execution_runner }}")
           if [ "${{ inputs.execute }}" = "true" ]; then
             args+=(--execute)
           fi
