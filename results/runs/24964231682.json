@@ -1,0 +1,264 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165990-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24964231682",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24964231682",
+  "head_sha": "38f70877c94ad408c7816548e9dafe09a3dd4328",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "blocked",
+  "source_job": "jobs/openclaw/ghcrawl-165990-agentic-merge.md",
+  "published_at": "2026-04-26T18:53:30.503Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/71779",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/71779",
+  "summary": "Hydrated state shows representative #70981 is already closed and superseded by open PR #71779 for the configured thinking-default session-row family. #71779 is the best current canonical path, but merge/post-merge closeout is blocked by failing checks and missing merge preflight. The cluster is over-broad: several open PRs are independent or related follow-up families, and security-sensitive #63418 is quarantined only for central security handling.",
+  "actions": [
+    {
+      "target": "#43984",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#71779",
+      "candidate_fix": null,
+      "reason": "Different root cause and affected behavior; not a duplicate of the #71779 thinking-default session-row family."
+    },
+    {
+      "target": "#50210",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#71779",
+      "candidate_fix": null,
+      "reason": "Separate default-model/default-context issue, not the configured thinking-default session-row bug."
+    },
+    {
+      "target": "#54647",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#71779",
+      "candidate_fix": null,
+      "reason": "ACP runtime model identity reporting is a separate session metadata bug."
+    },
+    {
+      "target": "#63418",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item is out of ProjectClownfish mutation scope; quarantine only this PR."
+    },
+    {
+      "target": "#65178",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#71779",
+      "candidate_fix": null,
+      "reason": "Related gateway/session-utils area but separate image-capability provider/model lookup bug."
+    },
+    {
+      "target": "#66098",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#71779",
+      "candidate_fix": null,
+      "reason": "Overlaps the thinking-default feature family but has broader web UI/chat-history scope and unresolved review/check blockers."
+    },
+    {
+      "target": "#67766",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#71779",
+      "candidate_fix": null,
+      "reason": "Separate image attachment/provider capability bug, not a duplicate of configured thinking defaults."
+    },
+    {
+      "target": "#67768",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#67766",
+      "candidate_fix": "#67766",
+      "reason": "Already closed; no closure action is valid."
+    },
+    {
+      "target": "#68047",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#71779",
+      "candidate_fix": null,
+      "reason": "Gateway image-support fallback work is related by file area but independent from thinking-default session rows."
+    },
+    {
+      "target": "#70259",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#71779",
+      "candidate_fix": null,
+      "reason": "Same configured-thinking-default family, but chat.history fallback is a related surface rather than the session-row canonical path."
+    },
+    {
+      "target": "#70302",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#71779",
+      "candidate_fix": "#71779",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#70981",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71779",
+      "candidate_fix": "#71779",
+      "reason": "Already closed; no close/merge action is valid."
+    },
+    {
+      "target": "#71779",
+      "action": "keep_canonical",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#71779",
+      "candidate_fix": "#71779",
+      "reason": "Canonical path is explicit, but merge and post-merge closeout are blocked by failing checks and missing merge preflight."
+    },
+    {
+      "target": "#43737",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#43984",
+      "candidate_fix": "#43984",
+      "reason": "Open linked issue belongs to the #43984 subfamily, not the #71779 configured thinking-default family."
+    },
+    {
+      "target": "#50156",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#50210",
+      "candidate_fix": "#50210",
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#54640",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54647",
+      "candidate_fix": "#54647",
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#64830",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#71779",
+      "candidate_fix": null,
+      "reason": "Related feature/behavior request with broader scope than the session-row bug."
+    },
+    {
+      "target": "#67759",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#67766",
+      "candidate_fix": "#67766",
+      "reason": "Open linked issue belongs to the #67766 image-capability subfamily."
+    },
+    {
+      "target": "#68044",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#70967",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#71779",
+      "candidate_fix": "#71779",
+      "reason": "Already closed; no closure action is valid."
+    },
+    {
+      "target": "#71033",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71779",
+      "candidate_fix": "#71779",
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "cluster:ghcrawl-165990-agentic-merge",
+      "action": "fix_needed",
+      "status": "blocked",
+      "classification": null,
+      "canonical": "#71779",
+      "candidate_fix": "#71779",
+      "reason": "A canonical fix path exists, but implementation/merge is blocked until checks and review preflight are repaired."
+    },
+    {
+      "target": "cluster:ghcrawl-165990-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#71779",
+      "candidate_fix": "#71779",
+      "reason": "Needed because the canonical PR is blocked and no merge-safe candidate exists in the hydrated artifact."
+    }
+  ],
+  "action_counts": {
+    "keep_independent": 6,
+    "route_security": 1,
+    "keep_related": 5,
+    "keep_closed": 7,
+    "close_superseded": 1,
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 13,
+    "skipped": 7,
+    "blocked": 3
+  },
+  "apply_counts": {
+    "skipped": 1
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#70302",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71779",
+      "candidate_fix": "#71779",
+      "title": null,
+      "idempotency_key": "ghcrawl-165990-agentic-merge:#70302:close_superseded:v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
