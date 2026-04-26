@@ -108,6 +108,7 @@ Current autonomy posture:
 - Prefer `keep_related`, `keep_independent`, `keep_closed`, `fix_needed`, `route_security`, and subcluster notes over blanket `needs_human`.
 - Use `needs_human` only for the exact maintainer decision still unresolved after hydrated evidence is reviewed.
 - Worker results must use one action per issue/PR ref. Never emit comma-separated action targets; related follow-up subclusters should be one `keep_related` action per ref or one cluster-scoped `fix_needed` action.
+- Close-action `canonical`, `duplicate_of`, and `candidate_fix` refs must come from hydrated preflight items. If a PR is only mentioned in comments or previous ProjectClownfish notes, keep it as evidence/fix-artifact context until a refreshed plan hydrates it.
 
 After tuning, run:
 

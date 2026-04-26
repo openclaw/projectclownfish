@@ -49,6 +49,7 @@ Instant close actions:
 - Never emit close actions for targets whose live state is closed. If a closed target needs to appear in the matrix, use `keep_closed` with `status: "skipped"`.
 - Include `target_updated_at`, `target_kind`, `canonical` or `candidate_fix`, contributor-credit preserving `comment`, evidence, and a stable `idempotency_key`.
 - In action fields, `canonical`, `duplicate_of`, and `candidate_fix` must be explicit refs like `#61741`. Do not put a year, timestamp fragment, unrelated number, or only a prose URL in those fields.
+- Do not put an unhydrated ref in `canonical`, `duplicate_of`, or `candidate_fix`. If a PR is mentioned only in comments or prior ProjectClownfish notes but is not present in the preflight item matrix, mention it in evidence or the fix artifact instead and leave `candidate_fix` null until the planner hydrates it.
 - `target` must be exactly one issue/PR ref like `#61741` or one cluster fix target like `cluster:<cluster_id>`. Do not group multiple refs in one action.
 - Leave independent or related reports open as `keep_independent` or `keep_related`. Use `needs_human` only when choosing among viable canonical paths, merge paths, or contributor-credit tradeoffs requires maintainer judgment.
 - Do not suppress duplicate closeout only because another linked ref is security-sensitive. `route_security` the security ref and close only unrelated non-security duplicates that satisfy all closure gates.

@@ -408,6 +408,7 @@ function buildFixArtifact(plan, job) {
       "address each actionable review-bot finding or mark the item needs_human with the unresolved blocker",
       "before any merge recommendation, include merge_preflight proving security clearance, resolved comments, resolved bot comments, passed Codex /review, addressed review findings, and validation commands",
       "show canonical URL or explain needs_human",
+      "use canonical/duplicate_of/candidate_fix refs only when those refs are hydrated preflight items; unhydrated PR refs found in comments belong in evidence or fix_artifact until hydrated",
       "include targeted tests and changelog plan for fix artifacts",
       "if replacing a contributor PR, include source PR credit and the exact close comment that says ProjectClownfish will preserve attribution",
       "include full GitHub URLs in closure rationale",
