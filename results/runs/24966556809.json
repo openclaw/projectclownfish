@@ -1,0 +1,169 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165991-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24966556809",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24966556809",
+  "head_sha": "23011a560ecd1e9edd009f92232cc2538590f2c9",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165991-agentic-merge.md",
+  "published_at": "2026-04-26T20:43:53.991Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/66875",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/66875",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/66997",
+  "summary": "Autonomous classification only. The representative #66597 is already closed as implemented, so the best live canonical for any remaining broad WebChat reload/flicker symptoms is #66875. The merged #66997/current-main fix is evidence for the already-closed duplicate family, but #66875 remains open with broader assistant-bubble/final-reconciliation symptoms and should not be closed from this artifact. #51497 is related but not a true duplicate because it reports persisted-session/token-accounting divergence rather than the optimistic-message/history-reload UI race. Security-sensitive linked refs #1 and #3 are routed to central security handling only.",
+  "actions": [
+    {
+      "target": "#1",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked PR is outside ProjectClownfish backlog cleanup and must be quarantined to central OpenClaw security triage."
+    },
+    {
+      "target": "#3",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked issue is outside ProjectClownfish backlog cleanup and must be quarantined to central OpenClaw security triage."
+    },
+    {
+      "target": "#44491",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed in live hydrated state; no close action is valid."
+    },
+    {
+      "target": "#49777",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed in live hydrated state; no close action is valid."
+    },
+    {
+      "target": "#51497",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related WebChat/session-loss area, but not a true duplicate of the #66875 UI history-reload race. Keep open for separate persistence investigation."
+    },
+    {
+      "target": "#66176",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented; no close action is valid."
+    },
+    {
+      "target": "#66274",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented; no close action is valid."
+    },
+    {
+      "target": "#66597",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Original representative is obsolete because it is already closed as implemented; no close action is valid."
+    },
+    {
+      "target": "#66598",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented; no close action is valid."
+    },
+    {
+      "target": "#66762",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented; no close action is valid."
+    },
+    {
+      "target": "#66875",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#66875",
+      "candidate_fix": null,
+      "reason": "Keep #66875 as the live canonical thread for any remaining broad WebChat reload/reconciliation symptoms; closing it would be premature from this artifact."
+    },
+    {
+      "target": "#67028",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented; no close action is valid."
+    },
+    {
+      "target": "#67081",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented; no close action is valid."
+    },
+    {
+      "target": "#67412",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented; no close action is valid."
+    },
+    {
+      "target": "#67582",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented; no close action is valid."
+    }
+  ],
+  "action_counts": {
+    "route_security": 2,
+    "keep_closed": 11,
+    "keep_related": 1,
+    "keep_canonical": 1
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "skipped": 11
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
