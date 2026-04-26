@@ -2,84 +2,82 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-165995-agentic-merge"
 mode: "autonomous"
-run_id: "24946033542"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24946033542"
-head_sha: "56bccb0db44200da8fc6f4a81252127a5c0e77d5"
+run_id: "24962940666"
+run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24962940666"
+head_sha: "c6a011e689cd5c31e8b8008fb1626f775ad148df"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-26T02:27:38.431Z"
-canonical: "https://github.com/openclaw/openclaw/issues/59390"
-canonical_issue: "https://github.com/openclaw/openclaw/issues/59390"
-canonical_pr: "https://github.com/openclaw/openclaw/pull/68397"
-actions_total: 16
+published_at: "2026-04-26T17:56:19.583Z"
+canonical: "https://github.com/openclaw/openclaw/issues/43556"
+canonical_issue: "https://github.com/openclaw/openclaw/issues/43556"
+canonical_pr: null
+actions_total: 19
 apply_executed: 0
-apply_blocked: 10
-apply_skipped: 0
-needs_human_count: 1
+apply_blocked: 0
+apply_skipped: 5
+needs_human_count: 0
 ---
 
 # ghcrawl-165995-agentic-merge
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24946033542](https://github.com/openclaw/projectclownfish/actions/runs/24946033542)
+Run: [https://github.com/openclaw/projectclownfish/actions/runs/24962940666](https://github.com/openclaw/projectclownfish/actions/runs/24962940666)
 
 Workflow conclusion: success
 
 Worker result: planned
 
-Canonical: https://github.com/openclaw/openclaw/issues/59390
+Canonical: https://github.com/openclaw/openclaw/issues/43556
 
 ## Summary
 
-Keep #59390 as the canonical surviving issue and #68397 as the current canonical fix PR. Plan high-confidence `close_fixed_by_candidate` actions for the duplicate hard-failure reports, keep broader schema-shaping follow-ups (#59225, #66719) open, keep #53370 open conservatively because this prompt excerpt does not show its hydrated body/comments, and leave superseded contributor PR #65282 open non-mutatively to preserve credit. No merge recommendation is emitted because #68397 lacks the required hydrated Codex `/review` proof and explicit clean mergeability evidence.
+Representative #59390 is already closed. The live canonical issue for the immediate streamTo/subagent hard-failure family is #43556, but no viable open implementation PR exists. Closed PR #68397 is the best narrow source patch, with #65282 as corroborating prior work; both are closed/uneditable, so the safe autonomous path is a credited replacement fix PR before any duplicate closeout. Broader schema-filtering work remains related on #59225, and open PR #69170 is a related schema-hint PR with failing checks, not the canonical runtime fix.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 16 |
+| Worker actions | 19 |
 | Applied executions | 0 |
-| Apply blocked | 10 |
-| Apply skipped | 0 |
-| Needs human | 1 |
+| Apply blocked | 0 |
+| Apply skipped | 5 |
+| Needs human | 0 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #43556 | close_fixed_by_candidate | blocked | fixed_by_candidate | candidate fix is not listed in job refs |
-| #56193 | close_fixed_by_candidate | blocked | fixed_by_candidate | candidate fix is not listed in job refs |
-| #56326 | close_fixed_by_candidate | blocked | fixed_by_candidate | candidate fix is not listed in job refs |
-| #60965 | close_fixed_by_candidate | blocked | fixed_by_candidate | candidate fix is not listed in job refs |
-| #61724 | close_fixed_by_candidate | blocked | fixed_by_candidate | candidate fix is not listed in job refs |
-| #63120 | close_fixed_by_candidate | blocked | fixed_by_candidate | candidate fix is not listed in job refs |
-| #64714 | close_fixed_by_candidate | blocked | fixed_by_candidate | candidate fix is not listed in job refs |
-| #67248 | close_fixed_by_candidate | blocked | fixed_by_candidate | candidate fix is not listed in job refs |
-| #68275 | close_fixed_by_candidate | blocked | fixed_by_candidate | candidate fix is not listed in job refs |
-| #69166 | close_fixed_by_candidate | blocked | fixed_by_candidate | candidate fix is not listed in job refs |
+| #56326 | close_duplicate | skipped | duplicate | action status is blocked |
+| #61724 | close_duplicate | skipped | duplicate | action status is blocked |
+| #63120 | close_duplicate | skipped | duplicate | action status is blocked |
+| #64714 | close_duplicate | skipped | duplicate | action status is blocked |
+| #67248 | close_duplicate | skipped | duplicate | action status is blocked |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #59390 | keep_canonical | planned | canonical | Best surviving canonical issue for duplicate routing while #68397 owns the candidate-fix validation path. |
-| #68397 | keep_canonical | planned | canonical | Current best fix PR for the cluster; keep it as the canonical PR but do not emit a merge action from this artifact. |
-| #65282 | keep_related | planned | superseded | Superseded for the canonical fix path, but left open non-mutatively so ProjectClownfish does not auto-close a useful contributor PR without an explicit credit-preserving handoff. |
-| #59225 | keep_related | planned | related | Related follow-up request, not a duplicate closeout target. |
-| #66719 | keep_related | planned | related | Related schema-surface follow-up, not a duplicate of the executor-side hard-failure bug. |
-| #53370 | keep_related | planned | related | Keep open conservatively as related until a fully visible hydrated pass confirms exact duplicate coverage. |
-| #43556 | close_fixed_by_candidate | planned | fixed_by_candidate | Same root cause and user-visible failure; #68397 should own validation and follow-up. |
-| #56193 | close_fixed_by_candidate | planned | fixed_by_candidate | Covered by the current candidate fix while broader schema design follow-up stays elsewhere. |
-| #56326 | close_fixed_by_candidate | planned | fixed_by_candidate | Same root cause, including the `resumeSessionId` variant, and directly covered by #68397. |
-| #60965 | close_fixed_by_candidate | planned | fixed_by_candidate | Duplicate behavior report covered by the live candidate fix. |
-| #61724 | close_fixed_by_candidate | planned | fixed_by_candidate | Same reproduced failure mode, now covered by the greener candidate fix PR. |
-| #63120 | close_fixed_by_candidate | planned | fixed_by_candidate | The reported failure mode is covered by the candidate fix even if broader schema-guidance work remains elsewhere. |
-| #64714 | close_fixed_by_candidate | planned | fixed_by_candidate | Same structural failure with strict-mode providers; candidate fix should own validation. |
-| #67248 | close_fixed_by_candidate | planned | fixed_by_candidate | Same reproduced release-level failure, covered by the current better candidate PR. |
-| #68275 | close_fixed_by_candidate | planned | fixed_by_candidate | Directly covered by the current candidate fix PR. |
-| #69166 | close_fixed_by_candidate | planned | fixed_by_candidate | The reported retry-loop symptom is covered by the candidate fix. |
+| #43556 | keep_canonical | planned | canonical | Current best live canonical issue after #59390 closed. |
+| #56326 | close_duplicate | blocked | duplicate | Close is blocked on the canonical fix path or fix PR. |
+| #61724 | close_duplicate | blocked | duplicate | Close is blocked on the canonical fix path or fix PR. |
+| #63120 | close_duplicate | blocked | duplicate | Close is blocked on the canonical fix path or fix PR. |
+| #64714 | close_duplicate | blocked | duplicate | Close is blocked on the canonical fix path or fix PR. |
+| #67248 | close_duplicate | blocked | duplicate | Close is blocked on the canonical fix path or fix PR. |
+| #59225 | keep_related | planned | related | Related follow-up scope, not a duplicate to close in this cluster. |
+| #69170 | keep_related | planned | related | Related schema-hint PR; not the canonical hard-failure fix. |
+| cluster:ghcrawl-165995-agentic-merge | fix_needed | planned |  | No viable open canonical implementation PR exists; replacement fix PR is needed. |
+| cluster:ghcrawl-165995-agentic-merge | build_fix_artifact | planned |  | Replacement fix artifact is the auditable canonical path. |
+| cluster:ghcrawl-165995-agentic-merge | open_fix_pr | planned |  | Open a new narrow fix PR through the guarded ProjectClownfish fix executor. |
+| #53370 | keep_closed | skipped | superseded | Already closed; no closure action allowed. |
+| #56193 | keep_closed | skipped | superseded | Already closed; no closure action allowed. |
+| #59390 | keep_closed | skipped | superseded | Already closed; no closure action allowed. |
+| #60965 | keep_closed | skipped | superseded | Already closed; no closure action allowed. |
+| #68275 | keep_closed | skipped | superseded | Already closed; no closure action allowed. |
+| #69166 | keep_closed | skipped | superseded | Already closed; no closure action allowed. |
+| #68397 | keep_closed | skipped | superseded | Closed source PR used as credit/evidence only. |
+| #65282 | keep_closed | skipped | superseded | Closed source PR used as credit/evidence only. |
 
 ## Needs Human
 
-- Merge decision for #68397 remains human-gated from this artifact: live CI is green, but the hydrated data does not include a clean Codex `/review` result or explicit clean mergeability proof, so ProjectClownfish should not emit `merge_canonical`.
+- none
