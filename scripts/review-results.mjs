@@ -260,9 +260,12 @@ function isClusterScopedAction(action, result) {
 
 function isFixFirstBlockedCloseAction(action, hasClusterFixPath) {
   if (action.status !== "blocked") return false;
-  if (!hasClusterFixPath) return false;
   const text = [action.reason, action.comment, action.idempotency_key, ...(action.evidence ?? [])].join("\n");
-  return /fix[- ]first|blocked-by-fix-first|requires? a fix|requires? ProjectClownfish fix|fix PR|fix path|canonical fix (?:path|landing|lands?)|canonical repair (?:path|landing|lands?)|merged canonical fix|replacement PR|replacement fix|pending .*fix|after .*fix .*lands?|open_fix_pr|build_fix_artifact/i.test(text);
+  const hasFixFirstText =
+    /fix[- ]first|blocked-by-fix-first|requires? a fix|requires? ProjectClownfish fix|fix PR|fix path|canonical fix (?:path|landing|lands?)|canonical repair (?:path|landing|lands?)|merged canonical fix|hydrated merged fix PR|replacement PR|replacement fix|pending .*fix|after .*fix .*lands?|open_fix_pr|build_fix_artifact/i.test(
+      text,
+    );
+  return hasFixFirstText || (hasClusterFixPath && /blocked|wait|pending/i.test(text));
 }
 
 function allowsSelfCanonicalCurrentMainCloseout(action) {
