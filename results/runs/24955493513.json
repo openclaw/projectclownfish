@@ -1,0 +1,383 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165984-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24955493513",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24955493513",
+  "head_sha": "0fb3b0fd1b19809718de2e1ab4f02964aa5a02eb",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165984-agentic-merge.md",
+  "published_at": "2026-04-26T11:31:38.993Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/70678",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/70678",
+  "canonical_pr": null,
+  "summary": "Classified the hydrated WhatsApp reconnect/watchdog cluster using the preflight artifact. #70678 is the best live canonical for the current-main quiet-socket 30-minute reconnect defect; #71466 is useful but draft, dirty, and not maintainer-editable, so the safe autonomous path is a credited replacement fix artifact. No GitHub mutations were performed.",
+  "actions": [
+    {
+      "target": "#70678",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Best live canonical for the currently verified quiet WhatsApp socket watchdog defect."
+    },
+    {
+      "target": "#71466",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#70678",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "A replacement fix PR is needed before closing duplicate or superseded items."
+    },
+    {
+      "target": "cluster:ghcrawl-165984-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Useful uneditable draft PR must be replaced by a credited ProjectClownfish fix path."
+    },
+    {
+      "target": "cluster:ghcrawl-165984-agentic-merge",
+      "action": "open_fix_pr",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Autonomous applicator may open the credited replacement PR after applying and validating the fix artifact."
+    },
+    {
+      "target": "#65215",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#53698",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Related but not a high-confidence duplicate because it asks for a specific configurability surface."
+    },
+    {
+      "target": "#63939",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Useful related PR, but not the canonical fix path for the current-main quiet-socket defect."
+    },
+    {
+      "target": "#48390",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Same WhatsApp reconnect family, different remaining root-cause scope."
+    },
+    {
+      "target": "#45474",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Related WhatsApp reliability report with distinct auth/stale-socket symptoms."
+    },
+    {
+      "target": "#49305",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Same component, different logout/auth cleanup root cause."
+    },
+    {
+      "target": "#58481",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Related WhatsApp disconnect symptom, distinct platform/network root cause."
+    },
+    {
+      "target": "#61788",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Related WhatsApp connection failure, not a duplicate of the watchdog defect."
+    },
+    {
+      "target": "#63855",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Related but has unique message-loss validation needs."
+    },
+    {
+      "target": "#64296",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Related WhatsApp connection issue, not same root cause."
+    },
+    {
+      "target": "#66920",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Related WhatsApp reconnect family with unique group-inbound scope."
+    },
+    {
+      "target": "#70856",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Related component and symptoms, but distinct decryption/session failure evidence remains."
+    },
+    {
+      "target": "#67986",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Independent gateway hang/config-read problem, not a duplicate of the watchdog cluster."
+    },
+    {
+      "target": "#7433",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Independent WhatsApp/Baileys reliability feature gap."
+    },
+    {
+      "target": "#63427",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Independent gateway CLI/device pairing retry behavior."
+    },
+    {
+      "target": "#67816",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item is out of scope for backlog cleanup automation."
+    },
+    {
+      "target": "#49293",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked ref is quarantined as historical/context evidence only."
+    },
+    {
+      "target": "#65427",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked ref is quarantined as historical/context evidence only."
+    },
+    {
+      "target": "#67815",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked ref is quarantined as historical/context evidence only."
+    },
+    {
+      "target": "#49057",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical evidence only."
+    },
+    {
+      "target": "#50684",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical evidence only."
+    },
+    {
+      "target": "#51111",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical QR/login stability evidence only."
+    },
+    {
+      "target": "#55138",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical duplicate evidence only."
+    },
+    {
+      "target": "#58408",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical related WhatsApp listener evidence only."
+    },
+    {
+      "target": "#61663",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical WhatsApp QR evidence only."
+    },
+    {
+      "target": "#61744",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical WhatsApp reconnect/status evidence only."
+    },
+    {
+      "target": "#63410",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical duplicate/related evidence only."
+    },
+    {
+      "target": "#63854",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical duplicate evidence only."
+    },
+    {
+      "target": "#63925",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical duplicate evidence only."
+    },
+    {
+      "target": "#66917",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical related WhatsApp stability evidence only."
+    },
+    {
+      "target": "#66965",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical duplicate evidence only."
+    },
+    {
+      "target": "#70463",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical related health-monitor evidence only."
+    },
+    {
+      "target": "#70608",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical duplicate evidence only."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_superseded": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "open_fix_pr": 1,
+    "close_duplicate": 1,
+    "keep_related": 11,
+    "keep_independent": 3,
+    "route_security": 4,
+    "keep_closed": 14
+  },
+  "action_status_counts": {
+    "planned": 22,
+    "blocked": 2,
+    "skipped": 14
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
