@@ -1,0 +1,140 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-199262-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24968260250",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24968260250",
+  "head_sha": "35f872793b4de7748d72852e171a8fc84e506e12",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-199262-agentic-merge.md",
+  "published_at": "2026-04-26T22:25:21.700Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72038",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72038",
+  "summary": "Cluster is over-broad. #72038 is the only open, clean, mergeable non-security PR with resolved bot review evidence, so it is the canonical merge path for stale Telegram preview fresh finals. #41105 is the original representative but is not merge-safe because it carries broad unrelated churn and failing checks; plan a narrow credited replacement before any closeout. #39213 remains related open work for tool-call coalescing with unresolved bot findings. #63695 is quarantined as security-sensitive. #71554 is already closed/merged and receives no mutation.",
+  "actions": [
+    {
+      "target": "#72038",
+      "action": "merge_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72038",
+      "candidate_fix": null,
+      "reason": "#72038 has the clearest canonical merge path in the live hydrated artifact: focused diff, clean merge state, passing checks, resolved bot review, and clean latest Codex review."
+    },
+    {
+      "target": "#39213",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related Telegram streaming work, but not the same root cause as #72038 and not currently merge-ready."
+    },
+    {
+      "target": "#41105",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Blocked on opening a narrow credited replacement fix PR for the #41105 Telegram real-partials behavior."
+    },
+    {
+      "target": "#63695",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item must be routed to central OpenClaw security triage only."
+    },
+    {
+      "target": "#71554",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#71554",
+      "reason": "Already merged/closed; no ProjectClownfish mutation is valid."
+    },
+    {
+      "target": "cluster:ghcrawl-199262-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Create a credited narrow replacement path before any #41105 closeout."
+    }
+  ],
+  "action_counts": {
+    "merge_canonical": 1,
+    "keep_related": 1,
+    "close_superseded": 1,
+    "route_security": 1,
+    "keep_closed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "blocked": 1,
+    "skipped": 1
+  },
+  "apply_counts": {
+    "blocked": 2,
+    "skipped": 1
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#72038",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#72038",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-199262-agentic-merge:merge_canonical:#72038@2026-04-26T18:36:02Z",
+      "reason": "mergeable state is UNKNOWN",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": "open",
+      "live_updated_at": "2026-04-26T18:36:02Z"
+    },
+    {
+      "target": "#41105",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-199262-agentic-merge:blocked_close_superseded:#41105@2026-04-26T04:35:29Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#72392",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(telegram): align final-only drafts with real partials",
+      "idempotency_key": null,
+      "reason": "merge state status is UNSTABLE",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
