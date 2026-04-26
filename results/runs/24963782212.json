@@ -1,0 +1,244 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165995-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24963782212",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24963782212",
+  "head_sha": "4838e2e5ab9835b1c533fb7aadafd90ccb2b6362",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165995-agentic-merge.md",
+  "published_at": "2026-04-26T18:34:01.863Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/43556",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/43556",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/69170",
+  "summary": "Hydrated state shows no security-sensitive refs. The representative #59390 is already closed, so the surviving canonical issue is #43556. Open PR #69170 is narrow and maintainer-editable but not merge-ready because checks fail and it only covers the schema-hint slice; use it as the repairable canonical PR path, carrying forward the silent-drop implementation from the closed useful PRs #68397 and #65282. Duplicate closeout for open reports is blocked by require_fix_before_close until #69170 is repaired and validated, or an equivalent credited ProjectClownfish fix PR exists.",
+  "actions": [
+    {
+      "target": "#43556",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Best surviving open issue for the shared sessions_spawn runtime=subagent plus ACP-only streamTo failure."
+    },
+    {
+      "target": "#56326",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#61724",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#63120",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#64714",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#67248",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#59225",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Related follow-up design issue, not a duplicate close target for this run."
+    },
+    {
+      "target": "#69170",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Repairable canonical PR path, blocked from merge until expanded, rebased, validated, and reviewed."
+    },
+    {
+      "target": "cluster:ghcrawl-165995-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "A narrow credited fix path is needed before duplicate closeout or merge/post-merge closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-165995-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Create the deterministic fix artifact for the canonical repair path."
+    },
+    {
+      "target": "#53370",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#56193",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#59390",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Closed representative cannot be the live canonical issue."
+    },
+    {
+      "target": "#60965",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#68275",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#69166",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Closed related schema-hint issue."
+    },
+    {
+      "target": "#47115",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Closed broad contributor PR is evidence and credit source only."
+    },
+    {
+      "target": "#55483",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Closed broad contributor PR is evidence and credit source only."
+    },
+    {
+      "target": "#65282",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Closed useful contributor PR is evidence and credit source only."
+    },
+    {
+      "target": "#68397",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Closed useful contributor PR is evidence and credit source only."
+    },
+    {
+      "target": "#69203",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Closed duplicate schema-hint PR."
+    },
+    {
+      "target": "#53016",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#66719",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#43556",
+      "candidate_fix": "#69170",
+      "reason": "Closed related provider-schema issue."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 2,
+    "close_duplicate": 5,
+    "keep_related": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_closed": 13
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "blocked": 5,
+    "skipped": 13
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
