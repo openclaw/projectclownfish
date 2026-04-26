@@ -101,7 +101,16 @@ if (NON_EXECUTABLE_REPAIR_STRATEGIES.has(repairStrategy)) {
 
 const fixArtifact = validateFixArtifact(result.fix_artifact);
 if (hasSecuritySignalText(job.raw, result.summary, fixArtifact, plannedFixActions)) {
-  throw new Error("refusing fix execution: security-sensitive signal detected");
+  report.status = "skipped";
+  report.reason = "security-sensitive signal detected";
+  report.actions.push({
+    action: "execute_fix",
+    status: "skipped",
+    repair_strategy: fixArtifact.repair_strategy,
+    reason: "security-sensitive signals are routed to central security handling; closure actions may still apply their own gates",
+  });
+  writeReport(report, resultPath);
+  process.exit(0);
 }
 
 const workRoot =
@@ -117,28 +126,42 @@ ensureTargetCheckout(result.repo, targetDir);
 setupGitIdentity(targetDir);
 
 let outcome;
-if (fixArtifact.repair_strategy === "repair_contributor_branch") {
-  try {
-    outcome = executeRepairBranch({ fixArtifact, targetDir });
-  } catch (error) {
-    report.actions.push({
-      action: "repair_contributor_branch",
-      status: "failed",
-      reason: error.message,
+try {
+  if (fixArtifact.repair_strategy === "repair_contributor_branch") {
+    try {
+      outcome = executeRepairBranch({ fixArtifact, targetDir });
+    } catch (error) {
+      report.actions.push({
+        action: "repair_contributor_branch",
+        status: "failed",
+        reason: error.message,
+      });
+      outcome = executeReplacementBranch({ fixArtifact, targetDir, supersedeSources: true, fallbackReason: error.message });
+    }
+  } else {
+    outcome = executeReplacementBranch({
+      fixArtifact,
+      targetDir,
+      supersedeSources: fixArtifact.repair_strategy === "replace_uneditable_branch",
     });
-    outcome = executeReplacementBranch({ fixArtifact, targetDir, supersedeSources: true, fallbackReason: error.message });
   }
-} else {
-  outcome = executeReplacementBranch({
-    fixArtifact,
-    targetDir,
-    supersedeSources: fixArtifact.repair_strategy === "replace_uneditable_branch",
-  });
+} catch (error) {
+  if (!isBlockedFixError(error)) throw error;
+  outcome = {
+    action: "execute_fix",
+    status: "blocked",
+    repair_strategy: fixArtifact.repair_strategy,
+    reason: error.message,
+  };
 }
 
 report.status = outcome.status;
 report.actions.push(outcome);
 writeReport(report, resultPath);
+
+function isBlockedFixError(error) {
+  return /Codex produced no target repo changes/i.test(String(error?.message ?? error));
+}
 
 function executeRepairBranch({ fixArtifact, targetDir }) {
   const sourcePr = firstSourcePullRequest(fixArtifact);
