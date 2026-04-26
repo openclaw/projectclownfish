@@ -1,0 +1,74 @@
+---
+repo: openclaw/openclaw
+cluster_id: ghcrawl-156690-autonomous-smoke
+mode: autonomous
+allowed_actions:
+  - comment
+  - label
+  - close
+blocked_actions:
+  - force_push
+  - bypass_checks
+  - merge
+  - fix
+require_human_for:
+  - security_sensitive
+  - failing_checks
+  - conflicting_prs
+  - unclear_canonical
+  - broad_code_delta
+canonical:
+  - "#13736"
+candidates:
+  - "#13736"
+  - "#52732"
+  - "#57174"
+  - "#69985"
+cluster_refs:
+  - "#13736"
+  - "#52732"
+  - "#57174"
+  - "#69985"
+security_policy: central_security_only
+security_sensitive: false
+allow_instant_close: true
+allow_fix_pr: false
+allow_merge: false
+allow_post_merge_close: false
+canonical_hint: "ghcrawl representative #13736 is open; worker must verify it is still the best live canonical."
+notes: "Generated from ghcrawl run cluster 156690 on 2026-04-26."
+---
+
+# GHCrawl Cluster 156690
+
+Generated from local ghcrawl run cluster 156690 for `openclaw/openclaw`.
+
+Display title:
+
+> [Feature]: Support per-agent compaction settings (mode, reserveTokensFloor, memoryFlush) in agents.list[]
+
+Cluster shape from ghcrawl:
+
+- total members: 4
+- issues: 4
+- pull requests: 0
+- open candidates in local store: 4
+- representative: #13736, currently open in local store
+- latest member update: 2026-04-26T00:46:51.814Z
+
+## Goal
+
+Run one live autonomous classification pass. Classify open candidates only, verify live GitHub state, choose the current canonical issue or PR if the representative is obsolete, and emit only high-confidence planned close/comment/label actions. Closed context refs are evidence only and must not receive close actions.
+
+## Member Inventory
+
+Closed context refs:
+
+- none
+
+Open candidates:
+
+- #13736 [Feature]: Support per-agent compaction settings (mode, reserveTokensFloor, memoryFlush) in agents.list[]
+- #52732 Per-agent compaction and contextPruning overrides in agents.list
+- #57174 Feature: Per-agent compaction configuration (thresholds, mode, reserveTokens)
+- #69985 Feature: support per-agent compaction overrides

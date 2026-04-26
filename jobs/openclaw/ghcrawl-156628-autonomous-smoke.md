@@ -1,0 +1,83 @@
+---
+repo: openclaw/openclaw
+cluster_id: ghcrawl-156628-autonomous-smoke
+mode: autonomous
+allowed_actions:
+  - comment
+  - label
+  - close
+blocked_actions:
+  - force_push
+  - bypass_checks
+  - merge
+  - fix
+require_human_for:
+  - security_sensitive
+  - failing_checks
+  - conflicting_prs
+  - unclear_canonical
+  - broad_code_delta
+canonical:
+  - "#63483"
+candidates:
+  - "#48625"
+  - "#54495"
+  - "#56454"
+  - "#57223"
+  - "#63046"
+  - "#63483"
+  - "#67929"
+cluster_refs:
+  - "#48625"
+  - "#54495"
+  - "#56454"
+  - "#57223"
+  - "#63046"
+  - "#63483"
+  - "#67929"
+security_policy: central_security_only
+security_sensitive: false
+allow_instant_close: true
+allow_fix_pr: false
+allow_merge: false
+allow_post_merge_close: false
+canonical_hint: "ghcrawl representative #63483 is open; worker must verify it is still the best live canonical."
+notes: "Generated from ghcrawl run cluster 156628 on 2026-04-26."
+---
+
+# GHCrawl Cluster 156628
+
+Generated from local ghcrawl run cluster 156628 for `openclaw/openclaw`.
+
+Display title:
+
+> fix(agents): honor image tool timeoutSeconds #62944
+
+Cluster shape from ghcrawl:
+
+- total members: 7
+- issues: 0
+- pull requests: 7
+- open candidates in local store: 7
+- representative: #63483, currently open in local store
+- latest member update: 2026-04-24T18:56:28.904Z
+
+## Goal
+
+Run one live autonomous classification pass. Classify open candidates only, verify live GitHub state, choose the current canonical issue or PR if the representative is obsolete, and emit only high-confidence planned close/comment/label actions. Closed context refs are evidence only and must not receive close actions.
+
+## Member Inventory
+
+Closed context refs:
+
+- none
+
+Open candidates:
+
+- #48625 fix: allow /tmp paths in sandboxed image tool
+- #54495 fix(image-gen): make image generation timeout configurable via AgentModelConfig
+- #56454 fix: make image tool timeout configurable
+- #57223 Agents: resolve image tool relative paths from workspace
+- #63046 fix: image tool respects tools.media.image.timeoutSeconds config
+- #63483 fix(agents): honor image tool timeoutSeconds #62944
+- #67929 fix(image): respect configured timeout on MiniMax VLM fallback path
