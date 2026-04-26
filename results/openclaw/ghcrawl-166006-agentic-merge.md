@@ -2,69 +2,74 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-166006-agentic-merge"
 mode: "autonomous"
-run_id: "24946041239"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24946041239"
-head_sha: "56bccb0db44200da8fc6f4a81252127a5c0e77d5"
+run_id: "24962113785"
+run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24962113785"
+head_sha: "0a093014e04049c913f3bb009311325943e11e03"
 workflow_conclusion: "success"
-result_status: "needs_human"
-published_at: "2026-04-26T02:19:34.565Z"
-canonical: "https://github.com/openclaw/openclaw/pull/54527"
-canonical_issue: "https://github.com/openclaw/openclaw/issues/54381"
-canonical_pr: "https://github.com/openclaw/openclaw/pull/54527"
-actions_total: 10
+result_status: "planned"
+published_at: "2026-04-26T17:03:33.538Z"
+canonical: "https://github.com/openclaw/openclaw/commit/cd89adf0ac01c169ecd002cea7bc1615705c295e"
+canonical_issue: "https://github.com/openclaw/openclaw/issues/62381"
+canonical_pr: null
+actions_total: 14
 apply_executed: 0
-apply_blocked: 0
+apply_blocked: 2
 apply_skipped: 0
-needs_human_count: 1
+needs_human_count: 0
 ---
 
 # ghcrawl-166006-agentic-merge
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24946041239](https://github.com/openclaw/projectclownfish/actions/runs/24946041239)
+Run: [https://github.com/openclaw/projectclownfish/actions/runs/24962113785](https://github.com/openclaw/projectclownfish/actions/runs/24962113785)
 
 Workflow conclusion: success
 
-Worker result: needs_human
+Worker result: planned
 
-Canonical: https://github.com/openclaw/openclaw/pull/54527
+Canonical: https://github.com/openclaw/openclaw/commit/cd89adf0ac01c169ecd002cea7bc1615705c295e
 
 ## Summary
 
-PR #54527 remains the canonical date-roll fix path for the stale subsystem file-logger bug, but this cluster contains security-sensitive PR #62458, so no mutating ProjectClownfish actions are emitted. The remaining PRs are classified non-mutating as superseded, related, or independent, and a blocked repair artifact is included for rebasing and finishing #54527.
+Current main already contains the canonical fix for the stale subsystem dated log-file rollover path, with #62381 closed by a maintainer as resolved on main in commit cd89adf0ac01c169ecd002cea7bc1615705c295e. Most seeded PRs are already closed and are kept as historical evidence only. The only open same-root issue/PR pair, #54381 and #62482, can be closed against the landed main fix. Security-sensitive #62458 is quarantined only for central security routing. Related logging.file config work remains separate from this cluster.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 10 |
+| Worker actions | 14 |
 | Applied executions | 0 |
-| Apply blocked | 0 |
+| Apply blocked | 2 |
 | Apply skipped | 0 |
-| Needs human | 1 |
+| Needs human | 0 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| _None_ |  |  |  |  |
+| #54381 | post_merge_close | blocked | fixed_by_candidate | target is not listed in job candidates |
+| #62482 | close_superseded | blocked | superseded | close requires ProjectClownfish fix PR opened/pushed or merge executed first |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #54527 | keep_canonical | planned | canonical | Keep #54527 as the surviving canonical PR for the midnight date-roll bug while repair work is planned separately. |
-| #54527 | build_fix_artifact | blocked | canonical | Canonical repair is plan-only in this run because the target branch checkout is unavailable and the branch needs manual rebase/changelog work. |
-| #37549 | keep_related | planned | superseded | Superseded by the narrower canonical repair path in #54527. |
-| #54589 | keep_related | planned | related | Alternative same-family fix; keep open as related while #54527 remains the maintainer-preferred canonical path. |
-| #62349 | keep_related | planned | superseded | Weaker generation-based duplicate with unresolved correctness review and failing checks. |
-| #62449 | keep_related | planned | related | Same symptom family, but a broader logger-transport approach with unresolved regressions; not the canonical path. |
-| #62458 | needs_human | blocked | needs_human | Security-sensitive PR; route to central OpenClaw security handling and do not mutate from ProjectClownfish. |
-| #62482 | keep_related | planned | related | Same bug family, but broader than the canonical path and lacking artifact proof that earlier review concerns were fully resolved. |
-| #65804 | keep_related | planned | related | Overlapping fix idea, but not the chosen canonical path because of hot-path regression risk. |
-| #67206 | keep_independent | planned | independent | Separate bundled-config regression cluster; keep it independent from the date-roll stale-file PR family. |
+| #37388 | keep_closed | skipped | fixed_by_candidate | Already closed; retained only as historical same-root evidence. |
+| #37549 | keep_closed | skipped | superseded | Already closed; no mutation allowed for closed targets. |
+| #54381 | post_merge_close | planned | fixed_by_candidate | Open same-root issue is covered by the landed main fix; require_fix_before_close is satisfied by the resolved-on-main canonical path. |
+| #54527 | keep_closed | skipped | superseded | Closed representative is historical evidence only; current main/#62381 is the canonical fixed path. |
+| #54589 | keep_closed | skipped | superseded | Already closed; no mutation allowed. |
+| #62349 | keep_closed | skipped | superseded | Already closed; current main fix is the canonical path. |
+| #62381 | keep_closed | skipped | canonical | Canonical path is already fixed and closed; no mutation required. |
+| #62449 | keep_closed | skipped | superseded | Already closed; no mutation allowed. |
+| #62458 | route_security | planned | security_sensitive | Security-sensitive item is out of ProjectClownfish backlog-cleanup scope. |
+| #62482 | close_superseded | planned | superseded | Open contributor PR is superseded by an already-landed main fix; require_fix_before_close is satisfied by the canonical resolved-on-main path, and contributor credit is preserved in the close comment. |
+| #65804 | keep_closed | skipped | superseded | Already closed; no mutation allowed. |
+| #67168 | keep_closed | skipped | related | Related closed context only. |
+| #67175 | keep_related | planned | related | Related logging config work should remain out of this one-cluster closeout. |
+| #67206 | keep_closed | skipped | related | Closed related context only; not the canonical path for this cluster. |
 
 ## Needs Human
 
-- Route #62458 to central OpenClaw security handling: the hydrated Aisle review flags a Medium CWE-400 performance-DoS issue, and the preflight security boundary explicitly forbids ProjectClownfish mutation while that item remains in scope.
+- none

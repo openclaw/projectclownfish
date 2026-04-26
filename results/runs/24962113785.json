@@ -1,0 +1,194 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-166006-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24962113785",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24962113785",
+  "head_sha": "0a093014e04049c913f3bb009311325943e11e03",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-166006-agentic-merge.md",
+  "published_at": "2026-04-26T17:03:33.538Z",
+  "canonical": "https://github.com/openclaw/openclaw/commit/cd89adf0ac01c169ecd002cea7bc1615705c295e",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/62381",
+  "canonical_pr": null,
+  "summary": "Current main already contains the canonical fix for the stale subsystem dated log-file rollover path, with #62381 closed by a maintainer as resolved on main in commit cd89adf0ac01c169ecd002cea7bc1615705c295e. Most seeded PRs are already closed and are kept as historical evidence only. The only open same-root issue/PR pair, #54381 and #62482, can be closed against the landed main fix. Security-sensitive #62458 is quarantined only for central security routing. Related logging.file config work remains separate from this cluster.",
+  "actions": [
+    {
+      "target": "#37388",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#62381",
+      "candidate_fix": "#62381",
+      "reason": "Already closed; retained only as historical same-root evidence."
+    },
+    {
+      "target": "#37549",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#62381",
+      "candidate_fix": "#62381",
+      "reason": "Already closed; no mutation allowed for closed targets."
+    },
+    {
+      "target": "#54381",
+      "action": "post_merge_close",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#62381",
+      "candidate_fix": "#62381",
+      "reason": "Open same-root issue is covered by the landed main fix; require_fix_before_close is satisfied by the resolved-on-main canonical path."
+    },
+    {
+      "target": "#54527",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#62381",
+      "candidate_fix": "#62381",
+      "reason": "Closed representative is historical evidence only; current main/#62381 is the canonical fixed path."
+    },
+    {
+      "target": "#54589",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#62381",
+      "candidate_fix": "#62381",
+      "reason": "Already closed; no mutation allowed."
+    },
+    {
+      "target": "#62349",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#62381",
+      "candidate_fix": "#62381",
+      "reason": "Already closed; current main fix is the canonical path."
+    },
+    {
+      "target": "#62381",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#62381",
+      "candidate_fix": "#62381",
+      "reason": "Canonical path is already fixed and closed; no mutation required."
+    },
+    {
+      "target": "#62449",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#62381",
+      "candidate_fix": "#62381",
+      "reason": "Already closed; no mutation allowed."
+    },
+    {
+      "target": "#62458",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item is out of ProjectClownfish backlog-cleanup scope."
+    },
+    {
+      "target": "#62482",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#62381",
+      "candidate_fix": "#62381",
+      "reason": "Open contributor PR is superseded by an already-landed main fix; require_fix_before_close is satisfied by the canonical resolved-on-main path, and contributor credit is preserved in the close comment."
+    },
+    {
+      "target": "#65804",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#62381",
+      "candidate_fix": "#62381",
+      "reason": "Already closed; no mutation allowed."
+    },
+    {
+      "target": "#67168",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related closed context only."
+    },
+    {
+      "target": "#67175",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related logging config work should remain out of this one-cluster closeout."
+    },
+    {
+      "target": "#67206",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed related context only; not the canonical path for this cluster."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 10,
+    "post_merge_close": 1,
+    "route_security": 1,
+    "close_superseded": 1,
+    "keep_related": 1
+  },
+  "action_status_counts": {
+    "skipped": 10,
+    "planned": 4
+  },
+  "apply_counts": {
+    "blocked": 2
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#54381",
+      "action": "post_merge_close",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#62381",
+      "candidate_fix": "#62381",
+      "title": null,
+      "idempotency_key": "ghcrawl-166006-agentic-merge:#54381:post_merge_close:cd89adf0:v1",
+      "reason": "target is not listed in job candidates",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#62482",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#62381",
+      "candidate_fix": "#62381",
+      "title": null,
+      "idempotency_key": "ghcrawl-166006-agentic-merge:#62482:close_superseded:cd89adf0:v1",
+      "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
