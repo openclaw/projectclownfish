@@ -1,0 +1,142 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-199270-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24968264891",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24968264891",
+  "head_sha": "35f872793b4de7748d72852e171a8fc84e506e12",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-199270-agentic-merge.md",
+  "published_at": "2026-04-26T22:22:38.841Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/52745",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/52745",
+  "summary": "Classified the hydrated cluster without GitHub mutations. #52745 remains the canonical repair target but is not merge-ready because actionable Greptile/Codex review findings remain unresolved. #69026 is related watchdog-threshold UX tuning, not a duplicate of the canonical stuck-streaming repair. Already-closed hydrated refs are historical evidence only.",
+  "actions": [
+    {
+      "target": "#52745",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#52745",
+      "candidate_fix": null,
+      "reason": "Canonical PR is useful but needs branch repair before any merge or closeout path."
+    },
+    {
+      "target": "#59570",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#60043",
+      "reason": "Closed linked issue retained as historical evidence only."
+    },
+    {
+      "target": "#59582",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#60043",
+      "reason": "Closed contributor PR retained as historical evidence only."
+    },
+    {
+      "target": "#60043",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#60043",
+      "reason": "Merged historical fix retained as evidence only."
+    },
+    {
+      "target": "#63189",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed linked issue retained as historical evidence only; no hydrated PR ref is available for the watchdog fix in candidate_fix."
+    },
+    {
+      "target": "#66289",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed PR retained as historical evidence only."
+    },
+    {
+      "target": "#66876",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed linked issue retained as historical evidence only; no hydrated PR ref is available for the watchdog fix in candidate_fix."
+    },
+    {
+      "target": "#67302",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed PR retained as historical evidence only."
+    },
+    {
+      "target": "#69026",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#52745",
+      "candidate_fix": null,
+      "reason": "Related follow-up UX tuning; keep open outside the canonical stuck-streaming branch repair."
+    },
+    {
+      "target": "cluster:ghcrawl-199270-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#52745",
+      "candidate_fix": null,
+      "reason": "No merge action is safe until the contributor branch is repaired and revalidated."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_closed": 7,
+    "keep_related": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 3,
+    "skipped": 7
+  },
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#72389",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(tui): clear stale streaming after orphaned finals",
+      "idempotency_key": null,
+      "reason": "merge state status is UNSTABLE",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}

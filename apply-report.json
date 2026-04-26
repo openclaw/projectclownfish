@@ -2178,5 +2178,25 @@
     "merge_commit_sha": null,
     "live_state": null,
     "live_updated_at": null
+  },
+  {
+    "repo": "openclaw/openclaw",
+    "run_id": "24968264891",
+    "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24968264891",
+    "cluster_id": "ghcrawl-199270-agentic-merge",
+    "published_at": "2026-04-26T22:22:38.841Z",
+    "target": "#72389",
+    "action": "merge_canonical",
+    "status": "blocked",
+    "classification": "fix_pr",
+    "canonical": null,
+    "candidate_fix": null,
+    "title": "fix(tui): clear stale streaming after orphaned finals",
+    "idempotency_key": null,
+    "reason": "merge state status is UNSTABLE",
+    "merged_at": null,
+    "merge_commit_sha": null,
+    "live_state": null,
+    "live_updated_at": null
   }
 ]
