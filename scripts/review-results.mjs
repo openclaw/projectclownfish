@@ -167,7 +167,7 @@ function reviewResult(resultPath) {
         if (action.target_kind !== "pull_request") {
           failures.push(`${target} low-signal close action must target a pull request`);
         }
-      } else if (!canonicalRef && !candidateRef) {
+      } else if (!canonicalRef && !candidateRef && !isFixFirstBlockedCloseAction(action, hasFixPath)) {
         failures.push(`${target} close action missing canonical/duplicate/candidate target`);
       }
       if (
