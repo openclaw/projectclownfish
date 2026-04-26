@@ -1,0 +1,577 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165980-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24962455386",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24962455386",
+  "head_sha": "4422ac5b046e0c4f9b41950153cca6f36c64ea1e",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165980-agentic-merge.md",
+  "published_at": "2026-04-26T17:28:21.409Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/69303",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/69303",
+  "canonical_pr": null,
+  "summary": "Hydrated state shows the representative #58549 is already closed. The clearest live canonical for the remaining inbound-provider-error dedupe root cause is #69303. No merge is safe: there is no viable canonical PR, and the only open hydrated PR #49980 is unrelated, dirty, failing checks, and has an unresolved Greptile test finding. No close actions are emitted because require_fix_before_close is enabled and no replacement fix PR exists yet. Security-sensitive refs #1 and #60646 are quarantined only.",
+  "actions": [
+    {
+      "target": "#1",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route only this security-sensitive linked PR to central OpenClaw security handling."
+    },
+    {
+      "target": "#2",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical linked ref only."
+    },
+    {
+      "target": "#9471",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation."
+    },
+    {
+      "target": "#16729",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed on a different fixed path."
+    },
+    {
+      "target": "#17521",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; outbound retry path is not the live inbound dedupe canonical."
+    },
+    {
+      "target": "#25793",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent linked ref."
+    },
+    {
+      "target": "#29106",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Historical related replay evidence; already closed."
+    },
+    {
+      "target": "#40125",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Feature request, not a duplicate of inbound dedupe replay."
+    },
+    {
+      "target": "#40905",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed on a LaunchAgent restart fix path."
+    },
+    {
+      "target": "#41753",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close action allowed."
+    },
+    {
+      "target": "#43311",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical linked ref only."
+    },
+    {
+      "target": "#43661",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Same duplicate-delivery symptom family, but root cause is compaction timeout/session recovery rather than inbound dedupe release after provider failure."
+    },
+    {
+      "target": "#46674",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; evidence supports historical polling replay context only."
+    },
+    {
+      "target": "#49272",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation."
+    },
+    {
+      "target": "#49864",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": "#49980",
+      "reason": "Different root cause and product surface from inbound dedupe replay."
+    },
+    {
+      "target": "#49980",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Unrelated PR and not merge-ready."
+    },
+    {
+      "target": "#50040",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related Telegram reliability/outbound durability gap, not the inbound dedupe replay root cause."
+    },
+    {
+      "target": "#50065",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed."
+    },
+    {
+      "target": "#52469",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed contributor PR in a different compaction subfamily."
+    },
+    {
+      "target": "#53895",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related Telegram delivery reliability issue, but outbound message loss is not the same root cause as inbound dedupe replay."
+    },
+    {
+      "target": "#55727",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#57410",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed and not live canonical."
+    },
+    {
+      "target": "#57738",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related polling context only."
+    },
+    {
+      "target": "#57743",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related polling context only."
+    },
+    {
+      "target": "#58064",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related gateway reliability context only."
+    },
+    {
+      "target": "#58443",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related duplicate-delivery family, but includes distinct Slack/subagent announce lineage evidence and should not be closed as a pure duplicate."
+    },
+    {
+      "target": "#58549",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed representative; current live canonical is #69303."
+    },
+    {
+      "target": "#58556",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent context."
+    },
+    {
+      "target": "#58611",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related evidence only."
+    },
+    {
+      "target": "#58788",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent context."
+    },
+    {
+      "target": "#58951",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed polling context only."
+    },
+    {
+      "target": "#59113",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related evidence only."
+    },
+    {
+      "target": "#59132",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation."
+    },
+    {
+      "target": "#59331",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related polling/replay context only."
+    },
+    {
+      "target": "#59833",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related polling context only."
+    },
+    {
+      "target": "#59951",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related evidence only."
+    },
+    {
+      "target": "#60088",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related channel reliability context only."
+    },
+    {
+      "target": "#60202",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related evidence only."
+    },
+    {
+      "target": "#60400",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related channel reliability context only."
+    },
+    {
+      "target": "#60646",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine exact security-sensitive issue and do not mutate it."
+    },
+    {
+      "target": "#61195",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed channel reliability context only."
+    },
+    {
+      "target": "#61222",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related evidence only."
+    },
+    {
+      "target": "#61273",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related channel reliability context only."
+    },
+    {
+      "target": "#61470",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related session reliability context only."
+    },
+    {
+      "target": "#61575",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related cross-channel duplication context only."
+    },
+    {
+      "target": "#61712",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related polling context only."
+    },
+    {
+      "target": "#63599",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related Telegram context only."
+    },
+    {
+      "target": "#64034",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related mixed reliability context only."
+    },
+    {
+      "target": "#64606",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related provider-timeout duplicate symptom, but it is an outbound reply idempotency issue rather than the inbound dedupe-release canonical."
+    },
+    {
+      "target": "#65701",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related duplicate-delivery context only."
+    },
+    {
+      "target": "#68232",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related Telegram reliability/reload state issue, not inbound dedupe replay."
+    },
+    {
+      "target": "#68494",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related mixed reliability report with unique context-overflow and CLI-runner scope."
+    },
+    {
+      "target": "#69147",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related active polling-stall report, not closeable as duplicate of inbound dedupe replay."
+    },
+    {
+      "target": "#69303",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Best live canonical after representative #58549 closed."
+    },
+    {
+      "target": "#70623",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Different multi-bug issue, not an inbound dedupe duplicate."
+    },
+    {
+      "target": "#70744",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Closed related session/compaction context only."
+    },
+    {
+      "target": "#71066",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related polling transport issue, not a duplicate of inbound dedupe replay."
+    },
+    {
+      "target": "#71429",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Related outbound/reload durability gap with a distinct fix path."
+    },
+    {
+      "target": "cluster:ghcrawl-165980-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Build a narrow replacement fix for inbound dedupe replay after provider/runtime failure before closing any duplicates."
+    },
+    {
+      "target": "cluster:ghcrawl-165980-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Prepare ProjectClownfish fix executor to open a narrow credited PR."
+    }
+  ],
+  "action_counts": {
+    "route_security": 2,
+    "keep_closed": 41,
+    "keep_independent": 4,
+    "keep_related": 10,
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 19,
+    "skipped": 41
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
