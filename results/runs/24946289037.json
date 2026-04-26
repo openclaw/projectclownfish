@@ -1,0 +1,147 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-166005-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24946289037",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24946289037",
+  "head_sha": "ee69c4d548d49371436383ab0781ed7138b9e5c0",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/ghcrawl-166005-agentic-merge.md",
+  "published_at": "2026-04-26T02:44:31.721Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/37634",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/37634",
+  "canonical_pr": null,
+  "summary": "Split the over-broad cluster into two families. #37634 remains the best live non-security canonical issue for the `workspaceAccess: \"none\"` writable-workspace regression and still needs a fresh credited fix PR. #31331 stays separate as the Docker-outside-of-Docker bind-source bug. Because linked PR #31457 is marked security-sensitive in the hydrated artifact, this run stays non-mutating and routes that DOOD fix path to central OpenClaw security handling.",
+  "actions": [
+    {
+      "target": "#37634",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#37634",
+      "candidate_fix": null,
+      "reason": "Best live canonical for the non-security `workspaceAccess: \"none\"` writable-workspace regression."
+    },
+    {
+      "target": "#37634",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#37634",
+      "candidate_fix": null,
+      "reason": "The bug still appears real on current main and needs a fresh fix path."
+    },
+    {
+      "target": "#37634",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#37634",
+      "candidate_fix": null,
+      "reason": "Prepare a fresh, narrow replacement fix plan that preserves contributor credit."
+    },
+    {
+      "target": "#46026",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#37634",
+      "candidate_fix": null,
+      "reason": "Clear duplicate of #37634, but left non-mutating in this run because of the linked security-sensitive item."
+    },
+    {
+      "target": "#36525",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Broader product/semantics request in the same area, not the same bug as #37634."
+    },
+    {
+      "target": "#65316",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related follow-up about capability gating and user-visible tool exposure."
+    },
+    {
+      "target": "#31331",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate live canonical for the Docker-outside-of-Docker bind-source family; do not dedupe it into #37634."
+    },
+    {
+      "target": "#31457",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security boundary: this linked PR is out of ProjectClownfish scope and blocks autonomous handling of the DOOD fix path."
+    },
+    {
+      "target": "#59613",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open until maintainers manually split it against #31331 versus #37634."
+    },
+    {
+      "target": "#44077",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Distinct file-permission regression; not part of this dedupe family."
+    },
+    {
+      "target": "#57230",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no ProjectClownfish close action is valid."
+    },
+    {
+      "target": "#59063",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no ProjectClownfish close action is valid."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_related": 4,
+    "keep_independent": 2,
+    "needs_human": 1,
+    "keep_closed": 2
+  },
+  "action_status_counts": {
+    "planned": 10,
+    "skipped": 2
+  },
+  "apply_counts": {},
+  "needs_human": [
+    "Hydrated state contradicts the seed job by marking linked PR #31457 security-sensitive. Route the separate #31331 Docker-outside-of-Docker fix path through central OpenClaw security triage before any ProjectClownfish mutation is considered there."
+  ],
+  "apply_actions": []
+}

@@ -2,12 +2,12 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-166005-agentic-merge"
 mode: "autonomous"
-run_id: "24946040483"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24946040483"
-head_sha: "56bccb0db44200da8fc6f4a81252127a5c0e77d5"
+run_id: "24946289037"
+run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24946289037"
+head_sha: "ee69c4d548d49371436383ab0781ed7138b9e5c0"
 workflow_conclusion: "failure"
 result_status: "needs_human"
-published_at: "2026-04-26T02:19:09.277Z"
+published_at: "2026-04-26T02:44:31.721Z"
 canonical: "https://github.com/openclaw/openclaw/issues/37634"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/37634"
 canonical_pr: null
@@ -15,14 +15,14 @@ actions_total: 12
 apply_executed: 0
 apply_blocked: 0
 apply_skipped: 0
-needs_human_count: 2
+needs_human_count: 1
 ---
 
 # ghcrawl-166005-agentic-merge
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24946040483](https://github.com/openclaw/projectclownfish/actions/runs/24946040483)
+Run: [https://github.com/openclaw/projectclownfish/actions/runs/24946289037](https://github.com/openclaw/projectclownfish/actions/runs/24946289037)
 
 Workflow conclusion: failure
 
@@ -32,7 +32,7 @@ Canonical: https://github.com/openclaw/openclaw/issues/37634
 
 ## Summary
 
-Hydrated live state splits this over-broad cluster into at least two families. #37634 remains the live canonical issue for the `workspaceAccess:"none"` writable-sandbox regression; #46026 is a clear duplicate, #36525/#59613/#65316 stay related, and #44077 plus #31331 remain independent. No GitHub mutation is recommended in this run because linked PR #31457 is marked security-sensitive in the hydrated artifact, so duplicate closeout is blocked and the correct next step is a new credited fix artifact for #37634.
+Split the over-broad cluster into two families. #37634 remains the best live non-security canonical issue for the `workspaceAccess: "none"` writable-workspace regression and still needs a fresh credited fix PR. #31331 stays separate as the Docker-outside-of-Docker bind-source bug. Because linked PR #31457 is marked security-sensitive in the hydrated artifact, this run stays non-mutating and routes that DOOD fix path to central OpenClaw security handling.
 
 ## Impact
 
@@ -42,7 +42,7 @@ Hydrated live state splits this over-broad cluster into at least two families. #
 | Applied executions | 0 |
 | Apply blocked | 0 |
 | Apply skipped | 0 |
-| Needs human | 2 |
+| Needs human | 1 |
 
 ## Apply Actions
 
@@ -54,20 +54,19 @@ Hydrated live state splits this over-broad cluster into at least two families. #
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #31457 | needs_human | blocked | needs_human | Security boundary blocks ProjectClownfish mutation while #31457 remains in cluster scope. |
-| #37634 | keep_canonical | planned | canonical | Best live canonical for the writable-`workspaceAccess:none` regression. |
-| #37634 | fix_needed | planned | canonical | Bug still appears real on current main and needs a new fix path from main. |
-| #37634 | build_fix_artifact | planned | canonical | Prepare a credited replacement fix path from current main. |
-| #46026 | close_duplicate | blocked | duplicate | Duplicate is clear, but close/comment mutation is blocked by the linked security-sensitive item in the cluster. |
-| #36525 | keep_related | planned | related | Same area, but broader design/semantics request rather than the same bounded bug. |
-| #59613 | keep_related | planned | related | Related none-mode sandbox failure, but duplicate confidence is not high enough for closure. |
-| #65316 | keep_related | planned | related | Same symptom family, but not proven to be the same root cause or the same remaining work. |
-| #44077 | keep_independent | planned | independent | Different sandbox file-permission regression. |
-| #31331 | keep_independent | planned | independent | Separate canonical family; keep open outside the #37634 duplicate path. |
-| #57230 | keep_closed | skipped | independent | Already closed as implemented on current main; not part of the open #37634 path. |
-| #59063 | keep_closed | skipped | independent | Already closed as implemented on current main; not part of the open #37634 path. |
+| #37634 | keep_canonical | planned | canonical | Best live canonical for the non-security `workspaceAccess: "none"` writable-workspace regression. |
+| #37634 | fix_needed | planned | canonical | The bug still appears real on current main and needs a fresh fix path. |
+| #37634 | build_fix_artifact | planned | canonical | Prepare a fresh, narrow replacement fix plan that preserves contributor credit. |
+| #46026 | keep_related | planned | duplicate | Clear duplicate of #37634, but left non-mutating in this run because of the linked security-sensitive item. |
+| #36525 | keep_related | planned | related | Broader product/semantics request in the same area, not the same bug as #37634. |
+| #65316 | keep_related | planned | related | Related follow-up about capability gating and user-visible tool exposure. |
+| #31331 | keep_independent | planned | independent | Separate live canonical for the Docker-outside-of-Docker bind-source family; do not dedupe it into #37634. |
+| #31457 | needs_human | planned | needs_human | Security boundary: this linked PR is out of ProjectClownfish scope and blocks autonomous handling of the DOOD fix path. |
+| #59613 | keep_related | planned | related | Keep open until maintainers manually split it against #31331 versus #37634. |
+| #44077 | keep_independent | planned | independent | Distinct file-permission regression; not part of this dedupe family. |
+| #57230 | keep_closed | skipped | independent | Already closed; no ProjectClownfish close action is valid. |
+| #59063 | keep_closed | skipped | independent | Already closed; no ProjectClownfish close action is valid. |
 
 ## Needs Human
 
-- Linked PR #31457 is marked security-sensitive in the hydrated artifact (`security_boundary.action`: no ProjectClownfish mutation is allowed); central OpenClaw security handling must own any follow-up tied to that PR or the DOOD bind-remap subfamily around #31331.
-- Issue #46026 is a clear duplicate of #37634, but its close/comment path must be retried only after #31457 is removed from cluster scope or centrally cleared.
+- Hydrated state contradicts the seed job by marking linked PR #31457 security-sensitive. Route the separate #31331 Docker-outside-of-Docker fix path through central OpenClaw security triage before any ProjectClownfish mutation is considered there.
