@@ -1,0 +1,436 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165980-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24946026518",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24946026518",
+  "head_sha": "56bccb0db44200da8fc6f4a81252127a5c0e77d5",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/ghcrawl-165980-agentic-merge.md",
+  "published_at": "2026-04-26T02:38:00.479Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/69303",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/69303",
+  "canonical_pr": null,
+  "summary": "Representative issue #58549 was open in the job file but is now closed as implemented on April 25, 2026. The remaining live canonical for the same narrower replay-after-error dedupe family is linked issue #69303. The hydrated scope is over-broad and splits into separate subfamilies (inbound replay/dedupe, Telegram polling/startup, compaction/session overflow, and hot-reload delivery). Because hydrated issue #60646 is security-sensitive, I emitted no mutating GitHub actions.",
+  "actions": [
+    {
+      "target": "#69303",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "#58549 is now historical evidence only; #69303 is the best live canonical for the remaining replay-after-error dedupe gap."
+    },
+    {
+      "target": "#69303",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "The bug still appears real on current main and there is no viable canonical PR to merge or repair."
+    },
+    {
+      "target": "#69303",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "A new narrow fix PR is the appropriate canonical path if maintainers want to continue this bug outside the current security-blocked cleanup run."
+    },
+    {
+      "target": "#40125",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "This is a product enhancement outside the replay/polling cleanup family."
+    },
+    {
+      "target": "#41753",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Same Telegram reliability area, but different user-visible failure and root cause scope."
+    },
+    {
+      "target": "#43661",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related duplicate-symptom family, but the root cause is compaction timeout/session recovery, not the #69303 error-release path."
+    },
+    {
+      "target": "#46674",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Close symptom family, but the proposed seam is polling restart continuity rather than dedupe release after provider/runtime failure."
+    },
+    {
+      "target": "#49272",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Same long-session reliability area, but not a Telegram replay or transport dedupe bug."
+    },
+    {
+      "target": "#50040",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related Telegram transport/recovery family, but outbound loss is a different fix surface from #69303."
+    },
+    {
+      "target": "#50065",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related session-overflow/compaction family, but not the same ingress replay mechanism."
+    },
+    {
+      "target": "#53895",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related outbound-delivery durability family, not inbound replay/dedupe."
+    },
+    {
+      "target": "#55727",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Telegram startup/polling initialization issue, not replay-after-error dedupe."
+    },
+    {
+      "target": "#57410",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical compaction-family evidence only; already closed in live state."
+    },
+    {
+      "target": "#57738",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Telegram group-routing/authorization family, not same-message replay."
+    },
+    {
+      "target": "#57743",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical polling-stall evidence only; already closed in live state."
+    },
+    {
+      "target": "#58064",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Restart/initialization family; related operationally, but not a duplicate of #69303."
+    },
+    {
+      "target": "#58443",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Useful umbrella issue, but broader than the specific provider-failure dedupe-release gap tracked by #69303."
+    },
+    {
+      "target": "#58549",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": "#69303",
+      "candidate_fix": null,
+      "reason": "Retain as historical evidence only. The remaining live successor for the narrower replay-after-error gap is #69303."
+    },
+    {
+      "target": "#58611",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#58549",
+      "candidate_fix": null,
+      "reason": "Historical Telegram-specific duplicate-storm report already covered by the #58549 family."
+    },
+    {
+      "target": "#58788",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent closed bug; not part of the remaining cluster cleanup path."
+    },
+    {
+      "target": "#59113",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#58549",
+      "candidate_fix": null,
+      "reason": "Historical duplicate-delivery report already covered by the #58549 family."
+    },
+    {
+      "target": "#59132",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#58549",
+      "candidate_fix": null,
+      "reason": "Historical high-cost replay-storm report already covered by the #58549 family."
+    },
+    {
+      "target": "#59833",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical startup-hang evidence only; already closed in live state."
+    },
+    {
+      "target": "#59951",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#58549",
+      "candidate_fix": null,
+      "reason": "Historical duplicate inbound report already covered by the #58549 family."
+    },
+    {
+      "target": "#60088",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical Telegram responsiveness report only; already closed in live state."
+    },
+    {
+      "target": "#60202",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Mixed duplicate/stale-reply report with a different root cause from #69303."
+    },
+    {
+      "target": "#60400",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical all-channels-init regression only; already closed in live state."
+    },
+    {
+      "target": "#60646",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security boundary hit. ProjectClownfish must not mutate or dedupe this item; route it to central OpenClaw security handling."
+    },
+    {
+      "target": "#61195",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical startup-race claim only; already closed in live state."
+    },
+    {
+      "target": "#61222",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Same symptom family, but current artifact does not support collapsing it into the narrower #69303 root cause."
+    },
+    {
+      "target": "#61273",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Telegram startup/config-loading family, not replay-after-error dedupe."
+    },
+    {
+      "target": "#61470",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live liveness/session-stall family, not same-message replay."
+    },
+    {
+      "target": "#61575",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical cross-channel duplicate-delivery evidence only; already closed in live state."
+    },
+    {
+      "target": "#61712",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "LaunchAgent restart/startup family, not replay-after-error dedupe."
+    },
+    {
+      "target": "#64034",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Over-broad multi-regression report that should be split, not folded into this replay cluster."
+    },
+    {
+      "target": "#64606",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related duplicate-delivery symptom, but on the outbound send/retry path rather than the inbound dedupe-release path of #69303."
+    },
+    {
+      "target": "#65701",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical duplicate-outbound report only; already closed in live state."
+    },
+    {
+      "target": "#68232",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live hot-reload/state-retention family, not the ingress dedupe bug tracked by #69303."
+    },
+    {
+      "target": "#68494",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related Telegram liveness/overflow family, but broader and different from replay-after-error dedupe."
+    },
+    {
+      "target": "#69147",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Active Telegram long-poll stall family; keep open separately from the #69303 replay bug."
+    },
+    {
+      "target": "#70623",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "The unresolved live issue is Discord-specific, so it should stay independent from this Telegram replay cluster."
+    },
+    {
+      "target": "#70744",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related session-recovery/overflow family, but not the same ingress dedupe gap."
+    },
+    {
+      "target": "#71066",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Active Telegram transport/polling issue; keep separate from the #69303 replay bug."
+    },
+    {
+      "target": "#71429",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Active hot-reload delivery-durability issue; related operationally, but not a duplicate of #69303."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_independent": 3,
+    "keep_related": 22,
+    "keep_closed": 15,
+    "needs_human": 1
+  },
+  "action_status_counts": {
+    "planned": 28,
+    "skipped": 15,
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [
+    "Security boundary: hydrated issue #60646 contains secret-leakage evidence and must stay routed to central OpenClaw security handling. The artifact also flags linked PR #1 as security-sensitive, so this run should remain non-mutating."
+  ],
+  "apply_actions": []
+}
