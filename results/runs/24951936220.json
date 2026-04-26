@@ -1,0 +1,208 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165986-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24951936220",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24951936220",
+  "head_sha": "487226d9b0003de3bec820fddf63fdc7cb2ab87d",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165986-agentic-merge.md",
+  "published_at": "2026-04-26T08:24:46.098Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/19929",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/19929",
+  "canonical_pr": null,
+  "summary": "Cluster split into mixed subfamilies. `#58004` is a closed historical representative for already-shipped direct-message continuity, but it is obsolete as the live canonical for remaining open work. `#19929` is the best surviving canonical issue for unresolved opt-in shared sessions across non-direct group/channel/thread chats. `#7524`, `#14850`, `#51691`, and `#51805` stay open as related but non-duplicate requests with distinct scope; `#11665` and `#46514` stay open as independent. No close or merge actions are emitted because the live cluster is over-broad, `require_fix_before_close` is enabled, and the only prior PR (`#20078`) is closed/unmerged with a failing check and no safe maintainer update path. `#52504` is quarantined with `route_security` exactly as directed by the hydrated security boundary artifact. A narrow fix path is needed for `#19929`, so this result emits `fix_needed` plus `build_fix_artifact` only.",
+  "actions": [
+    {
+      "target": "#19929",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Best surviving canonical for unresolved non-direct shared-session routing."
+    },
+    {
+      "target": "#19929",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Real unresolved feature gap with no viable open PR."
+    },
+    {
+      "target": "#19929",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Prepare a narrow replacement fix plan that preserves contributor credit without pretending to patch from this worker."
+    },
+    {
+      "target": "#7524",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Same family, but a focused request with unique scope that should stay open."
+    },
+    {
+      "target": "#14850",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Related unresolved route-binding variant; not safe to close as a duplicate."
+    },
+    {
+      "target": "#51691",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Adjacent continuity UX request with unique remaining work."
+    },
+    {
+      "target": "#51805",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Related group-to-DM continuity request with distinct design constraints."
+    },
+    {
+      "target": "#11665",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Different subsystem and fix path; should not be deduped into this cluster's canonical issue."
+    },
+    {
+      "target": "#46514",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Different product problem; leave open independently."
+    },
+    {
+      "target": "#20078",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Historical prior art only; no mutation valid on an already closed PR."
+    },
+    {
+      "target": "#40986",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed on a different implementation path; not a live target in this cluster."
+    },
+    {
+      "target": "#52504",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Exact-item security quarantine required by the hydrated artifact."
+    },
+    {
+      "target": "#52683",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed independently on plugin-scope grounds."
+    },
+    {
+      "target": "#57977",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#58004",
+      "reason": "Historical implemented direct-DM continuity closeout; no further action valid."
+    },
+    {
+      "target": "#58004",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#19929",
+      "candidate_fix": null,
+      "reason": "Historical representative only; already closed and not a mutation target."
+    },
+    {
+      "target": "#59355",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#58004",
+      "reason": "Historical implemented direct-DM continuity closeout; no further action valid."
+    },
+    {
+      "target": "#59585",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed independently on bootstrap/identity behavior."
+    },
+    {
+      "target": "#60255",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#58004",
+      "reason": "Historical implemented direct-DM continuity closeout; no further action valid."
+    },
+    {
+      "target": "#68628",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#58004",
+      "reason": "Historical implemented direct-DM continuity closeout; no further action valid."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_related": 4,
+    "keep_independent": 2,
+    "keep_closed": 9,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "planned": 10,
+    "skipped": 9
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
