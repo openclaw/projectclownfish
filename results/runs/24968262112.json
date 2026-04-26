@@ -1,0 +1,105 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-199264-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24968262112",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24968262112",
+  "head_sha": "35f872793b4de7748d72852e171a8fc84e506e12",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-199264-agentic-merge.md",
+  "published_at": "2026-04-26T22:10:40.799Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/42873",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/42873",
+  "summary": "Classified the live hydrated open candidates without GitHub mutation. #42873 remains the best non-security canonical path for the own-line NO_REPLY bug, but merge is blocked by an unresolved Greptile bot finding and missing clean /review proof. Security-sensitive refs are quarantined item-by-item; reasoning-prefaced and trailing-token variants are kept as related follow-up work.",
+  "actions": [
+    {
+      "target": "#42873",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#42873",
+      "candidate_fix": null,
+      "reason": "Best current canonical, but repair/review is required before any merge."
+    },
+    {
+      "target": "#46626",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item must be routed to central OpenClaw security handling with no close, merge, label, comment, or fix mutation from ProjectClownfish."
+    },
+    {
+      "target": "#66755",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#42873",
+      "candidate_fix": null,
+      "reason": "Related follow-up subcluster; not merge-ready because an actionable Codex P1 review finding remains unresolved."
+    },
+    {
+      "target": "#69394",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item is quarantined; unrelated non-security items remain classified."
+    },
+    {
+      "target": "#69472",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#42873",
+      "candidate_fix": null,
+      "reason": "Related follow-up PR; not merge-ready due failing check and unresolved Codex P1 finding."
+    },
+    {
+      "target": "#42472",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#42873",
+      "candidate_fix": null,
+      "reason": "Related issue remains open until the appropriate broader fix path lands."
+    },
+    {
+      "target": "#66701",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#42873",
+      "candidate_fix": null,
+      "reason": "Related follow-up issue; no fixed-by-candidate closeout is valid until a clean candidate lands."
+    },
+    {
+      "target": "cluster:ghcrawl-199264-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#42873",
+      "candidate_fix": null,
+      "reason": "Canonical PR needs a narrow repair and review pass before merge can be recommended."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "route_security": 2,
+    "keep_related": 4,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 8
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
