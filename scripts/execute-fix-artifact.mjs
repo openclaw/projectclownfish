@@ -910,7 +910,18 @@ function runCodexReview({ fixArtifact, targetDir, mode, attempt, baseBranch = DE
   if (child.stderr) fs.writeFileSync(path.join(workRoot, `${mode}-codex-review-${attempt}.stderr.log`), child.stderr);
   if (child.error?.code === "ETIMEDOUT") throw new Error(`Codex /review timed out after ${codexTimeoutMs}ms`);
   if (child.status !== 0) throw new Error(child.stderr || child.stdout || "Codex /review failed");
-  return JSON.parse(fs.readFileSync(outputPath, "utf8"));
+  if (!fs.existsSync(outputPath)) {
+    const stdout = compactText(child.stdout, 800);
+    const stderr = compactText(child.stderr, 800);
+    throw new Error(
+      `Codex /review failed: structured output was not written to ${path.basename(outputPath)}; stdout=${stdout || "empty"}; stderr=${stderr || "empty"}`,
+    );
+  }
+  try {
+    return JSON.parse(fs.readFileSync(outputPath, "utf8"));
+  } catch (error) {
+    throw new Error(`Codex /review failed: invalid structured output in ${path.basename(outputPath)}: ${error.message}`);
+  }
 }
 
 function runCodexReviewFix({ fixArtifact, targetDir, mode, review, attempt }) {
