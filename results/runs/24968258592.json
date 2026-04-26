@@ -1,0 +1,111 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-199255-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24968258592",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24968258592",
+  "head_sha": "35f872793b4de7748d72852e171a8fc84e506e12",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-199255-agentic-merge.md",
+  "published_at": "2026-04-26T22:09:19.806Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/67082",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/59984",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/67082",
+  "summary": "Hydrated preflight shows every job candidate is already closed. The cluster is covered by merged PR #67082 on main, with maintainer closeout comments on all issue refs and no security-sensitive signal. No GitHub mutations are planned.",
+  "actions": [
+    {
+      "target": "#59195",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#59984",
+      "candidate_fix": "#67082",
+      "reason": "Already closed after maintainer verification that current main contains the exec approval modal overflow fix."
+    },
+    {
+      "target": "#59315",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#67082",
+      "reason": "Closed unmerged contributor PR is historical evidence only; current canonical fix is merged PR #67082."
+    },
+    {
+      "target": "#59377",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#59984",
+      "candidate_fix": "#67082",
+      "reason": "Already closed as implemented by the merged/current-main approval overflow fix."
+    },
+    {
+      "target": "#59400",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#67082",
+      "reason": "Closed unmerged and broader-than-needed PR is superseded by merged PR #67082."
+    },
+    {
+      "target": "#59984",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#59984",
+      "candidate_fix": "#67082",
+      "reason": "Original representative is already closed as implemented; merged PR #67082 is the canonical fix path."
+    },
+    {
+      "target": "#60125",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#59984",
+      "candidate_fix": "#67082",
+      "reason": "Already closed as covered by the current-main approval overflow fix."
+    },
+    {
+      "target": "#60496",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#59984",
+      "candidate_fix": "#67082",
+      "reason": "Already closed as implemented by the merged/current-main approval overflow fix."
+    },
+    {
+      "target": "#66403",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#59984",
+      "candidate_fix": "#67082",
+      "reason": "Already closed as implemented by the current-main approval overflow fix."
+    },
+    {
+      "target": "#67082",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Merged canonical fix is historical/current-main evidence only; no merge or close action is needed."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 9
+  },
+  "action_status_counts": {
+    "skipped": 9
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
