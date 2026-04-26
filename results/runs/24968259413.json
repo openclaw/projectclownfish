@@ -1,0 +1,161 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-199256-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24968259413",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24968259413",
+  "head_sha": "35f872793b4de7748d72852e171a8fc84e506e12",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-199256-agentic-merge.md",
+  "published_at": "2026-04-26T22:23:13.540Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/68916",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/68916",
+  "canonical_pr": null,
+  "summary": "The original representative #59561 is now closed as implemented, so it is not a live canonical. The best current canonical path for the remaining unfixed ACP orphan-process cleanup family is open issue #68916. Open #61895 and #72080 remain related but distinct follow-up reports, not high-confidence duplicates for closure. No GitHub mutations are executed by the worker.",
+  "actions": [
+    {
+      "target": "#28708",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close/comment/label action is valid."
+    },
+    {
+      "target": "#31686",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close/comment/label action is valid."
+    },
+    {
+      "target": "#35886",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#68916",
+      "candidate_fix": null,
+      "reason": "Already closed; no close/comment/label action is valid."
+    },
+    {
+      "target": "#52708",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#68916",
+      "candidate_fix": null,
+      "reason": "Already closed; no close/comment/label action is valid."
+    },
+    {
+      "target": "#56855",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close/comment/label action is valid."
+    },
+    {
+      "target": "#59274",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close/comment/label action is valid."
+    },
+    {
+      "target": "#59561",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Original representative is obsolete because it is already closed."
+    },
+    {
+      "target": "#60585",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close/comment/label action is valid."
+    },
+    {
+      "target": "#61165",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close/comment/label action is valid."
+    },
+    {
+      "target": "#61895",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#68916",
+      "candidate_fix": null,
+      "reason": "Related ACP orphan-process lifecycle bug, but not a true duplicate of the current canonical because it has distinct persistent-session repair scope."
+    },
+    {
+      "target": "#68916",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#68916",
+      "candidate_fix": null,
+      "reason": "Best surviving canonical issue for the remaining open orphan-process cleanup family."
+    },
+    {
+      "target": "#72080",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#68916",
+      "candidate_fix": null,
+      "reason": "Related ACP child lifecycle issue, but not a high-confidence duplicate or close candidate."
+    },
+    {
+      "target": "cluster:ghcrawl-199256-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#68916",
+      "candidate_fix": null,
+      "reason": "A narrow fix path is needed for the open ACP orphan-process cleanup canonical before any duplicate/superseded closeout is planned."
+    },
+    {
+      "target": "cluster:ghcrawl-199256-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#68916",
+      "candidate_fix": null,
+      "reason": "Build a narrow replacement fix plan for ProjectClownfish execution."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 9,
+    "keep_related": 2,
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 9,
+    "planned": 5
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
