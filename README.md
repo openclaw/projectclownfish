@@ -41,7 +41,7 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 26, 2026, 02:38 UTC
+Last dashboard update: Apr 26, 2026, 02:41 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
@@ -52,11 +52,11 @@ Scope: 53 latest cluster reports. Run attempts are tracked as audit history only
 | --- | ---: | ---: |
 | Latest clusters reviewed | 53 | 100% |
 | Clean completed clusters | 11 | 20.8% |
-| Needs-human clusters | 38 | 71.7% |
+| Needs-human clusters | 39 | 73.6% |
 | Latest successful clusters | 45 | 84.9% |
 | Latest failed clusters | 8 | 15.1% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 67 | audit |
+| Run attempts archived | 68 | audit |
 | Distinct PRs touched | 213 | 100% |
 | Open PRs tracked | 184 | 86.4% |
 | Closed unmerged PRs tracked | 23 | 10.8% |

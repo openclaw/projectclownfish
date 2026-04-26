@@ -2,27 +2,27 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-166002-agentic-merge"
 mode: "autonomous"
-run_id: "24946038154"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24946038154"
-head_sha: "56bccb0db44200da8fc6f4a81252127a5c0e77d5"
+run_id: "24946287824"
+run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24946287824"
+head_sha: "ee69c4d548d49371436383ab0781ed7138b9e5c0"
 workflow_conclusion: "failure"
 result_status: "planned"
-published_at: "2026-04-26T02:25:42.215Z"
+published_at: "2026-04-26T02:41:35.290Z"
 canonical: "https://github.com/openclaw/openclaw/issues/65184"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/65184"
 canonical_pr: null
-actions_total: 13
+actions_total: 14
 apply_executed: 0
 apply_blocked: 0
 apply_skipped: 0
-needs_human_count: 0
+needs_human_count: 1
 ---
 
 # ghcrawl-166002-agentic-merge
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24946038154](https://github.com/openclaw/projectclownfish/actions/runs/24946038154)
+Run: [https://github.com/openclaw/projectclownfish/actions/runs/24946287824](https://github.com/openclaw/projectclownfish/actions/runs/24946287824)
 
 Workflow conclusion: failure
 
@@ -32,17 +32,17 @@ Canonical: https://github.com/openclaw/openclaw/issues/65184
 
 ## Summary
 
-Kept #65184 as the live canonical issue for the narrow gateway-install enable-time `openclaw-gateway.service does not exist` family, planned one safe duplicate close for #54429, left broader or platform-distinct Linux systemd reports open as related, and split #68287 out as independent. A new fix PR is still the likely path, but opening it is blocked in this artifact-only run because `target_checkout` is null and current-main behavior was not re-proven from code.
+Kept #65184 as the live canonical issue for the gateway missing-unit enable path, left the remaining live refs open as related except independent node-install bug #68287 and already-closed #57188, prepared a narrow fix artifact while leaving `open_fix_pr` blocked by missing checkout/current-main revalidation, and flagged linked ref #11805 for central security triage because a hydrated comment excerpt exposes an `OPENCLAW_GATEWAY_TOKEN`.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 13 |
+| Worker actions | 14 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
 | Apply skipped | 0 |
-| Needs human | 0 |
+| Needs human | 1 |
 
 ## Apply Actions
 
@@ -54,20 +54,21 @@ Kept #65184 as the live canonical issue for the narrow gateway-install enable-ti
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #65184 | keep_canonical | planned | canonical | Best surviving canonical for the gateway-install missing-unit failure family in this cluster. |
-| #39673 | keep_related | planned | related | Same subsystem and command family, but a different still-open user-bus failure mode. |
-| #42025 | keep_related | planned | related | Likely same symptom family as #65184, but the Amazon Linux environment is distinct enough to keep open as related. |
-| #44070 | keep_related | planned | related | Related Linux systemd install problem with a different daemon-reload/DBus failure signature. |
-| #44417 | keep_related | planned | related | Potentially overlapping helper-layer bug, but distinct reproduction and failure signature warrant keeping it open as related. |
-| #54429 | close_duplicate | planned | duplicate | High-confidence duplicate of the canonical missing-unit gateway-install report. |
-| #54517 | keep_related | planned | related | Same family as #65184, but it contains potentially useful diagnostic detail that should remain open. |
-| #57188 | keep_closed | skipped |  | Historical evidence only; no action beyond acknowledging that the live target is already closed. |
-| #63561 | keep_related | planned | related | Distinct still-open user-systemd detection problem; keep open as related. |
-| #68287 | keep_independent | planned | independent | Independent node-service bug with a separate fix path. |
-| #65184 | fix_needed | planned | canonical | The canonical issue still needs a focused fix path. |
-| #65184 | build_fix_artifact | planned | canonical | Produce a narrow artifact for a new fix PR rather than leaving the canonical issue without an implementation path. |
-| #65184 | open_fix_pr | blocked | canonical | Implementation is blocked by missing checkout and missing code-level validation against current main. |
+| #11805 | needs_human | blocked | needs_human | Route linked ref #11805 to central security triage and do not let ProjectClownfish mutate it. |
+| #39673 | keep_related | planned | related | Same Linux/systemd gateway-install family, but a materially different scope and root cause than the canonical missing-unit enable path. |
+| #42025 | keep_related | planned | related | Likely adjacent to the canonical bug, but the platform/repro details are distinct enough that instant duplicate closure would be unsafe. |
+| #44070 | keep_related | planned | related | Related systemd-user install failure, but a different failure point than the canonical issue. |
+| #44417 | keep_related | planned | related | This is a false-unavailable/user-targeting subfamily, not the same narrowed missing-unit enable path as #65184. |
+| #54429 | keep_related | planned | related | Symptom overlap is real, but the artifact does not prove this is the same root cause with no unique remaining work. |
+| #54517 | keep_related | planned | related | Related Linux/systemd targeting problem, but not a safe duplicate of the canonical missing-unit enable issue. |
+| #57188 | keep_closed | skipped |  | Historical evidence only; already-closed items must not receive new close actions. |
+| #63561 | keep_related | planned | related | Related systemd-user detection failure, but not the same root cause/scope as the canonical issue. |
+| #65184 | keep_canonical | planned | canonical | Best live canonical for the narrowed gateway user-service missing-unit enable path. |
+| #68287 | keep_independent | planned | independent | Independent bug that deserves its own follow-up cluster rather than dedupe against #65184. |
+| #65184 | fix_needed | planned | canonical | The canonical bug still lacks a viable PR, so the next safe step is a narrow fix plan rather than closure. |
+| #65184 | build_fix_artifact | planned | canonical | Prepared a narrow fix artifact centered on the Linux user-service activation/reload path for #65184. |
+| #65184 | open_fix_pr | blocked | canonical | A fix PR should be opened from the generated artifact, but implementation is blocked in this run because the target repository checkout is unavailable and current-main behavior was not revalidated from source. |
 
 ## Needs Human
 
-- none
+- Linked ref #11805 contains a hydrated comment excerpt that exposes an `OPENCLAW_GATEWAY_TOKEN`; route that item to central OpenClaw security triage and keep it out of ProjectClownfish mutation.
