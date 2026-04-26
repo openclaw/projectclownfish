@@ -1,0 +1,235 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165993-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24962938674",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24962938674",
+  "head_sha": "c6a011e689cd5c31e8b8008fb1626f775ad148df",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165993-agentic-merge.md",
+  "published_at": "2026-04-26T17:59:54.821Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/38596",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/38596",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/40413",
+  "summary": "Hydrated state shows the original representative #57666 is already closed. The best live canonical path is open issue #38596 plus repair of useful contributor PR #40413; #40413 is not merge-ready because it is dirty/unmergeable and still needs the applicator repair/review/validation loop. No close actions are planned because require_fix_before_close is enabled and no canonical fix has landed in this run. Security-sensitive linked refs are quarantined only for central security routing.",
+  "actions": [
+    {
+      "target": "#38596",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#38596",
+      "candidate_fix": "#40413",
+      "reason": "Best surviving issue for the health-monitor repeated restart/zombie-session root cause."
+    },
+    {
+      "target": "#40413",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#38596",
+      "candidate_fix": "#40413",
+      "reason": "Repair the contributor branch through the ProjectClownfish fix loop before any merge or closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-165993-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#38596",
+      "candidate_fix": "#40413",
+      "reason": "A fix path is needed before any duplicate or fixed-by closeout is safe."
+    },
+    {
+      "target": "#38853",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Different root cause and fix surface; keep open outside this cluster's canonical path."
+    },
+    {
+      "target": "#70420",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#38596",
+      "candidate_fix": null,
+      "reason": "Related follow-up, not a duplicate."
+    },
+    {
+      "target": "#71546",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#38596",
+      "candidate_fix": null,
+      "reason": "Related Discord lifecycle evidence but a distinct failure surface."
+    },
+    {
+      "target": "#45712",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#38596",
+      "candidate_fix": null,
+      "reason": "Useful related PR with unresolved validation/review blockers."
+    },
+    {
+      "target": "#41354",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed before this run."
+    },
+    {
+      "target": "#57111",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed before this run."
+    },
+    {
+      "target": "#57195",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed before this run."
+    },
+    {
+      "target": "#57291",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed before this run."
+    },
+    {
+      "target": "#57666",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Original representative is obsolete as an action target."
+    },
+    {
+      "target": "#57731",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed before this run."
+    },
+    {
+      "target": "#58173",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed before this run."
+    },
+    {
+      "target": "#59927",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed before this run."
+    },
+    {
+      "target": "#61124",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed before this run."
+    },
+    {
+      "target": "#15762",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#38596",
+      "candidate_fix": "#40413",
+      "reason": "Historical contributor context only."
+    },
+    {
+      "target": "#68159",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed/landed historical context."
+    },
+    {
+      "target": "#68213",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed/landed historical context."
+    },
+    {
+      "target": "#22003",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route to central OpenClaw security handling; no ProjectClownfish mutation."
+    },
+    {
+      "target": "#43468",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route to central OpenClaw security handling; no ProjectClownfish mutation."
+    },
+    {
+      "target": "#69833",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route to central OpenClaw security handling; no ProjectClownfish mutation."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_independent": 1,
+    "keep_related": 3,
+    "keep_closed": 12,
+    "route_security": 3
+  },
+  "action_status_counts": {
+    "planned": 10,
+    "skipped": 12
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
