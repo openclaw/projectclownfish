@@ -3,6 +3,8 @@ import path from "node:path";
 
 const SECURITY_SIGNAL_PATTERN =
   /\b(vulnerabilit(?:y|ies)|cve-\d+|ghsa|advisory|exploit|ssrf|xss|csrf|rce|(?:sql|command|code|prompt)\s*injection|auth(?:entication)?\s*bypass|privilege\s+escalation|sensitive\s+data|security\s+(?:issue|bug|fix|patch|advisory|triage|review)|(?:secretref|secret|credential|api[-_\s]?key|private[-_\s]?key|token).{0,80}(?:leak(?:ed|age)?|expos(?:e|ed|ure)|plaintext|plain[-_\s]?text)|(?:leak(?:ed|age)?|expos(?:e|ed|ure)|plaintext|plain[-_\s]?text).{0,80}(?:secretref|secret|credential|api[-_\s]?key|private[-_\s]?key|token))\b/i;
+const PROMPT_ARTIFACT_MAX_CHARS = Number(process.env.CLOWNFISH_PROMPT_ARTIFACT_MAX_CHARS ?? 320_000);
+const PROMPT_STRING_MAX_CHARS = Number(process.env.CLOWNFISH_PROMPT_STRING_MAX_CHARS ?? 700);
 
 export function repoRoot() {
   return path.resolve(import.meta.dirname, "..");
@@ -189,7 +191,17 @@ export function renderPrompt(job, requestedMode, context = {}) {
   ]) {
     if (!filePath) continue;
     const absolute = path.resolve(filePath);
-    parts.push(`## ${title}`, `Path: \`${path.relative(repoRoot(), absolute)}\``, "```json", fs.readFileSync(absolute, "utf8").trim(), "```");
+    const artifact = promptArtifactText(title, absolute);
+    parts.push(
+      `## ${title}`,
+      `Path: \`${path.relative(repoRoot(), absolute)}\``,
+      artifact.compacted
+        ? `Note: compacted for the Codex input budget; use counts, refs, timestamps, review-bot excerpts, and safety gates as authoritative.`
+        : "",
+      "```json",
+      artifact.text,
+      "```",
+    );
   }
 
   parts.push(
@@ -198,6 +210,123 @@ export function renderPrompt(job, requestedMode, context = {}) {
   );
 
   return parts.join("\n\n");
+}
+
+function promptArtifactText(title, absolutePath) {
+  const raw = fs.readFileSync(absolutePath, "utf8").trim();
+  if (raw.length <= PROMPT_ARTIFACT_MAX_CHARS) return { text: raw, compacted: false };
+  try {
+    const parsed = JSON.parse(raw);
+    const compacted = title === "Cluster preflight artifact" ? compactClusterPlan(parsed) : compactDeep(parsed);
+    const compactText = JSON.stringify(compacted, null, 2);
+    if (compactText.length <= PROMPT_ARTIFACT_MAX_CHARS) return { text: compactText, compacted: true };
+    return {
+      text: JSON.stringify(
+        {
+          _prompt_compacted: true,
+          _prompt_truncated: true,
+          _prompt_reason: `artifact exceeded ${PROMPT_ARTIFACT_MAX_CHARS} characters after compaction`,
+          summary: compactDeep(compacted, { arrayLimit: 20, stringLimit: 300 }),
+        },
+        null,
+        2,
+      ),
+      compacted: true,
+    };
+  } catch {
+    return {
+      text: `${raw.slice(0, PROMPT_ARTIFACT_MAX_CHARS - 120)}\n... [artifact truncated for Codex input budget]`,
+      compacted: true,
+    };
+  }
+}
+
+function compactClusterPlan(plan) {
+  return compactDeep({
+    _prompt_compacted: true,
+    repo: plan.repo,
+    cluster_id: plan.cluster_id,
+    mode: plan.mode,
+    source_job: plan.source_job,
+    generated_at: plan.generated_at,
+    offline: plan.offline,
+    main: plan.main,
+    security_boundary: plan.security_boundary,
+    scope: plan.scope,
+    canonical_candidates: plan.canonical_candidates,
+    safety_gates: plan.safety_gates,
+    items: (plan.items ?? []).map(compactPlanItem),
+  });
+}
+
+function compactPlanItem(item) {
+  const pull = item.pull_request;
+  return {
+    repo: item.repo,
+    ref: item.ref,
+    number: item.number,
+    kind: item.kind,
+    state: item.state,
+    title: item.title,
+    url: item.url,
+    author: item.author,
+    author_association: item.author_association,
+    labels: item.labels,
+    updated_at: item.updated_at,
+    closed_at: item.closed_at,
+    body_excerpt: item.body_excerpt,
+    security_sensitive: item.security_sensitive,
+    comments_count: item.comments_count,
+    comments_hydrated: item.comments_hydrated,
+    comments_truncated: item.comments_truncated,
+    maintainer_comments: (item.maintainer_comments ?? []).slice(0, 6),
+    bot_comments: (item.bot_comments ?? []).slice(0, 8),
+    comments: (item.comments ?? []).slice(0, 4),
+    classification_hint: item.classification_hint,
+    pull_request: pull
+      ? {
+          draft: pull.draft,
+          merged: pull.merged,
+          merged_at: pull.merged_at,
+          merge_commit_sha: pull.merge_commit_sha,
+          mergeable: pull.mergeable,
+          mergeable_state: pull.mergeable_state,
+          base_ref: pull.base_ref,
+          head_ref: pull.head_ref,
+          head_repo: pull.head_repo,
+          head_sha: pull.head_sha,
+          maintainer_can_modify: pull.maintainer_can_modify,
+          changed_files: pull.changed_files,
+          additions: pull.additions,
+          deletions: pull.deletions,
+          files: (pull.files ?? []).slice(0, 40),
+          commits: (pull.commits ?? []).slice(0, 10),
+          reviews: (pull.reviews ?? []).slice(0, 12),
+          review_comments_count: pull.review_comments_count,
+          review_comments_hydrated: pull.review_comments_hydrated,
+          review_comments_truncated: pull.review_comments_truncated,
+          review_comments: (pull.review_comments ?? []).slice(0, 8),
+          review_bot_comments: (pull.review_bot_comments ?? []).slice(0, 16),
+          checks: pull.checks,
+        }
+      : null,
+  };
+}
+
+function compactDeep(value, options = {}) {
+  const arrayLimit = options.arrayLimit ?? 80;
+  const stringLimit = options.stringLimit ?? PROMPT_STRING_MAX_CHARS;
+  if (typeof value === "string") {
+    const normalized = value.replace(/\s+/g, " ").trim();
+    return normalized.length > stringLimit ? `${normalized.slice(0, stringLimit - 3)}...` : normalized;
+  }
+  if (Array.isArray(value)) {
+    return value.slice(0, arrayLimit).map((item) => compactDeep(item, options));
+  }
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, compactDeep(item, options)]));
+  }
+  return value;
 }
 
 export function hasSecuritySignalText(...values) {

@@ -227,7 +227,6 @@ function updateDashboard() {
   const closedRows = executedRows.filter((row) => CLOSE_APPLICATOR_ACTIONS.has(String(row.action.action ?? "")));
   const mergedRows = executedRows.filter((row) => MERGE_APPLICATOR_ACTIONS.has(String(row.action.action ?? "")));
   const closureRows = hydrateClosureRows(closedRows).sort(sortNewestClosureRowFirst);
-  const projectClownfishMergedRows = trackedPrRows.filter((row) => row.projectClownfishMerged);
   const blockedRows = applyRows.filter((row) => row.action.status === "blocked");
   const skippedRows = applyRows.filter((row) => row.action.status === "skipped");
   const latestBlockedRows = latestApplyRows.filter((row) => row.action.status === "blocked");
@@ -266,7 +265,6 @@ function updateDashboard() {
     closed: closedRows.length,
     merged: mergedRows.length,
     trackedPrs: trackedPrRows.length,
-    trackedMergedPrs: projectClownfishMergedRows.length,
     openTrackedPrs: countRows(trackedPrRows, (row) => row.state === "open"),
     closedUnmergedTrackedPrs: countRows(
       trackedPrRows,
@@ -300,11 +298,6 @@ ${renderMetricRow("Latest failed clusters", totals.failure, percent(totals.failu
 ${renderMetricRow("Latest cancelled clusters", totals.cancelled, percent(totals.cancelled, totals.clusters))}
 ${renderMetricRow("Run attempts archived", totals.runs, "audit")}
 ${renderMetricRow("Distinct PRs touched", totals.trackedPrs, "100%")}
-${renderMetricRow(
-  "ProjectClownfish-tracked merged PRs",
-  totals.trackedMergedPrs,
-  percent(totals.trackedMergedPrs, totals.trackedPrs),
-)}
 ${renderMetricRow("Open PRs tracked", totals.openTrackedPrs, percent(totals.openTrackedPrs, totals.trackedPrs))}
 ${renderMetricRow(
   "Closed unmerged PRs tracked",
@@ -323,14 +316,6 @@ ${renderMetricRow(
 ${renderMetricRow("Low-signal PR closes", totals.lowSignalCloses, percent(totals.lowSignalCloses, totals.closed))}
 ${renderMetricRow("Blocked mutation attempts", totals.blocked, percent(totals.blocked, totals.mutationAttempts))}
 ${renderMetricRow("Skipped mutation attempts", totals.skipped, percent(totals.skipped, totals.mutationAttempts))}
-
-### Recent ProjectClownfish-Tracked Merges
-
-These are PRs referenced by ProjectClownfish run artifacts that GitHub now reports as merged. Explicit applicator merge actions are also counted when emitted.
-
-| PR | Title | Merged | Cluster | Report | Run |
-| --- | --- | --- | --- | --- | --- |
-${renderRecentMergeRows(projectClownfishMergedRows.slice(0, 25))}
 
 ### Latest ProjectClownfish Closures
 
@@ -474,23 +459,6 @@ function countRows(rows, predicate) {
   return rows.filter(predicate).length;
 }
 
-function renderRecentMergeRows(rows) {
-  if (rows.length === 0) return "| _None yet_ |  |  |  |  |  |";
-  return rows
-    .map((row) =>
-      [
-        markdownTableLink(`#${row.number}`, row.url),
-        tableCell(row.title),
-        tableCell(row.projectClownfishMergedAt ? formatTimestamp(row.projectClownfishMergedAt) : "executed"),
-        markdownTableLink(row.record.cluster_id, clusterReportPath(row.record)),
-        markdownTableLink("report", clusterReportPath(row.record)),
-        markdownTableLink(row.record.run_id || "run", row.record.run_url),
-      ].join(" | "),
-    )
-    .map((row) => `| ${row} |`)
-    .join("\n");
-}
-
 function renderRecentClosureRows(rows) {
   if (rows.length === 0) return "| _None yet_ |  |  |  |  |  |  |  |";
   return rows
@@ -621,9 +589,8 @@ function hydrateTrackedPrRows(rows) {
       const info = infoByPull.get(`${row.repo}#${row.number}`);
       if (!info && !row.explicitPull) return null;
       const projectClownfishMerged = Boolean(row.projectClownfishMerged);
-      const merged = Boolean(projectClownfishMerged || row.merged_at || info?.merged);
+      const merged = Boolean(row.merged_at || info?.merged);
       const mergedAt = row.merged_at ?? info?.merged_at ?? null;
-      const trackedMerge = Boolean(projectClownfishMerged || merged);
       const state = merged ? "merged" : normalizePullState(info?.state) ?? "tracked";
       return {
         ...row,
@@ -632,8 +599,8 @@ function hydrateTrackedPrRows(rows) {
         state,
         merged,
         merged_at: mergedAt,
-        projectClownfishMerged: trackedMerge,
-        projectClownfishMergedAt: row.projectClownfishMergedAt ?? mergedAt,
+        projectClownfishMerged,
+        projectClownfishMergedAt: row.projectClownfishMergedAt ?? null,
       };
     })
     .filter(Boolean);
