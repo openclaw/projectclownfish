@@ -2,12 +2,12 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-165984-agentic-merge"
 mode: "autonomous"
-run_id: "24954291044"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24954291044"
-head_sha: "b7ff2c22cf9c4626e6d8b688501647eccd48acad"
-workflow_conclusion: "cancelled"
+run_id: "24954753004"
+run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24954753004"
+head_sha: "6c2d2b959157a43049fe503c524f0a4d2639c7ba"
+workflow_conclusion: "failure"
 result_status: "planned"
-published_at: "2026-04-26T10:47:07.525Z"
+published_at: "2026-04-26T10:51:40.768Z"
 canonical: "https://github.com/openclaw/openclaw/issues/70678"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/70678"
 canonical_pr: "https://github.com/openclaw/openclaw/pull/71466"
@@ -22,9 +22,9 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24954291044](https://github.com/openclaw/projectclownfish/actions/runs/24954291044)
+Run: [https://github.com/openclaw/projectclownfish/actions/runs/24954753004](https://github.com/openclaw/projectclownfish/actions/runs/24954753004)
 
-Workflow conclusion: cancelled
+Workflow conclusion: failure
 
 Worker result: planned
 
@@ -32,7 +32,7 @@ Canonical: https://github.com/openclaw/openclaw/issues/70678
 
 ## Summary
 
-Canonical path is the still-open quiet WhatsApp socket watchdog family, now best represented by #70678 with draft fix PR #71466. Current main SHA 6d60b035b4e7c1739f038808e041567448f58060 still has the extension-local inbound-message watchdog gap per hydrated maintainer review. No merge is recommended: #71466 is draft with validation jobs skipped and no Codex /review, #63939 has failing checks and is explicitly secondary to #71466, and #67816 plus linked security refs are quarantined.
+Canonical path is the current quiet-socket watchdog family: open issue #70678 with draft maintainer PR #71466 as the best fix path. No GitHub mutations were performed. Duplicate closeouts are blocked by require_fix_before_close until #71466 or a replacement fix PR is made landable and merged/opened by ProjectClownfish. Security-sensitive linked refs are quarantined only for those refs.
 
 ## Impact
 
@@ -54,40 +54,40 @@ Canonical path is the still-open quiet WhatsApp socket watchdog family, now best
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #70678 | keep_canonical | planned | canonical | Best live canonical for the 30-minute quiet-session reconnect root cause. |
-| #71466 | fix_needed | planned | fixed_by_candidate | Canonical PR candidate exists but needs repair/finalization, validation, and Codex /review before merge or fixed-by-candidate closeout. |
-| cluster:ghcrawl-165984-agentic-merge | build_fix_artifact | planned |  | A narrow fix path is needed to finish or replace the draft canonical PR while preserving contributor credit. |
-| #53698 | close_duplicate | blocked | duplicate | Close is blocked on the canonical fix path or fix PR because require_fix_before_close is true. |
-| #65215 | close_duplicate | blocked | duplicate | Close is blocked on the canonical fix path or fix PR because require_fix_before_close is true. |
-| #45474 | keep_related | planned | related | Related WhatsApp stability issue, not a true duplicate of the quiet-session watchdog root cause. |
-| #48390 | keep_related | planned | related | Related subfamily with unique 440 conflict behavior; leave open. |
-| #49305 | keep_related | planned | related | Related WhatsApp lifecycle bug with distinct logout credential cleanup scope. |
-| #58481 | keep_independent | planned | independent | Different platform-specific TCP keepalive root cause. |
-| #61788 | keep_independent | planned | independent | Immediate connection timeout after login is not the quiet-session watchdog root cause. |
-| #63855 | keep_related | planned | related | Related liveness/silent-loss report with distinct remaining validation needs. |
-| #64296 | keep_independent | planned | independent | Login/opening failure is independent of the quiet-session watchdog. |
-| #66920 | keep_related | planned | related | Related reconnect-cycle symptom, but unique group inbound delivery scope. |
-| #67986 | keep_related | planned | related | Related health-monitor recovery symptom, but not a true duplicate. |
-| #70463 | keep_related | planned | related | Related, but has unique race/outage scope requiring separate validation. |
-| #70856 | keep_related | planned | related | Related WhatsApp stability report, but not a safe duplicate close. |
-| #63939 | keep_related | planned | related | Useful related contributor PR; do not merge or close because checks fail and maintainer explicitly deferred the product decision until #71466 lands. |
-| #67816 | route_security | planned | security_sensitive | Security-sensitive linked PR is out of ProjectClownfish backlog cleanup scope. |
-| #49293 | route_security | planned | security_sensitive | Security-sensitive linked issue is out of ProjectClownfish backlog cleanup scope. |
-| #65427 | route_security | planned | security_sensitive | Security-sensitive linked PR is out of ProjectClownfish backlog cleanup scope. |
-| #67815 | route_security | planned | security_sensitive | Security-sensitive linked PR is out of ProjectClownfish backlog cleanup scope. |
-| #49057 | keep_closed | skipped | superseded | Closed refs are historical evidence only. |
-| #50684 | keep_closed | skipped | fixed_by_candidate | Closed refs are historical evidence only. |
-| #51111 | keep_closed | skipped | fixed_by_candidate | Closed refs are historical evidence only. |
-| #55138 | keep_closed | skipped | superseded | Closed refs are historical evidence only. |
-| #58408 | keep_closed | skipped | fixed_by_candidate | Closed refs are historical evidence only. |
-| #61663 | keep_closed | skipped | fixed_by_candidate | Closed refs are historical evidence only. |
-| #61744 | keep_closed | skipped | fixed_by_candidate | Closed refs are historical evidence only. |
-| #63410 | keep_closed | skipped | superseded | Closed refs are historical evidence only. |
-| #63854 | keep_closed | skipped | superseded | Closed refs are historical evidence only. |
-| #63925 | keep_closed | skipped | superseded | Closed refs are historical evidence only. |
-| #66917 | keep_closed | skipped | superseded | Closed refs are historical evidence only. |
-| #66965 | keep_closed | skipped | superseded | Closed refs are historical evidence only. |
-| #70608 | keep_closed | skipped | superseded | Closed refs are historical evidence only. |
+| #70678 | keep_canonical | planned | canonical | Best live canonical issue for the 30-minute quiet-socket watchdog root cause. |
+| #71466 | fix_needed | blocked | fixed_by_candidate | Canonical fix candidate exists but is not merge-ready; blocked on making #71466 or a replacement branch landable with validation and review. |
+| #63939 | keep_related | planned | related | Useful related contributor work, but not the canonical fix because it leaves the bad default in place and currently has failing checks. |
+| #53698 | close_duplicate | blocked | duplicate | Close is blocked on the canonical fix path or fix PR. |
+| #65215 | close_duplicate | blocked | duplicate | Close is blocked on the canonical fix path or fix PR. |
+| #48390 | keep_related | planned | related | Same symptom family, but it contains unique 440/stale-listener work that should remain open or be split after the quiet-watchdog fix. |
+| #45474 | keep_related | planned | related | Related WhatsApp reliability failure, but unique 440/401 stale-auth and inbound delivery-loss details remain. |
+| #49305 | keep_related | planned | related | Related WhatsApp reconnect family, but the logged-out credential cleanup path is distinct from quiet-socket watchdog behavior. |
+| #58481 | keep_independent | planned | independent | Separate platform/network keepalive problem. |
+| #61788 | keep_independent | planned | independent | Separate connection-establishment timeout. |
+| #63855 | keep_related | planned | related | Related reliability issue with unique message-loss scope. |
+| #64296 | keep_related | planned | related | Same WhatsApp connection area, insufficient evidence for duplicate closeout. |
+| #66920 | keep_related | planned | related | Related WhatsApp reliability family, but unique group-message delivery scope. |
+| #67986 | keep_independent | planned | independent | Broader gateway hang, not the WhatsApp quiet-socket watchdog. |
+| #70463 | keep_related | planned | related | Related 30-minute disconnect symptom, but race-condition and gateway health-monitor control flow are distinct. |
+| #70856 | keep_related | planned | related | Related WhatsApp listener reliability issue with unique platform and failure details. |
+| #49057 | keep_closed | skipped | related | Historical evidence only. |
+| #50684 | keep_closed | skipped | related | Historical evidence only. |
+| #51111 | keep_closed | skipped | related | Historical evidence only. |
+| #55138 | keep_closed | skipped | duplicate | Already closed; no closure action allowed. |
+| #58408 | keep_closed | skipped | related | Already closed; no closure action allowed. |
+| #61663 | keep_closed | skipped | related | Already closed; no closure action allowed. |
+| #61744 | keep_closed | skipped | related | Already closed; no closure action allowed. |
+| #63410 | keep_closed | skipped | duplicate | Already closed; no closure action allowed. |
+| #63854 | keep_closed | skipped | duplicate | Already closed; no closure action allowed. |
+| #63925 | keep_closed | skipped | duplicate | Already closed; no closure action allowed. |
+| #66917 | keep_closed | skipped | related | Already closed; no closure action allowed. |
+| #66965 | keep_closed | skipped | duplicate | Already closed; no closure action allowed. |
+| #70608 | keep_closed | skipped | duplicate | Already closed; no closure action allowed. |
+| #49293 | route_security | planned | security_sensitive | Quarantine exact security-sensitive linked ref to central OpenClaw security handling. |
+| #65427 | route_security | planned | security_sensitive | Quarantine exact security-sensitive linked ref to central OpenClaw security handling. |
+| #67815 | route_security | planned | security_sensitive | Quarantine exact security-sensitive linked ref to central OpenClaw security handling. |
+| #67816 | route_security | planned | security_sensitive | Quarantine exact security-sensitive linked ref to central OpenClaw security handling. |
+| cluster:ghcrawl-165984-agentic-merge | build_fix_artifact | planned | fixed_by_candidate | A fix path is needed before duplicate closeout can proceed. |
 
 ## Needs Human
 

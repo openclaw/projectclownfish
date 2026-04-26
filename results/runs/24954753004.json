@@ -1,0 +1,345 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165984-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24954753004",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24954753004",
+  "head_sha": "6c2d2b959157a43049fe503c524f0a4d2639c7ba",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165984-agentic-merge.md",
+  "published_at": "2026-04-26T10:51:40.768Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/70678",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/70678",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/71466",
+  "summary": "Canonical path is the current quiet-socket watchdog family: open issue #70678 with draft maintainer PR #71466 as the best fix path. No GitHub mutations were performed. Duplicate closeouts are blocked by require_fix_before_close until #71466 or a replacement fix PR is made landable and merged/opened by ProjectClownfish. Security-sensitive linked refs are quarantined only for those refs.",
+  "actions": [
+    {
+      "target": "#70678",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Best live canonical issue for the 30-minute quiet-socket watchdog root cause."
+    },
+    {
+      "target": "#71466",
+      "action": "fix_needed",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Canonical fix candidate exists but is not merge-ready; blocked on making #71466 or a replacement branch landable with validation and review."
+    },
+    {
+      "target": "#63939",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Useful related contributor work, but not the canonical fix because it leaves the bad default in place and currently has failing checks."
+    },
+    {
+      "target": "#53698",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#65215",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#48390",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Same symptom family, but it contains unique 440/stale-listener work that should remain open or be split after the quiet-watchdog fix."
+    },
+    {
+      "target": "#45474",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Related WhatsApp reliability failure, but unique 440/401 stale-auth and inbound delivery-loss details remain."
+    },
+    {
+      "target": "#49305",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Related WhatsApp reconnect family, but the logged-out credential cleanup path is distinct from quiet-socket watchdog behavior."
+    },
+    {
+      "target": "#58481",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Separate platform/network keepalive problem."
+    },
+    {
+      "target": "#61788",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Separate connection-establishment timeout."
+    },
+    {
+      "target": "#63855",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Related reliability issue with unique message-loss scope."
+    },
+    {
+      "target": "#64296",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Same WhatsApp connection area, insufficient evidence for duplicate closeout."
+    },
+    {
+      "target": "#66920",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Related WhatsApp reliability family, but unique group-message delivery scope."
+    },
+    {
+      "target": "#67986",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Broader gateway hang, not the WhatsApp quiet-socket watchdog."
+    },
+    {
+      "target": "#70463",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Related 30-minute disconnect symptom, but race-condition and gateway health-monitor control flow are distinct."
+    },
+    {
+      "target": "#70856",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Related WhatsApp listener reliability issue with unique platform and failure details."
+    },
+    {
+      "target": "#49057",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical evidence only."
+    },
+    {
+      "target": "#50684",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical evidence only."
+    },
+    {
+      "target": "#51111",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Historical evidence only."
+    },
+    {
+      "target": "#55138",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#58408",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#61663",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#61744",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#63410",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#63854",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#63925",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#66917",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70678",
+      "candidate_fix": null,
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#66965",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#70608",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#49293",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine exact security-sensitive linked ref to central OpenClaw security handling."
+    },
+    {
+      "target": "#65427",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine exact security-sensitive linked ref to central OpenClaw security handling."
+    },
+    {
+      "target": "#67815",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine exact security-sensitive linked ref to central OpenClaw security handling."
+    },
+    {
+      "target": "#67816",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine exact security-sensitive linked ref to central OpenClaw security handling."
+    },
+    {
+      "target": "cluster:ghcrawl-165984-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#70678",
+      "candidate_fix": "#71466",
+      "reason": "A fix path is needed before duplicate closeout can proceed."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "keep_related": 9,
+    "close_duplicate": 2,
+    "keep_independent": 3,
+    "keep_closed": 13,
+    "route_security": 4,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 18,
+    "blocked": 3,
+    "skipped": 13
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
