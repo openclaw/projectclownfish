@@ -402,6 +402,7 @@ function buildFixArtifact(plan, job) {
       "prove current main behavior before fix, merge, fixed-by-candidate, or post-merge closeout actions",
       "for pure issue-dedupe closeout, prove the canonical issue and duplicate targets are live and current",
       "hydrate every provided and linked item before classification",
+      "emit one action per GitHub issue/PR ref; never use comma-separated targets",
       "if an item is not a true duplicate, run a single-item review/check/decide path before needs_human",
       "fetch Greptile, Codex, Asile, CodeRabbit, Copilot, and similar review-bot comments for every canonical or candidate PR",
       "address each actionable review-bot finding or mark the item needs_human with the unresolved blocker",

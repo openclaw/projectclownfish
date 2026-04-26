@@ -104,6 +104,7 @@ Current autonomy posture:
 - Match OpenClaw's CI fast lane for fix validation. Use `blacksmith-4vcpu-ubuntu-2404` for cluster planning/review and `blacksmith-16vcpu-ubuntu-2404` for fix/apply execution. The executor sets `OPENCLAW_LOCAL_CHECK=0` and treats `pnpm check:changed` plus diff checks as the default hard gate. It normalizes target validation commands to `pnpm check:changed` unless `CLOWNFISH_TARGET_VALIDATION_MODE=strict` or `CLOWNFISH_STRICT_TARGET_VALIDATION=1` is explicitly set, so unrelated flaky main CI and broad suites do not block narrow ProjectClownfish fixes.
 - Prefer `keep_related`, `keep_independent`, `keep_closed`, `fix_needed`, `route_security`, and subcluster notes over blanket `needs_human`.
 - Use `needs_human` only for the exact maintainer decision still unresolved after hydrated evidence is reviewed.
+- Worker results must use one action per issue/PR ref. Never emit comma-separated action targets; related follow-up subclusters should be one `keep_related` action per ref or one cluster-scoped `fix_needed` action.
 
 After tuning, run:
 

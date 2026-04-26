@@ -112,6 +112,7 @@ function reviewResult(resultPath) {
     const clusterScopedFixAction = isClusterScopedFixAction(action, result);
 
     if (!target) failures.push("action missing target");
+    if (target.includes(",")) failures.push(`${target} action target must be a single ref, not a comma-separated list`);
     if (!name) failures.push(`${target || "unknown target"} missing action`);
     if (!action.idempotency_key) failures.push(`${target} missing idempotency_key`);
     if (!Array.isArray(action.evidence) || action.evidence.length === 0) {

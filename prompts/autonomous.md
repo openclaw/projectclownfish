@@ -18,6 +18,8 @@ Before drive mode:
 3. For every canonical or candidate PR, inspect review comments and issue comments from review bots including Greptile, Codex, Asile, CodeRabbit, Copilot, and similar automated reviewers when they are present in the artifact.
 4. Address every actionable bot review finding in the fix path, prove it is non-actionable from the artifact, or mark only that PR/action `needs_human` with the exact unresolved comment/blocker. Do not treat a PR as merge-ready while an actionable bot finding is unresolved.
 5. Classify each item as `canonical`, `duplicate`, `related`, `superseded`, `independent`, `fixed_by_candidate`, or `needs_human`.
+   - Emit one action object per GitHub issue/PR ref. Never put comma-separated refs, ranges, or grouped target lists in `target`.
+   - For related follow-up subclusters, either emit one `keep_related` action per open ref with that ref's `target_kind` and `target_updated_at`, or emit one cluster-scoped `fix_needed` action with `target: "cluster:<cluster_id>"` when the follow-up is a new cluster-level work item.
 6. Identify the canonical path:
    - still-open canonical issue for pure duplicate routing;
    - already merged PR/commit on `main`;
@@ -47,6 +49,7 @@ Instant close actions:
 - Never emit close actions for targets whose live state is closed. If a closed target needs to appear in the matrix, use `keep_closed` with `status: "skipped"`.
 - Include `target_updated_at`, `target_kind`, `canonical` or `candidate_fix`, contributor-credit preserving `comment`, evidence, and a stable `idempotency_key`.
 - In action fields, `canonical`, `duplicate_of`, and `candidate_fix` must be explicit refs like `#61741`. Do not put a year, timestamp fragment, unrelated number, or only a prose URL in those fields.
+- `target` must be exactly one issue/PR ref like `#61741` or one cluster fix target like `cluster:<cluster_id>`. Do not group multiple refs in one action.
 - Leave independent or related reports open as `keep_independent` or `keep_related`. Use `needs_human` only when choosing among viable canonical paths, merge paths, or contributor-credit tradeoffs requires maintainer judgment.
 - Do not suppress duplicate closeout only because another linked ref is security-sensitive. `route_security` the security ref and close only unrelated non-security duplicates that satisfy all closure gates.
 
