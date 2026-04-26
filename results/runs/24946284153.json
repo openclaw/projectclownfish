@@ -1,0 +1,383 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165982-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24946284153",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24946284153",
+  "head_sha": "ee69c4d548d49371436383ab0781ed7138b9e5c0",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165982-agentic-merge.md",
+  "published_at": "2026-04-26T02:46:04.434Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/45222",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/45222",
+  "canonical_pr": null,
+  "summary": "Kept #45222 as the live canonical for the loopback WebSocket handshake regression, left other gateway/health/restart reports open as related or independent subfamilies, routed security-flagged PRs #47222 and #63651 to central OpenClaw security handling, and produced a narrow fix artifact because later handshake reports remain open and no viable canonical PR is available.",
+  "actions": [
+    {
+      "target": "#45222",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "#45222 remains the best live canonical for the loopback WebSocket handshake family."
+    },
+    {
+      "target": "#45222",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "The handshake regression still appears real on current main and needs a new narrow fix path."
+    },
+    {
+      "target": "#45222",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Build a new narrow fix artifact because no writable checkout or viable canonical PR is available in this worker."
+    },
+    {
+      "target": "#44354",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Do not dedupe this into #45222."
+    },
+    {
+      "target": "#44518",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "This older launchd restart PR is not a safe canonical path for the current cluster and should stay out of the #45222 dedupe track."
+    },
+    {
+      "target": "#46494",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep this open as a separate health-state family."
+    },
+    {
+      "target": "#46869",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate Windows restart work should remain open outside the #45222 handshake dedupe path."
+    },
+    {
+      "target": "#47222",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route #47222 and its linked systemd SIGTERM issue family to central OpenClaw security handling; do not merge, close, comment, or relabel from this worker."
+    },
+    {
+      "target": "#48360",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Same symptom family as #45222, but keep open because duplicate closure would rely on title-level matching."
+    },
+    {
+      "target": "#48766",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Root cause is too broad to dedupe into the handshake canonical."
+    },
+    {
+      "target": "#49180",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Related false-negative reporting path, but not safe to auto-close from the compact artifact."
+    },
+    {
+      "target": "#49758",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open because the report crosses handshake and stale channel-state paths."
+    },
+    {
+      "target": "#51016",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Same handshake/probe symptom family, but keep open because the compact artifact does not justify duplicate closure."
+    },
+    {
+      "target": "#51357",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Keep related to the canonical handshake tracker."
+    },
+    {
+      "target": "#51469",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Unique reproduction detail makes this related, not safely closable as a duplicate."
+    },
+    {
+      "target": "#51679",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Same regression family, but keep open because the compact artifact is not enough for duplicate closeout."
+    },
+    {
+      "target": "#52336",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Keep related; this is a later still-open manifestation of the handshake/closed false-negative family."
+    },
+    {
+      "target": "#52487",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep this separate Windows restart PR open outside the #45222 dedupe path."
+    },
+    {
+      "target": "#53168",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Related to the handshake family, but not safely closable as a pure duplicate."
+    },
+    {
+      "target": "#53877",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Unique platform detail makes this related, not a safe duplicate closeout."
+    },
+    {
+      "target": "#56284",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep this separate Windows restart/state-loss family open."
+    },
+    {
+      "target": "#57967",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#57971",
+      "reason": "Keep the issue open behind candidate PR #57971 until that branch is review-clean and landed."
+    },
+    {
+      "target": "#57971",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep this PR open outside the #45222 handshake dedupe path; no merge recommendation from this pass."
+    },
+    {
+      "target": "#59287",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep this open with the Telegram health-state family; the compact artifact is not enough for duplicate closure."
+    },
+    {
+      "target": "#59333",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical evidence only; no ProjectClownfish close action is valid."
+    },
+    {
+      "target": "#61554",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical evidence only; no ProjectClownfish close action is valid."
+    },
+    {
+      "target": "#63491",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep this Windows restart-health issue open outside the #45222 handshake family."
+    },
+    {
+      "target": "#63651",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route #63651 to central OpenClaw security handling."
+    },
+    {
+      "target": "#64201",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep this crash-loop report open as an independent issue."
+    },
+    {
+      "target": "#64476",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Related transport symptom family, but unique platform/version detail blocks duplicate closure."
+    },
+    {
+      "target": "#66735",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep this separate systemd restart PR open outside the #45222 dedupe path."
+    },
+    {
+      "target": "#67416",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical evidence only; no ProjectClownfish close action is valid."
+    },
+    {
+      "target": "#67544",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical evidence only; no ProjectClownfish close action is valid."
+    },
+    {
+      "target": "#68493",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep this issue independent from the #45222 handshake tracker."
+    },
+    {
+      "target": "#68853",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open outside the handshake cluster; no merge recommendation from this pass."
+    },
+    {
+      "target": "#68944",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45222",
+      "candidate_fix": null,
+      "reason": "Keep related to the canonical handshake tracker."
+    },
+    {
+      "target": "#69056",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep this separate Windows restart PR open outside the #45222 dedupe path."
+    },
+    {
+      "target": "#69057",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#69056",
+      "reason": "Keep the issue open behind candidate PR #69056 until that PR is fully review-cleared and landed."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_independent": 14,
+    "needs_human": 2,
+    "keep_related": 15,
+    "keep_closed": 4
+  },
+  "action_status_counts": {
+    "planned": 32,
+    "blocked": 2,
+    "skipped": 4
+  },
+  "apply_counts": {},
+  "needs_human": [
+    "Security boundary: #47222 and its linked issue family must route to central OpenClaw security handling because the preflight artifact marks #47222 security_sensitive and includes security-analysis review.",
+    "Security boundary: #63651 must route to central OpenClaw security handling because the preflight artifact marks the PR security_sensitive."
+  ],
+  "apply_actions": []
+}
