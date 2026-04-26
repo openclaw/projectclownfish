@@ -2,18 +2,18 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-165999-agentic-merge"
 mode: "autonomous"
-run_id: "24946036285"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24946036285"
-head_sha: "56bccb0db44200da8fc6f4a81252127a5c0e77d5"
-workflow_conclusion: "success"
+run_id: "24962941806"
+run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24962941806"
+head_sha: "c6a011e689cd5c31e8b8008fb1626f775ad148df"
+workflow_conclusion: "failure"
 result_status: "planned"
-published_at: "2026-04-26T02:20:12.591Z"
+published_at: "2026-04-26T18:14:22.226Z"
 canonical: "https://github.com/openclaw/openclaw/issues/57256"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/57256"
 canonical_pr: "https://github.com/openclaw/openclaw/pull/59685"
-actions_total: 15
+actions_total: 17
 apply_executed: 0
-apply_blocked: 3
+apply_blocked: 0
 apply_skipped: 0
 needs_human_count: 0
 ---
@@ -22,9 +22,9 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24946036285](https://github.com/openclaw/projectclownfish/actions/runs/24946036285)
+Run: [https://github.com/openclaw/projectclownfish/actions/runs/24962941806](https://github.com/openclaw/projectclownfish/actions/runs/24962941806)
 
-Workflow conclusion: success
+Workflow conclusion: failure
 
 Worker result: planned
 
@@ -32,15 +32,15 @@ Canonical: https://github.com/openclaw/openclaw/issues/57256
 
 ## Summary
 
-Representative issue #57256 remains the primary live canonical, with PR #59685 as the open fix path for the broad live-memory-plugin false-negative family. Planned duplicate closes are limited to exact matches (#56968, #60819, #64183); the doctor-timeout reports (#44426, #44932, #68171), the status side-effect report (#62599), and the memory-lancedb runtime-registration path (#60177/#65066) stay open as related. No merge action is emitted because the supplied artifact does not prove mergeability or a clean post-fix Codex /review result for the open PRs.
+Hydrated state shows two non-security subfamilies: status/plugin false negatives centered on open issue #57256 with useful but not merge-ready PR #59685, and doctor gateway timeout false warnings centered on open issue #44426 with no viable open PR. No GitHub mutations were performed; closeouts are blocked where require_fix_before_close applies.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 15 |
+| Worker actions | 17 |
 | Applied executions | 0 |
-| Apply blocked | 3 |
+| Apply blocked | 0 |
 | Apply skipped | 0 |
 | Needs human | 0 |
 
@@ -48,29 +48,29 @@ Representative issue #57256 remains the primary live canonical, with PR #59685 a
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #56968 | close_duplicate | blocked | duplicate | candidate fix is not listed in job refs |
-| #60819 | close_duplicate | blocked | duplicate | candidate fix is not listed in job refs |
-| #64183 | close_duplicate | blocked | duplicate | candidate fix is not listed in job refs |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #44426 | keep_related | planned | related | Timeout-only doctor false positives are related to this cluster's memory-diagnostic family, but they are not a clean duplicate of the live-plugin runtime false-negative tracked by #57256. |
-| #44674 | keep_closed | skipped | independent | Already closed and independent; kept only as historical context. |
-| #44932 | keep_related | planned | related | Keep open as a related timeout/cold-start subfamily report rather than force it under #57256. |
-| #56968 | close_duplicate | planned | duplicate | Same root cause as #57256 with no unique remaining work beyond the canonical thread and its open fix PR. |
-| #57256 | keep_canonical | planned | canonical | Best surviving canonical issue for the broad live-memory-plugin false-negative family. |
-| #59685 | keep_canonical | planned | canonical | Keep open as the canonical fix path for #57256, but do not recommend merge from this artifact. |
-| #59894 | keep_closed | skipped | related | Already closed; retained only as evidence about current main behavior. |
-| #59942 | keep_related | planned | related | Related symptom family, but root cause is still ambiguous between the broad runtime-health false negative and the memory-lancedb runtime-registration gap. |
-| #60177 | keep_related | planned | fixed_by_candidate | Keep open as fixed-by-candidate until PR #65066 completes validation; do not collapse it into #57256. |
-| #60819 | close_duplicate | planned | duplicate | Same false-negative family as #57256 with no unique remaining work after routing to the canonical issue and PR. |
-| #62585 | keep_closed | skipped | related | Already closed; retained as related evidence only. |
-| #62599 | keep_related | planned | related | Keep open as a related status read-only/side-effect report rather than auto-close it under the broader live-runtime false-negative issue. |
-| #64183 | close_duplicate | planned | duplicate | Same root cause as #57256 with no unique remaining scope beyond plugin-specific confirmation. |
-| #65066 | keep_related | planned | related | Keep open as the narrow candidate fix for the distinct memory-lancedb runtime-registration subfamily; do not recommend merge from this artifact. |
-| #68171 | keep_related | planned | related | Keep open as a related timeout/cold-start embeddings report instead of routing it to the live-plugin canonical. |
+| #44426 | keep_canonical | planned | canonical | Keep #44426 open as the canonical doctor-timeout false-warning tracker until a replacement fix lands. |
+| cluster:ghcrawl-165999-agentic-merge | fix_needed | planned | related | A narrow credited replacement fix is needed for the doctor timeout subcluster. |
+| cluster:ghcrawl-165999-agentic-merge | build_fix_artifact | planned | related | Build a replacement fix artifact for ProjectClownfish fix execution. |
+| cluster:ghcrawl-165999-agentic-merge | open_fix_pr | planned | related | Open a narrow credited replacement PR after deterministic fix execution passes validation. |
+| #57256 | keep_canonical | planned | canonical | Keep #57256 as the canonical issue for status/plugin memory false negatives. |
+| #59685 | keep_canonical | planned | canonical | Useful canonical PR, but merge is blocked until mergeability is refreshed and a clean latest-head /review preflight exists. |
+| #56968 | close_duplicate | blocked | duplicate | Close is blocked on the canonical fix path or fix PR. |
+| #60819 | close_duplicate | blocked | duplicate | Close is blocked on the canonical fix path or fix PR. |
+| #62599 | keep_related | planned | related | Related to #57256/#59685 but has unique side-effect/read-only status scope that should remain open unless separately proven fixed. |
+| #65066 | keep_related | planned | related | Useful related PR, not the canonical cluster fix and not merge-ready under ProjectClownfish merge policy. |
+| #44932 | keep_closed | skipped | duplicate | Already-closed refs are historical evidence only. |
+| #59894 | keep_closed | skipped | fixed_by_candidate | Already-closed refs are historical evidence only. |
+| #59942 | keep_closed | skipped | duplicate | Already-closed refs are historical evidence only. |
+| #60177 | keep_closed | skipped | independent | Already-closed refs are historical evidence only. |
+| #64183 | keep_closed | skipped | duplicate | Already-closed refs are historical evidence only. |
+| #68171 | keep_closed | skipped | duplicate | Already-closed refs are historical evidence only. |
+| #46576 | keep_closed | skipped | superseded | Already-closed PR is evidence only and should be credited, not mutated. |
 
 ## Needs Human
 

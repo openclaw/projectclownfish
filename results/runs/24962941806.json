@@ -1,0 +1,191 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165999-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24962941806",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24962941806",
+  "head_sha": "c6a011e689cd5c31e8b8008fb1626f775ad148df",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165999-agentic-merge.md",
+  "published_at": "2026-04-26T18:14:22.226Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/57256",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/57256",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/59685",
+  "summary": "Hydrated state shows two non-security subfamilies: status/plugin false negatives centered on open issue #57256 with useful but not merge-ready PR #59685, and doctor gateway timeout false warnings centered on open issue #44426 with no viable open PR. No GitHub mutations were performed; closeouts are blocked where require_fix_before_close applies.",
+  "actions": [
+    {
+      "target": "#44426",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#44426",
+      "candidate_fix": null,
+      "reason": "Keep #44426 open as the canonical doctor-timeout false-warning tracker until a replacement fix lands."
+    },
+    {
+      "target": "cluster:ghcrawl-165999-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#44426",
+      "candidate_fix": null,
+      "reason": "A narrow credited replacement fix is needed for the doctor timeout subcluster."
+    },
+    {
+      "target": "cluster:ghcrawl-165999-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#44426",
+      "candidate_fix": null,
+      "reason": "Build a replacement fix artifact for ProjectClownfish fix execution."
+    },
+    {
+      "target": "cluster:ghcrawl-165999-agentic-merge",
+      "action": "open_fix_pr",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#44426",
+      "candidate_fix": null,
+      "reason": "Open a narrow credited replacement PR after deterministic fix execution passes validation."
+    },
+    {
+      "target": "#57256",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#57256",
+      "candidate_fix": "#59685",
+      "reason": "Keep #57256 as the canonical issue for status/plugin memory false negatives."
+    },
+    {
+      "target": "#59685",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#57256",
+      "candidate_fix": "#59685",
+      "reason": "Useful canonical PR, but merge is blocked until mergeability is refreshed and a clean latest-head /review preflight exists."
+    },
+    {
+      "target": "#56968",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#57256",
+      "candidate_fix": "#59685",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#60819",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#57256",
+      "candidate_fix": "#59685",
+      "reason": "Close is blocked on the canonical fix path or fix PR."
+    },
+    {
+      "target": "#62599",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#57256",
+      "candidate_fix": "#59685",
+      "reason": "Related to #57256/#59685 but has unique side-effect/read-only status scope that should remain open unless separately proven fixed."
+    },
+    {
+      "target": "#65066",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#57256",
+      "candidate_fix": "#65066",
+      "reason": "Useful related PR, not the canonical cluster fix and not merge-ready under ProjectClownfish merge policy."
+    },
+    {
+      "target": "#44932",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#44426",
+      "candidate_fix": null,
+      "reason": "Already-closed refs are historical evidence only."
+    },
+    {
+      "target": "#59894",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#57256",
+      "candidate_fix": null,
+      "reason": "Already-closed refs are historical evidence only."
+    },
+    {
+      "target": "#59942",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#60177",
+      "candidate_fix": "#65066",
+      "reason": "Already-closed refs are historical evidence only."
+    },
+    {
+      "target": "#60177",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": "#65066",
+      "reason": "Already-closed refs are historical evidence only."
+    },
+    {
+      "target": "#64183",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#56968",
+      "candidate_fix": null,
+      "reason": "Already-closed refs are historical evidence only."
+    },
+    {
+      "target": "#68171",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#44426",
+      "candidate_fix": null,
+      "reason": "Already-closed refs are historical evidence only."
+    },
+    {
+      "target": "#46576",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#44426",
+      "candidate_fix": null,
+      "reason": "Already-closed PR is evidence only and should be credited, not mutated."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 3,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "open_fix_pr": 1,
+    "close_duplicate": 2,
+    "keep_related": 2,
+    "keep_closed": 7
+  },
+  "action_status_counts": {
+    "planned": 8,
+    "blocked": 2,
+    "skipped": 7
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
