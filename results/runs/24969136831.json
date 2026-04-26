@@ -1,0 +1,106 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-207026-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24969136831",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24969136831",
+  "head_sha": "954e3ac4580f330255b90e541b805287d2731ff4",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-207026-agentic-merge.md",
+  "published_at": "2026-04-26T22:55:53.363Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/63169",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/63169",
+  "canonical_pr": null,
+  "summary": "Hydrated preflight shows no security-sensitive items and no mergeable/open PR. #63169 remains the best open canonical issue for the WhatsApp media-send success-without-attachment family. #61970 is a high-confidence duplicate of #63169, but closeout is blocked by require_fix_before_close because no hydrated merged candidate PR is available to use as candidate_fix. Closed refs are kept as historical evidence only.",
+  "actions": [
+    {
+      "target": "#63169",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "Best surviving open canonical thread for this cluster's WhatsApp outbound media delivery failure."
+    },
+    {
+      "target": "#61970",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "Duplicate closeout is clear but blocked on the canonical fix path or a hydrated merged fix PR."
+    },
+    {
+      "target": "#60315",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "Closed historical context only."
+    },
+    {
+      "target": "#62214",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "Closed historical fixed context; linked fix PR refs are not hydrated primary items for candidate_fix."
+    },
+    {
+      "target": "#62399",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "Closed historical fixed context only."
+    },
+    {
+      "target": "#65451",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "Closed related context only."
+    },
+    {
+      "target": "#66090",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "Closed historical fixed context only."
+    },
+    {
+      "target": "#66117",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#63169",
+      "candidate_fix": null,
+      "reason": "Closed superseded contributor PR; credit is preserved in historical comments and no mutation is valid."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_duplicate": 1,
+    "keep_closed": 6
+  },
+  "action_status_counts": {
+    "planned": 1,
+    "blocked": 1,
+    "skipped": 6
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
