@@ -1,0 +1,180 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-191461-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24968428731",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24968428731",
+  "head_sha": "9bae724841e3040cf5eec99ce0991329a29e463b",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-191461-agentic-merge.md",
+  "published_at": "2026-04-26T22:32:47.612Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/37634",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/37634",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/46300",
+  "summary": "Classified the hydrated cluster as over-broad. The current canonical path for the representative permission/write failures is #37634 with repair of open PR #46300 before any duplicate closeout. #31331, #36525, #39497, and #44077 remain open as related or independent follow-up work. #31457 is quarantined as the only security-sensitive hydrated item. No merge is recommended because #46300 lacks fresh merge preflight and has a failing macos check in the artifact.",
+  "actions": [
+    {
+      "target": "#31331",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#37634",
+      "candidate_fix": null,
+      "reason": "Keep open as a related but separate DOOD bind-mount canonical issue; do not close into the workspaceAccess=none writable-workspace tracker."
+    },
+    {
+      "target": "#36525",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#37634",
+      "candidate_fix": null,
+      "reason": "Related product/semantics work, but too broad to close or include in the narrow #37634/#46300 fix path."
+    },
+    {
+      "target": "#37634",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#37634",
+      "candidate_fix": "#46300",
+      "reason": "Best live canonical for the representative read/write permission failures in workspaceAccess=none sandbox sessions."
+    },
+    {
+      "target": "#39497",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#37634",
+      "candidate_fix": null,
+      "reason": "Keep open as related follow-up work; not a duplicate of #37634 and not covered by #46300."
+    },
+    {
+      "target": "#44077",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent bug family; leave open for a separate focused fix or cluster."
+    },
+    {
+      "target": "#46300",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#37634",
+      "candidate_fix": "#46300",
+      "reason": "Repair the contributor branch before merge: rebase/refresh on current main ff9fefb79beac75e9a257aa43fce39db36fa828e, run pnpm check:changed, run /review, address any new findings, then re-evaluate merge."
+    },
+    {
+      "target": "cluster:ghcrawl-191461-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#37634",
+      "candidate_fix": "#46300",
+      "reason": "Prepare a repair_contributor_branch artifact for #46300 before any duplicate closeout."
+    },
+    {
+      "target": "#59613",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#37634",
+      "candidate_fix": "#46300",
+      "reason": "Duplicate closeout is clear but blocked on the canonical #37634 fix path / #46300 repair."
+    },
+    {
+      "target": "#65316",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#37634",
+      "candidate_fix": "#46300",
+      "reason": "Duplicate closeout is clear but blocked on the canonical #37634 fix path / #46300 repair."
+    },
+    {
+      "target": "#57230",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#59063",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#31457",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route the security-sensitive linked PR to central OpenClaw security triage; do not mutate it or use it as the canonical fix path."
+    }
+  ],
+  "action_counts": {
+    "keep_related": 3,
+    "keep_canonical": 1,
+    "keep_independent": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "close_duplicate": 2,
+    "keep_closed": 2,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "planned": 8,
+    "blocked": 2,
+    "skipped": 2
+  },
+  "apply_counts": {
+    "skipped": 2
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#59613",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#37634",
+      "candidate_fix": "#46300",
+      "title": null,
+      "idempotency_key": "ghcrawl-191461-agentic-merge:#59613:close_duplicate:2026-04-06T02:02:57Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#65316",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#37634",
+      "candidate_fix": "#46300",
+      "title": null,
+      "idempotency_key": "ghcrawl-191461-agentic-merge:#65316:close_duplicate:2026-04-12T11:28:42Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
