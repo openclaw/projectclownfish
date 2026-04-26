@@ -188,7 +188,9 @@ report.actions.push(outcome);
 writeReport(report, resultPath);
 
 function isBlockedFixError(error) {
-  return /Codex produced no target repo changes/i.test(String(error?.message ?? error));
+  return /Codex produced no target repo changes|Codex (?:fix worker|review-fix worker|\/review) timed out|Codex (?:fix worker|review-fix worker|\/review) failed/i.test(
+    String(error?.message ?? error),
+  );
 }
 
 function executeRepairBranch({ fixArtifact, targetDir }) {
