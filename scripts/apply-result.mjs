@@ -91,6 +91,7 @@ const allowedRefs = new Set(
 );
 
 for (const action of result.actions ?? []) {
+  if (!isApplicatorAction(action)) continue;
   report.actions.push(applyAction({ job, result, action, dryRun, allowMissingUpdatedAt }));
 }
 
@@ -258,6 +259,10 @@ function applyAction({ job, result, action, dryRun, allowMissingUpdatedAt }) {
     live_state: "closed",
     live_updated_at: live.updated_at,
   };
+}
+
+function isApplicatorAction(action) {
+  return CLOSE_ACTIONS.has(String(action?.action ?? ""));
 }
 
 function normalizeIssueRef(value, expectedRepo = "") {

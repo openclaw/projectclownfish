@@ -5,6 +5,13 @@ import { parseArgs, repoRoot } from "./lib.mjs";
 
 const DASHBOARD_START = "<!-- projectclownfish-dashboard:start -->";
 const DASHBOARD_END = "<!-- projectclownfish-dashboard:end -->";
+const APPLICATOR_ACTIONS = new Set([
+  "close",
+  "close_duplicate",
+  "close_superseded",
+  "close_fixed_by_candidate",
+  "close_low_signal",
+]);
 
 const args = parseArgs(process.argv.slice(2));
 const inputs = args._.length > 0 ? args._ : [path.join(repoRoot(), ".projectclownfish", "runs")];
@@ -39,6 +46,7 @@ function publishResult(resultPath) {
   const repo = String(result.repo ?? "unknown/unknown");
   const owner = repo.split("/")[0] || "unknown";
   const clusterId = String(result.cluster_id ?? path.basename(runDir));
+  const applyActions = (applyReport.actions ?? []).filter(isApplicatorAction);
   const report = {
     repo,
     cluster_id: clusterId,
@@ -58,9 +66,9 @@ function publishResult(resultPath) {
     actions: summarizeActions(result.actions),
     action_counts: countBy(result.actions ?? [], (action) => String(action.action ?? "unknown")),
     action_status_counts: countBy(result.actions ?? [], (action) => String(action.status ?? "unknown")),
-    apply_counts: countBy(applyReport.actions ?? [], (action) => String(action.status ?? "unknown")),
+    apply_counts: countBy(applyActions, (action) => String(action.status ?? "unknown")),
     needs_human: Array.isArray(result.needs_human) ? result.needs_human : [],
-    apply_actions: (applyReport.actions ?? []).map(sanitizeApplyAction),
+    apply_actions: applyActions.map(sanitizeApplyAction),
   };
 
   const reportDir = path.join(repoRoot(), "results", owner);
@@ -198,16 +206,17 @@ function updateDashboard() {
   const readme = fs.readFileSync(readmePath, "utf8");
   const records = readRunRecords();
   const latestByCluster = latestClusterRecords(records);
+  const applyRows = latestByCluster.flatMap((record) => (record.apply_actions ?? []).filter(isApplicatorAction));
   const totals = {
     clusters: latestByCluster.length,
     runs: records.length,
-    success: records.filter((record) => record.workflow_conclusion === "success").length,
-    failure: records.filter((record) => record.workflow_conclusion === "failure").length,
-    cancelled: records.filter((record) => record.workflow_conclusion === "cancelled").length,
-    executed: sum(records, (record) => record.apply_counts?.executed ?? 0),
-    blocked: sum(records, (record) => record.apply_counts?.blocked ?? 0),
-    skipped: sum(records, (record) => record.apply_counts?.skipped ?? 0),
-    needsHuman: sum(records, (record) => record.needs_human?.length ?? 0),
+    success: latestByCluster.filter((record) => record.workflow_conclusion === "success").length,
+    failure: latestByCluster.filter((record) => record.workflow_conclusion === "failure").length,
+    cancelled: latestByCluster.filter((record) => record.workflow_conclusion === "cancelled").length,
+    executed: applyRows.filter((action) => action.status === "executed").length,
+    blocked: applyRows.filter((action) => action.status === "blocked").length,
+    skipped: applyRows.filter((action) => action.status === "skipped").length,
+    needsHumanClusters: latestByCluster.filter((record) => (record.needs_human ?? []).length > 0).length,
   };
   const dashboard = `## Dashboard
 
@@ -218,13 +227,13 @@ ${DASHBOARD_START}
 | --- | ---: |
 | Cluster reports | ${totals.clusters} |
 | Published runs | ${totals.runs} |
-| Successful runs | ${totals.success} |
-| Failed runs | ${totals.failure} |
-| Cancelled runs | ${totals.cancelled} |
+| Latest successful clusters | ${totals.success} |
+| Latest failed clusters | ${totals.failure} |
+| Latest cancelled clusters | ${totals.cancelled} |
 | Executed close actions | ${totals.executed} |
 | Blocked apply actions | ${totals.blocked} |
 | Skipped apply actions | ${totals.skipped} |
-| Needs-human entries | ${totals.needsHuman} |
+| Needs-human clusters | ${totals.needsHumanClusters} |
 ${DASHBOARD_END}`;
 
   let updated;
@@ -240,14 +249,16 @@ ${DASHBOARD_END}`;
 }
 
 function writeAggregateApplyReport() {
-  const records = readRunRecords();
+  const records = latestClusterRecords(readRunRecords());
   const rows = records.flatMap((record) =>
-    (record.apply_actions ?? []).map((action) => ({
-      run_id: record.run_id,
-      run_url: record.run_url,
-      cluster_id: record.cluster_id,
-      ...action,
-    })),
+    (record.apply_actions ?? [])
+      .filter(isApplicatorAction)
+      .map((action) => ({
+        run_id: record.run_id,
+        run_url: record.run_url,
+        cluster_id: record.cluster_id,
+        ...action,
+      })),
   );
   fs.writeFileSync(path.join(repoRoot(), "apply-report.json"), `${JSON.stringify(rows, null, 2)}\n`, "utf8");
 }
@@ -341,6 +352,10 @@ function sanitizeApplyAction(action) {
     live_state: action.live_state ?? null,
     live_updated_at: action.live_updated_at ?? null,
   };
+}
+
+function isApplicatorAction(action) {
+  return APPLICATOR_ACTIONS.has(String(action?.action ?? ""));
 }
 
 function countBy(values, keyFn) {

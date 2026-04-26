@@ -34,20 +34,20 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 25, 2026, 23:50 UTC
+Last dashboard update: Apr 26, 2026, 00:02 UTC
 
 <!-- projectclownfish-dashboard:start -->
 | Metric | Count |
 | --- | ---: |
 | Cluster reports | 27 |
 | Published runs | 34 |
-| Successful runs | 28 |
-| Failed runs | 6 |
-| Cancelled runs | 0 |
+| Latest successful clusters | 27 |
+| Latest failed clusters | 0 |
+| Latest cancelled clusters | 0 |
 | Executed close actions | 16 |
 | Blocked apply actions | 2 |
-| Skipped apply actions | 365 |
-| Needs-human entries | 90 |
+| Skipped apply actions | 0 |
+| Needs-human clusters | 20 |
 <!-- projectclownfish-dashboard:end -->
 
 ## How It Works
