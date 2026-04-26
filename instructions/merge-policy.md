@@ -1,6 +1,6 @@
 # Merge And Fix Policy
 
-Merging is higher risk than closure. Prefer `needs_human` unless the merge path is obvious.
+Merging is higher risk than closure. Prefer non-mutating classification unless the merge path is obvious.
 
 Safe-ish merge candidate:
 
@@ -13,6 +13,11 @@ Safe-ish merge candidate:
 - no broad setup, generated, lockfile, or unrelated churn;
 - author credit is preserved;
 - superseded PRs are acknowledged before closing.
+
+If merge is unsafe, keep classifying. Failing checks, stale branches, broad diffs,
+or unresolved review comments block merge and fixed-by-candidate closeout, but
+they do not require whole-cluster `needs_human`. Use `keep_related`,
+`keep_independent`, `superseded`, or `fix_needed` when that decision is clear.
 
 For multiple PRs:
 

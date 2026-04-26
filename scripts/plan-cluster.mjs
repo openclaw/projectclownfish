@@ -13,6 +13,10 @@ import {
 
 const MAX_LINKED_REFS = Number(process.env.CLOWNFISH_MAX_LINKED_REFS ?? 0);
 const HYDRATE_COMMENTS = process.env.CLOWNFISH_HYDRATE_COMMENTS === "1";
+const MAX_COMMENTS_PER_ITEM = Number(process.env.CLOWNFISH_MAX_COMMENTS_PER_ITEM ?? 30);
+const MAX_REVIEW_COMMENTS_PER_PR = Number(process.env.CLOWNFISH_MAX_REVIEW_COMMENTS_PER_PR ?? 50);
+const MAINTAINER_AUTHOR_ASSOCIATIONS = new Set(["OWNER", "MEMBER", "COLLABORATOR"]);
+const REVIEW_BOT_PATTERN = /\b(greptile|codex|asile|coderabbit|code rabbit|copilot|reviewdog|sonar|deepsource|codecov|github-actions)\b/i;
 
 const args = parseArgs(process.argv.slice(2));
 const jobPath = args._[0];
@@ -106,6 +110,8 @@ const plan = {
     hydrate_cluster_refs: hydrateClusterRefs,
     max_linked_refs: MAX_LINKED_REFS,
     hydrate_comments: HYDRATE_COMMENTS,
+    max_comments_per_item: MAX_COMMENTS_PER_ITEM,
+    max_review_comments_per_pr: MAX_REVIEW_COMMENTS_PER_PR,
   },
   items: itemList.map((item) => summarizeItem(item, job)),
   canonical_candidates: canonicalCandidates(itemList, job),
@@ -144,6 +150,7 @@ function hydrateItem(repo, number) {
   const files = pullRequest ? ghPaged(`repos/${repo}/pulls/${number}/files`) : [];
   const commits = pullRequest ? ghPaged(`repos/${repo}/pulls/${number}/commits`) : [];
   const reviews = pullRequest ? ghPaged(`repos/${repo}/pulls/${number}/reviews`) : [];
+  const reviewComments = pullRequest ? ghPaged(`repos/${repo}/pulls/${number}/comments`) : [];
   const checks = pullRequest ? ghPrChecks(repo, number) : [];
 
   return {
@@ -174,12 +181,17 @@ function hydrateItem(repo, number) {
     pull_request: pullRequest
       ? {
           draft: pullRequest.draft,
+          merged: pullRequest.merged,
+          merged_at: pullRequest.merged_at,
+          merge_commit_sha: pullRequest.merge_commit_sha,
           mergeable: pullRequest.mergeable,
           mergeable_state: pullRequest.mergeable_state,
           base_ref: pullRequest.base?.ref,
           head_ref: pullRequest.head?.ref,
           head_repo: pullRequest.head?.repo?.full_name,
           head_sha: pullRequest.head?.sha,
+          requested_reviewers: (pullRequest.requested_reviewers ?? []).map((reviewer) => reviewer.login).filter(Boolean),
+          requested_teams: (pullRequest.requested_teams ?? []).map((team) => team.slug ?? team.name).filter(Boolean),
           additions: pullRequest.additions,
           deletions: pullRequest.deletions,
           changed_files: pullRequest.changed_files,
@@ -200,6 +212,18 @@ function hydrateItem(repo, number) {
             state: review.state,
             submitted_at: review.submitted_at,
             body_excerpt: excerpt(review.body),
+          })),
+          review_comments: reviewComments.map((comment) => ({
+            author: comment.user?.login,
+            author_association: comment.author_association,
+            path: comment.path,
+            line: comment.line ?? comment.original_line,
+            side: comment.side,
+            created_at: comment.created_at,
+            updated_at: comment.updated_at,
+            body: comment.body ?? "",
+            body_excerpt: excerpt(comment.body),
+            diff_hunk_excerpt: excerpt(comment.diff_hunk, 500),
           })),
           checks,
         }
@@ -224,22 +248,51 @@ function summarizeItem(item, job) {
     closed_at: item.closed_at,
     body_excerpt: item.body_excerpt,
     comments_count: item.comments_count ?? item.comments.length,
+    comments_hydrated: item.comments.length,
+    comments_truncated: Math.max(0, item.comments.length - MAX_COMMENTS_PER_ITEM),
+    comments: item.comments.slice(0, MAX_COMMENTS_PER_ITEM).map(summarizeComment),
+    maintainer_comments: item.comments
+      .filter((comment) => MAINTAINER_AUTHOR_ASSOCIATIONS.has(normalizeAuthorAssociation(comment.author_association)))
+      .slice(0, MAX_COMMENTS_PER_ITEM)
+      .map(summarizeComment),
+    bot_comments: item.comments
+      .filter((comment) => isReviewBotComment(comment))
+      .slice(0, MAX_COMMENTS_PER_ITEM)
+      .map(summarizeComment),
     classification_hint: classificationHint(item, job),
     pull_request: item.pull_request
       ? {
           draft: item.pull_request.draft,
+          merged: item.pull_request.merged,
+          merged_at: item.pull_request.merged_at,
+          merge_commit_sha: item.pull_request.merge_commit_sha,
           mergeable: item.pull_request.mergeable,
           mergeable_state: item.pull_request.mergeable_state,
           base_ref: item.pull_request.base_ref,
           head_ref: item.pull_request.head_ref,
           head_repo: item.pull_request.head_repo,
           head_sha: item.pull_request.head_sha,
+          requested_reviewers: item.pull_request.requested_reviewers,
+          requested_teams: item.pull_request.requested_teams,
           changed_files: item.pull_request.changed_files,
           additions: item.pull_request.additions,
           deletions: item.pull_request.deletions,
           files: item.pull_request.files,
           commits: item.pull_request.commits,
           reviews: item.pull_request.reviews,
+          review_comments_count: item.pull_request.review_comments.length,
+          review_comments_hydrated: item.pull_request.review_comments.length,
+          review_comments_truncated: Math.max(0, item.pull_request.review_comments.length - MAX_REVIEW_COMMENTS_PER_PR),
+          review_comments: item.pull_request.review_comments
+            .slice(0, MAX_REVIEW_COMMENTS_PER_PR)
+            .map(summarizeReviewComment),
+          review_bot_comments: [
+            ...item.pull_request.reviews.filter((review) => isReviewBotComment(review)).map(summarizeReview),
+            ...item.pull_request.review_comments
+              .filter((comment) => isReviewBotComment(comment))
+              .slice(0, MAX_REVIEW_COMMENTS_PER_PR)
+              .map(summarizeReviewComment),
+          ],
           checks: item.pull_request.checks,
         }
       : null,
@@ -339,6 +392,50 @@ function extractLinkedRefs(defaultRepo, item) {
     item.pull_request?.commits?.map((commit) => commit.message).join("\n"),
   ];
   return uniqueRefs(texts.flatMap((text) => refsFromText(defaultRepo, text)));
+}
+
+function summarizeComment(comment) {
+  return {
+    author: comment.author,
+    author_association: comment.author_association,
+    created_at: comment.created_at,
+    updated_at: comment.updated_at,
+    body_excerpt: comment.body_excerpt ?? excerpt(comment.body),
+  };
+}
+
+function summarizeReview(review) {
+  return {
+    author: review.author,
+    author_association: review.author_association,
+    state: review.state,
+    submitted_at: review.submitted_at,
+    body_excerpt: review.body_excerpt ?? excerpt(review.body),
+  };
+}
+
+function summarizeReviewComment(comment) {
+  return {
+    author: comment.author,
+    author_association: comment.author_association,
+    path: comment.path,
+    line: comment.line,
+    side: comment.side,
+    created_at: comment.created_at,
+    updated_at: comment.updated_at,
+    body_excerpt: comment.body_excerpt ?? excerpt(comment.body),
+    diff_hunk_excerpt: comment.diff_hunk_excerpt,
+  };
+}
+
+function isReviewBotComment(comment) {
+  const author = String(comment.author ?? "");
+  const body = String(comment.body ?? comment.body_excerpt ?? "");
+  return REVIEW_BOT_PATTERN.test(author) || REVIEW_BOT_PATTERN.test(body);
+}
+
+function normalizeAuthorAssociation(value) {
+  return typeof value === "string" && value.trim() ? value.trim().toUpperCase() : "NONE";
 }
 
 function refsFromText(defaultRepo, text) {

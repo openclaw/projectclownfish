@@ -2,15 +2,13 @@
 
 Produce a plan only. Do not call mutating `gh` commands.
 
-Allowed read commands include:
+Use the cluster preflight artifact as the live GitHub read for this run. The
+worker may not have direct GitHub CLI access.
 
-- `gh issue view`
-- `gh pr view`
-- `gh pr checks`
-- `gh pr diff`
-- `gh api` read endpoints
-
-For every listed open candidate, include `target_kind` and `target_updated_at` from live GitHub state. When the prompt includes a cluster preflight artifact, use that artifact as the live GitHub fetch for this run. If live state is unavailable from the artifact or a direct GitHub read, the item must be `needs_human` with `target_updated_at: null`.
+For every listed open candidate, include `target_kind` and `target_updated_at`
+from the artifact. If live state is unavailable from the artifact, do not emit a
+mutating close action. Use a non-mutating classification when possible and
+reserve `needs_human` for the specific unresolved decision.
 
 Evidence must come from GitHub issue/PR data, GitHub PR checks/diffs, or the job file. Do not cite external websites or mirrors.
 

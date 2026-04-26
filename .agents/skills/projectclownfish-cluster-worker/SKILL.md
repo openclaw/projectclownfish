@@ -82,6 +82,14 @@ Use repo scripts and prompts as the control plane:
 - `scripts/import-ghcrawl-low-signal-prs.mjs`: local ghcrawl open-PR scanner for opt-in low-signal cleanup jobs.
 - `.github/workflows/cluster-worker.yml`: runner behavior and env capture.
 
+Current autonomy posture:
+
+- Hydrate comments and PR review comments by default before model execution.
+- Hydrate cluster refs and bounded first-hop linked refs so closed representative drift can often be resolved without human review.
+- Treat failing checks as a merge/fixed-by-candidate blocker, not a reason to stop classifying the whole cluster.
+- Prefer `keep_related`, `keep_independent`, `keep_closed`, `fix_needed`, and subcluster notes over blanket `needs_human`.
+- Use `needs_human` only for the exact maintainer decision still unresolved after hydrated evidence is reviewed.
+
 After tuning, run:
 
 ```bash
@@ -99,6 +107,14 @@ rm -rf /tmp/projectclownfish-plan-check
 node scripts/plan-cluster.mjs jobs/openclaw/ghcrawl-143793-autonomous-smoke.md \
   --offline --run-dir /tmp/projectclownfish-plan-check
 jq '{items:(.items|length),seed_refs:(.scope.seed_refs|length),context_refs:(.scope.context_refs|length),hydrate_cluster_refs:.scope.hydrate_cluster_refs}' \
+  /tmp/projectclownfish-plan-check/cluster-plan.json
+```
+
+For a needs-human reduction smoke, verify the artifact includes real comment
+and review-comment excerpts:
+
+```bash
+jq '{items:(.items|length), comment_items:([.items[] | select(.comments_hydrated > 0)] | length), review_comment_prs:([.items[] | select(.pull_request.review_comments_hydrated > 0)] | length)}' \
   /tmp/projectclownfish-plan-check/cluster-plan.json
 ```
 

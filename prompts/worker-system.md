@@ -19,11 +19,12 @@ Before action:
 - read `instructions/closure-policy.md`;
 - read `instructions/merge-policy.md`;
 - read `instructions/low-signal-prs.md` when the job explicitly asks for manual backlog cleanup, low-signal PR triage, garbage PR review, or drive-by PR cleanup;
-- when a cluster preflight artifact is provided, treat its `items[*].updated_at`, state, kind, labels, body excerpt, comments count, PR files, PR checks, and linked refs as the live GitHub state fetched for this run;
+- when a cluster preflight artifact is provided, treat its `items[*].updated_at`, state, kind, labels, body/comment excerpts, hydrated issue comments, hydrated PR review comments, PR files, PR checks, and linked refs as the live GitHub state fetched for this run;
 - classify the hydrated canonical and open candidate items; closed context refs are historical evidence only unless they are explicitly hydrated as primary items;
-- use `gh issue view`, `gh pr view`, `gh pr checks`, and `gh pr diff` only when the provided artifact is missing an item or a detail required for a safe classification;
+- do not assume direct GitHub CLI access from the worker. If the artifact contains the needed data, use it instead of escalating because older runs lacked comment bodies;
+- if the artifact is missing a detail required for a mutating action, prefer a non-mutating `keep_related`, `keep_independent`, `fix_needed`, or `build_fix_artifact` action when the classification is still clear;
 - use GitHub and the local job/repo artifacts as evidence; do not use web search, third-party mirrors, blogs, or copied issue pages as evidence.
-- if `gh` cannot fetch a listed item, mark that item `needs_human`; do not replace GitHub evidence with non-GitHub sources.
+- use `needs_human` only for the specific unresolved decision, not as the default result for a whole cluster.
 
 Execution guard:
 
@@ -33,6 +34,6 @@ Execution guard:
 - Never mark the overall result or an action as `executed`; only the deterministic applicator may record executed mutations after replaying a `planned` action.
 - Closure actions are only valid for targets that are open in live GitHub state.
 - Already-closed refs must not receive `close_*` actions. Use `keep_closed` with `status: "skipped"` only if you must mention them in the action matrix.
-- If any safety condition is not met, return `needs_human`.
+- If a safety condition blocks a mutation, return a non-mutating classification when possible and reserve `needs_human` for unresolved maintainer judgment.
 
 Final answer must match `schemas/codex-result.schema.json`.

@@ -51,8 +51,11 @@ jobs:
       CODEX_API_KEY: ${{ secrets.CODEX_API_KEY || secrets.OPENAI_API_KEY }}
       CLOWNFISH_ALLOWED_OWNER: ${{ vars.CLOWNFISH_ALLOWED_OWNER || 'openclaw' }}
       CLOWNFISH_ALLOW_EXECUTE: ${{ (inputs.mode == 'execute' || inputs.mode == 'autonomous') && vars.CLOWNFISH_ALLOW_EXECUTE || '0' }}
-      CLOWNFISH_HYDRATE_COMMENTS: ${{ vars.CLOWNFISH_HYDRATE_COMMENTS || '0' }}
-      CLOWNFISH_MAX_LINKED_REFS: ${{ vars.CLOWNFISH_MAX_LINKED_REFS || '0' }}
+      CLOWNFISH_HYDRATE_CLUSTER_REFS: ${{ vars.CLOWNFISH_HYDRATE_CLUSTER_REFS || '1' }}
+      CLOWNFISH_HYDRATE_COMMENTS: ${{ vars.CLOWNFISH_HYDRATE_COMMENTS || '1' }}
+      CLOWNFISH_MAX_COMMENTS_PER_ITEM: ${{ vars.CLOWNFISH_MAX_COMMENTS_PER_ITEM || '30' }}
+      CLOWNFISH_MAX_LINKED_REFS: ${{ vars.CLOWNFISH_MAX_LINKED_REFS || '20' }}
+      CLOWNFISH_MAX_REVIEW_COMMENTS_PER_PR: ${{ vars.CLOWNFISH_MAX_REVIEW_COMMENTS_PER_PR || '50' }}
       CLOWNFISH_MODEL: ${{ inputs.model }}
     steps:
       - uses: actions/checkout@v4
