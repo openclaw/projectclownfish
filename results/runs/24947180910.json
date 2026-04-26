@@ -1,0 +1,126 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-166005-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24947180910",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24947180910",
+  "head_sha": "cc7e2b9deb213893d18c0bcca95afccd476be4c1",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/ghcrawl-166005-agentic-merge.md",
+  "published_at": "2026-04-26T03:33:55.727Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/37634",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/37634",
+  "canonical_pr": null,
+  "summary": "Representative #37634 remains the best live canonical for the `workspaceAccess: \"none\"` read-only sandbox-workspace bug, while #31331 remains a separate live canonical for the Docker bind-source remap family. #46026 is a high-confidence duplicate of #37634, but this run should not schedule close or fix actions because linked PR #31457 is flagged security-sensitive and must route to central OpenClaw security handling.",
+  "actions": [
+    {
+      "target": "#37634",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#37634",
+      "candidate_fix": null,
+      "reason": "Best live canonical for the `workspaceAccess: \"none\"` writable-workspace regression."
+    },
+    {
+      "target": "#31331",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#31331",
+      "candidate_fix": null,
+      "reason": "Separate live canonical subfamily: Docker bind-source remapping is related to this cluster but not a duplicate of #37634."
+    },
+    {
+      "target": "#36525",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related design-level follow-up, not a duplicate closeout target."
+    },
+    {
+      "target": "#44077",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related sandbox file-permission regression with a different root cause."
+    },
+    {
+      "target": "#46026",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#37634",
+      "candidate_fix": null,
+      "reason": "High-confidence duplicate of #37634, but kept non-mutating because the job requires a concrete fix path before duplicate closeout and this cluster includes security-routed PR #31457."
+    },
+    {
+      "target": "#59613",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related Docker sandbox write-failure report; not safe to collapse automatically into one canonical thread."
+    },
+    {
+      "target": "#65316",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related higher-level tool-exposure bug, not a pure duplicate of one existing issue."
+    },
+    {
+      "target": "#57230",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed in live state; historical evidence only."
+    },
+    {
+      "target": "#59063",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed in live state; historical evidence only."
+    },
+    {
+      "target": "#31457",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security boundary: this linked PR is out of scope for ProjectClownfish and blocks automatic mutation recommendations for the affected subfamily."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 2,
+    "keep_related": 5,
+    "keep_closed": 2,
+    "needs_human": 1
+  },
+  "action_status_counts": {
+    "planned": 8,
+    "skipped": 2
+  },
+  "apply_counts": {},
+  "needs_human": [
+    "Linked PR #31457 is marked `security_sensitive: true` and requested `secops`; ProjectClownfish must route that Docker bind-remap subfamily to central OpenClaw security handling and avoid automatic close, fix, or merge actions that depend on it."
+  ],
+  "apply_actions": []
+}

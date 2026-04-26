@@ -2,16 +2,16 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-166005-agentic-merge"
 mode: "autonomous"
-run_id: "24946289037"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24946289037"
-head_sha: "ee69c4d548d49371436383ab0781ed7138b9e5c0"
-workflow_conclusion: "failure"
+run_id: "24947180910"
+run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24947180910"
+head_sha: "cc7e2b9deb213893d18c0bcca95afccd476be4c1"
+workflow_conclusion: "success"
 result_status: "needs_human"
-published_at: "2026-04-26T02:44:31.721Z"
+published_at: "2026-04-26T03:33:55.727Z"
 canonical: "https://github.com/openclaw/openclaw/issues/37634"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/37634"
 canonical_pr: null
-actions_total: 12
+actions_total: 10
 apply_executed: 0
 apply_blocked: 0
 apply_skipped: 0
@@ -22,9 +22,9 @@ needs_human_count: 1
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24946289037](https://github.com/openclaw/projectclownfish/actions/runs/24946289037)
+Run: [https://github.com/openclaw/projectclownfish/actions/runs/24947180910](https://github.com/openclaw/projectclownfish/actions/runs/24947180910)
 
-Workflow conclusion: failure
+Workflow conclusion: success
 
 Worker result: needs_human
 
@@ -32,13 +32,13 @@ Canonical: https://github.com/openclaw/openclaw/issues/37634
 
 ## Summary
 
-Split the over-broad cluster into two families. #37634 remains the best live non-security canonical issue for the `workspaceAccess: "none"` writable-workspace regression and still needs a fresh credited fix PR. #31331 stays separate as the Docker-outside-of-Docker bind-source bug. Because linked PR #31457 is marked security-sensitive in the hydrated artifact, this run stays non-mutating and routes that DOOD fix path to central OpenClaw security handling.
+Representative #37634 remains the best live canonical for the `workspaceAccess: "none"` read-only sandbox-workspace bug, while #31331 remains a separate live canonical for the Docker bind-source remap family. #46026 is a high-confidence duplicate of #37634, but this run should not schedule close or fix actions because linked PR #31457 is flagged security-sensitive and must route to central OpenClaw security handling.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 12 |
+| Worker actions | 10 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
 | Apply skipped | 0 |
@@ -54,19 +54,17 @@ Split the over-broad cluster into two families. #37634 remains the best live non
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #37634 | keep_canonical | planned | canonical | Best live canonical for the non-security `workspaceAccess: "none"` writable-workspace regression. |
-| #37634 | fix_needed | planned | canonical | The bug still appears real on current main and needs a fresh fix path. |
-| #37634 | build_fix_artifact | planned | canonical | Prepare a fresh, narrow replacement fix plan that preserves contributor credit. |
-| #46026 | keep_related | planned | duplicate | Clear duplicate of #37634, but left non-mutating in this run because of the linked security-sensitive item. |
-| #36525 | keep_related | planned | related | Broader product/semantics request in the same area, not the same bug as #37634. |
-| #65316 | keep_related | planned | related | Related follow-up about capability gating and user-visible tool exposure. |
-| #31331 | keep_independent | planned | independent | Separate live canonical for the Docker-outside-of-Docker bind-source family; do not dedupe it into #37634. |
-| #31457 | needs_human | planned | needs_human | Security boundary: this linked PR is out of ProjectClownfish scope and blocks autonomous handling of the DOOD fix path. |
-| #59613 | keep_related | planned | related | Keep open until maintainers manually split it against #31331 versus #37634. |
-| #44077 | keep_independent | planned | independent | Distinct file-permission regression; not part of this dedupe family. |
-| #57230 | keep_closed | skipped | independent | Already closed; no ProjectClownfish close action is valid. |
-| #59063 | keep_closed | skipped | independent | Already closed; no ProjectClownfish close action is valid. |
+| #37634 | keep_canonical | planned | canonical | Best live canonical for the `workspaceAccess: "none"` writable-workspace regression. |
+| #31331 | keep_canonical | planned | canonical | Separate live canonical subfamily: Docker bind-source remapping is related to this cluster but not a duplicate of #37634. |
+| #36525 | keep_related | planned | related | Related design-level follow-up, not a duplicate closeout target. |
+| #44077 | keep_related | planned | related | Related sandbox file-permission regression with a different root cause. |
+| #46026 | keep_related | planned | duplicate | High-confidence duplicate of #37634, but kept non-mutating because the job requires a concrete fix path before duplicate closeout and this cluster includes security-routed PR #31457. |
+| #59613 | keep_related | planned | related | Related Docker sandbox write-failure report; not safe to collapse automatically into one canonical thread. |
+| #65316 | keep_related | planned | related | Related higher-level tool-exposure bug, not a pure duplicate of one existing issue. |
+| #57230 | keep_closed | skipped | related | Already closed in live state; historical evidence only. |
+| #59063 | keep_closed | skipped | related | Already closed in live state; historical evidence only. |
+| #31457 | needs_human | planned | needs_human | Security boundary: this linked PR is out of scope for ProjectClownfish and blocks automatic mutation recommendations for the affected subfamily. |
 
 ## Needs Human
 
-- Hydrated state contradicts the seed job by marking linked PR #31457 security-sensitive. Route the separate #31331 Docker-outside-of-Docker fix path through central OpenClaw security triage before any ProjectClownfish mutation is considered there.
+- Linked PR #31457 is marked `security_sensitive: true` and requested `secops`; ProjectClownfish must route that Docker bind-remap subfamily to central OpenClaw security handling and avoid automatic close, fix, or merge actions that depend on it.
