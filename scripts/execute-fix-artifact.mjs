@@ -20,7 +20,8 @@ const codexTimeoutMs = Number(process.env.CLOWNFISH_FIX_CODEX_TIMEOUT_MS ?? 45 *
 const maxEditAttempts = Math.max(1, Number(process.env.CLOWNFISH_FIX_EDIT_ATTEMPTS ?? 3));
 const maxReviewAttempts = Math.max(1, Number(process.env.CLOWNFISH_CODEX_REVIEW_ATTEMPTS ?? 2));
 const resolveReviewThreads = process.env.CLOWNFISH_RESOLVE_REVIEW_THREADS !== "0";
-const codexWriteSandbox = String(process.env.CLOWNFISH_CODEX_WRITE_SANDBOX ?? "workspace-write");
+const defaultCodexWriteSandbox = process.env.GITHUB_ACTIONS === "true" ? "danger-full-access" : "workspace-write";
+const codexWriteSandbox = String(process.env.CLOWNFISH_CODEX_WRITE_SANDBOX ?? defaultCodexWriteSandbox);
 const codexWriteNetworkAccess = parseBooleanEnv(
   process.env.CLOWNFISH_CODEX_WRITE_NETWORK_ACCESS,
   process.env.GITHUB_ACTIONS === "true",
