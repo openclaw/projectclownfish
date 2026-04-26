@@ -1,0 +1,256 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165985-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24946029320",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24946029320",
+  "head_sha": "56bccb0db44200da8fc6f4a81252127a5c0e77d5",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165985-agentic-merge.md",
+  "published_at": "2026-04-26T02:21:05.506Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/67979",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/67979",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/71479",
+  "summary": "Canonical issue remains #67979 and the current repair path is draft PR #71479. Planned closeouts are limited to the clearest CLI-context duplicates (#65722, #66082, #68828, #70181). Broader prune/multi-plugin follow-ups and overlapping contributor PRs stay open because the hydrated cluster contains multiple subfamilies and no merge-safe PR. #63146 is out of scope under the security boundary.",
+  "actions": [
+    {
+      "target": "#67979",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#67979",
+      "candidate_fix": "#71479",
+      "reason": "Best surviving canonical issue for the CLI-context zero-artifact symptom family."
+    },
+    {
+      "target": "#71479",
+      "action": "merge_candidate",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#67979",
+      "candidate_fix": "#71479",
+      "reason": "Current maintainer repair path, but draft/skipped validation blocks merge or post-merge closeout."
+    },
+    {
+      "target": "#63146",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item must route to central OpenClaw security triage; ProjectClownfish should not classify or mutate it further."
+    },
+    {
+      "target": "#65722",
+      "action": "close_duplicate",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Same root cause and user-visible failure as the canonical issue."
+    },
+    {
+      "target": "#66082",
+      "action": "close_duplicate",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Same CLI-context zero-artifact bug as the canonical issue."
+    },
+    {
+      "target": "#68828",
+      "action": "close_duplicate",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Same capability-visibility root cause as #67979."
+    },
+    {
+      "target": "#70181",
+      "action": "close_duplicate",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Same runtime-vs-CLI split as the canonical issue."
+    },
+    {
+      "target": "#65976",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Same symptom family, but the prune/delete side effect is broader than the canonical zero-artifact issue."
+    },
+    {
+      "target": "#67658",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Keep open as a related safety follow-up rather than deduping it away."
+    },
+    {
+      "target": "#68371",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Related zero-artifact report, but not a clean duplicate of the canonical memory-core CLI-context bug."
+    },
+    {
+      "target": "#69019",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Keep open because the active-memory/multi-plugin dimension makes the root cause family broader than #67979 alone."
+    },
+    {
+      "target": "#70242",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Related late-report reproduction; keep open until the remaining fix strategy settles."
+    },
+    {
+      "target": "#70842",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Regression report spans multiple related subfamilies; keep open."
+    },
+    {
+      "target": "#65800",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Useful overlapping contributor PR, but unresolved review feedback and competing repair shapes block merge or supersede actions."
+    },
+    {
+      "target": "#67063",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Overlapping passing PR; preserve contributor credit and keep it open pending maintainer choice."
+    },
+    {
+      "target": "#68041",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Broad combined PR overlaps multiple subfamilies; keep open until maintainers decide whether that breadth is desired."
+    },
+    {
+      "target": "#68121",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Tracks the related capability-overwrite subfamily, not a clean duplicate."
+    },
+    {
+      "target": "#68335",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Overlapping passing PR; keep open rather than choosing or superseding it automatically."
+    },
+    {
+      "target": "#68586",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Narrow related PR; keep open until maintainers settle the preferred fix shape."
+    },
+    {
+      "target": "#69458",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Related subfamily PR with failing checks; keep open and do not merge."
+    },
+    {
+      "target": "#69952",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Passing overlapping PR; preserve contributor credit and keep it open pending maintainer selection."
+    },
+    {
+      "target": "#70185",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#67979",
+      "candidate_fix": null,
+      "reason": "Passing overlapping PR; keep open until maintainers choose between metadata-registration and gateway-routing approaches."
+    },
+    {
+      "target": "#65476",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; historical superseded evidence only."
+    },
+    {
+      "target": "#66925",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed related issue; historical evidence only."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "merge_candidate": 1,
+    "needs_human": 1,
+    "close_duplicate": 4,
+    "keep_related": 15,
+    "keep_closed": 2
+  },
+  "action_status_counts": {
+    "planned": 20,
+    "blocked": 2,
+    "skipped": 2
+  },
+  "apply_counts": {},
+  "needs_human": [
+    "Route #63146 to central OpenClaw security triage; the hydrated artifact marks it security-sensitive and ProjectClownfish must not mutate it.",
+    "Complete validation and Codex review for #71479, or explicitly switch to another overlapping PR, before any merge or contributor-PR supersede decisions."
+  ],
+  "apply_actions": []
+}
