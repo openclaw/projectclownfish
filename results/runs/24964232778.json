@@ -1,0 +1,189 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165991-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24964232778",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24964232778",
+  "head_sha": "38f70877c94ad408c7816548e9dafe09a3dd4328",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165991-agentic-merge.md",
+  "published_at": "2026-04-26T18:56:04.755Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/66875",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/66875",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/66997",
+  "summary": "Autonomous classification completed from hydrated preflight state. Former representative #66597 is already closed; the remaining live canonical for the unresolved WebChat reload/streaming race family is #66875. Most flicker-only reports are already closed as implemented by current main / merged PR #66997. #51497 is related but not a duplicate because it alleges persisted session record/token-accounting divergence rather than the optimistic-render/history-reload race. Security-sensitive linked refs #1 and #3 are quarantined only, with no mutation planned.",
+  "actions": [
+    {
+      "target": "#1",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route exact security-sensitive linked PR to central OpenClaw security handling; continue unrelated non-security classification."
+    },
+    {
+      "target": "#3",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route exact security-sensitive linked issue to central OpenClaw security handling without blocking ordinary WebChat triage."
+    },
+    {
+      "target": "#44491",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#66875",
+      "candidate_fix": null,
+      "reason": "Already closed broad related issue; closed refs must not receive closure actions."
+    },
+    {
+      "target": "#49777",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#66875",
+      "candidate_fix": null,
+      "reason": "Already closed related history-rendering issue; no mutation planned."
+    },
+    {
+      "target": "#51497",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#66875",
+      "candidate_fix": null,
+      "reason": "Same WebChat/session area but materially different root cause and data-loss scope, so it should remain open as related rather than be closed as a duplicate."
+    },
+    {
+      "target": "#66176",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented by the merged current-main fix path; no closure action allowed."
+    },
+    {
+      "target": "#66274",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented by the merged current-main fix path; no closure action allowed."
+    },
+    {
+      "target": "#66597",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Former representative is already closed; choose #66875 as the remaining live canonical issue."
+    },
+    {
+      "target": "#66598",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented by the merged current-main fix path; no closure action allowed."
+    },
+    {
+      "target": "#66762",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented by the merged current-main fix path; no closure action allowed."
+    },
+    {
+      "target": "#66875",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Best surviving live canonical issue for unresolved WebChat race symptoms after former representative #66597 closed."
+    },
+    {
+      "target": "#67028",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented by the merged current-main fix path; no closure action allowed."
+    },
+    {
+      "target": "#67081",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented by the merged current-main fix path; no closure action allowed."
+    },
+    {
+      "target": "#67412",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented by the merged current-main fix path; no closure action allowed."
+    },
+    {
+      "target": "#67582",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66875",
+      "candidate_fix": "#66997",
+      "reason": "Already closed as implemented by the merged current-main fix path; no closure action allowed."
+    },
+    {
+      "target": "cluster:ghcrawl-165991-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#66875",
+      "candidate_fix": null,
+      "reason": "A narrow follow-up fix artifact is needed for the unresolved canonical #66875 streaming/reconciliation race; implementation is delegated to ProjectClownfish fix execution."
+    },
+    {
+      "target": "cluster:ghcrawl-165991-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#66875",
+      "candidate_fix": null,
+      "reason": "Build a narrow credited fix plan for the remaining open canonical issue."
+    }
+  ],
+  "action_counts": {
+    "route_security": 2,
+    "keep_closed": 11,
+    "keep_related": 1,
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "skipped": 11
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "apply_actions": []
+}
