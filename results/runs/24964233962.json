@@ -1,0 +1,206 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165996-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24964233962",
+  "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24964233962",
+  "head_sha": "38f70877c94ad408c7816548e9dafe09a3dd4328",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165996-agentic-merge.md",
+  "published_at": "2026-04-26T18:59:15.386Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/38808",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/38806",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/38808",
+  "summary": "Autonomous classification completed from the hydrated preflight artifact. The original representative #38996 is closed and security-sensitive, so it is quarantined rather than used as canonical. The live canonical path for the P2P thread regression is open PR #38808 with linked issue #38806; merge is not recommended because the artifact does not include a fresh Codex /review merge preflight. Two obsolete open PRs are safe superseded close candidates because their linked issues were already closed as implemented on current main. Other open PRs are related or independent Feishu follow-up work and should stay open.",
+  "actions": [
+    {
+      "target": "#38757",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked ref must be quarantined to central OpenClaw security triage."
+    },
+    {
+      "target": "#38996",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed security-sensitive representative is not a canonical mutation target."
+    },
+    {
+      "target": "#38806",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#38806",
+      "candidate_fix": "#38808",
+      "reason": "Keep the canonical issue open until the canonical PR path lands and is validated."
+    },
+    {
+      "target": "#38808",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#38808",
+      "candidate_fix": "#38808",
+      "reason": "Best live canonical PR for the P2P thread regression, but merge preflight is incomplete."
+    },
+    {
+      "target": "cluster:ghcrawl-165996-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#38808",
+      "candidate_fix": "#38808",
+      "reason": "Canonical PR needs repair/refresh and merge preflight before any merge or post-merge closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-165996-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#38808",
+      "candidate_fix": "#38808",
+      "reason": "Prepare deterministic repair of the canonical contributor branch for the applicator/fix executor."
+    },
+    {
+      "target": "#39507",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#38808",
+      "candidate_fix": null,
+      "reason": "Related Feishu threading bug with separate semantics; do not close or merge in this P2P canonical path."
+    },
+    {
+      "target": "#40147",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#38808",
+      "candidate_fix": null,
+      "reason": "Related but distinct Feishu reply-routing work with unresolved review/check blockers."
+    },
+    {
+      "target": "#42296",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical context only."
+    },
+    {
+      "target": "#44118",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#42228",
+      "candidate_fix": "#42228",
+      "reason": "Superseded by current main implementation documented on #42228; require_fix_before_close is satisfied by the landed main behavior."
+    },
+    {
+      "target": "#47961",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#38808",
+      "candidate_fix": null,
+      "reason": "Independent Feishu UX feature; leave open outside this canonical cluster path."
+    },
+    {
+      "target": "#55521",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#38808",
+      "candidate_fix": null,
+      "reason": "Related Feishu messaging UX PR with unresolved review/check blockers; keep open rather than close as duplicate."
+    },
+    {
+      "target": "#67068",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical context only."
+    },
+    {
+      "target": "#67069",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#67068",
+      "candidate_fix": "#67068",
+      "reason": "Superseded by current main implementation documented on #67068; require_fix_before_close is satisfied by the landed main behavior."
+    },
+    {
+      "target": "#67783",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#38808",
+      "candidate_fix": null,
+      "reason": "Related Feishu thread-mode UX fix; keep open because it is distinct and lacks merge preflight."
+    }
+  ],
+  "action_counts": {
+    "route_security": 2,
+    "keep_canonical": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_related": 4,
+    "keep_closed": 2,
+    "close_superseded": 2,
+    "keep_independent": 1
+  },
+  "action_status_counts": {
+    "planned": 13,
+    "skipped": 2
+  },
+  "apply_counts": {
+    "blocked": 2
+  },
+  "needs_human": [],
+  "apply_actions": [
+    {
+      "target": "#44118",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#42228",
+      "candidate_fix": "#42228",
+      "title": null,
+      "idempotency_key": "ghcrawl-165996-agentic-merge:#44118:close_superseded:2026-03-24T20:16:11Z",
+      "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#67069",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#67068",
+      "candidate_fix": "#67068",
+      "title": null,
+      "idempotency_key": "ghcrawl-165996-agentic-merge:#67069:close_superseded:2026-04-15T08:22:05Z",
+      "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}

@@ -2,71 +2,75 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-165996-agentic-merge"
 mode: "autonomous"
-run_id: "24946034235"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24946034235"
-head_sha: "56bccb0db44200da8fc6f4a81252127a5c0e77d5"
+run_id: "24964233962"
+run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24964233962"
+head_sha: "38f70877c94ad408c7816548e9dafe09a3dd4328"
 workflow_conclusion: "success"
-result_status: "needs_human"
-published_at: "2026-04-26T02:20:26.859Z"
-canonical: "https://github.com/openclaw/openclaw/issues/38806"
+result_status: "planned"
+published_at: "2026-04-26T18:59:15.386Z"
+canonical: "https://github.com/openclaw/openclaw/pull/38808"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/38806"
 canonical_pr: "https://github.com/openclaw/openclaw/pull/38808"
-actions_total: 12
+actions_total: 15
 apply_executed: 0
-apply_blocked: 0
+apply_blocked: 2
 apply_skipped: 0
-needs_human_count: 1
+needs_human_count: 0
 ---
 
 # ghcrawl-165996-agentic-merge
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24946034235](https://github.com/openclaw/projectclownfish/actions/runs/24946034235)
+Run: [https://github.com/openclaw/projectclownfish/actions/runs/24964233962](https://github.com/openclaw/projectclownfish/actions/runs/24964233962)
 
 Workflow conclusion: success
 
-Worker result: needs_human
+Worker result: planned
 
-Canonical: https://github.com/openclaw/openclaw/issues/38806
+Canonical: https://github.com/openclaw/openclaw/pull/38808
 
 ## Summary
 
-Selected #38806 as the best live canonical issue and #38808 as the best non-security canonical PR for the Feishu P2P direct-message thread regression. Split the over-broad cluster into related reply-thread PRs (#39507, #40147), independent Feishu fixes/features, and the security-boundary PR #38996. Because the preflight artifact marks #38996 as security-sensitive and explicitly says no ProjectClownfish mutation is allowed for this cluster, this result emits only non-mutating classifications and routes the cluster for human/security follow-up.
+Autonomous classification completed from the hydrated preflight artifact. The original representative #38996 is closed and security-sensitive, so it is quarantined rather than used as canonical. The live canonical path for the P2P thread regression is open PR #38808 with linked issue #38806; merge is not recommended because the artifact does not include a fresh Codex /review merge preflight. Two obsolete open PRs are safe superseded close candidates because their linked issues were already closed as implemented on current main. Other open PRs are related or independent Feishu follow-up work and should stay open.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 12 |
+| Worker actions | 15 |
 | Applied executions | 0 |
-| Apply blocked | 0 |
+| Apply blocked | 2 |
 | Apply skipped | 0 |
-| Needs human | 1 |
+| Needs human | 0 |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| _None_ |  |  |  |  |
+| #44118 | close_superseded | blocked | superseded | close requires ProjectClownfish fix PR opened/pushed or merge executed first |
+| #67069 | close_superseded | blocked | superseded | close requires ProjectClownfish fix PR opened/pushed or merge executed first |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #38806 | keep_canonical | planned | canonical | Best surviving canonical issue thread for the live P2P DM thread regression. |
-| #38808 | keep_canonical | planned | canonical | Best surviving non-security PR for the canonical #38806 bug, but no merge action is recommended in this run because cluster mutations are blocked and the artifact does not include a clean Codex /review preflight. |
-| #38996 | needs_human | blocked | needs_human | Mixed security/non-security PR; ProjectClownfish must not close, comment on, merge, or otherwise mutate this item. |
-| #39507 | keep_related | planned | related | Distinct but related Feishu reply-thread semantics bug; keep open as a separate related track. |
-| #40147 | keep_related | planned | related | Overlapping reply-routing work in the same area, but not a safe or clearer canonical path than the existing split related items. |
-| #42296 | keep_independent | planned | independent | Separate Feishu media-context bug, not part of the P2P thread canonical family. |
-| #44118 | keep_independent | planned | fixed_by_candidate | This behavior appears already shipped on current main and covered by #42228, but the cluster security boundary blocks ProjectClownfish closeout in this run. |
-| #47961 | keep_independent | planned | independent | Separate feature work with unresolved review risk; leave open independently. |
-| #55521 | keep_independent | planned | independent | Separate feature with clear unresolved regressions; not a canonical or closeout candidate for this cluster. |
-| #67068 | keep_closed | skipped |  | Already closed; retained only as historical evidence for the thread-metadata subfamily. |
-| #67069 | keep_independent | planned | fixed_by_candidate | The behavior is already covered on current main via #67068, but the cluster security boundary blocks ProjectClownfish closeout in this run. |
-| #67783 | keep_independent | planned | independent | Separate Feishu typing-indicator fix; leave open independently. |
+| #38757 | route_security | planned | security_sensitive | Security-sensitive linked ref must be quarantined to central OpenClaw security triage. |
+| #38996 | route_security | planned | security_sensitive | Closed security-sensitive representative is not a canonical mutation target. |
+| #38806 | keep_canonical | planned | canonical | Keep the canonical issue open until the canonical PR path lands and is validated. |
+| #38808 | keep_canonical | planned | canonical | Best live canonical PR for the P2P thread regression, but merge preflight is incomplete. |
+| cluster:ghcrawl-165996-agentic-merge | fix_needed | planned |  | Canonical PR needs repair/refresh and merge preflight before any merge or post-merge closeout. |
+| cluster:ghcrawl-165996-agentic-merge | build_fix_artifact | planned |  | Prepare deterministic repair of the canonical contributor branch for the applicator/fix executor. |
+| #39507 | keep_related | planned | related | Related Feishu threading bug with separate semantics; do not close or merge in this P2P canonical path. |
+| #40147 | keep_related | planned | related | Related but distinct Feishu reply-routing work with unresolved review/check blockers. |
+| #42296 | keep_closed | skipped | fixed_by_candidate | Already closed historical context only. |
+| #44118 | close_superseded | planned | superseded | Superseded by current main implementation documented on #42228; require_fix_before_close is satisfied by the landed main behavior. |
+| #47961 | keep_independent | planned | independent | Independent Feishu UX feature; leave open outside this canonical cluster path. |
+| #55521 | keep_related | planned | related | Related Feishu messaging UX PR with unresolved review/check blockers; keep open rather than close as duplicate. |
+| #67068 | keep_closed | skipped | fixed_by_candidate | Already closed historical context only. |
+| #67069 | close_superseded | planned | superseded | Superseded by current main implementation documented on #67068; require_fix_before_close is satisfied by the landed main behavior. |
+| #67783 | keep_related | planned | related | Related Feishu thread-mode UX fix; keep open because it is distinct and lacks merge preflight. |
 
 ## Needs Human
 
-- Security boundary: #38996 is hydrated as security-sensitive because it also carries the #38757 plaintext-secret persistence fix. Route this cluster to central OpenClaw security triage before any ProjectClownfish close/comment/label/merge action.
+- none
