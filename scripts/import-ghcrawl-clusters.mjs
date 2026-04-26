@@ -39,6 +39,7 @@ if (!["plan", "execute", "autonomous"].includes(mode)) {
 fs.mkdirSync(outDir, { recursive: true });
 
 const existingClusterIds = skipExisting ? existingGhcrawlClusterIds(outDir) : new Set();
+const existingMemberRefs = skipExisting ? existingGhcrawlMemberRefs(outDir, suffix) : new Map();
 let createdCount = 0;
 
 for (const clusterId of clusterIds) {
@@ -76,6 +77,20 @@ for (const clusterId of clusterIds) {
 
   if (members.length === 0) {
     console.error(`cluster not found: ${clusterId}`);
+    continue;
+  }
+  const overlappingRefs = members
+    .map((member) => Number(member.number))
+    .filter((number) => existingMemberRefs.has(number));
+  if (overlappingRefs.length > 0) {
+    const examples = overlappingRefs
+      .slice(0, 4)
+      .map((number) => `#${number}`)
+      .join(", ");
+    const existingFiles = [...new Set(overlappingRefs.flatMap((number) => existingMemberRefs.get(number) ?? []))];
+    console.error(
+      `skip existing member overlap cluster: ${clusterId} ${members[0].representative_title ?? ""} (${examples}${overlappingRefs.length > 4 ? ", ..." : ""}; ${existingFiles.slice(0, 2).join(", ")})`,
+    );
     continue;
   }
 
@@ -240,6 +255,28 @@ function existingGhcrawlClusterIds(dir) {
     for (const match of text.matchAll(/\bghcrawl-(\d+)\b/g)) ids.add(Number(match[1]));
   }
   return ids;
+}
+
+function existingGhcrawlMemberRefs(dir, suffix) {
+  const refs = new Map();
+  if (!fs.existsSync(dir)) return refs;
+  const suffixSlug = suffix ? slugify(suffix) : "";
+  for (const entry of fs.readdirSync(dir, { recursive: true })) {
+    const file = path.join(dir, String(entry));
+    if (!file.endsWith(".md") || !fs.statSync(file).isFile()) continue;
+    if (suffixSlug && !path.basename(file).endsWith(`-${suffixSlug}.md`)) continue;
+    const text = fs.readFileSync(file, "utf8");
+    const frontmatter = text.match(/^---\n([\s\S]*?)\n---/);
+    const clusterRefs = frontmatter?.[1].match(/^cluster_refs:\n((?:  - .+\n?)*)/m)?.[1] ?? "";
+    for (const match of clusterRefs.matchAll(/#(\d+)/g)) {
+      const number = Number(match[1]);
+      if (!Number.isSafeInteger(number)) continue;
+      const files = refs.get(number) ?? [];
+      files.push(path.relative(repoRoot(), file));
+      refs.set(number, files);
+    }
+  }
+  return refs;
 }
 
 function yamlList(values) {
