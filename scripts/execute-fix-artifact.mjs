@@ -257,6 +257,7 @@ function executeReplacementBranch({ fixArtifact, targetDir, supersedeSources, fa
   run("git", ["fetch", "origin", baseBranch], { cwd: targetDir });
   const branch = replacementBranchName(result.cluster_id);
   const branchState = checkoutRecoverableReplacementBranch({ targetDir, branch, baseBranch });
+  if (branchState.resumed) rebaseRecoverableReplacementBranch({ targetDir, branch, baseBranch });
   prepareTargetToolchain(targetDir);
 
   if (!dryRun) ghAuthSetupGit(targetDir);
@@ -1470,6 +1471,30 @@ function checkoutRecoverableReplacementBranch({ targetDir, branch, baseBranch })
   }
   run("git", ["checkout", "-B", branch, `origin/${baseBranch}`], { cwd: targetDir });
   return { resumed: false, branch };
+}
+
+function rebaseRecoverableReplacementBranch({ targetDir, branch, baseBranch }) {
+  const baseRef = `origin/${baseBranch}`;
+  if (!branchHasBaseDiff({ targetDir, baseBranch })) return;
+  if (isAncestor({ targetDir, ancestor: baseRef, descendant: "HEAD" })) return;
+  if (fs.existsSync(path.join(targetDir, ".git", "shallow"))) {
+    run("git", ["fetch", "--unshallow", "origin"], { cwd: targetDir });
+  }
+  try {
+    run("git", ["rebase", baseRef], { cwd: targetDir });
+  } catch (error) {
+    spawnSync("git", ["rebase", "--abort"], { cwd: targetDir, env: process.env, encoding: "utf8" });
+    throw new Error(`resumed branch ${branch} could not rebase onto ${baseRef}: ${compactText(error.message, 1200)}`);
+  }
+}
+
+function isAncestor({ targetDir, ancestor, descendant }) {
+  const child = spawnSync("git", ["merge-base", "--is-ancestor", ancestor, descendant], {
+    cwd: targetDir,
+    env: process.env,
+    encoding: "utf8",
+  });
+  return child.status === 0;
 }
 
 function remoteBranchExists({ targetDir, branch }) {
