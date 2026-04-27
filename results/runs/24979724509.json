@@ -1,0 +1,200 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-166016-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24979724509",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979724509",
+  "head_sha": "8806d2971f220668a5fdb92adf8595525bd6678b",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "blocked",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-166016-agentic-merge.md",
+  "published_at": "2026-04-27T06:25:06.196Z",
+  "canonical": "#72305",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72305",
+  "summary": "Hydrated state shows the original representative #55186 is already closed and replaced by open ProjectClownfish PR #72305. #72305 is the current canonical DM-threading fix path, but merge and covered closeout are blocked by failing checks and missing merge preflight proof. Related Mattermost thread-routing PRs remain open because they cover distinct entry points or have unresolved bot findings; unrelated Mattermost PRs are kept independent.",
+  "actions": [
+    {
+      "target": "#72305",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72305",
+      "candidate_fix": null,
+      "reason": "Canonical replacement PR exists but merge and fixed-by-candidate closeout are blocked on failing checks and required merge preflight."
+    },
+    {
+      "target": "#52120",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72305",
+      "candidate_fix": null,
+      "reason": "Same Mattermost threading area but a different entry point and unresolved review surface, so it should stay open as a related follow-up rather than be closed into #72305."
+    },
+    {
+      "target": "#52236",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72305",
+      "candidate_fix": null,
+      "reason": "Related Mattermost thread-routing work remains incomplete and distinct from the canonical DM reply-root fix."
+    },
+    {
+      "target": "#55151",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72305",
+      "candidate_fix": null,
+      "reason": "Overlaps the root-id family but has a distinct implementation and unresolved bot finding; not safe to close or merge under #72305."
+    },
+    {
+      "target": "#55186",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72305",
+      "candidate_fix": "#72305",
+      "reason": "Already closed and superseded by hydrated replacement PR #72305."
+    },
+    {
+      "target": "#57565",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72305",
+      "candidate_fix": null,
+      "reason": "Related but too broad and unresolved for autonomous merge or closeout in the #72305 DM-threading path."
+    },
+    {
+      "target": "#57609",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent Mattermost behavior bug, not a duplicate or superseded PR for this thread-root cluster."
+    },
+    {
+      "target": "#58439",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent Mattermost file-upload fix; leave outside this cluster."
+    },
+    {
+      "target": "#59791",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72305",
+      "candidate_fix": "#72305",
+      "reason": "Already closed; retain as historical evidence for the DM-threading family."
+    },
+    {
+      "target": "#60115",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72305",
+      "candidate_fix": "#72305",
+      "reason": "Already closed and replaced by hydrated PR #72305."
+    },
+    {
+      "target": "#45082",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72305",
+      "candidate_fix": null,
+      "reason": "Related Mattermost thread-context issue with a different entry point; keep open."
+    },
+    {
+      "target": "#57607",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent Mattermost behavior issue outside this cluster."
+    },
+    {
+      "target": "#57970",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72305",
+      "candidate_fix": null,
+      "reason": "Related prerequisite for broader routing work, not a duplicate of #72305."
+    },
+    {
+      "target": "#59758",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72305",
+      "candidate_fix": "#72305",
+      "reason": "Blocked on canonical fix path #72305 becoming merge-ready or merged."
+    },
+    {
+      "target": "#30977",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#72305",
+      "candidate_fix": null,
+      "reason": "Already closed historical evidence for the root-id family."
+    },
+    {
+      "target": "#59981",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72305",
+      "candidate_fix": "#72305",
+      "reason": "Already closed and covered by the active replacement path #72305."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 6,
+    "keep_closed": 5,
+    "keep_independent": 3,
+    "close_fixed_by_candidate": 1
+  },
+  "action_status_counts": {
+    "planned": 10,
+    "skipped": 5,
+    "blocked": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "skipped": 1
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#59758",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72305",
+      "candidate_fix": "#72305",
+      "title": null,
+      "idempotency_key": "ghcrawl-166016-agentic-merge:#59758:close_fixed_by_candidate:2026-04-02T15:12:19Z:#72305",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
