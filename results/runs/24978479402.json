@@ -1,0 +1,102 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "low-signal-pr-sweep-20260425T2355-01",
+  "mode": "autonomous",
+  "run_id": "24978479402",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978479402",
+  "head_sha": "3701e4ea719b18e8a66aab3ed90567b37a362212",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/low-signal-pr-sweep-20260425T2355-01.md",
+  "published_at": "2026-04-27T05:42:14.670Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Low-signal PR sweep classification only. No GitHub mutations were performed. The artifact supports one security quarantine, one already-closed skip, two non-closable focused docs PRs, and one low-signal close candidate.",
+  "actions": [
+    {
+      "target": "#50648",
+      "action": "close_low_signal",
+      "status": "planned",
+      "classification": "low_signal",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Boringly clear low-signal docs-only PR under the explicit low_signal_prs policy; no maintainer signal and unresolved bot feedback remain."
+    },
+    {
+      "target": "#49430",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Not a low-signal cleanup candidate because it is a focused docs fix for an open issue with active author follow-up and unresolved technical documentation judgment."
+    },
+    {
+      "target": "#49105",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed in hydrated live state; no action needed."
+    },
+    {
+      "target": "#48608",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Not boringly clear low-signal because it is tied to a closed tracker as the canonical PR, has green checks, and requires technical docs correctness judgment."
+    },
+    {
+      "target": "#48355",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PR must be routed to central OpenClaw security handling, not low-signal cleanup."
+    }
+  ],
+  "action_counts": {
+    "close_low_signal": 1,
+    "needs_human": 2,
+    "keep_closed": 1,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "skipped": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [
+    "#49430: maintainer judgment required because it is a focused docs fix for open issue #47558 with active contributor follow-up and unresolved technical documentation review comments.",
+    "#48608: maintainer judgment required because the PR has green checks, is named as the canonical open PR for closed issue #43034, and has unresolved technical docs correctness comments."
+  ],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#50648",
+      "action": "close_low_signal",
+      "status": "blocked",
+      "classification": "low_signal",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "low-signal-pr-sweep-20260425T2355-01:#50648:close_low_signal:2026-04-26T08:03:00Z",
+      "reason": "maintainer issue comment blocks low-signal auto-close",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": "closed",
+      "live_updated_at": "2026-04-27T05:41:47Z"
+    }
+  ]
+}

@@ -4118,5 +4118,25 @@
     "merge_commit_sha": null,
     "live_state": null,
     "live_updated_at": null
+  },
+  {
+    "repo": "openclaw/openclaw",
+    "run_id": "24978479402",
+    "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978479402",
+    "cluster_id": "low-signal-pr-sweep-20260425T2355-01",
+    "published_at": "2026-04-27T05:42:14.670Z",
+    "target": "#50648",
+    "action": "close_low_signal",
+    "status": "blocked",
+    "classification": "low_signal",
+    "canonical": null,
+    "candidate_fix": null,
+    "title": null,
+    "idempotency_key": "low-signal-pr-sweep-20260425T2355-01:#50648:close_low_signal:2026-04-26T08:03:00Z",
+    "reason": "maintainer issue comment blocks low-signal auto-close",
+    "merged_at": null,
+    "merge_commit_sha": null,
+    "live_state": "closed",
+    "live_updated_at": "2026-04-27T05:41:47Z"
   }
 ]
