@@ -1,0 +1,235 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156601-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24980228607",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24980228607",
+  "head_sha": "40a5c7418ff46bf3e60da63dc6e2345c96900f78",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156601-autonomous-smoke.md",
+  "published_at": "2026-04-27T06:47:09.895Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/63769",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/63769",
+  "canonical_pr": null,
+  "summary": "Classified hydrated cluster refs using the preflight artifact. The original representative #43861 is already closed. The surviving ordinary canonical is open issue #63769 for the repeated-character Gateway WebSocket chat merge bug. Open PR #72400 is quarantined as security-sensitive because the artifact includes an Aisle security finding, so it is not used as a merge or closeout candidate. No close or merge mutations are planned; a narrow credited replacement fix artifact is planned instead.",
+  "actions": [
+    {
+      "target": "#42588",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical linked ref; no ProjectClownfish mutation is valid."
+    },
+    {
+      "target": "#43828",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Closed issue with related symptoms; do not reopen or mutate in this cluster."
+    },
+    {
+      "target": "#43861",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Already closed; useful diagnosis should be credited in the replacement fix path."
+    },
+    {
+      "target": "#46985",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Related UI streaming subfamily with broad unrelated churn and failing checks; keep open for separate review."
+    },
+    {
+      "target": "#47188",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Closed related UI symptom; evidence only."
+    },
+    {
+      "target": "#47224",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent linked ref; no action."
+    },
+    {
+      "target": "#47344",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Closed related UI PR; evidence only."
+    },
+    {
+      "target": "#47377",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Related UI subfamily; failing checks block merge or fixed-by-candidate closeout."
+    },
+    {
+      "target": "#47399",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Related but not safe to close or merge in this cluster."
+    },
+    {
+      "target": "#54374",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Related gateway streaming work; not merge-ready and not a duplicate closeout target."
+    },
+    {
+      "target": "#58631",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Closed related issue; evidence only."
+    },
+    {
+      "target": "#59057",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Related performance follow-up with unresolved correctness findings; keep open for separate repair or replacement."
+    },
+    {
+      "target": "#60063",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Potentially useful related PR, but not the canonical repeated-character fix for this cluster."
+    },
+    {
+      "target": "#63769",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Best live non-security canonical for the ordinary repeated-character bug."
+    },
+    {
+      "target": "#63994",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Already closed superseded contributor PR; retain credit in the new fix artifact."
+    },
+    {
+      "target": "#65457",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Already closed superseded contributor PR; retain credit in the new fix artifact."
+    },
+    {
+      "target": "#72400",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine #72400 only; do not close, merge, label, comment, or use it as candidate_fix in ProjectClownfish."
+    },
+    {
+      "target": "cluster:ghcrawl-156601-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "A narrow non-security replacement fix path is needed before any duplicate or superseded closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-156601-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Prepare a narrow credited replacement PR plan for the ordinary bug path."
+    },
+    {
+      "target": "cluster:ghcrawl-156601-autonomous-smoke",
+      "action": "open_fix_pr",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#63769",
+      "candidate_fix": null,
+      "reason": "Open a replacement fix PR through ProjectClownfish scripts, not directly from this worker."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 9,
+    "keep_related": 6,
+    "keep_canonical": 1,
+    "route_security": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "open_fix_pr": 1
+  },
+  "action_status_counts": {
+    "skipped": 9,
+    "planned": 11
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "replace_uneditable_branch",
+      "reason": "Codex /review failed: structured output was not written to replacement-codex-review-1.json; stdout={\"type\":\"thread.started\",\"thread_id\":\"019dcdb0-5d46-7983-b521-fcb7ec30452f\"} {\"type\":\"turn.started\"} {\"type\":\"item.started\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/bash -lc \\\"pwd && if [ -f AGENTS.md ]; then sed -n '1,220p' AGENTS.md; fi && sed -n '1,220p' /tmp/projectclownfish-fix-FhVyeR/openclaw-openclaw/.agents/skills/openclaw-pr-maintainer/SKILL.md && if pnpm docs:list >/tmp/docs-list.out 2>/tmp/docs-list.err; then cat /tmp/docs-list.out; else cat /tmp/docs-list.err; fi\\\"\",\"aggregated_output\":\"\",\"exit_code\":null,\"status\":\"in_progress\"}} {\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/bash -lc \\\"pwd && if [ -f AGENTS.md ]; then sed -n '1,220p' AGENTS.md; fi && sed -n '1,220p' /tmp/projectclownfish-fix-FhVyeR/openclaw-...; stderr=empty",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}
