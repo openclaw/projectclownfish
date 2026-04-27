@@ -1,0 +1,292 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-166016-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24977064553",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24977064553",
+  "head_sha": "50a0b51ad3e3cfffa74443fc81bf0c842f9747bf",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-166016-agentic-merge.md",
+  "published_at": "2026-04-27T05:03:40.641Z",
+  "canonical": "Root/thread reply-routing needs a new replacement fix PR; #72305 is the hydrated canonical PR for the linked DM-threading subfamily.",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72305",
+  "summary": "Hydrated state shows the original representative #55186 is already closed and not a viable canonical. The cluster is over-broad: root/thread reply routing needs a new narrow credited replacement fix, #72305 is the existing canonical replacement for the DM-threading subfamily but is not merge-ready because checks are failing and no Codex /review preflight is present, and several other Mattermost PRs are related or independent follow-ups.",
+  "actions": [
+    {
+      "target": "cluster:ghcrawl-166016-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "No hydrated open PR is both narrow and clean for the root/thread reply-routing family."
+    },
+    {
+      "target": "cluster:ghcrawl-166016-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Replacement fix path is explicit and narrower than the available contributor PRs."
+    },
+    {
+      "target": "#55186",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already-closed refs must not receive close actions."
+    },
+    {
+      "target": "#55151",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Blocked on the replacement fix PR for the canonical root/thread routing path."
+    },
+    {
+      "target": "#57565",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Blocked on a narrower replacement fix PR; broad code delta and failing checks block merge."
+    },
+    {
+      "target": "#52120",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related Mattermost thread-context work, but not the same root/thread reply-routing fix and not merge-ready."
+    },
+    {
+      "target": "#45082",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Open related issue should remain as follow-up scope, not closed into this root-routing replacement."
+    },
+    {
+      "target": "#52236",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related cron/heartbeat delivery-context work, not a viable canonical PR."
+    },
+    {
+      "target": "#57609",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent Mattermost bug family."
+    },
+    {
+      "target": "#57607",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent issue should not be closed or merged as part of this cluster."
+    },
+    {
+      "target": "#58439",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent open PR outside this cluster's canonical routing path."
+    },
+    {
+      "target": "#57970",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related prerequisite-style work, but not the canonical root/thread reply fix."
+    },
+    {
+      "target": "#59758",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#72305",
+      "reason": "Fix-first policy blocks closeout until #72305 lands or is otherwise proven fixed on main."
+    },
+    {
+      "target": "#60115",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#72305",
+      "reason": "Already-closed refs must not receive close actions."
+    },
+    {
+      "target": "#72305",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72305",
+      "candidate_fix": null,
+      "reason": "Canonical for the DM-threading subfamily only; merge is blocked until checks and review preflight are clean."
+    },
+    {
+      "target": "#59791",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already-closed refs must not receive close actions."
+    },
+    {
+      "target": "#30977",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed issue is context only."
+    },
+    {
+      "target": "#59981",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#72305",
+      "reason": "Already-closed refs must not receive close actions."
+    },
+    {
+      "target": "#29587",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical ref is evidence only."
+    }
+  ],
+  "action_counts": {
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_closed": 6,
+    "close_superseded": 2,
+    "keep_related": 4,
+    "keep_independent": 3,
+    "close_fixed_by_candidate": 1,
+    "keep_canonical": 1
+  },
+  "action_status_counts": {
+    "planned": 10,
+    "skipped": 6,
+    "blocked": 3
+  },
+  "fix_counts": {
+    "opened": 1
+  },
+  "apply_counts": {
+    "skipped": 3,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "open_fix_pr",
+      "status": "opened",
+      "target": null,
+      "pr": "https://github.com/openclaw/openclaw/pull/72305",
+      "branch": "clownfish/ghcrawl-166016-agentic-merge",
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": "https://github.com/openclaw/openclaw/pull/72305"
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#55151",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-166016-agentic-merge:#55151:close-superseded-blocked:2026-04-27",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#57565",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-166016-agentic-merge:#57565:close-superseded-blocked:2026-04-27",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#59758",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#72305",
+      "title": null,
+      "idempotency_key": "ghcrawl-166016-agentic-merge:#59758:close-fixed-by-candidate-blocked:2026-04-27",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#72305",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(mattermost): prevent DM replies from creating threads",
+      "idempotency_key": null,
+      "reason": "merge state status is UNSTABLE",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
