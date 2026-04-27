@@ -1,0 +1,93 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "low-signal-pr-sweep-20260427T0530-01",
+  "mode": "autonomous",
+  "run_id": "24978251079",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978251079",
+  "head_sha": "ef3a582bffe2ffa57be653d2945931140635f43a",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/inbox/low-signal-pr-sweep-20260427T0530-01.md",
+  "published_at": "2026-04-27T05:34:00.467Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Low-signal sweep classified the five listed open PRs using hydrated preflight state. Planned low-signal closeout for two broad dirty PRs with no maintainer signal. Three PRs need maintainer judgment because they are focused or actively worked technical changes rather than boring low-signal cleanup. Quarantined the hydrated security-sensitive linked PR #41466 without mutating it.",
+  "actions": [
+    {
+      "target": "#41466",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive hydrated linked ref must be routed to central OpenClaw security handling only."
+    },
+    {
+      "target": "#48659",
+      "action": "close_low_signal",
+      "status": "planned",
+      "classification": "low_signal",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Boringly clear low-signal PR under dirty-branch and third-party/core extension categories with no maintainer signal."
+    },
+    {
+      "target": "#50955",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Requires maintainer technical judgment because it is a focused ACP bug-fix branch with unresolved correctness findings and failing checks, not a low-signal PR."
+    },
+    {
+      "target": "#53720",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Requires maintainer judgment because the PR has useful focused code, author follow-up, and green checks; low-signal policy forbids closing this automatically."
+    },
+    {
+      "target": "#53948",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Requires maintainer technical judgment because it is an actively iterated provider capability change with substantial review history and a failing check, not boring low-signal cleanup."
+    },
+    {
+      "target": "#55104",
+      "action": "close_low_signal",
+      "status": "planned",
+      "classification": "low_signal",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Boringly clear low-signal broad dirty branch with failing validation and no maintainer signal."
+    }
+  ],
+  "action_counts": {
+    "route_security": 1,
+    "close_low_signal": 2,
+    "needs_human": 3
+  },
+  "action_status_counts": {
+    "planned": 3,
+    "blocked": 3
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [
+    "#50955: focused ACP bug-fix PR with unresolved Codex review blockers and failing checks; maintainer must decide whether to repair, supersede, or close outside low-signal cleanup.",
+    "#53720: focused, useful enabled/disabled-agent implementation with author follow-up and green checks; low-signal policy requires maintainer judgment despite remaining technical review findings.",
+    "#53948: actively iterated local-models capability PR with substantial technical review history and one failing check; correctness/product direction cannot be decided as low-signal cleanup."
+  ],
+  "fix_actions": [],
+  "apply_actions": []
+}
