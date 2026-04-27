@@ -1,0 +1,239 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156598-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24984741507",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24984741507",
+  "head_sha": "26374cdd2f49f5683850f92c1448eb8af1cfa65f",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "blocked",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156598-autonomous-smoke.md",
+  "published_at": "2026-04-27T08:35:28.587Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72614",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72614",
+  "summary": "Classified the sessions_spawn ACP-only field cluster using the hydrated preflight artifact. #72614 is the current canonical PR path approved by maintainer calibration, but merge/final closeout is blocked until the deterministic executor completes merge preflight: rebase/repair if needed, run Codex /review, resolve bot/human findings, and validate with pnpm check:changed. Security-sensitive #63121 is quarantined only for central security routing. No GitHub mutations were performed.",
+  "actions": [
+    {
+      "target": "#72614",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72614",
+      "candidate_fix": null,
+      "reason": "Canonical PR path is explicit, but merge preflight is incomplete in this artifact."
+    },
+    {
+      "target": "#63121",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route only #63121 to central OpenClaw security handling; continue ordinary non-security classification for the rest of the cluster."
+    },
+    {
+      "target": "#56326",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Blocked on canonical fix path #72614 landing and passing merge preflight."
+    },
+    {
+      "target": "#61724",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Blocked on canonical fix path #72614 landing and passing merge preflight."
+    },
+    {
+      "target": "#63120",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Blocked on canonical fix path #72614 landing and passing merge preflight."
+    },
+    {
+      "target": "#58686",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Superseded by the explicit canonical replacement path #72614."
+    },
+    {
+      "target": "#66720",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72614",
+      "candidate_fix": null,
+      "reason": "Related provider/schema follow-up, not a duplicate closeout target for the #72614 runtime tolerance path."
+    },
+    {
+      "target": "#59225",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72614",
+      "candidate_fix": null,
+      "reason": "Related broader schema-filtering work should remain open outside this closeout."
+    },
+    {
+      "target": "#67276",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent open PR; no ProjectClownfish action in this cluster."
+    },
+    {
+      "target": "#40102",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed; closed refs are historical evidence only."
+    },
+    {
+      "target": "#56342",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed; closed refs are historical evidence only."
+    },
+    {
+      "target": "#64787",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed; closed refs are historical evidence only."
+    },
+    {
+      "target": "#65282",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed; closed refs are historical evidence only."
+    },
+    {
+      "target": "#68397",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Representative is obsolete because it is closed; keep as historical evidence only."
+    },
+    {
+      "target": "#69170",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed; closed refs are historical evidence only."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "route_security": 1,
+    "close_fixed_by_candidate": 3,
+    "close_superseded": 1,
+    "keep_related": 2,
+    "keep_independent": 1,
+    "keep_closed": 6
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "blocked": 3,
+    "skipped": 6
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "skipped": 3,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#56326",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "title": null,
+      "idempotency_key": "ghcrawl-156598-autonomous-smoke:close_fixed_by_candidate:#56326:#72614",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#61724",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "title": null,
+      "idempotency_key": "ghcrawl-156598-autonomous-smoke:close_fixed_by_candidate:#61724:#72614",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#63120",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "title": null,
+      "idempotency_key": "ghcrawl-156598-autonomous-smoke:close_fixed_by_candidate:#63120:#72614",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#58686",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "title": null,
+      "idempotency_key": "ghcrawl-156598-autonomous-smoke:close_superseded:#58686:#72614",
+      "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
