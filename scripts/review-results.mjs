@@ -352,10 +352,10 @@ function isBlockedReplacementSourceCloseout(action, result) {
 
 function allowsHistoricalCanonicalForCloseout(action) {
   const name = String(action.action ?? "");
-  if (!["close_fixed_by_candidate", "post_merge_close"].includes(name)) return false;
+  if (!["close_fixed_by_candidate", "close_superseded", "post_merge_close"].includes(name)) return false;
   if (action.status !== "planned") return false;
   const classification = String(action.classification ?? "");
-  if (classification && classification !== "fixed_by_candidate") return false;
+  if (classification && !["fixed_by_candidate", "superseded"].includes(classification)) return false;
   const candidateRef = normalizeRef(action.candidate_fix ?? action.fixed_by ?? action.fix_candidate);
   if (!candidateRef) return false;
   const evidenceText = [action.reason, action.comment, ...(action.evidence ?? [])].join("\n");
