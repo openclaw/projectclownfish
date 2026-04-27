@@ -1,0 +1,208 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165991-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24978973591",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978973591",
+  "head_sha": "29400ea714d617de4455a11f0aa59ca745bf6cda",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-165991-agentic-merge.md",
+  "published_at": "2026-04-27T05:59:38.615Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/66875",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/66875",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72325",
+  "summary": "Representative #66597 is obsolete because it is already closed. The live canonical issue is #66875, with open canonical fix PR #72325. Most flicker-only reports are already closed and should remain historical evidence. #51497 is a distinct storage/session-loss report and should stay open independently. No merge is recommended because #72325 still lacks a clean Codex /review preflight and has an unresolved Greptile P2 note about the silent-reply sentinel.",
+  "actions": [
+    {
+      "target": "#1",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked PR is out of ProjectClownfish mutation scope."
+    },
+    {
+      "target": "#3",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked issue is out of ProjectClownfish mutation scope."
+    },
+    {
+      "target": "#44491",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#49777",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#51497",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Distinct root cause and recovery surface; keep open outside this flicker/final-reconciliation cluster."
+    },
+    {
+      "target": "#66176",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#66274",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#66597",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Obsolete representative; already closed and must not be used for new close actions."
+    },
+    {
+      "target": "#66598",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#66762",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#66875",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#66875",
+      "candidate_fix": "#72325",
+      "reason": "Best live canonical issue for the remaining non-security WebChat final/reconciliation race."
+    },
+    {
+      "target": "#67028",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#67081",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#67412",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#67582",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#66997",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#66997",
+      "reason": "Merged historical fix for the active-send/session.message flicker subpath."
+    },
+    {
+      "target": "#67037",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#66875",
+      "candidate_fix": "#72325",
+      "reason": "Closed superseded contributor attempt; preserve it as credited source evidence for #72325."
+    },
+    {
+      "target": "#67271",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed and not a safe canonical for this cluster."
+    },
+    {
+      "target": "#72325",
+      "action": "keep_canonical",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#66875",
+      "candidate_fix": "#72325",
+      "reason": "Canonical fix PR, but merge recommendation is blocked until Codex /review passes and the Greptile P2 sentinel-case finding is addressed or explicitly proven non-actionable."
+    }
+  ],
+  "action_counts": {
+    "route_security": 2,
+    "keep_closed": 14,
+    "keep_independent": 1,
+    "keep_canonical": 2
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "skipped": 14,
+    "blocked": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
