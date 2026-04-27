@@ -1,0 +1,170 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156611-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24980242750",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24980242750",
+  "head_sha": "40a5c7418ff46bf3e60da63dc6e2345c96900f78",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156611-autonomous-smoke.md",
+  "published_at": "2026-04-27T06:38:53.562Z",
+  "canonical": "https://github.com/openclaw/openclaw/tree/main",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/60429",
+  "canonical_pr": null,
+  "summary": "Hydrated preflight shows the original canonical hint #60429 is now closed and current main is the canonical fixed path. Only one job candidate remains open (#41330); it matches the same iMessage outbound self-echo/is_from_me failure family and can be closed as fixed by current main evidence tied to hydrated #42546 and the related maintainer closeouts. Security-sensitive linked PR #38440 is quarantined only; all already-closed refs are kept closed with no mutation.",
+  "actions": [
+    {
+      "target": "#38440",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine exact security-sensitive linked PR to central OpenClaw security handling; do not use it as a ProjectClownfish mutation target."
+    },
+    {
+      "target": "#41330",
+      "action": "close_fixed_by_candidate",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "High-confidence fixed-by-current-main closeout is allowed because the open issue is covered by hydrated current-main evidence and related maintainer closeouts; require_fix_before_close is satisfied by the already-present fix path."
+    },
+    {
+      "target": "#1649",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#38440",
+      "reason": "Already closed historical context only."
+    },
+    {
+      "target": "#32166",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#38440",
+      "reason": "Already closed historical context only."
+    },
+    {
+      "target": "#42546",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#60429",
+      "candidate_fix": null,
+      "reason": "Contributor PR is already closed as implemented/stale against current main; no merge or close mutation is valid."
+    },
+    {
+      "target": "#47830",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#60429",
+      "candidate_fix": "#38440",
+      "reason": "Already closed related regression context only."
+    },
+    {
+      "target": "#58695",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed as implemented by current main."
+    },
+    {
+      "target": "#58794",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed as implemented by current main."
+    },
+    {
+      "target": "#60045",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed as implemented by current main."
+    },
+    {
+      "target": "#60429",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Historical canonical representative is already closed as implemented; current main is the surviving canonical path."
+    },
+    {
+      "target": "#60525",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed as implemented by current main."
+    },
+    {
+      "target": "#60940",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed as implemented by current main."
+    },
+    {
+      "target": "#65420",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "reason": "Already closed as implemented by current main."
+    }
+  ],
+  "action_counts": {
+    "route_security": 1,
+    "close_fixed_by_candidate": 1,
+    "keep_closed": 11
+  },
+  "action_status_counts": {
+    "planned": 2,
+    "skipped": 11
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#41330",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60429",
+      "candidate_fix": "#42546",
+      "title": null,
+      "idempotency_key": "ghcrawl-156611-autonomous-smoke:#41330:close_fixed_by_candidate:#42546:2026-04-05T00:02:57Z",
+      "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
