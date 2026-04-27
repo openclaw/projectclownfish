@@ -1,0 +1,250 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156588-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24981384467",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24981384467",
+  "head_sha": "e0fb289dbbb528ad94fac3d2036800e925923c24",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156588-autonomous-smoke.md",
+  "published_at": "2026-04-27T07:12:29.526Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/46871",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/46871",
+  "canonical_pr": null,
+  "summary": "Autonomous classification only. The original canonical hint #50970 is closed; the surviving non-security canonical for the nodes list/status bug is open issue #46871. No close or merge is ready because the active replacement PR #72619 is security-sensitive and must be quarantined, while other open PRs are related subfamily work or blocked by review findings.",
+  "actions": [
+    {
+      "target": "#46871",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#46871",
+      "candidate_fix": null,
+      "reason": "Best live non-security canonical for the nodes list/status family."
+    },
+    {
+      "target": "cluster:ghcrawl-156588-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "blocked",
+      "classification": null,
+      "canonical": "#46871",
+      "candidate_fix": null,
+      "reason": "The non-security nodes bug is real, but the current replacement path is blocked by security quarantine of #72619."
+    },
+    {
+      "target": "cluster:ghcrawl-156588-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "blocked",
+      "classification": null,
+      "canonical": "#46871",
+      "candidate_fix": null,
+      "reason": "Build artifact emitted as blocked rather than opening or mutating a security-sensitive fix path."
+    },
+    {
+      "target": "#72619",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PR is out of scope for ProjectClownfish mutation."
+    },
+    {
+      "target": "#46894",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related subcluster, not a duplicate of the nodes canonical."
+    },
+    {
+      "target": "#46895",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#47069",
+      "reason": "Superseded closeout is blocked by require_fix_before_close because #47069 is not landed or otherwise canonical yet."
+    },
+    {
+      "target": "#47069",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Useful related PR, but not merge-ready and not part of the nodes canonical path."
+    },
+    {
+      "target": "#49989",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Different channel/plugin root cause."
+    },
+    {
+      "target": "#50847",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#46871",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#50871",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": null,
+      "reason": "Closed historical PR; evidence only."
+    },
+    {
+      "target": "#50970",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": null,
+      "reason": "Representative is obsolete; do not mutate already-closed PR."
+    },
+    {
+      "target": "#51027",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed mixed-scope PR; evidence only."
+    },
+    {
+      "target": "#51051",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#46871",
+      "candidate_fix": null,
+      "reason": "Useful related PR, but not a safe merge or close target in this run."
+    },
+    {
+      "target": "#51053",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": null,
+      "reason": "Closed historical PR; evidence only."
+    },
+    {
+      "target": "#51126",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed issue; no closeout action allowed."
+    },
+    {
+      "target": "#51270",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related model-command subcluster; not merge-ready."
+    },
+    {
+      "target": "#51507",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#71462",
+      "reason": "Closed context item; not part of current mutation set."
+    },
+    {
+      "target": "#51536",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#71462",
+      "reason": "Already closed PR; no action."
+    },
+    {
+      "target": "#65706",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#46871",
+      "candidate_fix": null,
+      "reason": "Closed duplicate evidence only."
+    },
+    {
+      "target": "#65772",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": null,
+      "reason": "Closed source PR; contributor credit must be preserved in any future replacement path."
+    },
+    {
+      "target": "#71462",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#71462",
+      "reason": "Merged context PR; no mutation required."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "route_security": 1,
+    "keep_related": 4,
+    "close_superseded": 1,
+    "keep_independent": 1,
+    "keep_closed": 11
+  },
+  "action_status_counts": {
+    "planned": 7,
+    "blocked": 3,
+    "skipped": 11
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "skipped": 1
+  },
+  "needs_human": [
+    "Central OpenClaw security triage must decide #72619 before ProjectClownfish continues the nodes list/status replacement path, because the security-sensitive findings are on the same fix surface."
+  ],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#46895",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#47069",
+      "title": null,
+      "idempotency_key": "pcw:ghcrawl-156588-autonomous-smoke:#46895:close_superseded_by_47069:v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
