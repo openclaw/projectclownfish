@@ -7658,5 +7658,25 @@
     "merge_commit_sha": null,
     "live_state": null,
     "live_updated_at": null
+  },
+  {
+    "repo": "openclaw/openclaw",
+    "run_id": "25023049824",
+    "run_url": "https://github.com/openclaw/clownfish/actions/runs/25023049824",
+    "cluster_id": "ghcrawl-156675-autonomous-smoke",
+    "published_at": "2026-04-27T22:49:01.377Z",
+    "target": "#49751",
+    "action": "merge_canonical",
+    "status": "blocked",
+    "classification": "fix_pr",
+    "canonical": null,
+    "candidate_fix": null,
+    "title": "fix: clear WS handshake timer early, increase timeouts",
+    "idempotency_key": null,
+    "reason": "mergeable state is CONFLICTING",
+    "merged_at": null,
+    "merge_commit_sha": null,
+    "live_state": null,
+    "live_updated_at": null
   }
 ]

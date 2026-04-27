@@ -1,0 +1,143 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156675-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25023049824",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25023049824",
+  "head_sha": "416b225d73239870f6704a4eeb6d95f026ba00e9",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156675-autonomous-smoke.md",
+  "published_at": "2026-04-27T22:49:01.377Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/49751",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/49751",
+  "summary": "Classified the hydrated cluster without GitHub mutations. #49751 remains the canonical useful contributor PR, but it is not merge-ready because review-bot findings and failing/stale checks require repair. Closed PRs stay historical evidence, #62060 stays open as related follow-up timeout work, and security-sensitive linked refs are quarantined only for central security routing.",
+  "actions": [
+    {
+      "target": "#49751",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#49751",
+      "candidate_fix": null,
+      "reason": "Canonical PR is useful but not merge-ready; repair the contributor branch, address review-bot findings, rebase onto main 496a5eb56f466e828e7f843a0a55dfc7fbe01199, run validation and Codex /review, then reassess merge."
+    },
+    {
+      "target": "cluster:ghcrawl-156675-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#49751",
+      "candidate_fix": null,
+      "reason": "Build an executable repair artifact for the canonical contributor PR instead of merging stale/unreviewed code."
+    },
+    {
+      "target": "#62060",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#49751",
+      "candidate_fix": null,
+      "reason": "Keep open as related follow-up timeout-headroom work; do not merge or close it in this cluster pass."
+    },
+    {
+      "target": "#48950",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#49751",
+      "candidate_fix": null,
+      "reason": "Already closed; retain as historical related/superseded evidence only."
+    },
+    {
+      "target": "#51172",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#49751",
+      "candidate_fix": null,
+      "reason": "Already closed; retain as historical superseded evidence only."
+    },
+    {
+      "target": "#52142",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#49751",
+      "candidate_fix": null,
+      "reason": "Already closed; retain as historical superseded timeout evidence only."
+    },
+    {
+      "target": "#47113",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine this exact linked ref for central OpenClaw security handling; do not mutate it through ProjectClownfish."
+    },
+    {
+      "target": "#47640",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine this exact linked ref for central OpenClaw security handling; continue unrelated non-security classification."
+    }
+  ],
+  "action_counts": {
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_related": 1,
+    "keep_closed": 3,
+    "route_security": 2
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "skipped": 3
+  },
+  "fix_counts": {
+    "pushed": 1
+  },
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "pushed",
+      "target": "https://github.com/openclaw/openclaw/pull/49751",
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#49751",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix: clear WS handshake timer early, increase timeouts",
+      "idempotency_key": null,
+      "reason": "mergeable state is CONFLICTING",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
