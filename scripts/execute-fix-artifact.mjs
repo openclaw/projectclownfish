@@ -307,6 +307,7 @@ function executeRepairBranch({ fixArtifact, targetDir }) {
   run("git", ["fetch", `https://github.com/${pull.head.repo.full_name}.git`, `${pull.head.ref}:${branch}`], { cwd: targetDir });
   run("git", ["checkout", branch], { cwd: targetDir });
   ensureMergeBaseAvailable({ targetDir, baseBranch });
+  const rebased = rebaseRecoverableReplacementBranch({ targetDir, branch, baseBranch, fixArtifact });
   prepareTargetToolchain(targetDir);
 
   const prep = editValidatePrepareMerge({ fixArtifact, targetDir, branch, mode: "repair", baseBranch });
@@ -322,7 +323,8 @@ function executeRepairBranch({ fixArtifact, targetDir }) {
   }
 
   ghAuthSetupGit(targetDir);
-  run("git", ["push", `https://github.com/${pull.head.repo.full_name}.git`, `HEAD:${pull.head.ref}`], { cwd: targetDir });
+  const pushArgs = repairBranchPushArgs({ pull, rebased });
+  run("git", pushArgs, { cwd: targetDir });
   const threadResolution = prepareReviewThreadsForMerge({ repo: result.repo, number: sourcePr.number, targetDir });
   const comment = [
     "ProjectClownfish pushed a narrow repair to this branch so the original contributor path can stay canonical.",
@@ -338,10 +340,21 @@ function executeRepairBranch({ fixArtifact, targetDir }) {
     target: sourcePr.url,
     head_repo: pull.head.repo.full_name,
     head_ref: pull.head.ref,
+    rebased,
     commit: prep.commit,
     merge_preflight: prep.merge_preflight,
     review_threads: threadResolution,
   };
+}
+
+function repairBranchPushArgs({ pull, rebased }) {
+  const remote = `https://github.com/${pull.head.repo.full_name}.git`;
+  if (!rebased) return ["push", remote, `HEAD:${pull.head.ref}`];
+  const headSha = String(pull.head?.sha ?? "");
+  if (!/^[0-9a-f]{40}$/i.test(headSha)) {
+    throw new Error(`cannot force-with-lease repair branch ${pull.head.ref}: source head sha is missing`);
+  }
+  return ["push", `--force-with-lease=refs/heads/${pull.head.ref}:${headSha}`, remote, `HEAD:${pull.head.ref}`];
 }
 
 function prepareFallbackReplacementCheckout(sourceTargetDir) {
@@ -1751,13 +1764,14 @@ function checkoutRecoverableReplacementBranch({ targetDir, branch, baseBranch })
 
 function rebaseRecoverableReplacementBranch({ targetDir, branch, baseBranch, fixArtifact }) {
   const baseRef = `origin/${baseBranch}`;
-  if (!branchHasBaseDiff({ targetDir, baseBranch })) return;
-  if (isAncestor({ targetDir, ancestor: baseRef, descendant: "HEAD" })) return;
+  if (!branchHasBaseDiff({ targetDir, baseBranch })) return false;
+  if (isAncestor({ targetDir, ancestor: baseRef, descendant: "HEAD" })) return false;
   if (fs.existsSync(path.join(targetDir, ".git", "shallow"))) {
     run("git", ["fetch", "--unshallow", "origin"], { cwd: targetDir });
   }
   try {
     run("git", ["rebase", baseRef], { cwd: targetDir });
+    return true;
   } catch (error) {
     try {
       resolveRecoverableRebaseConflicts({
@@ -1770,9 +1784,10 @@ function rebaseRecoverableReplacementBranch({ targetDir, branch, baseBranch, fix
     } catch (repairError) {
       spawnSync("git", ["rebase", "--abort"], { cwd: targetDir, env: process.env, encoding: "utf8" });
       throw new Error(
-        `resumed branch ${branch} could not rebase onto ${baseRef}: ${compactText(repairError.message, 1200)}`,
+        `branch ${branch} could not rebase onto ${baseRef}: ${compactText(repairError.message, 1200)}`,
       );
     }
+    return true;
   }
 }
 
