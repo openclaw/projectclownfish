@@ -383,22 +383,12 @@ function executeReplacementBranch({ fixArtifact, targetDir, supersedeSources, fa
     : { status: "blocked", reason: "replacement PR URL did not include a PR number" };
 
   const supersededSources = supersedeSources ? supersededReplacementSources(fixArtifact) : [];
+  const supersededSourceActions = [];
   if (supersededSources.length > 0) {
     for (const source of supersededSources) {
       const parsed = parsePullRequestUrl(source);
       if (!parsed || parsed.repo !== result.repo) continue;
-      const comment = [
-        "ProjectClownfish could not safely update this branch, so it opened a narrow replacement PR instead.",
-        "",
-        `Replacement PR: ${prUrl}`,
-        `Source PR: ${source}`,
-        "Contributor credit is preserved in the replacement PR body and changelog plan.",
-      ].join("\n");
-      run("gh", ["pr", "comment", String(parsed.number), "--repo", result.repo, "--body", comment], {
-        cwd: targetDir,
-        env: ghEnv(),
-      });
-      run("gh", ["pr", "close", String(parsed.number), "--repo", result.repo], { cwd: targetDir, env: ghEnv() });
+      supersededSourceActions.push(closeSupersededSourcePr({ source, parsed, replacementPrUrl: prUrl, targetDir }));
     }
   }
 
@@ -413,7 +403,53 @@ function executeReplacementBranch({ fixArtifact, targetDir, supersedeSources, fa
     merge_preflight: prep.merge_preflight,
     review_threads: threadResolution,
     superseded_sources: supersededSources,
+    superseded_source_actions: supersededSourceActions,
   };
+}
+
+function closeSupersededSourcePr({ source, parsed, replacementPrUrl, targetDir }) {
+  const base = { source, pr: `#${parsed.number}`, action: "close_superseded_source" };
+  const view = fetchSourcePullRequestView({ repo: result.repo, number: parsed.number, targetDir });
+  if (view.mergedAt || view.state === "MERGED") {
+    return { ...base, status: "skipped", reason: "already merged", merged_at: view.mergedAt ?? null };
+  }
+  if (view.state === "CLOSED") {
+    return { ...base, status: "skipped", reason: "already closed" };
+  }
+
+  const comment = [
+    "ProjectClownfish could not safely update this branch, so it opened a narrow replacement PR instead.",
+    "",
+    `Replacement PR: ${replacementPrUrl}`,
+    `Source PR: ${source}`,
+    "Contributor credit is preserved in the replacement PR body and changelog plan.",
+  ].join("\n");
+  run("gh", ["pr", "comment", String(parsed.number), "--repo", result.repo, "--body", comment], {
+    cwd: targetDir,
+    env: ghEnv(),
+  });
+
+  const closed = spawnSync("gh", ["pr", "close", String(parsed.number), "--repo", result.repo], {
+    cwd: targetDir,
+    env: ghEnv(),
+    encoding: "utf8",
+  });
+  if (closed.status === 0) return { ...base, status: "executed", reason: "closed in favor of replacement PR" };
+
+  const detail = `${closed.stderr ?? ""}\n${closed.stdout ?? ""}`.trim();
+  if (/already merged|can't be closed because it was already merged/i.test(detail)) {
+    return { ...base, status: "skipped", reason: "already merged during close" };
+  }
+  throw new Error(detail || `gh pr close exited ${closed.status}`);
+}
+
+function fetchSourcePullRequestView({ repo, number, targetDir }) {
+  return JSON.parse(
+    run("gh", ["pr", "view", String(number), "--repo", repo, "--json", "state,mergedAt,title,url"], {
+      cwd: targetDir,
+      env: ghEnv(),
+    }),
+  );
 }
 
 function editValidatePrepareMerge({
