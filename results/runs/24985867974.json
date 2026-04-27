@@ -1,0 +1,166 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156598-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24985867974",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24985867974",
+  "head_sha": "a357d4628713c59472019d207d99949bc4b4ad8e",
+  "workflow_conclusion": "cancelled",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156598-autonomous-smoke.md",
+  "published_at": "2026-04-27T09:29:51.375Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72614",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72614",
+  "summary": "Hydrated state makes #72614 the current maintainer-calibrated canonical replacement for the sessions_spawn ACP-only field tolerance bug. Merge is not planned because the artifact lacks merge preflight proof: no passed Codex /review, no pnpm check:changed result, unknown mergeability, and only label/auto-response checks are present. Plan repair/review of #72614, route #63121 to security, keep #66720 as related provider-schema work, and block duplicate closeouts until #72614 lands.",
+  "actions": [
+    {
+      "target": "#72614",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Repair and validate the calibrated canonical PR before merge; do not emit merge_canonical without merge preflight."
+    },
+    {
+      "target": "cluster:ghcrawl-156598-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Build executable repair instructions for the applicator/fix executor."
+    },
+    {
+      "target": "#63121",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item must be routed to central OpenClaw security handling and not mutated by ProjectClownfish."
+    },
+    {
+      "target": "#56326",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Blocked on canonical fix path #72614 being merged."
+    },
+    {
+      "target": "#61724",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Blocked on canonical fix path #72614 being merged."
+    },
+    {
+      "target": "#63120",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Blocked on canonical fix path #72614 being merged."
+    },
+    {
+      "target": "#58686",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Blocked on canonical fix path #72614 being merged."
+    },
+    {
+      "target": "#66720",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72614",
+      "candidate_fix": null,
+      "reason": "Related provider compatibility work remains open and should not be closed in this cluster."
+    },
+    {
+      "target": "#40102",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed historical source PR."
+    },
+    {
+      "target": "#56342",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed historical source PR."
+    },
+    {
+      "target": "#64787",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed historical source PR."
+    },
+    {
+      "target": "#65282",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed historical source PR."
+    },
+    {
+      "target": "#68397",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Closed representative is evidence only; #72614 is the live canonical path."
+    },
+    {
+      "target": "#69170",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#72614",
+      "candidate_fix": null,
+      "reason": "Already closed related PR."
+    }
+  ],
+  "action_counts": {
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "route_security": 1,
+    "close_fixed_by_candidate": 3,
+    "close_superseded": 1,
+    "keep_related": 1,
+    "keep_closed": 6
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "blocked": 4,
+    "skipped": 6
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}

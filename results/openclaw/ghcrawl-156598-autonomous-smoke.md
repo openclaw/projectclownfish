@@ -2,12 +2,12 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-156598-autonomous-smoke"
 mode: "autonomous"
-run_id: "24985375991"
-run_url: "https://github.com/openclaw/clownfish/actions/runs/24985375991"
-head_sha: "8ffde172f9f9317fcea4f231a536be493c2f7f18"
+run_id: "24985867974"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/24985867974"
+head_sha: "a357d4628713c59472019d207d99949bc4b4ad8e"
 workflow_conclusion: "cancelled"
 result_status: "planned"
-published_at: "2026-04-27T08:56:34.156Z"
+published_at: "2026-04-27T09:29:51.375Z"
 canonical: "https://github.com/openclaw/openclaw/pull/72614"
 canonical_issue: null
 canonical_pr: "https://github.com/openclaw/openclaw/pull/72614"
@@ -25,7 +25,7 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/clownfish/actions/runs/24985375991](https://github.com/openclaw/clownfish/actions/runs/24985375991)
+Run: [https://github.com/openclaw/clownfish/actions/runs/24985867974](https://github.com/openclaw/clownfish/actions/runs/24985867974)
 
 Workflow conclusion: cancelled
 
@@ -35,7 +35,7 @@ Canonical: https://github.com/openclaw/openclaw/pull/72614
 
 ## Summary
 
-Hydrated state shows the original representative #68397 is closed. Maintainer calibration makes open PR #72614 the current canonical path, but it is not merge-ready in the worker result because validation, Codex /review, and merge preflight are not present. Plan repairs #72614, quarantines security-sensitive #63121, blocks duplicate/superseded closeout until #72614 lands, and keeps broader provider-schema PR #66720 related.
+Hydrated state makes #72614 the current maintainer-calibrated canonical replacement for the sessions_spawn ACP-only field tolerance bug. Merge is not planned because the artifact lacks merge preflight proof: no passed Codex /review, no pnpm check:changed result, unknown mergeability, and only label/auto-response checks are present. Plan repair/review of #72614, route #63121 to security, keep #66720 as related provider-schema work, and block duplicate closeouts until #72614 lands.
 
 ## Impact
 
@@ -66,20 +66,20 @@ Hydrated state shows the original representative #68397 is closed. Maintainer ca
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #72614 | fix_needed | planned | canonical | Canonical PR needs executor repair and validation before merge. |
-| cluster:ghcrawl-156598-autonomous-smoke | build_fix_artifact | planned | canonical | Build an executable repair plan for the calibrated canonical PR. |
-| #63121 | route_security | planned | security_sensitive | Route this exact PR to central OpenClaw security handling and do not mutate it through ProjectClownfish. |
-| #56326 | close_fixed_by_candidate | blocked | fixed_by_candidate | Closeout is high-confidence but blocked on the canonical fix path. |
-| #61724 | close_fixed_by_candidate | blocked | fixed_by_candidate | Closeout is high-confidence but blocked on the canonical fix path. |
-| #63120 | close_fixed_by_candidate | blocked | fixed_by_candidate | Closeout is high-confidence but blocked on the canonical fix path. |
-| #58686 | close_superseded | blocked | superseded | Superseded closeout should wait until the canonical fix path lands. |
-| #66720 | keep_related | planned | related | Related provider-schema work, not a high-confidence duplicate closeout target. |
-| #40102 | keep_closed | skipped | superseded | Already closed. |
-| #56342 | keep_closed | skipped | superseded | Already closed. |
-| #64787 | keep_closed | skipped | superseded | Already closed. |
-| #65282 | keep_closed | skipped | superseded | Already closed. |
-| #68397 | keep_closed | skipped | superseded | Representative is obsolete and already closed. |
-| #69170 | keep_closed | skipped | related | Already closed. |
+| #72614 | fix_needed | planned | canonical | Repair and validate the calibrated canonical PR before merge; do not emit merge_canonical without merge preflight. |
+| cluster:ghcrawl-156598-autonomous-smoke | build_fix_artifact | planned |  | Build executable repair instructions for the applicator/fix executor. |
+| #63121 | route_security | planned | security_sensitive | Security-sensitive item must be routed to central OpenClaw security handling and not mutated by ProjectClownfish. |
+| #56326 | close_fixed_by_candidate | blocked | fixed_by_candidate | Blocked on canonical fix path #72614 being merged. |
+| #61724 | close_fixed_by_candidate | blocked | fixed_by_candidate | Blocked on canonical fix path #72614 being merged. |
+| #63120 | close_fixed_by_candidate | blocked | fixed_by_candidate | Blocked on canonical fix path #72614 being merged. |
+| #58686 | close_superseded | blocked | superseded | Blocked on canonical fix path #72614 being merged. |
+| #66720 | keep_related | planned | related | Related provider compatibility work remains open and should not be closed in this cluster. |
+| #40102 | keep_closed | skipped | superseded | Already closed historical source PR. |
+| #56342 | keep_closed | skipped | superseded | Already closed historical source PR. |
+| #64787 | keep_closed | skipped | superseded | Already closed historical source PR. |
+| #65282 | keep_closed | skipped | superseded | Already closed historical source PR. |
+| #68397 | keep_closed | skipped | superseded | Closed representative is evidence only; #72614 is the live canonical path. |
+| #69170 | keep_closed | skipped | related | Already closed related PR. |
 
 ## Needs Human
 
