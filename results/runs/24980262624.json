@@ -1,0 +1,230 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156626-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24980262624",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24980262624",
+  "head_sha": "40a5c7418ff46bf3e60da63dc6e2345c96900f78",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156626-autonomous-smoke.md",
+  "published_at": "2026-04-27T06:51:43.883Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/42083",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/42083",
+  "summary": "Classified the hydrated memory-lancedb cluster without GitHub mutations. #42083 remains the canonical repairable PR for the auto-capture full-history inefficiency, but merge is blocked by unresolved Codex/Greptile review findings and a failing Windows test shard. Security-sensitive refs #62741, #63326, and #63413 are quarantined. The other open PRs are related but independent memory-lancedb feature or CLI gaps and should stay open for their own focused follow-up paths.",
+  "actions": [
+    {
+      "target": "#25",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed before this run; no ProjectClownfish close action is valid."
+    },
+    {
+      "target": "#10550",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed related context only."
+    },
+    {
+      "target": "#16392",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed related CJK-trigger context only."
+    },
+    {
+      "target": "#16672",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed related CJK-trigger context only."
+    },
+    {
+      "target": "#20241",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed related CJK/category context only."
+    },
+    {
+      "target": "#42083",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#42083",
+      "candidate_fix": "#42083",
+      "reason": "Best canonical path is to repair the contributor branch, then revalidate and rerun Codex review before any merge."
+    },
+    {
+      "target": "#47285",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#42083",
+      "candidate_fix": null,
+      "reason": "Related memory-lancedb work, but not a duplicate of the canonical auto-capture cursor fix."
+    },
+    {
+      "target": "#62741",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item is out of scope for backlog cleanup and fix/merge automation."
+    },
+    {
+      "target": "#63326",
+      "action": "route_security",
+      "status": "skipped",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; mention only as quarantined historical context with no mutation."
+    },
+    {
+      "target": "#63413",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item is out of scope for backlog cleanup and fix/merge automation."
+    },
+    {
+      "target": "#67952",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#42083",
+      "candidate_fix": null,
+      "reason": "Related memory-lancedb CLI work with its own unresolved review path."
+    },
+    {
+      "target": "#68116",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#42083",
+      "candidate_fix": null,
+      "reason": "Related memory-lancedb CLI work with its own unresolved review path."
+    },
+    {
+      "target": "#70040",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#42083",
+      "candidate_fix": null,
+      "reason": "Related CJK-trigger work; no high-confidence duplicate or fixed-by-candidate closure because no hydrated landed canonical fix is available."
+    },
+    {
+      "target": "#71349",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#42083",
+      "candidate_fix": null,
+      "reason": "Related open issue should remain open until the canonical repair lands and the broader autoCapture behavior is reassessed."
+    },
+    {
+      "target": "cluster:ghcrawl-156626-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#42083",
+      "candidate_fix": "#42083",
+      "reason": "Repair the canonical contributor branch before merge or any fixed-by-candidate closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-156626-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#42083",
+      "candidate_fix": "#42083",
+      "reason": "Build a narrow repair artifact for the canonical auto-capture cursor PR."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 5,
+    "keep_canonical": 1,
+    "keep_related": 5,
+    "route_security": 3,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 6,
+    "planned": 10
+  },
+  "fix_counts": {
+    "failed": 1,
+    "opened": 1
+  },
+  "apply_counts": {
+    "executed": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "failed",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": "validation command failed (pnpm test:serial extensions/memory-lancedb/index.test.ts): undefined ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL Command \"test:serial\" not found Did you mean \"pnpm test:sectriage\"?",
+      "title": null,
+      "url": null
+    },
+    {
+      "action": "open_fix_pr",
+      "status": "opened",
+      "target": null,
+      "pr": "https://github.com/openclaw/openclaw/pull/72663",
+      "branch": "clownfish/ghcrawl-156626-autonomous-smoke",
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": "https://github.com/openclaw/openclaw/pull/72663"
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#72663",
+      "action": "merge_canonical",
+      "status": "executed",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(memory-lancedb): skip processed auto-capture messages safely",
+      "idempotency_key": null,
+      "reason": "merged by ProjectClownfish post-flight",
+      "merged_at": "2026-04-27T06:51:05Z",
+      "merge_commit_sha": "69c30e37d9ecf91ff34e6f6b6cf2e03b68a1996f",
+      "live_state": "merged",
+      "live_updated_at": null
+    }
+  ]
+}
