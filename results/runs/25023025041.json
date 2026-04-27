@@ -1,0 +1,180 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156657-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25023025041",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25023025041",
+  "head_sha": "416b225d73239870f6704a4eeb6d95f026ba00e9",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156657-autonomous-smoke.md",
+  "published_at": "2026-04-27T22:42:00.217Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/39120",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/39120",
+  "canonical_pr": null,
+  "summary": "Hydrated artifact supports keeping #39120 as the live canonical issue for arbitrary/custom bootstrap workspace-file injection. #50876 is an open duplicate but closure is blocked by require_fix_before_close until a canonical fix PR exists. Security-sensitive refs #31901 and #66576 are quarantined for central security handling. No merge is recommended; a narrow replacement fix artifact is planned from non-security source PR #39174 with contributor credit preserved.",
+  "actions": [
+    {
+      "target": "#39120",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#39120",
+      "candidate_fix": null,
+      "reason": "No viable open canonical PR exists; plan a narrow replacement fix path preserving source PR credit."
+    },
+    {
+      "target": "#50876",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#39120",
+      "candidate_fix": null,
+      "reason": "Close is blocked on the canonical #39120 fix path or replacement fix PR."
+    },
+    {
+      "target": "cluster:ghcrawl-156657-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#39120",
+      "candidate_fix": null,
+      "reason": "Build a replacement fix PR artifact for executor replay; do not merge or close duplicates until the fix path exists."
+    },
+    {
+      "target": "#31901",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked PR is quarantined out of ProjectClownfish mutation scope."
+    },
+    {
+      "target": "#66576",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive candidate is quarantined without blocking unrelated non-security classification."
+    },
+    {
+      "target": "#39635",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#39120",
+      "candidate_fix": null,
+      "reason": "Historical closed duplicate; no ProjectClownfish mutation."
+    },
+    {
+      "target": "#51789",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#39120",
+      "candidate_fix": null,
+      "reason": "Historical closed duplicate; no ProjectClownfish mutation."
+    },
+    {
+      "target": "#20649",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#39120",
+      "candidate_fix": null,
+      "reason": "Closed related context only."
+    },
+    {
+      "target": "#31883",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#39120",
+      "candidate_fix": null,
+      "reason": "Historical closed duplicate; no ProjectClownfish mutation."
+    },
+    {
+      "target": "#39174",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#39120",
+      "candidate_fix": null,
+      "reason": "Closed source PR is superseded by a credited replacement fix artifact."
+    },
+    {
+      "target": "#43532",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent context only."
+    },
+    {
+      "target": "#51862",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed related context only."
+    }
+  ],
+  "action_counts": {
+    "fix_needed": 1,
+    "close_duplicate": 1,
+    "build_fix_artifact": 1,
+    "route_security": 2,
+    "keep_closed": 7
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "blocked": 1,
+    "skipped": 7
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {
+    "skipped": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "replace_uneditable_branch",
+      "reason": "validation command failed (pnpm check:changed): [check:changed] lanes=core, coreTests, docs [check:changed] src/agents/workspace.load-extra-bootstrap-files.test.ts: core test [check:changed] src/agents/workspace.ts: core production [check:changed] src/hooks/bundled/bootstrap-extra-files/handler.test.ts: core test [check:changed] conflict markers [check:changed] changelog attributions [check:changed] guarded extension wildcard re-exports [check:changed] plugin-sdk wildcard re-exports [check:changed] typecheck core [check:changed] typecheck core tests [check:changed] lint core [check:changed] summary 436ms ok conflict markers 190ms ok changelog attributions 205ms ok guarded extension wildcard re-exports 199ms ok plugin-sdk wildcard re-exports 1.15s ok typecheck core 1.75s ok typecheck core tests 15.80s failed:1 lint core",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#50876",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#39120",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-156657-autonomous-smoke:#50876:close_duplicate:#39120:2026-03-30T21:21:04Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
