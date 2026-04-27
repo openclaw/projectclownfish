@@ -1,0 +1,257 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156608-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24980238741",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24980238741",
+  "head_sha": "40a5c7418ff46bf3e60da63dc6e2345c96900f78",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156608-autonomous-smoke.md",
+  "published_at": "2026-04-27T07:02:29.305Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/13175",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/13175",
+  "canonical_pr": null,
+  "summary": "Classified the hydrated Feishu interactive-card cluster into three related subfamilies: generic/native Feishu card sending remains tracked by #13175 with #47891 as a repairable contributor PR path; inbound card parsing remains related but separate under #41609/#56795/#60380/#60383; exec approval cards remain related under #60328. No merge is recommended because the hydrated PR candidates lack clean merge preflight and several have failing checks or unresolved bot findings. One security-sensitive closed PR is quarantined only for security routing.",
+  "actions": [
+    {
+      "target": "#13175",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#13175",
+      "candidate_fix": null,
+      "reason": "Best live canonical issue for the generic Feishu interactive card button/send capability request."
+    },
+    {
+      "target": "#41607",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41609",
+      "candidate_fix": null,
+      "reason": "Already closed; closed refs must not receive close actions."
+    },
+    {
+      "target": "#41609",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#13175",
+      "candidate_fix": null,
+      "reason": "Related Feishu interactive-card work, but not the same root cause as the canonical outgoing button/send capability issue."
+    },
+    {
+      "target": "#42218",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item is out of ProjectClownfish cleanup scope."
+    },
+    {
+      "target": "#45936",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41609",
+      "candidate_fix": null,
+      "reason": "Useful related parsing work, but too broad and not merge-ready for this cluster action."
+    },
+    {
+      "target": "#47891",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#13175",
+      "candidate_fix": null,
+      "reason": "Repairable contributor PR path for part of the canonical outgoing native-card support, but not merge-ready."
+    },
+    {
+      "target": "#48281",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41609",
+      "candidate_fix": null,
+      "reason": "Already closed; closed refs must not receive close actions."
+    },
+    {
+      "target": "#56795",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41609",
+      "candidate_fix": null,
+      "reason": "Related inbound parsing implementation candidate, but checks/review findings block merge or fixed-by-candidate closeout."
+    },
+    {
+      "target": "#58298",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#13175",
+      "candidate_fix": "#47891",
+      "reason": "Close is blocked on the canonical fix path or fix PR because require_fix_before_close=true."
+    },
+    {
+      "target": "#58983",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#60328",
+      "candidate_fix": null,
+      "reason": "Already closed; closed refs must not receive close actions."
+    },
+    {
+      "target": "#60328",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#13175",
+      "candidate_fix": null,
+      "reason": "Related exec-approval feature path, but not merge-ready and not the canonical generic button/send issue."
+    },
+    {
+      "target": "#60380",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41609",
+      "candidate_fix": "#60383",
+      "reason": "Specific related inbound parsing bug; keep open until its direct PR is repaired or replaced."
+    },
+    {
+      "target": "#60383",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#60380",
+      "candidate_fix": null,
+      "reason": "Related focused PR, but failing checks and unresolved bot finding block merge or fixed-by-candidate closeout."
+    },
+    {
+      "target": "#63170",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#60328",
+      "candidate_fix": null,
+      "reason": "Already closed; closed refs must not receive close actions."
+    },
+    {
+      "target": "#69860",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#60328",
+      "candidate_fix": null,
+      "reason": "Already closed; closed refs must not receive close actions."
+    },
+    {
+      "target": "cluster:ghcrawl-156608-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#13175",
+      "candidate_fix": "#47891",
+      "reason": "A narrow repair path is needed for the outgoing Feishu native-card send capability before duplicate closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-156608-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#13175",
+      "candidate_fix": "#47891",
+      "reason": "Create a deterministic repair artifact for the useful contributor PR path."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_closed": 5,
+    "keep_related": 7,
+    "route_security": 1,
+    "close_duplicate": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 11,
+    "skipped": 5,
+    "blocked": 1
+  },
+  "fix_counts": {
+    "failed": 1,
+    "opened": 1
+  },
+  "apply_counts": {
+    "skipped": 1,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "failed",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": "validation command failed (pnpm test:serial extensions/feishu/src/outbound.test.ts): undefined ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL Command \"test:serial\" not found Did you mean \"pnpm test:sectriage\"?",
+      "title": null,
+      "url": null
+    },
+    {
+      "action": "open_fix_pr",
+      "status": "opened",
+      "target": null,
+      "pr": "https://github.com/openclaw/openclaw/pull/72667",
+      "branch": "clownfish/ghcrawl-156608-autonomous-smoke",
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": "https://github.com/openclaw/openclaw/pull/72667"
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#58298",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#13175",
+      "candidate_fix": "#47891",
+      "title": null,
+      "idempotency_key": "ghcrawl-156608-autonomous-smoke:close_duplicate:#58298:2026-04-27T063706Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#72667",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(feishu): support native interactive card payload sends",
+      "idempotency_key": null,
+      "reason": "unresolved review threads remain: https://github.com/openclaw/openclaw/pull/72667#discussion_r3145417054, https://github.com/openclaw/openclaw/pull/72667#discussion_r3145417125",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
