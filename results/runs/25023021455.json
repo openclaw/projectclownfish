@@ -1,0 +1,142 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156655-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25023021455",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25023021455",
+  "head_sha": "416b225d73239870f6704a4eeb6d95f026ba00e9",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156655-autonomous-smoke.md",
+  "published_at": "2026-04-27T22:33:36.138Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72009",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72009",
+  "summary": "Hydrated state shows the original representative #45310 and all job-listed issue candidates are already closed. The best live canonical path is open PR #72009, which implements the configurable typing TTL request with focused docs/schema/tests and passing checks, but it is not merge-ready for autonomous merge because mergeability is unknown and the required clean Codex /review on the current head is missing after the author addressed the prior review finding. Security-sensitive linked PRs #42105 and #42851 are quarantined only for central security handling; unrelated non-security classification continues.",
+  "actions": [
+    {
+      "target": "#13673",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72009",
+      "candidate_fix": "#72009",
+      "reason": "Already closed; no mutation needed."
+    },
+    {
+      "target": "#20622",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72009",
+      "candidate_fix": "#72009",
+      "reason": "Historical closed contributor PR; preserve as source-credit evidence, not a mutation target."
+    },
+    {
+      "target": "#41516",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72009",
+      "candidate_fix": "#72009",
+      "reason": "Already closed and covered by the current canonical PR path."
+    },
+    {
+      "target": "#42105",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive hydrated ref is out of ProjectClownfish mutation scope."
+    },
+    {
+      "target": "#42851",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive hydrated ref is out of ProjectClownfish mutation scope."
+    },
+    {
+      "target": "#45310",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72009",
+      "candidate_fix": "#72009",
+      "reason": "Representative became obsolete because it is already closed; canonical path moves to open PR #72009."
+    },
+    {
+      "target": "#53029",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72009",
+      "candidate_fix": "#72009",
+      "reason": "Already closed and covered by the current canonical PR path."
+    },
+    {
+      "target": "#61992",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72009",
+      "candidate_fix": "#72009",
+      "reason": "Already closed and covered by the current canonical PR path."
+    },
+    {
+      "target": "#72009",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72009",
+      "candidate_fix": "#72009",
+      "reason": "Canonical PR is useful and repairable, but not merge-ready until the executor refreshes mergeability, reruns /review on current head, addresses any findings, and reruns the repo gate."
+    },
+    {
+      "target": "cluster:ghcrawl-156655-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#72009",
+      "candidate_fix": "#72009",
+      "reason": "Build an executable repair artifact for the canonical contributor PR before merge or post-merge closeout."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 6,
+    "route_security": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 6,
+    "planned": 4
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "repair_contributor_branch",
+      "reason": "fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}
