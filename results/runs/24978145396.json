@@ -1,0 +1,252 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156586-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24978145396",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978145396",
+  "head_sha": "e8d437d9978c397d8d3fb39c23597d4e5c1d98bf",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156586-autonomous-smoke.md",
+  "published_at": "2026-04-27T05:51:32.627Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/46647",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/46647",
+  "canonical_pr": null,
+  "summary": "Representative #47362 is already closed and obsolete. The current Slack canonical path is open issue #46647, which still describes a distinct final-edit Slack blocks delivery bug not covered by #47362. Security-sensitive open refs #45062, #63940, and linked #8813 are quarantined only; unrelated prompt PRs are kept open as independent work. No merge or close actions are merge-ready because required Codex /review merge preflight is missing and several PRs have unresolved bot/check blockers.",
+  "actions": [
+    {
+      "target": "#46647",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#46647",
+      "candidate_fix": null,
+      "reason": "Use #46647 as the live Slack canonical issue because the job representative is closed and obsolete."
+    },
+    {
+      "target": "cluster:ghcrawl-156586-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#46647",
+      "candidate_fix": null,
+      "reason": "A narrow credited replacement fix is needed for #46647 before any related closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-156586-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#46647",
+      "candidate_fix": null,
+      "reason": "Prepare a narrow Slack delivery fix artifact for the deterministic ProjectClownfish fix executor."
+    },
+    {
+      "target": "#45062",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine this exact PR to central OpenClaw security handling; do not mutate through ProjectClownfish."
+    },
+    {
+      "target": "#63940",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine this exact PR to central OpenClaw security handling; do not mutate through ProjectClownfish."
+    },
+    {
+      "target": "#8813",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine this exact linked issue to central OpenClaw security handling; keep unrelated non-security classification moving."
+    },
+    {
+      "target": "#14432",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate prompt-guidance subfamily; leave open for its own merge path."
+    },
+    {
+      "target": "#52727",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent prompt-policy change with failing checks; not eligible for merge or closeout here."
+    },
+    {
+      "target": "#57247",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent prompt feature with unresolved bot/check blockers; leave open."
+    },
+    {
+      "target": "#65777",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent prompt fix; keep open for its own merge-preflight path."
+    },
+    {
+      "target": "#70605",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent context-sanitization PR; keep open and do not merge in this cluster pass."
+    },
+    {
+      "target": "#47362",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46647",
+      "candidate_fix": null,
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#56951",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#46647",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action may be emitted."
+    },
+    {
+      "target": "#56955",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46647",
+      "candidate_fix": null,
+      "reason": "Already closed; preserve as credit/evidence for the replacement fix artifact."
+    },
+    {
+      "target": "#60017",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed and independent."
+    },
+    {
+      "target": "#14310",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical context only."
+    },
+    {
+      "target": "#32466",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical context only."
+    },
+    {
+      "target": "#10841",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed security-sensitive context; no ProjectClownfish mutation."
+    },
+    {
+      "target": "#62953",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed security-sensitive context; no ProjectClownfish mutation."
+    },
+    {
+      "target": "#47668",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent linked issue; leave open for the #70605 subfamily."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "route_security": 3,
+    "keep_independent": 6,
+    "keep_closed": 8
+  },
+  "action_status_counts": {
+    "planned": 12,
+    "skipped": 8
+  },
+  "fix_counts": {
+    "opened": 1
+  },
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "open_fix_pr",
+      "status": "opened",
+      "target": null,
+      "pr": "https://github.com/openclaw/openclaw/pull/72626",
+      "branch": "clownfish/ghcrawl-156586-autonomous-smoke",
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": "https://github.com/openclaw/openclaw/pull/72626"
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#72626",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(slack): preserve button blocks in final updates",
+      "idempotency_key": null,
+      "reason": "mergeable state is CONFLICTING",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
