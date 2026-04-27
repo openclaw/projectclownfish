@@ -1,0 +1,110 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "low-signal-pr-sweep-20260425T2355-02",
+  "mode": "autonomous",
+  "run_id": "24978527573",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978527573",
+  "head_sha": "52d57e1e9e9b1fa39aeddf60fb448e4f0e3aa8da",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/low-signal-pr-sweep-20260425T2355-02.md",
+  "published_at": "2026-04-27T05:43:54.987Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Reviewed the low-signal PR sweep using the hydrated preflight artifact. No PR is boringly clear for low-signal closure: two are focused useful docs PRs, one needs maintainer/technical judgment, and two security-sensitive refs are quarantined. No GitHub mutations were performed.",
+  "actions": [
+    {
+      "target": "#47878",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Not a boring low-signal PR under the opt-in cleanup policy; keep open outside this cleanup sweep."
+    },
+    {
+      "target": "#46552",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Focused, validated docs clarification with author follow-up; not a low-signal cleanup close."
+    },
+    {
+      "target": "#43190",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Broad Teams feature/plugin work with red checks and review concerns, but also substantive author-owned fixes; maintainer judgment is required before closure or further triage."
+    },
+    {
+      "target": "#43170",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item is out of ProjectClownfish low-signal cleanup scope."
+    },
+    {
+      "target": "#43214",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed security-sensitive ref is noted for central security handling only; no mutation is planned."
+    },
+    {
+      "target": "#40097",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical linked context only."
+    },
+    {
+      "target": "#41988",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical linked context only."
+    },
+    {
+      "target": "#45816",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical linked context only."
+    }
+  ],
+  "action_counts": {
+    "keep_independent": 2,
+    "needs_human": 1,
+    "route_security": 2,
+    "keep_closed": 3
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "skipped": 3
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [
+    "#43190 requires maintainer/product and technical correctness judgment: it has broad Teams extension/runtime changes and red checks, but also substantive active author follow-up and addressed review feedback, so it is not safe to close as low-signal automation."
+  ],
+  "fix_actions": [],
+  "apply_actions": []
+}
