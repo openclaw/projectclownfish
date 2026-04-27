@@ -1,0 +1,89 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-207039-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24977048660",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24977048660",
+  "head_sha": "50a0b51ad3e3cfffa74443fc81bf0c842f9747bf",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-207039-agentic-merge.md",
+  "published_at": "2026-04-27T04:48:45.846Z",
+  "canonical": null,
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/42099",
+  "canonical_pr": null,
+  "summary": "Hydrated state shows the original hinted canonical PR #42192 is already closed after ProjectClownfish opened replacement PR #72409, but #72409 is security-sensitive and must be quarantined. No merge or fixed-by-candidate closeout is safe in this run. The remaining open contributor PRs are not merge-ready: #48673 has failing checks and is scoped to the npm-installed/bundled override subcase, while #58796 has a broad 19-file delta and an unresolved Codex P1 review finding. Closed PRs are retained as historical evidence only.",
+  "actions": [
+    {
+      "target": "#42192",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already-closed refs must not receive close actions; #42192 remains historical source-credit evidence for the replacement path."
+    },
+    {
+      "target": "#45900",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed and not a viable canonical path for this cluster."
+    },
+    {
+      "target": "#48673",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related provider/plugin duplicate-warning subcase, but failing checks block merge or fixed-by-candidate closeout; keep open for separate repair or maintainer review."
+    },
+    {
+      "target": "#58796",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related but broad and review-blocked; broad code delta and unresolved Codex P1 block autonomous merge or superseded closeout."
+    },
+    {
+      "target": "#72409",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route #72409 to central OpenClaw security triage and continue non-security classification only."
+    },
+    {
+      "target": "#42099",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open until the quarantined replacement path is resolved or a non-security canonical fix is hydrated."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 2,
+    "keep_related": 3,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "skipped": 2,
+    "planned": 4
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}

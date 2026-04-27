@@ -2,19 +2,22 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-207039-agentic-merge"
 mode: "autonomous"
-run_id: "24969138648"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24969138648"
-head_sha: "954e3ac4580f330255b90e541b805287d2731ff4"
+run_id: "24977048660"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/24977048660"
+head_sha: "50a0b51ad3e3cfffa74443fc81bf0c842f9747bf"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-26T23:04:48.906Z"
-canonical: "https://github.com/openclaw/openclaw/issues/42099"
+published_at: "2026-04-27T04:48:45.846Z"
+canonical: null
 canonical_issue: "https://github.com/openclaw/openclaw/issues/42099"
 canonical_pr: null
-actions_total: 7
+actions_total: 6
+fix_executed: 0
+fix_failed: 0
+fix_blocked: 0
 apply_executed: 0
-apply_blocked: 1
-apply_skipped: 1
+apply_blocked: 0
+apply_skipped: 0
 needs_human_count: 0
 ---
 
@@ -22,7 +25,7 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24969138648](https://github.com/openclaw/projectclownfish/actions/runs/24969138648)
+Run: [https://github.com/openclaw/clownfish/actions/runs/24977048660](https://github.com/openclaw/clownfish/actions/runs/24977048660)
 
 Workflow conclusion: success
 
@@ -32,36 +35,43 @@ Canonical: https://github.com/openclaw/openclaw/issues/42099
 
 ## Summary
 
-Classified the duplicate plugin-id warning cluster without GitHub mutations. The surviving canonical path is the open root issue #42099 plus a replacement ProjectClownfish fix derived from #42192, because #42192 is useful but cannot be safely repaired in place and has unresolved bot findings. #48673 and #58796 remain related follow-ups rather than merge/close targets; #45900 is already closed.
+Hydrated state shows the original hinted canonical PR #42192 is already closed after ProjectClownfish opened replacement PR #72409, but #72409 is security-sensitive and must be quarantined. No merge or fixed-by-candidate closeout is safe in this run. The remaining open contributor PRs are not merge-ready: #48673 has failing checks and is scoped to the npm-installed/bundled override subcase, while #58796 has a broad 19-file delta and an unresolved Codex P1 review finding. Closed PRs are retained as historical evidence only.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 7 |
+| Worker actions | 6 |
+| Fix executed | 0 |
+| Fix failed | 0 |
+| Fix blocked | 0 |
 | Applied executions | 0 |
-| Apply blocked | 1 |
-| Apply skipped | 1 |
+| Apply blocked | 0 |
+| Apply skipped | 0 |
 | Needs human | 0 |
+
+## Fix Execution Actions
+
+| Action | Status | Target | Branch | Reason |
+| --- | --- | --- | --- | --- |
+| _None_ |  |  |  |  |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #42192 | close_superseded | skipped | superseded | action status is blocked |
-| #72409 | merge_canonical | blocked | fix_pr | mergeable state is CONFLICTING |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #42099 | keep_canonical | planned | canonical | Use #42099 as the live canonical issue while ProjectClownfish prepares a replacement fix path. |
-| #42192 | close_superseded | blocked | superseded | Blocked by require_fix_before_close until the credited replacement fix PR exists; do not close a useful contributor PR before preserving the fix and attribution. |
-| #45900 | keep_closed | skipped | superseded | Historical closed context only; no mutation is valid for an already-closed PR. |
-| #48673 | keep_related | planned | related | Related plugin duplicate-warning work, but not a high-confidence duplicate closure or merge target because checks fail and the scope differs from the #42099/#42192 cross-origin warning path. |
-| #58796 | keep_related | planned | related | Related but too broad and review-blocked for this narrow cluster; keep open as a separate follow-up rather than merging or closing. |
-| cluster:ghcrawl-207039-agentic-merge | fix_needed | planned |  | A narrow credited replacement fix is needed before closing or superseding useful open contributor PRs. |
-| cluster:ghcrawl-207039-agentic-merge | build_fix_artifact | planned |  | ProjectClownfish should create a narrow replacement fix artifact rather than attempting to merge or mutate the uneditable contributor branch. |
+| #42192 | keep_closed | skipped | superseded | Already-closed refs must not receive close actions; #42192 remains historical source-credit evidence for the replacement path. |
+| #45900 | keep_closed | skipped | superseded | Already closed and not a viable canonical path for this cluster. |
+| #48673 | keep_related | planned | related | Related provider/plugin duplicate-warning subcase, but failing checks block merge or fixed-by-candidate closeout; keep open for separate repair or maintainer review. |
+| #58796 | keep_related | planned | related | Related but broad and review-blocked; broad code delta and unresolved Codex P1 block autonomous merge or superseded closeout. |
+| #72409 | route_security | planned | security_sensitive | Route #72409 to central OpenClaw security triage and continue non-security classification only. |
+| #42099 | keep_related | planned | related | Keep open until the quarantined replacement path is resolved or a non-security canonical fix is hydrated. |
 
 ## Needs Human
 
