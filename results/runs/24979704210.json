@@ -1,0 +1,80 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-207035-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24979704210",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979704210",
+  "head_sha": "8806d2971f220668a5fdb92adf8595525bd6678b",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-207035-agentic-merge.md",
+  "published_at": "2026-04-27T06:22:21.740Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/39921",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/39921",
+  "summary": "Classified the runtime-backed gateway health cluster using the hydrated preflight artifact. The original representative #39921 is already closed after ProjectClownfish opened replacement #72417, but #72417 is security-sensitive because Aisle reported potential secret/PII disclosure issues. Therefore no merge, closeout, or fixed-by-candidate actions are safe for this run. The non-security contributor PRs remain related useful work until the security-routed replacement path is resolved.",
+  "actions": [
+    {
+      "target": "#39921",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#39921",
+      "candidate_fix": null,
+      "reason": "Already closed after replacement path was opened; no mutation planned."
+    },
+    {
+      "target": "#42586",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#39921",
+      "candidate_fix": null,
+      "reason": "Useful overlapping contributor PR, but closeout is blocked until the security-routed replacement path is resolved and validated."
+    },
+    {
+      "target": "#46527",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#39921",
+      "candidate_fix": null,
+      "reason": "Useful related contributor PR with unresolved review-bot findings and no safe replacement closeout while #72417 is security-routed."
+    },
+    {
+      "target": "#52770",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#39921",
+      "candidate_fix": null,
+      "reason": "Related useful follow-up work, but failing checks and a remaining review-bot issue block merge/fixed-by-candidate closeout."
+    },
+    {
+      "target": "#72417",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route #72417 to central OpenClaw security handling; do not process it through backlog cleanup automation."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 1,
+    "keep_related": 3,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "skipped": 1,
+    "planned": 4
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}

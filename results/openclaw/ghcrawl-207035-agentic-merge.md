@@ -2,53 +2,53 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-207035-agentic-merge"
 mode: "autonomous"
-run_id: "24977042053"
-run_url: "https://github.com/openclaw/clownfish/actions/runs/24977042053"
-head_sha: "50a0b51ad3e3cfffa74443fc81bf0c842f9747bf"
+run_id: "24979704210"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/24979704210"
+head_sha: "8806d2971f220668a5fdb92adf8595525bd6678b"
 workflow_conclusion: "success"
-result_status: "blocked"
-published_at: "2026-04-27T04:49:51.172Z"
-canonical: "https://github.com/openclaw/openclaw/pull/72417"
-canonical_issue: "https://github.com/openclaw/openclaw/issues/42538"
-canonical_pr: "https://github.com/openclaw/openclaw/pull/72417"
-actions_total: 12
+result_status: "planned"
+published_at: "2026-04-27T06:22:21.740Z"
+canonical: "https://github.com/openclaw/openclaw/pull/39921"
+canonical_issue: null
+canonical_pr: "https://github.com/openclaw/openclaw/pull/39921"
+actions_total: 5
 fix_executed: 0
 fix_failed: 0
 fix_blocked: 0
 apply_executed: 0
 apply_blocked: 0
-apply_skipped: 4
-needs_human_count: 1
+apply_skipped: 0
+needs_human_count: 0
 ---
 
 # ghcrawl-207035-agentic-merge
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/clownfish/actions/runs/24977042053](https://github.com/openclaw/clownfish/actions/runs/24977042053)
+Run: [https://github.com/openclaw/clownfish/actions/runs/24979704210](https://github.com/openclaw/clownfish/actions/runs/24979704210)
 
 Workflow conclusion: success
 
-Worker result: blocked
+Worker result: planned
 
-Canonical: https://github.com/openclaw/openclaw/pull/72417
+Canonical: https://github.com/openclaw/openclaw/pull/39921
 
 ## Summary
 
-Canonical PR #39921 is already closed and was replaced by #72417, but #72417 is hydrated as security-sensitive due Aisle security findings. Route only #72417 to central security triage. Non-security overlapping PRs are clear superseded/replacement candidates, but their closeout is blocked until the canonical fix path is cleared or replaced by security triage.
+Classified the runtime-backed gateway health cluster using the hydrated preflight artifact. The original representative #39921 is already closed after ProjectClownfish opened replacement #72417, but #72417 is security-sensitive because Aisle reported potential secret/PII disclosure issues. Therefore no merge, closeout, or fixed-by-candidate actions are safe for this run. The non-security contributor PRs remain related useful work until the security-routed replacement path is resolved.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 12 |
+| Worker actions | 5 |
 | Fix executed | 0 |
 | Fix failed | 0 |
 | Fix blocked | 0 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
-| Apply skipped | 4 |
-| Needs human | 1 |
+| Apply skipped | 0 |
+| Needs human | 0 |
 
 ## Fix Execution Actions
 
@@ -60,28 +60,18 @@ Canonical PR #39921 is already closed and was replaced by #72417, but #72417 is 
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #42586 | close_superseded | skipped | superseded | action status is blocked |
-| #46527 | close_superseded | skipped | superseded | action status is blocked |
-| #52770 | close_superseded | skipped | superseded | action status is blocked |
-| #46494 | close_duplicate | skipped | duplicate | action status is blocked |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #72417 | route_security | planned | security_sensitive | Security-sensitive PRs are out of ProjectClownfish mutation scope. |
-| #39921 | keep_closed | skipped | superseded | Historical source PR only; already closed. |
-| #42586 | close_superseded | blocked | superseded | Blocked on canonical fix path #72417 clearing central security review or being replaced. |
-| #46527 | close_superseded | blocked | superseded | Blocked on canonical fix path #72417 clearing central security review or being replaced. |
-| #52770 | close_superseded | blocked | superseded | Blocked on canonical fix path #72417 clearing central security review or being replaced. |
-| #42538 | keep_canonical | planned | canonical | Keep open as the non-security canonical issue thread until the fix path is cleared. |
-| #46494 | close_duplicate | blocked | duplicate | Blocked on canonical fix path #72417 clearing central security review or being replaced. |
-| #17105 | keep_closed | skipped | duplicate | Already closed. |
-| #20967 | keep_closed | skipped | related | Already closed historical context. |
-| #31307 | keep_closed | skipped | related | Already closed related context, not a mutation target. |
-| #32689 | keep_closed | skipped | related | Already closed historical context. |
-| #42543 | keep_closed | skipped | superseded | Already closed and superseded by the replacement path. |
+| #39921 | keep_closed | skipped | canonical | Already closed after replacement path was opened; no mutation planned. |
+| #42586 | keep_related | planned | related | Useful overlapping contributor PR, but closeout is blocked until the security-routed replacement path is resolved and validated. |
+| #46527 | keep_related | planned | related | Useful related contributor PR with unresolved review-bot findings and no safe replacement closeout while #72417 is security-routed. |
+| #52770 | keep_related | planned | related | Related useful follow-up work, but failing checks and a remaining review-bot issue block merge/fixed-by-candidate closeout. |
+| #72417 | route_security | planned | security_sensitive | Route #72417 to central OpenClaw security handling; do not process it through backlog cleanup automation. |
 
 ## Needs Human
 
-- #72417 must be handled by central OpenClaw security triage before ProjectClownfish can merge it or close non-security PRs/issues as fixed or superseded by it.
+- none
