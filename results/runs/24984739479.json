@@ -1,0 +1,193 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156629-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24984739479",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24984739479",
+  "head_sha": "26374cdd2f49f5683850f92c1448eb8af1cfa65f",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "blocked",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156629-autonomous-smoke.md",
+  "published_at": "2026-04-27T08:35:03.322Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/48771",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/48771",
+  "canonical_pr": null,
+  "summary": "Hydrated state supports #48771 as the narrow live canonical issue for the Windows restart false-timeout policy-close bug. #63491 remains a broader related umbrella, #69056 is related Windows SIGUSR1 restart work, and the current replacement PR #72660 cannot be merged or used for fixed-by closeout because the artifact marks it security-sensitive, shows an Aisle security finding, an unresolved Greptile review comment, unknown mergeability, and failing checks.",
+  "actions": [
+    {
+      "target": "#48771",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#48771",
+      "candidate_fix": null,
+      "reason": "Best narrow live canonical issue for the ordinary non-security Windows Scheduled Task restart health false-timeout bug."
+    },
+    {
+      "target": "#63491",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#48771",
+      "candidate_fix": null,
+      "reason": "Related umbrella issue, not a true duplicate of the narrower #48771 fix path."
+    },
+    {
+      "target": "#69056",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related Windows restart work with a different root cause."
+    },
+    {
+      "target": "#72660",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PR with unresolved security/review findings and failing checks must be routed to central OpenClaw security handling, not merged by ProjectClownfish."
+    },
+    {
+      "target": "#48766",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#48771",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate; no closure action is valid."
+    },
+    {
+      "target": "#49865",
+      "action": "route_security",
+      "status": "skipped",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed security-sensitive context item; noted for quarantine boundary only."
+    },
+    {
+      "target": "#64476",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented; no mutation is valid."
+    },
+    {
+      "target": "#67416",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented; no mutation is valid."
+    },
+    {
+      "target": "#69057",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#69056",
+      "reason": "Already closed as superseded; no mutation is valid."
+    },
+    {
+      "target": "#51469",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate gateway handshake timeout follow-up, not part of this cluster closeout."
+    },
+    {
+      "target": "#63691",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related broad gateway stability issue with a distinct root cause and existing keep-open evidence."
+    },
+    {
+      "target": "#1",
+      "action": "route_security",
+      "status": "skipped",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed security-sensitive linked context item; no ProjectClownfish mutation."
+    },
+    {
+      "target": "#41034",
+      "action": "route_security",
+      "status": "skipped",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed security-sensitive linked context item; no ProjectClownfish mutation."
+    },
+    {
+      "target": "cluster:ghcrawl-156629-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#48771",
+      "candidate_fix": null,
+      "reason": "A narrow fix path is still needed, but the current PR path is blocked."
+    },
+    {
+      "target": "cluster:ghcrawl-156629-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "blocked",
+      "classification": null,
+      "canonical": "#48771",
+      "candidate_fix": null,
+      "reason": "Implementation is blocked on central security handling for #72660 and unresolved review findings; ProjectClownfish should not open or merge a parallel security-sensitive fix path in this run."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 3,
+    "route_security": 4,
+    "keep_closed": 4,
+    "keep_independent": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 7,
+    "skipped": 7,
+    "blocked": 1
+  },
+  "fix_counts": {
+    "skipped": 1
+  },
+  "apply_counts": {},
+  "needs_human": [
+    "#72660 requires central OpenClaw security triage before ProjectClownfish can merge, replace, or use it as a fixed-by candidate for #48771."
+  ],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "skipped",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "needs_human",
+      "reason": "worker marked the fix path as non-executable; closure actions may still apply",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}
