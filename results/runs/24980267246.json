@@ -1,0 +1,252 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156629-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24980267246",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24980267246",
+  "head_sha": "40a5c7418ff46bf3e60da63dc6e2345c96900f78",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156629-autonomous-smoke.md",
+  "published_at": "2026-04-27T06:52:07.391Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/63491",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/63491",
+  "canonical_pr": null,
+  "summary": "Classified hydrated cluster from preflight artifact. Keep #63491 as the broad canonical issue. Treat #48771 as a duplicate/narrow subcase but block closure until the canonical fix path lands. Route security-sensitive #49865 only. Do not merge #48801 or #69056 now: #48801 has failing checks and actionable bot review findings; #69056 lacks merge-preflight proof in this worker run. Build a narrow repair artifact for #48801 preserving contributor credit.",
+  "actions": [
+    {
+      "target": "#63491",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#63491",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#48771",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#63491",
+      "candidate_fix": null,
+      "reason": "Blocked by require_fix_before_close: closeout should wait for the canonical fix path for #63491/#48771, most likely a repaired #48801 or replacement fix PR."
+    },
+    {
+      "target": "#48801",
+      "action": "merge_candidate",
+      "status": "blocked",
+      "classification": "related",
+      "canonical": "#63491",
+      "candidate_fix": "#48801",
+      "reason": "Repairable contributor PR, but not merge-ready until bot review findings are fixed, checks pass, and merge preflight including clean Codex /review is present."
+    },
+    {
+      "target": "cluster:ghcrawl-156629-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#63491",
+      "candidate_fix": "#48801",
+      "reason": "Build a narrow repair plan for #48801 before duplicate closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-156629-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#63491",
+      "candidate_fix": "#48801",
+      "reason": null
+    },
+    {
+      "target": "#69056",
+      "action": "merge_candidate",
+      "status": "blocked",
+      "classification": "related",
+      "canonical": "#63491",
+      "candidate_fix": "#69056",
+      "reason": "Do not recommend merge without required merge_preflight proof. Keep as a related candidate for the SIGUSR1 subfamily."
+    },
+    {
+      "target": "#51469",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#63491",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#63691",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#63491",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#49865",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item is outside ProjectClownfish backlog cleanup mutation scope."
+    },
+    {
+      "target": "#48766",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63491",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#64476",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#67416",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#69057",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#69056",
+      "reason": null
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_duplicate": 1,
+    "merge_candidate": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_related": 2,
+    "route_security": 1,
+    "keep_closed": 4
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "blocked": 3,
+    "skipped": 4
+  },
+  "fix_counts": {
+    "failed": 1,
+    "opened": 1
+  },
+  "apply_counts": {
+    "skipped": 3,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "failed",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": "validation command failed (pnpm check:changed): undefined ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL Command \"check:changed\" not found Did you mean \"pnpm check:docs\"?",
+      "title": null,
+      "url": null
+    },
+    {
+      "action": "open_fix_pr",
+      "status": "opened",
+      "target": null,
+      "pr": "https://github.com/openclaw/openclaw/pull/72660",
+      "branch": "clownfish/ghcrawl-156629-autonomous-smoke",
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": "https://github.com/openclaw/openclaw/pull/72660"
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#48771",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63491",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-156629-autonomous-smoke:#48771:close_duplicate_blocked:#63491:2026-03-30T21:18:32Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#48801",
+      "action": "merge_candidate",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#63491",
+      "candidate_fix": "#48801",
+      "title": null,
+      "idempotency_key": "ghcrawl-156629-autonomous-smoke:#48801:merge_candidate_blocked:2026-03-24T20:15:52Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#69056",
+      "action": "merge_candidate",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#63491",
+      "candidate_fix": "#69056",
+      "title": null,
+      "idempotency_key": "ghcrawl-156629-autonomous-smoke:#69056:merge_candidate_blocked:2026-04-22T05:51:00Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#72660",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(cli): tighten Windows restart policy-close health checks",
+      "idempotency_key": null,
+      "reason": "merge state status is UNSTABLE",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
