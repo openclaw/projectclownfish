@@ -1,0 +1,257 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156610-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24984733562",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24984733562",
+  "head_sha": "26374cdd2f49f5683850f92c1448eb8af1cfa65f",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156610-autonomous-smoke.md",
+  "published_at": "2026-04-27T08:42:31.378Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72658",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/37706",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72658",
+  "summary": "Canonical path is the open ProjectClownfish replacement PR #72658 for canonical issue #37706. It is not merge-ready because merge preflight is incomplete and relevant checks include failures, so duplicate/superseded closeouts are blocked until #72658 is repaired, reviewed, validated, and merged or otherwise made concretely ready. Security-sensitive #49770 is quarantined only for central security handling.",
+  "actions": [
+    {
+      "target": "#37706",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#37706",
+      "candidate_fix": "#72658",
+      "reason": null
+    },
+    {
+      "target": "#39568",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#39568",
+      "candidate_fix": "#39569",
+      "reason": null
+    },
+    {
+      "target": "#39569",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#39568",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#44256",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#37706",
+      "candidate_fix": "#72658",
+      "reason": "Already closed; historical source PR for #72658 only."
+    },
+    {
+      "target": "#49761",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#37706",
+      "candidate_fix": "#72658",
+      "reason": "Already closed as duplicate/superseded; no mutation allowed."
+    },
+    {
+      "target": "#49767",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#37706",
+      "candidate_fix": "#72658",
+      "reason": "Blocked on canonical fix path #72658 becoming merge-ready or merged."
+    },
+    {
+      "target": "#49770",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route the security-sensitive item to central OpenClaw security handling without blocking unrelated non-security classification."
+    },
+    {
+      "target": "#50144",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#37706",
+      "candidate_fix": "#72658",
+      "reason": "Blocked on canonical fix path #72658 becoming merge-ready or merged."
+    },
+    {
+      "target": "#50394",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#37706",
+      "candidate_fix": "#72658",
+      "reason": "Blocked on canonical fix path #72658 becoming merge-ready or merged."
+    },
+    {
+      "target": "#50801",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#37706",
+      "candidate_fix": "#72658",
+      "reason": "Blocked on canonical fix path #72658 becoming merge-ready or merged."
+    },
+    {
+      "target": "#58867",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#37706",
+      "candidate_fix": "#72658",
+      "reason": "Blocked on canonical fix path #72658 becoming merge-ready or merged."
+    },
+    {
+      "target": "#72658",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#37706",
+      "candidate_fix": "#72658",
+      "reason": "Canonical PR exists but needs merge-prep repair and validation before merge or duplicate closeout."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 2,
+    "keep_closed": 2,
+    "close_superseded": 5,
+    "route_security": 1,
+    "fix_needed": 1
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "skipped": 2,
+    "blocked": 5
+  },
+  "fix_counts": {
+    "opened": 1
+  },
+  "apply_counts": {
+    "skipped": 5,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "open_fix_pr",
+      "status": "opened",
+      "target": null,
+      "pr": "https://github.com/openclaw/openclaw/pull/72658",
+      "branch": "clownfish/ghcrawl-156610-autonomous-smoke",
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": "https://github.com/openclaw/openclaw/pull/72658"
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#49767",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#37706",
+      "candidate_fix": "#72658",
+      "title": null,
+      "idempotency_key": "ghcrawl-156610-autonomous-smoke:close_superseded:49767:by-72658",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#50144",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#37706",
+      "candidate_fix": "#72658",
+      "title": null,
+      "idempotency_key": "ghcrawl-156610-autonomous-smoke:close_superseded:50144:by-72658",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#50394",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#37706",
+      "candidate_fix": "#72658",
+      "title": null,
+      "idempotency_key": "ghcrawl-156610-autonomous-smoke:close_superseded:50394:by-72658",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#50801",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#37706",
+      "candidate_fix": "#72658",
+      "title": null,
+      "idempotency_key": "ghcrawl-156610-autonomous-smoke:close_superseded:50801:by-72658",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#58867",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#37706",
+      "candidate_fix": "#72658",
+      "title": null,
+      "idempotency_key": "ghcrawl-156610-autonomous-smoke:close_superseded:58867:by-72658",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#72658",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(feishu): do not treat @all as a bot mention",
+      "idempotency_key": null,
+      "reason": "merge state status is UNSTABLE",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
