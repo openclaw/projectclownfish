@@ -1,0 +1,174 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "low-signal-pr-sweep-20260425T2355-01",
+  "mode": "autonomous",
+  "run_id": "24978126570",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978126570",
+  "head_sha": "e8d437d9978c397d8d3fb39c23597d4e5c1d98bf",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/inbox/low-signal-pr-sweep-20260425T2355-01.md",
+  "published_at": "2026-04-27T05:30:01.437Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Low-signal sweep planned no direct GitHub mutations. Security-sensitive refs are routed to security handling. No open non-security PR is boringly clear enough for autonomous low-signal closure because the remaining open PRs are focused docs/product work, have active author or bot review signal, or require maintainer/product judgment.",
+  "actions": [
+    {
+      "target": "#48355",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PR must be routed to central OpenClaw security handling."
+    },
+    {
+      "target": "#21184",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked issue must be routed to central OpenClaw security handling."
+    },
+    {
+      "target": "#50648",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Do not close under low-signal policy because the PR has a concrete focused docs change and unresolved review findings."
+    },
+    {
+      "target": "#49430",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Focused docs fix with active author follow-up and technical review context should stay open for normal review."
+    },
+    {
+      "target": "#48608",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Maintainer judgment is needed on whether this broad new guide belongs in core or should be closed as low-signal docs work."
+    },
+    {
+      "target": "#47558",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Open issue is related context for #49430, not a close target in this low-signal PR sweep."
+    },
+    {
+      "target": "#49105",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "low_signal",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no action required."
+    },
+    {
+      "target": "#49404",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; keep as context only."
+    },
+    {
+      "target": "#43034",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; keep as context for #48608."
+    },
+    {
+      "target": "#7724",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; historical context only."
+    },
+    {
+      "target": "#30285",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no action required."
+    },
+    {
+      "target": "#5279",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; historical context only."
+    },
+    {
+      "target": "#5086",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; historical context only."
+    },
+    {
+      "target": "#99",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed and independent context."
+    },
+    {
+      "target": "#78",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed and independent context."
+    }
+  ],
+  "action_counts": {
+    "route_security": 2,
+    "keep_related": 3,
+    "needs_human": 1,
+    "keep_closed": 9
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "blocked": 1,
+    "skipped": 9
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [
+    "#48608 requires maintainer judgment: it is a broad docs guide that has low-signal characteristics, but a recent #43034 closeout identifies it as the open tracker, reviews are not red, and bot comments require product/technical docs judgment."
+  ],
+  "fix_actions": [],
+  "apply_actions": []
+}
