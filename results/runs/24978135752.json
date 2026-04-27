@@ -1,0 +1,288 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156578-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24978135752",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978135752",
+  "head_sha": "e8d437d9978c397d8d3fb39c23597d4e5c1d98bf",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156578-autonomous-smoke.md",
+  "published_at": "2026-04-27T05:30:23.234Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/69492",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/69492",
+  "canonical_pr": null,
+  "summary": "Representative #68508 is already closed. Hydrated linked issue #69492 is the current open canonical for the remaining system-event-shape / consumer-path leakage work. No close, merge, or fix-PR action is safe or necessary in this pass: all seed candidates except #65131 are already closed, #65131 is a related broader Control UI/internal-message request, and security-sensitive linked PRs #50818 and #58300 are quarantined for central security handling.",
+  "actions": [
+    {
+      "target": "#50818",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked PR must be quarantined outside ProjectClownfish mutation."
+    },
+    {
+      "target": "#58300",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked PR context should be quarantined, but the PR is already closed."
+    },
+    {
+      "target": "#69492",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#69492",
+      "candidate_fix": null,
+      "reason": "Best live canonical issue for remaining non-security system-event leakage work."
+    },
+    {
+      "target": "#65131",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69492",
+      "candidate_fix": null,
+      "reason": "Related broader UX/product-scope issue, not a true duplicate of the system-event-shape canonical."
+    },
+    {
+      "target": "#52305",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related async completion routing issue; not safe to close or assign to the security-quarantined PR."
+    },
+    {
+      "target": "#55049",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no ProjectClownfish mutation valid."
+    },
+    {
+      "target": "#58287",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close action valid."
+    },
+    {
+      "target": "#62418",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#69492",
+      "candidate_fix": null,
+      "reason": "Already closed as part of the #69492 family."
+    },
+    {
+      "target": "#65315",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on main."
+    },
+    {
+      "target": "#65994",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#69492",
+      "candidate_fix": null,
+      "reason": "Already closed as part of the #69492 family."
+    },
+    {
+      "target": "#66343",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on main."
+    },
+    {
+      "target": "#66648",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on main/release."
+    },
+    {
+      "target": "#66814",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#69492",
+      "candidate_fix": null,
+      "reason": "Already closed as part of the #69492 family."
+    },
+    {
+      "target": "#67238",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#65131",
+      "candidate_fix": null,
+      "reason": "Already closed as duplicate/superseded by #65131."
+    },
+    {
+      "target": "#67267",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on main."
+    },
+    {
+      "target": "#67364",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on main."
+    },
+    {
+      "target": "#67527",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on main."
+    },
+    {
+      "target": "#68508",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#69492",
+      "candidate_fix": null,
+      "reason": "Original representative is obsolete and already closed; #69492 is the live canonical."
+    },
+    {
+      "target": "#70732",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on main."
+    },
+    {
+      "target": "#25959",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical evidence only."
+    },
+    {
+      "target": "#52787",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent context ref."
+    },
+    {
+      "target": "#58418",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed related historical context only."
+    },
+    {
+      "target": "#63921",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent context ref."
+    },
+    {
+      "target": "#65247",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed related historical context only."
+    },
+    {
+      "target": "#66496",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on main."
+    },
+    {
+      "target": "#66947",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent context ref."
+    },
+    {
+      "target": "#67036",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no merge or supersede action valid."
+    },
+    {
+      "target": "#67656",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent context ref."
+    }
+  ],
+  "action_counts": {
+    "route_security": 2,
+    "keep_canonical": 1,
+    "keep_related": 2,
+    "keep_closed": 23
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "skipped": 23
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
