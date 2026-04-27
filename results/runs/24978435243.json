@@ -1,0 +1,117 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "low-signal-pr-sweep-20260427T0530-03",
+  "mode": "autonomous",
+  "run_id": "24978435243",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978435243",
+  "head_sha": "dc0849b4d1289248c930aee5bbc6c1b559bdacb7",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/low-signal-pr-sweep-20260427T0530-03.md",
+  "published_at": "2026-04-27T05:40:46.491Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Low-signal sweep reviewed the hydrated candidate PRs and linked refs. No open PR is safe for low-signal closure: the open candidates are focused fixes/features, have green checks, active author follow-up, unresolved review-bot findings, linked maintainer context, or security-sensitive evidence. Closed refs are kept closed, and security-sensitive linked refs are routed to central security handling.",
+  "actions": [
+    {
+      "target": "#75",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route only this linked security-sensitive item to central OpenClaw security handling."
+    },
+    {
+      "target": "#12008",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related feature issue for #49529; not a low-signal PR target and should remain open."
+    },
+    {
+      "target": "#27186",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical linked context only."
+    },
+    {
+      "target": "#38283",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed context ref only."
+    },
+    {
+      "target": "#49529",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Not boringly low-signal; it is a substantive feature implementation with green checks and linked open feature demand."
+    },
+    {
+      "target": "#59075",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive evidence appears in hydrated review comments; quarantine this PR instead of closing it through backlog cleanup."
+    },
+    {
+      "target": "#59483",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "low_signal",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed by maintainer; no ProjectClownfish mutation needed."
+    },
+    {
+      "target": "#59523",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Focused bug fix, not a low-signal cleanup target."
+    },
+    {
+      "target": "#61167",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Not eligible for low-signal closure because it has active author follow-up and unresolved technical validation/review issues."
+    }
+  ],
+  "action_counts": {
+    "route_security": 2,
+    "keep_related": 2,
+    "keep_closed": 3,
+    "keep_independent": 2
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "skipped": 3
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
