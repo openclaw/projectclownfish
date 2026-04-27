@@ -1,0 +1,101 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-207050-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24977051940",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24977051940",
+  "head_sha": "50a0b51ad3e3cfffa74443fc81bf0c842f9747bf",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-207050-agentic-merge.md",
+  "published_at": "2026-04-27T04:49:28.497Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72405",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72405",
+  "summary": "Classified the hydrated cluster without GitHub mutation. #72405 is the current canonical replacement path for the non-security restart-probe-auth work, but it is not merge-ready because review-bot feedback remains unresolved or depends on unhydrated #72433, mergeability is unknown, several checks are failing, and no clean Codex /review preflight is present. #48472 is quarantined as security-sensitive. #50662 remains related because it includes a separate rate-limit fallback change. #57374 is already closed and historical. #59439 is superseded by the credited replacement path but closure is blocked until the canonical fix path is merge-ready.",
+  "actions": [
+    {
+      "target": "#48472",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PRs are outside ProjectClownfish mutation scope."
+    },
+    {
+      "target": "#50662",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72405",
+      "candidate_fix": null,
+      "reason": "Related mixed-scope PR with unique non-gateway work; keep open for separate review rather than closing as a duplicate."
+    },
+    {
+      "target": "#57374",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72405",
+      "candidate_fix": "#72405",
+      "reason": "Historical closed source PR; evidence only."
+    },
+    {
+      "target": "#59439",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#72405",
+      "candidate_fix": "#72405",
+      "reason": "Blocked on the canonical fix path #72405 becoming merge-ready; do not close useful contributor work before the replacement path is clean."
+    },
+    {
+      "target": "#72405",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72405",
+      "candidate_fix": "#72405",
+      "reason": "Current canonical replacement path, but merge is blocked until review-bot feedback, linked follow-up hydration, checks, mergeability, and Codex /review preflight are clean."
+    }
+  ],
+  "action_counts": {
+    "route_security": 1,
+    "keep_related": 1,
+    "keep_closed": 1,
+    "close_superseded": 1,
+    "keep_canonical": 1
+  },
+  "action_status_counts": {
+    "planned": 3,
+    "skipped": 1,
+    "blocked": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "skipped": 1
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#59439",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72405",
+      "candidate_fix": "#72405",
+      "title": null,
+      "idempotency_key": "ghcrawl-207050-agentic-merge:close-superseded:#59439:2026-04-02T05:17:53Z->#72405",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
