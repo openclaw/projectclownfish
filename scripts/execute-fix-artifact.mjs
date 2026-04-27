@@ -1864,6 +1864,7 @@ function buildRebaseConflictPrompt({ targetDir, branch, baseRef, fixArtifact, at
     "- resolve every conflict marker and preserve the narrow ProjectClownfish fix intent;",
     "- you may refactor touched implementation/tests when current main moved or renamed the code;",
     "- prefer current main structure over stale branch structure;",
+    "- if the same implementation or test files conflict repeatedly, synthesize the final current-main-compatible version instead of preserving old checkpoint shape;",
     "- keep contributor credit/changelog entries from the fix artifact when still applicable;",
     "- for CHANGELOG.md conflicts, keep the current active-version structure, preserve one relevant single-line entry with credit, and remove stale duplicate conflict sides;",
     "- do not commit, push, open PRs, close PRs, call gh, or run `git rebase --continue`; ProjectClownfish handles that after your edits;",
