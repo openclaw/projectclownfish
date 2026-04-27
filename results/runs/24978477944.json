@@ -1,0 +1,130 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "low-signal-pr-sweep-20260425T2346-01",
+  "mode": "autonomous",
+  "run_id": "24978477944",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978477944",
+  "head_sha": "3701e4ea719b18e8a66aab3ed90567b37a362212",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/low-signal-pr-sweep-20260425T2346-01.md",
+  "published_at": "2026-04-27T05:43:00.193Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Low-signal sweep classified only the listed PRs plus exact hydrated security-sensitive linked refs. No GitHub mutations were performed. The only open PR that is boringly clear under the low-signal policy is #51697; #51513 and #51672 need human review because the artifact shows active author/green-check or technical-correctness signals that the policy explicitly excludes from automated low-signal closure. Already-closed candidate PRs are kept closed.",
+  "actions": [
+    {
+      "target": "#53336",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "low_signal",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed in hydrated preflight state."
+    },
+    {
+      "target": "#52216",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed in hydrated preflight state."
+    },
+    {
+      "target": "#51697",
+      "action": "close_low_signal",
+      "status": "planned",
+      "classification": "low_signal",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Boringly clear low-signal docs-only PR with unresolved setup/documentation correctness findings and no maintainer or active author signal."
+    },
+    {
+      "target": "#51672",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Blocked by green checks and technical-correctness judgment required by the low-signal policy."
+    },
+    {
+      "target": "#51513",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Blocked by active author follow-up, green checks, and technical correctness judgment required by the low-signal policy."
+    },
+    {
+      "target": "#51504",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive hydrated linked ref; quarantine exact item only."
+    },
+    {
+      "target": "#28788",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive hydrated linked ref; quarantine exact item only."
+    },
+    {
+      "target": "#28796",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive hydrated linked ref; quarantine exact item only."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 2,
+    "close_low_signal": 1,
+    "needs_human": 2,
+    "route_security": 3
+  },
+  "action_status_counts": {
+    "skipped": 2,
+    "planned": 4,
+    "blocked": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [
+    "#51672: human decision required because the PR is green, focused on labeler behavior, and has a narrow unresolved review finding rather than a boring low-signal close category.",
+    "#51513: human decision required because the PR has active author follow-up, green docs checks, and transport-doc technical correctness questions."
+  ],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#51697",
+      "action": "close_low_signal",
+      "status": "blocked",
+      "classification": "low_signal",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "projectclownfish:low-signal-pr-sweep-20260425T2346-01:#51697:close_low_signal:2026-04-26T08:03:18Z",
+      "reason": "maintainer issue comment blocks low-signal auto-close",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": "closed",
+      "live_updated_at": "2026-04-27T05:42:18Z"
+    }
+  ]
+}
