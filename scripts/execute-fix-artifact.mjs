@@ -68,15 +68,6 @@ if (!["execute", "autonomous"].includes(job.frontmatter.mode)) {
 if (process.env.CLOWNFISH_ALLOW_EXECUTE !== "1") {
   throw new Error("refusing fix execution: CLOWNFISH_ALLOW_EXECUTE must be 1");
 }
-if (process.env.CLOWNFISH_ALLOW_FIX_PR !== "1") {
-  throw new Error("refusing fix execution: CLOWNFISH_ALLOW_FIX_PR must be 1");
-}
-if (!job.frontmatter.allowed_actions.includes("fix") || !job.frontmatter.allowed_actions.includes("raise_pr")) {
-  throw new Error("refusing fix execution: job must allow fix and raise_pr");
-}
-if ((job.frontmatter.blocked_actions ?? []).includes("fix") || job.frontmatter.allow_fix_pr !== true) {
-  throw new Error("refusing fix execution: fix is blocked by job frontmatter");
-}
 
 const resultPath = resultPathArg ? path.resolve(resultPathArg) : findLatestResultPath();
 const result = JSON.parse(fs.readFileSync(resultPath, "utf8"));
@@ -111,6 +102,16 @@ if (plannedFixActions.length === 0) {
   report.reason = "no planned fix actions";
   writeReport(report, resultPath);
   process.exit(0);
+}
+
+if (process.env.CLOWNFISH_ALLOW_FIX_PR !== "1") {
+  throw new Error("refusing fix execution: CLOWNFISH_ALLOW_FIX_PR must be 1");
+}
+if (!job.frontmatter.allowed_actions.includes("fix") || !job.frontmatter.allowed_actions.includes("raise_pr")) {
+  throw new Error("refusing fix execution: job must allow fix and raise_pr");
+}
+if ((job.frontmatter.blocked_actions ?? []).includes("fix") || job.frontmatter.allow_fix_pr !== true) {
+  throw new Error("refusing fix execution: fix is blocked by job frontmatter");
 }
 
 const repairStrategy = String(executableFixArtifact?.repair_strategy ?? "");
