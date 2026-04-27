@@ -1,0 +1,221 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156602-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24987818672",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24987818672",
+  "head_sha": "f677d095c70e025afb42e22cf29ae7b90caccf9c",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156602-autonomous-smoke.md",
+  "published_at": "2026-04-27T09:45:39.052Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72659",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72659",
+  "summary": "Hydrated state shows the original canonical hint #55186 is closed and the maintainer-calibrated replacement #72659 has merged. Treat #72659 as the canonical landed fix for the Mattermost DM reply-root bug, close only clearly covered open refs, and keep adjacent Mattermost threading/provider PRs open as related or independent follow-up work.",
+  "actions": [
+    {
+      "target": "#72659",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#72305",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#72659",
+      "candidate_fix": "#72659",
+      "reason": null
+    },
+    {
+      "target": "#55151",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#72659",
+      "candidate_fix": "#72659",
+      "reason": null
+    },
+    {
+      "target": "#59758",
+      "action": "close_fixed_by_candidate",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72659",
+      "candidate_fix": "#72659",
+      "reason": null
+    },
+    {
+      "target": "#52120",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#45082",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#52236",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#57565",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#57970",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#57609",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#57607",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#58439",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#55186",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72659",
+      "candidate_fix": "#72659",
+      "reason": null
+    },
+    {
+      "target": "#59791",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72659",
+      "candidate_fix": "#72659",
+      "reason": null
+    },
+    {
+      "target": "#60115",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72659",
+      "candidate_fix": "#72659",
+      "reason": null
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_superseded": 2,
+    "close_fixed_by_candidate": 1,
+    "keep_related": 5,
+    "keep_independent": 3,
+    "keep_closed": 3
+  },
+  "action_status_counts": {
+    "planned": 12,
+    "skipped": 3
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 3
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#72305",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#72659",
+      "candidate_fix": "#72659",
+      "title": null,
+      "idempotency_key": "ghcrawl-156602-autonomous-smoke:close_superseded:#72305:2026-04-27T05:01:13Z",
+      "reason": "target author association is MEMBER",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": "open",
+      "live_updated_at": null
+    },
+    {
+      "target": "#55151",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#72659",
+      "candidate_fix": "#72659",
+      "title": null,
+      "idempotency_key": "ghcrawl-156602-autonomous-smoke:close_superseded:#55151:2026-03-26T12:33:19Z",
+      "reason": "target changed since worker review",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": "closed",
+      "live_updated_at": "2026-04-27T09:45:19Z"
+    },
+    {
+      "target": "#59758",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72659",
+      "candidate_fix": "#72659",
+      "title": null,
+      "idempotency_key": "ghcrawl-156602-autonomous-smoke:close_fixed_by_candidate:#59758:2026-04-02T15:12:19Z",
+      "reason": "target is not listed in job candidates",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
