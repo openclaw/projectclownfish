@@ -1,0 +1,135 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156670-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25023042445",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25023042445",
+  "head_sha": "416b225d73239870f6704a4eeb6d95f026ba00e9",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156670-autonomous-smoke.md",
+  "published_at": "2026-04-27T22:34:01.610Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/49262",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/45222",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/49262",
+  "summary": "Hydrated preflight shows the original loopback gateway handshake issue family is already closed as implemented on current main, with the landed canonical fix path represented by merged PR #49262. No close, merge, or fix mutation is safe for the only open seed candidate #52336 because maintainer review explicitly says it is browser/WSL2-specific and should not be closed without a fresh repro. Linked exec-env issue #61095 is a separate root cause, and security-sensitive linked PR #61127 is quarantined only for central security handling.",
+  "actions": [
+    {
+      "target": "#45222",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#49262",
+      "reason": "Already closed as implemented; retained as historical canonical issue evidence only."
+    },
+    {
+      "target": "#51679",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#49262",
+      "reason": "Already closed as implemented by the landed handshake fix path."
+    },
+    {
+      "target": "#52336",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#49262",
+      "candidate_fix": null,
+      "reason": "Related symptom family, but not a true duplicate or fixed-by-candidate closeout because maintainer requested a fresh current-version repro before closure."
+    },
+    {
+      "target": "#61554",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#49262",
+      "reason": "Already closed as implemented by the landed handshake fix path."
+    },
+    {
+      "target": "#64201",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent crash-loop report; historical evidence only for this handshake cluster."
+    },
+    {
+      "target": "#45173",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#49262",
+      "candidate_fix": null,
+      "reason": "Already closed related context for the same gateway handshake symptom family."
+    },
+    {
+      "target": "#45437",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#49262",
+      "candidate_fix": null,
+      "reason": "Closed unmerged PR superseded by the landed hydrated PR #49262."
+    },
+    {
+      "target": "#49262",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Best canonical landed fix path for the original loopback gateway handshake timeout family."
+    },
+    {
+      "target": "#61095",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related gateway failure symptom, but separate exec environment root cause; keep open for its own cluster/security-aware handling."
+    },
+    {
+      "target": "#61127",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine exact security-sensitive linked PR to central OpenClaw security handling while continuing unrelated non-security classification."
+    },
+    {
+      "target": "#64255",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed related context only; not a viable canonical PR and not part of this handshake closeout."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 7,
+    "keep_related": 2,
+    "keep_canonical": 1,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "skipped": 7,
+    "planned": 4
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
