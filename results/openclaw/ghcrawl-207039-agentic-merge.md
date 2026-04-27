@@ -2,16 +2,16 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-207039-agentic-merge"
 mode: "autonomous"
-run_id: "24977048660"
-run_url: "https://github.com/openclaw/clownfish/actions/runs/24977048660"
-head_sha: "50a0b51ad3e3cfffa74443fc81bf0c842f9747bf"
+run_id: "24979710456"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/24979710456"
+head_sha: "8806d2971f220668a5fdb92adf8595525bd6678b"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-27T04:48:45.846Z"
-canonical: null
+published_at: "2026-04-27T06:23:32.949Z"
+canonical: "https://github.com/openclaw/openclaw/issues/42099"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/42099"
 canonical_pr: null
-actions_total: 6
+actions_total: 8
 fix_executed: 0
 fix_failed: 0
 fix_blocked: 0
@@ -25,7 +25,7 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/clownfish/actions/runs/24977048660](https://github.com/openclaw/clownfish/actions/runs/24977048660)
+Run: [https://github.com/openclaw/clownfish/actions/runs/24979710456](https://github.com/openclaw/clownfish/actions/runs/24979710456)
 
 Workflow conclusion: success
 
@@ -35,13 +35,13 @@ Canonical: https://github.com/openclaw/openclaw/issues/42099
 
 ## Summary
 
-Hydrated state shows the original hinted canonical PR #42192 is already closed after ProjectClownfish opened replacement PR #72409, but #72409 is security-sensitive and must be quarantined. No merge or fixed-by-candidate closeout is safe in this run. The remaining open contributor PRs are not merge-ready: #48673 has failing checks and is scoped to the npm-installed/bundled override subcase, while #58796 has a broad 19-file delta and an unresolved Codex P1 review finding. Closed PRs are retained as historical evidence only.
+Canonical PR #42192 is already closed and its replacement #72409 is security-sensitive, so this pass keeps the non-security canonical issue #42099 open, routes #72409 to central security handling, keeps closed refs closed, keeps the remaining open contributor PRs related, and emits a narrow credited replacement fix artifact instead of recommending merge or closeout.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 6 |
+| Worker actions | 8 |
 | Fix executed | 0 |
 | Fix failed | 0 |
 | Fix blocked | 0 |
@@ -54,7 +54,7 @@ Hydrated state shows the original hinted canonical PR #42192 is already closed a
 
 | Action | Status | Target | Branch | Reason |
 | --- | --- | --- | --- | --- |
-| _None_ |  |  |  |  |
+| execute_fix | skipped |  |  | fix artifact scope itself contains security-sensitive signals |
 
 ## Apply Actions
 
@@ -66,12 +66,14 @@ Hydrated state shows the original hinted canonical PR #42192 is already closed a
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #42192 | keep_closed | skipped | superseded | Already-closed refs must not receive close actions; #42192 remains historical source-credit evidence for the replacement path. |
-| #45900 | keep_closed | skipped | superseded | Already closed and not a viable canonical path for this cluster. |
-| #48673 | keep_related | planned | related | Related provider/plugin duplicate-warning subcase, but failing checks block merge or fixed-by-candidate closeout; keep open for separate repair or maintainer review. |
-| #58796 | keep_related | planned | related | Related but broad and review-blocked; broad code delta and unresolved Codex P1 block autonomous merge or superseded closeout. |
-| #72409 | route_security | planned | security_sensitive | Route #72409 to central OpenClaw security triage and continue non-security classification only. |
-| #42099 | keep_related | planned | related | Keep open until the quarantined replacement path is resolved or a non-security canonical fix is hydrated. |
+| #42099 | keep_canonical | planned | canonical | Keep the live non-security issue open as the canonical tracker because no mergeable non-security canonical PR is available. |
+| #42192 | keep_closed | skipped | superseded | Historical source PR only; preserve credit but do not mutate an already-closed PR. |
+| #45900 | keep_closed | skipped | superseded | Already closed and based on a different, now-rejected channel-registration premise. |
+| #48673 | keep_related | planned | related | Related non-security PR; keep open because it is not the canonical cross-origin fix and is not merge-ready. |
+| #58796 | keep_related | planned | related | Related broad PR; keep open for separate maintainer review rather than using it as the canonical fix. |
+| #72409 | route_security | planned | security_sensitive | Security-sensitive linked PR must be routed to central OpenClaw security handling and cannot be used as this worker's canonical merge path. |
+| cluster:ghcrawl-207039-agentic-merge | fix_needed | planned |  | A new narrow non-security replacement fix path is needed before any duplicate or superseded closeout. |
+| cluster:ghcrawl-207039-agentic-merge | build_fix_artifact | planned |  | Prepare a narrow credited replacement fix artifact for executor-owned PR creation after normal checkout and validation gates. |
 
 ## Needs Human
 
