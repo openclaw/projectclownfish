@@ -1,0 +1,147 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156594-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24981382453",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24981382453",
+  "head_sha": "e0fb289dbbb528ad94fac3d2036800e925923c24",
+  "workflow_conclusion": "cancelled",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156594-autonomous-smoke.md",
+  "published_at": "2026-04-27T07:17:26.010Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/39392",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/39392",
+  "canonical_pr": null,
+  "summary": "Hydrated state shows the original representative #40443 is already closed and was replaced by #72624, but #72624 is security-sensitive and must be quarantined. The cluster splits into two non-identical Control UI bug families: agent model select state (#39392 with related PRs #52948/#54724) and explicit config reload stale state (#40352). No merge or close is safe in this run; plan non-mutating classifications, route the security-sensitive PRs, and build a narrow replacement fix artifact for the non-security agent model-selection family.",
+  "actions": [
+    {
+      "target": "#39392",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#39392",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#40352",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#40352",
+      "action": "fix_needed",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": "Blocked on central security handling for the current replacement path #72624; do not close #40352 until a cleared canonical fix exists."
+    },
+    {
+      "target": "#40441",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#40443",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#43013",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route to central OpenClaw security handling; no ProjectClownfish mutation or merge."
+    },
+    {
+      "target": "#46275",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#39392",
+      "candidate_fix": null,
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#52948",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#39392",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#54724",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#39392",
+      "candidate_fix": null,
+      "reason": "Keep open for maintainer review or a narrower credited replacement path; do not merge or close in this run."
+    },
+    {
+      "target": "#70633",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#39392",
+      "candidate_fix": null,
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#72624",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route to central OpenClaw security handling; #72624 cannot be the autonomous canonical fix path."
+    },
+    {
+      "target": "cluster:ghcrawl-156594-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#39392",
+      "candidate_fix": null,
+      "reason": null
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 2,
+    "fix_needed": 1,
+    "keep_closed": 4,
+    "route_security": 2,
+    "keep_related": 2,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 7,
+    "blocked": 1,
+    "skipped": 4
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
