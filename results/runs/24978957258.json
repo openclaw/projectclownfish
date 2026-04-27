@@ -1,0 +1,199 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-207048-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24978957258",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978957258",
+  "head_sha": "29400ea714d617de4455a11f0aa59ca745bf6cda",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-207048-agentic-merge.md",
+  "published_at": "2026-04-27T06:05:15.242Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/68865",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/68865",
+  "summary": "Hydrated state shows the representative #55619 is not merge-ready and is no longer the best path. #68865 is the best repairable non-security contributor PR for the Feishu WebSocket app-layer reconnect path, but it still has unresolved P1 bot findings. The already-open replacement #72411 is security-sensitive because Aisle reported potential sensitive log exposure, so it is quarantined only and not used as the canonical fix. Planned result: keep #68865 as canonical repair path, build a repair artifact, block superseded/fixed-by closeout until the fix is clean, and route #72411 to central security handling.",
+  "actions": [
+    {
+      "target": "#42354",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#68865",
+      "candidate_fix": "#68865",
+      "reason": "Related issue remains open because it has concrete reproduction details and possible domain-scope nuance; closeout is premature until the canonical repaired fix lands."
+    },
+    {
+      "target": "#45674",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#68865",
+      "candidate_fix": "#68865",
+      "reason": "Closed historical PR; retain as credited source evidence only."
+    },
+    {
+      "target": "#46472",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#68865",
+      "candidate_fix": "#68865",
+      "reason": "Closure is blocked by require_fix_before_close until #68865 or an equivalent repaired fix lands."
+    },
+    {
+      "target": "#55532",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#68865",
+      "candidate_fix": "#68865",
+      "reason": "Related but not a clean duplicate because it includes an additional token-cache failure mode."
+    },
+    {
+      "target": "#55619",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#68865",
+      "candidate_fix": "#68865",
+      "reason": "Closure is blocked by require_fix_before_close until #68865 or an equivalent repaired fix lands; #55619 itself is not merge-ready."
+    },
+    {
+      "target": "#68766",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#68865",
+      "candidate_fix": "#68865",
+      "reason": "Issue is likely covered by #68865 after repair, but require_fix_before_close blocks closeout until the fix lands."
+    },
+    {
+      "target": "#68865",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#68865",
+      "candidate_fix": "#68865",
+      "reason": "Best non-security canonical repair path, but merge is blocked until review-bot P1 findings are addressed and focused validation passes."
+    },
+    {
+      "target": "#72411",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route only this PR to central security handling; continue non-security classification for unrelated refs."
+    },
+    {
+      "target": "cluster:ghcrawl-207048-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#68865",
+      "candidate_fix": "#68865",
+      "reason": "A narrow repair artifact is needed before any merge or closeout action can proceed."
+    }
+  ],
+  "action_counts": {
+    "keep_related": 2,
+    "keep_closed": 1,
+    "close_superseded": 2,
+    "close_fixed_by_candidate": 1,
+    "keep_canonical": 1,
+    "route_security": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "skipped": 1,
+    "blocked": 3
+  },
+  "fix_counts": {
+    "failed": 1,
+    "blocked": 1
+  },
+  "apply_counts": {
+    "skipped": 3
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "failed",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": "source PR #45674 is closed",
+      "title": null,
+      "url": null
+    },
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "repair_contributor_branch",
+      "reason": "validation command failed (pnpm check:changed): [check:changed] lanes=extensions, extensionTests, docs [check:changed] extensions/feishu/src/client.test.ts: extension test [check:changed] extensions/feishu/src/client.ts: extension production [check:changed] extensions/feishu/src/monitor.cleanup.test.ts: extension test [check:changed] extensions/feishu/src/monitor.transport.ts: extension production [check:changed] conflict markers [check:changed] typecheck extensions [check:changed] typecheck extension tests [check:changed] lint extensions [check:changed] summary 434ms ok conflict markers 1.71s ok typecheck extensions 1.87s ok typecheck extension tests 16.21s failed:1 lint extensions",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#46472",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#68865",
+      "candidate_fix": "#68865",
+      "title": null,
+      "idempotency_key": "ghcrawl-207048-agentic-merge:#46472:close-superseded-blocked:2026-03-24T20:16:02Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#55619",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#68865",
+      "candidate_fix": "#68865",
+      "title": null,
+      "idempotency_key": "ghcrawl-207048-agentic-merge:#55619:close-superseded-blocked:2026-04-06T10:44:07Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#68766",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#68865",
+      "candidate_fix": "#68865",
+      "title": null,
+      "idempotency_key": "ghcrawl-207048-agentic-merge:#68766:close-fixed-by-candidate-blocked:2026-04-20T13:20:08Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
