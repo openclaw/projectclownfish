@@ -1,0 +1,188 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-207034-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24979709102",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979709102",
+  "head_sha": "8806d2971f220668a5fdb92adf8595525bd6678b",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-207034-agentic-merge.md",
+  "published_at": "2026-04-27T06:29:37.722Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/51065",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/51065",
+  "canonical_pr": null,
+  "summary": "Classified the hydrated Telegram tool-leak cluster into two subfamilies. #51065 remains the canonical failed mutating-tool warning leak issue; #39631 is a true duplicate but closeout is blocked by require_fix_before_close until a replacement fix path exists. #71575 is related but distinct and should remain open as the canonical Telegram preview/final-only behavior request. Closed linked refs are kept closed as historical evidence only. No merge is recommended; prior contributor PRs are closed/unmergeable or broad, so a narrow credited replacement fix artifact is planned for #51065/#39631.",
+  "actions": [
+    {
+      "target": "#51065",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "reason": "Best surviving issue for the failed mutating-tool warning leak subfamily."
+    },
+    {
+      "target": "#39631",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "reason": "True duplicate of #51065, but closure is blocked by the fix-first policy."
+    },
+    {
+      "target": "#71575",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#71575",
+      "candidate_fix": null,
+      "reason": "Related Telegram leakage family, but a different root cause and product surface from failed mutating-tool warning payloads."
+    },
+    {
+      "target": "#39406",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#39406",
+      "candidate_fix": null,
+      "reason": "Related broader feature/policy request, not a duplicate close candidate for this failed Telegram warning leak cluster."
+    },
+    {
+      "target": "#39636",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical contributor PR; useful for credit and replacement planning only."
+    },
+    {
+      "target": "#39717",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical contributor PR with useful ideas but unsafe/broad diff and unresolved bot findings; replacement should preserve credit."
+    },
+    {
+      "target": "#66161",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#71575",
+      "candidate_fix": null,
+      "reason": "Closed related context only."
+    },
+    {
+      "target": "#66188",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed superseded PR, useful only as historical evidence for the related Telegram preview/chatter family."
+    },
+    {
+      "target": "#71663",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71575",
+      "candidate_fix": null,
+      "reason": "Already-closed duplicate context for #71575."
+    },
+    {
+      "target": "cluster:ghcrawl-207034-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "reason": "A narrow replacement fix path is needed for the failed mutating-tool warning leak subfamily."
+    },
+    {
+      "target": "cluster:ghcrawl-207034-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "reason": "Prepare a credited, narrow fix plan for ProjectClownfish execution."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_duplicate": 1,
+    "keep_related": 2,
+    "keep_closed": 5,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "blocked": 1,
+    "skipped": 5
+  },
+  "fix_counts": {
+    "opened": 1
+  },
+  "apply_counts": {
+    "skipped": 1,
+    "executed": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "open_fix_pr",
+      "status": "opened",
+      "target": null,
+      "pr": "https://github.com/openclaw/openclaw/pull/72410",
+      "branch": "clownfish/ghcrawl-207034-agentic-merge",
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": "https://github.com/openclaw/openclaw/pull/72410"
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#39631",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-207034-agentic-merge:#39631:close_duplicate:#51065:2026-04-26T20:08:58Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#72410",
+      "action": "merge_canonical",
+      "status": "executed",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(telegram): hide acknowledged failed-tool warnings from chat",
+      "idempotency_key": null,
+      "reason": "merged by ProjectClownfish post-flight",
+      "merged_at": "2026-04-27T06:29:19Z",
+      "merge_commit_sha": "dcff28d28524eda07f3e10cab3e34ce9fecccea2",
+      "live_state": "merged",
+      "live_updated_at": null
+    }
+  ]
+}
