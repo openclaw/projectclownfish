@@ -1,0 +1,183 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156613-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24980244367",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24980244367",
+  "head_sha": "40a5c7418ff46bf3e60da63dc6e2345c96900f78",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156613-autonomous-smoke.md",
+  "published_at": "2026-04-27T07:10:07.453Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/64953",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/64950",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/64953",
+  "summary": "Hydrated state shows the original representative #66072 is already closed. The current replace-mode canonical path is open issue #64950 with open contributor PR #64953 as the repairable canonical PR. No merge or post-merge closeout is safe yet because #64953 still has actionable bot-review concerns and no clean Codex /review preflight. Security-sensitive refs #59693 and #66305 are quarantined only; unrelated non-security items are classified separately.",
+  "actions": [
+    {
+      "target": "#4349",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#42797",
+      "candidate_fix": "#42797",
+      "reason": "Closed context refs are evidence only."
+    },
+    {
+      "target": "#42797",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#64950",
+      "candidate_fix": null,
+      "reason": "Separate provider-auth narrowing subcluster; keep open and do not close as duplicate of replace-mode work."
+    },
+    {
+      "target": "#47581",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed and not a live mutation target."
+    },
+    {
+      "target": "#48483",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#64950",
+      "candidate_fix": "#64953",
+      "reason": "Duplicate closeout is blocked by require_fix_before_close until canonical fix path #64953 lands."
+    },
+    {
+      "target": "#48535",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#64950",
+      "candidate_fix": "#64953",
+      "reason": "Already closed; no close action may be emitted."
+    },
+    {
+      "target": "#59693",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item; ProjectClownfish must not close, merge, label, comment on, or open a fix PR for this ref."
+    },
+    {
+      "target": "#62317",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#64950",
+      "candidate_fix": null,
+      "reason": "Separate model-catalog phantom-provider subcluster; keep open."
+    },
+    {
+      "target": "#62323",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#64950",
+      "candidate_fix": null,
+      "reason": "Separate related subcluster and not merge-ready; do not close or merge in this replace-mode cluster."
+    },
+    {
+      "target": "#62481",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#64950",
+      "candidate_fix": null,
+      "reason": "Separate draft related work; not safe for autonomous close or merge."
+    },
+    {
+      "target": "#64950",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#64950",
+      "candidate_fix": "#64953",
+      "reason": "Canonical live issue for the replace-mode family."
+    },
+    {
+      "target": "#64953",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#64950",
+      "candidate_fix": "#64953",
+      "reason": "Canonical PR is repairable but not merge-ready."
+    },
+    {
+      "target": "#64967",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#64950",
+      "candidate_fix": "#64953",
+      "reason": "Already closed; no close action may be emitted."
+    },
+    {
+      "target": "#66072",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#64950",
+      "candidate_fix": "#64953",
+      "reason": "Representative is obsolete and closed; keep as historical evidence only."
+    },
+    {
+      "target": "#66094",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent context; no live action."
+    },
+    {
+      "target": "#66305",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item; ProjectClownfish must route to central security handling only."
+    },
+    {
+      "target": "cluster:ghcrawl-156613-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#64950",
+      "candidate_fix": "#64953",
+      "reason": "Build repair instructions for the canonical contributor PR; no merge or closeout until repair, validation, and Codex /review pass."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 6,
+    "keep_related": 4,
+    "close_duplicate": 1,
+    "route_security": 2,
+    "keep_canonical": 2,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 6,
+    "planned": 9,
+    "blocked": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
