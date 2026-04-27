@@ -263,7 +263,8 @@ function hasPendingChecks(checks) {
     if (ignored.has(name)) return false;
     const status = String(check.status ?? check.state ?? "").toUpperCase();
     const conclusion = String(check.conclusion ?? "").toUpperCase();
-    return !["COMPLETED", "SUCCESS"].includes(status) && !PASSING_CHECK_CONCLUSIONS.has(conclusion);
+    if (conclusion) return false;
+    return Boolean(status) && !["COMPLETED", "SUCCESS"].includes(status);
   });
 }
 
