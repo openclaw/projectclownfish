@@ -2,18 +2,21 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-165998-agentic-merge"
 mode: "autonomous"
-run_id: "24964236283"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24964236283"
-head_sha: "38f70877c94ad408c7816548e9dafe09a3dd4328"
+run_id: "24977061644"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/24977061644"
+head_sha: "50a0b51ad3e3cfffa74443fc81bf0c842f9747bf"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-26T18:56:33.346Z"
-canonical: "https://github.com/openclaw/openclaw/pull/40571"
+published_at: "2026-04-27T05:07:47.380Z"
+canonical: "https://github.com/openclaw/openclaw/pull/72326"
 canonical_issue: null
-canonical_pr: "https://github.com/openclaw/openclaw/pull/40571"
+canonical_pr: "https://github.com/openclaw/openclaw/pull/72326"
 actions_total: 19
+fix_executed: 0
+fix_failed: 1
+fix_blocked: 0
 apply_executed: 0
-apply_blocked: 0
+apply_blocked: 1
 apply_skipped: 0
 needs_human_count: 0
 ---
@@ -22,57 +25,67 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24964236283](https://github.com/openclaw/projectclownfish/actions/runs/24964236283)
+Run: [https://github.com/openclaw/clownfish/actions/runs/24977061644](https://github.com/openclaw/clownfish/actions/runs/24977061644)
 
 Workflow conclusion: success
 
 Worker result: planned
 
-Canonical: https://github.com/openclaw/openclaw/pull/40571
+Canonical: https://github.com/openclaw/openclaw/pull/72326
 
 ## Summary
 
-Classified the hydrated cluster without GitHub mutation. The cluster is over-broad: #40571 remains the best canonical path for the agentId auto-fill bug but is not merge-ready; Telegram thread/topic PRs are related subfamilies with unresolved checks or bot findings; #43469 is quarantined as security-sensitive linked work. No close or merge actions are safe before the canonical fix path is repaired and validated.
+Hydrated state shows the original representative #40571 is already closed and was replaced by #72326, but #72326 is security-sensitive and must be routed to central security handling. The remaining open refs split into related cron subfamilies rather than one safe merge/close path. No close or merge is planned; a narrow repair artifact is planned for the current-main Telegram topic threadId regression represented by #64708.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
 | Worker actions | 19 |
+| Fix executed | 0 |
+| Fix failed | 1 |
+| Fix blocked | 0 |
 | Applied executions | 0 |
-| Apply blocked | 0 |
+| Apply blocked | 1 |
 | Apply skipped | 0 |
 | Needs human | 0 |
+
+## Fix Execution Actions
+
+| Action | Status | Target | Branch | Reason |
+| --- | --- | --- | --- | --- |
+| repair_contributor_branch | failed |  |  | validation command failed (pnpm check:changed): undefined ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL Command "check:changed" not found Did you mean "pnpm test:changed"? |
+| open_fix_pr | opened | https://github.com/openclaw/openclaw/pull/72326 | clownfish/ghcrawl-165998-agentic-merge |  |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| _None_ |  |  |  |  |
+| #72326 | merge_canonical | blocked | fix_pr | merge state status is UNSTABLE |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #40571 | keep_canonical | planned | canonical | Best canonical for the agentId auto-fill subfamily, but keep only; repair and validation are required before merge or closeout. |
-| #42196 | keep_related | planned | related | Related agent-routing UX issue, not a true duplicate of the #40571 auto-fill bug. |
-| #42245 | keep_related | planned | related | Useful related PR for the --agent warning issue, but not the canonical fix for this cluster and not merge-ready. |
-| #43469 | route_security | planned | security_sensitive | Quarantine this exact linked security-scanner PR; it is unrelated to the cron maintenance cluster. |
-| #43695 | keep_closed | skipped | fixed_by_candidate | Closed context evidence only; no closure action is valid. |
-| #43808 | keep_related | planned | related | Related Telegram topic-delivery PR, not a duplicate of the agentId canonical path. |
-| #44240 | keep_closed | skipped | fixed_by_candidate | Closed context evidence only; no closure action is valid. |
-| #44270 | keep_related | planned | related | Related Telegram direct-thread inference bug; keep open until the #44412 subfamily is repaired and validated. |
-| #44325 | keep_closed | skipped | superseded | Already closed and superseded by #44412; no further action. |
-| #44351 | keep_closed | skipped | superseded | Already closed and superseded by #44412; no further action. |
-| #44412 | keep_related | planned | related | Canonical for a related Telegram direct-thread subfamily, but not the cluster canonical and not merge-ready. |
-| #49704 | keep_related | planned | related | Related Telegram forum-topic delivery PR with unresolved review and failing checks; keep open. |
-| #54307 | keep_closed | skipped | fixed_by_candidate | Already closed; useful historical evidence for agentId behavior only. |
-| #58893 | keep_related | planned | related | Related cron reminder delivery work, but too broad and draft; keep open outside this canonical path. |
-| #59069 | keep_related | planned | related | Potentially useful Telegram topic-target PR, but unresolved bot review prevents merge or closeout. |
-| #64708 | keep_related | planned | related | Related Telegram topic-thread PR with hard review blockers and failing checks; keep open. |
-| cluster:ghcrawl-165998-agentic-merge | fix_needed | planned |  | Repair #40571, rebase if needed, validate with OpenClaw's changed-check lane, run /review, then reconsider merge and duplicate closeout. |
-| cluster:ghcrawl-165998-agentic-merge | build_fix_artifact | planned |  | Emit a repair artifact for the canonical contributor branch instead of merging or closing anything in this run. |
-| cluster:ghcrawl-165998-agentic-merge | open_fix_pr | blocked |  | Target checkout unavailable in the artifact; do not pretend to patch or open a PR from this worker. |
+| #40571 | keep_closed | skipped | superseded | Already closed; replacement path exists but is quarantined separately as security-sensitive. |
+| #42196 | keep_related | planned | related | Separate warning/UX subfamily; keep open for #42245 or a follow-up job. |
+| #42245 | keep_related | planned | related | Useful related PR, but not merge-ready in this worker result because mergeability is unknown and merge_preflight is absent. |
+| #43469 | keep_independent | planned | independent | Independent linked ref; do not mutate from this cron cluster. |
+| #43695 | keep_closed | skipped | fixed_by_candidate | Already closed with maintainer fixed-on-main evidence. |
+| #43808 | keep_related | planned | related | Related Telegram topic delivery PR; keep open for a dedicated merge-prep or replacement job. |
+| #44240 | keep_closed | skipped | fixed_by_candidate | Already closed with maintainer fixed-on-main evidence. |
+| #44270 | keep_related | planned | related | Related direct-thread subfamily; keep open until #44412 or a follow-up repair lands. |
+| #44325 | keep_closed | skipped | superseded | Already closed as superseded by #44412. |
+| #44351 | keep_closed | skipped | superseded | Already closed as superseded by #44412. |
+| #44412 | keep_related | planned | related | Useful related PR, but merge is blocked by unresolved bot feedback, failing check evidence, and missing merge_preflight. |
+| #49704 | keep_related | planned | related | Related but broad and not merge-ready; keep open for a dedicated follow-up, not this cluster closeout. |
+| #54307 | keep_closed | skipped | fixed_by_candidate | Already closed after fixed-on-main review. |
+| #58893 | keep_related | planned | related | Related cron reminder behavior, but draft and broader than the canonical agentId/Telegram threadId subfamilies. |
+| #59069 | keep_related | planned | related | Promising related PR, but not merge-ready until the review-bot comment is addressed and merge preflight is produced. |
+| #64708 | keep_related | planned | related | Useful repair candidate for a narrow follow-up fix path, but not merge-ready. |
+| #72326 | route_security | planned | security_sensitive | Quarantine only #72326 for central OpenClaw security handling; do not close, merge, comment on, or fix it through ProjectClownfish. |
+| cluster:ghcrawl-165998-agentic-merge | fix_needed | planned | related | Plan a narrow repair path for #64708 rather than merging or closing anything now. |
+| cluster:ghcrawl-165998-agentic-merge | build_fix_artifact | planned |  | A fix artifact is needed because the bug is real and the existing contributor PR is useful but not merge-ready. |
 
 ## Needs Human
 

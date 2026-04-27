@@ -1,0 +1,257 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165998-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24977061644",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24977061644",
+  "head_sha": "50a0b51ad3e3cfffa74443fc81bf0c842f9747bf",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165998-agentic-merge.md",
+  "published_at": "2026-04-27T05:07:47.380Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72326",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72326",
+  "summary": "Hydrated state shows the original representative #40571 is already closed and was replaced by #72326, but #72326 is security-sensitive and must be routed to central security handling. The remaining open refs split into related cron subfamilies rather than one safe merge/close path. No close or merge is planned; a narrow repair artifact is planned for the current-main Telegram topic threadId regression represented by #64708.",
+  "actions": [
+    {
+      "target": "#40571",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72326",
+      "candidate_fix": "#72326",
+      "reason": "Already closed; replacement path exists but is quarantined separately as security-sensitive."
+    },
+    {
+      "target": "#42196",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#42245",
+      "candidate_fix": null,
+      "reason": "Separate warning/UX subfamily; keep open for #42245 or a follow-up job."
+    },
+    {
+      "target": "#42245",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#42245",
+      "candidate_fix": null,
+      "reason": "Useful related PR, but not merge-ready in this worker result because mergeability is unknown and merge_preflight is absent."
+    },
+    {
+      "target": "#43469",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent linked ref; do not mutate from this cron cluster."
+    },
+    {
+      "target": "#43695",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed with maintainer fixed-on-main evidence."
+    },
+    {
+      "target": "#43808",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#43808",
+      "candidate_fix": null,
+      "reason": "Related Telegram topic delivery PR; keep open for a dedicated merge-prep or replacement job."
+    },
+    {
+      "target": "#44240",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed with maintainer fixed-on-main evidence."
+    },
+    {
+      "target": "#44270",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#44412",
+      "candidate_fix": null,
+      "reason": "Related direct-thread subfamily; keep open until #44412 or a follow-up repair lands."
+    },
+    {
+      "target": "#44325",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#44412",
+      "candidate_fix": "#44412",
+      "reason": "Already closed as superseded by #44412."
+    },
+    {
+      "target": "#44351",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#44412",
+      "candidate_fix": "#44412",
+      "reason": "Already closed as superseded by #44412."
+    },
+    {
+      "target": "#44412",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#44412",
+      "candidate_fix": null,
+      "reason": "Useful related PR, but merge is blocked by unresolved bot feedback, failing check evidence, and missing merge_preflight."
+    },
+    {
+      "target": "#49704",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#49704",
+      "candidate_fix": null,
+      "reason": "Related but broad and not merge-ready; keep open for a dedicated follow-up, not this cluster closeout."
+    },
+    {
+      "target": "#54307",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72326",
+      "candidate_fix": null,
+      "reason": "Already closed after fixed-on-main review."
+    },
+    {
+      "target": "#58893",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#58893",
+      "candidate_fix": null,
+      "reason": "Related cron reminder behavior, but draft and broader than the canonical agentId/Telegram threadId subfamilies."
+    },
+    {
+      "target": "#59069",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#59069",
+      "candidate_fix": null,
+      "reason": "Promising related PR, but not merge-ready until the review-bot comment is addressed and merge preflight is produced."
+    },
+    {
+      "target": "#64708",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#64708",
+      "candidate_fix": null,
+      "reason": "Useful repair candidate for a narrow follow-up fix path, but not merge-ready."
+    },
+    {
+      "target": "#72326",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine only #72326 for central OpenClaw security handling; do not close, merge, comment on, or fix it through ProjectClownfish."
+    },
+    {
+      "target": "cluster:ghcrawl-165998-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#64708",
+      "candidate_fix": null,
+      "reason": "Plan a narrow repair path for #64708 rather than merging or closing anything now."
+    },
+    {
+      "target": "cluster:ghcrawl-165998-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#64708",
+      "candidate_fix": null,
+      "reason": "A fix artifact is needed because the bug is real and the existing contributor PR is useful but not merge-ready."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 6,
+    "keep_related": 9,
+    "keep_independent": 1,
+    "route_security": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 6,
+    "planned": 13
+  },
+  "fix_counts": {
+    "failed": 1,
+    "opened": 1
+  },
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "failed",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": "validation command failed (pnpm check:changed): undefined ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL Command \"check:changed\" not found Did you mean \"pnpm test:changed\"?",
+      "title": null,
+      "url": null
+    },
+    {
+      "action": "open_fix_pr",
+      "status": "opened",
+      "target": null,
+      "pr": "https://github.com/openclaw/openclaw/pull/72326",
+      "branch": "clownfish/ghcrawl-165998-agentic-merge",
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": "https://github.com/openclaw/openclaw/pull/72326"
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#72326",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(cron): infer session agentId when omitted",
+      "idempotency_key": null,
+      "reason": "merge state status is UNSTABLE",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
