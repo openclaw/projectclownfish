@@ -1,0 +1,257 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156584-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24978142389",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978142389",
+  "head_sha": "e8d437d9978c397d8d3fb39c23597d4e5c1d98bf",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156584-autonomous-smoke.md",
+  "published_at": "2026-04-27T05:31:32.542Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/43556",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/43556",
+  "canonical_pr": null,
+  "summary": "Autonomous classification completed from the hydrated preflight artifact. #43556 remains the canonical open issue. No merge is safe: the active replacement PR #72331 and linked PR #63121 are marked security-sensitive and must be routed to central security handling, while the useful non-security PRs are closed/uneditable. The ordinary non-security bug remains real on main, so emit a narrow credited replacement fix artifact and block duplicate closeout until that fix path exists.",
+  "actions": [
+    {
+      "target": "#43556",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Best live canonical issue for the shared root cause."
+    },
+    {
+      "target": "#56326",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Clear duplicate, but closeout is blocked on the canonical fix path."
+    },
+    {
+      "target": "#61724",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Same bug family, but keep open as related validation coverage for packaged release behavior."
+    },
+    {
+      "target": "#63120",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Clear duplicate, but closeout is blocked on the canonical fix path."
+    },
+    {
+      "target": "#64714",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Clear duplicate, but closeout is blocked on the canonical fix path."
+    },
+    {
+      "target": "#53370",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#56193",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#59390",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#60965",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#67248",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#68275",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#69166",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Already closed; no closure action allowed."
+    },
+    {
+      "target": "#59225",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Related follow-up scope; not a duplicate closeout target for this cluster."
+    },
+    {
+      "target": "#63121",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked PR is out of scope for ProjectClownfish mutation."
+    },
+    {
+      "target": "#72331",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive active PR must be handled by central security triage, not cluster cleanup automation."
+    },
+    {
+      "target": "cluster:ghcrawl-156584-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "A narrow non-security replacement fix path is needed before duplicate closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-156584-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "reason": "Build a narrow credited replacement fix artifact for the ordinary bug path."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_duplicate": 3,
+    "keep_related": 2,
+    "keep_closed": 7,
+    "route_security": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 7,
+    "blocked": 3,
+    "skipped": 7
+  },
+  "fix_counts": {
+    "skipped": 1
+  },
+  "apply_counts": {
+    "skipped": 3
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "skipped",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "replace_uneditable_branch",
+      "reason": "fix artifact scope itself contains security-sensitive signals",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#56326",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-156584-autonomous-smoke:#56326:close_duplicate_blocked:2026-03-31T03:12:09Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#63120",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-156584-autonomous-smoke:#63120:close_duplicate_blocked:2026-04-27T04:21:14Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#64714",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43556",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-156584-autonomous-smoke:#64714:close_duplicate_blocked:2026-04-27T03:52:49Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}

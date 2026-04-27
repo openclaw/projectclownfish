@@ -46,34 +46,34 @@ Last dashboard update: Apr 27, 2026, 05:31 UTC
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 114 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 115 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 114 | 100% |
+| Latest clusters reviewed | 115 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 60 | 52.6% |
-| Needs-human clusters | 32 | 28.1% |
-| Latest successful clusters | 113 | 99.1% |
+| Clean completed clusters | 61 | 53.0% |
+| Needs-human clusters | 32 | 27.8% |
+| Latest successful clusters | 114 | 99.1% |
 | Latest failed clusters | 1 | 0.9% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 239 | audit |
-| Fix action attempts | 15 | audit |
+| Run attempts archived | 240 | audit |
+| Fix action attempts | 16 | audit |
 | Fix actions executed | 0 | 0.0% |
-| Fix actions failed | 5 | 33.3% |
-| Fix actions blocked | 5 | 33.3% |
-| Latest clusters with fix failures | 6 | 5.3% |
+| Fix actions failed | 5 | 31.3% |
+| Fix actions blocked | 5 | 31.3% |
+| Latest clusters with fix failures | 6 | 5.2% |
 | Distinct PRs touched | 515 | 100% |
 | Open PRs tracked | 295 | 57.3% |
 | Closed unmerged PRs tracked | 186 | 36.1% |
-| Completed close actions | 22 | 11.3% |
-| Completed merge actions | 4 | 2.1% |
+| Completed close actions | 22 | 11.2% |
+| Completed merge actions | 4 | 2.0% |
 | Duplicate closes | 22 | 100.0% |
 | Superseded closes | 0 | 0.0% |
 | Fixed-by-candidate closes | 0 | 0.0% |
 | Low-signal PR closes | 0 | 0.0% |
-| Blocked mutation attempts | 44 | 22.7% |
-| Skipped mutation attempts | 124 | 63.9% |
+| Blocked mutation attempts | 44 | 22.3% |
+| Skipped mutation attempts | 127 | 64.5% |
 
 ### Latest ProjectClownfish Closures
 
