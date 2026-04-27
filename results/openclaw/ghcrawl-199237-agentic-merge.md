@@ -2,19 +2,22 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-199237-agentic-merge"
 mode: "autonomous"
-run_id: "24968249732"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24968249732"
-head_sha: "7d4cb531a8aefe63df69f7cc78f50c73fe08de4d"
+run_id: "24977053355"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/24977053355"
+head_sha: "50a0b51ad3e3cfffa74443fc81bf0c842f9747bf"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-26T22:37:52.909Z"
-canonical: "https://github.com/openclaw/openclaw/pull/60063"
+published_at: "2026-04-27T05:13:23.018Z"
+canonical: "https://github.com/openclaw/openclaw/pull/54374"
 canonical_issue: null
-canonical_pr: "https://github.com/openclaw/openclaw/pull/60063"
-actions_total: 9
+canonical_pr: "https://github.com/openclaw/openclaw/pull/54374"
+actions_total: 15
+fix_executed: 0
+fix_failed: 1
+fix_blocked: 1
 apply_executed: 0
-apply_blocked: 1
-apply_skipped: 0
+apply_blocked: 0
+apply_skipped: 3
 needs_human_count: 0
 ---
 
@@ -22,47 +25,65 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24968249732](https://github.com/openclaw/projectclownfish/actions/runs/24968249732)
+Run: [https://github.com/openclaw/clownfish/actions/runs/24977053355](https://github.com/openclaw/clownfish/actions/runs/24977053355)
 
 Workflow conclusion: success
 
 Worker result: planned
 
-Canonical: https://github.com/openclaw/openclaw/pull/60063
+Canonical: https://github.com/openclaw/openclaw/pull/54374
 
 ## Summary
 
-Hydrated evidence splits this cluster into related streaming-text subfamilies. #60063 is the best live canonical candidate for gateway overlap/replace handling, but merge is blocked because the artifact lacks a fresh ProjectClownfish /review merge preflight. UI-only PRs remain related to closed #47188/current-main behavior. Repeated-character PRs #63994 and #65457 are a narrower related bug family tied to #63769 and need a separate narrow credited fix path.
+Classified the over-broad streaming cluster without GitHub mutation. #54374 remains the canonical repairable PR for the pre-tool WebChat/gateway duplicate-text family, but merge is blocked by missing clean merge preflight and a failing check-additional job. WebChat UI overlap PR closeouts are blocked until the canonical repair path lands. Repeated-character and provider-overlap work is kept as related follow-up work, and security-sensitive #72400 is quarantined for central security handling.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 9 |
+| Worker actions | 15 |
+| Fix executed | 0 |
+| Fix failed | 1 |
+| Fix blocked | 1 |
 | Applied executions | 0 |
-| Apply blocked | 1 |
-| Apply skipped | 0 |
+| Apply blocked | 0 |
+| Apply skipped | 3 |
 | Needs human | 0 |
+
+## Fix Execution Actions
+
+| Action | Status | Target | Branch | Reason |
+| --- | --- | --- | --- | --- |
+| repair_contributor_branch | failed |  |  | validation command failed (pnpm check:changed): undefined ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL Command "check:changed" not found Did you mean "pnpm test:changed"? |
+| execute_fix | blocked |  |  | validation command failed (pnpm check:changed): [check:changed] lanes=core, coreTests, docs [check:changed] src/gateway/chat-abort.test.ts: core test [check:changed] src/gateway/chat-abort.ts: core production [check:changed] src/gateway/server-chat.agent-events.test.ts: core test [check:changed] src/gateway/server-chat.ts: core production [check:changed] src/gateway/server-maintenance.test.ts: core test [check:changed] src/gateway/server-maintenance.ts: core production [check:changed] src/gateway/server-methods/agent.test.ts: core test [check:changed] src/gateway/server-methods/chat.abort.test-helpers.ts: core production [check:changed] src/gateway/server-methods/chat.directive-tags.test.ts: core test [check:changed] src/gateway/server-methods/chat.ts: core production [check:changed] src/gateway/server-methods/shared-types.ts: core production [check:changed] src/gateway/server-request-context.test.ts: core test [check:changed] src/gateway/server-request-context.ts: core production [check:changed] src/gateway/server-runtime-state.ts: core production [check:changed] src/gateway/server-startup-early.test.ts: core test [check:changed] src/gateway/server-startup-early.ts: core production [check:changed] src/gateway/server.chat.gat... |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #72400 | merge_canonical | blocked | fix_pr | mergeable state is CONFLICTING |
+| #46985 | close_superseded | skipped | superseded | action status is blocked |
+| #47377 | close_superseded | skipped | superseded | action status is blocked |
+| #47399 | close_superseded | skipped | superseded | action status is blocked |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #60063 | keep_canonical | planned | canonical | Best live canonical candidate for gateway overlap/replace stream assembler, but merge preflight is incomplete. |
-| #54374 | keep_related | planned | related | Related gateway pre-tool duplicate-text fix, but not the safest canonical merge path. |
-| #46985 | keep_related | planned | related | Related UI-side duplicate-bubble work, not canonical for gateway stream overlap/replace. |
-| #47377 | keep_related | planned | related | Related UI-side fix family; failing checks block merge or fixed-by-candidate closeout. |
-| #47399 | keep_related | planned | related | Related UI implementation with unresolved bot finding and broader file churn. |
-| #63994 | keep_related | planned | related | Related repeated-character subfamily; useful but not merge-ready until the P1 bot finding is resolved. |
-| #65457 | keep_related | planned | related | Related repeated-token fix candidate, but failing checks block merge and closeout. |
-| #63769 | fix_needed | planned | related | Real related bug with no clean merge-ready PR in the hydrated artifact. |
-| cluster:ghcrawl-199237-agentic-merge | build_fix_artifact | planned |  | Repeated-character bug is real and independently actionable, but no existing PR is cleanly merge-ready. |
+| #54374 | keep_canonical | planned | canonical | Canonical repair path is clear, but merge is blocked until the contributor branch is refreshed, validated, and reviewed cleanly. |
+| cluster:ghcrawl-199237-agentic-merge | fix_needed | planned |  | Canonical implementation exists but is not merge-ready. |
+| cluster:ghcrawl-199237-agentic-merge | build_fix_artifact | planned |  | A narrow repair artifact is needed before merge or closeout actions are safe. |
+| #46985 | close_superseded | blocked | superseded | Closeout is blocked by require_fix_before_close until the canonical #54374 repair path lands. |
+| #47377 | close_superseded | blocked | superseded | Closeout is blocked by require_fix_before_close until the canonical #54374 repair path lands. |
+| #47399 | close_superseded | blocked | superseded | Closeout is blocked by require_fix_before_close until the canonical #54374 repair path lands. |
+| #60063 | keep_related | planned | related | Same streaming area, different root cause and unresolved review blocker. |
+| #63769 | keep_related | planned | related | Keep open as related repeated-character subcluster; do not close under #54374. |
+| #63994 | keep_related | planned | related | Related repeated-character fix candidate, but not canonical for #54374 and not merge-ready. |
+| #72400 | route_security | planned | security_sensitive | Route #72400 to central OpenClaw security handling; do not mutate, merge, close, or use it as a candidate fix in ProjectClownfish. |
+| #65457 | keep_closed | skipped | superseded | Already closed historical context only. |
+| #47188 | keep_closed | skipped | fixed_by_candidate | Already closed historical evidence only. |
+| #47344 | keep_closed | skipped | superseded | Already closed historical evidence only. |
+| #42588 | keep_closed | skipped | independent | Already closed independent context. |
+| #47224 | keep_closed | skipped | independent | Already closed independent context. |
 
 ## Needs Human
 

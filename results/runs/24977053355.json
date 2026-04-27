@@ -1,0 +1,253 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-199237-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24977053355",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24977053355",
+  "head_sha": "50a0b51ad3e3cfffa74443fc81bf0c842f9747bf",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-199237-agentic-merge.md",
+  "published_at": "2026-04-27T05:13:23.018Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/54374",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/54374",
+  "summary": "Classified the over-broad streaming cluster without GitHub mutation. #54374 remains the canonical repairable PR for the pre-tool WebChat/gateway duplicate-text family, but merge is blocked by missing clean merge preflight and a failing check-additional job. WebChat UI overlap PR closeouts are blocked until the canonical repair path lands. Repeated-character and provider-overlap work is kept as related follow-up work, and security-sensitive #72400 is quarantined for central security handling.",
+  "actions": [
+    {
+      "target": "#54374",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#54374",
+      "candidate_fix": null,
+      "reason": "Canonical repair path is clear, but merge is blocked until the contributor branch is refreshed, validated, and reviewed cleanly."
+    },
+    {
+      "target": "cluster:ghcrawl-199237-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#54374",
+      "candidate_fix": null,
+      "reason": "Canonical implementation exists but is not merge-ready."
+    },
+    {
+      "target": "cluster:ghcrawl-199237-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#54374",
+      "candidate_fix": null,
+      "reason": "A narrow repair artifact is needed before merge or closeout actions are safe."
+    },
+    {
+      "target": "#46985",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#54374",
+      "candidate_fix": null,
+      "reason": "Closeout is blocked by require_fix_before_close until the canonical #54374 repair path lands."
+    },
+    {
+      "target": "#47377",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#54374",
+      "candidate_fix": null,
+      "reason": "Closeout is blocked by require_fix_before_close until the canonical #54374 repair path lands."
+    },
+    {
+      "target": "#47399",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#54374",
+      "candidate_fix": null,
+      "reason": "Closeout is blocked by require_fix_before_close until the canonical #54374 repair path lands."
+    },
+    {
+      "target": "#60063",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#54374",
+      "candidate_fix": null,
+      "reason": "Same streaming area, different root cause and unresolved review blocker."
+    },
+    {
+      "target": "#63769",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#54374",
+      "candidate_fix": null,
+      "reason": "Keep open as related repeated-character subcluster; do not close under #54374."
+    },
+    {
+      "target": "#63994",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#54374",
+      "candidate_fix": null,
+      "reason": "Related repeated-character fix candidate, but not canonical for #54374 and not merge-ready."
+    },
+    {
+      "target": "#72400",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route #72400 to central OpenClaw security handling; do not mutate, merge, close, or use it as a candidate fix in ProjectClownfish."
+    },
+    {
+      "target": "#65457",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical context only."
+    },
+    {
+      "target": "#47188",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical evidence only."
+    },
+    {
+      "target": "#47344",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical evidence only."
+    },
+    {
+      "target": "#42588",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed independent context."
+    },
+    {
+      "target": "#47224",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed independent context."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "close_superseded": 3,
+    "keep_related": 3,
+    "route_security": 1,
+    "keep_closed": 5
+  },
+  "action_status_counts": {
+    "planned": 7,
+    "blocked": 3,
+    "skipped": 5
+  },
+  "fix_counts": {
+    "failed": 1,
+    "blocked": 1
+  },
+  "apply_counts": {
+    "skipped": 3
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "failed",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": "validation command failed (pnpm check:changed): undefined ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL Command \"check:changed\" not found Did you mean \"pnpm test:changed\"?",
+      "title": null,
+      "url": null
+    },
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "repair_contributor_branch",
+      "reason": "validation command failed (pnpm check:changed): [check:changed] lanes=core, coreTests, docs [check:changed] src/gateway/chat-abort.test.ts: core test [check:changed] src/gateway/chat-abort.ts: core production [check:changed] src/gateway/server-chat.agent-events.test.ts: core test [check:changed] src/gateway/server-chat.ts: core production [check:changed] src/gateway/server-maintenance.test.ts: core test [check:changed] src/gateway/server-maintenance.ts: core production [check:changed] src/gateway/server-methods/agent.test.ts: core test [check:changed] src/gateway/server-methods/chat.abort.test-helpers.ts: core production [check:changed] src/gateway/server-methods/chat.directive-tags.test.ts: core test [check:changed] src/gateway/server-methods/chat.ts: core production [check:changed] src/gateway/server-methods/shared-types.ts: core production [check:changed] src/gateway/server-request-context.test.ts: core test [check:changed] src/gateway/server-request-context.ts: core production [check:changed] src/gateway/server-runtime-state.ts: core production [check:changed] src/gateway/server-startup-early.test.ts: core test [check:changed] src/gateway/server-startup-early.ts: core production [check:changed] src/gateway/server.chat.gat...",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#46985",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54374",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-199237-agentic-merge:#46985:close_superseded:2026-03-24T20:16:00Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#47377",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54374",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-199237-agentic-merge:#47377:close_superseded:2026-03-24T20:15:58Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#47399",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54374",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-199237-agentic-merge:#47399:close_superseded:2026-03-24T20:15:59Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
