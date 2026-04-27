@@ -1,0 +1,157 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156622-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24980256758",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24980256758",
+  "head_sha": "40a5c7418ff46bf3e60da63dc6e2345c96900f78",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156622-autonomous-smoke.md",
+  "published_at": "2026-04-27T06:47:45.668Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/47631",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/47631",
+  "summary": "Hydrated state shows the representative #40330 is already closed. The best non-security canonical path is open PR #47631, a narrow maintainer-editable contributor PR for restoring Telegram DM answer draft streaming, but merge is blocked by failing checks and no clean post-fix /review. Security-sensitive #63695 and linked #72392 are quarantined only. Closed seed refs remain skipped historical context.",
+  "actions": [
+    {
+      "target": "#39213",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#47631",
+      "candidate_fix": null,
+      "reason": "Already closed in live hydrated state; keep as historical superseded context only."
+    },
+    {
+      "target": "#40330",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#47631",
+      "candidate_fix": null,
+      "reason": "Representative is obsolete and already closed; do not mutate."
+    },
+    {
+      "target": "#41105",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#47631",
+      "candidate_fix": null,
+      "reason": "Already closed after replacement handling; broad closed branch is historical context only."
+    },
+    {
+      "target": "#42479",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#47631",
+      "candidate_fix": null,
+      "reason": "Already closed as superseded by the still-open #47631 path."
+    },
+    {
+      "target": "#47631",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#47631",
+      "candidate_fix": null,
+      "reason": "Best current non-security canonical PR, but not merge-ready until checks and review gates are repaired."
+    },
+    {
+      "target": "#61226",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#47631",
+      "candidate_fix": null,
+      "reason": "Closed related context only; insufficient and unnecessary to mutate."
+    },
+    {
+      "target": "#63695",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route to central OpenClaw security handling; do not close, merge, comment, label, or fix through ProjectClownfish."
+    },
+    {
+      "target": "#72392",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine linked security-sensitive item; keep it out of backlog cleanup and fix automation."
+    },
+    {
+      "target": "cluster:ghcrawl-156622-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#47631",
+      "candidate_fix": null,
+      "reason": "Canonical PR needs automated repair and validation before merge or closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-156622-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#47631",
+      "candidate_fix": null,
+      "reason": "Build an auditable repair plan for the existing contributor PR."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 5,
+    "keep_canonical": 1,
+    "route_security": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 5,
+    "planned": 5
+  },
+  "fix_counts": {
+    "failed": 1,
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "failed",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": "validation command failed (pnpm check:changed): undefined ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL Command \"check:changed\" not found Did you mean \"pnpm check:docs\"?",
+      "title": null,
+      "url": null
+    },
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "repair_contributor_branch",
+      "reason": "Codex /review failed: structured output was not written to replacement-codex-review-1.json; stdout={\"type\":\"thread.started\",\"thread_id\":\"019dcdb0-59ae-7e92-89da-c99fb0606a48\"} {\"type\":\"turn.started\"} {\"type\":\"item.started\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/bash -lc \\\"sed -n '1,220p' .agents/skills/openclaw-pr-maintainer/SKILL.md\\\"\",\"aggregated_output\":\"\",\"exit_code\":null,\"status\":\"in_progress\"}} {\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/bash -lc \\\"sed -n '1,220p' .agents/skills/openclaw-pr-maintainer/SKILL.md\\\"\",\"aggregated_output\":\"---\\nname: openclaw-pr-maintainer\\ndescription: Review, triage, close, label, comment on, or land OpenClaw PRs/issues with maintainer evidence checks.\\n---\\n\\n# OpenClaw PR Maintainer\\n\\nUse this skill for maintainer-facing GitHub workflow, not for ordinary code changes.\\n\\n## ...; stderr=empty",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}
