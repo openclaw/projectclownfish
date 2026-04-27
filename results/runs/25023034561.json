@@ -1,0 +1,121 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156664-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25023034561",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25023034561",
+  "head_sha": "416b225d73239870f6704a4eeb6d95f026ba00e9",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156664-autonomous-smoke.md",
+  "published_at": "2026-04-27T23:03:58.354Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/41861",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/41862",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/41861",
+  "summary": "Canonical hint #50001 is obsolete because it is closed unmerged. The best live canonical path is repair of open PR #41861, which is focused, maintainer-editable, and already addresses the key function-replacer review finding. No merge or close is planned because merge preflight is incomplete and require_fix_before_close blocks superseded/duplicate closeout until the canonical repair lands.",
+  "actions": [
+    {
+      "target": "#41861",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41861",
+      "candidate_fix": null,
+      "reason": "Best live canonical PR, but it needs repair/validation before merge."
+    },
+    {
+      "target": "cluster:ghcrawl-156664-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#41861",
+      "candidate_fix": null,
+      "reason": "Canonical PR exists but is not merge-ready under the merge policy."
+    },
+    {
+      "target": "cluster:ghcrawl-156664-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#41861",
+      "candidate_fix": null,
+      "reason": "Executable repair artifact required for a calibrated autonomous fix path."
+    },
+    {
+      "target": "#49961",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#41861",
+      "candidate_fix": null,
+      "reason": "Superseded by canonical #41861, but closeout is blocked on the canonical fix path."
+    },
+    {
+      "target": "#68947",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#41861",
+      "candidate_fix": null,
+      "reason": "Useful but superseded by canonical #41861; blocked from closure until canonical fix lands."
+    },
+    {
+      "target": "#41862",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#41861",
+      "candidate_fix": "#41861",
+      "reason": "Paired canonical issue; not closable before fix lands."
+    },
+    {
+      "target": "#49957",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#41861",
+      "candidate_fix": "#41861",
+      "reason": "Same root cause, but fixed-by closeout must wait for the canonical fix path."
+    },
+    {
+      "target": "#43634",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#41861",
+      "candidate_fix": null,
+      "reason": "Historical evidence only."
+    },
+    {
+      "target": "#50001",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#41861",
+      "candidate_fix": null,
+      "reason": "Canonical hint is obsolete; historical evidence only."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "close_superseded": 2,
+    "keep_related": 1,
+    "close_fixed_by_candidate": 1,
+    "keep_closed": 2
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "blocked": 3,
+    "skipped": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
