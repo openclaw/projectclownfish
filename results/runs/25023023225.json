@@ -1,0 +1,238 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156656-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25023023225",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25023023225",
+  "head_sha": "416b225d73239870f6704a4eeb6d95f026ba00e9",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156656-autonomous-smoke.md",
+  "published_at": "2026-04-27T22:45:01.436Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/71792",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/71792",
+  "summary": "Canonical issue #43524 is already closed. The best live canonical path is focused open PR #71792, but it is not merge-ready because mergeability is unknown, some CI lanes are failing, and no clean Codex /review preflight is present. Plan is to repair contributor branch #71792, quarantine security-sensitive #45608, keep already-closed cluster refs closed, and block duplicate/superseded closeout until the canonical fix path lands.",
+  "actions": [
+    {
+      "target": "#71792",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#71792",
+      "candidate_fix": null,
+      "reason": "Best live canonical fix candidate, but it needs repair/rebase/review before merge."
+    },
+    {
+      "target": "cluster:ghcrawl-156656-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#71792",
+      "candidate_fix": "#71792",
+      "reason": "Repair contributor branch #71792 before merge or closeout replay."
+    },
+    {
+      "target": "cluster:ghcrawl-156656-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#71792",
+      "candidate_fix": "#71792",
+      "reason": "Build an executable repair plan for the canonical PR."
+    },
+    {
+      "target": "#45608",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine this open security-sensitive item to central OpenClaw security handling; do not close, label, or fix through ProjectClownfish."
+    },
+    {
+      "target": "#56072",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#71792",
+      "candidate_fix": "#71792",
+      "reason": "Closeout blocked on canonical fix path #71792 repair and merge."
+    },
+    {
+      "target": "#61675",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#71792",
+      "candidate_fix": "#71792",
+      "reason": "Superseded closeout is blocked until canonical path #71792 lands or a replacement fix PR exists."
+    },
+    {
+      "target": "#50933",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#71792",
+      "candidate_fix": "#71792",
+      "reason": "Superseded closeout is blocked until canonical path #71792 lands or a replacement fix PR exists."
+    },
+    {
+      "target": "#37955",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71792",
+      "candidate_fix": "#71792",
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#43524",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71792",
+      "candidate_fix": "#71792",
+      "reason": "Representative issue is obsolete as a canonical target because it is closed."
+    },
+    {
+      "target": "#50891",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71792",
+      "candidate_fix": "#71792",
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#57369",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Different scope; leave open outside this cluster."
+    },
+    {
+      "target": "#34951",
+      "action": "route_security",
+      "status": "skipped",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed linked security-sensitive ref noted but not mutated."
+    },
+    {
+      "target": "#38027",
+      "action": "route_security",
+      "status": "skipped",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed linked security-sensitive ref noted but not mutated."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "route_security": 3,
+    "close_fixed_by_candidate": 1,
+    "close_superseded": 2,
+    "keep_closed": 3,
+    "keep_independent": 1
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "blocked": 3,
+    "skipped": 5
+  },
+  "fix_counts": {
+    "pushed": 1
+  },
+  "apply_counts": {
+    "skipped": 3,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "pushed",
+      "target": "https://github.com/openclaw/openclaw/pull/71792",
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#56072",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#71792",
+      "candidate_fix": "#71792",
+      "title": null,
+      "idempotency_key": "ghcrawl-156656-autonomous-smoke:#56072:close_fixed_by_candidate:blocked-on-71792",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#61675",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71792",
+      "candidate_fix": "#71792",
+      "title": null,
+      "idempotency_key": "ghcrawl-156656-autonomous-smoke:#61675:close_superseded:blocked-on-71792",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#50933",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71792",
+      "candidate_fix": "#71792",
+      "title": null,
+      "idempotency_key": "ghcrawl-156656-autonomous-smoke:#50933:close_superseded:blocked-on-71792",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#71792",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(session): persist memory on auto daily/idle rollover",
+      "idempotency_key": null,
+      "reason": "mergeable state is CONFLICTING",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
