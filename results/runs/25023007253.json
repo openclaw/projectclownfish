@@ -1,0 +1,107 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156641-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25023007253",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25023007253",
+  "head_sha": "416b225d73239870f6704a4eeb6d95f026ba00e9",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156641-autonomous-smoke.md",
+  "published_at": "2026-04-27T22:32:05.845Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/53989",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/53989",
+  "canonical_pr": null,
+  "summary": "Hydrated state shows the original representative #45857 and most cluster members are already closed. The only open seed item is #53989, which is a related but narrower 2026.3.23-2 multi-account/config-rewrite Slack Socket Mode dispatch regression that lacks proof of a current-main fix and should remain open as the live canonical tracker for that remaining subcase. No GitHub mutations, merges, or fix PRs are safe from this worker result.",
+  "actions": [
+    {
+      "target": "#28037",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked item must be routed to central OpenClaw security handling; no ProjectClownfish close/comment/merge/fix mutation is planned."
+    },
+    {
+      "target": "#45311",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked item is routed only; already-closed state prevents any closure mutation."
+    },
+    {
+      "target": "#45857",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#53989",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid. It is historical evidence for the remaining open #53989 tracker."
+    },
+    {
+      "target": "#47831",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#53989",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#52527",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#53989",
+      "candidate_fix": "#45953",
+      "reason": "Already closed; no close action is valid. The older v2026.3.13 rollback report is historical evidence, not a live target."
+    },
+    {
+      "target": "#53989",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#53989",
+      "candidate_fix": null,
+      "reason": "#53989 should remain the live canonical issue for the unresolved 2026.3.23-2 multi-account/config-rewrite Slack dispatch subcase."
+    },
+    {
+      "target": "#57844",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#53989",
+      "candidate_fix": "#45953",
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#66989",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#53989",
+      "candidate_fix": "#45953",
+      "reason": "Already closed; no close action is valid."
+    }
+  ],
+  "action_counts": {
+    "route_security": 2,
+    "keep_closed": 5,
+    "keep_canonical": 1
+  },
+  "action_status_counts": {
+    "planned": 3,
+    "skipped": 5
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
