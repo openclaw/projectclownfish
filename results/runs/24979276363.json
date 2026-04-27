@@ -1,0 +1,190 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156598-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24979276363",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979276363",
+  "head_sha": "8e31aae983b7234a42609965f5ffc5696bcab67d",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156598-autonomous-smoke.md",
+  "published_at": "2026-04-27T06:20:01.944Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72614",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72614",
+  "summary": "Classified the sessions_spawn ACP-only-field cluster from hydrated preflight state. The original representative #68397 is now closed and superseded by the hydrated ProjectClownfish replacement PR #72614, which is the current canonical path but is not merge-ready because checks are failing and a Greptile P2 schema-description finding remains unresolved. Security-sensitive refs #63121 and #72331 are quarantined only for central security triage. No direct GitHub mutations were performed.",
+  "actions": [
+    {
+      "target": "#72614",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72614",
+      "candidate_fix": null,
+      "reason": "Current canonical fix path is explicit but merge is blocked until #72614 is repaired, revalidated, and reviewed."
+    },
+    {
+      "target": "cluster:ghcrawl-156598-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Repair #72614 before merge or post-merge closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-156598-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Existing canonical replacement PR needs a narrow repair artifact for the deterministic executor."
+    },
+    {
+      "target": "#58686",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Useful contributor PR is superseded by the existing credited replacement PR #72614."
+    },
+    {
+      "target": "#63121",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive hydrated item must be routed to central OpenClaw security handling only."
+    },
+    {
+      "target": "#72331",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive hydrated linked PR is out of ProjectClownfish mutation scope."
+    },
+    {
+      "target": "#66720",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72614",
+      "candidate_fix": null,
+      "reason": "Related provider-schema design work should stay open separately from the narrow #72614 runtime-subagent fix."
+    },
+    {
+      "target": "#40102",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed historical source PR; evidence only."
+    },
+    {
+      "target": "#56342",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed historical source PR; evidence only."
+    },
+    {
+      "target": "#64787",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed source PR with unrelated review noise; evidence only."
+    },
+    {
+      "target": "#65282",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed source PR superseded by credited replacement #72614."
+    },
+    {
+      "target": "#68397",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Obsolete closed representative; current canonical path is #72614."
+    },
+    {
+      "target": "#69170",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#72614",
+      "candidate_fix": null,
+      "reason": "Already closed related documentation PR; evidence only."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "close_superseded": 1,
+    "route_security": 2,
+    "keep_related": 1,
+    "keep_closed": 6
+  },
+  "action_status_counts": {
+    "planned": 7,
+    "skipped": 6
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "replace_uneditable_branch",
+      "reason": "Codex /review did not pass after 2 attempt(s): Merge is blocked by one stale user-facing docs statement. The code diff is narrow, security-sensitive refs are not mutated, Greptile's P2 schema-description comment is addressed in code, and local validation passed: `pnpm check:changed`, `pnpm -s vitest run src/agents/tools/sessions-spawn-tool.test.ts`, and `git diff --check origin/main...HEAD`.",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#58686",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "title": null,
+      "idempotency_key": "pc:ghcrawl-156598-autonomous-smoke:#58686:close_superseded-by-72614:v1",
+      "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}

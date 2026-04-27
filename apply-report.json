@@ -4698,5 +4698,25 @@
     "merge_commit_sha": null,
     "live_state": null,
     "live_updated_at": null
+  },
+  {
+    "repo": "openclaw/openclaw",
+    "run_id": "24979276363",
+    "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979276363",
+    "cluster_id": "ghcrawl-156598-autonomous-smoke",
+    "published_at": "2026-04-27T06:20:01.944Z",
+    "target": "#58686",
+    "action": "close_superseded",
+    "status": "blocked",
+    "classification": "superseded",
+    "canonical": "#72614",
+    "candidate_fix": "#72614",
+    "title": null,
+    "idempotency_key": "pc:ghcrawl-156598-autonomous-smoke:#58686:close_superseded-by-72614:v1",
+    "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+    "merged_at": null,
+    "merge_commit_sha": null,
+    "live_state": null,
+    "live_updated_at": null
   }
 ]
