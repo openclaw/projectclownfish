@@ -1,0 +1,206 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156602-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24988619039",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24988619039",
+  "head_sha": "68766d5583c05ab6d63e38d07f560c3e32e3781a",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156602-autonomous-smoke.md",
+  "published_at": "2026-04-27T10:03:22.115Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72659",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72659",
+  "summary": "Canonical path is the already-merged ProjectClownfish PR #72659. The open DM-threading issue #59758 is covered by that landed fix, and the older overlapping maintainer PR #72305 can be superseded now that #72659 merged. Other open Mattermost PRs/issues are related follow-up work or independent bugs and should remain open.",
+  "actions": [
+    {
+      "target": "#72659",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": "#72659 is the landed canonical fix for the Mattermost DM reply-root bug."
+    },
+    {
+      "target": "#59758",
+      "action": "close_fixed_by_candidate",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#72659",
+      "reason": "The open issue is directly covered by the already-merged canonical fix #72659."
+    },
+    {
+      "target": "#72305",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#72659",
+      "reason": "The approved overlap PR is superseded by the merged canonical PR #72659."
+    },
+    {
+      "target": "#52120",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": "Related Mattermost thread-routing work with distinct scope and unresolved review findings; leave open for a separate follow-up decision."
+    },
+    {
+      "target": "#52236",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": "Related but incomplete heartbeat/thread-context work; not covered by #72659."
+    },
+    {
+      "target": "#57565",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": "Related broad follow-up branch with unresolved review and check blockers; not safe to close or merge under this cluster."
+    },
+    {
+      "target": "#57609",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate Mattermost group-policy bug; keep out of this DM-threading closeout."
+    },
+    {
+      "target": "#58439",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent Mattermost media upload fix."
+    },
+    {
+      "target": "#45082",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": "Related Mattermost thread-context issue with unique scope; leave open."
+    },
+    {
+      "target": "#57607",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate group-policy pending-history bug."
+    },
+    {
+      "target": "#57970",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": "Related prerequisite for broader routing work; not a duplicate of #72659."
+    },
+    {
+      "target": "#55151",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#72659",
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#55186",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#72659",
+      "reason": "Already closed and superseded by the landed replacement."
+    },
+    {
+      "target": "#59791",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#72659",
+      "reason": "Already closed; no mutation allowed."
+    },
+    {
+      "target": "#60115",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#72659",
+      "reason": "Already closed and superseded by #72659."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_fixed_by_candidate": 1,
+    "close_superseded": 1,
+    "keep_related": 5,
+    "keep_independent": 3,
+    "keep_closed": 4
+  },
+  "action_status_counts": {
+    "planned": 11,
+    "skipped": 4
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 2
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#59758",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#72659",
+      "title": null,
+      "idempotency_key": "pcw-ghcrawl-156602-close-fixed-by-72659-59758-2026-04-27",
+      "reason": "target changed since worker review",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": "closed",
+      "live_updated_at": "2026-04-27T10:02:51Z"
+    },
+    {
+      "target": "#72305",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#72659",
+      "title": null,
+      "idempotency_key": "pcw-ghcrawl-156602-close-superseded-72305-by-72659-2026-04-27",
+      "reason": "closure requires canonical or duplicate_of",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
