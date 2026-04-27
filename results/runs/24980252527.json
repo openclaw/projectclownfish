@@ -1,0 +1,187 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156619-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24980252527",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24980252527",
+  "head_sha": "40a5c7418ff46bf3e60da63dc6e2345c96900f78",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156619-autonomous-smoke.md",
+  "published_at": "2026-04-27T06:39:19.037Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/26517",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/26517",
+  "canonical_pr": null,
+  "summary": "Hydrated state shows the hinted canonical #51793 is already closed. The best live canonical is #26517, which a maintainer/member comment explicitly kept open for the remaining WebChat isolated labeled session/create/manage work. No security-sensitive items were detected. No merge is recommended because all candidate PRs are closed; #52042 and #52746 are useful historical implementations but uneditable/closed, and #52746 also has failing checks and unresolved review-bot blockers. Because require_fix_before_close is true and no replacement fix PR has landed in this run, clear duplicate closeouts are blocked pending the canonical fix path while related broader UX requests remain open.",
+  "actions": [
+    {
+      "target": "#26517",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#26517",
+      "candidate_fix": null,
+      "reason": "#26517 is the best live canonical for the remaining WebChat multi-session create/manage work."
+    },
+    {
+      "target": "#50404",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#26517",
+      "candidate_fix": null,
+      "reason": "Related to the canonical WebChat multi-session work, but broader than the narrow create/switch/labeled-session gap."
+    },
+    {
+      "target": "#51793",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#26517",
+      "candidate_fix": null,
+      "reason": "Already closed as duplicate/superseded historical evidence; no mutation is allowed."
+    },
+    {
+      "target": "#52042",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#26517",
+      "candidate_fix": null,
+      "reason": "Closed unmerged contributor PR is useful source evidence for a replacement fix artifact, not a merge or close target."
+    },
+    {
+      "target": "#52266",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#26517",
+      "candidate_fix": null,
+      "reason": "Related broader implementation proposal; keep open until the canonical fix path is explicit."
+    },
+    {
+      "target": "#52746",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#26517",
+      "candidate_fix": null,
+      "reason": "Closed unmerged contributor PR is too risky to merge and should only inform a credited replacement plan."
+    },
+    {
+      "target": "#57210",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#26517",
+      "candidate_fix": null,
+      "reason": "Blocked on the canonical fix path for #26517 or a replacement fix PR; do not close before that fix exists."
+    },
+    {
+      "target": "#60741",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#26517",
+      "candidate_fix": null,
+      "reason": "Blocked on the canonical fix path for #26517 or a replacement fix PR; do not close before that fix exists."
+    },
+    {
+      "target": "#70783",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#26517",
+      "candidate_fix": null,
+      "reason": "Related UX proposal with unique tab-management requirements; keep open rather than duplicate-close in this cluster."
+    },
+    {
+      "target": "cluster:ghcrawl-156619-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#26517",
+      "candidate_fix": null,
+      "reason": "A narrow credited replacement fix is needed before duplicate closeout can proceed."
+    },
+    {
+      "target": "cluster:ghcrawl-156619-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#26517",
+      "candidate_fix": null,
+      "reason": "The cluster has a real canonical gap with useful closed source PR evidence but no landable canonical PR."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 3,
+    "keep_closed": 3,
+    "close_duplicate": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "skipped": 3,
+    "blocked": 2
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {
+    "skipped": 2
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "replace_uneditable_branch",
+      "reason": "fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#57210",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#26517",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-156619-autonomous-smoke:#57210:close_duplicate:blocked:2026-04-27",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#60741",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#26517",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-156619-autonomous-smoke:#60741:close_duplicate:blocked:2026-04-27",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
