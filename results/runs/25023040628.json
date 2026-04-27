@@ -1,0 +1,171 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156667-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25023040628",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25023040628",
+  "head_sha": "416b225d73239870f6704a4eeb6d95f026ba00e9",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156667-autonomous-smoke.md",
+  "published_at": "2026-04-27T22:34:59.849Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72408",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72408",
+  "summary": "Hydrated state shows the original representative #46721 is closed and was explicitly superseded by merged replacement PR #72408. The local-timezone filename bug in #46703 is covered by merged #72408, while the other open PRs are related but different session-memory subproblems and are not safe duplicate/merge targets in this cluster. Security-sensitive hydrated refs are quarantined only for central security handling.",
+  "actions": [
+    {
+      "target": "#38478",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical linked context only; already closed."
+    },
+    {
+      "target": "#40418",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Same session-memory area but different product scope from the local-timezone filename fix."
+    },
+    {
+      "target": "#44060",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical related PR only; already closed."
+    },
+    {
+      "target": "#44123",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Useful related contributor PR, but not duplicate of the local-timezone canonical path and not merge-ready."
+    },
+    {
+      "target": "#45607",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical related mismatch issue; already closed."
+    },
+    {
+      "target": "#46687",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical related mismatch issue; already closed."
+    },
+    {
+      "target": "#46703",
+      "action": "close_fixed_by_candidate",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#72408",
+      "reason": "require_fix_before_close is satisfied by already-merged hydrated candidate #72408."
+    },
+    {
+      "target": "#46721",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#72408",
+      "reason": "Already closed source PR superseded by merged replacement #72408."
+    },
+    {
+      "target": "#50584",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related session-memory feature work, but too broad and distinct from this cluster's fixed local-timezone bug."
+    },
+    {
+      "target": "#61384",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical related mismatch issue; already closed."
+    },
+    {
+      "target": "#62298",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related but distinct contributor PR; failing checks and unresolved bot findings block merge or fixed-by-candidate closeout."
+    },
+    {
+      "target": "#67545",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine exact security-sensitive item for central OpenClaw security handling."
+    },
+    {
+      "target": "#72408",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine exact security-sensitive item for central OpenClaw security handling while using only non-security closeout on unrelated target #46703."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 6,
+    "keep_related": 4,
+    "close_fixed_by_candidate": 1,
+    "route_security": 2
+  },
+  "action_status_counts": {
+    "skipped": 6,
+    "planned": 7
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#46703",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#72408",
+      "title": null,
+      "idempotency_key": "ghcrawl-156667-autonomous-smoke:#46703:close_fixed_by_candidate:#72408",
+      "reason": "target is not listed in job candidates",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
