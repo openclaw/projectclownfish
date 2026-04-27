@@ -1,0 +1,143 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156648-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25023016010",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25023016010",
+  "head_sha": "416b225d73239870f6704a4eeb6d95f026ba00e9",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156648-autonomous-smoke.md",
+  "published_at": "2026-04-27T22:42:25.780Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/54155",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/54155",
+  "canonical_pr": null,
+  "summary": "Hydrated preflight shows #54155 is still the only open seed ref and remains the best canonical issue for the broader long-running Gateway RSS/session-accumulation family. Seed refs #57699, #62717, #66886, #69977, and #70717 are already closed, so no close actions are valid for them. Open linked #45438 is related but narrower structuredClone/session-cache work, not a duplicate to close under this cluster. No merge is available; a narrow fix artifact is needed for the remaining unproven Gateway RSS/session-cache leak path.",
+  "actions": [
+    {
+      "target": "#54155",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#54155",
+      "candidate_fix": null,
+      "reason": "Best live canonical issue for the unresolved broad Gateway RSS/session-accumulation problem."
+    },
+    {
+      "target": "#45438",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#54155",
+      "candidate_fix": null,
+      "reason": "Related subfamily with unique structuredClone/session-cache evidence; not safe to close as a duplicate of the broader canonical issue."
+    },
+    {
+      "target": "#57699",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#54155",
+      "candidate_fix": null,
+      "reason": "Already closed; closure actions are invalid for closed refs."
+    },
+    {
+      "target": "#62717",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#54155",
+      "candidate_fix": null,
+      "reason": "Already closed; closure actions are invalid for closed refs."
+    },
+    {
+      "target": "#66886",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54155",
+      "candidate_fix": null,
+      "reason": "Already closed; treat as historical superseded/related evidence only."
+    },
+    {
+      "target": "#69977",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#54155",
+      "candidate_fix": null,
+      "reason": "Already closed; no further ProjectClownfish closure action is valid."
+    },
+    {
+      "target": "#70717",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#54155",
+      "candidate_fix": null,
+      "reason": "Already closed as implemented by current main; no closure or merge action is valid."
+    },
+    {
+      "target": "#70730",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54155",
+      "candidate_fix": null,
+      "reason": "Closed unmerged PR is superseded by current main and has unresolved review-bot concerns; it is not a merge candidate."
+    },
+    {
+      "target": "cluster:ghcrawl-156648-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#54155",
+      "candidate_fix": null,
+      "reason": "A narrow fix path is needed for the remaining unproven Gateway RSS/session-cache leak family."
+    },
+    {
+      "target": "cluster:ghcrawl-156648-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#54155",
+      "candidate_fix": null,
+      "reason": "Executor should create a narrow credited fix PR for the remaining issue family."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 1,
+    "keep_closed": 6,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "skipped": 6
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "new_fix_pr",
+      "reason": "Codex /review failed: structured output was not written to replacement-codex-review-2.json; stdout={\"type\":\"thread.started\",\"thread_id\":\"019dd11a-35e4-7b22-97a0-deffe9a91766\"} {\"type\":\"turn.started\"} {\"type\":\"item.started\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/bash -lc \\\"sed -n '1,220p' .agents/skills/openclaw-pr-maintainer/SKILL.md\\\"\",\"aggregated_output\":\"\",\"exit_code\":null,\"status\":\"in_progress\"}} {\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/bash -lc \\\"sed -n '1,220p' .agents/skills/openclaw-pr-maintainer/SKILL.md\\\"\",\"aggregated_output\":\"---\\nname: openclaw-pr-maintainer\\ndescription: Review, triage, close, label, comment on, or land OpenClaw PRs/issues with maintainer evidence checks.\\n---\\n\\n# OpenClaw PR Maintainer\\n\\nUse this skill for maintainer-facing GitHub workflow, not for ordinary code changes.\\n\\n## ...; stderr=empty",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}
