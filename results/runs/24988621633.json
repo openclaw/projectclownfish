@@ -1,0 +1,245 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156598-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24988621633",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24988621633",
+  "head_sha": "68766d5583c05ab6d63e38d07f560c3e32e3781a",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156598-autonomous-smoke.md",
+  "published_at": "2026-04-27T10:16:54.728Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72614",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72614",
+  "summary": "Canonical drift resolved: closed representative #68397 is obsolete; calibrated open ProjectClownfish PR #72614 is the canonical repair path for the sessions_spawn ACP-only field tolerance bug but is not merge-ready because merge proof is missing and the Aisle security review finding must be addressed or proven non-actionable before merge. Open issue duplicates #56326, #61724, and #63120 are blocked from closeout until #72614 lands. Security-sensitive #63121 is quarantined only for central security handling. Provider schema-stripping PR #66720 is related but not a duplicate of the #72614 runtime-tolerance fix.",
+  "actions": [
+    {
+      "target": "#40102",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#56342",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#58686",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#64787",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#65282",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#68397",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Closed representative is obsolete; #72614 is the current canonical PR."
+    },
+    {
+      "target": "#69170",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#56326",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Closeout is blocked on the canonical fix path #72614 landing."
+    },
+    {
+      "target": "#61724",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Closeout is blocked on the canonical fix path #72614 landing."
+    },
+    {
+      "target": "#63120",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Closeout is blocked on the canonical fix path #72614 landing."
+    },
+    {
+      "target": "#63121",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine exact security-sensitive ref for central OpenClaw security handling."
+    },
+    {
+      "target": "#66720",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72614",
+      "candidate_fix": null,
+      "reason": "Related provider schema compatibility work, not a duplicate of the #72614 runtime-tolerance bug."
+    },
+    {
+      "target": "#72614",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Canonical PR is repairable but not merge-ready; executor should repair/review/validate the existing ProjectClownfish branch before any merge or duplicate closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-156598-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "reason": "Build an executable repair artifact for the canonical PR branch."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 7,
+    "close_fixed_by_candidate": 3,
+    "route_security": 1,
+    "keep_related": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 7,
+    "blocked": 3,
+    "planned": 4
+  },
+  "fix_counts": {
+    "pushed": 1
+  },
+  "apply_counts": {
+    "skipped": 3,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "pushed",
+      "target": "https://github.com/openclaw/openclaw/pull/72614",
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#56326",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "title": null,
+      "idempotency_key": "ghcrawl-156598-autonomous-smoke:#56326:close_fixed_by_candidate:#72614",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#61724",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "title": null,
+      "idempotency_key": "ghcrawl-156598-autonomous-smoke:#61724:close_fixed_by_candidate:#72614",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#63120",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72614",
+      "candidate_fix": "#72614",
+      "title": null,
+      "idempotency_key": "ghcrawl-156598-autonomous-smoke:#63120:close_fixed_by_candidate:#72614",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#72614",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(sessions_spawn): tolerate ACP-only fields for subagent runtime",
+      "idempotency_key": null,
+      "reason": "merge state status is UNSTABLE",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
