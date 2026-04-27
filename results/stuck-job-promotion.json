@@ -3,9 +3,9 @@
   "repo": "openclaw",
   "inbox_dir": "jobs/openclaw/inbox",
   "stuck_dir": "jobs/openclaw/outbox/stuck",
-  "generated_at": "2026-04-27T05:25:55.895Z",
+  "generated_at": "2026-04-27T06:32:22.377Z",
   "totals": {
-    "available": 461,
+    "available": 431,
     "selected": 30,
     "promoted": 30,
     "planned": 0,
@@ -13,212 +13,212 @@
   },
   "jobs": [
     {
-      "job": "ghcrawl-166007-agentic-merge.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-166007-agentic-merge.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-166007-agentic-merge.md",
+      "job": "ghcrawl-156599-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156599-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156599-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-207028-agentic-merge.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-207028-agentic-merge.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-207028-agentic-merge.md",
+      "job": "ghcrawl-156600-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156600-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156600-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-207030-agentic-merge.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-207030-agentic-merge.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-207030-agentic-merge.md",
+      "job": "ghcrawl-156601-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156601-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156601-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "low-signal-pr-sweep-20260425T2346-01.md",
-      "source": "jobs/openclaw/outbox/stuck/low-signal-pr-sweep-20260425T2346-01.md",
-      "destination": "jobs/openclaw/inbox/low-signal-pr-sweep-20260425T2346-01.md",
+      "job": "ghcrawl-156602-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156602-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156602-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "low-signal-pr-sweep-20260425T2355-01.md",
-      "source": "jobs/openclaw/outbox/stuck/low-signal-pr-sweep-20260425T2355-01.md",
-      "destination": "jobs/openclaw/inbox/low-signal-pr-sweep-20260425T2355-01.md",
+      "job": "ghcrawl-156604-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156604-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156604-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "low-signal-pr-sweep-20260425T2355-02.md",
-      "source": "jobs/openclaw/outbox/stuck/low-signal-pr-sweep-20260425T2355-02.md",
-      "destination": "jobs/openclaw/inbox/low-signal-pr-sweep-20260425T2355-02.md",
+      "job": "ghcrawl-156605-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156605-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156605-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "low-signal-pr-sweep-20260425T2355-03.md",
-      "source": "jobs/openclaw/outbox/stuck/low-signal-pr-sweep-20260425T2355-03.md",
-      "destination": "jobs/openclaw/inbox/low-signal-pr-sweep-20260425T2355-03.md",
+      "job": "ghcrawl-156606-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156606-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156606-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "low-signal-pr-sweep-20260425T2355-04.md",
-      "source": "jobs/openclaw/outbox/stuck/low-signal-pr-sweep-20260425T2355-04.md",
-      "destination": "jobs/openclaw/inbox/low-signal-pr-sweep-20260425T2355-04.md",
+      "job": "ghcrawl-156607-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156607-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156607-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-143797-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-143797-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-143797-autonomous-smoke.md",
+      "job": "ghcrawl-156608-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156608-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156608-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156576-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156576-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156576-autonomous-smoke.md",
+      "job": "ghcrawl-156610-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156610-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156610-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156577-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156577-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156577-autonomous-smoke.md",
+      "job": "ghcrawl-156611-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156611-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156611-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156578-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156578-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156578-autonomous-smoke.md",
+      "job": "ghcrawl-156613-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156613-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156613-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156579-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156579-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156579-autonomous-smoke.md",
+      "job": "ghcrawl-156614-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156614-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156614-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156580-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156580-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156580-autonomous-smoke.md",
+      "job": "ghcrawl-156615-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156615-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156615-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156581-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156581-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156581-autonomous-smoke.md",
+      "job": "ghcrawl-156616-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156616-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156616-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156582-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156582-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156582-autonomous-smoke.md",
+      "job": "ghcrawl-156617-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156617-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156617-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156584-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156584-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156584-autonomous-smoke.md",
+      "job": "ghcrawl-156619-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156619-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156619-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156585-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156585-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156585-autonomous-smoke.md",
+      "job": "ghcrawl-156620-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156620-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156620-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156586-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156586-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156586-autonomous-smoke.md",
+      "job": "ghcrawl-156621-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156621-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156621-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156587-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156587-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156587-autonomous-smoke.md",
+      "job": "ghcrawl-156622-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156622-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156622-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156588-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156588-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156588-autonomous-smoke.md",
+      "job": "ghcrawl-156623-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156623-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156623-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156589-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156589-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156589-autonomous-smoke.md",
+      "job": "ghcrawl-156624-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156624-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156624-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156590-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156590-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156590-autonomous-smoke.md",
+      "job": "ghcrawl-156625-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156625-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156625-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156591-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156591-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156591-autonomous-smoke.md",
+      "job": "ghcrawl-156626-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156626-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156626-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156592-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156592-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156592-autonomous-smoke.md",
+      "job": "ghcrawl-156627-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156627-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156627-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156593-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156593-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156593-autonomous-smoke.md",
+      "job": "ghcrawl-156628-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156628-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156628-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156594-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156594-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156594-autonomous-smoke.md",
+      "job": "ghcrawl-156629-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156629-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156629-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156595-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156595-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156595-autonomous-smoke.md",
+      "job": "ghcrawl-156630-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156630-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156630-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156597-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156597-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156597-autonomous-smoke.md",
+      "job": "ghcrawl-156631-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156631-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156631-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     },
     {
-      "job": "ghcrawl-156598-autonomous-smoke.md",
-      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156598-autonomous-smoke.md",
-      "destination": "jobs/openclaw/inbox/ghcrawl-156598-autonomous-smoke.md",
+      "job": "ghcrawl-156632-autonomous-smoke.md",
+      "source": "jobs/openclaw/outbox/stuck/ghcrawl-156632-autonomous-smoke.md",
+      "destination": "jobs/openclaw/inbox/ghcrawl-156632-autonomous-smoke.md",
       "status": "promoted",
       "reason": "moved to inbox"
     }
