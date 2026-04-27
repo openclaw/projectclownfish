@@ -1,0 +1,176 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156594-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24979996819",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979996819",
+  "head_sha": "83a7148bc5de8d1cf6f53dc784229962ebfcf20a",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156594-autonomous-smoke.md",
+  "published_at": "2026-04-27T06:32:48.038Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/40352",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/40352",
+  "canonical_pr": null,
+  "summary": "Hydrated state shows the representative #40443 is already closed and was replaced by #72624, but #72624 is security-sensitive and must be quarantined. The non-security items split into at least two related bug families: #40352 for explicit Reload Config stale state and #39392 for agent-switch/model-selection drift. No close, merge, or post-merge close action is safe because no non-security canonical fix has landed.",
+  "actions": [
+    {
+      "target": "#40352",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": "Keep #40352 open as the explicit config reload canonical issue until a non-security fix path lands."
+    },
+    {
+      "target": "#39392",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": "Related Control UI stale model state, but distinct from the explicit Reload Config stale-state root cause in #40352."
+    },
+    {
+      "target": "#43013",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine exact security-sensitive PR to central OpenClaw security handling."
+    },
+    {
+      "target": "#52948",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Useful related candidate, but not merge-ready and not a duplicate close target."
+    },
+    {
+      "target": "#54724",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related but too broad and under-validated for merge; should remain open or become a narrower follow-up."
+    },
+    {
+      "target": "#72624",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine exact replacement PR to central OpenClaw security handling."
+    },
+    {
+      "target": "#40443",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#40441",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": "Already closed as superseded; no close action is valid."
+    },
+    {
+      "target": "#39401",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#39392",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#46275",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54724",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#70633",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#52948",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#13142",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#41344",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "cluster:ghcrawl-156594-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "blocked",
+      "classification": null,
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": "Implementation should be split or refreshed after central security handling for #72624; do not close issues before a non-security fix lands."
+    },
+    {
+      "target": "cluster:ghcrawl-156594-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "blocked",
+      "classification": null,
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": "Blocked on scoped maintainer/security decision before ProjectClownfish opens or merges a replacement fix."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 3,
+    "route_security": 2,
+    "keep_closed": 7,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "skipped": 7,
+    "blocked": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [
+    "Decide whether to split this mixed cluster into narrower non-security follow-up jobs: #40352 explicit Reload Config stale state, and #39392/#54724 agent-switch/model-catalog selection stability. The existing replacement #72624 is security-sensitive and must first go through central OpenClaw security handling."
+  ],
+  "fix_actions": [],
+  "apply_actions": []
+}
