@@ -41,39 +41,39 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 27, 2026, 05:44 UTC
+Last dashboard update: Apr 27, 2026, 05:50 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 129 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 130 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 129 | 100% |
+| Latest clusters reviewed | 130 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 64 | 49.6% |
-| Needs-human clusters | 38 | 29.5% |
-| Latest successful clusters | 127 | 98.4% |
-| Latest failed clusters | 2 | 1.6% |
+| Clean completed clusters | 64 | 49.2% |
+| Needs-human clusters | 38 | 29.2% |
+| Latest successful clusters | 128 | 98.5% |
+| Latest failed clusters | 2 | 1.5% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 256 | audit |
-| Fix action attempts | 22 | audit |
+| Run attempts archived | 257 | audit |
+| Fix action attempts | 24 | audit |
 | Fix actions executed | 0 | 0.0% |
-| Fix actions failed | 6 | 27.3% |
-| Fix actions blocked | 5 | 22.7% |
-| Latest clusters with fix failures | 7 | 5.4% |
-| Distinct PRs touched | 575 | 100% |
+| Fix actions failed | 7 | 29.2% |
+| Fix actions blocked | 5 | 20.8% |
+| Latest clusters with fix failures | 8 | 6.2% |
+| Distinct PRs touched | 576 | 100% |
 | Open PRs tracked | 324 | 56.3% |
-| Closed unmerged PRs tracked | 212 | 36.9% |
-| Completed close actions | 22 | 10.5% |
-| Completed merge actions | 6 | 2.9% |
+| Closed unmerged PRs tracked | 213 | 37.0% |
+| Completed close actions | 22 | 10.4% |
+| Completed merge actions | 6 | 2.8% |
 | Duplicate closes | 22 | 100.0% |
 | Superseded closes | 0 | 0.0% |
 | Fixed-by-candidate closes | 0 | 0.0% |
 | Low-signal PR closes | 0 | 0.0% |
-| Blocked mutation attempts | 50 | 23.9% |
-| Skipped mutation attempts | 131 | 62.7% |
+| Blocked mutation attempts | 51 | 24.2% |
+| Skipped mutation attempts | 132 | 62.6% |
 
 ### Latest ProjectClownfish Closures
 

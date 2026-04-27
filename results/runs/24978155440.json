@@ -1,0 +1,193 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156594-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24978155440",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978155440",
+  "head_sha": "e8d437d9978c397d8d3fb39c23597d4e5c1d98bf",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156594-autonomous-smoke.md",
+  "published_at": "2026-04-27T05:50:06.728Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/40443",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/40352",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/40443",
+  "summary": "Classified the hydrated cluster without GitHub mutations. #40443 remains the canonical repair path for the explicit reload stale-config bug tracked by #40352, but it is not merge-ready because mergeability is unknown, no fresh Codex /review is present, and review-bot findings need verification on the latest head. #43013 is quarantined as security-sensitive. Agent-switch/page-load model-select work in #39392, #52948, and #54724 is related follow-up work rather than duplicate closeout for #40443.",
+  "actions": [
+    {
+      "target": "#39392",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#40443",
+      "candidate_fix": null,
+      "reason": "Same Control UI model-selection area, but a meaningfully different agent-switch root cause, so this should remain open as related follow-up work."
+    },
+    {
+      "target": "#40352",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#40443",
+      "candidate_fix": "#40443",
+      "reason": "Clear coverage by #40443, but closeout is blocked until the canonical fix path lands."
+    },
+    {
+      "target": "#40441",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#40443",
+      "candidate_fix": "#40443",
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#40443",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#40443",
+      "candidate_fix": "#40443",
+      "reason": "Best canonical path for #40352, but not merge-ready under ProjectClownfish merge policy."
+    },
+    {
+      "target": "#43013",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Scoped quarantine; continue unrelated non-security classification."
+    },
+    {
+      "target": "#46275",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#54724",
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#52948",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related selected-option/page-load subproblem; keep open for a separate review or repair path."
+    },
+    {
+      "target": "#54724",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related agent-switch/model-catalog subcluster; broad delta blocks autonomous merge in this pass."
+    },
+    {
+      "target": "#70633",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#52948",
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "cluster:ghcrawl-156594-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#40443",
+      "candidate_fix": "#40443",
+      "reason": "Repair the canonical contributor PR branch before any merge or issue closeout."
+    }
+  ],
+  "action_counts": {
+    "keep_related": 3,
+    "close_fixed_by_candidate": 1,
+    "keep_closed": 3,
+    "keep_canonical": 1,
+    "route_security": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "blocked": 1,
+    "skipped": 3
+  },
+  "fix_counts": {
+    "failed": 1,
+    "opened": 1
+  },
+  "apply_counts": {
+    "skipped": 1,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "failed",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": "validation command failed (pnpm check:changed): undefined ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL Command \"check:changed\" not found Did you mean \"pnpm check:docs\"?",
+      "title": null,
+      "url": null
+    },
+    {
+      "action": "open_fix_pr",
+      "status": "opened",
+      "target": null,
+      "pr": "https://github.com/openclaw/openclaw/pull/72624",
+      "branch": "clownfish/ghcrawl-156594-autonomous-smoke",
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": "https://github.com/openclaw/openclaw/pull/72624"
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#40352",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#40443",
+      "candidate_fix": "#40443",
+      "title": null,
+      "idempotency_key": "ghcrawl-156594-autonomous-smoke:#40352:close_fixed_by_candidate:blocked-on-40443:2026-04-27T051139Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#72624",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(ui): discard stale config state on explicit reload",
+      "idempotency_key": null,
+      "reason": "mergeable state is CONFLICTING",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
