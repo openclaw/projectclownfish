@@ -1,0 +1,359 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165995-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24977058676",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24977058676",
+  "head_sha": "50a0b51ad3e3cfffa74443fc81bf0c842f9747bf",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-165995-agentic-merge.md",
+  "published_at": "2026-04-27T04:51:05.206Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/63120",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/63120",
+  "canonical_pr": null,
+  "summary": "Hydrated preflight shows the original representative #59390 is already closed. The best live non-security canonical issue is #63120 for the sessions_spawn runtime=subagent ACP-only streamTo failure. Open duplicates are blocked from closure by require_fix_before_close until a non-quarantined fix PR is opened or merged. Security-sensitive PRs #63121 and #72331 are routed to central security handling only. A narrow credited replacement fix artifact is needed because useful prior PRs are closed/uneditable and the only open replacement PR is quarantined.",
+  "actions": [
+    {
+      "target": "#63120",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Best live non-security canonical issue for the exact sessions_spawn runtime=subagent plus ACP-only streamTo failure."
+    },
+    {
+      "target": "#43556",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Duplicate close is blocked on the canonical fix path or replacement fix PR."
+    },
+    {
+      "target": "#56326",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Duplicate close is blocked on the canonical fix path or replacement fix PR."
+    },
+    {
+      "target": "#61724",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Duplicate close is blocked on the canonical fix path or replacement fix PR."
+    },
+    {
+      "target": "#64714",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Duplicate close is blocked on the canonical fix path or replacement fix PR."
+    },
+    {
+      "target": "#67248",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Duplicate close is blocked on the canonical fix path or replacement fix PR."
+    },
+    {
+      "target": "#59225",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Related schema-filtering feature request; not a true duplicate of the narrow streamTo execution failure."
+    },
+    {
+      "target": "#63121",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item must be routed to central OpenClaw security handling without ProjectClownfish mutation."
+    },
+    {
+      "target": "#72331",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item must be routed to central OpenClaw security handling without ProjectClownfish mutation."
+    },
+    {
+      "target": "cluster:ghcrawl-165995-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "No viable non-security canonical PR exists; a narrow credited replacement fix PR is needed before duplicate closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-165995-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Needed to unblock require_fix_before_close duplicate closeout with a non-quarantined ProjectClownfish fix path."
+    },
+    {
+      "target": "#47115",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Closed historical PR; no mutation."
+    },
+    {
+      "target": "#53016",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate; no mutation."
+    },
+    {
+      "target": "#53370",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate/superseded issue; no mutation."
+    },
+    {
+      "target": "#55483",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Closed historical PR; no mutation."
+    },
+    {
+      "target": "#56193",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate/superseded issue; no mutation."
+    },
+    {
+      "target": "#59390",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Representative is closed; no mutation."
+    },
+    {
+      "target": "#60965",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate/superseded issue; no mutation."
+    },
+    {
+      "target": "#65282",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Closed useful source PR for replacement credit; no mutation."
+    },
+    {
+      "target": "#66719",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Closed related issue; no mutation."
+    },
+    {
+      "target": "#68275",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate/superseded issue; no mutation."
+    },
+    {
+      "target": "#68397",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Closed useful source PR for replacement credit; no mutation."
+    },
+    {
+      "target": "#69166",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate/superseded issue; no mutation."
+    },
+    {
+      "target": "#69170",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Closed source PR; no mutation."
+    },
+    {
+      "target": "#69203",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "reason": "Closed source PR; no mutation."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_duplicate": 5,
+    "keep_related": 1,
+    "route_security": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_closed": 14
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "blocked": 5,
+    "skipped": 14
+  },
+  "fix_counts": {
+    "skipped": 1
+  },
+  "apply_counts": {
+    "skipped": 5
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "skipped",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "replace_uneditable_branch",
+      "reason": "fix artifact scope itself contains security-sensitive signals",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#43556",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-165995-agentic-merge:#43556:close_duplicate_blocked_on_fix:v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#56326",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-165995-agentic-merge:#56326:close_duplicate_blocked_on_fix:v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#61724",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-165995-agentic-merge:#61724:close_duplicate_blocked_on_fix:v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#64714",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-165995-agentic-merge:#64714:close_duplicate_blocked_on_fix:v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#67248",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63120",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-165995-agentic-merge:#67248:close_duplicate_blocked_on_fix:v1",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
