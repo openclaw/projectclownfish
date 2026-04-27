@@ -197,7 +197,13 @@ function applyCloseAction({
     const lowSignalBlock = validateLowSignalIntent({ job, action, actionName, classification });
     if (lowSignalBlock) return { ...base, status: "blocked", reason: lowSignalBlock };
   }
-  if ((classification === "duplicate" || classification === "superseded") && !canonical) {
+  const explicitSupersededByCandidate =
+    actionName === "close_superseded" &&
+    classification === "superseded" &&
+    !canonical &&
+    candidateFix &&
+    maintainerCloseRefs.has(target);
+  if ((classification === "duplicate" || classification === "superseded") && !canonical && !explicitSupersededByCandidate) {
     return { ...base, status: "blocked", reason: "closure requires canonical or duplicate_of" };
   }
   const isPostMergeFixedClose = actionName === "post_merge_close" && classification === "fixed_by_candidate";
@@ -210,7 +216,7 @@ function applyCloseAction({
   if (candidateFix && !allowedRefs.has(candidateFix) && !isPostMergeFixedClose) {
     return { ...base, status: "blocked", reason: "candidate fix is not listed in job refs" };
   }
-  if (actionName === "post_merge_close") {
+  if (actionName === "post_merge_close" || explicitSupersededByCandidate) {
     const candidateBlock = validateMergedCandidateFix(result.repo, candidateFix);
     if (candidateBlock) return { ...base, status: "blocked", reason: candidateBlock };
   }
@@ -663,6 +669,10 @@ function renderCloseComment({ action, classification, result, target, live }) {
   } else if (classification === "superseded" && canonical) {
     lines.push(
       `This is superseded by #${canonical}. I'm keeping that thread as the canonical path so the useful context and contributor credit stay visible.`,
+    );
+  } else if (classification === "superseded" && candidateFix) {
+    lines.push(
+      `This is superseded by landed fix #${candidateFix}. I'm closing this older overlap so validation and follow-up stay attached to the shipped path.`,
     );
   } else if (classification === "fixed_by_candidate" && candidateFix) {
     lines.push(
