@@ -1,0 +1,245 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-143797-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24978131891",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978131891",
+  "head_sha": "e8d437d9978c397d8d3fb39c23597d4e5c1d98bf",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-143797-autonomous-smoke.md",
+  "published_at": "2026-04-27T05:31:54.318Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/62762",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/62762",
+  "canonical_pr": null,
+  "summary": "Classified the hydrated cluster without mutating GitHub. The closed representative #45560 is obsolete as an open canonical; the current open canonical for the still-active gateway probe/1006 false-negative family is #62762. One direct duplicate close is safe for #48360 against #62762. Other open items remain related or independent because they carry distinct scope, stale-but-not-proven-fixed browser behavior, or an unrelated Google Chat PR. Security-sensitive hydrated refs are routed only to central security handling.",
+  "actions": [
+    {
+      "target": "#62762",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#62762",
+      "candidate_fix": null,
+      "reason": "Use #62762 as the surviving open canonical for the still-reproducing gateway probe/1006 family."
+    },
+    {
+      "target": "#48360",
+      "action": "close_duplicate",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#62762",
+      "candidate_fix": null,
+      "reason": "Direct duplicate of the still-open #62762 canonical issue."
+    },
+    {
+      "target": "#51469",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#62762",
+      "candidate_fix": null,
+      "reason": "Related gateway handshake timeout issue, not a direct duplicate suitable for autonomous closure in this smoke pass."
+    },
+    {
+      "target": "#52336",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#62762",
+      "candidate_fix": null,
+      "reason": "Related gateway-close symptom but unique browser automation scope and maintainer explicitly kept it open pending fresh repro."
+    },
+    {
+      "target": "#68944",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#62762",
+      "candidate_fix": null,
+      "reason": "Keep open as related until the current-main fix path for this exact hang is hydrated or the reporter confirms resolution."
+    },
+    {
+      "target": "#68614",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent linked PR; do not merge or close as part of this gateway handshake cluster."
+    },
+    {
+      "target": "#61095",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#62762",
+      "candidate_fix": null,
+      "reason": "Related gateway CLI failure family, but distinct exec-env root cause."
+    },
+    {
+      "target": "#45560",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#62762",
+      "candidate_fix": null,
+      "reason": "Closed historical representative; do not emit close actions for already-closed refs."
+    },
+    {
+      "target": "#45222",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#62762",
+      "candidate_fix": null,
+      "reason": "Already closed; no worker close action allowed."
+    },
+    {
+      "target": "#46008",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#62762",
+      "candidate_fix": null,
+      "reason": "Already closed; no worker close action allowed."
+    },
+    {
+      "target": "#51357",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#62762",
+      "candidate_fix": null,
+      "reason": "Already closed as superseded by #62762; no worker close action allowed."
+    },
+    {
+      "target": "#51679",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#62762",
+      "candidate_fix": null,
+      "reason": "Already closed; no worker close action allowed."
+    },
+    {
+      "target": "#61554",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#62762",
+      "candidate_fix": null,
+      "reason": "Already closed; no worker close action allowed."
+    },
+    {
+      "target": "#67985",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#62762",
+      "candidate_fix": null,
+      "reason": "Already closed; no worker close action allowed."
+    },
+    {
+      "target": "#68642",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#62762",
+      "candidate_fix": null,
+      "reason": "Already closed; no worker close action allowed."
+    },
+    {
+      "target": "#44089",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine security-sensitive ref; do not mutate through ProjectClownfish."
+    },
+    {
+      "target": "#44714",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine security-sensitive ref; do not mutate through ProjectClownfish."
+    },
+    {
+      "target": "#44962",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine security-sensitive ref; do not mutate through ProjectClownfish."
+    },
+    {
+      "target": "#45590",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine security-sensitive ref; do not mutate through ProjectClownfish."
+    },
+    {
+      "target": "#47265",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine security-sensitive ref; do not mutate through ProjectClownfish."
+    },
+    {
+      "target": "#61127",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine security-sensitive ref; do not mutate through ProjectClownfish."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_duplicate": 1,
+    "keep_related": 4,
+    "keep_independent": 1,
+    "keep_closed": 8,
+    "route_security": 6
+  },
+  "action_status_counts": {
+    "planned": 13,
+    "skipped": 8
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#48360",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#62762",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-143797-autonomous-smoke:close_duplicate:48360:dup-62762",
+      "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}

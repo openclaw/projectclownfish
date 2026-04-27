@@ -41,39 +41,39 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 27, 2026, 05:31 UTC
+Last dashboard update: Apr 27, 2026, 05:32 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 115 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 116 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 115 | 100% |
+| Latest clusters reviewed | 116 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 61 | 53.0% |
-| Needs-human clusters | 32 | 27.8% |
-| Latest successful clusters | 114 | 99.1% |
+| Clean completed clusters | 61 | 52.6% |
+| Needs-human clusters | 32 | 27.6% |
+| Latest successful clusters | 115 | 99.1% |
 | Latest failed clusters | 1 | 0.9% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 240 | audit |
+| Run attempts archived | 241 | audit |
 | Fix action attempts | 16 | audit |
 | Fix actions executed | 0 | 0.0% |
 | Fix actions failed | 5 | 31.3% |
 | Fix actions blocked | 5 | 31.3% |
 | Latest clusters with fix failures | 6 | 5.2% |
-| Distinct PRs touched | 515 | 100% |
-| Open PRs tracked | 295 | 57.3% |
-| Closed unmerged PRs tracked | 186 | 36.1% |
-| Completed close actions | 22 | 11.2% |
+| Distinct PRs touched | 520 | 100% |
+| Open PRs tracked | 296 | 56.9% |
+| Closed unmerged PRs tracked | 189 | 36.3% |
+| Completed close actions | 22 | 11.1% |
 | Completed merge actions | 4 | 2.0% |
 | Duplicate closes | 22 | 100.0% |
 | Superseded closes | 0 | 0.0% |
 | Fixed-by-candidate closes | 0 | 0.0% |
 | Low-signal PR closes | 0 | 0.0% |
-| Blocked mutation attempts | 44 | 22.3% |
-| Skipped mutation attempts | 127 | 64.5% |
+| Blocked mutation attempts | 45 | 22.7% |
+| Skipped mutation attempts | 127 | 64.1% |
 
 ### Latest ProjectClownfish Closures
 
