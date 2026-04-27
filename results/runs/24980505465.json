@@ -1,0 +1,192 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156628-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24980505465",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24980505465",
+  "head_sha": "c6da0a7fcbc9623e625f7c12d5e31f91829491bd",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156628-autonomous-smoke.md",
+  "published_at": "2026-04-27T06:46:45.664Z",
+  "canonical": "https://github.com/openclaw/openclaw/commit/ca67762b8887a4c97cefe7d434b6d3b539d47242",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/67889",
+  "canonical_pr": null,
+  "summary": "Hydrated artifact shows the timeout family is already fixed on current main by commit ca67762b8887a4c97cefe7d434b6d3b539d47242, recorded in the #67889 maintainer closeout. Security-sensitive refs are quarantined only for those exact items. Non-security open timeout reports/PRs can be closed as fixed or superseded by current main; unrelated already-closed refs remain skipped historical context.",
+  "actions": [
+    {
+      "target": "#48625",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item is out of ProjectClownfish cleanup scope."
+    },
+    {
+      "target": "#54494",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical linked issue; no mutation allowed."
+    },
+    {
+      "target": "#54495",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed superseded contributor PR; no mutation allowed."
+    },
+    {
+      "target": "#56419",
+      "action": "close_fixed_by_candidate",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#67889",
+      "candidate_fix": null,
+      "reason": "Current main contains the fix for the user-visible hardcoded image-tool timeout reported here."
+    },
+    {
+      "target": "#56454",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#67889",
+      "candidate_fix": null,
+      "reason": "Useful contributor PR is superseded by a landed current-main fix with a different accepted config contract; credit is preserved in the close comment."
+    },
+    {
+      "target": "#57215",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed independent linked context; no mutation allowed."
+    },
+    {
+      "target": "#57223",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed independent PR; no mutation allowed."
+    },
+    {
+      "target": "#62944",
+      "action": "close_fixed_by_candidate",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#67889",
+      "candidate_fix": null,
+      "reason": "The exact hardcoded timeout bug is fixed on current main; closeout waits on the landed fix evidence rather than the quarantined PR."
+    },
+    {
+      "target": "#63046",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item is out of ProjectClownfish cleanup scope."
+    },
+    {
+      "target": "#63483",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item must not be closed, merged, commented on, or used as the ProjectClownfish canonical PR."
+    },
+    {
+      "target": "#67889",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed fixed issue; no mutation allowed."
+    },
+    {
+      "target": "#67929",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#67889",
+      "candidate_fix": null,
+      "reason": "Already closed superseded contributor PR; no mutation allowed."
+    }
+  ],
+  "action_counts": {
+    "route_security": 3,
+    "keep_closed": 6,
+    "close_fixed_by_candidate": 2,
+    "close_superseded": 1
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "skipped": 6
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 3
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#56419",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#67889",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-156628-autonomous-smoke:#56419:close_fixed_by_candidate:2026-04-10T06:37:05Z",
+      "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#56454",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#67889",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-156628-autonomous-smoke:#56454:close_superseded:2026-03-28T15:40:31Z",
+      "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#62944",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#67889",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-156628-autonomous-smoke:#62944:close_fixed_by_candidate:2026-04-27T06:09:15Z",
+      "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
