@@ -1,0 +1,238 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156579-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24979702593",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979702593",
+  "head_sha": "8806d2971f220668a5fdb92adf8595525bd6678b",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156579-autonomous-smoke.md",
+  "published_at": "2026-04-27T06:34:47.349Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/70185",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/70185",
+  "summary": "Hydrated preflight shows the original representative #67979 and prior maintainer PR #71479 are already closed. The best current canonical path is the open, narrow, maintainer-editable contributor PR #70185, but it is not merge-ready because two actionable Codex P1 review findings remain unresolved. Plan repair of #70185 and route the linked security-sensitive PR #72615 to central security handling. No GitHub mutations are executed by this worker.",
+  "actions": [
+    {
+      "target": "#65722",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70185",
+      "candidate_fix": "#70185",
+      "reason": "Already closed duplicate context; no mutation planned."
+    },
+    {
+      "target": "#65976",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70185",
+      "candidate_fix": "#70185",
+      "reason": "Already closed duplicate context; no mutation planned."
+    },
+    {
+      "target": "#66082",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70185",
+      "candidate_fix": "#70185",
+      "reason": "Already closed duplicate context; no mutation planned."
+    },
+    {
+      "target": "#67979",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#70185",
+      "candidate_fix": "#70185",
+      "reason": "Canonical hint is obsolete because the issue is already closed."
+    },
+    {
+      "target": "#68371",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#70185",
+      "candidate_fix": "#70185",
+      "reason": "Already closed related context; no mutation planned."
+    },
+    {
+      "target": "#68586",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#70185",
+      "candidate_fix": "#70185",
+      "reason": "Closed superseded contributor PR; no mutation planned."
+    },
+    {
+      "target": "#68828",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70185",
+      "candidate_fix": "#70185",
+      "reason": "Already closed duplicate context; no mutation planned."
+    },
+    {
+      "target": "#69019",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70185",
+      "candidate_fix": "#70185",
+      "reason": "Already closed duplicate context; no mutation planned."
+    },
+    {
+      "target": "#69952",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#70185",
+      "candidate_fix": "#70185",
+      "reason": "Closed superseded contributor PR; no mutation planned."
+    },
+    {
+      "target": "#70181",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70185",
+      "candidate_fix": "#70185",
+      "reason": "Already closed duplicate context; no mutation planned."
+    },
+    {
+      "target": "#70185",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#70185",
+      "candidate_fix": null,
+      "reason": "Best current canonical path is repairable but not merge-ready."
+    },
+    {
+      "target": "#70242",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70185",
+      "candidate_fix": "#70185",
+      "reason": "Already closed duplicate context; no mutation planned."
+    },
+    {
+      "target": "#70842",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#70185",
+      "candidate_fix": "#70185",
+      "reason": "Already closed duplicate context; no mutation planned."
+    },
+    {
+      "target": "#71479",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#70185",
+      "candidate_fix": "#70185",
+      "reason": "Prior canonical PR is closed and not viable for merge."
+    },
+    {
+      "target": "#67063",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#70185",
+      "candidate_fix": null,
+      "reason": "Keep open as related follow-up/alternative work; do not close or merge in this cluster."
+    },
+    {
+      "target": "#72615",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route exact security-sensitive linked PR to central OpenClaw security handling."
+    },
+    {
+      "target": "cluster:ghcrawl-156579-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#70185",
+      "candidate_fix": "#70185",
+      "reason": "Build a repair plan for the open canonical contributor PR rather than opening a replacement PR."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 13,
+    "fix_needed": 1,
+    "keep_related": 1,
+    "route_security": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 13,
+    "planned": 4
+  },
+  "fix_counts": {
+    "failed": 1,
+    "opened": 1
+  },
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "failed",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": "validation command failed (pnpm check:changed): node:internal/errors:985 const err = new Error(message); ^ Error: Command failed: git diff --name-only origin/main...HEAD fatal: origin/main...HEAD: no merge base at genericNodeError (node:internal/errors:985:15) at wrappedFn (node:internal/errors:539:14) at checkExecSyncError (node:child_process:925:11) at execFileSync (node:child_process:961:15) at runGitNameOnlyDiff (file:///tmp/projectclownfish-fix-Yg3Idu/openclaw-openclaw/scripts/changed-lanes.mjs:202:18) at listChangedPathsFromGit (file:///tmp/projectclownfish-fix-Yg3Idu/openclaw-openclaw/scripts/changed-lanes.mjs:187:22) at file:///tmp/projectclownfish-fix-Yg3Idu/openclaw-openclaw/scripts/check-changed.mjs:290:11 at ModuleJob.run (node:internal/modules/esm/module_job:413:25) at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26) at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) { status: 128, signal: null, output: [ null, '', 'fatal: origin/main...HEAD: no merge base\\n' ], pid: 6883, stdout: '', stderr: 'fatal: origin/main...HEAD: no merge base\\n' } Node.js v24.13.0",
+      "title": null,
+      "url": null
+    },
+    {
+      "action": "open_fix_pr",
+      "status": "opened",
+      "target": null,
+      "pr": "https://github.com/openclaw/openclaw/pull/72615",
+      "branch": "clownfish/ghcrawl-156579-autonomous-smoke",
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": "https://github.com/openclaw/openclaw/pull/72615"
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#72615",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(memory-wiki): route bridge CLI through gateway",
+      "idempotency_key": null,
+      "reason": "mergeable state is CONFLICTING",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}

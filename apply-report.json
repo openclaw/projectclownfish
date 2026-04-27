@@ -3921,10 +3921,10 @@
   },
   {
     "repo": "openclaw/openclaw",
-    "run_id": "24978137169",
-    "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978137169",
+    "run_id": "24979702593",
+    "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979702593",
     "cluster_id": "ghcrawl-156579-autonomous-smoke",
-    "published_at": "2026-04-27T05:39:58.393Z",
+    "published_at": "2026-04-27T06:34:47.349Z",
     "target": "#72615",
     "action": "merge_canonical",
     "status": "blocked",
