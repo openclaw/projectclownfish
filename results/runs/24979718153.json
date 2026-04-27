@@ -1,0 +1,235 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-199239-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24979718153",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979718153",
+  "head_sha": "8806d2971f220668a5fdb92adf8595525bd6678b",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-199239-agentic-merge.md",
+  "published_at": "2026-04-27T06:24:37.350Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72388",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/48388",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72388",
+  "summary": "Hydrated state shows the seed cluster is over-broad. The original representative #48578 is already closed and was replaced by hydrated PR #72388 for the Feishu filename mojibake family. Separate subfamilies remain for Feishu video file download fallback (#50164/#49967), Feishu upload ReadStream cleanup (#51196), and Feishu video thumbnails (#61807). No merge is recommended because the open canonical PRs lack clean merge preflight proof and some have failing checks or unresolved bot review comments.",
+  "actions": [
+    {
+      "target": "#48578",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72388",
+      "candidate_fix": "#72388",
+      "reason": "Already closed; closure actions are invalid for closed refs."
+    },
+    {
+      "target": "#72388",
+      "action": "keep_canonical",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#72388",
+      "candidate_fix": null,
+      "reason": "Canonical for the filename mojibake family, but merge is blocked until review-bot feedback, checks, and Codex /review preflight are clean."
+    },
+    {
+      "target": "#50435",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#72388",
+      "candidate_fix": "#72388",
+      "reason": "Replacement PR #72388 is the safer canonical path for the same filename mojibake fix and preserves contributor attribution in the closeout comment."
+    },
+    {
+      "target": "#59431",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#72388",
+      "candidate_fix": "#72388",
+      "reason": "Superseded by the narrower replacement PR #72388; closeout preserves contributor credit."
+    },
+    {
+      "target": "#48388",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72388",
+      "candidate_fix": "#72388",
+      "reason": "Blocked on the canonical fix path #72388 landing; require_fix_before_close prevents closing this open issue now."
+    },
+    {
+      "target": "#59409",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72388",
+      "candidate_fix": "#72388",
+      "reason": "Non-mutating classification only. The issue appears covered by #72388, but closure must wait until the canonical fix path lands and validates."
+    },
+    {
+      "target": "#50164",
+      "action": "keep_canonical",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#50164",
+      "candidate_fix": null,
+      "reason": "Best canonical PR for the video-download-502 subfamily, but merge is blocked by missing merge preflight and insufficient current checks."
+    },
+    {
+      "target": "#49967",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#50164",
+      "candidate_fix": "#50164",
+      "reason": "Blocked until the canonical #50164 fix path has clean validation; require_fix_before_close prevents closing this useful contributor PR now."
+    },
+    {
+      "target": "#49855",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#50164",
+      "candidate_fix": "#50164",
+      "reason": "Blocked on #50164 landing; require_fix_before_close prevents issue closure now."
+    },
+    {
+      "target": "#51196",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent Feishu media resource cleanup work, not a duplicate or superseded member of the filename/video-download subfamilies."
+    },
+    {
+      "target": "#61807",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related Feishu media work but a separate root cause and currently not merge-ready."
+    },
+    {
+      "target": "#38554",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed linked context only; no mutation target."
+    },
+    {
+      "target": "#38559",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed linked context only; no mutation target."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 3,
+    "keep_canonical": 2,
+    "close_superseded": 3,
+    "close_fixed_by_candidate": 2,
+    "keep_related": 2,
+    "keep_independent": 1
+  },
+  "action_status_counts": {
+    "skipped": 3,
+    "blocked": 5,
+    "planned": 5
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 2,
+    "skipped": 3
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#50435",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#72388",
+      "candidate_fix": "#72388",
+      "title": null,
+      "idempotency_key": "ghcrawl-199239-agentic-merge:close_superseded:50435:by-72388",
+      "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#59431",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#72388",
+      "candidate_fix": "#72388",
+      "title": null,
+      "idempotency_key": "ghcrawl-199239-agentic-merge:close_superseded:59431:by-72388",
+      "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#48388",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72388",
+      "candidate_fix": "#72388",
+      "title": null,
+      "idempotency_key": "ghcrawl-199239-agentic-merge:close_fixed_by_candidate:48388:by-72388",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#49967",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#50164",
+      "candidate_fix": "#50164",
+      "title": null,
+      "idempotency_key": "ghcrawl-199239-agentic-merge:close_superseded:49967:by-50164",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#49855",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#50164",
+      "candidate_fix": "#50164",
+      "title": null,
+      "idempotency_key": "ghcrawl-199239-agentic-merge:close_fixed_by_candidate:49855:by-50164",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
