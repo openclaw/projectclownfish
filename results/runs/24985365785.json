@@ -1,0 +1,175 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156588-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24985365785",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24985365785",
+  "head_sha": "8ffde172f9f9317fcea4f231a536be493c2f7f18",
+  "workflow_conclusion": "cancelled",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156588-autonomous-smoke.md",
+  "published_at": "2026-04-27T08:56:08.549Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/46871",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/46871",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72619",
+  "summary": "Hydrated state shows the original representative #50970 is already closed. The live canonical path for the nodes list/status mismatch is open issue #46871 plus the maintainer-calibrated repair PR #72619. #72619 is not merge-ready because it is dirty, has failing relevant checks, and still has actionable Aisle/Greptile review findings, so this result plans repair rather than merge or closeout. Related /model and WebChat items are kept out of the nodes closeout path.",
+  "actions": [
+    {
+      "target": "#46871",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "reason": "Best live canonical issue for the nodes list/status source-of-truth mismatch."
+    },
+    {
+      "target": "#72619",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "reason": "Calibrated canonical PR is useful but not merge-ready; autonomous mode should repair the existing ProjectClownfish PR branch, rerun review, validate, and only then merge."
+    },
+    {
+      "target": "cluster:ghcrawl-156588-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "reason": "Executable repair artifact is required because the calibrated canonical PR is not currently merge-ready."
+    },
+    {
+      "target": "#51051",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "reason": "Clearly superseded by the canonical fix path, but closeout is blocked until #72619 is repaired and validated."
+    },
+    {
+      "target": "#46895",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related command-parsing family, not a duplicate of the nodes canonical issue."
+    },
+    {
+      "target": "#47069",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related slash-command bug family should be handled separately from this nodes cluster."
+    },
+    {
+      "target": "#51270",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related command parsing work, not part of the canonical nodes fix."
+    },
+    {
+      "target": "#46894",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate WebUI slash-command issue family."
+    },
+    {
+      "target": "#49989",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent linked ref; leave open outside this cluster."
+    },
+    {
+      "target": "#50871",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "reason": "Closed historical contributor PR; evidence only."
+    },
+    {
+      "target": "#50970",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "reason": "Obsolete closed representative; canonical has moved to #46871/#72619."
+    },
+    {
+      "target": "#51027",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed and not the live canonical path."
+    },
+    {
+      "target": "#51053",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "reason": "Closed historical PR; no mutation."
+    },
+    {
+      "target": "#51536",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent closed context ref."
+    },
+    {
+      "target": "#65772",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "reason": "Closed source PR for the replacement path; evidence and credit source only."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "close_superseded": 1,
+    "keep_related": 4,
+    "keep_independent": 1,
+    "keep_closed": 6
+  },
+  "action_status_counts": {
+    "planned": 8,
+    "blocked": 1,
+    "skipped": 6
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}

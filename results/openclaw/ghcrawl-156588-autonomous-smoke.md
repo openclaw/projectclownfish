@@ -2,19 +2,19 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-156588-autonomous-smoke"
 mode: "autonomous"
-run_id: "24984731618"
-run_url: "https://github.com/openclaw/clownfish/actions/runs/24984731618"
-head_sha: "26374cdd2f49f5683850f92c1448eb8af1cfa65f"
-workflow_conclusion: "success"
+run_id: "24985365785"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/24985365785"
+head_sha: "8ffde172f9f9317fcea4f231a536be493c2f7f18"
+workflow_conclusion: "cancelled"
 result_status: "planned"
-published_at: "2026-04-27T08:38:28.440Z"
+published_at: "2026-04-27T08:56:08.549Z"
 canonical: "https://github.com/openclaw/openclaw/issues/46871"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/46871"
-canonical_pr: null
-actions_total: 21
+canonical_pr: "https://github.com/openclaw/openclaw/pull/72619"
+actions_total: 15
 fix_executed: 0
 fix_failed: 0
-fix_blocked: 1
+fix_blocked: 0
 apply_executed: 0
 apply_blocked: 0
 apply_skipped: 0
@@ -25,9 +25,9 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/clownfish/actions/runs/24984731618](https://github.com/openclaw/clownfish/actions/runs/24984731618)
+Run: [https://github.com/openclaw/clownfish/actions/runs/24985365785](https://github.com/openclaw/clownfish/actions/runs/24985365785)
 
-Workflow conclusion: success
+Workflow conclusion: cancelled
 
 Worker result: planned
 
@@ -35,16 +35,16 @@ Canonical: https://github.com/openclaw/openclaw/issues/46871
 
 ## Summary
 
-Hydrated state shows the original representative #50970 is already closed. The surviving non-security canonical path for the nodes list/status mismatch is the open issue #46871. The available open replacement PR #72619 is security-sensitive and must be quarantined, so no merge or fixed-by-candidate closeout is safe. A narrow credited replacement fix artifact is needed for the non-security nodes mismatch. Adjacent /model and WebChat/context refs are kept open or closed according to their own hydrated state, not folded into the nodes canonical path.
+Hydrated state shows the original representative #50970 is already closed. The live canonical path for the nodes list/status mismatch is open issue #46871 plus the maintainer-calibrated repair PR #72619. #72619 is not merge-ready because it is dirty, has failing relevant checks, and still has actionable Aisle/Greptile review findings, so this result plans repair rather than merge or closeout. Related /model and WebChat items are kept out of the nodes closeout path.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 21 |
+| Worker actions | 15 |
 | Fix executed | 0 |
 | Fix failed | 0 |
-| Fix blocked | 1 |
+| Fix blocked | 0 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
 | Apply skipped | 0 |
@@ -54,7 +54,7 @@ Hydrated state shows the original representative #50970 is already closed. The s
 
 | Action | Status | Target | Branch | Reason |
 | --- | --- | --- | --- | --- |
-| execute_fix | blocked |  |  | validation command failed (pnpm check:changed): [check:changed] lanes=core, coreTests, docs [check:changed] src/cli/nodes-cli/register.status.ts: core production [check:changed] src/cli/program.nodes-basic.e2e.test.ts: core test [check:changed] conflict markers [check:changed] typecheck core [check:changed] typecheck core tests [check:changed] summary 489ms ok conflict markers 992ms ok typecheck core 1.64s failed:2 typecheck core tests |
+| _None_ |  |  |  |  |
 
 ## Apply Actions
 
@@ -66,27 +66,21 @@ Hydrated state shows the original representative #50970 is already closed. The s
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #46871 | keep_canonical | planned | canonical | Best surviving non-security canonical for the nodes list/status source-of-truth family. |
-| #46894 | keep_related | planned | related | Adjacent /model slash-command family, not a duplicate of the nodes canonical. |
-| #46895 | keep_related | planned | related | Related to the open WebUI /model issue #46894 but not merge-ready and not part of the nodes canonical path. |
-| #47069 | keep_related | planned | related | Related /model subcluster; keep open for its own review/repair path. |
-| #49989 | keep_independent | planned | independent | Accidental linked context only; not in this cluster's canonical family. |
-| #50847 | keep_closed | skipped | duplicate | Already closed; closed refs are historical evidence only. |
-| #50871 | keep_closed | skipped | superseded | Already closed; preserve as historical credited evidence. |
-| #50970 | keep_closed | skipped | superseded | Representative is obsolete and already closed. |
-| #51027 | keep_closed | skipped | superseded | Already closed and too mixed to be a canonical path. |
-| #51051 | keep_related | planned | related | Related useful work but not viable for automated merge or closeout; replacement fix artifact is needed. |
-| #51053 | keep_closed | skipped | superseded | Already closed; historical evidence only. |
-| #51126 | keep_closed | skipped | fixed_by_candidate | Already closed and outside the nodes canonical path. |
-| #51270 | keep_related | planned | related | Related /model subcluster; keep open for separate triage. |
-| #51507 | keep_closed | skipped | fixed_by_candidate | Already closed unrelated context issue. |
-| #51536 | keep_closed | skipped | superseded | Already closed unrelated context PR. |
-| #65706 | keep_closed | skipped | duplicate | Already closed duplicate evidence. |
-| #65772 | keep_closed | skipped | superseded | Already closed and credited; cannot be re-opened or mutated by this worker. |
-| #71462 | keep_closed | skipped | fixed_by_candidate | Merged unrelated context PR; closed historical evidence only. |
-| #72619 | route_security | planned | security_sensitive | Quarantine exact security-sensitive PR to central OpenClaw security handling; do not comment, close, merge, or open a fix PR for this item. |
-| cluster:ghcrawl-156588-autonomous-smoke | fix_needed | planned | related | No non-security merge-ready canonical PR exists for the nodes mismatch; build a narrow credited replacement artifact. |
-| cluster:ghcrawl-156588-autonomous-smoke | build_fix_artifact | planned |  | Prepare a replacement fix plan for the executor while preserving contributor credit. |
+| #46871 | keep_canonical | planned | canonical | Best live canonical issue for the nodes list/status source-of-truth mismatch. |
+| #72619 | fix_needed | planned | canonical | Calibrated canonical PR is useful but not merge-ready; autonomous mode should repair the existing ProjectClownfish PR branch, rerun review, validate, and only then merge. |
+| cluster:ghcrawl-156588-autonomous-smoke | build_fix_artifact | planned |  | Executable repair artifact is required because the calibrated canonical PR is not currently merge-ready. |
+| #51051 | close_superseded | blocked | superseded | Clearly superseded by the canonical fix path, but closeout is blocked until #72619 is repaired and validated. |
+| #46895 | keep_related | planned | related | Related command-parsing family, not a duplicate of the nodes canonical issue. |
+| #47069 | keep_related | planned | related | Related slash-command bug family should be handled separately from this nodes cluster. |
+| #51270 | keep_related | planned | related | Related command parsing work, not part of the canonical nodes fix. |
+| #46894 | keep_related | planned | related | Separate WebUI slash-command issue family. |
+| #49989 | keep_independent | planned | independent | Independent linked ref; leave open outside this cluster. |
+| #50871 | keep_closed | skipped | superseded | Closed historical contributor PR; evidence only. |
+| #50970 | keep_closed | skipped | superseded | Obsolete closed representative; canonical has moved to #46871/#72619. |
+| #51027 | keep_closed | skipped | superseded | Already closed and not the live canonical path. |
+| #51053 | keep_closed | skipped | superseded | Closed historical PR; no mutation. |
+| #51536 | keep_closed | skipped | independent | Independent closed context ref. |
+| #65772 | keep_closed | skipped | superseded | Closed source PR for the replacement path; evidence and credit source only. |
 
 ## Needs Human
 
