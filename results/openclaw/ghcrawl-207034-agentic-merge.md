@@ -2,18 +2,21 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-207034-agentic-merge"
 mode: "autonomous"
-run_id: "24969052517"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24969052517"
-head_sha: "0e4564f671623de117a9abb4813b36a385aecd45"
+run_id: "24977046946"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/24977046946"
+head_sha: "50a0b51ad3e3cfffa74443fc81bf0c842f9747bf"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-26T23:11:47.435Z"
+published_at: "2026-04-27T04:54:01.146Z"
 canonical: "https://github.com/openclaw/openclaw/issues/51065"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/51065"
 canonical_pr: null
-actions_total: 10
+actions_total: 11
+fix_executed: 0
+fix_failed: 0
+fix_blocked: 1
 apply_executed: 0
-apply_blocked: 2
+apply_blocked: 0
 apply_skipped: 1
 needs_human_count: 0
 ---
@@ -22,7 +25,7 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24969052517](https://github.com/openclaw/projectclownfish/actions/runs/24969052517)
+Run: [https://github.com/openclaw/clownfish/actions/runs/24977046946](https://github.com/openclaw/clownfish/actions/runs/24977046946)
 
 Workflow conclusion: success
 
@@ -32,40 +35,48 @@ Canonical: https://github.com/openclaw/openclaw/issues/51065
 
 ## Summary
 
-Hydrated artifact shows no security-sensitive refs. #51065 remains the best open canonical for failed mutating tool narrations leaking into Telegram. #39631 is a duplicate but closeout is blocked by require_fix_before_close until a replacement fix PR exists. #71575 is a related Telegram tool/progress chatter report that appears already fixed on current main per the hydrated #66161/#66188 closure evidence, so it can be closed as fixed by current main. The broader #39406 config-policy request should stay open as related product follow-up. No PR is merge-ready; closed contributor PRs are useful evidence but uneditable, stale, broad, or have unresolved bot findings, so a narrow credited replacement fix artifact is needed.
+Hydrated state splits this cluster into two Telegram leakage subfamilies. #51065 remains the canonical open issue for failed mutating-tool warning narrations leaking to Telegram, with #39631 a duplicate blocked from closure until a hydrated canonical fix path exists. #71575 is related but distinct: it tracks visible Telegram tool-progress preview/raw output during partial/preview streaming and should remain open separately. Closed PRs/issues are historical evidence only. A narrow replacement fix artifact is needed for the failed mutating-tool warning family because the useful contributor PRs are closed/uneditable or unsafe, and the replacement PR mentioned in comments is not hydrated in this run.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 10 |
+| Worker actions | 11 |
+| Fix executed | 0 |
+| Fix failed | 0 |
+| Fix blocked | 1 |
 | Applied executions | 0 |
-| Apply blocked | 2 |
+| Apply blocked | 0 |
 | Apply skipped | 1 |
 | Needs human | 0 |
+
+## Fix Execution Actions
+
+| Action | Status | Target | Branch | Reason |
+| --- | --- | --- | --- | --- |
+| execute_fix | blocked |  |  | Codex /review failed: structured output was not written to replacement-codex-review-1.json; stdout={"type":"thread.started","thread_id":"019dcd47-060c-73d0-b6dc-151f708d677e"} {"type":"turn.started"} {"type":"item.started","item":{"id":"item_0","type":"command_execution","command":"/bin/bash -lc 'if pnpm run --silent docs:list >/tmp/docs-list-check.out 2>/tmp/docs-list-check.err; then cat /tmp/docs-list-check.out; else cat /tmp/docs-list-check.err; fi'","aggregated_output":"","exit_code":null,"status":"in_progress"}} {"type":"item.started","item":{"id":"item_1","type":"command_execution","command":"/bin/bash -lc \"sed -n '1,220p' /tmp/projectclownfish-fix-k76WSy/openclaw-openclaw/.agents/skills/openclaw-pr-maintainer/SKILL.md\"","aggregated_output":"","exit_code":null,"status":"in_progress"}} {"type":"item.completed","item":{"id":"item_0","type":"command_execution","command":"/bin/ba...; stderr=empty |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
 | #39631 | close_duplicate | skipped | duplicate | action status is blocked |
-| #71575 | close_fixed_by_candidate | blocked | fixed_by_candidate | closure requires candidate_fix |
-| #72410 | merge_canonical | blocked | fix_pr | merge state status is UNSTABLE |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #51065 | keep_canonical | planned | canonical | Best surviving open issue for the failed mutating-tool warning leak family. |
-| #39631 | close_duplicate | blocked | duplicate | True duplicate of #51065, but closure is blocked on the canonical replacement fix path. |
-| #71575 | close_fixed_by_candidate | planned | fixed_by_candidate | The intermediate tool/progress chatter surface is already implemented on current main; this does not need the new failed-mutating-tool warning fix. |
-| #39406 | keep_related | planned | related | Related broader feature/policy request, not a duplicate of the Telegram failed-warning bug. |
-| #39636 | keep_closed | skipped | superseded | Closed unmerged contributor PR; preserve credit in the replacement fix artifact instead of mutating the closed PR. |
-| #39717 | keep_closed | skipped | superseded | Closed unsafe contributor PR; replacement should borrow only the narrow useful idea and address the bot findings. |
-| #66161 | keep_closed | skipped | fixed_by_candidate | Already closed as implemented on main. |
-| #66188 | keep_closed | skipped | superseded | Already closed superseded PR; useful only as historical evidence for the intermediate chatter subfamily. |
-| cluster:ghcrawl-207034-agentic-merge | fix_needed | planned |  | A narrow replacement fix PR is needed for the canonical failed mutating-tool warning leak. |
-| cluster:ghcrawl-207034-agentic-merge | build_fix_artifact | planned |  | Create the narrow credited fix artifact for ProjectClownfish execution. |
+| #51065 | keep_canonical | planned | canonical | Best surviving canonical issue for the failed mutating-tool warning leak family. |
+| #39631 | close_duplicate | blocked | duplicate | Duplicate closeout is clear but blocked on the canonical fix path or a hydrated replacement fix PR. |
+| #71575 | keep_related | planned | related | Same Telegram leakage area, but meaningfully different root cause and product behavior scope; leave open as a separate related subcluster. |
+| #39406 | keep_related | planned | related | Related feature/policy request, not a duplicate close candidate for this cluster. |
+| #39636 | keep_closed | skipped | superseded | Closed historical contributor PR; use only as credit/evidence for a replacement fix artifact. |
+| #39717 | keep_closed | skipped | superseded | Closed historical contributor PR with useful ideas but unsafe/uneditable as an automation merge candidate. |
+| #66161 | keep_closed | skipped | fixed_by_candidate | Closed context issue; historical evidence only. |
+| #66188 | keep_closed | skipped | superseded | Closed unrelated/superseded PR for the scratch/progress leakage family. |
+| #71663 | keep_closed | skipped | duplicate | Closed duplicate context for the #71575 subcluster. |
+| cluster:ghcrawl-207034-agentic-merge | fix_needed | planned |  | Build a narrow credited replacement fix for the failed mutating-tool warning family before closing duplicate reports. |
+| cluster:ghcrawl-207034-agentic-merge | build_fix_artifact | planned |  | Produce a narrow replacement fix artifact for ProjectClownfish execution. |
 
 ## Needs Human
 

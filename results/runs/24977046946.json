@@ -1,0 +1,172 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-207034-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24977046946",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24977046946",
+  "head_sha": "50a0b51ad3e3cfffa74443fc81bf0c842f9747bf",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-207034-agentic-merge.md",
+  "published_at": "2026-04-27T04:54:01.146Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/51065",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/51065",
+  "canonical_pr": null,
+  "summary": "Hydrated state splits this cluster into two Telegram leakage subfamilies. #51065 remains the canonical open issue for failed mutating-tool warning narrations leaking to Telegram, with #39631 a duplicate blocked from closure until a hydrated canonical fix path exists. #71575 is related but distinct: it tracks visible Telegram tool-progress preview/raw output during partial/preview streaming and should remain open separately. Closed PRs/issues are historical evidence only. A narrow replacement fix artifact is needed for the failed mutating-tool warning family because the useful contributor PRs are closed/uneditable or unsafe, and the replacement PR mentioned in comments is not hydrated in this run.",
+  "actions": [
+    {
+      "target": "#51065",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "reason": "Best surviving canonical issue for the failed mutating-tool warning leak family."
+    },
+    {
+      "target": "#39631",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "reason": "Duplicate closeout is clear but blocked on the canonical fix path or a hydrated replacement fix PR."
+    },
+    {
+      "target": "#71575",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "reason": "Same Telegram leakage area, but meaningfully different root cause and product behavior scope; leave open as a separate related subcluster."
+    },
+    {
+      "target": "#39406",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "reason": "Related feature/policy request, not a duplicate close candidate for this cluster."
+    },
+    {
+      "target": "#39636",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "reason": "Closed historical contributor PR; use only as credit/evidence for a replacement fix artifact."
+    },
+    {
+      "target": "#39717",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "reason": "Closed historical contributor PR with useful ideas but unsafe/uneditable as an automation merge candidate."
+    },
+    {
+      "target": "#66161",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "reason": "Closed context issue; historical evidence only."
+    },
+    {
+      "target": "#66188",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "reason": "Closed unrelated/superseded PR for the scratch/progress leakage family."
+    },
+    {
+      "target": "#71663",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71575",
+      "candidate_fix": null,
+      "reason": "Closed duplicate context for the #71575 subcluster."
+    },
+    {
+      "target": "cluster:ghcrawl-207034-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "reason": "Build a narrow credited replacement fix for the failed mutating-tool warning family before closing duplicate reports."
+    },
+    {
+      "target": "cluster:ghcrawl-207034-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "reason": "Produce a narrow replacement fix artifact for ProjectClownfish execution."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_duplicate": 1,
+    "keep_related": 2,
+    "keep_closed": 5,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "blocked": 1,
+    "skipped": 5
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {
+    "skipped": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "replace_uneditable_branch",
+      "reason": "Codex /review failed: structured output was not written to replacement-codex-review-1.json; stdout={\"type\":\"thread.started\",\"thread_id\":\"019dcd47-060c-73d0-b6dc-151f708d677e\"} {\"type\":\"turn.started\"} {\"type\":\"item.started\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/bash -lc 'if pnpm run --silent docs:list >/tmp/docs-list-check.out 2>/tmp/docs-list-check.err; then cat /tmp/docs-list-check.out; else cat /tmp/docs-list-check.err; fi'\",\"aggregated_output\":\"\",\"exit_code\":null,\"status\":\"in_progress\"}} {\"type\":\"item.started\",\"item\":{\"id\":\"item_1\",\"type\":\"command_execution\",\"command\":\"/bin/bash -lc \\\"sed -n '1,220p' /tmp/projectclownfish-fix-k76WSy/openclaw-openclaw/.agents/skills/openclaw-pr-maintainer/SKILL.md\\\"\",\"aggregated_output\":\"\",\"exit_code\":null,\"status\":\"in_progress\"}} {\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/ba...; stderr=empty",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#39631",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#51065",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-207034-agentic-merge:blocked-close-duplicate:39631:51065",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
