@@ -1,0 +1,169 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156579-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24982560484",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24982560484",
+  "head_sha": "64b08445e255b22babdbfd48320457951faa2507",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156579-autonomous-smoke.md",
+  "published_at": "2026-04-27T08:02:54.887Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72615",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72615",
+  "summary": "All job-provided candidate refs are already closed in the hydrated live-state artifact, so no close/comment/merge actions are valid for them. The former representative #67979 and maintainer parent #71479 are closed; the current replacement path is #72615, but that hydrated open PR is security-sensitive and must be routed to central OpenClaw security handling only.",
+  "actions": [
+    {
+      "target": "#65722",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#65976",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#66082",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#67979",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "The representative is obsolete because it is already closed."
+    },
+    {
+      "target": "#68371",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#68586",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed PR; useful credit remains historical evidence only."
+    },
+    {
+      "target": "#68828",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#69019",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#69952",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed PR; no mutation is valid."
+    },
+    {
+      "target": "#70181",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#70185",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed PR; no mutation is valid."
+    },
+    {
+      "target": "#70242",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#70842",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#71479",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "The former parent PR is closed and is evidence only."
+    },
+    {
+      "target": "#72615",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PRs must be routed to central OpenClaw security handling and not mutated by ProjectClownfish."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 14,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "skipped": 14,
+    "planned": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}

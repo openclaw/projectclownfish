@@ -1,0 +1,208 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156602-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24982551042",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24982551042",
+  "head_sha": "64b08445e255b22babdbfd48320457951faa2507",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156602-autonomous-smoke.md",
+  "published_at": "2026-04-27T08:00:52.915Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72659",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72659",
+  "summary": "Canonical hint #55186 is already closed and has been replaced by hydrated ProjectClownfish PR #72659. No merge is recommended because #72659 still has a failing checks-node-core-runtime-shared check and no Codex /review merge preflight. Clear related/independent subfamilies are kept open; only the older replacement PR #72305 is safe to supersede in favor of #72659.",
+  "actions": [
+    {
+      "target": "#72659",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": "Canonical fix path is explicit but not merge-ready."
+    },
+    {
+      "target": "#72305",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#72659",
+      "candidate_fix": "#72659",
+      "reason": "Older replacement PR is superseded by the newer cluster-specific replacement PR #72659."
+    },
+    {
+      "target": "#55186",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72659",
+      "candidate_fix": "#72659",
+      "reason": "Already closed source PR; retained as credited historical evidence for #72659."
+    },
+    {
+      "target": "#60115",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72659",
+      "candidate_fix": "#72659",
+      "reason": "Already closed source PR; retained as credited historical evidence for #72659."
+    },
+    {
+      "target": "#59791",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented; no mutation planned."
+    },
+    {
+      "target": "#59758",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72659",
+      "candidate_fix": "#72659",
+      "reason": "Close is blocked on the canonical fix path #72659 landing cleanly."
+    },
+    {
+      "target": "#52120",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": "Related follow-up subfamily; not safe to close or merge in this cluster."
+    },
+    {
+      "target": "#45082",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": "Open related issue with distinct reproduction path; leave open."
+    },
+    {
+      "target": "#52236",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": "Draft incomplete related work; not a duplicate closeout candidate."
+    },
+    {
+      "target": "#55151",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": "Related open contributor PR with unresolved bot finding; leave open for separate repair/triage."
+    },
+    {
+      "target": "#57565",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": "Related broader routing PR; not safe for merge or superseded close in this cluster."
+    },
+    {
+      "target": "#57970",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72659",
+      "candidate_fix": null,
+      "reason": "Related dependency subcluster; leave open."
+    },
+    {
+      "target": "#57609",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent Mattermost bug; no cluster mutation planned."
+    },
+    {
+      "target": "#57607",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent open issue; leave open."
+    },
+    {
+      "target": "#58439",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent PR; leave open for its own review/merge path."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_superseded": 1,
+    "keep_closed": 3,
+    "close_fixed_by_candidate": 1,
+    "keep_related": 6,
+    "keep_independent": 3
+  },
+  "action_status_counts": {
+    "planned": 11,
+    "skipped": 3,
+    "blocked": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 1,
+    "skipped": 1
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#72305",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#72659",
+      "candidate_fix": "#72659",
+      "title": null,
+      "idempotency_key": "ghcrawl-156602-autonomous-smoke:#72305:close_superseded_by_72659:2026-04-27T05:01:13Z",
+      "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#59758",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72659",
+      "candidate_fix": "#72659",
+      "title": null,
+      "idempotency_key": "ghcrawl-156602-autonomous-smoke:#59758:close_fixed_by_72659_blocked:2026-04-02T15:12:19Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}

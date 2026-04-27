@@ -1,0 +1,302 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156581-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24982556691",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24982556691",
+  "head_sha": "64b08445e255b22babdbfd48320457951faa2507",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "blocked",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156581-autonomous-smoke.md",
+  "published_at": "2026-04-27T08:02:14.842Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/45474",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/45474",
+  "canonical_pr": null,
+  "summary": "Classified the hydrated WhatsApp stability cluster without GitHub mutation. #45474 remains the best open canonical issue for the linked/OK silent inbound plus 440/401 churn family. No close or merge is safe in this pass: the only current narrow fix PR for #45474, #72621, is security-sensitive and must be routed to central security, and several related open issues have distinct remaining symptoms.",
+  "actions": [
+    {
+      "target": "#45474",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#46518",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#63855",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#66920",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#67986",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#70856",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#7433",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#49305",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#47710",
+      "action": "keep_related",
+      "status": "blocked",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Merge and closeout are blocked by failing checks, unresolved bot findings, and an unhydrated current-main fix ref."
+    },
+    {
+      "target": "#63939",
+      "action": "keep_related",
+      "status": "blocked",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep open as related; merge/closeout blocked by failing checks and unhydrated canonical PR reference."
+    },
+    {
+      "target": "#72621",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PR must be handled by central security triage."
+    },
+    {
+      "target": "#69833",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked ref is routed only; it is not a mutation target."
+    },
+    {
+      "target": "cluster:ghcrawl-156581-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "blocked",
+      "classification": null,
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": "Canonical fix path is blocked on central security triage for #72621."
+    },
+    {
+      "target": "cluster:ghcrawl-156581-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "blocked",
+      "classification": null,
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": "Build/open fix path blocked by security-sensitive #72621."
+    },
+    {
+      "target": "#47367",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#49057",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#51111",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#61663",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#61744",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#66917",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#70678",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#19907",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#24947",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#45387",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#45391",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#47503",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#47513",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#60007",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#63410",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": null
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 9,
+    "route_security": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_closed": 15
+  },
+  "action_status_counts": {
+    "planned": 10,
+    "blocked": 4,
+    "skipped": 15
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [
+    "Central security triage must decide #72621 before ProjectClownfish can merge, reuse, replace, or close against that auth cleanup/listener recovery fix path."
+  ],
+  "fix_actions": [],
+  "apply_actions": []
+}

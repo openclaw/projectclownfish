@@ -2,12 +2,12 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-156581-autonomous-smoke"
 mode: "autonomous"
-run_id: "24978948275"
-run_url: "https://github.com/openclaw/clownfish/actions/runs/24978948275"
-head_sha: "29400ea714d617de4455a11f0aa59ca745bf6cda"
+run_id: "24982556691"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/24982556691"
+head_sha: "64b08445e255b22babdbfd48320457951faa2507"
 workflow_conclusion: "success"
-result_status: "planned"
-published_at: "2026-04-27T06:08:50.817Z"
+result_status: "blocked"
+published_at: "2026-04-27T08:02:14.842Z"
 canonical: "https://github.com/openclaw/openclaw/issues/45474"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/45474"
 canonical_pr: null
@@ -16,26 +16,26 @@ fix_executed: 0
 fix_failed: 0
 fix_blocked: 0
 apply_executed: 0
-apply_blocked: 1
+apply_blocked: 0
 apply_skipped: 0
-needs_human_count: 0
+needs_human_count: 1
 ---
 
 # ghcrawl-156581-autonomous-smoke
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/clownfish/actions/runs/24978948275](https://github.com/openclaw/clownfish/actions/runs/24978948275)
+Run: [https://github.com/openclaw/clownfish/actions/runs/24982556691](https://github.com/openclaw/clownfish/actions/runs/24982556691)
 
 Workflow conclusion: success
 
-Worker result: planned
+Worker result: blocked
 
 Canonical: https://github.com/openclaw/openclaw/issues/45474
 
 ## Summary
 
-Autonomous classification only. #45474 remains the best live canonical issue for the 440/401 linked-but-dead WhatsApp session failure. The cluster contains several related but non-duplicate WhatsApp reliability subfamilies, one open non-merge-ready PR path, and one security-sensitive linked PR that is quarantined. No close or merge actions are planned because require_fix_before_close is set and no canonical fix PR has landed in this run.
+Classified the hydrated WhatsApp stability cluster without GitHub mutation. #45474 remains the best open canonical issue for the linked/OK silent inbound plus 440/401 churn family. No close or merge is safe in this pass: the only current narrow fix PR for #45474, #72621, is security-sensitive and must be routed to central security, and several related open issues have distinct remaining symptoms.
 
 ## Impact
 
@@ -46,56 +46,56 @@ Autonomous classification only. #45474 remains the best live canonical issue for
 | Fix failed | 0 |
 | Fix blocked | 0 |
 | Applied executions | 0 |
-| Apply blocked | 1 |
+| Apply blocked | 0 |
 | Apply skipped | 0 |
-| Needs human | 0 |
+| Needs human | 1 |
 
 ## Fix Execution Actions
 
 | Action | Status | Target | Branch | Reason |
 | --- | --- | --- | --- | --- |
-| open_fix_pr | opened | https://github.com/openclaw/openclaw/pull/72621 | clownfish/ghcrawl-156581-autonomous-smoke |  |
+| _None_ |  |  |  |  |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #72621 | merge_canonical | blocked | fix_pr | merge state status is UNSTABLE |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #45474 | keep_canonical | planned | canonical | Best surviving canonical for the 440/401 linked-but-dead WhatsApp session failure. |
-| #46518 | keep_related | planned | related | Related WhatsApp Baileys auth/pairing failure with unique QR pairing evidence; keep open. |
-| #47367 | keep_closed | skipped | superseded | Closed context ref; no mutation is allowed. |
-| #49057 | keep_closed | skipped | superseded | Closed context ref; no mutation is allowed. |
-| #51111 | keep_closed | skipped | fixed_by_candidate | Closed context ref; no mutation is allowed. |
-| #61663 | keep_closed | skipped | fixed_by_candidate | Closed context ref; no mutation is allowed. |
-| #61744 | keep_closed | skipped | fixed_by_candidate | Closed context ref; no mutation is allowed. |
-| #63855 | keep_related | planned | related | Related WhatsApp silent message-loss bug with distinct stale-socket detector scope; keep open. |
-| #66917 | keep_closed | skipped | superseded | Closed context ref; no mutation is allowed. |
-| #66920 | keep_related | planned | related | Related group-specific WhatsApp reliability bug; keep open. |
-| #67986 | keep_related | planned | related | Related reliability report with distinct gateway wedge scope; keep open. |
-| #70678 | keep_closed | skipped | fixed_by_candidate | Closed context ref; no mutation is allowed. |
-| #70856 | keep_related | planned | related | Related broader WhatsApp listener regression; keep open. |
-| #7433 | keep_related | planned | related | Related group reliability work; keep open. |
-| #39608 | keep_related | planned | related | Related group-inbound delivery bug; keep open. |
-| #49305 | keep_related | planned | related | Related WhatsApp logout/recovery bug; keep open. |
-| #47710 | keep_related | planned | related | Useful related contributor PR, but merge is blocked by failing checks and unresolved review-bot findings. |
-| #63939 | keep_related | planned | related | Related configurable-watchdog PR; not merge-ready and not the canonical fix for #45474. |
-| #69833 | route_security | planned | security_sensitive | Quarantine exact security-sensitive linked ref to central OpenClaw security handling; no ProjectClownfish mutation. |
-| #19907 | keep_closed | skipped | superseded | Closed linked context ref; no mutation is allowed. |
-| #24947 | keep_closed | skipped | superseded | Closed linked context ref; no mutation is allowed. |
-| #45387 | keep_closed | skipped | fixed_by_candidate | Closed linked context ref; no mutation is allowed. |
-| #45391 | keep_closed | skipped | fixed_by_candidate | Closed linked context ref; no mutation is allowed. |
-| #47503 | keep_closed | skipped | superseded | Closed linked PR; no mutation is allowed. |
-| #47513 | keep_closed | skipped | superseded | Closed linked PR; no mutation is allowed. |
-| #60007 | keep_closed | skipped | fixed_by_candidate | Closed merged linked PR; no mutation is allowed. |
-| #63410 | keep_closed | skipped | superseded | Closed linked context ref; no mutation is allowed. |
-| cluster:ghcrawl-156581-autonomous-smoke | fix_needed | planned |  | A narrow replacement fix path is needed before duplicate or fixed-by closeout can be considered. |
-| cluster:ghcrawl-156581-autonomous-smoke | build_fix_artifact | planned |  | No viable canonical PR exists for #45474 and allow_fix_pr is true. |
+| #45474 | keep_canonical | planned | canonical |  |
+| #46518 | keep_related | planned | related |  |
+| #63855 | keep_related | planned | related |  |
+| #66920 | keep_related | planned | related |  |
+| #67986 | keep_related | planned | related |  |
+| #70856 | keep_related | planned | related |  |
+| #7433 | keep_related | planned | related |  |
+| #49305 | keep_related | planned | related |  |
+| #47710 | keep_related | blocked | related | Merge and closeout are blocked by failing checks, unresolved bot findings, and an unhydrated current-main fix ref. |
+| #63939 | keep_related | blocked | related | Keep open as related; merge/closeout blocked by failing checks and unhydrated canonical PR reference. |
+| #72621 | route_security | planned | security_sensitive | Security-sensitive PR must be handled by central security triage. |
+| #69833 | route_security | planned | security_sensitive | Security-sensitive linked ref is routed only; it is not a mutation target. |
+| cluster:ghcrawl-156581-autonomous-smoke | fix_needed | blocked |  | Canonical fix path is blocked on central security triage for #72621. |
+| cluster:ghcrawl-156581-autonomous-smoke | build_fix_artifact | blocked |  | Build/open fix path blocked by security-sensitive #72621. |
+| #47367 | keep_closed | skipped | superseded |  |
+| #49057 | keep_closed | skipped | superseded |  |
+| #51111 | keep_closed | skipped | fixed_by_candidate |  |
+| #61663 | keep_closed | skipped | fixed_by_candidate |  |
+| #61744 | keep_closed | skipped | fixed_by_candidate |  |
+| #66917 | keep_closed | skipped | superseded |  |
+| #70678 | keep_closed | skipped | fixed_by_candidate |  |
+| #19907 | keep_closed | skipped |  |  |
+| #24947 | keep_closed | skipped |  |  |
+| #45387 | keep_closed | skipped | fixed_by_candidate |  |
+| #45391 | keep_closed | skipped | fixed_by_candidate |  |
+| #47503 | keep_closed | skipped | superseded |  |
+| #47513 | keep_closed | skipped | superseded |  |
+| #60007 | keep_closed | skipped | fixed_by_candidate |  |
+| #63410 | keep_closed | skipped | superseded |  |
 
 ## Needs Human
 
-- none
+- Central security triage must decide #72621 before ProjectClownfish can merge, reuse, replace, or close against that auth cleanup/listener recovery fix path.

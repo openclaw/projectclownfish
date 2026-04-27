@@ -1,0 +1,172 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156624-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24982547226",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24982547226",
+  "head_sha": "64b08445e255b22babdbfd48320457951faa2507",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156624-autonomous-smoke.md",
+  "published_at": "2026-04-27T08:00:12.712Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72662",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/61279",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72662",
+  "summary": "Hydrated state shows #72662 is the current canonical replacement PR for the Docker named-volume .openclaw ownership failure, carrying credit from #48072 and #63959. Merge and fixed-by-candidate closeout are blocked by failing checks and missing Codex /review proof. #41624 is quarantined as security-sensitive per preflight. Other open Docker PRs are separate follow-up work and should remain open.",
+  "actions": [
+    {
+      "target": "#41624",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item is out of scope for ProjectClownfish mutation and must be routed to central security handling."
+    },
+    {
+      "target": "#43846",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41624",
+      "candidate_fix": null,
+      "reason": "Already-closed historical context; no close action is valid."
+    },
+    {
+      "target": "#47660",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate broad Docker refactor with unresolved review findings and failing checks; keep open outside this named-volume fix cluster."
+    },
+    {
+      "target": "#48072",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#72662",
+      "reason": "Already closed and replaced by hydrated PR #72662; no close action is valid."
+    },
+    {
+      "target": "#52176",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate optional uv feature/provider gap; keep open for its own review path rather than deduping into the named-volume fix."
+    },
+    {
+      "target": "#55933",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related Dockerfile maintenance work with a distinct root cause; keep open as a separate follow-up candidate."
+    },
+    {
+      "target": "#59601",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already-closed linked context; no close action is valid."
+    },
+    {
+      "target": "#60052",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already-closed separate npm-global permissions work; no close action is valid."
+    },
+    {
+      "target": "#61279",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72662",
+      "candidate_fix": "#72662",
+      "reason": "Closeout is blocked on the canonical fix path: #72662 must merge or otherwise land before #61279 can close as fixed."
+    },
+    {
+      "target": "#63959",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#72662",
+      "candidate_fix": "#72662",
+      "reason": "Superseded close is blocked on the canonical fix path: #72662 must merge or otherwise land before closing the useful contributor PR."
+    },
+    {
+      "target": "#72662",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72662",
+      "candidate_fix": null,
+      "reason": "Canonical replacement PR is explicit, but merge and post-merge closeout are blocked until checks are clean and merge preflight includes a passed Codex /review."
+    }
+  ],
+  "action_counts": {
+    "route_security": 1,
+    "keep_closed": 4,
+    "keep_independent": 2,
+    "keep_related": 1,
+    "close_fixed_by_candidate": 1,
+    "close_superseded": 1,
+    "keep_canonical": 1
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "skipped": 4,
+    "blocked": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "skipped": 2
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#61279",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72662",
+      "candidate_fix": "#72662",
+      "title": null,
+      "idempotency_key": "ghcrawl-156624-autonomous-smoke:close_fixed_by_candidate:#61279:#72662:2026-04-27",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#63959",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72662",
+      "candidate_fix": "#72662",
+      "title": null,
+      "idempotency_key": "ghcrawl-156624-autonomous-smoke:close_superseded:#63959:#72662:2026-04-27",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
