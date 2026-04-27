@@ -2541,10 +2541,10 @@
   },
   {
     "repo": "openclaw/openclaw",
-    "run_id": "24968264891",
-    "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24968264891",
+    "run_id": "24977056123",
+    "run_url": "https://github.com/openclaw/clownfish/actions/runs/24977056123",
     "cluster_id": "ghcrawl-199270-agentic-merge",
-    "published_at": "2026-04-26T22:22:38.841Z",
+    "published_at": "2026-04-27T04:58:23.775Z",
     "target": "#72389",
     "action": "merge_canonical",
     "status": "blocked",

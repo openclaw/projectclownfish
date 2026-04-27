@@ -41,7 +41,7 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 27, 2026, 04:54 UTC
+Last dashboard update: Apr 27, 2026, 04:58 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Fix execution needs repair
@@ -57,11 +57,11 @@ Scope: 107 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | Latest successful clusters | 107 | 100.0% |
 | Latest failed clusters | 0 | 0.0% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 228 | audit |
-| Fix action attempts | 8 | audit |
+| Run attempts archived | 229 | audit |
+| Fix action attempts | 9 | audit |
 | Fix actions executed | 0 | 0.0% |
-| Fix actions failed | 3 | 37.5% |
-| Fix actions blocked | 4 | 50.0% |
+| Fix actions failed | 3 | 33.3% |
+| Fix actions blocked | 4 | 44.4% |
 | Latest clusters with fix failures | 4 | 3.7% |
 | Distinct PRs touched | 492 | 100% |
 | Open PRs tracked | 289 | 58.7% |

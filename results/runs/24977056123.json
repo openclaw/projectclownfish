@@ -1,0 +1,169 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-199270-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24977056123",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24977056123",
+  "head_sha": "50a0b51ad3e3cfffa74443fc81bf0c842f9747bf",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/ghcrawl-199270-agentic-merge.md",
+  "published_at": "2026-04-27T04:58:23.775Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72389",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72389",
+  "summary": "Hydrated state shows no security-sensitive items. The original representative #52745 is already closed after ProjectClownfish opened replacement PR #72389. #72389 is the current canonical repair path for the orphaned-final stale streaming bug, but it is not merge-ready because Greptile has an actionable P2 finding and current checks include failures. #69026 is related watchdog UX tuning, not the same root cause, and should remain open for its own review path.",
+  "actions": [
+    {
+      "target": "#52745",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72389",
+      "candidate_fix": "#72389",
+      "reason": "Already closed source PR superseded by hydrated replacement #72389."
+    },
+    {
+      "target": "#59570",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60043",
+      "candidate_fix": "#60043",
+      "reason": "Already closed issue covered by merged linked PR #60043."
+    },
+    {
+      "target": "#59582",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#60043",
+      "candidate_fix": "#60043",
+      "reason": "Already closed unmerged fallback TUI-side PR superseded by merged #60043."
+    },
+    {
+      "target": "#60043",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#60043",
+      "candidate_fix": "#60043",
+      "reason": "Already merged fallback-display fix retained as historical canonical evidence for that subfamily."
+    },
+    {
+      "target": "#63189",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed issue covered by current main/release evidence in the hydrated comments."
+    },
+    {
+      "target": "#66289",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed overlapping PR superseded by current main's watchdog work."
+    },
+    {
+      "target": "#66876",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed issue covered by current main/release evidence in the hydrated comments."
+    },
+    {
+      "target": "#67302",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed related defensive PR that was not accepted as the canonical fix."
+    },
+    {
+      "target": "#69026",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72389",
+      "candidate_fix": null,
+      "reason": "Related open watchdog UX PR should remain open for its own review path, not be closed or merged as part of the orphaned-final fix cluster."
+    },
+    {
+      "target": "#72389",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72389",
+      "candidate_fix": "#72389",
+      "reason": "Canonical replacement PR is useful but requires narrow repair and validation before any merge or post-merge closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-199270-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#72389",
+      "candidate_fix": "#72389",
+      "reason": "A fix artifact is needed because the canonical replacement PR exists but is not merge-ready."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 8,
+    "keep_related": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 8,
+    "planned": 3
+  },
+  "fix_counts": {
+    "opened": 1
+  },
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "open_fix_pr",
+      "status": "opened",
+      "target": null,
+      "pr": "https://github.com/openclaw/openclaw/pull/72389",
+      "branch": "clownfish/ghcrawl-199270-agentic-merge",
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": "https://github.com/openclaw/openclaw/pull/72389"
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#72389",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(tui): clear stale streaming after orphaned finals",
+      "idempotency_key": null,
+      "reason": "merge state status is UNSTABLE",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
