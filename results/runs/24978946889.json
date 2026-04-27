@@ -1,0 +1,192 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156594-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24978946889",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978946889",
+  "head_sha": "29400ea714d617de4455a11f0aa59ca745bf6cda",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156594-autonomous-smoke.md",
+  "published_at": "2026-04-27T05:59:15.012Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/40352",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/40352",
+  "canonical_pr": null,
+  "summary": "Classified the hydrated cluster without GitHub mutations. The original representative #40443 is now closed and replaced by #72624, but #72624 is security-sensitive and must be quarantined. #40352 remains the live canonical issue for the explicit Reload Config stale-state bug; #39392 remains a related open issue for the agent-switch model-select bug. No merge or close actions are safe in this pass.",
+  "actions": [
+    {
+      "target": "#40352",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#39392",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": "Related Control UI model-select state bug, but not a true duplicate of #40352 because the reproduction path and likely UI remount/select synchronization fix are distinct."
+    },
+    {
+      "target": "#40441",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#40443",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#43013",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive hydrated item; route to central OpenClaw security handling and do not close, merge, comment, or fix through ProjectClownfish."
+    },
+    {
+      "target": "#46275",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#39392",
+      "candidate_fix": null,
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#52948",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#39392",
+      "candidate_fix": null,
+      "reason": "Useful related contributor PR, but not merge-ready and not safe to close as superseded before a canonical fix path lands."
+    },
+    {
+      "target": "#54724",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#39392",
+      "candidate_fix": null,
+      "reason": "Related useful contributor PR, but broad code delta and missing merge preflight block autonomous merge."
+    },
+    {
+      "target": "#70633",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#39392",
+      "candidate_fix": null,
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#72624",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive replacement PR; route to central OpenClaw security handling."
+    },
+    {
+      "target": "#39401",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#39392",
+      "candidate_fix": null,
+      "reason": "Already closed linked context; historical evidence only."
+    },
+    {
+      "target": "#13142",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#39392",
+      "candidate_fix": null,
+      "reason": "Already closed linked context; historical evidence only."
+    },
+    {
+      "target": "#41344",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#39392",
+      "candidate_fix": null,
+      "reason": "Already closed linked context; historical evidence only."
+    },
+    {
+      "target": "cluster:ghcrawl-156594-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": "Canonical fix path is blocked on central security handling for #72624."
+    },
+    {
+      "target": "cluster:ghcrawl-156594-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": "#40352",
+      "candidate_fix": null,
+      "reason": "Implementation blocked until security triage clears the replacement path or authorizes a non-security repair scope."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 3,
+    "keep_closed": 7,
+    "route_security": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "skipped": 7,
+    "blocked": 2
+  },
+  "fix_counts": {
+    "skipped": 1
+  },
+  "apply_counts": {},
+  "needs_human": [
+    "Central OpenClaw security triage is required for #43013 and #72624. #72624 is the active replacement for the #40443/#40352 explicit reload fix path, so merge, fixed-by-candidate closeout, and a new equivalent fix PR are blocked until that security-sensitive item is cleared or split."
+  ],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "skipped",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "replace_uneditable_branch",
+      "reason": "fix artifact scope itself contains security-sensitive signals",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}

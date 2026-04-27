@@ -2,83 +2,86 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-156594-autonomous-smoke"
 mode: "autonomous"
-run_id: "24978155440"
-run_url: "https://github.com/openclaw/clownfish/actions/runs/24978155440"
-head_sha: "e8d437d9978c397d8d3fb39c23597d4e5c1d98bf"
+run_id: "24978946889"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/24978946889"
+head_sha: "29400ea714d617de4455a11f0aa59ca745bf6cda"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-27T05:50:06.728Z"
-canonical: "https://github.com/openclaw/openclaw/pull/40443"
+published_at: "2026-04-27T05:59:15.012Z"
+canonical: "https://github.com/openclaw/openclaw/issues/40352"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/40352"
-canonical_pr: "https://github.com/openclaw/openclaw/pull/40443"
-actions_total: 10
+canonical_pr: null
+actions_total: 15
 fix_executed: 0
-fix_failed: 1
+fix_failed: 0
 fix_blocked: 0
 apply_executed: 0
-apply_blocked: 1
-apply_skipped: 1
-needs_human_count: 0
+apply_blocked: 0
+apply_skipped: 0
+needs_human_count: 1
 ---
 
 # ghcrawl-156594-autonomous-smoke
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/clownfish/actions/runs/24978155440](https://github.com/openclaw/clownfish/actions/runs/24978155440)
+Run: [https://github.com/openclaw/clownfish/actions/runs/24978946889](https://github.com/openclaw/clownfish/actions/runs/24978946889)
 
 Workflow conclusion: success
 
 Worker result: planned
 
-Canonical: https://github.com/openclaw/openclaw/pull/40443
+Canonical: https://github.com/openclaw/openclaw/issues/40352
 
 ## Summary
 
-Classified the hydrated cluster without GitHub mutations. #40443 remains the canonical repair path for the explicit reload stale-config bug tracked by #40352, but it is not merge-ready because mergeability is unknown, no fresh Codex /review is present, and review-bot findings need verification on the latest head. #43013 is quarantined as security-sensitive. Agent-switch/page-load model-select work in #39392, #52948, and #54724 is related follow-up work rather than duplicate closeout for #40443.
+Classified the hydrated cluster without GitHub mutations. The original representative #40443 is now closed and replaced by #72624, but #72624 is security-sensitive and must be quarantined. #40352 remains the live canonical issue for the explicit Reload Config stale-state bug; #39392 remains a related open issue for the agent-switch model-select bug. No merge or close actions are safe in this pass.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 10 |
+| Worker actions | 15 |
 | Fix executed | 0 |
-| Fix failed | 1 |
+| Fix failed | 0 |
 | Fix blocked | 0 |
 | Applied executions | 0 |
-| Apply blocked | 1 |
-| Apply skipped | 1 |
-| Needs human | 0 |
+| Apply blocked | 0 |
+| Apply skipped | 0 |
+| Needs human | 1 |
 
 ## Fix Execution Actions
 
 | Action | Status | Target | Branch | Reason |
 | --- | --- | --- | --- | --- |
-| repair_contributor_branch | failed |  |  | validation command failed (pnpm check:changed): undefined ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL Command "check:changed" not found Did you mean "pnpm check:docs"? |
-| open_fix_pr | opened | https://github.com/openclaw/openclaw/pull/72624 | clownfish/ghcrawl-156594-autonomous-smoke |  |
+| execute_fix | skipped |  |  | fix artifact scope itself contains security-sensitive signals |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #40352 | close_fixed_by_candidate | skipped | fixed_by_candidate | action status is blocked |
-| #72624 | merge_canonical | blocked | fix_pr | mergeable state is CONFLICTING |
+| _None_ |  |  |  |  |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #39392 | keep_related | planned | related | Same Control UI model-selection area, but a meaningfully different agent-switch root cause, so this should remain open as related follow-up work. |
-| #40352 | close_fixed_by_candidate | blocked | fixed_by_candidate | Clear coverage by #40443, but closeout is blocked until the canonical fix path lands. |
+| #40352 | keep_canonical | planned | canonical |  |
+| #39392 | keep_related | planned | related | Related Control UI model-select state bug, but not a true duplicate of #40352 because the reproduction path and likely UI remount/select synchronization fix are distinct. |
 | #40441 | keep_closed | skipped | superseded | Already closed; historical evidence only. |
-| #40443 | keep_canonical | planned | canonical | Best canonical path for #40352, but not merge-ready under ProjectClownfish merge policy. |
-| #43013 | route_security | planned | security_sensitive | Scoped quarantine; continue unrelated non-security classification. |
+| #40443 | keep_closed | skipped | superseded | Already closed; historical evidence only. |
+| #43013 | route_security | planned | security_sensitive | Security-sensitive hydrated item; route to central OpenClaw security handling and do not close, merge, comment, or fix through ProjectClownfish. |
 | #46275 | keep_closed | skipped | superseded | Already closed; historical evidence only. |
-| #52948 | keep_related | planned | related | Related selected-option/page-load subproblem; keep open for a separate review or repair path. |
-| #54724 | keep_related | planned | related | Related agent-switch/model-catalog subcluster; broad delta blocks autonomous merge in this pass. |
-| #70633 | keep_closed | skipped | superseded | Already closed; historical evidence only. |
-| cluster:ghcrawl-156594-autonomous-smoke | build_fix_artifact | planned |  | Repair the canonical contributor PR branch before any merge or issue closeout. |
+| #52948 | keep_related | planned | related | Useful related contributor PR, but not merge-ready and not safe to close as superseded before a canonical fix path lands. |
+| #54724 | keep_related | planned | related | Related useful contributor PR, but broad code delta and missing merge preflight block autonomous merge. |
+| #70633 | keep_closed | skipped | duplicate | Already closed; historical evidence only. |
+| #72624 | route_security | planned | security_sensitive | Security-sensitive replacement PR; route to central OpenClaw security handling. |
+| #39401 | keep_closed | skipped | superseded | Already closed linked context; historical evidence only. |
+| #13142 | keep_closed | skipped | related | Already closed linked context; historical evidence only. |
+| #41344 | keep_closed | skipped | fixed_by_candidate | Already closed linked context; historical evidence only. |
+| cluster:ghcrawl-156594-autonomous-smoke | fix_needed | blocked | needs_human | Canonical fix path is blocked on central security handling for #72624. |
+| cluster:ghcrawl-156594-autonomous-smoke | build_fix_artifact | blocked | needs_human | Implementation blocked until security triage clears the replacement path or authorizes a non-security repair scope. |
 
 ## Needs Human
 
-- none
+- Central OpenClaw security triage is required for #43013 and #72624. #72624 is the active replacement for the #40443/#40352 explicit reload fix path, so merge, fixed-by-candidate closeout, and a new equivalent fix PR are blocked until that security-sensitive item is cleared or split.

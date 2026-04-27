@@ -53,16 +53,16 @@ Scope: 132 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | Latest clusters reviewed | 132 | 100% |
 | Policy-archived clusters | 1 | audit |
 | Clean completed clusters | 65 | 49.2% |
-| Needs-human clusters | 38 | 28.8% |
+| Needs-human clusters | 39 | 29.5% |
 | Latest successful clusters | 130 | 98.5% |
 | Latest failed clusters | 2 | 1.5% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 260 | audit |
-| Fix action attempts | 26 | audit |
+| Run attempts archived | 261 | audit |
+| Fix action attempts | 27 | audit |
 | Fix actions executed | 0 | 0.0% |
-| Fix actions failed | 7 | 26.9% |
-| Fix actions blocked | 5 | 19.2% |
-| Latest clusters with fix failures | 8 | 6.1% |
+| Fix actions failed | 7 | 25.9% |
+| Fix actions blocked | 5 | 18.5% |
+| Latest clusters with fix failures | 7 | 5.3% |
 | Distinct PRs touched | 580 | 100% |
 | Open PRs tracked | 325 | 56.0% |
 | Closed unmerged PRs tracked | 216 | 37.2% |
