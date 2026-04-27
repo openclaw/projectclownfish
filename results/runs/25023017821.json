@@ -1,0 +1,97 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156649-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25023017821",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25023017821",
+  "head_sha": "416b225d73239870f6704a4eeb6d95f026ba00e9",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156649-autonomous-smoke.md",
+  "published_at": "2026-04-27T22:33:10.382Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/65519",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/65519",
+  "canonical_pr": null,
+  "summary": "Hydrated live preflight shows the ghcrawl representative and all six job candidates are already closed. No close/comment/label/merge/fix mutation is valid. The closed representative #65519 remains the canonical historical issue for the model override family; linked security-sensitive #49491 is quarantined only.",
+  "actions": [
+    {
+      "target": "#65519",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#65519",
+      "candidate_fix": null,
+      "reason": "Already closed canonical/history item; no mutation planned."
+    },
+    {
+      "target": "#57306",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#65519",
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on current main."
+    },
+    {
+      "target": "#57428",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#65519",
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on current main."
+    },
+    {
+      "target": "#58305",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#65519",
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on current main."
+    },
+    {
+      "target": "#58539",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#65519",
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on current main."
+    },
+    {
+      "target": "#61359",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#65519",
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on current main."
+    },
+    {
+      "target": "#49491",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked ref must be routed to central OpenClaw security handling and not processed by ProjectClownfish backlog automation."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 6,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "skipped": 6,
+    "planned": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
