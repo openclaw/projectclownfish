@@ -1,0 +1,171 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156627-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24980264116",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24980264116",
+  "head_sha": "40a5c7418ff46bf3e60da63dc6e2345c96900f78",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156627-autonomous-smoke.md",
+  "published_at": "2026-04-27T06:40:31.041Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/48238",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/48238",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/48278",
+  "summary": "Classified the loop-aware compaction guard cluster without GitHub mutation. #48238 is the live canonical problem statement and #48278 is the best first canonical PR, but #48278 is not merge-ready because Greptile review findings are unresolved and CI has failing lanes. The remaining open PRs are related stacked follow-up slices, not duplicates to close. #48365 is quarantined as security-sensitive per the preflight artifact. A narrow repair artifact is planned for #48278 only.",
+  "actions": [
+    {
+      "target": "#48238",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#48238",
+      "candidate_fix": "#48278",
+      "reason": "Keep the root issue open as the canonical tracking thread while #48278 is repaired and follow-up slices remain separate."
+    },
+    {
+      "target": "#48278",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#48238",
+      "candidate_fix": "#48278",
+      "reason": "Best first canonical PR, but merge is blocked until the branch is repaired, refreshed against main f2a17b299119b426d7542cefe8848f8f69535c42, reviewed, and validated."
+    },
+    {
+      "target": "#48293",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#48238",
+      "candidate_fix": null,
+      "reason": "Keep open as a related follow-up slice after the canonical config PR path is repaired."
+    },
+    {
+      "target": "#48312",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#48238",
+      "candidate_fix": null,
+      "reason": "Keep open as related; it is not safe to merge or close as duplicate in this cluster pass."
+    },
+    {
+      "target": "#48335",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#48238",
+      "candidate_fix": null,
+      "reason": "Keep open as a related runtime follow-up; broad stacked draft work is not merge-ready and should not be closed as duplicate."
+    },
+    {
+      "target": "#48350",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#48238",
+      "candidate_fix": null,
+      "reason": "Keep open as a related validator follow-up; no closure or merge path is safe from the hydrated state."
+    },
+    {
+      "target": "#48368",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#48238",
+      "candidate_fix": null,
+      "reason": "Keep open as related escalation work; failing checks and draft stacked scope block merge."
+    },
+    {
+      "target": "#48406",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#48238",
+      "candidate_fix": null,
+      "reason": "Keep open as related docs follow-up; no high-confidence duplicate or superseded closeout is available before the canonical fix path lands."
+    },
+    {
+      "target": "#48354",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#48238",
+      "candidate_fix": null,
+      "reason": "Already-closed linked issue must not receive a close action."
+    },
+    {
+      "target": "#48365",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked ref is out of ProjectClownfish mutation scope."
+    },
+    {
+      "target": "#48397",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#48238",
+      "candidate_fix": null,
+      "reason": "Already-closed linked PR must not receive a close action."
+    },
+    {
+      "target": "cluster:ghcrawl-156627-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#48238",
+      "candidate_fix": "#48278",
+      "reason": "A narrow repair is needed before #48278 can become merge-ready."
+    },
+    {
+      "target": "cluster:ghcrawl-156627-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#48238",
+      "candidate_fix": "#48278",
+      "reason": "Emit a deterministic repair artifact for the ProjectClownfish executor."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 2,
+    "keep_related": 6,
+    "keep_closed": 2,
+    "route_security": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 11,
+    "skipped": 2
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "repair_contributor_branch",
+      "reason": "fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}
