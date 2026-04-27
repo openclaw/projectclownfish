@@ -110,6 +110,7 @@ function reviewResult(resultPath) {
     const target = String(action.target ?? "");
     const item = itemByRef.get(target);
     const clusterScopedAction = isClusterScopedAction(action, result);
+    const unavailableNeedsHuman = isUnavailableNeedsHumanAction(action);
 
     if (!target) failures.push("action missing target");
     if (target.includes(",")) failures.push(`${target} action target must be a single ref, not a comma-separated list`);
@@ -118,8 +119,10 @@ function reviewResult(resultPath) {
     if (!Array.isArray(action.evidence) || action.evidence.length === 0) {
       failures.push(`${target} missing evidence`);
     }
-    if (!clusterScopedAction && !action.target_kind) failures.push(`${target} missing target_kind`);
-    if (!clusterScopedAction && !action.target_updated_at) failures.push(`${target} missing target_updated_at`);
+    if (!clusterScopedAction && !unavailableNeedsHuman && !action.target_kind) failures.push(`${target} missing target_kind`);
+    if (!clusterScopedAction && !unavailableNeedsHuman && !action.target_updated_at) {
+      failures.push(`${target} missing target_updated_at`);
+    }
     if (!clusterScopedAction && item && action.target_updated_at && item.updated_at !== action.target_updated_at) {
       failures.push(`${target} target_updated_at does not match preflight`);
     }
@@ -256,6 +259,13 @@ function isClusterScopedAction(action, result) {
   const name = String(action.action ?? "");
   const target = String(action.target ?? "");
   return (FIX_ACTIONS.has(name) || name === "needs_human") && (target === `cluster:${result.cluster_id}` || target === result.cluster_id);
+}
+
+function isUnavailableNeedsHumanAction(action) {
+  if (action.action !== "needs_human") return false;
+  if (action.status !== "planned" && action.status !== "blocked") return false;
+  const text = [action.reason, action.comment, ...(action.evidence ?? [])].join("\n");
+  return /\b(404|not found|unavailable|could not hydrate|missing live|refreshed hydration)\b/i.test(text);
 }
 
 function isFixFirstBlockedCloseAction(action, hasClusterFixPath) {
