@@ -1,0 +1,221 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156624-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24988624070",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24988624070",
+  "head_sha": "68766d5583c05ab6d63e38d07f560c3e32e3781a",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156624-autonomous-smoke.md",
+  "published_at": "2026-04-27T10:07:15.162Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72662",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72662",
+  "summary": "Canonical path is the already-open ProjectClownfish replacement PR #72662 for the Docker named-volume state directory ownership bug. It is not merge-ready from the hydrated preflight because relevant checks are failing and no clean Codex /review merge preflight is present, so this result plans repair of #72662 and blocks dependent closeouts until that canonical fix path is clean or merged.",
+  "actions": [
+    {
+      "target": "#72662",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72662",
+      "candidate_fix": null,
+      "reason": "Best live canonical path, but it needs repair/validation before merge."
+    },
+    {
+      "target": "#72662",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72662",
+      "candidate_fix": null,
+      "reason": "Repair the canonical ProjectClownfish PR branch, rerun review and pnpm check:changed, then merge only if gates pass."
+    },
+    {
+      "target": "cluster:ghcrawl-156624-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#72662",
+      "candidate_fix": null,
+      "reason": "Canonical PR #72662 needs executable branch repair and merge preflight."
+    },
+    {
+      "target": "#61279",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72662",
+      "candidate_fix": "#72662",
+      "reason": "Blocked on canonical fix path #72662 landing cleanly."
+    },
+    {
+      "target": "#63959",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#72662",
+      "candidate_fix": "#72662",
+      "reason": "Superseded by #72662, but closeout waits for the canonical fix path."
+    },
+    {
+      "target": "#48072",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72662",
+      "candidate_fix": "#72662",
+      "reason": "Already closed; historical source credit only."
+    },
+    {
+      "target": "#41624",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72662",
+      "candidate_fix": null,
+      "reason": "Related Docker permissions bug, not a duplicate of the named-volume state directory fix."
+    },
+    {
+      "target": "#47660",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#72662",
+      "candidate_fix": null,
+      "reason": "Independent broad Dockerfile refactor; not part of this closeout path."
+    },
+    {
+      "target": "#52176",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#72662",
+      "candidate_fix": null,
+      "reason": "Independent Docker feature work."
+    },
+    {
+      "target": "#55933",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": "#72662",
+      "candidate_fix": null,
+      "reason": "Independent Docker build optimization."
+    },
+    {
+      "target": "#60052",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72662",
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation allowed."
+    },
+    {
+      "target": "#59601",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72662",
+      "candidate_fix": null,
+      "reason": "Already closed; historical context only."
+    },
+    {
+      "target": "#43846",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41624",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate context."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "close_fixed_by_candidate": 1,
+    "close_superseded": 1,
+    "keep_closed": 4,
+    "keep_related": 1,
+    "keep_independent": 3
+  },
+  "action_status_counts": {
+    "planned": 7,
+    "blocked": 2,
+    "skipped": 4
+  },
+  "fix_counts": {
+    "failed": 1,
+    "blocked": 1
+  },
+  "apply_counts": {
+    "skipped": 2
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "failed",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": "branch projectclownfish/repair-ghcrawl-156624-autonomous-smoke-72662 could not rebase onto origin/main: Codex could not repair rebase conflicts after 2 attempt(s): Rebasing (3/4) error: could not apply af769d8aa6... fix(clownfish): address review for ghcrawl-156624-autonomous-smoke (1) hint: Resolve all conflicts manually, mark them as resolved with hint: \"git add/rm <conflicted_files>\", then run \"git rebase --continue\". hint: You can instead skip this commit: run \"git rebase --skip\". hint: To abort and get back to the state before \"git rebase\", run \"git rebase --abort\". hint: Disable this message with \"git config set advice.mergeConflict false\" Could not apply af769d8aa6... # fix(clownfish): address review for ghcrawl-156624-autonomous-smoke (1) [detached HEAD b4ea8068b6] fix(docker): repair named-volume state directory ownership 2 files changed, 6 insertions(+), 2 deletions(-) Auto-merging CHANGELOG.md CONFLICT (content): Merge conflict in CHANGELOG.md",
+      "title": null,
+      "url": null
+    },
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "repair_contributor_branch",
+      "reason": "branch projectclownfish/repair-ghcrawl-156624-autonomous-smoke-72662 could not rebase onto origin/main: Codex could not repair rebase conflicts after 2 attempt(s): Rebasing (3/4) error: could not apply af769d8aa6... fix(clownfish): address review for ghcrawl-156624-autonomous-smoke (1) hint: Resolve all conflicts manually, mark them as resolved with hint: \"git add/rm <conflicted_files>\", then run \"git rebase --continue\". hint: You can instead skip this commit: run \"git rebase --skip\". hint: To abort and get back to the state before \"git rebase\", run \"git rebase --abort\". hint: Disable this message with \"git config set advice.mergeConflict false\" Could not apply af769d8aa6... # fix(clownfish): address review for ghcrawl-156624-autonomous-smoke (1) [detached HEAD b4ea8068b6] fix(docker): repair named-volume state directory ownership 2 files changed, 6 insertions(+), 2 deletions(-) Auto-merging CHANGELOG.md CONFLICT (content): Merge conflict in CHANGELOG.md",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#61279",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72662",
+      "candidate_fix": "#72662",
+      "title": null,
+      "idempotency_key": "ghcrawl-156624-autonomous-smoke:#61279:close_fixed_by_candidate:block-until-72662-merged:2026-04-27T09:18:21Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#63959",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72662",
+      "candidate_fix": "#72662",
+      "title": null,
+      "idempotency_key": "ghcrawl-156624-autonomous-smoke:#63959:close_superseded:block-until-72662-merged:2026-04-27T03:49:10Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
