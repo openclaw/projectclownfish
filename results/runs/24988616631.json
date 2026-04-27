@@ -1,0 +1,178 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156588-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24988616631",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24988616631",
+  "head_sha": "68766d5583c05ab6d63e38d07f560c3e32e3781a",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156588-autonomous-smoke.md",
+  "published_at": "2026-04-27T10:02:56.260Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/46871",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/46871",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72619",
+  "summary": "Hydrated artifact shows the nodes list/status family has been fixed by merged PR #72619 on current main a50edbdc60481ab8e9d94126d9216596d564e6cd. Plan post-merge closeout for the still-open canonical issue #46871 and supersede the remaining open overlapping nodes-list PR #51051. Slash-command PRs #46895, #47069, and #51270 are separate related work, not duplicates of the nodes-list canonical.",
+  "actions": [
+    {
+      "target": "#46871",
+      "action": "post_merge_close",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#72619",
+      "reason": null
+    },
+    {
+      "target": "#51051",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "reason": null
+    },
+    {
+      "target": "#46895",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#46871",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#47069",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#46871",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#51270",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#46871",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#50871",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "reason": "Already closed."
+    },
+    {
+      "target": "#50970",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "reason": "Already closed."
+    },
+    {
+      "target": "#51027",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "reason": "Already closed."
+    },
+    {
+      "target": "#51053",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "reason": "Already closed."
+    },
+    {
+      "target": "#51536",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed and out of cluster root cause."
+    },
+    {
+      "target": "#65772",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "reason": "Already closed."
+    },
+    {
+      "target": "#72619",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "reason": null
+    }
+  ],
+  "action_counts": {
+    "post_merge_close": 1,
+    "close_superseded": 1,
+    "keep_related": 3,
+    "keep_closed": 6,
+    "keep_canonical": 1
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "skipped": 6
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 2
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#46871",
+      "action": "post_merge_close",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#72619",
+      "title": null,
+      "idempotency_key": "ghcrawl-156588-autonomous-smoke:post_merge_close:#46871:fixed-by-#72619",
+      "reason": "target changed since worker review",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": "closed",
+      "live_updated_at": "2026-04-27T10:02:33Z"
+    },
+    {
+      "target": "#51051",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#46871",
+      "candidate_fix": "#72619",
+      "title": null,
+      "idempotency_key": "ghcrawl-156588-autonomous-smoke:close_superseded:#51051:by-#72619",
+      "reason": "target changed since worker review",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": "closed",
+      "live_updated_at": "2026-04-27T10:02:37Z"
+    }
+  ]
+}
