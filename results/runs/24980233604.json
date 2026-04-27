@@ -1,0 +1,125 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156605-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24980233604",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24980233604",
+  "head_sha": "40a5c7418ff46bf3e60da63dc6e2345c96900f78",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156605-autonomous-smoke.md",
+  "published_at": "2026-04-27T06:38:29.134Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/58443",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/58443",
+  "canonical_pr": null,
+  "summary": "Representative #59951 is already closed as implemented. The only open job candidate is #58443, which has broader and later evidence spanning inbound replay, subagent announce replay, and stale delivery routing; keep it as the surviving canonical tracking issue rather than closing it against a single already-closed implemented thread. Closed candidates are evidence only. Security-sensitive linked PR #1 is quarantined for central security handling.",
+  "actions": [
+    {
+      "target": "#1",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked PR is outside ProjectClownfish mutation scope."
+    },
+    {
+      "target": "#58443",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#58443",
+      "candidate_fix": null,
+      "reason": "Keep open as the surviving canonical issue for any remaining duplicate inbound/gateway replay validation after the implemented fixes on current main."
+    },
+    {
+      "target": "#58549",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#58443",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#58611",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#58443",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#59113",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#58443",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#59951",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#58443",
+      "candidate_fix": null,
+      "reason": "Original representative is obsolete because it is already closed; no close action is valid."
+    },
+    {
+      "target": "#60202",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#58443",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#61222",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#58443",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#64606",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#58443",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    },
+    {
+      "target": "#65701",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#58443",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action is valid."
+    }
+  ],
+  "action_counts": {
+    "route_security": 1,
+    "keep_canonical": 1,
+    "keep_closed": 8
+  },
+  "action_status_counts": {
+    "planned": 2,
+    "skipped": 8
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
