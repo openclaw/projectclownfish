@@ -1,0 +1,215 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156629-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24987100052",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24987100052",
+  "head_sha": "3e2fd13363b486f8485ca909bf84ab36ee9ff77c",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156629-autonomous-smoke.md",
+  "published_at": "2026-04-27T09:35:43.386Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72660",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/48771",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72660",
+  "summary": "Autonomous classification only. #72660 is the calibrated canonical PR for the #48771 Windows restart policy-close root, but it is not merge-ready: Greptile has an unresolved P2 on broad device matching, Aisle raised a security-shaped review that must be addressed or proven non-actionable under the override, mergeability is unknown, and the required Codex /review plus pnpm check:changed merge preflight is missing. Emit repair work for #72660, keep related open issues/PRs open, and do not close already-closed refs.",
+  "actions": [
+    {
+      "target": "#1",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked PR is out of ProjectClownfish mutation scope and should remain with central OpenClaw security handling."
+    },
+    {
+      "target": "#41034",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked PR is out of ProjectClownfish mutation scope and should remain with central OpenClaw security handling."
+    },
+    {
+      "target": "#48766",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#48771",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#48771",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72660",
+      "candidate_fix": "#72660",
+      "reason": "require_fix_before_close blocks close until #72660 is repaired and merged."
+    },
+    {
+      "target": "#49865",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive candidate is out of ProjectClownfish mutation scope and should remain with central OpenClaw security handling."
+    },
+    {
+      "target": "#51469",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72660",
+      "candidate_fix": null,
+      "reason": "Same gateway/handshake area but materially different root cause and fix surface; keep open as related follow-up work."
+    },
+    {
+      "target": "#63491",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72660",
+      "candidate_fix": null,
+      "reason": "Keep open because it has broader reproduction scope than the #48771/#72660 canonical fix path."
+    },
+    {
+      "target": "#63691",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72660",
+      "candidate_fix": null,
+      "reason": "Related gateway stability signal but different root cause and broader implementation scope; keep open."
+    },
+    {
+      "target": "#64476",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed and related but not a target for this run."
+    },
+    {
+      "target": "#67416",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#69056",
+      "candidate_fix": null,
+      "reason": "Already closed; the SIGUSR1 restart crash family is related to, but not the same root as, #48771/#72660."
+    },
+    {
+      "target": "#69056",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72660",
+      "candidate_fix": null,
+      "reason": "Different Windows restart root cause and implementation surface; keep open as related PR."
+    },
+    {
+      "target": "#69057",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#69056",
+      "candidate_fix": "#69056",
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#72660",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72660",
+      "candidate_fix": "#72660",
+      "reason": "Calibrated canonical PR is useful but not merge-ready; executor should repair the existing PR branch, run review and validation, then merge only if clean."
+    },
+    {
+      "target": "cluster:ghcrawl-156629-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72660",
+      "candidate_fix": "#72660",
+      "reason": "Required because the maintainer-calibrated canonical PR is not merge-ready but is repairable."
+    }
+  ],
+  "action_counts": {
+    "route_security": 3,
+    "keep_closed": 4,
+    "close_fixed_by_candidate": 1,
+    "keep_related": 4,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 9,
+    "skipped": 4,
+    "blocked": 1
+  },
+  "fix_counts": {
+    "pushed": 1
+  },
+  "apply_counts": {
+    "skipped": 1,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "pushed",
+      "target": "https://github.com/openclaw/openclaw/pull/72660",
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#48771",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72660",
+      "candidate_fix": "#72660",
+      "title": null,
+      "idempotency_key": "ghcrawl-156629-autonomous-smoke:#48771:close_fixed_by_candidate:#72660:2026-03-30T21:18:32Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#72660",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(cli): tighten Windows restart policy-close health checks",
+      "idempotency_key": null,
+      "reason": "mergeable state is CONFLICTING",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}

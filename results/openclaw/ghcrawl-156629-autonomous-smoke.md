@@ -2,22 +2,22 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-156629-autonomous-smoke"
 mode: "autonomous"
-run_id: "24985865652"
-run_url: "https://github.com/openclaw/clownfish/actions/runs/24985865652"
-head_sha: "a357d4628713c59472019d207d99949bc4b4ad8e"
+run_id: "24987100052"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/24987100052"
+head_sha: "3e2fd13363b486f8485ca909bf84ab36ee9ff77c"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-27T09:08:17.794Z"
+published_at: "2026-04-27T09:35:43.386Z"
 canonical: "https://github.com/openclaw/openclaw/pull/72660"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/48771"
 canonical_pr: "https://github.com/openclaw/openclaw/pull/72660"
-actions_total: 10
+actions_total: 14
 fix_executed: 0
 fix_failed: 0
 fix_blocked: 0
 apply_executed: 0
 apply_blocked: 1
-apply_skipped: 0
+apply_skipped: 1
 needs_human_count: 0
 ---
 
@@ -25,7 +25,7 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/clownfish/actions/runs/24985865652](https://github.com/openclaw/clownfish/actions/runs/24985865652)
+Run: [https://github.com/openclaw/clownfish/actions/runs/24987100052](https://github.com/openclaw/clownfish/actions/runs/24987100052)
 
 Workflow conclusion: success
 
@@ -35,19 +35,19 @@ Canonical: https://github.com/openclaw/openclaw/pull/72660
 
 ## Summary
 
-Autonomous classification found #72660 is the calibrated canonical PR for the Windows restart policy-close fix, but it is not merge-ready because review-bot/security-analysis findings and failing checks remain unresolved. #48771 remains the canonical issue for that narrow bug, #63491 is related broader Windows restart/state drift, and #69056 is a separate related SIGUSR1 Windows restart PR.
+Autonomous classification only. #72660 is the calibrated canonical PR for the #48771 Windows restart policy-close root, but it is not merge-ready: Greptile has an unresolved P2 on broad device matching, Aisle raised a security-shaped review that must be addressed or proven non-actionable under the override, mergeability is unknown, and the required Codex /review plus pnpm check:changed merge preflight is missing. Emit repair work for #72660, keep related open issues/PRs open, and do not close already-closed refs.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 10 |
+| Worker actions | 14 |
 | Fix executed | 0 |
 | Fix failed | 0 |
 | Fix blocked | 0 |
 | Applied executions | 0 |
 | Apply blocked | 1 |
-| Apply skipped | 0 |
+| Apply skipped | 1 |
 | Needs human | 0 |
 
 ## Fix Execution Actions
@@ -60,22 +60,27 @@ Autonomous classification found #72660 is the calibrated canonical PR for the Wi
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
+| #48771 | close_fixed_by_candidate | skipped | fixed_by_candidate | action status is blocked |
 | #72660 | merge_canonical | blocked | fix_pr | mergeable state is CONFLICTING |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #48766 | keep_closed | skipped | duplicate | Already closed; retained as historical duplicate evidence only. |
-| #48771 | keep_canonical | planned | canonical | Canonical issue remains open until the calibrated fix PR is repaired, reviewed, validated, and merged. |
-| #49865 | route_security | planned | security_sensitive | Quarantine only this security-sensitive item; it does not block unrelated Windows restart classification. |
-| #63491 | keep_related | planned | related | Related broader Windows restart/state-drift report, not a true duplicate of the narrow #48771/#72660 fix path. |
-| #64476 | keep_closed | skipped | fixed_by_candidate | Already closed as implemented; historical context only. |
-| #67416 | keep_closed | skipped | related | Already closed; related evidence for the Windows restart family only. |
-| #69056 | keep_related | planned | related | Separate Windows restart root cause; keep open for its own review/merge path. |
-| #69057 | keep_closed | skipped | superseded | Already closed as superseded by #69056; historical context only. |
-| #72660 | fix_needed | planned | canonical | Repair the calibrated canonical PR branch, address review findings, rebase if needed, run /review and pnpm check:changed, then merge only after deterministic gates pass. |
-| cluster:ghcrawl-156629-autonomous-smoke | build_fix_artifact | planned |  | Maintainer-calibrated canonical PR needs repair_contributor_branch work before merge. |
+| #1 | route_security | planned | security_sensitive | Security-sensitive linked PR is out of ProjectClownfish mutation scope and should remain with central OpenClaw security handling. |
+| #41034 | route_security | planned | security_sensitive | Security-sensitive linked PR is out of ProjectClownfish mutation scope and should remain with central OpenClaw security handling. |
+| #48766 | keep_closed | skipped | duplicate | Already closed refs must not receive close actions. |
+| #48771 | close_fixed_by_candidate | blocked | fixed_by_candidate | require_fix_before_close blocks close until #72660 is repaired and merged. |
+| #49865 | route_security | planned | security_sensitive | Security-sensitive candidate is out of ProjectClownfish mutation scope and should remain with central OpenClaw security handling. |
+| #51469 | keep_related | planned | related | Same gateway/handshake area but materially different root cause and fix surface; keep open as related follow-up work. |
+| #63491 | keep_related | planned | related | Keep open because it has broader reproduction scope than the #48771/#72660 canonical fix path. |
+| #63691 | keep_related | planned | related | Related gateway stability signal but different root cause and broader implementation scope; keep open. |
+| #64476 | keep_closed | skipped | related | Already closed and related but not a target for this run. |
+| #67416 | keep_closed | skipped | related | Already closed; the SIGUSR1 restart crash family is related to, but not the same root as, #48771/#72660. |
+| #69056 | keep_related | planned | related | Different Windows restart root cause and implementation surface; keep open as related PR. |
+| #69057 | keep_closed | skipped | superseded | Already closed refs must not receive close actions. |
+| #72660 | fix_needed | planned | canonical | Calibrated canonical PR is useful but not merge-ready; executor should repair the existing PR branch, run review and validation, then merge only if clean. |
+| cluster:ghcrawl-156629-autonomous-smoke | build_fix_artifact | planned | canonical | Required because the maintainer-calibrated canonical PR is not merge-ready but is repairable. |
 
 ## Needs Human
 
