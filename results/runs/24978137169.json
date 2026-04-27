@@ -1,0 +1,215 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156579-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24978137169",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978137169",
+  "head_sha": "e8d437d9978c397d8d3fb39c23597d4e5c1d98bf",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156579-autonomous-smoke.md",
+  "published_at": "2026-04-27T05:39:58.393Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/71479",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/71479",
+  "summary": "Hydrated preflight shows no security-sensitive refs. The original representative #67979 is already closed, so the live canonical tracker is open draft maintainer PR #71479. No merge is recommended because #71479 is draft, has only lightweight/skipped checks, and has no Codex /review merge preflight. Closed cluster refs remain historical evidence only. Open related contributor PRs #67063 and #70185 stay open because both are useful but not merge-ready review-clean canonical fixes. A replacement fix artifact is planned to carry the narrow Gateway-routed bridge CLI fix forward with source credit.",
+  "actions": [
+    {
+      "target": "#65722",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate child of the remaining Memory Wiki bridge CLI/runtime-context bug tracked by #71479."
+    },
+    {
+      "target": "#65976",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate/superseded child of the bridge CLI/runtime-context fix family."
+    },
+    {
+      "target": "#66082",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate child of the remaining #71479 bridge CLI/runtime-context bug."
+    },
+    {
+      "target": "#67979",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Representative issue is obsolete because it is closed; #71479 is the live canonical tracker."
+    },
+    {
+      "target": "#68371",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate/superseded child of the bridge artifact pipeline bug tracked by #71479."
+    },
+    {
+      "target": "#68586",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Closed contributor PR is historical evidence and was superseded by the Gateway-routing direction."
+    },
+    {
+      "target": "#68828",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate child of the bridge CLI/runtime-context fix family."
+    },
+    {
+      "target": "#69019",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate child of #71479."
+    },
+    {
+      "target": "#69952",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Closed PR is superseded historical evidence, not a merge target."
+    },
+    {
+      "target": "#70181",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate/superseded child of #71479."
+    },
+    {
+      "target": "#70185",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Keep open as related useful work; it is not a review-clean canonical fix and should not be closed before a replacement or landed canonical path exists."
+    },
+    {
+      "target": "#70242",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate child of #71479."
+    },
+    {
+      "target": "#70842",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate/superseded child of #71479."
+    },
+    {
+      "target": "#71479",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Best surviving canonical tracker, but not merge-ready."
+    },
+    {
+      "target": "cluster:ghcrawl-156579-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "A narrow fix path is needed because the live canonical PR is not currently mergeable."
+    },
+    {
+      "target": "cluster:ghcrawl-156579-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#71479",
+      "candidate_fix": null,
+      "reason": "Build a replacement fix artifact for ProjectClownfish executor; no direct GitHub mutation is performed by the worker."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 12,
+    "keep_related": 1,
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 12,
+    "planned": 4
+  },
+  "fix_counts": {
+    "opened": 1
+  },
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "open_fix_pr",
+      "status": "opened",
+      "target": null,
+      "pr": "https://github.com/openclaw/openclaw/pull/72615",
+      "branch": "clownfish/ghcrawl-156579-autonomous-smoke",
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": "https://github.com/openclaw/openclaw/pull/72615"
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#72615",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(memory-wiki): route bridge CLI through gateway",
+      "idempotency_key": null,
+      "reason": "mergeable state is CONFLICTING",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
