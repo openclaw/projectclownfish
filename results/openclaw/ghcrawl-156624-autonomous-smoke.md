@@ -2,12 +2,12 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-156624-autonomous-smoke"
 mode: "autonomous"
-run_id: "24982547226"
-run_url: "https://github.com/openclaw/clownfish/actions/runs/24982547226"
-head_sha: "64b08445e255b22babdbfd48320457951faa2507"
+run_id: "24984737515"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/24984737515"
+head_sha: "26374cdd2f49f5683850f92c1448eb8af1cfa65f"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-27T08:00:12.712Z"
+published_at: "2026-04-27T08:34:37.863Z"
 canonical: "https://github.com/openclaw/openclaw/pull/72662"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/61279"
 canonical_pr: "https://github.com/openclaw/openclaw/pull/72662"
@@ -16,8 +16,8 @@ fix_executed: 0
 fix_failed: 0
 fix_blocked: 0
 apply_executed: 0
-apply_blocked: 0
-apply_skipped: 2
+apply_blocked: 1
+apply_skipped: 1
 needs_human_count: 0
 ---
 
@@ -25,7 +25,7 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/clownfish/actions/runs/24982547226](https://github.com/openclaw/clownfish/actions/runs/24982547226)
+Run: [https://github.com/openclaw/clownfish/actions/runs/24984737515](https://github.com/openclaw/clownfish/actions/runs/24984737515)
 
 Workflow conclusion: success
 
@@ -35,7 +35,7 @@ Canonical: https://github.com/openclaw/openclaw/pull/72662
 
 ## Summary
 
-Hydrated state shows #72662 is the current canonical replacement PR for the Docker named-volume .openclaw ownership failure, carrying credit from #48072 and #63959. Merge and fixed-by-candidate closeout are blocked by failing checks and missing Codex /review proof. #41624 is quarantined as security-sensitive per preflight. Other open Docker PRs are separate follow-up work and should remain open.
+Hydrated state shows the original representative #48072 is already closed and replaced by maintainer PR #72662. #72662 is the canonical named-volume fix path, but merge is not recommended yet because the artifact lacks a passed Codex /review and still shows failing checks. Unrelated Docker PRs remain open; #63959 is superseded by #72662 with contributor credit preserved; #61279 closeout is blocked until the canonical fix lands.
 
 ## Impact
 
@@ -46,8 +46,8 @@ Hydrated state shows #72662 is the current canonical replacement PR for the Dock
 | Fix failed | 0 |
 | Fix blocked | 0 |
 | Applied executions | 0 |
-| Apply blocked | 0 |
-| Apply skipped | 2 |
+| Apply blocked | 1 |
+| Apply skipped | 1 |
 | Needs human | 0 |
 
 ## Fix Execution Actions
@@ -61,23 +61,23 @@ Hydrated state shows #72662 is the current canonical replacement PR for the Dock
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
 | #61279 | close_fixed_by_candidate | skipped | fixed_by_candidate | action status is blocked |
-| #63959 | close_superseded | skipped | superseded | action status is blocked |
+| #63959 | close_superseded | blocked | superseded | close requires ProjectClownfish fix PR opened/pushed or merge executed first |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #41624 | route_security | planned | security_sensitive | Security-sensitive item is out of scope for ProjectClownfish mutation and must be routed to central security handling. |
-| #43846 | keep_closed | skipped | duplicate | Already-closed historical context; no close action is valid. |
-| #47660 | keep_independent | planned | independent | Separate broad Docker refactor with unresolved review findings and failing checks; keep open outside this named-volume fix cluster. |
-| #48072 | keep_closed | skipped | superseded | Already closed and replaced by hydrated PR #72662; no close action is valid. |
-| #52176 | keep_independent | planned | independent | Separate optional uv feature/provider gap; keep open for its own review path rather than deduping into the named-volume fix. |
-| #55933 | keep_related | planned | related | Related Dockerfile maintenance work with a distinct root cause; keep open as a separate follow-up candidate. |
-| #59601 | keep_closed | skipped | fixed_by_candidate | Already-closed linked context; no close action is valid. |
-| #60052 | keep_closed | skipped | superseded | Already-closed separate npm-global permissions work; no close action is valid. |
-| #61279 | close_fixed_by_candidate | blocked | fixed_by_candidate | Closeout is blocked on the canonical fix path: #72662 must merge or otherwise land before #61279 can close as fixed. |
-| #63959 | close_superseded | blocked | superseded | Superseded close is blocked on the canonical fix path: #72662 must merge or otherwise land before closing the useful contributor PR. |
-| #72662 | keep_canonical | planned | canonical | Canonical replacement PR is explicit, but merge and post-merge closeout are blocked until checks are clean and merge preflight includes a passed Codex /review. |
+| #72662 | keep_canonical | planned | canonical | Canonical path is clear, but merge gates are incomplete; executor should repair/revalidate #72662, run /review, run pnpm check:changed, and only then merge. |
+| #61279 | close_fixed_by_candidate | blocked | fixed_by_candidate | Closeout is clear but must wait for #72662 to merge. |
+| #63959 | close_superseded | planned | superseded | #72662 is the clearer maintainer replacement path for the same named-volume bug and preserves contributor credit. |
+| #48072 | keep_closed | skipped | superseded | Closed historical source PR; evidence only. |
+| #41624 | keep_related | planned | related | Related Docker ownership bug; keep open as a separate implementation candidate. |
+| #47660 | keep_independent | planned | independent | Independent broad Docker refactor with unresolved review findings; not part of the #72662 closeout path. |
+| #52176 | keep_independent | planned | independent | Independent Docker feature PR with its own review blockers. |
+| #55933 | keep_independent | planned | independent | Independent Docker build optimization; keep open outside this canonical path. |
+| #60052 | keep_closed | skipped | independent | Closed independent historical PR; evidence only. |
+| #59601 | keep_closed | skipped | independent | Closed independent historical issue; evidence only. |
+| #43846 | keep_closed | skipped | duplicate | Closed duplicate context ref; evidence only. |
 
 ## Needs Human
 

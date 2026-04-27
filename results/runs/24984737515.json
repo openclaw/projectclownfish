@@ -1,0 +1,172 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156624-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "24984737515",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24984737515",
+  "head_sha": "26374cdd2f49f5683850f92c1448eb8af1cfa65f",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156624-autonomous-smoke.md",
+  "published_at": "2026-04-27T08:34:37.863Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72662",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/61279",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72662",
+  "summary": "Hydrated state shows the original representative #48072 is already closed and replaced by maintainer PR #72662. #72662 is the canonical named-volume fix path, but merge is not recommended yet because the artifact lacks a passed Codex /review and still shows failing checks. Unrelated Docker PRs remain open; #63959 is superseded by #72662 with contributor credit preserved; #61279 closeout is blocked until the canonical fix lands.",
+  "actions": [
+    {
+      "target": "#72662",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72662",
+      "candidate_fix": null,
+      "reason": "Canonical path is clear, but merge gates are incomplete; executor should repair/revalidate #72662, run /review, run pnpm check:changed, and only then merge."
+    },
+    {
+      "target": "#61279",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72662",
+      "candidate_fix": "#72662",
+      "reason": "Closeout is clear but must wait for #72662 to merge."
+    },
+    {
+      "target": "#63959",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#72662",
+      "candidate_fix": "#72662",
+      "reason": "#72662 is the clearer maintainer replacement path for the same named-volume bug and preserves contributor credit."
+    },
+    {
+      "target": "#48072",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72662",
+      "candidate_fix": "#72662",
+      "reason": "Closed historical source PR; evidence only."
+    },
+    {
+      "target": "#41624",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72662",
+      "candidate_fix": null,
+      "reason": "Related Docker ownership bug; keep open as a separate implementation candidate."
+    },
+    {
+      "target": "#47660",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent broad Docker refactor with unresolved review findings; not part of the #72662 closeout path."
+    },
+    {
+      "target": "#52176",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent Docker feature PR with its own review blockers."
+    },
+    {
+      "target": "#55933",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent Docker build optimization; keep open outside this canonical path."
+    },
+    {
+      "target": "#60052",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent historical PR; evidence only."
+    },
+    {
+      "target": "#59601",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent historical issue; evidence only."
+    },
+    {
+      "target": "#43846",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41624",
+      "candidate_fix": null,
+      "reason": "Closed duplicate context ref; evidence only."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_fixed_by_candidate": 1,
+    "close_superseded": 1,
+    "keep_closed": 4,
+    "keep_related": 1,
+    "keep_independent": 3
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "blocked": 1,
+    "skipped": 4
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "skipped": 1,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#61279",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72662",
+      "candidate_fix": "#72662",
+      "title": null,
+      "idempotency_key": "ghcrawl-156624-autonomous-smoke:#61279:close_fixed_by_candidate:#72662:2026-04-27T07:35:25Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#63959",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#72662",
+      "candidate_fix": "#72662",
+      "title": null,
+      "idempotency_key": "ghcrawl-156624-autonomous-smoke:#63959:close_superseded:#72662:2026-04-27T03:49:10Z",
+      "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
