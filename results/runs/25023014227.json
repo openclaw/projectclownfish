@@ -1,0 +1,207 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156647-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25023014227",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25023014227",
+  "head_sha": "416b225d73239870f6704a4eeb6d95f026ba00e9",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156647-autonomous-smoke.md",
+  "published_at": "2026-04-27T22:51:03.818Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/64825",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/64825",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72389",
+  "summary": "Representative #52745 is already closed and has been replaced by open ProjectClownfish PR #72389. The best canonical path is to repair #72389 before merge or closeout: it covers the orphaned-final/no-active-run TUI streaming bug but is blocked by failing checks and an actionable Greptile P2 about pending history refresh. #64825 should remain open until #72389 lands. #69026 is related watchdog UX tuning, not a duplicate of the orphaned-final fix. Security-sensitive linked ref #67401 is quarantined only for security routing.",
+  "actions": [
+    {
+      "target": "#52745",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72389",
+      "candidate_fix": "#72389",
+      "reason": "Closed historical source PR; keep as credited source evidence only."
+    },
+    {
+      "target": "#64862",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72389",
+      "candidate_fix": "#72389",
+      "reason": "Already closed; no mutation allowed."
+    },
+    {
+      "target": "#66192",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72389",
+      "candidate_fix": "#72389",
+      "reason": "Already closed; no mutation allowed."
+    },
+    {
+      "target": "#66289",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72389",
+      "candidate_fix": "#72389",
+      "reason": "Already closed; no mutation allowed."
+    },
+    {
+      "target": "#67302",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72389",
+      "candidate_fix": "#72389",
+      "reason": "Already closed; no mutation allowed."
+    },
+    {
+      "target": "#63189",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#64825",
+      "candidate_fix": null,
+      "reason": "Closed context issue; no close action is valid."
+    },
+    {
+      "target": "#66876",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#64825",
+      "candidate_fix": null,
+      "reason": "Closed context issue; no close action is valid."
+    },
+    {
+      "target": "#67401",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive hydrated linked ref must be quarantined outside ProjectClownfish mutation flow."
+    },
+    {
+      "target": "#64825",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#64825",
+      "candidate_fix": "#72389",
+      "reason": "Best live canonical issue while repairable PR #72389 is not yet merge-ready."
+    },
+    {
+      "target": "#64825",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#72389",
+      "reason": "Closeout is blocked on the canonical fix path landing in #72389."
+    },
+    {
+      "target": "#69026",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#64825",
+      "candidate_fix": null,
+      "reason": "Related TUI streaming watchdog tuning; keep open as a separate PR, not a duplicate closeout target."
+    },
+    {
+      "target": "#72389",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#64825",
+      "candidate_fix": "#72389",
+      "reason": "Canonical PR is repairable but not merge-ready; executor should repair the existing ProjectClownfish branch before merge/closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-156647-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#64825",
+      "candidate_fix": "#72389",
+      "reason": "A narrow executable repair artifact is needed before merge or issue closeout."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 7,
+    "route_security": 1,
+    "keep_canonical": 1,
+    "close_fixed_by_candidate": 1,
+    "keep_related": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 7,
+    "planned": 5,
+    "blocked": 1
+  },
+  "fix_counts": {
+    "pushed": 1
+  },
+  "apply_counts": {
+    "skipped": 1,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "pushed",
+      "target": "https://github.com/openclaw/openclaw/pull/72389",
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#64825",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#72389",
+      "title": null,
+      "idempotency_key": "pcw-ghcrawl-156647-autonomous-smoke-64825-close-after-72389",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#72389",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(tui): clear stale streaming after orphaned finals",
+      "idempotency_key": null,
+      "reason": "merge state status is UNSTABLE",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
