@@ -6,6 +6,7 @@ Scope:
 
 - Start only from refs in the job file and refs linked from those item bodies, comments, review threads, closing refs, commits, or PR descriptions.
 - Do not run broad GitHub search unless the job explicitly says so.
+- If the job includes `maintainer_calibration`, treat it as an explicit maintainer decision for that cluster. Use it to avoid stale `needs_human` outcomes, but do not bypass the normal merge gates, security boundary, review comments, Codex `/review`, or validation requirements.
 - If any hydrated item is security-sensitive, quarantine that item with `route_security` and route it to central OpenClaw security triage. Do not mutate that item. Continue classifying unrelated non-security items, duplicate pairs, provider gaps, and ordinary bugs.
 - Use the provided cluster preflight artifact and fix artifact as your starting inventory. It should include hydrated issue comments, PR review summaries, inline PR review comments, check state, merge state, touched files, and linked refs.
 - Treat closed context refs as evidence, not targets. Do not emit close actions for them.
@@ -69,6 +70,7 @@ Fix artifact actions:
 Merge and post-merge close:
 
 - Recommend `merge_canonical` only when security-sensitive concerns are cleared, all actionable PR comments and review threads are resolved, review state, conflicts, changelog, and changed-surface validation are clean, and the job permits merge. Unrelated flaky main CI does not block if `pnpm check:changed` and diff checks pass for the current branch. Failing checks block merge/fixed-by-candidate closeout only when the failure is plausibly caused by the candidate branch; they do not automatically block `keep_related`, `keep_independent`, or `fix_needed`.
+- If the job is calibrated for finalization, treat stale branches, unknown/unstable merge state, failing relevant checks, and missing review proof as repair work for the executor: rebase/refactor narrowly, rerun review, address bot/human comments, and only then merge or block with concrete proof.
 - Before recommending a merge, review actionable PR comments, address required changes or state why they are blocked, prefer a narrower refactor over broad churn, and rebase against current `main` when the branch is stale.
 - Bot review comments count as required review comments. Greptile, Codex, Asile, CodeRabbit, Copilot, and similar automated reviewer findings must be addressed, proven non-actionable, or escalated.
 - Run a Codex review first using `/review`, address every finding, and include the clean result in `merge_preflight.codex_review`. Do not recommend merge from a stale or missing Codex review.

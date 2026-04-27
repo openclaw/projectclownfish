@@ -13,8 +13,6 @@ blocked_actions:
   - force_push
   - bypass_checks
 require_human_for:
-  - security_sensitive
-  - failing_checks
   - conflicting_prs
   - unclear_canonical
   - broad_code_delta
@@ -29,6 +27,7 @@ candidates:
   - "#50394"
   - "#50801"
   - "#58867"
+  - "#72658"
 cluster_refs:
   - "#39569"
   - "#44256"
@@ -38,6 +37,7 @@ cluster_refs:
   - "#50394"
   - "#50801"
   - "#58867"
+  - "#72658"
 security_policy: central_security_only
 security_sensitive: false
 allow_instant_close: true
@@ -47,6 +47,11 @@ allow_post_merge_close: true
 require_fix_before_close: true
 canonical_hint: "ghcrawl representative #44256 is open; worker must verify it is still the best live canonical."
 notes: "Generated from ghcrawl run cluster 156610 on 2026-04-26."
+maintainer_calibration:
+  - "2026-04-27 vincentkoc approved finalization for https://github.com/openclaw/openclaw/pull/72658."
+  - "Feishu @all mention handling is an ordinary provider bug unless live evidence shows a real security boundary change."
+  - "Handle CI, review comments, review-bot findings, Codex /review, rebase, and merge prep before escalating."
+  - "Close duplicate/superseded PRs only after the canonical fix path is merged or concretely ready according to policy."
 ---
 
 # GHCrawl Cluster 156610
@@ -86,3 +91,4 @@ Open candidates:
 - #50394 fix(feishu): stop treating @all as a direct bot mention in group chats
 - #50801 fix(feishu): do not treat @_all as a bot-specific mention
 - #58867 fix(feishu): do not treat @all as bot mention unless respondToAtAll is enabled
+- #72658 fix(feishu): do not treat @all as a bot mention

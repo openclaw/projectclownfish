@@ -21,6 +21,15 @@ or unresolved review comments block merge and fixed-by-candidate closeout, but
 they do not require whole-cluster `needs_human`. Use `keep_related`,
 `keep_independent`, `superseded`, or `fix_needed` when that decision is clear.
 
+When a job includes maintainer calibration approving finalization of a specific
+ProjectClownfish PR, do not stop at the first stale branch, unstable merge
+state, missing review preflight, or failing relevant check. Treat those as
+repair tasks: rebase onto current `main`, make the smallest needed fix/refactor,
+address human and review-bot comments, run Codex `/review`, run
+`pnpm check:changed`, and then emit merge or a precise blocked result. Block
+only with concrete proof that the PR is nonsense, crosses a real security or
+privilege boundary, or cannot be repaired inside the job window.
+
 Every merge action must include `merge_preflight` proving security clearance,
 resolved comments, resolved bot comments, passed Codex `/review`, addressed
 review findings, and validation commands. Missing proof blocks merge.

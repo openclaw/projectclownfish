@@ -13,8 +13,6 @@ blocked_actions:
   - force_push
   - bypass_checks
 require_human_for:
-  - security_sensitive
-  - failing_checks
   - conflicting_prs
   - unclear_canonical
   - broad_code_delta
@@ -30,6 +28,8 @@ candidates:
   - "#58439"
   - "#59791"
   - "#60115"
+  - "#72305"
+  - "#72659"
 cluster_refs:
   - "#52120"
   - "#52236"
@@ -40,6 +40,8 @@ cluster_refs:
   - "#58439"
   - "#59791"
   - "#60115"
+  - "#72305"
+  - "#72659"
 security_policy: central_security_only
 security_sensitive: false
 allow_instant_close: true
@@ -49,6 +51,11 @@ allow_post_merge_close: true
 require_fix_before_close: true
 canonical_hint: "ghcrawl representative #55186 is open; worker must verify it is still the best live canonical."
 notes: "Generated from ghcrawl run cluster 156602 on 2026-04-26."
+maintainer_calibration:
+  - "2026-04-27 vincentkoc approved finalization for https://github.com/openclaw/openclaw/pull/72659."
+  - "Mattermost DM/thread behavior is an ordinary provider bug unless live evidence shows a real security boundary change."
+  - "Treat conflicting state, failing checks, missing review preflight, and #72305 overlap as executor repair/finalization work."
+  - "If #72659 is viable, rebase/fix/review/merge it; supersede #72305 only after the canonical path is safe."
 ---
 
 # GHCrawl Cluster 156602
@@ -89,3 +96,5 @@ Open candidates:
 - #58439 fix(mattermost): forward mediaLocalRoots in handleAction for agent workspace file uploads
 - #59791 fix(mattermost): prioritize threadRootId over kind===direct for DM thread replies [fixes #59758]
 - #60115 fix(mattermost): prevent DM replies from threading via resolveMattermostReplyRootId
+- #72305 fix(mattermost): prevent DM replies from creating threads
+- #72659 fix(mattermost): prevent DM replies from creating threads

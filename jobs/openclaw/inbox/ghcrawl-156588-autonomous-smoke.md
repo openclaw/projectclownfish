@@ -13,8 +13,6 @@ blocked_actions:
   - force_push
   - bypass_checks
 require_human_for:
-  - security_sensitive
-  - failing_checks
   - conflicting_prs
   - unclear_canonical
   - broad_code_delta
@@ -31,6 +29,7 @@ candidates:
   - "#51270"
   - "#51536"
   - "#65772"
+  - "#72619"
 cluster_refs:
   - "#46895"
   - "#47069"
@@ -42,6 +41,7 @@ cluster_refs:
   - "#51270"
   - "#51536"
   - "#65772"
+  - "#72619"
 security_policy: central_security_only
 security_sensitive: false
 allow_instant_close: true
@@ -51,6 +51,11 @@ allow_post_merge_close: true
 require_fix_before_close: true
 canonical_hint: "ghcrawl representative #50970 is open; worker must verify it is still the best live canonical."
 notes: "Generated from ghcrawl run cluster 156588 on 2026-04-26."
+maintainer_calibration:
+  - "2026-04-27 vincentkoc approved finalization for https://github.com/openclaw/openclaw/pull/72619."
+  - "Treat the prior security hold as likely false unless live evidence shows a real auth, secret, sandbox, or privilege-boundary change."
+  - "Treat UNKNOWN/UNSTABLE merge state and failing relevant checks as repair work: rebase, review, fix, run pnpm check:changed, then merge if clean."
+  - "Keep #46871 as the likely canonical issue family if live hydration proves it; do not use title-only similarity."
 ---
 
 # GHCrawl Cluster 156588
@@ -92,3 +97,4 @@ Open candidates:
 - #51270 fix(tui): handle /model list and /model status as commands
 - #51536 fix(webchat): use totalTokens for context utilization display
 - #65772 fix(cli): keep nodes list aligned with nodes status
+- #72619 fix(cli): keep nodes list aligned with nodes status

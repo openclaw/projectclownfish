@@ -13,8 +13,6 @@ blocked_actions:
   - force_push
   - bypass_checks
 require_human_for:
-  - security_sensitive
-  - failing_checks
   - conflicting_prs
   - unclear_canonical
   - broad_code_delta
@@ -28,6 +26,7 @@ candidates:
   - "#55933"
   - "#60052"
   - "#63959"
+  - "#72662"
 cluster_refs:
   - "#41624"
   - "#47660"
@@ -36,6 +35,7 @@ cluster_refs:
   - "#55933"
   - "#60052"
   - "#63959"
+  - "#72662"
 security_policy: central_security_only
 security_sensitive: false
 allow_instant_close: true
@@ -45,6 +45,11 @@ allow_post_merge_close: true
 require_fix_before_close: true
 canonical_hint: "ghcrawl representative #48072 is open; worker must verify it is still the best live canonical."
 notes: "Generated from ghcrawl run cluster 156624 on 2026-04-26."
+maintainer_calibration:
+  - "2026-04-27 vincentkoc approved finalization for https://github.com/openclaw/openclaw/pull/72662."
+  - "Docker named-volume ownership is an ordinary install/runtime bug unless the patch changes a real privilege boundary."
+  - "If ownership crosses a privilege boundary, block with proof; otherwise rebase, fix checks/review, run pnpm check:changed, and merge if clean."
+  - "Preserve credit for #48072 and #63959 in any replacement/finalization path."
 ---
 
 # GHCrawl Cluster 156624
@@ -83,3 +88,4 @@ Open candidates:
 - #55933 fix(docker): add pnpm store cache mount to prune step
 - #60052 fix(docker): npm lack of perms to run install in docker
 - #63959 fix(docker): pre-create .openclaw dir with node ownership for named volumes
+- #72662 fix(docker): repair named-volume state directory ownership

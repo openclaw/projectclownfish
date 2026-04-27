@@ -13,8 +13,6 @@ blocked_actions:
   - force_push
   - bypass_checks
 require_human_for:
-  - security_sensitive
-  - failing_checks
   - conflicting_prs
   - unclear_canonical
   - broad_code_delta
@@ -27,7 +25,9 @@ candidates:
   - "#63491"
   - "#64476"
   - "#67416"
+  - "#69056"
   - "#69057"
+  - "#72660"
 cluster_refs:
   - "#48766"
   - "#48771"
@@ -35,7 +35,9 @@ cluster_refs:
   - "#63491"
   - "#64476"
   - "#67416"
+  - "#69056"
   - "#69057"
+  - "#72660"
 security_policy: central_security_only
 security_sensitive: false
 allow_instant_close: true
@@ -45,6 +47,11 @@ allow_post_merge_close: true
 require_fix_before_close: true
 canonical_hint: "ghcrawl representative #63491 is open; worker must verify it is still the best live canonical."
 notes: "Generated from ghcrawl run cluster 156629 on 2026-04-26."
+maintainer_calibration:
+  - "2026-04-27 vincentkoc approved finalization for https://github.com/openclaw/openclaw/pull/72660."
+  - "Windows restart health should inspect current main and src/daemon/schtasks* coverage before blocking on schtasks Last Result uncertainty."
+  - "If main already covers Last Result, cite proof and continue; otherwise patch narrowly, rebase, review, run pnpm check:changed, and merge if clean."
+  - "#69056 is related Windows signal handling evidence; keep it related unless live proof shows the same root cause."
 ---
 
 # GHCrawl Cluster 156629
@@ -82,4 +89,6 @@ Open candidates:
 - #63491 [Bug]: Windows Scheduled Task gateway restart/health becomes inconsistent after ready
 - #64476 [Bug]: Windows local gateway has partial RPC failures/timeouts on v2026.4.9 even when gateway process is running
 - #67416 Gateway restart crashes instead of restarting on Windows
+- #69056 fix(gateway): handle SIGUSR1 gracefully on Windows
 - #69057 gateway restart fails on Windows with ERR_UNKNOWN_SIGNAL (SIGUSR1)
+- #72660 fix(cli): tighten Windows restart policy-close health checks
