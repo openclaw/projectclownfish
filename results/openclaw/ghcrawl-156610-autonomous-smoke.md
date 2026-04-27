@@ -2,12 +2,12 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-156610-autonomous-smoke"
 mode: "autonomous"
-run_id: "24987101927"
-run_url: "https://github.com/openclaw/clownfish/actions/runs/24987101927"
-head_sha: "3e2fd13363b486f8485ca909bf84ab36ee9ff77c"
+run_id: "24987399670"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/24987399670"
+head_sha: "75c79cef47b3ca23a53992bcbb37f8be7afc4d10"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-27T09:27:47.381Z"
+published_at: "2026-04-27T09:35:18.533Z"
 canonical: "https://github.com/openclaw/openclaw/pull/72658"
 canonical_issue: null
 canonical_pr: "https://github.com/openclaw/openclaw/pull/72658"
@@ -25,7 +25,7 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/clownfish/actions/runs/24987101927](https://github.com/openclaw/clownfish/actions/runs/24987101927)
+Run: [https://github.com/openclaw/clownfish/actions/runs/24987399670](https://github.com/openclaw/clownfish/actions/runs/24987399670)
 
 Workflow conclusion: success
 
@@ -35,7 +35,7 @@ Canonical: https://github.com/openclaw/openclaw/pull/72658
 
 ## Summary
 
-Canonical fix path is merged PR #72658. It supersedes the open non-security Feishu @all PRs. #49770 is quarantined as security-sensitive by the preflight artifact. #39569/#39568 are related Feishu reply-mention work, not duplicates of the @all fix.
+Prepared autonomous ProjectClownfish result for ghcrawl-156610. Canonical Feishu @all fix is merged via #72658; unrelated reply-mention work remains open; security-sensitive #49770 is quarantined; open overlapping @all PRs are planned for credited superseded closeout.
 
 ## Impact
 
@@ -60,28 +60,28 @@ Canonical fix path is merged PR #72658. It supersedes the open non-security Feis
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #49767 | close_superseded | blocked | superseded | close requires ProjectClownfish fix PR opened/pushed or merge executed first |
-| #50144 | close_superseded | blocked | superseded | close requires ProjectClownfish fix PR opened/pushed or merge executed first |
-| #50394 | close_superseded | blocked | superseded | close requires ProjectClownfish fix PR opened/pushed or merge executed first |
-| #50801 | close_superseded | blocked | superseded | close requires ProjectClownfish fix PR opened/pushed or merge executed first |
-| #58867 | close_superseded | blocked | superseded | close requires ProjectClownfish fix PR opened/pushed or merge executed first |
+| #49767 | close_superseded | blocked | superseded | target changed since worker review |
+| #50144 | close_superseded | blocked | superseded | target changed since worker review |
+| #50394 | close_superseded | blocked | superseded | target changed since worker review |
+| #50801 | close_superseded | blocked | superseded | target changed since worker review |
+| #58867 | close_superseded | blocked | superseded | target changed since worker review |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #37706 | keep_closed | skipped | fixed_by_candidate | Historical closed tracker for the same @all bug; no mutation allowed. |
-| #39568 | keep_related | planned | related | Related Feishu channel bug, but a different root cause and validation path from the @all canonical fix. |
-| #39569 | keep_related | planned | related | Keep open as a related follow-up PR; it is not covered by merged #72658. |
-| #44256 | keep_closed | skipped | superseded | Closed source PR superseded by merged replacement #72658. |
-| #49761 | keep_closed | skipped | fixed_by_candidate | Historical duplicate issue already closed; no mutation allowed. |
-| #49767 | close_superseded | planned | superseded | Open contributor PR is superseded by merged canonical fix #72658 with credit preserved. |
-| #49770 | route_security | planned | security_sensitive | Route exact security-sensitive item to central OpenClaw security handling; do not close, merge, or use as implementation source. |
-| #50144 | close_superseded | planned | superseded | Open contributor PR is superseded by merged canonical fix #72658 with credit preserved. |
-| #50394 | close_superseded | planned | superseded | Open contributor PR is superseded by merged canonical fix #72658 with credit preserved. |
-| #50801 | close_superseded | planned | superseded | Open contributor PR is superseded by merged canonical fix #72658 with credit preserved. |
-| #58867 | close_superseded | planned | superseded | Open contributor PR is superseded by merged canonical fix #72658 with credit preserved. |
-| #72658 | keep_canonical | planned | canonical | Merged canonical fix for this @all/@_all cluster. |
+| #39569 | keep_related | planned | related | Same Feishu mention-detection area, but materially different user-visible bug and root cause. |
+| #44256 | keep_closed | skipped | superseded | Already closed targets must not receive close actions. |
+| #49767 | close_superseded | planned | superseded | Covered by merged canonical replacement; original PR is broader and has unresolved review-bot blockers. |
+| #49770 | route_security | planned | security_sensitive | Security-sensitive item is out of ProjectClownfish cleanup scope. |
+| #50144 | close_superseded | planned | superseded | Covered by merged canonical replacement; original PR has unresolved review-bot blockers. |
+| #50394 | close_superseded | planned | superseded | Covered by merged canonical replacement. |
+| #50801 | close_superseded | planned | superseded | Covered by merged canonical replacement; candidate fix has landed cleanly. |
+| #58867 | close_superseded | planned | superseded | Covered by merged canonical replacement; original PR has unresolved review-bot blocker and broader surface. |
+| #72658 | keep_closed | skipped | canonical | Canonical fix already merged and closed; no further mutation for this target. |
+| #39568 | keep_related | planned | related | Linked issue is same provider area but different bug family. |
+| #37706 | keep_closed | skipped | fixed_by_candidate | Historical context only; already closed. |
+| #49761 | keep_closed | skipped | duplicate | Historical context only; already closed. |
 
 ## Needs Human
 
