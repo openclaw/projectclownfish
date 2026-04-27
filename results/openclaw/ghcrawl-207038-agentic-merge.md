@@ -2,15 +2,15 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-207038-agentic-merge"
 mode: "autonomous"
-run_id: "24977043657"
-run_url: "https://github.com/openclaw/clownfish/actions/runs/24977043657"
-head_sha: "50a0b51ad3e3cfffa74443fc81bf0c842f9747bf"
+run_id: "24978956018"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/24978956018"
+head_sha: "29400ea714d617de4455a11f0aa59ca745bf6cda"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-27T04:49:07.510Z"
-canonical: "https://github.com/openclaw/openclaw/pull/42009"
-canonical_issue: null
-canonical_pr: "https://github.com/openclaw/openclaw/pull/42009"
+published_at: "2026-04-27T05:58:50.803Z"
+canonical: "https://github.com/openclaw/openclaw/issues/63992"
+canonical_issue: "https://github.com/openclaw/openclaw/issues/63992"
+canonical_pr: null
 actions_total: 9
 fix_executed: 0
 fix_failed: 0
@@ -25,17 +25,17 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/clownfish/actions/runs/24977043657](https://github.com/openclaw/clownfish/actions/runs/24977043657)
+Run: [https://github.com/openclaw/clownfish/actions/runs/24978956018](https://github.com/openclaw/clownfish/actions/runs/24978956018)
 
 Workflow conclusion: success
 
 Worker result: planned
 
-Canonical: https://github.com/openclaw/openclaw/pull/42009
+Canonical: https://github.com/openclaw/openclaw/issues/63992
 
 ## Summary
 
-Classified the hydrated cluster without direct GitHub mutation. #42009 remains the best canonical open PR for the original --agent + --to bug, but no merge is recommended because merge preflight is incomplete. Default-agent --to/session-key items form a related subfamily: #56370/#56453/#63992 stay open, #64108 is already superseded/closed, and security-sensitive replacement PR #72414 is quarantined. Already-closed refs are not targeted for closure.
+Autonomous classification pass using the hydrated preflight artifact. Security-sensitive refs are quarantined only; non-security items are kept open/closed according to live state and relationship to the default-agent/session-routing family.
 
 ## Impact
 
@@ -66,15 +66,15 @@ Classified the hydrated cluster without direct GitHub mutation. #42009 remains t
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #30654 | route_security | planned | security_sensitive | Security-sensitive hydrated ref must be routed to central OpenClaw security handling, not processed by ProjectClownfish mutation. |
-| #42009 | keep_canonical | planned | canonical | Best canonical for the representative bug, but merge is not recommended until the branch is refreshed/reviewed and merge_preflight is populated. |
-| #56370 | keep_related | planned | related | Related default-agent routing issue should remain open until a non-security canonical fix lands or security triage resolves #72414. |
-| #56453 | keep_related | planned | related | Useful related PR, but not the canonical PR for the representative #42009 bug and not merge-preflighted in this run. |
-| #60614 | keep_closed | skipped | fixed_by_candidate | Already-closed refs must not receive close actions. |
-| #60621 | keep_closed | skipped | superseded | Already-closed PR; no close action permitted. |
-| #63992 | keep_related | planned | related | Keep the issue open while the security-sensitive replacement PR is routed to central security handling. |
-| #64108 | keep_closed | skipped | superseded | Already closed as superseded by a replacement path; no further closure action is valid. |
-| #72414 | route_security | planned | security_sensitive | Security-sensitive linked PR must be routed to central OpenClaw security handling; continue non-security classification only. |
+| #30654 | route_security | planned | security_sensitive | Security-sensitive hydrated ref must be routed to central OpenClaw security handling, not processed by backlog automation. |
+| #42009 | route_security | planned | security_sensitive | Open security-sensitive PR is quarantined for central OpenClaw security triage. |
+| #56370 | keep_related | planned | related | Related default-agent routing report, but not safe to close because the canonical implementation candidate #72414 is quarantined and unmerged. |
+| #56453 | keep_related | planned | related | Useful related PR in the same default-agent routing family; keep open because the broader replacement/canonical fix path is quarantined. |
+| #60614 | keep_closed | skipped | fixed_by_candidate | Already closed; no closure action is valid. |
+| #60621 | keep_closed | skipped | superseded | Already closed as superseded by code on main; no closure action is valid. |
+| #63992 | keep_canonical | planned | canonical | Best non-security open canonical issue for the default-agent session-routing family while the implementation PR is quarantined. |
+| #64108 | keep_closed | skipped | superseded | Already closed as superseded by a replacement path; no closure action is valid. |
+| #72414 | route_security | planned | security_sensitive | Open PR has a security-sensitive review finding and must be routed to central OpenClaw security handling without ProjectClownfish merge/close/fix action. |
 
 ## Needs Human
 
