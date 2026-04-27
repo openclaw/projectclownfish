@@ -1,0 +1,117 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-166007-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "24978122093",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978122093",
+  "head_sha": "e8d437d9978c397d8d3fb39c23597d4e5c1d98bf",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-166007-agentic-merge.md",
+  "published_at": "2026-04-27T05:29:39.681Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Hydrated preflight shows the original representative #39463 is closed and security-sensitive, #40850 is also security-sensitive, and the remaining open PRs are distinct install.sh subfamilies rather than one mergeable canonical path. No GitHub mutations are safe from this pass; security refs are routed, closed refs are skipped, and open refs are kept for separate repair/review paths.",
+  "actions": [
+    {
+      "target": "#39463",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PR must be quarantined; no close, merge, comment, label, or fix action is planned."
+    },
+    {
+      "target": "#40850",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PR must be routed to central security handling; it is already closed so no closure action is valid."
+    },
+    {
+      "target": "#44986",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Useful but not merge-ready installer optimization; unresolved member review blocks merge/fixed-by-candidate closeout and it is not a duplicate of the obsolete security-sensitive representative."
+    },
+    {
+      "target": "#49594",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical closed PR only; no mutation is valid."
+    },
+    {
+      "target": "#49673",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical closed PR only; no mutation is valid."
+    },
+    {
+      "target": "#50479",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Useful narrow PR in a separate installer warning subfamily, but unresolved review-bot feedback and failing-check evidence block merge or fixed-by-candidate closeout."
+    },
+    {
+      "target": "#51436",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Historical closed PR only; no mutation is valid."
+    },
+    {
+      "target": "#58340",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent feature PR with unresolved bot findings; no close or merge action is safe in this cluster."
+    },
+    {
+      "target": "#67795",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related installer compatibility PR, but failing install-smoke blocks merge and there is no single canonical path for the mixed cluster."
+    }
+  ],
+  "action_counts": {
+    "route_security": 2,
+    "keep_related": 3,
+    "keep_closed": 3,
+    "keep_independent": 1
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "skipped": 3
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
