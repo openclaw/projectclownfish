@@ -3,18 +3,18 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-28T07:36:29.510Z",
-  "count": 10,
+  "generated_at": "2026-04-28T07:38:27.271Z",
+  "count": 12,
   "summary": {
-    "open_prs": 10,
+    "open_prs": 12,
     "ready_candidates": 0,
     "security_hold": 5,
     "needs_rebase": 10,
     "mergeability_unknown": 0,
-    "needs_checks": 9,
+    "needs_checks": 11,
     "needs_review": 5,
-    "needs_merge_preflight": 10,
-    "needs_result_backfill": 5
+    "needs_merge_preflight": 12,
+    "needs_result_backfill": 7
   },
   "dispatch": {
     "enabled": false,
@@ -27,6 +27,66 @@
     "candidates": []
   },
   "prs": [
+    {
+      "number": 73379,
+      "title": "fix(cron): support Telegram thread IDs in cron add/edit",
+      "url": "https://github.com/openclaw/openclaw/pull/73379",
+      "branch": "clownfish/ghcrawl-156855-autonomous-smoke",
+      "head_sha": "06e4bc6035bf5636453850e9e8e11912493e233a",
+      "cluster_id": "ghcrawl-156855-autonomous-smoke",
+      "job_path": "jobs/openclaw/inbox/ghcrawl-156855-autonomous-smoke.md",
+      "updated_at": "2026-04-28T07:36:00Z",
+      "mergeable": "MERGEABLE",
+      "merge_state_status": "UNSTABLE",
+      "review_decision": "",
+      "security_hold": false,
+      "checks": {
+        "total": 73,
+        "counts": {
+          "CANCELLED": 4,
+          "SUCCESS": 43,
+          "SKIPPED": 9,
+          "IN_PROGRESS": 17
+        },
+        "blockers": [
+          "CI / build-artifacts:IN_PROGRESS",
+          "CI / checks-fast-contracts-plugins:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-1:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-2:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-4:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-5:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-6:IN_PROGRESS",
+          "CI / checks-node-core-fast-support:IN_PROGRESS",
+          "CI / checks-node-core-runtime-infra:IN_PROGRESS",
+          "CI / checks-node-core-runtime-media-ui:IN_PROGRESS",
+          "CI / checks-node-agentic-commands:IN_PROGRESS",
+          "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
+          "CI / checks-node-agentic-plugins:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-dispatch:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-commands-state-routing:IN_PROGRESS",
+          "CI / check-additional-extension-package-boundary:IN_PROGRESS",
+          "Greptile Review:IN_PROGRESS"
+        ]
+      },
+      "review_threads": {
+        "status": "clean",
+        "reason": null,
+        "unresolved_count": 0,
+        "examples": []
+      },
+      "review_bots": {
+        "count": 0,
+        "latest": []
+      },
+      "latest_record": null,
+      "blockers": [
+        "needs_merge_state:UNSTABLE",
+        "needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS; CI / checks-node-extensions-shard-1:IN_PROGRESS",
+        "needs_merge_preflight",
+        "needs_result_backfill"
+      ],
+      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
+    },
     {
       "number": 73374,
       "title": "fix: retry same model on transient fallback errors",
@@ -694,6 +754,82 @@
         "needs_merge_preflight"
       ],
       "recommended_next_action": "route to central security triage"
+    },
+    {
+      "number": 73380,
+      "title": "fix(memory): keep pre-compaction flush prompt out of user transcript",
+      "url": "https://github.com/openclaw/openclaw/pull/73380",
+      "branch": "clownfish/ghcrawl-156869-autonomous-smoke",
+      "head_sha": "a18411cfaa72e5213bd235615278dd9d10225a89",
+      "cluster_id": "ghcrawl-156869-autonomous-smoke",
+      "job_path": "jobs/openclaw/inbox/ghcrawl-156869-autonomous-smoke.md",
+      "updated_at": "2026-04-28T07:37:31Z",
+      "mergeable": "MERGEABLE",
+      "merge_state_status": "UNSTABLE",
+      "review_decision": "",
+      "security_hold": false,
+      "checks": {
+        "total": 68,
+        "counts": {
+          "CANCELLED": 4,
+          "SUCCESS": 23,
+          "SKIPPED": 8,
+          "IN_PROGRESS": 33
+        },
+        "blockers": [
+          "CI / build-artifacts:IN_PROGRESS",
+          "CI / checks-fast-bundled:IN_PROGRESS",
+          "CI / checks-fast-contracts-plugins:IN_PROGRESS",
+          "CI / checks-fast-contracts-channels-a:IN_PROGRESS",
+          "CI / checks-fast-contracts-channels-b:IN_PROGRESS",
+          "CI / checks-fast-contracts-channels-c:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-1:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-2:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-3:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-4:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-5:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-6:IN_PROGRESS",
+          "CI / checks-node-core-fast-support:IN_PROGRESS",
+          "CI / checks-node-core-src-security:IN_PROGRESS",
+          "CI / checks-node-core-runtime-infra:IN_PROGRESS",
+          "CI / checks-node-core-runtime-media-ui:IN_PROGRESS",
+          "CI / checks-node-core-runtime-shared:IN_PROGRESS",
+          "CI / checks-node-agentic-control-plane:IN_PROGRESS",
+          "CI / checks-node-agentic-commands:IN_PROGRESS",
+          "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
+          "CI / checks-node-agentic-plugins:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-agent-runner:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-dispatch:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-commands-state-routing:IN_PROGRESS",
+          "CI / check-lint:IN_PROGRESS",
+          "CI / check-test-types:IN_PROGRESS",
+          "CI / check-additional-boundaries:IN_PROGRESS",
+          "CI / check-additional-extension-channels:IN_PROGRESS",
+          "CI / check-additional-extension-bundled:IN_PROGRESS",
+          "CI / check-additional-extension-package-boundary:IN_PROGRESS",
+          "CI / check-additional-runtime-topology-architecture:IN_PROGRESS",
+          "CI / check-docs:IN_PROGRESS",
+          "Greptile Review:IN_PROGRESS"
+        ]
+      },
+      "review_threads": {
+        "status": "clean",
+        "reason": null,
+        "unresolved_count": 0,
+        "examples": []
+      },
+      "review_bots": {
+        "count": 0,
+        "latest": []
+      },
+      "latest_record": null,
+      "blockers": [
+        "needs_merge_state:UNSTABLE",
+        "needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-fast-bundled:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS",
+        "needs_merge_preflight",
+        "needs_result_backfill"
+      ],
+      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
     }
   ]
 }

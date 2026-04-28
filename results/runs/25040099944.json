@@ -1,0 +1,79 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156915-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25040099944",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25040099944",
+  "head_sha": "6b7e12844dc688ededad88c8b64d13fabc4b8a1c",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156915-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:37:08.914Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/66856",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/66856",
+  "canonical_pr": null,
+  "summary": "Hydrated preflight shows the job's canonical issue and both issue candidates are already closed with maintainer comments tying the false plugins.allow warning to fixes already present on current main. No closure, merge, or fix PR action is valid. The only active routing decision is to quarantine hydrated security-sensitive linked PR #63848 without letting it block the closed non-security issue classifications.",
+  "actions": [
+    {
+      "target": "#62049",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66856",
+      "candidate_fix": null,
+      "reason": "Closed historical linked issue retained as evidence only."
+    },
+    {
+      "target": "#63848",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine the exact security-sensitive linked PR for central OpenClaw security handling."
+    },
+    {
+      "target": "#64933",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66856",
+      "candidate_fix": null,
+      "reason": "Already closed as fixed with canonical issue #66856; keep closed and do not mutate."
+    },
+    {
+      "target": "#66121",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#66856",
+      "candidate_fix": null,
+      "reason": "Already closed as implemented/fixed on main; keep closed and do not mutate."
+    },
+    {
+      "target": "#66856",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#66856",
+      "candidate_fix": null,
+      "reason": "Canonical issue remains the best historical root-cause thread, but it is already closed as fixed on current main."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 4,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "skipped": 4,
+    "planned": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
