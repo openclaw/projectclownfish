@@ -11,8 +11,9 @@ const FIX_PR_ACTIONS = new Set(["open_fix_pr", "repair_contributor_branch"]);
 const FIX_PR_READY_STATUSES = new Set(["opened", "pushed"]);
 const POST_MERGE_CLOSE_ACTIONS = new Set(["close_duplicate", "close_superseded", "close_fixed_by_candidate", "post_merge_close"]);
 const DEFAULT_IGNORED_CHECKS = ["auto-response", "Labeler", "Stale"];
-const HUMAN_REVIEW_LABEL = "clownfish:human-review";
-const MERGE_READY_LABEL = "clownfish:merge-ready";
+const CLOWNFISH_LABEL = "clownfish";
+const CLOWNFISH_LABEL_COLOR = "F97316";
+const CLOWNFISH_LABEL_DESCRIPTION = "Tracked by Clownfish automation";
 const POST_FLIGHT_WAIT_MS = numberEnv("CLOWNFISH_POST_FLIGHT_WAIT_MS", 10 * 60 * 1000);
 const POST_FLIGHT_POLL_MS = numberEnv("CLOWNFISH_POST_FLIGHT_POLL_MS", 15 * 1000);
 
@@ -161,11 +162,11 @@ function finalizeFixPr(action) {
   }
 
   if (process.env.CLOWNFISH_ALLOW_MERGE !== "1") {
-    labelForHumanMergeReview(result.repo, parsed.number);
+    labelForClownfishReview(result.repo, parsed.number);
     return {
       ...prBase,
       status: "blocked",
-      reason: "merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review",
+      reason: "merge requires CLOWNFISH_ALLOW_MERGE=1; labeled clownfish",
       merge_method: "squash",
       waited_ms: waitedMs,
     };
@@ -288,11 +289,9 @@ function validateMergePolicy() {
   return "";
 }
 
-function labelForHumanMergeReview(repo, number) {
-  ensureLabel(repo, HUMAN_REVIEW_LABEL, "B60205", "Needs maintainer review before ProjectClownfish can finish");
-  ensureLabel(repo, MERGE_READY_LABEL, "0E8A16", "ProjectClownfish found a merge-ready candidate; human owns the final merge");
-  ghBestEffort(["issue", "edit", String(number), "--repo", repo, "--add-label", HUMAN_REVIEW_LABEL]);
-  ghBestEffort(["issue", "edit", String(number), "--repo", repo, "--add-label", MERGE_READY_LABEL]);
+function labelForClownfishReview(repo, number) {
+  ensureLabel(repo, CLOWNFISH_LABEL, CLOWNFISH_LABEL_COLOR, CLOWNFISH_LABEL_DESCRIPTION);
+  ghBestEffort(["issue", "edit", String(number), "--repo", repo, "--add-label", CLOWNFISH_LABEL]);
 }
 
 function ensureLabel(repo, name, color, description) {

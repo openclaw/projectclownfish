@@ -224,7 +224,7 @@ Each cluster job:
 8. Applies guarded close/comment and explicit merge actions through `scripts/apply-result.mjs`.
 9. Publishes a sanitized result ledger back to this repo under `results/`, `jobs/openclaw/closed/`, `apply-report.json`, and this README dashboard.
 
-Codex does not receive a GitHub token during classification. The runner preflights GitHub state before model execution, then Codex receives those artifacts and returns JSON only. When a reviewed fix artifact is executed, Codex gets a temporary target checkout without GitHub credentials; the deterministic executor owns commit, push, PR creation, and source-PR closeout using `CLOWNFISH_GH_TOKEN`. Commit author metadata defaults to `projectclownfish` and can be overridden with `CLOWNFISH_GIT_USER_NAME` and `CLOWNFISH_GIT_USER_EMAIL`; this is separate from the GitHub token used to push. The applicator re-fetches the target item, checks `updated_at`, blocks unsafe closeouts, writes idempotent close comments, closes supported duplicate/superseded/fixed-by-candidate actions, and can squash-merge explicitly allowed clean PR actions.
+Codex does not receive a GitHub token during classification. The runner preflights GitHub state before model execution, then Codex receives those artifacts and returns JSON only. The preferred GitHub auth path is a short-lived installation token minted from `CLOWNFISH_APP_ID` and `CLOWNFISH_APP_PRIVATE_KEY`; legacy `CLOWNFISH_READ_GH_TOKEN` and `CLOWNFISH_GH_TOKEN` secrets remain fallbacks. The read token is narrowed to read-only issue, PR, content, checks, and status access. When a reviewed fix artifact is executed, Codex gets a temporary target checkout without GitHub credentials; the deterministic executor owns commit, push, PR creation, and source-PR closeout using a write-scoped GitHub App token or `CLOWNFISH_GH_TOKEN`. Commit author metadata defaults to `projectclownfish` and can be overridden with `CLOWNFISH_GIT_USER_NAME` and `CLOWNFISH_GIT_USER_EMAIL`; this is separate from the GitHub token used to push. The applicator re-fetches the target item, checks `updated_at`, blocks unsafe closeouts, writes idempotent close comments, closes supported duplicate/superseded/fixed-by-candidate actions, and can squash-merge explicitly allowed clean PR actions.
 
 Merge is deliberately harder than closeout. A merge action must include `merge_preflight` proving security clearance, resolved human comments, resolved review-bot findings, a passed Codex `/review`, addressed review findings, and clean validation commands. The fix executor runs an agentic edit/review loop before it writes a fix PR: edit, validate, Codex `/review`, address findings, revalidate, and resolve PR review threads when permitted. The applicator also checks live unresolved GitHub review threads immediately before merge.
 
@@ -234,6 +234,10 @@ Runs for the same job path and mode are queued instead of running concurrently. 
 
 Full worker prompts, Codex transcripts, and raw artifacts stay in GitHub Actions. The committed ledger keeps only the cluster summary, run URL, action counts, apply outcomes, closed targets, and needs-human entries.
 
+## GitHub App Auth
+
+Create a GitHub App installed on `openclaw/openclaw` and `openclaw/clownfish`. Give it `Contents: write`, `Issues: write`, `Pull requests: write`, `Checks: read`, and `Commit statuses: read`; leave webhooks disabled. Store the App ID as repository variable `CLOWNFISH_APP_ID` and the downloaded private key PEM as repository secret `CLOWNFISH_APP_PRIVATE_KEY` in `openclaw/clownfish`. The workflows mint per-job tokens with the minimum permission level needed for that job, so classification stays read-only and execution gets write access only after the execution gate opens. Merge remains disabled unless `CLOWNFISH_ALLOW_MERGE=1`.
+
 ## Modes
 
 - `plan`: produces recommendations only.
@@ -242,7 +246,7 @@ Full worker prompts, Codex transcripts, and raw artifacts stay in GitHub Actions
 - `route_security`: quarantines true security-sensitive refs without poisoning unrelated cluster work.
 - `needs_human`: only product-direction, trust-boundary, canonical-choice, merge-path, or contributor-credit decisions that remain unclear after the hydrated artifact and single-item review/check/decide pass.
 - Automated reviewer feedback must be cleared during autonomous PR work. Greptile, Codex, Asile, CodeRabbit, Copilot, and similar bot comments must be addressed, proven non-actionable, or escalated before any merge or post-merge closeout recommendation.
-- Merge preflight: no PR can merge until `CLOWNFISH_ALLOW_MERGE=1`, security issues are cleared, comments are resolved, Codex `/review` has passed, findings are addressed, and changed-surface validation is clean. With the merge gate closed, ProjectClownfish labels merge-ready targets for human review instead of merging.
+- Merge preflight: no PR can merge until `CLOWNFISH_ALLOW_MERGE=1`, security issues are cleared, comments are resolved, Codex `/review` has passed, findings are addressed, and changed-surface validation is clean. With the merge gate closed, ProjectClownfish applies the single `clownfish` label and leaves the final merge to a maintainer.
 - Repair ladder: make the useful contributor PR mergeable when its branch is maintainer-editable; otherwise replace draft, stale, unmergeable, uneditable, or unsafe branches with a narrow credited fix PR. When fix PR mode is enabled, "wait or replace" is already answered: replace, preserve credit, then supersede only the source PR that could not be safely updated.
 
 ## Local Run
@@ -349,7 +353,7 @@ The workflow needs:
 - a read-only GitHub token for worker inspection
 - a separate write-scoped GitHub token for the deterministic applicator
 - execution gates that default on for execute/autonomous jobs: set `CLOWNFISH_ALLOW_EXECUTE=0` or `CLOWNFISH_ALLOW_FIX_PR=0` only when intentionally pausing live work
-- merge is separately gated by `CLOWNFISH_ALLOW_MERGE`; it defaults to `0`, and merge-ready PRs are labeled `clownfish:human-review` and `clownfish:merge-ready` for a maintainer to merge manually
+- merge is separately gated by `CLOWNFISH_ALLOW_MERGE`; it defaults to `0`, and merge-ready PRs keep only the orange `clownfish` label for a maintainer to merge manually
 - optional `CLOWNFISH_CODEX_CLI_VERSION` variable to pin and refresh the cached Codex CLI
 - optional `CLOWNFISH_MODEL` override for dispatch scripts; default Codex model is `gpt-5.5`
 - optional `CLOWNFISH_MAX_LIVE_WORKERS` variable for dispatch/requeue/self-heal worker fan-out; default is `50`

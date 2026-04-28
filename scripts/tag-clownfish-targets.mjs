@@ -5,6 +5,8 @@ import { execFileSync } from "node:child_process";
 import { currentProjectRepo, parseArgs, parseSimpleYaml, repoRoot } from "./lib.mjs";
 
 const DEFAULT_LABEL = "clownfish";
+const DEFAULT_LABEL_COLOR = "F97316";
+const DEFAULT_LABEL_DESCRIPTION = "Tracked by Clownfish automation";
 const FIX_PR_STATUSES = new Set(["opened", "pushed", "executed", "blocked", "planned"]);
 const APPLY_STATUSES = new Set(["executed"]);
 const CLOSE_ACTIONS = new Set([
@@ -327,7 +329,7 @@ function createGithubLabel() {
   const repo = process.env.CLOWNFISH_TARGET_REPO ?? "openclaw/openclaw";
   execFileSync(
     "gh",
-    ["label", "create", labelName, "--repo", repo, "--color", "0E8A16", "--description", "Tracked by Clownfish automation"],
+    ["label", "create", labelName, "--repo", repo, "--color", DEFAULT_LABEL_COLOR, "--description", DEFAULT_LABEL_DESCRIPTION],
     { cwd: repoRoot(), encoding: "utf8", env: process.env, stdio: ["ignore", "pipe", "pipe"] },
   );
 }

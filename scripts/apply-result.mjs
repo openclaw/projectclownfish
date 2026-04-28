@@ -18,8 +18,9 @@ const MERGE_ACTIONS = new Set(["merge_candidate", "merge_canonical"]);
 const CLOSE_CLASSIFICATIONS = new Set(["duplicate", "superseded", "fixed_by_candidate", "low_signal"]);
 const PASSING_CHECK_CONCLUSIONS = new Set(["SUCCESS", "SKIPPED", "NEUTRAL"]);
 const CLEAN_MERGE_STATES = new Set(["CLEAN"]);
-const HUMAN_REVIEW_LABEL = "clownfish:human-review";
-const MERGE_READY_LABEL = "clownfish:merge-ready";
+const CLOWNFISH_LABEL = "clownfish";
+const CLOWNFISH_LABEL_COLOR = "F97316";
+const CLOWNFISH_LABEL_DESCRIPTION = "Tracked by Clownfish automation";
 
 const args = parseArgs(process.argv.slice(2));
 const jobPath = args._[0];
@@ -406,11 +407,11 @@ function applyMergeAction({ job, result, action, dryRun, allowMissingUpdatedAt, 
   }
 
   if (process.env.CLOWNFISH_ALLOW_MERGE !== "1") {
-    if (!dryRun) labelForHumanMergeReview(result.repo, target);
+    if (!dryRun) labelForClownfishReview(result.repo, target);
     return {
       ...base,
       status: "blocked",
-      reason: "merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review",
+      reason: "merge requires CLOWNFISH_ALLOW_MERGE=1; labeled clownfish",
       live_state: live.state,
       live_updated_at: live.updated_at,
       merge_method: "squash",
@@ -494,11 +495,9 @@ function validateMergePolicy({ job, action }) {
   return "";
 }
 
-function labelForHumanMergeReview(repo, target) {
-  ensureLabel(repo, HUMAN_REVIEW_LABEL, "B60205", "Needs maintainer review before ProjectClownfish can finish");
-  ensureLabel(repo, MERGE_READY_LABEL, "0E8A16", "ProjectClownfish found a merge-ready candidate; human owns the final merge");
-  ghBestEffort(["issue", "edit", String(target), "--repo", repo, "--add-label", HUMAN_REVIEW_LABEL]);
-  ghBestEffort(["issue", "edit", String(target), "--repo", repo, "--add-label", MERGE_READY_LABEL]);
+function labelForClownfishReview(repo, target) {
+  ensureLabel(repo, CLOWNFISH_LABEL, CLOWNFISH_LABEL_COLOR, CLOWNFISH_LABEL_DESCRIPTION);
+  ghBestEffort(["issue", "edit", String(target), "--repo", repo, "--add-label", CLOWNFISH_LABEL]);
 }
 
 function ensureLabel(repo, name, color, description) {

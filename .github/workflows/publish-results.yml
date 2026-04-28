@@ -14,6 +14,8 @@ permissions:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+  CLOWNFISH_APP_ID: ${{ vars.CLOWNFISH_APP_ID || secrets.CLOWNFISH_APP_ID }}
+  CLOWNFISH_APP_AUTH_ENABLED: ${{ secrets.CLOWNFISH_APP_PRIVATE_KEY != '' && (vars.CLOWNFISH_APP_ID != '' || secrets.CLOWNFISH_APP_ID != '') && '1' || '0' }}
 
 concurrency:
   group: projectclownfish-publish-results
@@ -31,6 +33,23 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: "24"
+
+      - name: Create GitHub App read token
+        id: read_app_token
+        if: ${{ env.CLOWNFISH_APP_AUTH_ENABLED == '1' }}
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ env.CLOWNFISH_APP_ID }}
+          private-key: ${{ secrets.CLOWNFISH_APP_PRIVATE_KEY }}
+          owner: openclaw
+          repositories: |
+            openclaw
+            clownfish
+          permission-contents: read
+          permission-issues: read
+          permission-pull-requests: read
+          permission-checks: read
+          permission-statuses: read
 
       - name: Download worker artifacts
         env:
@@ -50,7 +69,7 @@ jobs:
 
       - name: Publish and commit result ledger
         env:
-          GH_TOKEN: ${{ secrets.CLOWNFISH_READ_GH_TOKEN || github.token }}
+          GH_TOKEN: ${{ steps.read_app_token.outputs.token || secrets.CLOWNFISH_READ_GH_TOKEN || github.token }}
           RUN_ID: ${{ github.event.workflow_run.id }}
           RUN_URL: ${{ github.event.workflow_run.html_url }}
           HEAD_SHA: ${{ github.event.workflow_run.head_sha }}

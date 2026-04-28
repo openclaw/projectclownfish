@@ -73,6 +73,8 @@ jobs:
       CLOWNFISH_MODEL: ${{ inputs.model || vars.CLOWNFISH_MODEL || 'gpt-5.5' }}
       CODEX_CLI_VERSION: ${{ vars.CLOWNFISH_CODEX_CLI_VERSION || '0.125.0' }}
       OPENCLAW_LOCAL_CHECK: "0"
+      CLOWNFISH_APP_ID: ${{ vars.CLOWNFISH_APP_ID || secrets.CLOWNFISH_APP_ID }}
+      CLOWNFISH_APP_AUTH_ENABLED: ${{ secrets.CLOWNFISH_APP_PRIVATE_KEY != '' && (vars.CLOWNFISH_APP_ID != '' || secrets.CLOWNFISH_APP_ID != '') && '1' || '0' }}
     steps:
       - uses: actions/checkout@v5
 
@@ -99,12 +101,29 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node24-codex-
 
+      - name: Create GitHub App read token
+        id: read_app_token
+        if: ${{ env.CLOWNFISH_APP_AUTH_ENABLED == '1' }}
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ env.CLOWNFISH_APP_ID }}
+          private-key: ${{ secrets.CLOWNFISH_APP_PRIVATE_KEY }}
+          owner: openclaw
+          repositories: |
+            openclaw
+            clownfish
+          permission-contents: read
+          permission-issues: read
+          permission-pull-requests: read
+          permission-checks: read
+          permission-statuses: read
+
       - name: Verify GitHub read token
         env:
-          GH_TOKEN: ${{ secrets.CLOWNFISH_READ_GH_TOKEN }}
+          GH_TOKEN: ${{ steps.read_app_token.outputs.token || secrets.CLOWNFISH_READ_GH_TOKEN }}
         run: |
           if [ -z "${GH_TOKEN:-}" ]; then
-            echo "CLOWNFISH_READ_GH_TOKEN is required"
+            echo "CLOWNFISH_APP_ID + CLOWNFISH_APP_PRIVATE_KEY or CLOWNFISH_READ_GH_TOKEN is required"
             exit 1
           fi
           gh auth status
@@ -133,7 +152,7 @@ jobs:
 
       - name: Run worker
         env:
-          GH_TOKEN: ${{ secrets.CLOWNFISH_READ_GH_TOKEN }}
+          GH_TOKEN: ${{ steps.read_app_token.outputs.token || secrets.CLOWNFISH_READ_GH_TOKEN }}
         run: |
           args=("${{ inputs.job }}" --mode "${{ inputs.mode }}")
           if [ "${{ inputs.dry_run }}" = "true" ]; then
@@ -193,6 +212,8 @@ jobs:
       CLOWNFISH_GIT_USER_EMAIL: ${{ vars.CLOWNFISH_GIT_USER_EMAIL || 'projectclownfish@users.noreply.github.com' }}
       CODEX_CLI_VERSION: ${{ vars.CLOWNFISH_CODEX_CLI_VERSION || '0.125.0' }}
       OPENCLAW_LOCAL_CHECK: "0"
+      CLOWNFISH_APP_ID: ${{ vars.CLOWNFISH_APP_ID || secrets.CLOWNFISH_APP_ID }}
+      CLOWNFISH_APP_AUTH_ENABLED: ${{ secrets.CLOWNFISH_APP_PRIVATE_KEY != '' && (vars.CLOWNFISH_APP_ID != '' || secrets.CLOWNFISH_APP_ID != '') && '1' || '0' }}
     steps:
       - uses: actions/checkout@v5
 
@@ -212,6 +233,33 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node24-codex-${{ env.CODEX_CLI_VERSION }}-target-pnpm-
             ${{ runner.os }}-node24-codex-
+
+      - name: Create GitHub App write token
+        id: write_app_token
+        if: ${{ env.CLOWNFISH_APP_AUTH_ENABLED == '1' }}
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ env.CLOWNFISH_APP_ID }}
+          private-key: ${{ secrets.CLOWNFISH_APP_PRIVATE_KEY }}
+          owner: openclaw
+          repositories: |
+            openclaw
+            clownfish
+          permission-contents: write
+          permission-issues: write
+          permission-pull-requests: write
+          permission-checks: read
+          permission-statuses: read
+
+      - name: Verify GitHub write token
+        env:
+          GH_TOKEN: ${{ steps.write_app_token.outputs.token || secrets.CLOWNFISH_GH_TOKEN }}
+        run: |
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "CLOWNFISH_APP_ID + CLOWNFISH_APP_PRIVATE_KEY or CLOWNFISH_GH_TOKEN is required"
+            exit 1
+          fi
+          gh auth status
 
       - name: Install Codex CLI
         run: |
@@ -245,31 +293,31 @@ jobs:
         if: ${{ env.CLOWNFISH_ALLOW_EXECUTE == '1' && env.CLOWNFISH_ALLOW_FIX_PR == '1' }}
         timeout-minutes: 30
         env:
-          GH_TOKEN: ${{ secrets.CLOWNFISH_GH_TOKEN }}
+          GH_TOKEN: ${{ steps.write_app_token.outputs.token || secrets.CLOWNFISH_GH_TOKEN }}
         run: npm run execute-fix -- "${{ inputs.job }}" --latest
 
       - name: Apply safe closure actions
         if: ${{ env.CLOWNFISH_ALLOW_EXECUTE == '1' }}
         env:
-          GH_TOKEN: ${{ secrets.CLOWNFISH_GH_TOKEN }}
+          GH_TOKEN: ${{ steps.write_app_token.outputs.token || secrets.CLOWNFISH_GH_TOKEN }}
         run: npm run apply-result -- "${{ inputs.job }}" --latest
 
       - name: Post-flight finalize fix PRs
         if: ${{ env.CLOWNFISH_ALLOW_EXECUTE == '1' && env.CLOWNFISH_ALLOW_FIX_PR == '1' }}
         env:
-          GH_TOKEN: ${{ secrets.CLOWNFISH_GH_TOKEN }}
+          GH_TOKEN: ${{ steps.write_app_token.outputs.token || secrets.CLOWNFISH_GH_TOKEN }}
         run: npm run post-flight -- "${{ inputs.job }}" --latest
 
       - name: Apply post-flight closeouts
         if: ${{ env.CLOWNFISH_ALLOW_EXECUTE == '1' }}
         env:
-          GH_TOKEN: ${{ secrets.CLOWNFISH_GH_TOKEN }}
+          GH_TOKEN: ${{ steps.write_app_token.outputs.token || secrets.CLOWNFISH_GH_TOKEN }}
         run: npm run apply-result -- "${{ inputs.job }}" --latest
 
       - name: Tag Clownfish targets
         if: ${{ always() && env.CLOWNFISH_ALLOW_EXECUTE == '1' }}
         env:
-          GH_TOKEN: ${{ secrets.CLOWNFISH_GH_TOKEN }}
+          GH_TOKEN: ${{ steps.write_app_token.outputs.token || secrets.CLOWNFISH_GH_TOKEN }}
         run: npm run tag-clownfish -- .projectclownfish/runs --apply --live --open-branches false --report .projectclownfish/runs/clownfish-label-report.json
 
       - name: Upload final worker artifacts
