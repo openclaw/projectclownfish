@@ -41,31 +41,31 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 28, 2026, 07:11 UTC
+Last dashboard update: Apr 28, 2026, 07:12 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 181 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 182 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 181 | 100% |
+| Latest clusters reviewed | 182 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 86 | 47.5% |
-| Needs-human clusters | 42 | 23.2% |
-| Latest successful clusters | 179 | 98.9% |
+| Clean completed clusters | 86 | 47.3% |
+| Needs-human clusters | 42 | 23.1% |
+| Latest successful clusters | 180 | 98.9% |
 | Latest failed clusters | 2 | 1.1% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 406 | audit |
+| Run attempts archived | 407 | audit |
 | Fix action attempts | 113 | audit |
 | Fix actions executed | 0 | 0.0% |
 | Fix actions failed | 26 | 23.0% |
 | Fix actions blocked | 27 | 23.9% |
-| Latest clusters with fix failures | 23 | 12.7% |
-| Distinct PRs touched | 722 | 100% |
-| Open PRs tracked | 314 | 43.5% |
-| Closed unmerged PRs tracked | 329 | 45.6% |
+| Latest clusters with fix failures | 23 | 12.6% |
+| Distinct PRs touched | 723 | 100% |
+| Open PRs tracked | 314 | 43.4% |
+| Closed unmerged PRs tracked | 330 | 45.6% |
 | Completed close actions | 30 | 12.2% |
 | Completed merge actions | 23 | 9.3% |
 | Duplicate closes | 22 | 73.3% |
@@ -79,6 +79,7 @@ Scope: 181 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 
 | Cluster | State | Source job | Reason | Report | Run |
 | --- | --- | --- | --- | --- | --- |
+| [ghcrawl-156722-autonomous-smoke](results/openclaw/ghcrawl-156722-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156722-autonomous-smoke.md | close requires ProjectClownfish fix PR opened/pushed or merge executed first | [report](results/openclaw/ghcrawl-156722-autonomous-smoke.md) | [25039070434](https://github.com/openclaw/clownfish/actions/runs/25039070434) |
 | [ghcrawl-156617-autonomous-smoke](results/openclaw/ghcrawl-156617-autonomous-smoke.md) | fix blocked | jobs/openclaw/inbox/ghcrawl-156617-autonomous-smoke.md | base branch advanced after validation and clownfish/ghcrawl-156617-autonomous-smoke needs a fresh rebase pass: Rebasing (1/2) error: coul... | [report](results/openclaw/ghcrawl-156617-autonomous-smoke.md) | [25035222674](https://github.com/openclaw/clownfish/actions/runs/25035222674) |
 | [ghcrawl-156636-autonomous-smoke](results/openclaw/ghcrawl-156636-autonomous-smoke.md) | fix failed | jobs/openclaw/inbox/ghcrawl-156636-autonomous-smoke.md | remote: Permission to security-for-ai-agent/openclaw.git denied to vincentkoc. fatal: unable to access 'https://github.com/security-for-a... | [report](results/openclaw/ghcrawl-156636-autonomous-smoke.md) | [25032428566](https://github.com/openclaw/clownfish/actions/runs/25032428566) |
 | [ghcrawl-156651-autonomous-smoke](results/openclaw/ghcrawl-156651-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156651-autonomous-smoke.md | mergeable state is CONFLICTING | [report](results/openclaw/ghcrawl-156651-autonomous-smoke.md) | [25023019730](https://github.com/openclaw/clownfish/actions/runs/25023019730) |
@@ -103,7 +104,6 @@ Scope: 181 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | [ghcrawl-156610-autonomous-smoke](results/openclaw/ghcrawl-156610-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156610-autonomous-smoke.md | target changed since worker review | [report](results/openclaw/ghcrawl-156610-autonomous-smoke.md) | [24987399670](https://github.com/openclaw/clownfish/actions/runs/24987399670) |
 | [ghcrawl-156594-autonomous-smoke](results/openclaw/ghcrawl-156594-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156594-autonomous-smoke.md | mergeable state is CONFLICTING | [report](results/openclaw/ghcrawl-156594-autonomous-smoke.md) | [24981853908](https://github.com/openclaw/clownfish/actions/runs/24981853908) |
 | [ghcrawl-156613-autonomous-smoke](results/openclaw/ghcrawl-156613-autonomous-smoke.md) | needs human | jobs/openclaw/inbox/ghcrawl-156613-autonomous-smoke.md | #64953: maintainer decision needed on whether models.mode=replace should include implicit, provider-discovered, or plugin-augmented model... | [report](results/openclaw/ghcrawl-156613-autonomous-smoke.md) | [24981856066](https://github.com/openclaw/clownfish/actions/runs/24981856066) |
-| [ghcrawl-156626-autonomous-smoke](results/openclaw/ghcrawl-156626-autonomous-smoke.md) | fix failed | jobs/openclaw/inbox/ghcrawl-156626-autonomous-smoke.md | validation command failed (pnpm test:serial extensions/memory-lancedb/index.test.ts): undefined ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL Comman... | [report](results/openclaw/ghcrawl-156626-autonomous-smoke.md) | [24980262624](https://github.com/openclaw/clownfish/actions/runs/24980262624) |
 
 ### Fix Failure Queue
 
@@ -140,7 +140,7 @@ Scope: 181 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | Reason | Latest count | Example cluster |
 | --- | ---: | --- |
 | action status is blocked | 89 | [ghcrawl-156636-autonomous-smoke](results/openclaw/ghcrawl-156636-autonomous-smoke.md) |
-| close requires ProjectClownfish fix PR opened/pushed or merge executed first | 11 | [ghcrawl-156628-autonomous-smoke](results/openclaw/ghcrawl-156628-autonomous-smoke.md) |
+| close requires ProjectClownfish fix PR opened/pushed or merge executed first | 12 | [ghcrawl-156722-autonomous-smoke](results/openclaw/ghcrawl-156722-autonomous-smoke.md) |
 | merge state status is UNSTABLE | 10 | [ghcrawl-156647-autonomous-smoke](results/openclaw/ghcrawl-156647-autonomous-smoke.md) |
 | target changed since worker review | 9 | [ghcrawl-156624-autonomous-smoke](results/openclaw/ghcrawl-156624-autonomous-smoke.md) |
 | mergeable state is CONFLICTING | 7 | [ghcrawl-156651-autonomous-smoke](results/openclaw/ghcrawl-156651-autonomous-smoke.md) |

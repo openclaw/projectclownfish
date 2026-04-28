@@ -1,0 +1,134 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156722-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25039070434",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25039070434",
+  "head_sha": "da036e490846162aa84e5b443cfc870a58f935a1",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156722-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:11:51.160Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/46703",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/46703",
+  "canonical_pr": null,
+  "summary": "Classified the session-memory timezone cluster using the hydrated preflight artifact. #46703 remains the canonical issue for the original UTC filename bug, and current main d525d6486d305482906b974136b8d25395211709 is evidenced as already fixing the user-facing session-memory date mismatch, so the only planned mutation is a fixed-by-current-main closeout for #46703. Closed refs are retained as historical evidence only; linked #55943 is related but separate subagent memory work.",
+  "actions": [
+    {
+      "target": "#46703",
+      "action": "close_fixed_by_candidate",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#46703",
+      "candidate_fix": null,
+      "reason": "The canonical UTC filename bug is evidenced as implemented on current main; close_fixed_by_candidate is allowed because the fix is already present on main and the target is still open in the preflight artifact."
+    },
+    {
+      "target": "#55943",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#46703",
+      "candidate_fix": null,
+      "reason": "Related session-memory area, but distinct root cause and user-visible failure from the timezone filename canonical."
+    },
+    {
+      "target": "#17633",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#46703",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#37027",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#46703",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive close actions."
+    },
+    {
+      "target": "#46721",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46703",
+      "candidate_fix": null,
+      "reason": "The PR is already closed and superseded by the replacement path; no mutation is valid for this closed ref."
+    },
+    {
+      "target": "#55963",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#46703",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive close actions; classification is split between duplicate UTC filename work and related subagent work."
+    },
+    {
+      "target": "#55974",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#46703",
+      "candidate_fix": null,
+      "reason": "Already closed and not mergeable; useful context only."
+    },
+    {
+      "target": "#64990",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#46703",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate; no close action is valid."
+    },
+    {
+      "target": "#67568",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#46703",
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on main; no mutation is valid."
+    }
+  ],
+  "action_counts": {
+    "close_fixed_by_candidate": 1,
+    "keep_related": 1,
+    "keep_closed": 7
+  },
+  "action_status_counts": {
+    "planned": 2,
+    "skipped": 7
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#46703",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#46703",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-156722-autonomous-smoke:#46703:close_fixed_by_current_main:d525d6486d305482906b974136b8d25395211709",
+      "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
