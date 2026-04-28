@@ -1,0 +1,77 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156885-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25039987987",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25039987987",
+  "head_sha": "9fff25109fedd0a6983588f78c57d6ac62e0da26",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156885-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:34:12.514Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/57997",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/57997",
+  "canonical_pr": null,
+  "summary": "Hydrated preflight shows all job refs are already closed. No GitHub mutations are planned. The original representative #57997 is no longer open, but maintainer closeout comments on #57997, #58506, and #58927 state current main implements the cron payload.model and agentId paths with regression coverage. Linked contributor PRs #58998 and #59000 are closed historical evidence only and are not merge or close targets.",
+  "actions": [
+    {
+      "target": "#57997",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#57997",
+      "candidate_fix": null,
+      "reason": "Already closed canonical representative; closure policy forbids close actions for closed items."
+    },
+    {
+      "target": "#58506",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#57997",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate of the #57997 cron payload.model root-cause family; no mutation is allowed or needed."
+    },
+    {
+      "target": "#58927",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#57997",
+      "candidate_fix": null,
+      "reason": "Already closed as implemented on current main; no post-merge or fixed-by close action is valid for a closed issue."
+    },
+    {
+      "target": "#58998",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#57997",
+      "candidate_fix": null,
+      "reason": "Closed historical contributor PR; useful context was superseded by maintainer-confirmed current main behavior, and closed PRs must not receive close or merge actions."
+    },
+    {
+      "target": "#59000",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#57997",
+      "candidate_fix": null,
+      "reason": "Closed historical contributor PR with unresolved review/check blockers; it is evidence only and not a mutation target."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 5
+  },
+  "action_status_counts": {
+    "skipped": 5
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
