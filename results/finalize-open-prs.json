@@ -3,7 +3,7 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-28T18:40:47.311Z",
+  "generated_at": "2026-04-28T18:43:01.656Z",
   "count": 19,
   "summary": {
     "open_prs": 19,
@@ -12,7 +12,7 @@
     "needs_rebase": 13,
     "mergeability_unknown": 0,
     "needs_checks": 16,
-    "needs_review": 8,
+    "needs_review": 9,
     "needs_merge_preflight": 19,
     "needs_result_backfill": 13
   },
@@ -35,45 +35,31 @@
       "head_sha": "c9f17f62d210c36287013003b87b8f2a15484abd",
       "cluster_id": "ghcrawl-156717-autonomous-smoke",
       "job_path": "jobs/openclaw/inbox/ghcrawl-156717-autonomous-smoke.md",
-      "updated_at": "2026-04-28T18:38:43Z",
+      "updated_at": "2026-04-28T18:41:37Z",
       "mergeable": "MERGEABLE",
       "merge_state_status": "UNSTABLE",
       "review_decision": "",
       "security_hold": false,
       "checks": {
-        "total": 64,
+        "total": 71,
         "counts": {
           "CANCELLED": 2,
-          "SKIPPED": 9,
-          "SUCCESS": 29,
-          "IN_PROGRESS": 23,
-          "FAILURE": 1
+          "SKIPPED": 10,
+          "SUCCESS": 49,
+          "IN_PROGRESS": 3,
+          "FAILURE": 7
         },
         "blockers": [
-          "CI / build-artifacts:IN_PROGRESS",
           "CI / checks-fast-bundled:IN_PROGRESS",
-          "CI / checks-fast-contracts-plugins:IN_PROGRESS",
-          "CI / checks-fast-contracts-channels-a:IN_PROGRESS",
-          "CI / checks-fast-contracts-channels-c:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-1:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-2:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-3:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-4:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-5:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-6:IN_PROGRESS",
-          "CI / checks-node-core-fast-support:IN_PROGRESS",
-          "CI / checks-node-core-runtime-infra:IN_PROGRESS",
-          "CI / checks-node-core-runtime-media-ui:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-4:FAILURE",
+          "CI / checks-node-core-runtime-infra:FAILURE",
           "CI / checks-node-agentic-control-plane:IN_PROGRESS",
-          "CI / checks-node-agentic-commands:IN_PROGRESS",
-          "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
+          "CI / checks-node-agentic-plugin-sdk:FAILURE",
           "CI / checks-node-agentic-plugins:IN_PROGRESS",
-          "CI / checks-node-auto-reply-reply-dispatch:IN_PROGRESS",
-          "CI / checks-node-auto-reply-reply-commands-state-routing:IN_PROGRESS",
-          "CI / check-additional-extension-bundled:IN_PROGRESS",
-          "CI / check-additional-extension-package-boundary:IN_PROGRESS",
           "CI / check-docs:FAILURE",
-          "Greptile Review:IN_PROGRESS"
+          "CI / checks-node-channels:FAILURE",
+          "CI / checks-node-core-support-boundary:FAILURE",
+          "CI / checks-node-extensions:FAILURE"
         ]
       },
       "review_threads": {
@@ -83,13 +69,26 @@
         "examples": []
       },
       "review_bots": {
-        "count": 0,
-        "latest": []
+        "count": 2,
+        "latest": [
+          {
+            "source": "comment",
+            "author": "greptile-apps",
+            "url": "https://github.com/openclaw/openclaw/pull/73744#issuecomment-4338119441",
+            "submitted_at": "2026-04-28T18:41:03Z"
+          },
+          {
+            "source": "comment",
+            "author": "clawsweeper",
+            "url": "https://github.com/openclaw/openclaw/pull/73744#issuecomment-4338122729",
+            "submitted_at": "2026-04-28T18:41:37Z"
+          }
+        ]
       },
       "latest_record": null,
       "blockers": [
         "needs_merge_state:UNSTABLE",
-        "needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-fast-bundled:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS",
+        "needs_checks:CI / checks-fast-bundled:IN_PROGRESS; CI / checks-node-extensions-shard-4:FAILURE; CI / checks-node-core-runtime-infra:FAILURE",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],
@@ -103,7 +102,7 @@
       "head_sha": "5dd7729dead4ace4ec54ca09b2c270ceb95e3094",
       "cluster_id": "ghcrawl-156682-autonomous-smoke",
       "job_path": "jobs/openclaw/inbox/ghcrawl-156682-autonomous-smoke.md",
-      "updated_at": "2026-04-28T18:39:45Z",
+      "updated_at": "2026-04-28T18:41:22Z",
       "mergeable": "MERGEABLE",
       "merge_state_status": "UNSTABLE",
       "review_decision": "",
@@ -113,37 +112,50 @@
         "counts": {
           "CANCELLED": 4,
           "SKIPPED": 10,
-          "SUCCESS": 49,
-          "IN_PROGRESS": 4,
-          "FAILURE": 6
+          "SUCCESS": 50,
+          "IN_PROGRESS": 2,
+          "FAILURE": 7
         },
         "blockers": [
           "CI / checks-fast-bundled:IN_PROGRESS",
           "CI / checks-node-extensions-shard-4:FAILURE",
           "CI / checks-node-core-runtime-infra:FAILURE",
-          "CI / checks-node-agentic-control-plane:IN_PROGRESS",
+          "CI / checks-node-agentic-control-plane:FAILURE",
           "CI / checks-node-agentic-plugin-sdk:FAILURE",
           "CI / checks-node-agentic-plugins:IN_PROGRESS",
           "CI / checks-node-channels:FAILURE",
           "CI / checks-node-core-support-boundary:FAILURE",
-          "CI / checks-node-extensions:FAILURE",
-          "Greptile Review:IN_PROGRESS"
+          "CI / checks-node-extensions:FAILURE"
         ]
       },
       "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
+        "status": "blocked",
+        "reason": "unresolved review threads remain",
+        "unresolved_count": 1,
+        "examples": [
+          "https://github.com/openclaw/openclaw/pull/73739#discussion_r3156425388"
+        ]
       },
       "review_bots": {
-        "count": 1,
+        "count": 3,
         "latest": [
           {
             "source": "comment",
             "author": "clawsweeper",
             "url": "https://github.com/openclaw/openclaw/pull/73739#issuecomment-4338111905",
             "submitted_at": "2026-04-28T18:39:45Z"
+          },
+          {
+            "source": "comment",
+            "author": "greptile-apps",
+            "url": "https://github.com/openclaw/openclaw/pull/73739#issuecomment-4338120737",
+            "submitted_at": "2026-04-28T18:41:17Z"
+          },
+          {
+            "source": "review",
+            "author": "greptile-apps",
+            "url": null,
+            "submitted_at": "2026-04-28T18:41:22Z"
           }
         ]
       },
@@ -171,6 +183,7 @@
       },
       "blockers": [
         "needs_merge_state:UNSTABLE",
+        "unresolved review threads remain",
         "needs_checks:CI / checks-fast-bundled:IN_PROGRESS; CI / checks-node-extensions-shard-4:FAILURE; CI / checks-node-core-runtime-infra:FAILURE",
         "needs_merge_preflight"
       ],
@@ -184,19 +197,18 @@
       "head_sha": "3e528fc2ca5aea95c0d86e5a0b0ff8c73ebde545",
       "cluster_id": "ghcrawl-156648-autonomous-smoke",
       "job_path": "jobs/openclaw/inbox/ghcrawl-156648-autonomous-smoke.md",
-      "updated_at": "2026-04-28T18:36:47Z",
+      "updated_at": "2026-04-28T18:41:06Z",
       "mergeable": "MERGEABLE",
       "merge_state_status": "UNSTABLE",
       "review_decision": "",
       "security_hold": false,
       "checks": {
-        "total": 72,
+        "total": 73,
         "counts": {
           "CANCELLED": 3,
           "SKIPPED": 10,
           "SUCCESS": 50,
-          "FAILURE": 8,
-          "IN_PROGRESS": 1
+          "FAILURE": 10
         },
         "blockers": [
           "CI / checks-fast-bundled:FAILURE",
@@ -204,10 +216,11 @@
           "CI / checks-node-core-runtime-infra:FAILURE",
           "CI / checks-node-agentic-control-plane:FAILURE",
           "CI / checks-node-agentic-plugin-sdk:FAILURE",
-          "CI / checks-node-agentic-plugins:IN_PROGRESS",
+          "CI / checks-node-agentic-plugins:FAILURE",
           "CI / checks-node-channels:FAILURE",
           "CI / checks-node-core-support-boundary:FAILURE",
-          "CI / checks-node-extensions:FAILURE"
+          "CI / checks-node-extensions:FAILURE",
+          "CI / checks-node-core:FAILURE"
         ]
       },
       "review_threads": {
@@ -219,13 +232,19 @@
         ]
       },
       "review_bots": {
-        "count": 2,
+        "count": 3,
         "latest": [
           {
             "source": "comment",
             "author": "greptile-apps",
             "url": "https://github.com/openclaw/openclaw/pull/73737#issuecomment-4338095085",
             "submitted_at": "2026-04-28T18:36:43Z"
+          },
+          {
+            "source": "comment",
+            "author": "clawsweeper",
+            "url": "https://github.com/openclaw/openclaw/pull/73737#issuecomment-4338119704",
+            "submitted_at": "2026-04-28T18:41:06Z"
           },
           {
             "source": "review",
@@ -845,60 +864,30 @@
       "head_sha": "5e92b5761dac0f0478dba3562d9d413d4d5f1aef",
       "cluster_id": "ghcrawl-156681-autonomous-smoke",
       "job_path": "jobs/openclaw/inbox/ghcrawl-156681-autonomous-smoke.md",
-      "updated_at": "2026-04-28T18:39:55Z",
+      "updated_at": "2026-04-28T18:41:50Z",
       "mergeable": "MERGEABLE",
       "merge_state_status": "UNSTABLE",
       "review_decision": "",
       "security_hold": false,
       "checks": {
-        "total": 59,
+        "total": 66,
         "counts": {
-          "IN_PROGRESS": 41,
-          "SUCCESS": 10,
-          "SKIPPED": 8
+          "FAILURE": 7,
+          "SUCCESS": 48,
+          "SKIPPED": 8,
+          "IN_PROGRESS": 3
         },
         "blockers": [
-          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS",
-          "CI / build-artifacts:IN_PROGRESS",
+          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE",
           "CI / checks-fast-bundled:IN_PROGRESS",
-          "CI / checks-fast-contracts-plugins:IN_PROGRESS",
-          "CI / checks-fast-contracts-channels-a:IN_PROGRESS",
-          "CI / checks-fast-contracts-channels-b:IN_PROGRESS",
-          "CI / checks-fast-contracts-channels-c:IN_PROGRESS",
-          "CI / checks-fast-protocol:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-1:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-2:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-3:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-4:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-5:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-6:IN_PROGRESS",
-          "CI / checks-node-core-fast-support:IN_PROGRESS",
-          "CI / checks-node-core-src-security:IN_PROGRESS",
-          "CI / checks-node-core-ui:IN_PROGRESS",
-          "CI / checks-node-core-runtime-infra:IN_PROGRESS",
-          "CI / checks-node-core-runtime-media-ui:IN_PROGRESS",
-          "CI / checks-node-core-runtime-shared:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-4:FAILURE",
+          "CI / checks-node-core-runtime-infra:FAILURE",
           "CI / checks-node-agentic-control-plane:IN_PROGRESS",
-          "CI / checks-node-agentic-commands:IN_PROGRESS",
-          "CI / checks-node-agentic-agents:IN_PROGRESS",
-          "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
+          "CI / checks-node-agentic-plugin-sdk:FAILURE",
           "CI / checks-node-agentic-plugins:IN_PROGRESS",
-          "CI / checks-node-auto-reply-core-top-level:IN_PROGRESS",
-          "CI / checks-node-auto-reply-reply-agent-runner:IN_PROGRESS",
-          "CI / checks-node-auto-reply-reply-dispatch:IN_PROGRESS",
-          "CI / checks-node-auto-reply-reply-commands-state-routing:IN_PROGRESS",
-          "CI / check-preflight-guards:IN_PROGRESS",
-          "CI / check-prod-types:IN_PROGRESS",
-          "CI / check-lint:IN_PROGRESS",
-          "CI / check-policy-guards:IN_PROGRESS",
-          "CI / check-test-types:IN_PROGRESS",
-          "CI / check-strict-smoke:IN_PROGRESS",
-          "CI / check-additional-boundaries:IN_PROGRESS",
-          "CI / check-additional-extension-channels:IN_PROGRESS",
-          "CI / check-additional-extension-bundled:IN_PROGRESS",
-          "CI / check-additional-extension-package-boundary:IN_PROGRESS",
-          "CI / check-additional-runtime-topology-architecture:IN_PROGRESS",
-          "CI / check-docs:IN_PROGRESS"
+          "CI / checks-node-channels:FAILURE",
+          "CI / checks-node-core-support-boundary:FAILURE",
+          "CI / checks-node-extensions:FAILURE"
         ]
       },
       "review_threads": {
@@ -933,7 +922,7 @@
       "latest_record": null,
       "blockers": [
         "needs_merge_state:UNSTABLE",
-        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS; CI / build-artifacts:IN_PROGRESS; CI / checks-fast-bundled:IN_PROGRESS",
+        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-fast-bundled:IN_PROGRESS; CI / checks-node-extensions-shard-4:FAILURE",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],
@@ -1021,7 +1010,7 @@
       "head_sha": "288c98d9bbbd17692fb2759cb0d961ce91672219",
       "cluster_id": "ghcrawl-156581-autonomous-smoke",
       "job_path": "jobs/openclaw/inbox/ghcrawl-156581-autonomous-smoke.md",
-      "updated_at": "2026-04-28T18:31:59Z",
+      "updated_at": "2026-04-28T18:40:26Z",
       "mergeable": "MERGEABLE",
       "merge_state_status": "UNSTABLE",
       "review_decision": "",
@@ -1054,13 +1043,19 @@
         "examples": []
       },
       "review_bots": {
-        "count": 1,
+        "count": 2,
         "latest": [
           {
             "source": "comment",
             "author": "greptile-apps",
             "url": "https://github.com/openclaw/openclaw/pull/73732#issuecomment-4338067899",
             "submitted_at": "2026-04-28T18:31:59Z"
+          },
+          {
+            "source": "comment",
+            "author": "clawsweeper",
+            "url": "https://github.com/openclaw/openclaw/pull/73732#issuecomment-4338115577",
+            "submitted_at": "2026-04-28T18:40:26Z"
           }
         ]
       },

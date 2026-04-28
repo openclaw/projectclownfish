@@ -1,0 +1,159 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156679-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25070625859",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25070625859",
+  "head_sha": "8b6e588945d23823a34b05ad78ca752a430936c7",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156679-autonomous-smoke.md",
+  "published_at": "2026-04-28T18:41:21.955Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/59697",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/59697",
+  "summary": "Hydrated state shows the representative #50796 is already closed and obsolete. The live canonical path is repairable PR #59697 because it covers both WebUI extraction and gateway chat.history for plugin-injected user-role <relevant-memories> blocks, but it is not merge-ready until review-bot whitespace and user-text preservation findings are addressed. #51288 is overlapping narrower work and should not close until the canonical repair lands.",
+  "actions": [
+    {
+      "target": "#50788",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#59697",
+      "candidate_fix": "#59697",
+      "reason": "Already closed; no mutation is valid for this item."
+    },
+    {
+      "target": "#50796",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#59697",
+      "candidate_fix": "#59697",
+      "reason": "Closed obsolete assistant-scaffolding PR; no close or merge action is valid."
+    },
+    {
+      "target": "#50920",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#59697",
+      "candidate_fix": "#59697",
+      "reason": "Already closed and not part of the remaining user-role memory-context canonical path."
+    },
+    {
+      "target": "#51288",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#59697",
+      "candidate_fix": "#59697",
+      "reason": "Closeout is blocked by require_fix_before_close until the canonical #59697 repair is pushed and validated."
+    },
+    {
+      "target": "#53588",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#59697",
+      "candidate_fix": "#59697",
+      "reason": "Already closed as narrower superseded work; no mutation is valid."
+    },
+    {
+      "target": "#59568",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#59697",
+      "candidate_fix": "#59697",
+      "reason": "Already closed; no mutation is valid for this item."
+    },
+    {
+      "target": "#59697",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#59697",
+      "candidate_fix": "#59697",
+      "reason": "Repair the contributor branch before any merge or duplicate closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-156679-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#59697",
+      "candidate_fix": "#59697",
+      "reason": "A narrow branch repair is executable and preserves contributor credit without requiring maintainer judgment."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 5,
+    "close_superseded": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 5,
+    "blocked": 1,
+    "planned": 2
+  },
+  "fix_counts": {
+    "pushed": 1
+  },
+  "apply_counts": {
+    "skipped": 1,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "pushed",
+      "target": "https://github.com/openclaw/openclaw/pull/59697",
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#51288",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#59697",
+      "candidate_fix": "#59697",
+      "title": null,
+      "idempotency_key": "ghcrawl-156679-autonomous-smoke:#51288:close_superseded_blocked_by_59697:2026-04-28T18:11:35Z",
+      "reason": "Closeout is blocked by require_fix_before_close until the canonical #59697 repair is pushed and validated.",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#59697",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix: strip <relevant-memories> injected by memory plugin from user messages in WebUI",
+      "idempotency_key": null,
+      "reason": "merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
