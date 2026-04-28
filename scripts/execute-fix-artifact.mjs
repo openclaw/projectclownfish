@@ -228,7 +228,7 @@ report.actions.push(outcome);
 writeReport(report, resultPath);
 
 function isBlockedFixError(error) {
-  return /Codex produced no target repo changes|Codex \/review did not pass|Codex (?:fix worker|review-fix worker|rebase-fix worker|\/review) timed out|Codex (?:fix worker|review-fix worker|rebase-fix worker|\/review) failed|could not repair rebase conflicts|validation command failed/i.test(
+  return /Codex produced no target repo changes|Codex \/review did not pass|Codex (?:fix worker|review-fix worker|rebase-fix worker|\/review) timed out|Codex (?:fix worker|review-fix worker|rebase-fix worker|\/review) failed|could not repair rebase conflicts|validation command failed|base branch advanced after validation/i.test(
     String(error?.message ?? error),
   );
 }
@@ -307,7 +307,7 @@ function executeRepairBranch({ fixArtifact, targetDir }) {
   run("git", ["fetch", `https://github.com/${pull.head.repo.full_name}.git`, `${pull.head.ref}:${branch}`], { cwd: targetDir });
   run("git", ["checkout", branch], { cwd: targetDir });
   ensureMergeBaseAvailable({ targetDir, baseBranch });
-  const rebased = rebaseRecoverableReplacementBranch({ targetDir, branch, baseBranch, fixArtifact });
+  let rebased = rebaseRecoverableReplacementBranch({ targetDir, branch, baseBranch, fixArtifact });
   if (!sameRepoBranch && !dryRun) {
     ghAuthSetupGit(targetDir);
     assertRepairBranchWritable({ targetDir, pull, rebased });
@@ -315,6 +315,10 @@ function executeRepairBranch({ fixArtifact, targetDir }) {
   prepareTargetToolchain(targetDir);
 
   const prep = editValidatePrepareMerge({ fixArtifact, targetDir, branch, mode: "repair", baseBranch });
+  if (refreshValidatedBranchBase({ targetDir, branch, baseBranch })) {
+    rebased = true;
+    prep.commit = currentHead(targetDir);
+  }
   prep.merge_preflight.target = `#${sourcePr.number}`;
   if (dryRun) {
     return {
@@ -392,6 +396,9 @@ function executeReplacementBranch({ fixArtifact, targetDir, supersedeSources, fa
     allowExistingChanges: branchState.resumed && branchHasBaseDiff({ targetDir, baseBranch }),
     pushCheckpoint: dryRun ? null : () => pushRecoverableBranch({ targetDir, branch }),
   });
+  if (refreshValidatedBranchBase({ targetDir, branch, baseBranch })) {
+    prep.commit = currentHead(targetDir);
+  }
   const body = replacementPrBody(fixArtifact, fallbackReason);
   if (dryRun) {
     return {
@@ -1800,6 +1807,21 @@ function rebaseRecoverableReplacementBranch({ targetDir, branch, baseBranch, fix
   }
 }
 
+function refreshValidatedBranchBase({ targetDir, branch, baseBranch }) {
+  run("git", ["fetch", "origin", `${baseBranch}:refs/remotes/origin/${baseBranch}`], { cwd: targetDir });
+  const baseRef = `origin/${baseBranch}`;
+  if (isAncestor({ targetDir, ancestor: baseRef, descendant: "HEAD" })) return false;
+  try {
+    run("git", ["rebase", baseRef], { cwd: targetDir });
+    return true;
+  } catch (error) {
+    spawnSync("git", ["rebase", "--abort"], { cwd: targetDir, env: process.env, encoding: "utf8" });
+    throw new Error(
+      `base branch advanced after validation and ${branch} needs a fresh rebase pass: ${compactText(error.message, 1200)}`,
+    );
+  }
+}
+
 function resolveRecoverableRebaseConflicts({ targetDir, branch, baseRef, fixArtifact, initialError }) {
   let lastError = initialError;
   for (let attempt = 1; attempt <= maxRebaseAttempts; attempt += 1) {
@@ -1997,6 +2019,10 @@ function commitCheckpointIfNeeded({ targetDir, message }) {
   if (!run("git", ["status", "--porcelain"], { cwd: targetDir }).trim()) return "";
   run("git", ["add", "--all"], { cwd: targetDir });
   run("git", ["commit", "-m", message], { cwd: targetDir });
+  return run("git", ["rev-parse", "HEAD"], { cwd: targetDir }).trim();
+}
+
+function currentHead(targetDir) {
   return run("git", ["rev-parse", "HEAD"], { cwd: targetDir }).trim();
 }
 
