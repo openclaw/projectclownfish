@@ -1,0 +1,130 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156843-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25039684300",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25039684300",
+  "head_sha": "64dd82814bb25b764c7bfdb8aaea777eedeecd80",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156843-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:48:35.124Z",
+  "canonical": "https://github.com/openclaw/openclaw/tree/39cecd64285e1edcc2fadf8a937cbf9c74d68e9e",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/49933",
+  "canonical_pr": null,
+  "summary": "Hydrated state shows the original direct/inline memory embedding timeout bug is already implemented on current main and the original issue/older PRs are closed. The remaining open item, #49981, is related follow-up work for remote provider batch HTTP timeouts, but it is not merge-ready because checks are failing and multiple actionable Codex/Greptile review findings remain. #49963 is security-sensitive in the artifact and is routed to central security handling only.",
+  "actions": [
+    {
+      "target": "#49933",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; retain as historical canonical issue context for the implemented direct/inline timeout fix."
+    },
+    {
+      "target": "#49937",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed after the narrower main implementation superseded this branch while preserving contributor context."
+    },
+    {
+      "target": "#49960",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent context ref; no cluster action needed."
+    },
+    {
+      "target": "#49963",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive ref is quarantined to central OpenClaw security handling; unrelated non-security #49981 remains classified separately."
+    },
+    {
+      "target": "#49981",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": "#49981",
+      "reason": "Keep open as related follow-up provider-batch timeout work and prepare a repair path rather than merging or closing."
+    },
+    {
+      "target": "cluster:ghcrawl-156843-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": "#49981",
+      "reason": "Executor should repair the contributor branch, address bot findings, run /review and pnpm check:changed, then only merge if clean."
+    },
+    {
+      "target": "cluster:ghcrawl-156843-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": "#49981",
+      "reason": "Build an executable repair plan for the only open related candidate."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 3,
+    "route_security": 1,
+    "keep_related": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 3,
+    "planned": 4
+  },
+  "fix_counts": {
+    "failed": 1,
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "failed",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": "base branch advanced after validation and projectclownfish/repair-ghcrawl-156843-autonomous-smoke-49981 needs a fresh rebase pass: Rebasing (1/6) Rebasing (2/6) Rebasing (3/6) Rebasing (4/6) Rebasing (5/6) Rebasing (6/6) error: could not apply 335cd91778... fix(memory): bound remote embedding batch HTTP calls by configured timeout hint: Resolve all conflicts manually, mark them as resolved with hint: \"git add/rm <conflicted_files>\", then run \"git rebase --continue\". hint: You can instead skip this commit: run \"git rebase --skip\". hint: To abort and get back to the state before \"git rebase\", run \"git rebase --abort\". hint: Disable this message with \"git config set advice.mergeConflict false\" Could not apply 335cd91778... # fix(memory): bound remote embedding batch HTTP calls by configured timeout",
+      "title": null,
+      "url": null
+    },
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "repair_contributor_branch",
+      "reason": "base branch advanced after validation and projectclownfish/repair-ghcrawl-156843-autonomous-smoke-49981 needs a fresh rebase pass: Rebasing (1/6) Rebasing (2/6) Rebasing (3/6) Rebasing (4/6) Rebasing (5/6) Rebasing (6/6) error: could not apply 335cd91778... fix(memory): bound remote embedding batch HTTP calls by configured timeout hint: Resolve all conflicts manually, mark them as resolved with hint: \"git add/rm <conflicted_files>\", then run \"git rebase --continue\". hint: You can instead skip this commit: run \"git rebase --skip\". hint: To abort and get back to the state before \"git rebase\", run \"git rebase --abort\". hint: Disable this message with \"git config set advice.mergeConflict false\" Could not apply 335cd91778... # fix(memory): bound remote embedding batch HTTP calls by configured timeout",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}

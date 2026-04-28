@@ -1,20 +1,20 @@
 # Open ProjectClownfish PR Finalizer
 
-Generated: 2026-04-28T07:48:02.953Z
+Generated: 2026-04-28T07:49:25.325Z
 
 ## Summary
 
 | Metric | Count |
 | --- | ---: |
-| open_prs | 16 |
+| open_prs | 17 |
 | ready_candidates | 0 |
 | security_hold | 5 |
 | needs_rebase | 10 |
 | mergeability_unknown | 0 |
-| needs_checks | 14 |
+| needs_checks | 15 |
 | needs_review | 7 |
-| needs_merge_preflight | 16 |
-| needs_result_backfill | 11 |
+| needs_merge_preflight | 17 |
+| needs_result_backfill | 12 |
 
 ## Dispatch
 
@@ -30,7 +30,8 @@ Status: report_only
 
 | PR | Title | Cluster | Mergeable | Merge State | Checks | Blockers | Next action |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [#73388](https://github.com/openclaw/openclaw/pull/73388) | Fix Trinity main-session compatibility mismatch | ghcrawl-156908-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:2 SUCCESS:63 SKIPPED:8 IN_PROGRESS:1; blockers:1 | needs_merge_state:UNSTABLE, needs_checks:CI / checks-node-core-fast-support:IN_PROGRESS, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
+| [#73393](https://github.com/openclaw/openclaw/pull/73393) | feat(whatsapp): support newsletter targets in message tool | ghcrawl-156943-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:3 SUCCESS:21 SKIPPED:9 IN_PROGRESS:37; blockers:37 | needs_merge_state:UNSTABLE, needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-fast-bundled:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
+| [#73388](https://github.com/openclaw/openclaw/pull/73388) | Fix Trinity main-session compatibility mismatch | ghcrawl-156908-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:2 SUCCESS:63 SKIPPED:9 IN_PROGRESS:1; blockers:1 | needs_merge_state:UNSTABLE, needs_checks:CI / checks-node-core-fast-support:IN_PROGRESS, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73380](https://github.com/openclaw/openclaw/pull/73380) | fix(memory): keep pre-compaction flush prompt out of user transcript | ghcrawl-156869-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:4 SUCCESS:62 SKIPPED:9 FAILURE:2; blockers:2 | needs_merge_state:UNSTABLE, needs_checks:CI / checks-node-core-fast-support:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73379](https://github.com/openclaw/openclaw/pull/73379) | fix(cron): support Telegram thread IDs in cron add/edit | ghcrawl-156855-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:4 SUCCESS:63 SKIPPED:9 FAILURE:3; blockers:3 | needs_merge_state:UNSTABLE, unresolved review threads remain, needs_checks:CI / checks-node-core-fast-support:FAILURE; CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73374](https://github.com/openclaw/openclaw/pull/73374) | fix: retry same model on transient fallback errors | ghcrawl-156725-autonomous-smoke | CONFLICTING | DIRTY | FAILURE:5 CANCELLED:1 SUCCESS:62 SKIPPED:9; blockers:5 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-fast-support:FAILURE; CI / checks-node-agentic-commands:FAILURE, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
@@ -43,6 +44,6 @@ Status: report_only
 | [#72615](https://github.com/openclaw/openclaw/pull/72615) | fix(memory-wiki): route bridge CLI through gateway | ghcrawl-156579-autonomous-smoke | CONFLICTING | DIRTY | SUCCESS:55 SKIPPED:9 FAILURE:2; blockers:2 | security_route, needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight | route to central security triage |
 | [#72409](https://github.com/openclaw/openclaw/pull/72409) | fix(plugins): suppress false duplicate-id warnings across origins | ghcrawl-207039-agentic-merge | CONFLICTING | DIRTY | SUCCESS:54 SKIPPED:9 FAILURE:3; blockers:3 | security_route, needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / checks-fast-bundled:FAILURE; CI / checks-node-agentic-plugins:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight | route to central security triage |
 | [#72326](https://github.com/openclaw/openclaw/pull/72326) | fix(cron): infer session agentId when omitted | ghcrawl-165998-agentic-merge | CONFLICTING | DIRTY | SUCCESS:56 SKIPPED:9 FAILURE:2; blockers:2 | security_route, needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / checks-node-agentic-agents:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight | route to central security triage |
-| [#73390](https://github.com/openclaw/openclaw/pull/73390) | Add configurable WebChat send shortcut | ghcrawl-156934-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:4 SUCCESS:63 SKIPPED:9 IN_PROGRESS:2; blockers:2 | needs_merge_state:UNSTABLE, unresolved review threads remain, needs_checks:CI / checks-fast-contracts-plugins:IN_PROGRESS; CI / checks-node-agentic-control-plane:IN_PROGRESS, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
+| [#73390](https://github.com/openclaw/openclaw/pull/73390) | Add configurable WebChat send shortcut | ghcrawl-156934-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:4 SUCCESS:64 SKIPPED:9 IN_PROGRESS:1; blockers:1 | needs_merge_state:UNSTABLE, unresolved review threads remain, needs_checks:CI / checks-node-agentic-control-plane:IN_PROGRESS, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73389](https://github.com/openclaw/openclaw/pull/73389) | feat(slack): publish App Home tab views | ghcrawl-156940-autonomous-smoke | MERGEABLE | CLEAN | CANCELLED:3 SUCCESS:67 SKIPPED:9 | needs_merge_preflight, needs_result_backfill | backfill merge preflight: security cleared, comments resolved, Codex /review passed, validation recorded |
-| [#73385](https://github.com/openclaw/openclaw/pull/73385) | fix: gate sandbox write tools on writable workspace access | ghcrawl-156881-autonomous-smoke | MERGEABLE | UNSTABLE | FAILURE:1 CANCELLED:4 SUCCESS:64 SKIPPED:9 IN_PROGRESS:1; blockers:2 | needs_merge_state:UNSTABLE, needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-fast-support:IN_PROGRESS, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
+| [#73385](https://github.com/openclaw/openclaw/pull/73385) | fix: gate sandbox write tools on writable workspace access | ghcrawl-156881-autonomous-smoke | MERGEABLE | UNSTABLE | FAILURE:3 CANCELLED:4 SUCCESS:64 SKIPPED:9; blockers:3 | needs_merge_state:UNSTABLE, needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-fast-support:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
