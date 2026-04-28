@@ -1,0 +1,228 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156581-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25035224236",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25035224236",
+  "head_sha": "11314bb0977e829eeb62cc0be17e0c531c9fe13a",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156581-autonomous-smoke.md",
+  "published_at": "2026-04-28T05:17:58.755Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/45474",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/45474",
+  "canonical_pr": null,
+  "summary": "Classified the hydrated WhatsApp reliability cluster without GitHub mutations. #45474 remains the canonical open issue for the linked/OK silent inbound 440/401 failure. The only hydrated PR that directly targets that canonical path, #72621, is security-sensitive and is routed to central security handling, so no merge or closeout is planned. Other open reports are related but distinct WhatsApp reliability subfamilies that should remain open.",
+  "actions": [
+    {
+      "target": "#45474",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": "Best surviving canonical issue for the 440/401 linked/OK silent inbound failure."
+    },
+    {
+      "target": "cluster:ghcrawl-156581-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "blocked",
+      "classification": null,
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": "Canonical implementation is blocked on security quarantine of #72621; do not open or merge a fix that depends on the quarantined PR path in this run."
+    },
+    {
+      "target": "cluster:ghcrawl-156581-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "blocked",
+      "classification": null,
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": "Fix artifact recorded as blocked so the executor does not open a replacement PR while the only direct hydrated candidate is quarantined."
+    },
+    {
+      "target": "#46518",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": "Related WhatsApp stability area, but not a true duplicate of #45474."
+    },
+    {
+      "target": "#47367",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical context only."
+    },
+    {
+      "target": "#49057",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation is valid."
+    },
+    {
+      "target": "#51111",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close action permitted."
+    },
+    {
+      "target": "#61663",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical context."
+    },
+    {
+      "target": "#61744",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation."
+    },
+    {
+      "target": "#63855",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": "Related but distinct remaining reliability bug."
+    },
+    {
+      "target": "#66917",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed broad umbrella tracker."
+    },
+    {
+      "target": "#66920",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": "Related WhatsApp reliability issue that should remain open."
+    },
+    {
+      "target": "#67986",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": "Related reliability area, but broader gateway hang/config-read symptom makes it non-duplicate."
+    },
+    {
+      "target": "#70678",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close action valid."
+    },
+    {
+      "target": "#70856",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": "Related but not a true duplicate."
+    },
+    {
+      "target": "#47710",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": "Useful related PR, but not merge-ready and not the canonical path for this cluster."
+    },
+    {
+      "target": "#63939",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": "Related PR in another subfamily; keep open."
+    },
+    {
+      "target": "#49305",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": "Related open issue, not safe to close before a canonical fix exists."
+    },
+    {
+      "target": "#7433",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45474",
+      "candidate_fix": null,
+      "reason": "Related follow-up subcluster should remain open."
+    },
+    {
+      "target": "#72621",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PR must be handled by central security triage."
+    },
+    {
+      "target": "#69833",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked ref routed to central security handling; no mutation planned."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_related": 9,
+    "keep_closed": 7,
+    "route_security": 2
+  },
+  "action_status_counts": {
+    "planned": 12,
+    "blocked": 2,
+    "skipped": 7
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
