@@ -1,0 +1,132 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156627-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25070489790",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25070489790",
+  "head_sha": "171c894289932531f79e81566dceac40b5a48214",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156627-autonomous-smoke.md",
+  "published_at": "2026-04-28T18:28:00.033Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/48278",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/48238",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/48278",
+  "summary": "Classified the live hydrated cluster as an active same-author loop-aware compaction guard stack. #48278 remains the narrow canonical PR but is not merge-ready because it is dirty, has unresolved Greptile review comments, and has failing checks, so the executable path is contributor-branch repair plus review/validation. Security-sensitive PRs #48312, #48335, and #48350 are quarantined only for central security handling. No close or merge actions are planned.",
+  "actions": [
+    {
+      "target": "#48238",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#48278",
+      "candidate_fix": null,
+      "reason": "Open related canonical-family issue; do not close as part of PR stack classification."
+    },
+    {
+      "target": "#48278",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#48278",
+      "candidate_fix": null,
+      "reason": "Canonical PR is useful and repairable, but not merge-ready; executor should repair the contributor branch before any merge decision."
+    },
+    {
+      "target": "#48293",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#48278",
+      "candidate_fix": null,
+      "reason": "Dependent follow-up implementation PR; keep open as related until #48278 is resolved."
+    },
+    {
+      "target": "#48312",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine this item only for central OpenClaw security handling; continue non-security classification elsewhere."
+    },
+    {
+      "target": "#48335",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine this item only for central OpenClaw security handling; do not close, merge, or fix through ProjectClownfish."
+    },
+    {
+      "target": "#48350",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine this item only for central OpenClaw security handling; do not mutate this PR in this pass."
+    },
+    {
+      "target": "#48368",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#48278",
+      "candidate_fix": null,
+      "reason": "Related later-stage follow-up; keep open pending prerequisite stack and security routing decisions."
+    },
+    {
+      "target": "#48406",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#48278",
+      "candidate_fix": null,
+      "reason": "Related docs follow-up for the stack; keep open and do not close or merge before the implementation path is resolved."
+    },
+    {
+      "target": "cluster:ghcrawl-156627-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#48278",
+      "candidate_fix": null,
+      "reason": "Prepare #48278 for repair, validation, Codex /review, and possible later merge by the executor."
+    }
+  ],
+  "action_counts": {
+    "keep_related": 4,
+    "fix_needed": 1,
+    "route_security": 3,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 9
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "repair_contributor_branch",
+      "reason": "fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}

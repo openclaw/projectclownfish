@@ -2,16 +2,16 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-156627-autonomous-smoke"
 mode: "autonomous"
-run_id: "24980264116"
-run_url: "https://github.com/openclaw/clownfish/actions/runs/24980264116"
-head_sha: "40a5c7418ff46bf3e60da63dc6e2345c96900f78"
+run_id: "25070489790"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/25070489790"
+head_sha: "171c894289932531f79e81566dceac40b5a48214"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-27T06:40:31.041Z"
-canonical: "https://github.com/openclaw/openclaw/issues/48238"
+published_at: "2026-04-28T18:28:00.033Z"
+canonical: "https://github.com/openclaw/openclaw/pull/48278"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/48238"
 canonical_pr: "https://github.com/openclaw/openclaw/pull/48278"
-actions_total: 13
+actions_total: 9
 fix_executed: 0
 fix_failed: 0
 fix_blocked: 1
@@ -25,23 +25,23 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/clownfish/actions/runs/24980264116](https://github.com/openclaw/clownfish/actions/runs/24980264116)
+Run: [https://github.com/openclaw/clownfish/actions/runs/25070489790](https://github.com/openclaw/clownfish/actions/runs/25070489790)
 
 Workflow conclusion: success
 
 Worker result: planned
 
-Canonical: https://github.com/openclaw/openclaw/issues/48238
+Canonical: https://github.com/openclaw/openclaw/pull/48278
 
 ## Summary
 
-Classified the loop-aware compaction guard cluster without GitHub mutation. #48238 is the live canonical problem statement and #48278 is the best first canonical PR, but #48278 is not merge-ready because Greptile review findings are unresolved and CI has failing lanes. The remaining open PRs are related stacked follow-up slices, not duplicates to close. #48365 is quarantined as security-sensitive per the preflight artifact. A narrow repair artifact is planned for #48278 only.
+Classified the live hydrated cluster as an active same-author loop-aware compaction guard stack. #48278 remains the narrow canonical PR but is not merge-ready because it is dirty, has unresolved Greptile review comments, and has failing checks, so the executable path is contributor-branch repair plus review/validation. Security-sensitive PRs #48312, #48335, and #48350 are quarantined only for central security handling. No close or merge actions are planned.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 13 |
+| Worker actions | 9 |
 | Fix executed | 0 |
 | Fix failed | 0 |
 | Fix blocked | 1 |
@@ -66,19 +66,15 @@ Classified the loop-aware compaction guard cluster without GitHub mutation. #482
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #48238 | keep_canonical | planned | canonical | Keep the root issue open as the canonical tracking thread while #48278 is repaired and follow-up slices remain separate. |
-| #48278 | keep_canonical | planned | canonical | Best first canonical PR, but merge is blocked until the branch is repaired, refreshed against main f2a17b299119b426d7542cefe8848f8f69535c42, reviewed, and validated. |
-| #48293 | keep_related | planned | related | Keep open as a related follow-up slice after the canonical config PR path is repaired. |
-| #48312 | keep_related | planned | related | Keep open as related; it is not safe to merge or close as duplicate in this cluster pass. |
-| #48335 | keep_related | planned | related | Keep open as a related runtime follow-up; broad stacked draft work is not merge-ready and should not be closed as duplicate. |
-| #48350 | keep_related | planned | related | Keep open as a related validator follow-up; no closure or merge path is safe from the hydrated state. |
-| #48368 | keep_related | planned | related | Keep open as related escalation work; failing checks and draft stacked scope block merge. |
-| #48406 | keep_related | planned | related | Keep open as related docs follow-up; no high-confidence duplicate or superseded closeout is available before the canonical fix path lands. |
-| #48354 | keep_closed | skipped | related | Already-closed linked issue must not receive a close action. |
-| #48365 | route_security | planned | security_sensitive | Security-sensitive linked ref is out of ProjectClownfish mutation scope. |
-| #48397 | keep_closed | skipped | related | Already-closed linked PR must not receive a close action. |
-| cluster:ghcrawl-156627-autonomous-smoke | fix_needed | planned |  | A narrow repair is needed before #48278 can become merge-ready. |
-| cluster:ghcrawl-156627-autonomous-smoke | build_fix_artifact | planned |  | Emit a deterministic repair artifact for the ProjectClownfish executor. |
+| #48238 | keep_related | planned | related | Open related canonical-family issue; do not close as part of PR stack classification. |
+| #48278 | fix_needed | planned | canonical | Canonical PR is useful and repairable, but not merge-ready; executor should repair the contributor branch before any merge decision. |
+| #48293 | keep_related | planned | related | Dependent follow-up implementation PR; keep open as related until #48278 is resolved. |
+| #48312 | route_security | planned | security_sensitive | Quarantine this item only for central OpenClaw security handling; continue non-security classification elsewhere. |
+| #48335 | route_security | planned | security_sensitive | Quarantine this item only for central OpenClaw security handling; do not close, merge, or fix through ProjectClownfish. |
+| #48350 | route_security | planned | security_sensitive | Quarantine this item only for central OpenClaw security handling; do not mutate this PR in this pass. |
+| #48368 | keep_related | planned | related | Related later-stage follow-up; keep open pending prerequisite stack and security routing decisions. |
+| #48406 | keep_related | planned | related | Related docs follow-up for the stack; keep open and do not close or merge before the implementation path is resolved. |
+| cluster:ghcrawl-156627-autonomous-smoke | build_fix_artifact | planned |  | Prepare #48278 for repair, validation, Codex /review, and possible later merge by the executor. |
 
 ## Needs Human
 
