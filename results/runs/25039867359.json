@@ -1,0 +1,114 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156868-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25039867359",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25039867359",
+  "head_sha": "ddeac017c7796b33e322eb33ea7297510fe2229d",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156868-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:31:15.460Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/54838",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/54838",
+  "summary": "Hydrated state shows the original issue candidates are already closed. The remaining live canonical path is open PR #54838, which is narrow and maintainer-editable but not merge-ready because Greptile and Codex review comments are unresolved and mergeability/Codex clean-review proof is missing. Plan repair on the contributor branch and do not emit closure or merge actions in this pass.",
+  "actions": [
+    {
+      "target": "#7844",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#54838",
+      "candidate_fix": null,
+      "reason": "Already closed historical context; no mutation planned."
+    },
+    {
+      "target": "#41188",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#54838",
+      "candidate_fix": null,
+      "reason": "Already closed historical context; no mutation planned."
+    },
+    {
+      "target": "#53619",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#54838",
+      "candidate_fix": "#54838",
+      "reason": "Original canonical hint is obsolete because #53619 is closed; live remaining implementation path is #54838."
+    },
+    {
+      "target": "#54478",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54838",
+      "candidate_fix": "#54838",
+      "reason": "Already closed as superseded by the hydrated canonical PR #54838."
+    },
+    {
+      "target": "#54838",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#54838",
+      "candidate_fix": "#54838",
+      "reason": "Canonical PR is useful and repairable, but not merge-ready until review findings are fixed, branch state is refreshed, /review passes, and pnpm check:changed passes."
+    },
+    {
+      "target": "#69523",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54838",
+      "candidate_fix": "#54838",
+      "reason": "Already closed as superseded by the hydrated canonical PR #54838."
+    },
+    {
+      "target": "cluster:ghcrawl-156868-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#54838",
+      "candidate_fix": "#54838",
+      "reason": "A concrete contributor-branch repair artifact is required because the best live canonical PR is useful, maintainer-editable, and not merge-ready."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 5,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 5,
+    "planned": 2
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "repair_contributor_branch",
+      "reason": "fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}

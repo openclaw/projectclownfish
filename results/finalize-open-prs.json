@@ -3,7 +3,7 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-28T07:30:46.994Z",
+  "generated_at": "2026-04-28T07:32:43.181Z",
   "count": 10,
   "summary": {
     "open_prs": 10,
@@ -41,19 +41,19 @@
       "review_decision": "",
       "security_hold": false,
       "checks": {
-        "total": 76,
+        "total": 77,
         "counts": {
-          "FAILURE": 3,
+          "FAILURE": 5,
           "CANCELLED": 1,
           "SUCCESS": 62,
-          "SKIPPED": 9,
-          "IN_PROGRESS": 1
+          "SKIPPED": 9
         },
         "blockers": [
           "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE",
-          "CI / checks-node-core-fast-support:IN_PROGRESS",
+          "CI / checks-node-core-fast-support:FAILURE",
           "CI / checks-node-agentic-commands:FAILURE",
-          "CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE"
+          "CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE",
+          "CI / checks-node-core:FAILURE"
         ]
       },
       "review_threads": {
@@ -86,7 +86,7 @@
         "needs_rebase:CONFLICTING",
         "needs_merge_state:DIRTY",
         "unresolved review threads remain",
-        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-fast-support:IN_PROGRESS; CI / checks-node-agentic-commands:FAILURE",
+        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-fast-support:FAILURE; CI / checks-node-agentic-commands:FAILURE",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],
