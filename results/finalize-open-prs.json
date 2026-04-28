@@ -3,7 +3,7 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-28T07:20:36.457Z",
+  "generated_at": "2026-04-28T07:21:34.575Z",
   "count": 9,
   "summary": {
     "open_prs": 9,
@@ -35,40 +35,25 @@
       "head_sha": "a161df062d862a56572da6d817ed96f00c1648c7",
       "cluster_id": "ghcrawl-156728-autonomous-smoke",
       "job_path": "jobs/openclaw/inbox/ghcrawl-156728-autonomous-smoke.md",
-      "updated_at": "2026-04-28T07:19:00Z",
+      "updated_at": "2026-04-28T07:20:39Z",
       "mergeable": "MERGEABLE",
       "merge_state_status": "UNSTABLE",
       "review_decision": "",
       "security_hold": false,
       "checks": {
-        "total": 69,
+        "total": 70,
         "counts": {
           "CANCELLED": 1,
-          "SUCCESS": 38,
+          "SUCCESS": 54,
           "SKIPPED": 9,
-          "IN_PROGRESS": 19,
-          "FAILURE": 2
+          "IN_PROGRESS": 3,
+          "FAILURE": 3
         },
         "blockers": [
           "CI / build-artifacts:IN_PROGRESS",
-          "CI / checks-fast-contracts-plugins:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-1:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-2:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-3:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-4:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-5:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-6:IN_PROGRESS",
-          "CI / checks-node-core-fast-support:IN_PROGRESS",
-          "CI / checks-node-core-runtime-infra:IN_PROGRESS",
-          "CI / checks-node-core-runtime-media-ui:IN_PROGRESS",
-          "CI / checks-node-agentic-commands:IN_PROGRESS",
           "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
-          "CI / checks-node-agentic-plugins:IN_PROGRESS",
-          "CI / checks-node-auto-reply-reply-dispatch:IN_PROGRESS",
-          "CI / checks-node-auto-reply-reply-commands-state-routing:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE",
           "CI / check-test-types:FAILURE",
-          "CI / check-additional-extension-bundled:IN_PROGRESS",
-          "CI / checks-fast-contracts-channels:IN_PROGRESS",
           "CI / check:FAILURE",
           "Greptile Review:IN_PROGRESS"
         ]
@@ -86,7 +71,7 @@
       "latest_record": null,
       "blockers": [
         "needs_merge_state:UNSTABLE",
-        "needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS; CI / checks-node-extensions-shard-1:IN_PROGRESS",
+        "needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-node-agentic-plugin-sdk:IN_PROGRESS; CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],
@@ -109,15 +94,14 @@
         "total": 77,
         "counts": {
           "CANCELLED": 3,
-          "IN_PROGRESS": 3,
-          "SUCCESS": 59,
+          "IN_PROGRESS": 2,
+          "SUCCESS": 60,
           "SKIPPED": 9,
           "FAILURE": 3
         },
         "blockers": [
           "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS",
           "CI / checks-node-agentic-control-plane:IN_PROGRESS",
-          "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
           "CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE",
           "CI / check-test-types:FAILURE",
           "CI / check:FAILURE"
@@ -152,7 +136,7 @@
       "blockers": [
         "needs_merge_state:UNSTABLE",
         "unresolved review threads remain",
-        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS; CI / checks-node-agentic-control-plane:IN_PROGRESS; CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
+        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS; CI / checks-node-agentic-control-plane:IN_PROGRESS; CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],

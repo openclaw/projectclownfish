@@ -41,31 +41,31 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 28, 2026, 07:20 UTC
+Last dashboard update: Apr 28, 2026, 07:21 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 190 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 191 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 190 | 100% |
+| Latest clusters reviewed | 191 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 89 | 46.8% |
-| Needs-human clusters | 42 | 22.1% |
-| Latest successful clusters | 188 | 98.9% |
-| Latest failed clusters | 2 | 1.1% |
+| Clean completed clusters | 90 | 47.1% |
+| Needs-human clusters | 42 | 22.0% |
+| Latest successful clusters | 189 | 99.0% |
+| Latest failed clusters | 2 | 1.0% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 415 | audit |
+| Run attempts archived | 416 | audit |
 | Fix action attempts | 119 | audit |
 | Fix actions executed | 0 | 0.0% |
 | Fix actions failed | 27 | 22.7% |
 | Fix actions blocked | 30 | 25.2% |
-| Latest clusters with fix failures | 26 | 13.7% |
-| Distinct PRs touched | 741 | 100% |
-| Open PRs tracked | 321 | 43.3% |
-| Closed unmerged PRs tracked | 339 | 45.7% |
+| Latest clusters with fix failures | 26 | 13.6% |
+| Distinct PRs touched | 743 | 100% |
+| Open PRs tracked | 321 | 43.2% |
+| Closed unmerged PRs tracked | 340 | 45.8% |
 | Completed close actions | 30 | 11.9% |
 | Completed merge actions | 23 | 9.1% |
 | Duplicate closes | 22 | 73.3% |
@@ -159,7 +159,7 @@ Scope: 190 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 
 | PR | Title | Cluster | Branch | Blockers | Next action |
 | --- | --- | --- | --- | --- | --- |
-| [#73368](https://github.com/openclaw/openclaw/pull/73368) | fix(ui): clear webchat pending state only for completed active run | ghcrawl-156728-autonomous-smoke | clownfish/ghcrawl-156728-autonomous-smoke | needs_merge_state:UNSTABLE, needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS; CI / checks-no... | repair failing checks or document unrelated main flake with touched-surface proof |
+| [#73368](https://github.com/openclaw/openclaw/pull/73368) | fix(ui): clear webchat pending state only for completed active run | ghcrawl-156728-autonomous-smoke | clownfish/ghcrawl-156728-autonomous-smoke | needs_merge_state:UNSTABLE, needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-node-agentic-plugin-sdk:IN_PROGRESS; CI / checks-n... | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73365](https://github.com/openclaw/openclaw/pull/73365) | fix: allow steer messages during active non-streaming runs | ghcrawl-156681-autonomous-smoke | clownfish/ghcrawl-156681-autonomous-smoke | needs_merge_state:UNSTABLE, unresolved review threads remain, needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against th... | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73362](https://github.com/openclaw/openclaw/pull/73362) | Fix default sandbox image fallback for python3-dependent mutations | ghcrawl-156718-autonomous-smoke | clownfish/ghcrawl-156718-autonomous-smoke | needs_merge_state:UNSTABLE, needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks... | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73361](https://github.com/openclaw/openclaw/pull/73361) | fix(ui): confirm button-triggered new session resets | ghcrawl-156695-autonomous-smoke | clownfish/ghcrawl-156695-autonomous-smoke | needs_merge_state:UNSTABLE, unresolved review threads remain, needs_checks:CI / checks-node-auto-reply-reply-commands-state-routing:FAILU... | repair failing checks or document unrelated main flake with touched-surface proof |

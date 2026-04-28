@@ -1,0 +1,89 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156800-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25039450038",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25039450038",
+  "head_sha": "af67d1692446511bac9b9ee37455ab0ab4f556c4",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156800-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:21:06.148Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/44919",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/44919",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/70902",
+  "summary": "Hydrated state shows the job's original representative and candidates have already changed materially: #43632, #44616, and #44919 are closed. No close, merge, or PR-opening mutation is appropriate. The canonical bug path is already implemented on current main, with #44919 closed as implemented and #70902 merged for Claude CLI external credential sync. The only still-open non-security linked item, #8673, is related but distinct and should remain open for bounded transient OAuth refresh retry work. The security-sensitive linked #48153 is quarantined only for central security handling.",
+  "actions": [
+    {
+      "target": "#8673",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#44919",
+      "candidate_fix": null,
+      "reason": "Related follow-up bug, not a duplicate closeout target for the stale credential desync cluster."
+    },
+    {
+      "target": "#43632",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#44919",
+      "candidate_fix": "#70902",
+      "reason": "Closed historical contributor PR; no closure action may be emitted for an already-closed target."
+    },
+    {
+      "target": "#44616",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#44919",
+      "candidate_fix": "#70902",
+      "reason": "Already closed as superseded/fixed by the later canonical auth-store work; no close action is valid."
+    },
+    {
+      "target": "#44919",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#44919",
+      "candidate_fix": "#70902",
+      "reason": "Canonical issue is already closed as implemented; no mutation needed."
+    },
+    {
+      "target": "#48153",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked ref must route to central OpenClaw security handling; ProjectClownfish should not mutate it."
+    },
+    {
+      "target": "#70902",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#44919",
+      "candidate_fix": "#70902",
+      "reason": "Merged historical candidate fix; no merge or close action is needed."
+    }
+  ],
+  "action_counts": {
+    "keep_related": 1,
+    "keep_closed": 4,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "planned": 2,
+    "skipped": 4
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
