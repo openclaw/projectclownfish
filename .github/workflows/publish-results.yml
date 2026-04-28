@@ -69,7 +69,7 @@ jobs:
               --conclusion "$CONCLUSION"
             npm run finalize-open-prs -- --write-report
             npm run publish-result
-            git add README.md results closed apply-report.json
+            git add README.md results jobs/openclaw/closed apply-report.json
             if git diff --cached --quiet; then
               echo "No result changes"
               exit 0

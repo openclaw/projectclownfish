@@ -31,9 +31,9 @@ vulnerabilities unless there is a real trust-boundary bypass.
 
 ## Status
 
-Clownfish is intentionally smaller than ClawSweeper. ClawSweeper scans the whole OpenClaw backlog on a cadence; Clownfish handles targeted clusters that were already grouped by a human, ghcrawl, or another dedupe tool.
+Clownfish is intentionally smaller than ClawSweeper. ClawSweeper scans the whole OpenClaw backlog on a cadence; Clownfish handles targeted clusters that were already grouped by a human, gitcrawl, or another dedupe tool.
 
-Cluster discovery currently comes from [vincentkoc/ghcrawl](https://github.com/vincentkoc/ghcrawl). That repository is expected to migrate into the OpenClaw organization soon.
+Cluster discovery currently comes from [openclaw/gitcrawl](https://github.com/openclaw/gitcrawl).
 
 <img width="3582" height="2160" alt="image" src="https://github.com/user-attachments/assets/20b816cc-72ab-479e-bc18-84f5b2b53745" />
 
@@ -205,7 +205,7 @@ Each cluster job:
 6. Reviews the worker artifact with deterministic safety checks.
 7. Executes credited fix artifacts through `scripts/execute-fix-artifact.mjs` when the fix gate is open: repair a maintainer-editable contributor branch first, otherwise raise a narrow replacement PR and close the uneditable source PR after the replacement push succeeds.
 8. Applies guarded close/comment and explicit merge actions through `scripts/apply-result.mjs`.
-9. Publishes a sanitized result ledger back to this repo under `results/`, `closed/`, `apply-report.json`, and this README dashboard.
+9. Publishes a sanitized result ledger back to this repo under `results/`, `jobs/openclaw/closed/`, `apply-report.json`, and this README dashboard.
 
 Codex does not receive a GitHub token during classification. The runner preflights GitHub state before model execution, then Codex receives those artifacts and returns JSON only. When a reviewed fix artifact is executed, Codex gets a temporary target checkout without GitHub credentials; the deterministic executor owns commit, push, PR creation, and source-PR closeout using `CLOWNFISH_GH_TOKEN`. Commit author metadata defaults to `projectclownfish` and can be overridden with `CLOWNFISH_GIT_USER_NAME` and `CLOWNFISH_GIT_USER_EMAIL`; this is separate from the GitHub token used to push. The applicator re-fetches the target item, checks `updated_at`, blocks unsafe closeouts, writes idempotent close comments, closes supported duplicate/superseded/fixed-by-candidate actions, and can squash-merge explicitly allowed clean PR actions.
 
@@ -245,13 +245,13 @@ npm run worker -- jobs/openclaw/inbox/cluster-example.md --mode plan --dry-run
 # Build an offline autonomous cluster/fix artifact.
 npm run build-fix-artifact -- jobs/openclaw/inbox/autonomous-example.md --offline
 
-# Stage low-signal PR sweep jobs from local ghcrawl data.
-npm run import-low-signal -- --limit 20 --batch-size 5 --mode autonomous --sort stale
+# Stage low-signal PR sweep jobs from local gitcrawl data.
+npm run import-gitcrawl-low-signal -- --limit 20 --batch-size 5 --mode autonomous --sort stale
 
-# Stage the next largest active ghcrawl clusters, skipping already-imported and
+# Stage the next largest active gitcrawl clusters, skipping already-imported and
 # fully security-sensitive clusters by default. Mixed clusters can route security
 # refs while continuing ordinary bug/dedupe work.
-npm run import-ghcrawl -- --from-ghcrawl --limit 40 --mode autonomous --suffix autonomous-smoke --allow-instant-close --allow-merge --allow-fix-pr --allow-post-merge-close
+npm run import-gitcrawl -- --from-gitcrawl --limit 40 --mode autonomous --suffix autonomous-smoke --allow-instant-close --allow-merge --allow-fix-pr --allow-post-merge-close
 
 # Dispatch reviewed jobs. Dispatch, requeue, and self-heal refuse to exceed
 # 50 live cluster-worker runs by default; tune with CLOWNFISH_MAX_LIVE_WORKERS

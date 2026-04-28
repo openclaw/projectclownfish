@@ -215,7 +215,7 @@ ${needsHuman}
 function writeClosedRecord(report, action, owner) {
   const targetNumber = String(action.target ?? "").replace(/^#/, "");
   if (!/^\d+$/.test(targetNumber)) return;
-  const closedDir = path.join(repoRoot(), "closed", owner);
+  const closedDir = path.join(repoRoot(), "jobs", owner, "closed");
   fs.mkdirSync(closedDir, { recursive: true });
   const body = `---
 repo: ${quote(report.repo)}

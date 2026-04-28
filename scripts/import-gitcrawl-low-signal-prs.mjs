@@ -7,7 +7,7 @@ import { hasSecuritySignalText, parseArgs, repoRoot } from "./lib.mjs";
 
 const args = parseArgs(process.argv.slice(2));
 const repo = String(args.repo ?? "openclaw/openclaw");
-const dbPath = path.resolve(String(args.db ?? path.join(os.homedir(), ".config", "ghcrawl", "ghcrawl.db")));
+const dbPath = path.resolve(String(args.db ?? path.join(os.homedir(), ".config", "gitcrawl", "gitcrawl.db")));
 const outDir = path.resolve(String(args.out ?? path.join(repoRoot(), "jobs", repo.split("/")[0], "inbox")));
 const mode = String(args.mode ?? "autonomous");
 const limit = numberArg("limit", 20);
@@ -171,7 +171,7 @@ function writeJob(batch, index) {
     "allow_merge: false",
     "allow_post_merge_close: false",
     `canonical_hint: ${quoteYaml("No canonical is needed; this is an opt-in low-signal PR cleanup sweep.")}`,
-    `notes: ${quoteYaml(`Generated from local ghcrawl open PR data on ${now.toISOString()}.`)}`,
+    `notes: ${quoteYaml(`Generated from local gitcrawl open PR data on ${now.toISOString()}.`)}`,
     "---",
     "",
     `# Low-Signal PR Sweep ${index}`,
@@ -184,7 +184,7 @@ function writeJob(batch, index) {
     "",
     "The deterministic applicator will re-fetch live state, reject non-PRs, reject maintainer-authored/reviewed/commented/assigned PRs, and close only planned `close_low_signal` actions.",
     "",
-    "## GHCrawl Candidate Signals",
+    "## Gitcrawl Candidate Signals",
     "",
     ...batch.flatMap(candidateBlock),
     "",
@@ -208,7 +208,7 @@ function candidateBlock(candidate) {
     `- signals: ${candidate.signals.join(", ")}`,
     `- files: ${candidate.file_count}`,
     `- body excerpt: ${candidate.body_excerpt || "none"}`,
-    `- changed files: ${candidate.files.slice(0, 18).join(", ") || "not hydrated in ghcrawl"}`,
+    `- changed files: ${candidate.files.slice(0, 18).join(", ") || "not hydrated in gitcrawl"}`,
     "",
   ];
 }

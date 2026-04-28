@@ -7,7 +7,7 @@ import { hasSecuritySignalText, parseArgs, repoRoot } from "./lib.mjs";
 
 const args = parseArgs(process.argv.slice(2));
 const repo = String(args.repo ?? "openclaw/openclaw");
-const dbPath = path.resolve(String(args.db ?? path.join(os.homedir(), ".config", "ghcrawl", "ghcrawl.db")));
+const dbPath = path.resolve(String(args.db ?? path.join(os.homedir(), ".config", "gitcrawl", "gitcrawl.db")));
 const outDir = path.resolve(String(args.out ?? path.join(repoRoot(), "jobs", repo.split("/")[0], "inbox")));
 const mode = String(args.mode ?? "plan");
 const suffix = typeof args.suffix === "string" ? args.suffix : "";
@@ -19,19 +19,19 @@ const allowPostMergeClose = booleanArg("allow-post-merge-close", allowMerge || a
 const skipExisting = args["skip-existing"] !== "false";
 const skipSecurity = args["include-security"] !== true && args["skip-security"] !== "false";
 const skipFeatureRequests = args["include-feature-requests"] !== true && args["skip-feature-requests"] !== "false";
-const fromGhcrawl = Boolean(args["from-ghcrawl"] || args.all);
+const fromGitcrawl = Boolean(args["from-gitcrawl"] || args["from-ghcrawl"] || args.all);
 const limit = numberArg("limit", 40);
 const minSize = numberArg("min-size", 2);
 let clusterIds = args._.map((value) => Number(value)).filter(Boolean);
-const selectingFromGhcrawl = clusterIds.length === 0 && fromGhcrawl;
+const selectingFromGitcrawl = clusterIds.length === 0 && fromGitcrawl;
 
-if (selectingFromGhcrawl) {
+if (selectingFromGitcrawl) {
   clusterIds = selectClusterIds();
 }
 
 if (clusterIds.length === 0) {
   console.error(
-    "usage: node scripts/import-ghcrawl-clusters.mjs <cluster-id> [...] [--from-ghcrawl] [--limit N] [--repo owner/repo] [--db path] [--out dir] [--mode plan|autonomous] [--suffix name] [--allow-instant-close] [--allow-merge true|false] [--allow-fix-pr true|false] [--allow-post-merge-close true|false]",
+    "usage: node scripts/import-gitcrawl-clusters.mjs <cluster-id> [...] [--from-gitcrawl] [--limit N] [--repo owner/repo] [--db path] [--out dir] [--mode plan|autonomous] [--suffix name] [--allow-instant-close] [--allow-merge true|false] [--allow-fix-pr true|false] [--allow-post-merge-close true|false]",
   );
   process.exit(2);
 }
@@ -42,12 +42,12 @@ if (!["plan", "execute", "autonomous"].includes(mode)) {
 
 fs.mkdirSync(outDir, { recursive: true });
 
-const existingClusterIds = skipExisting ? existingGhcrawlClusterIds(outDir) : new Set();
-const existingMemberRefs = skipExisting ? existingGhcrawlMemberRefs(outDir, suffix) : new Map();
+const existingClusterIds = skipExisting ? existingGitcrawlClusterIds(outDir) : new Set();
+const existingMemberRefs = skipExisting ? existingGitcrawlMemberRefs(outDir, suffix) : new Map();
 let createdCount = 0;
 
 for (const clusterId of clusterIds) {
-  if (selectingFromGhcrawl && createdCount >= limit) break;
+  if (selectingFromGitcrawl && createdCount >= limit) break;
   if (existingClusterIds.has(clusterId)) {
     console.error(`skip existing cluster: ${clusterId}`);
     continue;
@@ -125,9 +125,9 @@ for (const clusterId of clusterIds) {
   const pullRequestCount = members.filter((member) => member.kind === "pull_request").length;
   const latestUpdatedAt = members.map((member) => member.updated_at).sort().at(-1);
   const slug = slugify(representative.title || `cluster-${clusterId}`);
-  const fileStem = suffix ? `ghcrawl-${clusterId}-${slugify(suffix)}` : `ghcrawl-${clusterId}-${slug}`;
+  const fileStem = suffix ? `gitcrawl-${clusterId}-${slugify(suffix)}` : `gitcrawl-${clusterId}-${slug}`;
   const filePath = path.join(outDir, `${fileStem}.md`);
-  const clusterSlug = suffix ? `ghcrawl-${clusterId}-${slugify(suffix)}` : `ghcrawl-${clusterId}-${slug}`;
+  const clusterSlug = suffix ? `gitcrawl-${clusterId}-${slugify(suffix)}` : `gitcrawl-${clusterId}-${slug}`;
   const canonical = representative.number ? [`#${representative.number}`] : [];
 
   const markdown = [
@@ -173,15 +173,15 @@ for (const clusterId of clusterIds) {
     `notes: ${quoteYaml(jobNotes(clusterId, securitySensitiveMembers))}`,
     "---",
     "",
-    `# GHCrawl Cluster ${clusterId}`,
+    `# Gitcrawl Cluster ${clusterId}`,
     "",
-    `Generated from local ghcrawl run cluster ${clusterId} for \`${repo}\`.`,
+    `Generated from local gitcrawl run cluster ${clusterId} for \`${repo}\`.`,
     "",
     "Display title:",
     "",
     `> ${representative.title || "Untitled representative"}`,
     "",
-    "Cluster shape from ghcrawl:",
+    "Cluster shape from gitcrawl:",
     "",
     `- total members: ${members.length}`,
     `- issues: ${issueCount}`,
@@ -265,19 +265,19 @@ function isProductFeatureRequest(title) {
   return /^\s*\[?\s*feature(?:\s+(?:request|proposal))?\b/i.test(String(title ?? ""));
 }
 
-function existingGhcrawlClusterIds(dir) {
+function existingGitcrawlClusterIds(dir) {
   if (!fs.existsSync(dir)) return new Set();
   const ids = new Set();
   for (const entry of fs.readdirSync(dir, { recursive: true })) {
     const file = path.join(dir, String(entry));
     if (!file.endsWith(".md") || !fs.statSync(file).isFile()) continue;
     const text = fs.readFileSync(file, "utf8");
-    for (const match of text.matchAll(/\bghcrawl-(\d+)\b/g)) ids.add(Number(match[1]));
+    for (const match of text.matchAll(/\b(?:ghcrawl|gitcrawl)-(\d+)\b/g)) ids.add(Number(match[1]));
   }
   return ids;
 }
 
-function existingGhcrawlMemberRefs(dir, suffix) {
+function existingGitcrawlMemberRefs(dir, suffix) {
   const refs = new Map();
   if (!fs.existsSync(dir)) return refs;
   const suffixSlug = suffix ? slugify(suffix) : "";
@@ -309,11 +309,11 @@ function quoteYaml(value) {
 }
 
 function canonicalHint(representative) {
-  if (!representative.number) return "No ghcrawl representative was available; worker must choose a live canonical.";
+  if (!representative.number) return "No gitcrawl representative was available; worker must choose a live canonical.";
   if (representative.state === "open") {
-    return `ghcrawl representative #${representative.number} is open; worker must verify it is still the best live canonical.`;
+    return `gitcrawl representative #${representative.number} is open; worker must verify it is still the best live canonical.`;
   }
-  return `ghcrawl representative #${representative.number} is ${representative.state}; worker must verify whether an open canonical should replace it.`;
+  return `gitcrawl representative #${representative.number} is ${representative.state}; worker must verify whether an open canonical should replace it.`;
 }
 
 function goalText(mode) {
@@ -324,7 +324,7 @@ function goalText(mode) {
 }
 
 function jobNotes(clusterId, securitySensitiveMembers) {
-  const base = `Generated from ghcrawl run cluster ${clusterId} on ${new Date().toISOString().slice(0, 10)}.`;
+  const base = `Generated from gitcrawl run cluster ${clusterId} on ${new Date().toISOString().slice(0, 10)}.`;
   if (securitySensitiveMembers.length === 0) return base;
   return `${base} Security-sensitive refs ${securitySensitiveMembers.map((member) => `#${member.number}`).join(", ")} must be routed with route_security and must not block unrelated non-security work.`;
 }

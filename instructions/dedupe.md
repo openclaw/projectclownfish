@@ -18,7 +18,7 @@ Evidence order:
 2. Issue/PR body, hydrated comments, maintainer comments, and PR review comments.
 3. Changed files and diff shape for PRs.
 4. CI status and mergeability.
-5. Cluster notes and ghcrawl summaries.
+5. Cluster notes and gitcrawl summaries.
 
 Do not close based on title similarity alone.
 

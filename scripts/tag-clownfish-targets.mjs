@@ -26,7 +26,7 @@ const includeOpenBranches = args["open-branches"] !== false && args["open-branch
 const reportPath = path.resolve(String(args.report ?? path.join(repoRoot(), "results", "clownfish-label-backfill.json")));
 const inputs = args._.length > 0 ? args._ : [
   path.join(repoRoot(), "results", "runs"),
-  path.join(repoRoot(), "closed", "openclaw"),
+  path.join(repoRoot(), "jobs", "openclaw", "closed"),
 ];
 
 if (labelName !== DEFAULT_LABEL) {
@@ -96,7 +96,7 @@ function collectTargetsFromInput(inputPath) {
     }
     return;
   }
-  if (normalized === path.join("closed", "openclaw")) {
+  if (normalized === path.join("jobs", "openclaw", "closed") || normalized === path.join("closed", "openclaw")) {
     for (const name of fs.readdirSync(inputPath)) {
       if (name.endsWith(".md")) collectClosedRecord(path.join(inputPath, name));
     }
@@ -110,7 +110,7 @@ function collectTargetsFromInput(inputPath) {
     if (filePath.includes(`${path.sep}results${path.sep}runs${path.sep}`) && filePath.endsWith(".json")) {
       collectPublishedRun(filePath);
     }
-    if (filePath.includes(`${path.sep}closed${path.sep}openclaw${path.sep}`) && filePath.endsWith(".md")) {
+    if (isClosedRecordPath(filePath) && filePath.endsWith(".md")) {
       collectClosedRecord(filePath);
     }
   }
@@ -121,9 +121,17 @@ function collectTargetsFromFile(filePath) {
     collectRawRun(filePath);
   } else if (filePath.endsWith(".json")) {
     collectPublishedRun(filePath);
-  } else if (filePath.endsWith(".md") && filePath.includes(`${path.sep}closed${path.sep}`)) {
+  } else if (filePath.endsWith(".md") && isClosedRecordPath(filePath)) {
     collectClosedRecord(filePath);
   }
+}
+
+function isClosedRecordPath(filePath) {
+  const relative = path.relative(repoRoot(), filePath).split(path.sep).join("/");
+  return (
+    relative.startsWith("jobs/openclaw/closed/") ||
+    relative.startsWith("closed/openclaw/")
+  );
 }
 
 function collectPublishedRun(filePath) {
