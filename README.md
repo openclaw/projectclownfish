@@ -41,7 +41,7 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 28, 2026, 05:24 UTC
+Last dashboard update: Apr 28, 2026, 05:25 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
@@ -57,28 +57,29 @@ Scope: 179 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | Latest successful clusters | 177 | 98.9% |
 | Latest failed clusters | 2 | 1.1% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 401 | audit |
-| Fix action attempts | 110 | audit |
+| Run attempts archived | 402 | audit |
+| Fix action attempts | 111 | audit |
 | Fix actions executed | 0 | 0.0% |
-| Fix actions failed | 26 | 23.6% |
-| Fix actions blocked | 26 | 23.6% |
+| Fix actions failed | 26 | 23.4% |
+| Fix actions blocked | 26 | 23.4% |
 | Latest clusters with fix failures | 23 | 12.8% |
 | Distinct PRs touched | 713 | 100% |
-| Open PRs tracked | 317 | 44.5% |
-| Closed unmerged PRs tracked | 320 | 44.9% |
-| Completed close actions | 29 | 11.8% |
-| Completed merge actions | 21 | 8.6% |
-| Duplicate closes | 22 | 75.9% |
+| Open PRs tracked | 315 | 44.2% |
+| Closed unmerged PRs tracked | 321 | 45.0% |
+| Completed close actions | 30 | 12.2% |
+| Completed merge actions | 22 | 9.0% |
+| Duplicate closes | 22 | 73.3% |
 | Superseded closes | 0 | 0.0% |
 | Fixed-by-candidate closes | 0 | 0.0% |
 | Low-signal PR closes | 0 | 0.0% |
-| Blocked mutation attempts | 88 | 35.9% |
+| Blocked mutation attempts | 86 | 35.1% |
 | Skipped mutation attempts | 107 | 43.7% |
 
 ### Latest ProjectClownfish Closures
 
 | Target | Type | Title | Closed | Action | Cluster | Report | Run |
 | --- | --- | --- | --- | --- | --- | --- | --- |
+| [#59439](https://github.com/openclaw/openclaw/pull/59439) | pull_request | Use daemon auth for unmanaged restart probes | Apr 28, 2026, 05:25 UTC | close_superseded | [ghcrawl-207050-agentic-merge](results/openclaw/ghcrawl-207050-agentic-merge.md) | [report](results/openclaw/ghcrawl-207050-agentic-merge.md) | [25035228706](https://github.com/openclaw/clownfish/actions/runs/25035228706) |
 | [#59431](https://github.com/openclaw/openclaw/pull/59431) | pull_request | fix(feishu): correct Chinese filename encoding in attachments | Apr 28, 2026, 05:23 UTC | close_superseded | [ghcrawl-199239-agentic-merge](results/openclaw/ghcrawl-199239-agentic-merge.md) | [report](results/openclaw/ghcrawl-199239-agentic-merge.md) | [25035231796](https://github.com/openclaw/clownfish/actions/runs/25035231796) |
 | [#59409](https://github.com/openclaw/openclaw/issues/59409) | issue | [Bug]: Feishu plugin: Chinese filenames in attachments display as garbled (Latin-1 encoding issue) | Apr 28, 2026, 05:23 UTC | close_fixed_by_candidate | [ghcrawl-199239-agentic-merge](results/openclaw/ghcrawl-199239-agentic-merge.md) | [report](results/openclaw/ghcrawl-199239-agentic-merge.md) | [25035231796](https://github.com/openclaw/clownfish/actions/runs/25035231796) |
 | [#50435](https://github.com/openclaw/openclaw/pull/50435) | pull_request | fix(feishu): recover Chinese filenames from Latin-1 mojibake in Content-Disposition | Apr 28, 2026, 05:23 UTC | close_superseded | [ghcrawl-199239-agentic-merge](results/openclaw/ghcrawl-199239-agentic-merge.md) | [report](results/openclaw/ghcrawl-199239-agentic-merge.md) | [25035231796](https://github.com/openclaw/clownfish/actions/runs/25035231796) |
@@ -103,7 +104,6 @@ Scope: 179 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | [#67029](https://github.com/openclaw/openclaw/issues/67029) | issue | [Bug]: memory-core dreaming: narrative session cleanup fails with missing scope operator.admin | Apr 25, 2026, 19:53 UTC | close_duplicate | [ghcrawl-143819-autonomous-smoke](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143819-autonomous-smoke.md) | [24939011554](https://github.com/openclaw/projectclownfish/actions/runs/24939011554) |
 | [#50691](https://github.com/openclaw/openclaw/issues/50691) | issue | openclaw status reports missing operator.read while gateway is healthy; gateway probe times out on same loopback endpoint | Apr 25, 2026, 19:46 UTC | close_duplicate | [ghcrawl-143815-autonomous-smoke](results/openclaw/ghcrawl-143815-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143815-autonomous-smoke.md) | [24939008778](https://github.com/openclaw/projectclownfish/actions/runs/24939008778) |
 | [#50541](https://github.com/openclaw/openclaw/issues/50541) | issue | [Bug]: CLI cannot connect to Gateway (missing scope: operator.read) - Downgrade to 2026.3.11 works | Apr 25, 2026, 19:46 UTC | close_duplicate | [ghcrawl-143815-autonomous-smoke](results/openclaw/ghcrawl-143815-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143815-autonomous-smoke.md) | [24939008778](https://github.com/openclaw/projectclownfish/actions/runs/24939008778) |
-| [#70373](https://github.com/openclaw/openclaw/issues/70373) | issue | Control UI shows async exec system events inline as if authored by the user | Apr 25, 2026, 19:45 UTC | close_duplicate | [ghcrawl-143804-autonomous-smoke](results/openclaw/ghcrawl-143804-autonomous-smoke.md) | [report](results/openclaw/ghcrawl-143804-autonomous-smoke.md) | [24939000666](https://github.com/openclaw/projectclownfish/actions/runs/24939000666) |
 <!-- projectclownfish-dashboard:end -->
 
 ## How It Works
