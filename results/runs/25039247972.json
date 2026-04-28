@@ -1,0 +1,61 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156767-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25039247972",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25039247972",
+  "head_sha": "fde59edd9cd014ad373980963191e4d2052146de",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156767-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:15:53.522Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/39115",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/39115",
+  "summary": "Hydrated preflight shows #39115 is the only open primary candidate and is marked security-sensitive, so it is quarantined to central OpenClaw security handling. The other primary candidate PRs, #41809 and #50854, are already closed and remain historical evidence only.",
+  "actions": [
+    {
+      "target": "#39115",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive hydrated PR must be quarantined to central OpenClaw security handling; unrelated closed PRs can still be classified as historical evidence."
+    },
+    {
+      "target": "#41809",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#39115",
+      "candidate_fix": null,
+      "reason": "Already closed live; no mutation is valid. Classification remains superseded by hydrated #39115 for historical cluster accounting."
+    },
+    {
+      "target": "#50854",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#39115",
+      "candidate_fix": null,
+      "reason": "Already closed live; no mutation is valid. Classification remains superseded by hydrated #39115 for historical cluster accounting."
+    }
+  ],
+  "action_counts": {
+    "route_security": 1,
+    "keep_closed": 2
+  },
+  "action_status_counts": {
+    "planned": 1,
+    "skipped": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}

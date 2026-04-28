@@ -41,31 +41,31 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 28, 2026, 07:15 UTC
+Last dashboard update: Apr 28, 2026, 07:16 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 185 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 186 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 185 | 100% |
+| Latest clusters reviewed | 186 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 88 | 47.6% |
-| Needs-human clusters | 42 | 22.7% |
-| Latest successful clusters | 183 | 98.9% |
+| Clean completed clusters | 89 | 47.8% |
+| Needs-human clusters | 42 | 22.6% |
+| Latest successful clusters | 184 | 98.9% |
 | Latest failed clusters | 2 | 1.1% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 410 | audit |
+| Run attempts archived | 411 | audit |
 | Fix action attempts | 114 | audit |
 | Fix actions executed | 0 | 0.0% |
 | Fix actions failed | 26 | 22.8% |
 | Fix actions blocked | 28 | 24.6% |
-| Latest clusters with fix failures | 24 | 13.0% |
-| Distinct PRs touched | 725 | 100% |
-| Open PRs tracked | 314 | 43.3% |
-| Closed unmerged PRs tracked | 332 | 45.8% |
+| Latest clusters with fix failures | 24 | 12.9% |
+| Distinct PRs touched | 728 | 100% |
+| Open PRs tracked | 315 | 43.3% |
+| Closed unmerged PRs tracked | 334 | 45.9% |
 | Completed close actions | 30 | 12.1% |
 | Completed merge actions | 23 | 9.3% |
 | Duplicate closes | 22 | 73.3% |
@@ -157,12 +157,12 @@ Scope: 185 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 
 | PR | Title | Cluster | Branch | Blockers | Next action |
 | --- | --- | --- | --- | --- | --- |
+| [#73361](https://github.com/openclaw/openclaw/pull/73361) | fix(ui): confirm button-triggered new session resets | ghcrawl-156695-autonomous-smoke | clownfish/ghcrawl-156695-autonomous-smoke | needs_merge_state:UNSTABLE, needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS; CI / checks-fa... | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#72664](https://github.com/openclaw/openclaw/pull/72664) | fix(qwen): allow explicit qwen3.6-plus on Coding Plan | ghcrawl-156617-autonomous-smoke | clownfish/ghcrawl-156617-autonomous-smoke | security_route, needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_merge_preflight | route to central security triage |
 | [#72621](https://github.com/openclaw/openclaw/pull/72621) | fix(whatsapp): recover stale listener after auth conflict churn | ghcrawl-156581-autonomous-smoke | clownfish/ghcrawl-156581-autonomous-smoke | security_route, needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / checks-node-agentic-agents:FAILURE; CI / checks-node... | route to central security triage |
 | [#72615](https://github.com/openclaw/openclaw/pull/72615) | fix(memory-wiki): route bridge CLI through gateway | ghcrawl-156579-autonomous-smoke | clownfish/ghcrawl-156579-autonomous-smoke | security_route, needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / checks-node-core-runtime-shared:FAILURE; CI / checks... | route to central security triage |
 | [#72409](https://github.com/openclaw/openclaw/pull/72409) | fix(plugins): suppress false duplicate-id warnings across origins | ghcrawl-207039-agentic-merge | clownfish/ghcrawl-207039-agentic-merge | security_route, needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / checks-fast-bundled:FAILURE; CI / checks-node-agenti... | route to central security triage |
 | [#72326](https://github.com/openclaw/openclaw/pull/72326) | fix(cron): infer session agentId when omitted | ghcrawl-165998-agentic-merge | clownfish/ghcrawl-165998-agentic-merge | security_route, needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / checks-node-agentic-agents:FAILURE; CI / checks-node... | route to central security triage |
-| [#73361](https://github.com/openclaw/openclaw/pull/73361) | fix(ui): confirm button-triggered new session resets | ghcrawl-156695-autonomous-smoke | clownfish/ghcrawl-156695-autonomous-smoke | needs_merge_state:UNSTABLE, needs_checks:ClawSweeper Dispatch / dispatch:IN_PROGRESS; CI / build-artifacts:IN_PROGRESS; CI / checks-fast-... | repair failing checks or document unrelated main flake with touched-surface proof |
 
 ### Latest ProjectClownfish Closures
 

@@ -3,7 +3,7 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-28T07:15:25.587Z",
+  "generated_at": "2026-04-28T07:16:18.740Z",
   "count": 6,
   "summary": {
     "open_prs": 6,
@@ -27,6 +27,77 @@
     "candidates": []
   },
   "prs": [
+    {
+      "number": 73361,
+      "title": "fix(ui): confirm button-triggered new session resets",
+      "url": "https://github.com/openclaw/openclaw/pull/73361",
+      "branch": "clownfish/ghcrawl-156695-autonomous-smoke",
+      "head_sha": "5a159ae779d67fbc48b5daff3a9824971489453e",
+      "cluster_id": "ghcrawl-156695-autonomous-smoke",
+      "job_path": "jobs/openclaw/inbox/ghcrawl-156695-autonomous-smoke.md",
+      "updated_at": "2026-04-28T07:15:13Z",
+      "mergeable": "MERGEABLE",
+      "merge_state_status": "UNSTABLE",
+      "review_decision": "",
+      "security_hold": false,
+      "checks": {
+        "total": 67,
+        "counts": {
+          "CANCELLED": 1,
+          "SUCCESS": 30,
+          "SKIPPED": 9,
+          "IN_PROGRESS": 26,
+          "FAILURE": 1
+        },
+        "blockers": [
+          "CI / build-artifacts:IN_PROGRESS",
+          "CI / checks-fast-contracts-plugins:IN_PROGRESS",
+          "CI / checks-fast-contracts-channels-a:IN_PROGRESS",
+          "CI / checks-fast-contracts-channels-b:IN_PROGRESS",
+          "CI / checks-fast-contracts-channels-c:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-1:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-2:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-3:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-4:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-5:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-6:IN_PROGRESS",
+          "CI / checks-node-core-fast-support:IN_PROGRESS",
+          "CI / checks-node-core-runtime-infra:IN_PROGRESS",
+          "CI / checks-node-core-runtime-media-ui:IN_PROGRESS",
+          "CI / checks-node-core-runtime-shared:IN_PROGRESS",
+          "CI / checks-node-agentic-commands:IN_PROGRESS",
+          "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
+          "CI / checks-node-agentic-plugins:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-dispatch:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-commands-state-routing:IN_PROGRESS",
+          "CI / check-preflight-guards:IN_PROGRESS",
+          "CI / check-policy-guards:IN_PROGRESS",
+          "CI / check-test-types:FAILURE",
+          "CI / check-additional-boundaries:IN_PROGRESS",
+          "CI / check-additional-extension-bundled:IN_PROGRESS",
+          "CI / check-docs:IN_PROGRESS",
+          "Greptile Review:IN_PROGRESS"
+        ]
+      },
+      "review_threads": {
+        "status": "clean",
+        "reason": null,
+        "unresolved_count": 0,
+        "examples": []
+      },
+      "review_bots": {
+        "count": 0,
+        "latest": []
+      },
+      "latest_record": null,
+      "blockers": [
+        "needs_merge_state:UNSTABLE",
+        "needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS; CI / checks-fast-contracts-channels-a:IN_PROGRESS",
+        "needs_merge_preflight",
+        "needs_result_backfill"
+      ],
+      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
+    },
     {
       "number": 72664,
       "title": "fix(qwen): allow explicit qwen3.6-plus on Coding Plan",
@@ -380,93 +451,6 @@
         "needs_merge_preflight"
       ],
       "recommended_next_action": "route to central security triage"
-    },
-    {
-      "number": 73361,
-      "title": "fix(ui): confirm button-triggered new session resets",
-      "url": "https://github.com/openclaw/openclaw/pull/73361",
-      "branch": "clownfish/ghcrawl-156695-autonomous-smoke",
-      "head_sha": "5a159ae779d67fbc48b5daff3a9824971489453e",
-      "cluster_id": "ghcrawl-156695-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-156695-autonomous-smoke.md",
-      "updated_at": "2026-04-28T07:15:13Z",
-      "mergeable": "MERGEABLE",
-      "merge_state_status": "UNSTABLE",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 67,
-        "counts": {
-          "CANCELLED": 1,
-          "QUEUED": 2,
-          "IN_PROGRESS": 42,
-          "SUCCESS": 13,
-          "SKIPPED": 9
-        },
-        "blockers": [
-          "ClawSweeper Dispatch / dispatch:IN_PROGRESS",
-          "CI / build-artifacts:IN_PROGRESS",
-          "CI / checks-fast-bundled:IN_PROGRESS",
-          "CI / checks-fast-contracts-plugins:IN_PROGRESS",
-          "CI / checks-fast-contracts-channels-a:IN_PROGRESS",
-          "CI / checks-fast-contracts-channels-b:IN_PROGRESS",
-          "CI / checks-fast-contracts-channels-c:IN_PROGRESS",
-          "CI / checks-fast-protocol:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-1:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-2:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-3:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-4:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-5:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-6:IN_PROGRESS",
-          "CI / checks-node-core-fast-support:IN_PROGRESS",
-          "CI / checks-node-core-src-security:IN_PROGRESS",
-          "CI / checks-node-core-ui:IN_PROGRESS",
-          "CI / checks-node-core-runtime-infra:IN_PROGRESS",
-          "CI / checks-node-core-runtime-media-ui:IN_PROGRESS",
-          "CI / checks-node-core-runtime-shared:IN_PROGRESS",
-          "CI / checks-node-agentic-control-plane:IN_PROGRESS",
-          "CI / checks-node-agentic-commands:IN_PROGRESS",
-          "CI / checks-node-agentic-agents:IN_PROGRESS",
-          "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
-          "CI / checks-node-agentic-plugins:IN_PROGRESS",
-          "CI / checks-node-auto-reply-core-top-level:IN_PROGRESS",
-          "CI / checks-node-auto-reply-reply-agent-runner:IN_PROGRESS",
-          "CI / checks-node-auto-reply-reply-dispatch:IN_PROGRESS",
-          "CI / checks-node-auto-reply-reply-commands-state-routing:IN_PROGRESS",
-          "CI / check-preflight-guards:IN_PROGRESS",
-          "CI / check-prod-types:IN_PROGRESS",
-          "CI / check-lint:IN_PROGRESS",
-          "CI / check-policy-guards:IN_PROGRESS",
-          "CI / check-test-types:IN_PROGRESS",
-          "CI / check-strict-smoke:IN_PROGRESS",
-          "CI / check-additional-boundaries:IN_PROGRESS",
-          "CI / check-additional-extension-channels:IN_PROGRESS",
-          "CI / check-additional-extension-bundled:IN_PROGRESS",
-          "CI / check-additional-extension-package-boundary:IN_PROGRESS",
-          "CI / check-additional-runtime-topology-architecture:IN_PROGRESS",
-          "CI / check-docs:IN_PROGRESS",
-          "CI / security-fast:QUEUED",
-          "Greptile Review:IN_PROGRESS"
-        ]
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 0,
-        "latest": []
-      },
-      "latest_record": null,
-      "blockers": [
-        "needs_merge_state:UNSTABLE",
-        "needs_checks:ClawSweeper Dispatch / dispatch:IN_PROGRESS; CI / build-artifacts:IN_PROGRESS; CI / checks-fast-bundled:IN_PROGRESS",
-        "needs_merge_preflight",
-        "needs_result_backfill"
-      ],
-      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
     }
   ]
 }
