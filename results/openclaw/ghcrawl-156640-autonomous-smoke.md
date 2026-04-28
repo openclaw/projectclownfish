@@ -7,7 +7,7 @@ run_url: "https://github.com/openclaw/clownfish/actions/runs/25034019917"
 head_sha: "9664db69447d8ae7ba70e6370f8f2fb22eb81719"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-28T04:46:39.069Z"
+published_at: "2026-04-28T05:00:37.242Z"
 canonical: "https://github.com/openclaw/openclaw/pull/73229"
 canonical_issue: null
 canonical_pr: "https://github.com/openclaw/openclaw/pull/73229"
@@ -15,8 +15,8 @@ actions_total: 12
 fix_executed: 0
 fix_failed: 0
 fix_blocked: 0
-apply_executed: 0
-apply_blocked: 2
+apply_executed: 2
+apply_blocked: 0
 apply_skipped: 0
 needs_human_count: 0
 ---
@@ -45,8 +45,8 @@ Hydrated state shows the original representative #68456 is closed. The current s
 | Fix executed | 0 |
 | Fix failed | 0 |
 | Fix blocked | 0 |
-| Applied executions | 0 |
-| Apply blocked | 2 |
+| Applied executions | 2 |
+| Apply blocked | 0 |
 | Apply skipped | 0 |
 | Needs human | 0 |
 
@@ -60,8 +60,8 @@ Hydrated state shows the original representative #68456 is closed. The current s
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #61016 | close_superseded | blocked | superseded | canonical is not listed in job refs |
-| #73229 | merge_canonical | blocked | fix_pr | merge state status is UNSTABLE |
+| #61016 | close_superseded | executed | post_merge_closeout | closed after canonical fix merged |
+| #73229 | merge_canonical | executed | fix_pr | merged by ProjectClownfish post-flight |
 
 ## Worker Action Matrix
 

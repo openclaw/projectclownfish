@@ -11,7 +11,7 @@
   "workflow_updated_at": null,
   "result_status": "planned",
   "source_job": "jobs/openclaw/inbox/ghcrawl-156664-autonomous-smoke.md",
-  "published_at": "2026-04-28T04:28:50.978Z",
+  "published_at": "2026-04-28T04:59:57.565Z",
   "canonical": "https://github.com/openclaw/openclaw/pull/41861",
   "canonical_issue": "https://github.com/openclaw/openclaw/issues/41862",
   "canonical_pr": "https://github.com/openclaw/openclaw/pull/41861",
@@ -153,8 +153,7 @@
     "pushed": 1
   },
   "apply_counts": {
-    "skipped": 2,
-    "blocked": 1
+    "executed": 3
   },
   "needs_human": [],
   "fix_actions": [
@@ -176,46 +175,46 @@
     {
       "target": "#49957",
       "action": "close_duplicate",
-      "status": "skipped",
-      "classification": "duplicate",
+      "status": "executed",
+      "classification": "post_merge_closeout",
       "canonical": "#41862",
       "candidate_fix": "#41861",
       "title": null,
-      "idempotency_key": "ghcrawl-156664-autonomous-smoke:#49957:close-duplicate-after-fix",
-      "reason": "action status is blocked",
+      "idempotency_key": null,
+      "reason": "target already closed after canonical fix merged",
       "merged_at": null,
-      "merge_commit_sha": null,
-      "live_state": null,
+      "merge_commit_sha": "055127425f8f286d6b1113a17f9acde260cdc2e6",
+      "live_state": "closed",
       "live_updated_at": null
     },
     {
       "target": "#49961",
       "action": "close_superseded",
-      "status": "skipped",
-      "classification": "superseded",
+      "status": "executed",
+      "classification": "post_merge_closeout",
       "canonical": "#41861",
       "candidate_fix": "#41861",
       "title": null,
-      "idempotency_key": "ghcrawl-156664-autonomous-smoke:#49961:close-superseded-after-fix",
-      "reason": "action status is blocked",
+      "idempotency_key": null,
+      "reason": "target already closed after canonical fix merged",
       "merged_at": null,
-      "merge_commit_sha": null,
-      "live_state": null,
+      "merge_commit_sha": "055127425f8f286d6b1113a17f9acde260cdc2e6",
+      "live_state": "closed",
       "live_updated_at": null
     },
     {
       "target": "#41861",
       "action": "merge_canonical",
-      "status": "blocked",
+      "status": "executed",
       "classification": "fix_pr",
       "canonical": null,
       "candidate_fix": null,
       "title": "fix(export): fix broken template placeholders in session export HTML",
       "idempotency_key": null,
-      "reason": "merge state status is UNSTABLE",
-      "merged_at": null,
-      "merge_commit_sha": null,
-      "live_state": null,
+      "reason": "already merged",
+      "merged_at": "2026-04-28T04:34:20Z",
+      "merge_commit_sha": "055127425f8f286d6b1113a17f9acde260cdc2e6",
+      "live_state": "merged",
       "live_updated_at": null
     }
   ]

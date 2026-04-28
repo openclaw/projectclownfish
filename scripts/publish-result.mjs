@@ -16,7 +16,7 @@ const CLOSE_APPLICATOR_ACTIONS = new Set([
 ]);
 const MERGE_APPLICATOR_ACTIONS = new Set(["merge_candidate", "merge_canonical"]);
 const APPLICATOR_ACTIONS = new Set([...CLOSE_APPLICATOR_ACTIONS, ...MERGE_APPLICATOR_ACTIONS]);
-const POST_FLIGHT_MERGE_ACTIONS = new Set(["finalize_fix_pr"]);
+const POST_FLIGHT_APPLY_ACTIONS = new Set(["finalize_fix_pr", "post_merge_closeout"]);
 const PR_INFO_CACHE = new Map();
 const ISSUE_INFO_CACHE = new Map();
 const archivedClusters = readArchivedClusters();
@@ -58,10 +58,10 @@ function publishResult(resultPath) {
   const repo = String(result.repo ?? "unknown/unknown");
   const owner = repo.split("/")[0] || "unknown";
   const clusterId = String(result.cluster_id ?? path.basename(runDir));
-  const applyActions = [
+  const applyActions = uniquePlainActionRows([
     ...(applyReport.actions ?? []),
-    ...(postFlightReport.actions ?? []).filter(isPostFlightMergeAction).map(postFlightMergeToApplyAction),
-  ].filter(isApplicatorAction);
+    ...(postFlightReport.actions ?? []).filter(isPostFlightApplyAction).map(postFlightToApplyAction),
+  ].filter(isApplicatorAction));
   const fixActions = (fixReport.actions ?? []).map(sanitizeFixAction);
   const report = {
     repo,
@@ -565,11 +565,30 @@ function isApplicatorAction(action) {
   return APPLICATOR_ACTIONS.has(String(action?.action ?? ""));
 }
 
-function isPostFlightMergeAction(action) {
-  return POST_FLIGHT_MERGE_ACTIONS.has(String(action?.action ?? "")) && action?.pr;
+function isPostFlightApplyAction(action) {
+  const actionName = String(action?.action ?? "");
+  if (!POST_FLIGHT_APPLY_ACTIONS.has(actionName)) return false;
+  if (actionName === "finalize_fix_pr") return Boolean(action?.pr);
+  return Boolean(action?.target);
 }
 
-function postFlightMergeToApplyAction(action) {
+function postFlightToApplyAction(action) {
+  if (String(action.action ?? "") === "post_merge_closeout") {
+    return {
+      target: action.target,
+      action: action.source_action ?? "post_merge_close",
+      status: action.status,
+      classification: "post_merge_closeout",
+      canonical: action.canonical ?? null,
+      candidate_fix: action.candidate_fix ?? null,
+      title: action.title ?? null,
+      reason: action.reason ?? null,
+      merged_at: null,
+      merge_commit_sha: action.merge_commit_sha ?? null,
+      live_state: action.live_state ?? null,
+      live_updated_at: null,
+    };
+  }
   return {
     target: action.pr,
     action: "merge_canonical",
@@ -775,9 +794,6 @@ function uniqueActionRows(rows) {
       record.repo,
       action.target,
       action.action,
-      action.idempotency_key,
-      action.canonical,
-      action.candidate_fix,
     ].join(":");
     const previous = byKey.get(key);
     if (!previous || preferActionRow(row, previous)) {
@@ -795,9 +811,6 @@ function uniquePlainActionRows(rows) {
       row.cluster_id,
       row.target,
       row.action,
-      row.idempotency_key,
-      row.canonical,
-      row.candidate_fix,
     ].join(":");
     const previous = byKey.get(key);
     if (!previous || preferActionRow(row, previous)) {
@@ -831,10 +844,10 @@ function uniqueFixRows(rows) {
 }
 
 function preferActionRow(candidate, previous) {
-  const candidateRecord = candidate.record ?? candidate;
-  const previousRecord = previous.record ?? previous;
-  const candidateAction = candidate.action ?? candidate;
-  const previousAction = previous.action ?? previous;
+  const candidateRecord = candidate.record && typeof candidate.record === "object" ? candidate.record : candidate;
+  const previousRecord = previous.record && typeof previous.record === "object" ? previous.record : previous;
+  const candidateAction = candidate.action && typeof candidate.action === "object" ? candidate.action : candidate;
+  const previousAction = previous.action && typeof previous.action === "object" ? previous.action : previous;
   const candidateRank = actionStatusRank(candidateAction.status);
   const previousRank = actionStatusRank(previousAction.status);
   if (candidateRank !== previousRank) return candidateRank > previousRank;
@@ -977,19 +990,25 @@ function githubPullInfoBatch(repo, numbers) {
 }
 
 function runGhGraphql(query) {
-  const env = { ...process.env };
+  const env = { ...process.env, NO_COLOR: "1", CLICOLOR: "0" };
+  delete env.FORCE_COLOR;
   if (!env.GH_TOKEN && env.CLOWNFISH_READ_GH_TOKEN) env.GH_TOKEN = env.CLOWNFISH_READ_GH_TOKEN;
   if (!env.GH_TOKEN && env.GITHUB_TOKEN) env.GH_TOKEN = env.GITHUB_TOKEN;
   try {
-    return execFileSync("gh", ["api", "graphql", "-f", `query=${query}`], {
+    const text = execFileSync("gh", ["api", "graphql", "-f", `query=${query}`], {
       encoding: "utf8",
       env,
       maxBuffer: 8 * 1024 * 1024,
       stdio: ["ignore", "pipe", "ignore"],
     });
+    return stripAnsi(text);
   } catch (error) {
-    return error.stdout || error.output?.[1]?.toString() || "";
+    return stripAnsi(error.stdout || error.output?.[1]?.toString() || "");
   }
+}
+
+function stripAnsi(text) {
+  return String(text ?? "").replace(/\u001b\[[0-?]*[ -/]*[@-~]/g, "");
 }
 
 function parseGithubPullRef(defaultRepo, value) {

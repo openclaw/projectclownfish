@@ -219,7 +219,13 @@ function finalizePostMergeCloseout({ action, actionName, target, fixRef, fixUrl,
   };
   const live = fetchIssue(result.repo, target);
   if (live.state !== "open") {
-    return { ...base, status: "skipped", reason: `target is ${live.state}`, live_state: live.state };
+    return {
+      ...base,
+      status: live.state === "closed" ? "executed" : "skipped",
+      reason: live.state === "closed" ? "target already closed after canonical fix merged" : `target is ${live.state}`,
+      live_state: live.state,
+      merge_commit_sha: finalized.merge_commit_sha ?? null,
+    };
   }
   if (hasSecuritySignalText(live.title, live.body, live.labels ?? [])) {
     return { ...base, status: "blocked", reason: "security-sensitive target requires central security triage" };

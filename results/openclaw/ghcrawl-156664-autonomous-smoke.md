@@ -7,7 +7,7 @@ run_url: "https://github.com/openclaw/clownfish/actions/runs/25033552424"
 head_sha: "d0e303d624dd280a70153bc0cbc4feeb676f0979"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-28T04:28:50.978Z"
+published_at: "2026-04-28T04:59:57.565Z"
 canonical: "https://github.com/openclaw/openclaw/pull/41861"
 canonical_issue: "https://github.com/openclaw/openclaw/issues/41862"
 canonical_pr: "https://github.com/openclaw/openclaw/pull/41861"
@@ -15,9 +15,9 @@ actions_total: 13
 fix_executed: 0
 fix_failed: 0
 fix_blocked: 0
-apply_executed: 0
-apply_blocked: 1
-apply_skipped: 2
+apply_executed: 3
+apply_blocked: 0
+apply_skipped: 0
 needs_human_count: 0
 ---
 
@@ -45,9 +45,9 @@ Canonical hint #50001 is closed and superseded. The best live canonical path is 
 | Fix executed | 0 |
 | Fix failed | 0 |
 | Fix blocked | 0 |
-| Applied executions | 0 |
-| Apply blocked | 1 |
-| Apply skipped | 2 |
+| Applied executions | 3 |
+| Apply blocked | 0 |
+| Apply skipped | 0 |
 | Needs human | 0 |
 
 ## Fix Execution Actions
@@ -60,9 +60,9 @@ Canonical hint #50001 is closed and superseded. The best live canonical path is 
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #49957 | close_duplicate | skipped | duplicate | action status is blocked |
-| #49961 | close_superseded | skipped | superseded | action status is blocked |
-| #41861 | merge_canonical | blocked | fix_pr | merge state status is UNSTABLE |
+| #49957 | close_duplicate | executed | post_merge_closeout | target already closed after canonical fix merged |
+| #49961 | close_superseded | executed | post_merge_closeout | target already closed after canonical fix merged |
+| #41861 | merge_canonical | executed | fix_pr | already merged |
 
 ## Worker Action Matrix
 

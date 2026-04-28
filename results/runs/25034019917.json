@@ -11,7 +11,7 @@
   "workflow_updated_at": null,
   "result_status": "planned",
   "source_job": "jobs/openclaw/inbox/ghcrawl-156640-autonomous-smoke.md",
-  "published_at": "2026-04-28T04:46:39.069Z",
+  "published_at": "2026-04-28T05:00:37.242Z",
   "canonical": "https://github.com/openclaw/openclaw/pull/73229",
   "canonical_issue": null,
   "canonical_pr": "https://github.com/openclaw/openclaw/pull/73229",
@@ -141,7 +141,7 @@
     "pushed": 1
   },
   "apply_counts": {
-    "blocked": 2
+    "executed": 2
   },
   "needs_human": [],
   "fix_actions": [
@@ -163,31 +163,31 @@
     {
       "target": "#61016",
       "action": "close_superseded",
-      "status": "blocked",
-      "classification": "superseded",
+      "status": "executed",
+      "classification": "post_merge_closeout",
       "canonical": "#73229",
       "candidate_fix": "#73229",
       "title": null,
-      "idempotency_key": "ghcrawl-156640-autonomous-smoke:#61016:close_superseded:#73229:v1",
-      "reason": "canonical is not listed in job refs",
+      "idempotency_key": null,
+      "reason": "closed after canonical fix merged",
       "merged_at": null,
-      "merge_commit_sha": null,
-      "live_state": null,
+      "merge_commit_sha": "6fadc56802066c7de40f9a9eba7ebdb9994b6a33",
+      "live_state": "closed",
       "live_updated_at": null
     },
     {
       "target": "#73229",
       "action": "merge_canonical",
-      "status": "blocked",
+      "status": "executed",
       "classification": "fix_pr",
       "canonical": null,
       "candidate_fix": null,
       "title": "fix(media): tighten sanitizeMimeType anchoring",
       "idempotency_key": null,
-      "reason": "merge state status is UNSTABLE",
-      "merged_at": null,
-      "merge_commit_sha": null,
-      "live_state": null,
+      "reason": "merged by ProjectClownfish post-flight",
+      "merged_at": "2026-04-28T04:48:36Z",
+      "merge_commit_sha": "6fadc56802066c7de40f9a9eba7ebdb9994b6a33",
+      "live_state": "merged",
       "live_updated_at": null
     }
   ]
