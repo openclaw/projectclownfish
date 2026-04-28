@@ -1,0 +1,169 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156604-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25069753968",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25069753968",
+  "head_sha": "2a04089b3cf2fdf8500369cf552da7581e8f16f0",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156604-autonomous-smoke.md",
+  "published_at": "2026-04-28T18:12:17.913Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/61273",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/61273",
+  "canonical_pr": null,
+  "summary": "Autonomous pass found the representative #61273 and all job candidate issues already closed in the hydrated preflight state. No close, merge, fix, label, or PR-open actions are safe or needed. Security-sensitive hydrated refs #1 and #60646 are scoped to route_security only; unrelated closed Telegram/channel startup reports remain historical evidence for the already-fixed-on-main path.",
+  "actions": [
+    {
+      "target": "#1",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked PR is out of ProjectClownfish cleanup scope and should be routed to central OpenClaw security handling."
+    },
+    {
+      "target": "#55727",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#61273",
+      "candidate_fix": null,
+      "reason": "Already closed; do not emit close actions for closed refs."
+    },
+    {
+      "target": "#58064",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#61273",
+      "candidate_fix": null,
+      "reason": "Already closed; related LaunchAgent/channel-startup evidence only."
+    },
+    {
+      "target": "#58230",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#61273",
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation required."
+    },
+    {
+      "target": "#60088",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#61273",
+      "candidate_fix": null,
+      "reason": "Already closed; no closeout action allowed."
+    },
+    {
+      "target": "#60400",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#61273",
+      "candidate_fix": null,
+      "reason": "Already closed; fixed-on-main evidence only."
+    },
+    {
+      "target": "#60646",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Secret-leakage evidence requires central OpenClaw security handling, not backlog cleanup mutation."
+    },
+    {
+      "target": "#61195",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#61273",
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation required."
+    },
+    {
+      "target": "#61273",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#61273",
+      "candidate_fix": null,
+      "reason": "Canonical representative is already closed as implemented; ProjectClownfish must not close or comment again."
+    },
+    {
+      "target": "#61712",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#61273",
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation required."
+    },
+    {
+      "target": "#60700",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#61273",
+      "candidate_fix": null,
+      "reason": "Already closed unmerged PR; useful only as context for #60646/current-main channel-config evidence."
+    },
+    {
+      "target": "#2",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed linked context ref is independent historical evidence only."
+    },
+    {
+      "target": "#23646",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#61273",
+      "candidate_fix": null,
+      "reason": "Closed related context ref; no action."
+    },
+    {
+      "target": "#40905",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#61273",
+      "candidate_fix": null,
+      "reason": "Closed related context ref; no action."
+    },
+    {
+      "target": "#43311",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#61273",
+      "candidate_fix": null,
+      "reason": "Closed related context ref; no action."
+    }
+  ],
+  "action_counts": {
+    "route_security": 2,
+    "keep_closed": 13
+  },
+  "action_status_counts": {
+    "planned": 2,
+    "skipped": 13
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
