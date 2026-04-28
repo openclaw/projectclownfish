@@ -1,6 +1,6 @@
 # Open ProjectClownfish PR Finalizer
 
-Generated: 2026-04-28T07:39:35.871Z
+Generated: 2026-04-28T07:40:54.098Z
 
 ## Summary
 
@@ -30,7 +30,7 @@ Status: report_only
 
 | PR | Title | Cluster | Mergeable | Merge State | Checks | Blockers | Next action |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [#73380](https://github.com/openclaw/openclaw/pull/73380) | fix(memory): keep pre-compaction flush prompt out of user transcript | ghcrawl-156869-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:4 SUCCESS:46 SKIPPED:8 IN_PROGRESS:12; blockers:12 | needs_merge_state:UNSTABLE, needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS; CI / checks-node-extensions-shard-1:IN_PROGRESS, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
+| [#73380](https://github.com/openclaw/openclaw/pull/73380) | fix(memory): keep pre-compaction flush prompt out of user transcript | ghcrawl-156869-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:4 SUCCESS:62 SKIPPED:8 IN_PROGRESS:1; blockers:1 | needs_merge_state:UNSTABLE, needs_checks:CI / checks-node-core-fast-support:IN_PROGRESS, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73379](https://github.com/openclaw/openclaw/pull/73379) | fix(cron): support Telegram thread IDs in cron add/edit | ghcrawl-156855-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:4 SUCCESS:63 SKIPPED:9 IN_PROGRESS:1 FAILURE:1; blockers:2 | needs_merge_state:UNSTABLE, unresolved review threads remain, needs_checks:CI / checks-node-core-fast-support:IN_PROGRESS; CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73374](https://github.com/openclaw/openclaw/pull/73374) | fix: retry same model on transient fallback errors | ghcrawl-156725-autonomous-smoke | CONFLICTING | DIRTY | FAILURE:5 CANCELLED:1 SUCCESS:62 SKIPPED:9; blockers:5 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-fast-support:FAILURE; CI / checks-node-agentic-commands:FAILURE, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#73368](https://github.com/openclaw/openclaw/pull/73368) | fix(ui): clear webchat pending state only for completed active run | ghcrawl-156728-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:1 SUCCESS:61 SKIPPED:9 FAILURE:4; blockers:4 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_checks:CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE; CI / check-test-types:FAILURE; CI / check:FAILURE, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |

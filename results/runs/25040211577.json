@@ -1,0 +1,116 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156946-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25040211577",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25040211577",
+  "head_sha": "c1026cc2b278a4ef12da5cbce3ebe633f12beb50",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156946-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:40:21.237Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/14850",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/14850",
+  "canonical_pr": null,
+  "summary": "Classified the hydrated cluster without GitHub mutations. #14850 remains the canonical open issue for binding-level cross-channel session unification. #58004 is already closed and must not receive a close action. #11665 and #50875 are related but distinct session/identity follow-ups. A narrow fix artifact is needed for #14850 because no viable hydrated PR fixes the binding-level non-direct channel session-target gap.",
+  "actions": [
+    {
+      "target": "#14850",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#14850",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#58004",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#14850",
+      "candidate_fix": null,
+      "reason": "Already closed before this worker pass."
+    },
+    {
+      "target": "#11665",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#14850",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#50875",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#14850",
+      "candidate_fix": null,
+      "reason": null
+    },
+    {
+      "target": "#39049",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#14850",
+      "candidate_fix": null,
+      "reason": "Closed historical context; no mutation planned."
+    },
+    {
+      "target": "cluster:ghcrawl-156946-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#14850",
+      "candidate_fix": null,
+      "reason": "Canonical issue is real and no viable canonical PR exists."
+    },
+    {
+      "target": "cluster:ghcrawl-156946-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#14850",
+      "candidate_fix": null,
+      "reason": "Needed to make #14850 actionable for the executor."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_closed": 2,
+    "keep_related": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "skipped": 2
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "new_fix_pr",
+      "reason": "fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}

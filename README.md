@@ -41,28 +41,28 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 28, 2026, 07:39 UTC
+Last dashboard update: Apr 28, 2026, 07:41 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 203 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 204 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 203 | 100% |
+| Latest clusters reviewed | 204 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 93 | 45.8% |
-| Needs-human clusters | 42 | 20.7% |
-| Latest successful clusters | 201 | 99.0% |
+| Clean completed clusters | 93 | 45.6% |
+| Needs-human clusters | 42 | 20.6% |
+| Latest successful clusters | 202 | 99.0% |
 | Latest failed clusters | 2 | 1.0% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 428 | audit |
-| Fix action attempts | 130 | audit |
+| Run attempts archived | 429 | audit |
+| Fix action attempts | 131 | audit |
 | Fix actions executed | 0 | 0.0% |
-| Fix actions failed | 29 | 22.3% |
-| Fix actions blocked | 36 | 27.7% |
-| Latest clusters with fix failures | 32 | 15.8% |
+| Fix actions failed | 29 | 22.1% |
+| Fix actions blocked | 37 | 28.2% |
+| Latest clusters with fix failures | 33 | 16.2% |
 | Distinct PRs touched | 776 | 100% |
 | Open PRs tracked | 339 | 43.7% |
 | Closed unmerged PRs tracked | 354 | 45.6% |
@@ -79,6 +79,7 @@ Scope: 203 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 
 | Cluster | State | Source job | Reason | Report | Run |
 | --- | --- | --- | --- | --- | --- |
+| [ghcrawl-156946-autonomous-smoke](results/openclaw/ghcrawl-156946-autonomous-smoke.md) | fix blocked | jobs/openclaw/inbox/ghcrawl-156946-autonomous-smoke.md | fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1 | [report](results/openclaw/ghcrawl-156946-autonomous-smoke.md) | [25040211577](https://github.com/openclaw/clownfish/actions/runs/25040211577) |
 | [ghcrawl-156873-autonomous-smoke](results/openclaw/ghcrawl-156873-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156873-autonomous-smoke.md | merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review | [report](results/openclaw/ghcrawl-156873-autonomous-smoke.md) | [25039876456](https://github.com/openclaw/clownfish/actions/runs/25039876456) |
 | [ghcrawl-156879-autonomous-smoke](results/openclaw/ghcrawl-156879-autonomous-smoke.md) | fix blocked | jobs/openclaw/inbox/ghcrawl-156879-autonomous-smoke.md | fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1 | [report](results/openclaw/ghcrawl-156879-autonomous-smoke.md) | [25039930706](https://github.com/openclaw/clownfish/actions/runs/25039930706) |
 | [ghcrawl-156868-autonomous-smoke](results/openclaw/ghcrawl-156868-autonomous-smoke.md) | fix blocked | jobs/openclaw/inbox/ghcrawl-156868-autonomous-smoke.md | fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1 | [report](results/openclaw/ghcrawl-156868-autonomous-smoke.md) | [25039867359](https://github.com/openclaw/clownfish/actions/runs/25039867359) |
@@ -103,12 +104,12 @@ Scope: 203 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | [ghcrawl-156642-autonomous-smoke](results/openclaw/ghcrawl-156642-autonomous-smoke.md) | fix failed | jobs/openclaw/inbox/ghcrawl-156642-autonomous-smoke.md | Codex /review failed: structured output was not written to repair-codex-review-1.json; stdout={"type":"thread.started","thread_id":"019dd... | [report](results/openclaw/ghcrawl-156642-autonomous-smoke.md) | [25023008984](https://github.com/openclaw/clownfish/actions/runs/25023008984) |
 | [ghcrawl-156658-autonomous-smoke](results/openclaw/ghcrawl-156658-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156658-autonomous-smoke.md | canonical is not listed in job refs | [report](results/openclaw/ghcrawl-156658-autonomous-smoke.md) | [25023026716](https://github.com/openclaw/clownfish/actions/runs/25023026716) |
 | [ghcrawl-156656-autonomous-smoke](results/openclaw/ghcrawl-156656-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156656-autonomous-smoke.md | mergeable state is CONFLICTING | [report](results/openclaw/ghcrawl-156656-autonomous-smoke.md) | [25023023225](https://github.com/openclaw/clownfish/actions/runs/25023023225) |
-| [ghcrawl-156644-autonomous-smoke](results/openclaw/ghcrawl-156644-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156644-autonomous-smoke.md | mergeable state is CONFLICTING | [report](results/openclaw/ghcrawl-156644-autonomous-smoke.md) | [25023010799](https://github.com/openclaw/clownfish/actions/runs/25023010799) |
 
 ### Fix Failure Queue
 
 | Cluster | Status | Target | Branch/PR | Reason | Run |
 | --- | --- | --- | --- | --- | --- |
+| [ghcrawl-156946-autonomous-smoke](results/openclaw/ghcrawl-156946-autonomous-smoke.md) | blocked |  |  | fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1 | [25040211577](https://github.com/openclaw/clownfish/actions/runs/25040211577) |
 | [ghcrawl-156879-autonomous-smoke](results/openclaw/ghcrawl-156879-autonomous-smoke.md) | blocked |  |  | fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1 | [25039930706](https://github.com/openclaw/clownfish/actions/runs/25039930706) |
 | [ghcrawl-156868-autonomous-smoke](results/openclaw/ghcrawl-156868-autonomous-smoke.md) | blocked |  |  | fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1 | [25039867359](https://github.com/openclaw/clownfish/actions/runs/25039867359) |
 | [ghcrawl-156864-autonomous-smoke](results/openclaw/ghcrawl-156864-autonomous-smoke.md) | blocked |  |  | fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1 | [25039821052](https://github.com/openclaw/clownfish/actions/runs/25039821052) |
@@ -133,7 +134,6 @@ Scope: 203 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | [ghcrawl-156661-autonomous-smoke](results/openclaw/ghcrawl-156661-autonomous-smoke.md) | blocked |  |  | validation command failed (pnpm check:changed): [check:changed] lanes=extensions, extensionTests, docs [check:changed] extensions/feishu/... | [25023028672](https://github.com/openclaw/clownfish/actions/runs/25023028672) |
 | [ghcrawl-156655-autonomous-smoke](results/openclaw/ghcrawl-156655-autonomous-smoke.md) | blocked |  |  | fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1 | [25023021455](https://github.com/openclaw/clownfish/actions/runs/25023021455) |
 | [ghcrawl-156629-autonomous-smoke](results/openclaw/ghcrawl-156629-autonomous-smoke.md) | failed |  |  | branch projectclownfish/repair-ghcrawl-156629-autonomous-smoke-72660 could not rebase onto origin/main: Codex could not repair rebase con... | [24989070557](https://github.com/openclaw/clownfish/actions/runs/24989070557) |
-| [ghcrawl-156629-autonomous-smoke](results/openclaw/ghcrawl-156629-autonomous-smoke.md) | blocked |  |  | branch projectclownfish/repair-ghcrawl-156629-autonomous-smoke-72660 could not rebase onto origin/main: Codex could not repair rebase con... | [24989070557](https://github.com/openclaw/clownfish/actions/runs/24989070557) |
 
 ### Top Blocked Reasons
 
@@ -159,7 +159,7 @@ Scope: 203 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 
 | PR | Title | Cluster | Branch | Blockers | Next action |
 | --- | --- | --- | --- | --- | --- |
-| [#73380](https://github.com/openclaw/openclaw/pull/73380) | fix(memory): keep pre-compaction flush prompt out of user transcript | ghcrawl-156869-autonomous-smoke | clownfish/ghcrawl-156869-autonomous-smoke | needs_merge_state:UNSTABLE, needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS; CI / checks-no... | repair failing checks or document unrelated main flake with touched-surface proof |
+| [#73380](https://github.com/openclaw/openclaw/pull/73380) | fix(memory): keep pre-compaction flush prompt out of user transcript | ghcrawl-156869-autonomous-smoke | clownfish/ghcrawl-156869-autonomous-smoke | needs_merge_state:UNSTABLE, needs_checks:CI / checks-node-core-fast-support:IN_PROGRESS, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73379](https://github.com/openclaw/openclaw/pull/73379) | fix(cron): support Telegram thread IDs in cron add/edit | ghcrawl-156855-autonomous-smoke | clownfish/ghcrawl-156855-autonomous-smoke | needs_merge_state:UNSTABLE, unresolved review threads remain, needs_checks:CI / checks-node-core-fast-support:IN_PROGRESS; CI / checks-no... | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73374](https://github.com/openclaw/openclaw/pull/73374) | fix: retry same model on transient fallback errors | ghcrawl-156725-autonomous-smoke | clownfish/ghcrawl-156725-autonomous-smoke | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_checks:Parity gate / Run the OpenAI / Opus 4.6... | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#73368](https://github.com/openclaw/openclaw/pull/73368) | fix(ui): clear webchat pending state only for completed active run | ghcrawl-156728-autonomous-smoke | clownfish/ghcrawl-156728-autonomous-smoke | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_checks:CI / checks-node-auto-reply-reply-comma... | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
