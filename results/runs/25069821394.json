@@ -1,0 +1,216 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-143794-bug-macos-openclaw-gateway-restart-fails-when-invoked-from-agent",
+  "mode": "plan",
+  "run_id": "25069821394",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25069821394",
+  "head_sha": "2a04089b3cf2fdf8500369cf552da7581e8f16f0",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-143794-bug-macos-openclaw-gateway-restart-fails-when-invoked-from-agent.md",
+  "published_at": "2026-04-28T18:14:33.338Z",
+  "canonical": "#60885",
+  "canonical_issue": "#60885",
+  "canonical_pr": null,
+  "summary": "Plan-mode classification only. The job canonical #40306 is already closed as implemented, so no closure action is legal for it. The best live canonical for remaining non-security macOS LaunchAgent auto-update/throttle downtime is #60885. The cluster has split residual work: #71060 is related but narrower stop/drain bootout behavior, #58890 is related update subprocess restart-handoff context, and security-sensitive secret persistence reports are routed out of ProjectClownfish scope.",
+  "actions": [
+    {
+      "target": "#40306",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#60885",
+      "candidate_fix": null,
+      "reason": "Closed representative; no mutation allowed."
+    },
+    {
+      "target": "#40089",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#58890",
+      "candidate_fix": null,
+      "reason": "Already closed; historical evidence for #58890/#60885 only."
+    },
+    {
+      "target": "#46466",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed and not part of the remaining duplicate family."
+    },
+    {
+      "target": "#53475",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60885",
+      "candidate_fix": "#72616",
+      "reason": "Already closed as implemented; no closure action legal."
+    },
+    {
+      "target": "#53742",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive secret persistence report; ProjectClownfish must not dedupe-close or fix it."
+    },
+    {
+      "target": "#54861",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#60885",
+      "candidate_fix": null,
+      "reason": "Already closed; remaining family is represented by open #60885 and related #58890/#58061."
+    },
+    {
+      "target": "#57104",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; separate systemd secret/config persistence path."
+    },
+    {
+      "target": "#57379",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60885",
+      "candidate_fix": null,
+      "reason": "Already closed as implemented; no mutation allowed."
+    },
+    {
+      "target": "#58254",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60885",
+      "candidate_fix": null,
+      "reason": "Already closed as implemented; remaining throttle/ExitTimeOut follow-up belongs in #60885."
+    },
+    {
+      "target": "#60885",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#60885",
+      "candidate_fix": null,
+      "reason": "Best open canonical for the remaining non-security macOS LaunchAgent auto-update/throttle downtime work."
+    },
+    {
+      "target": "#61340",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive secret persistence report; ProjectClownfish must not dedupe-close or fix it."
+    },
+    {
+      "target": "#63562",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60885",
+      "candidate_fix": null,
+      "reason": "Already closed as implemented; no mutation allowed."
+    },
+    {
+      "target": "#64052",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60885",
+      "candidate_fix": null,
+      "reason": "Already closed as implemented; no closure action legal."
+    },
+    {
+      "target": "#67335",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#60885",
+      "candidate_fix": "#72616",
+      "reason": "Already closed as implemented; no mutation allowed."
+    },
+    {
+      "target": "#70612",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; related PR has unresolved review finding and merge is blocked by job frontmatter."
+    },
+    {
+      "target": "#71060",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#60885",
+      "candidate_fix": null,
+      "reason": "Related but not a duplicate of #60885; keep open as stop/drain bootout follow-up. The job blocks fix actions, so no fix artifact or executable repair plan is emitted."
+    },
+    {
+      "target": "#58890",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#60885",
+      "candidate_fix": null,
+      "reason": "Open related subcluster for update subprocess handoff, not the best canonical for plist throttle/ExitTimeOut downtime."
+    },
+    {
+      "target": "#58061",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#60885",
+      "candidate_fix": null,
+      "reason": "Open related LaunchAgent plist follow-up; keep separate."
+    },
+    {
+      "target": "#66436",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#60885",
+      "candidate_fix": null,
+      "reason": "Related throttle symptom with distinct missing-config/backoff scope; keep separate."
+    },
+    {
+      "target": "#70968",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": "#70968",
+      "reason": "Open related PR has unresolved automated review finding. Keep related in plan mode because merge/fix are blocked for this job and no executable fix artifact is allowed."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 12,
+    "route_security": 2,
+    "keep_canonical": 1,
+    "keep_related": 5
+  },
+  "action_status_counts": {
+    "skipped": 12,
+    "planned": 8
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}

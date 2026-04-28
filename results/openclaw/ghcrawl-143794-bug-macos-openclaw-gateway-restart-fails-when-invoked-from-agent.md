@@ -2,47 +2,59 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-143794-bug-macos-openclaw-gateway-restart-fails-when-invoked-from-agent"
 mode: "plan"
-run_id: "24931325652"
-run_url: "https://github.com/openclaw/projectclownfish/actions/runs/24931325652"
-head_sha: "75185936126d75ebb182e229f44f6cda4edd81cd"
+run_id: "25069821394"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/25069821394"
+head_sha: "2a04089b3cf2fdf8500369cf552da7581e8f16f0"
 workflow_conclusion: "success"
-result_status: "needs_human"
-published_at: "2026-04-26T01:36:05.571Z"
-canonical: "#67335"
-canonical_issue: "#67335"
+result_status: "planned"
+published_at: "2026-04-28T18:14:33.338Z"
+canonical: "#60885"
+canonical_issue: "#60885"
 canonical_pr: null
-actions_total: 15
+actions_total: 20
+fix_executed: 0
+fix_failed: 0
+fix_blocked: 0
 apply_executed: 0
 apply_blocked: 0
 apply_skipped: 0
-needs_human_count: 3
+needs_human_count: 0
 ---
 
 # ghcrawl-143794-bug-macos-openclaw-gateway-restart-fails-when-invoked-from-agent
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/projectclownfish/actions/runs/24931325652](https://github.com/openclaw/projectclownfish/actions/runs/24931325652)
+Run: [https://github.com/openclaw/clownfish/actions/runs/25069821394](https://github.com/openclaw/clownfish/actions/runs/25069821394)
 
 Workflow conclusion: success
 
-Worker result: needs_human
+Worker result: planned
 
-Canonical: #67335
+Canonical: #60885
 
 ## Summary
 
-The preflight live state no longer matches the job exactly: listed candidates #57104 and #57379 are already closed, the remaining candidates span multiple families, and #64052 is still mixed/ambiguous. For the main macOS launchd-lifecycle outage family, #67335 is the safest open replacement canonical for closed #40306, but execute-mode closure should wait for a split review.
+Plan-mode classification only. The job canonical #40306 is already closed as implemented, so no closure action is legal for it. The best live canonical for remaining non-security macOS LaunchAgent auto-update/throttle downtime is #60885. The cluster has split residual work: #71060 is related but narrower stop/drain bootout behavior, #58890 is related update subprocess restart-handoff context, and security-sensitive secret persistence reports are routed out of ProjectClownfish scope.
 
 ## Impact
 
 | Metric | Count |
 | --- | ---: |
-| Worker actions | 15 |
+| Worker actions | 20 |
+| Fix executed | 0 |
+| Fix failed | 0 |
+| Fix blocked | 0 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
 | Apply skipped | 0 |
-| Needs human | 3 |
+| Needs human | 0 |
+
+## Fix Execution Actions
+
+| Action | Status | Target | Branch | Reason |
+| --- | --- | --- | --- | --- |
+| _None_ |  |  |  |  |
 
 ## Apply Actions
 
@@ -54,24 +66,27 @@ The preflight live state no longer matches the job exactly: listed candidates #5
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #40089 | keep_related | planned | related | Specific restart/update manifestation of the broader macOS LaunchAgent-removal family that #67335 now best represents. |
-| #46466 | keep_independent | planned | independent | Install-context eligibility for launchctl bootstrap is separate from the restart/unload regression family in this cluster. |
-| #53475 | keep_related | planned | related | Same launchd service-availability family, but the reported on-demand-only respawn behavior is narrower than the broader lifecycle-removal canonical. |
-| #53742 | keep_independent | planned | independent | Installer secret persistence is a separate security/configuration family and should not be deduped into the restart/unload canonical. |
-| #54861 | keep_related | planned | related | Auto-update rapid-restart outage is a related manifestation of the same macOS LaunchAgent lifecycle instability, but not safe to collapse into a duplicate from the artifact alone. |
-| #57104 | needs_human | blocked | needs_human | Live state drift: this candidate is no longer open, so no safe plan action should be inferred from the stale candidate list. |
-| #57379 | needs_human | blocked | needs_human | Live state drift: this candidate is no longer open, so no safe plan action should be inferred from the stale candidate list. |
-| #58254 | keep_related | planned | related | Related macOS auto-update reproduction with useful version-specific evidence; keep open rather than collapsing it into a duplicate. |
-| #60885 | keep_related | planned | related | Specific launchd template/race diagnosis for the same macOS availability failure family tracked by #67335. |
-| #61340 | keep_independent | planned | independent | Linux systemd secret persistence is outside the macOS LaunchAgent restart/unload family and should be handled separately. |
-| #63562 | keep_related | planned | related | The outage belongs to the same family as #67335, but the report is broader and should stay related rather than be deduped. |
-| #64052 | needs_human | blocked | needs_human | Safe dedupe is unclear from the artifact alone because the report mixes multiple failure families and could still contain unique work. |
-| #67335 | keep_canonical | planned | canonical | Safest live open replacement for closed #40306 and the best umbrella thread for the remaining macOS launchd lifecycle outage family. |
-| #70612 | keep_independent | planned | independent | Later-version secret-embedding regression belongs with installer secret-hygiene follow-up work, not the main restart/unload canonical. |
-| #71060 | keep_related | planned | related | Specific stop/restart drain-time path inside the broader lifecycle-removal family; keep as a related diagnostic thread. |
+| #40306 | keep_closed | skipped | canonical | Closed representative; no mutation allowed. |
+| #40089 | keep_closed | skipped | superseded | Already closed; historical evidence for #58890/#60885 only. |
+| #46466 | keep_closed | skipped | independent | Already closed and not part of the remaining duplicate family. |
+| #53475 | keep_closed | skipped | fixed_by_candidate | Already closed as implemented; no closure action legal. |
+| #53742 | route_security | planned | security_sensitive | Security-sensitive secret persistence report; ProjectClownfish must not dedupe-close or fix it. |
+| #54861 | keep_closed | skipped | superseded | Already closed; remaining family is represented by open #60885 and related #58890/#58061. |
+| #57104 | keep_closed | skipped | fixed_by_candidate | Already closed; separate systemd secret/config persistence path. |
+| #57379 | keep_closed | skipped | fixed_by_candidate | Already closed as implemented; no mutation allowed. |
+| #58254 | keep_closed | skipped | fixed_by_candidate | Already closed as implemented; remaining throttle/ExitTimeOut follow-up belongs in #60885. |
+| #60885 | keep_canonical | planned | canonical | Best open canonical for the remaining non-security macOS LaunchAgent auto-update/throttle downtime work. |
+| #61340 | route_security | planned | security_sensitive | Security-sensitive secret persistence report; ProjectClownfish must not dedupe-close or fix it. |
+| #63562 | keep_closed | skipped | fixed_by_candidate | Already closed as implemented; no mutation allowed. |
+| #64052 | keep_closed | skipped | fixed_by_candidate | Already closed as implemented; no closure action legal. |
+| #67335 | keep_closed | skipped | fixed_by_candidate | Already closed as implemented; no mutation allowed. |
+| #70612 | keep_closed | skipped | fixed_by_candidate | Already closed; related PR has unresolved review finding and merge is blocked by job frontmatter. |
+| #71060 | keep_related | planned | related | Related but not a duplicate of #60885; keep open as stop/drain bootout follow-up. The job blocks fix actions, so no fix artifact or executable repair plan is emitted. |
+| #58890 | keep_related | planned | related | Open related subcluster for update subprocess handoff, not the best canonical for plist throttle/ExitTimeOut downtime. |
+| #58061 | keep_related | planned | related | Open related LaunchAgent plist follow-up; keep separate. |
+| #66436 | keep_related | planned | related | Related throttle symptom with distinct missing-config/backoff scope; keep separate. |
+| #70968 | keep_related | planned | related | Open related PR has unresolved automated review finding. Keep related in plan mode because merge/fix are blocked for this job and no executable fix artifact is allowed. |
 
 ## Needs Human
 
-- Listed candidates #57104 and #57379 are already closed in the preflight live state, so the cluster changed materially after job generation.
-- The current candidate set spans multiple families: macOS launchd lifecycle/removal (#67335 and related), installer secret persistence (#53742/#61340/#70612), and headless install context (#46466). Any execute-mode closure plan should be split by family first.
-- #64052 mixes launchd lifecycle breakage with embedded-token/install symptoms, so artifact-only evidence is not enough for safe dedupe.
+- none
