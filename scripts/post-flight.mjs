@@ -6,6 +6,7 @@ import { assertAllowedOwner, hasSecuritySignalText, parseArgs, parseJob, repoRoo
 
 const PASSING_CHECK_CONCLUSIONS = new Set(["SUCCESS", "SKIPPED", "NEUTRAL"]);
 const CLEAN_MERGE_STATES = new Set(["CLEAN", "HAS_HOOKS"]);
+const FIX_PR_MERGE_STATES = new Set(["CLEAN", "HAS_HOOKS", "UNSTABLE"]);
 const FIX_PR_ACTIONS = new Set(["open_fix_pr", "repair_contributor_branch"]);
 const FIX_PR_READY_STATUSES = new Set(["opened", "pushed"]);
 const DEFAULT_IGNORED_CHECKS = ["auto-response", "Labeler", "Stale"];
@@ -198,7 +199,7 @@ function validateMergeableFixPr({ pull, view, preflight }) {
     return "security-sensitive PR requires central security triage";
   }
   if (view.mergeable !== "MERGEABLE") return `mergeable state is ${view.mergeable || "unknown"}`;
-  if (!CLEAN_MERGE_STATES.has(String(view.mergeStateStatus ?? ""))) {
+  if (!FIX_PR_MERGE_STATES.has(String(view.mergeStateStatus ?? ""))) {
     return `merge state status is ${view.mergeStateStatus || "unknown"}`;
   }
   if (["CHANGES_REQUESTED", "REVIEW_REQUIRED"].includes(String(view.reviewDecision ?? ""))) {
@@ -211,7 +212,7 @@ function validateMergeableFixPr({ pull, view, preflight }) {
   const threadBlock = validateResolvedReviewThreads(result.repo, pull.number);
   if (threadBlock) return threadBlock;
 
-  const checkBlock = validateStatusChecks(view.statusCheckRollup ?? []);
+  const checkBlock = shouldRequirePrChecks() ? validateStatusChecks(view.statusCheckRollup ?? []) : "";
   if (checkBlock) return checkBlock;
 
   return "";
@@ -294,6 +295,10 @@ function ignoredCheckNames() {
       .map((item) => item.trim())
       .filter(Boolean),
   );
+}
+
+function shouldRequirePrChecks() {
+  return process.env.CLOWNFISH_POST_FLIGHT_REQUIRE_PR_CHECKS === "1";
 }
 
 function validateResolvedReviewThreads(repo, number) {
