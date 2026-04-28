@@ -3,18 +3,18 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-28T07:18:43.537Z",
-  "count": 8,
+  "generated_at": "2026-04-28T07:19:39.326Z",
+  "count": 9,
   "summary": {
-    "open_prs": 8,
+    "open_prs": 9,
     "ready_candidates": 0,
     "security_hold": 5,
     "needs_rebase": 5,
     "mergeability_unknown": 0,
-    "needs_checks": 7,
+    "needs_checks": 8,
     "needs_review": 2,
-    "needs_merge_preflight": 8,
-    "needs_result_backfill": 3
+    "needs_merge_preflight": 9,
+    "needs_result_backfill": 4
   },
   "dispatch": {
     "enabled": false,
@@ -28,35 +28,34 @@
   },
   "prs": [
     {
-      "number": 73365,
-      "title": "fix: allow steer messages during active non-streaming runs",
-      "url": "https://github.com/openclaw/openclaw/pull/73365",
-      "branch": "clownfish/ghcrawl-156681-autonomous-smoke",
-      "head_sha": "26490eab0959da72beb8566125672875ff412552",
-      "cluster_id": "ghcrawl-156681-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-156681-autonomous-smoke.md",
-      "updated_at": "2026-04-28T07:17:56Z",
+      "number": 73368,
+      "title": "fix(ui): clear webchat pending state only for completed active run",
+      "url": "https://github.com/openclaw/openclaw/pull/73368",
+      "branch": "clownfish/ghcrawl-156728-autonomous-smoke",
+      "head_sha": "a161df062d862a56572da6d817ed96f00c1648c7",
+      "cluster_id": "ghcrawl-156728-autonomous-smoke",
+      "job_path": "jobs/openclaw/inbox/ghcrawl-156728-autonomous-smoke.md",
+      "updated_at": "2026-04-28T07:19:00Z",
       "mergeable": "MERGEABLE",
       "merge_state_status": "UNSTABLE",
       "review_decision": "",
       "security_hold": false,
       "checks": {
-        "total": 69,
+        "total": 67,
         "counts": {
-          "CANCELLED": 3,
-          "IN_PROGRESS": 39,
-          "SUCCESS": 18,
-          "SKIPPED": 8,
-          "FAILURE": 1
+          "CANCELLED": 1,
+          "SUCCESS": 16,
+          "SKIPPED": 9,
+          "IN_PROGRESS": 41
         },
         "blockers": [
-          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS",
           "CI / build-artifacts:IN_PROGRESS",
           "CI / checks-fast-bundled:IN_PROGRESS",
           "CI / checks-fast-contracts-plugins:IN_PROGRESS",
           "CI / checks-fast-contracts-channels-a:IN_PROGRESS",
           "CI / checks-fast-contracts-channels-b:IN_PROGRESS",
           "CI / checks-fast-contracts-channels-c:IN_PROGRESS",
+          "CI / checks-fast-protocol:IN_PROGRESS",
           "CI / checks-node-extensions-shard-1:IN_PROGRESS",
           "CI / checks-node-extensions-shard-2:IN_PROGRESS",
           "CI / checks-node-extensions-shard-3:IN_PROGRESS",
@@ -65,6 +64,7 @@
           "CI / checks-node-extensions-shard-6:IN_PROGRESS",
           "CI / checks-node-core-fast-support:IN_PROGRESS",
           "CI / checks-node-core-src-security:IN_PROGRESS",
+          "CI / checks-node-core-ui:IN_PROGRESS",
           "CI / checks-node-core-runtime-infra:IN_PROGRESS",
           "CI / checks-node-core-runtime-media-ui:IN_PROGRESS",
           "CI / checks-node-core-runtime-shared:IN_PROGRESS",
@@ -81,7 +81,7 @@
           "CI / check-prod-types:IN_PROGRESS",
           "CI / check-lint:IN_PROGRESS",
           "CI / check-policy-guards:IN_PROGRESS",
-          "CI / check-test-types:FAILURE",
+          "CI / check-test-types:IN_PROGRESS",
           "CI / check-strict-smoke:IN_PROGRESS",
           "CI / check-additional-boundaries:IN_PROGRESS",
           "CI / check-additional-extension-channels:IN_PROGRESS",
@@ -105,7 +105,68 @@
       "latest_record": null,
       "blockers": [
         "needs_merge_state:UNSTABLE",
-        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS; CI / build-artifacts:IN_PROGRESS; CI / checks-fast-bundled:IN_PROGRESS",
+        "needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-fast-bundled:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS",
+        "needs_merge_preflight",
+        "needs_result_backfill"
+      ],
+      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
+    },
+    {
+      "number": 73365,
+      "title": "fix: allow steer messages during active non-streaming runs",
+      "url": "https://github.com/openclaw/openclaw/pull/73365",
+      "branch": "clownfish/ghcrawl-156681-autonomous-smoke",
+      "head_sha": "26490eab0959da72beb8566125672875ff412552",
+      "cluster_id": "ghcrawl-156681-autonomous-smoke",
+      "job_path": "jobs/openclaw/inbox/ghcrawl-156681-autonomous-smoke.md",
+      "updated_at": "2026-04-28T07:17:56Z",
+      "mergeable": "MERGEABLE",
+      "merge_state_status": "UNSTABLE",
+      "review_decision": "",
+      "security_hold": false,
+      "checks": {
+        "total": 72,
+        "counts": {
+          "CANCELLED": 3,
+          "IN_PROGRESS": 15,
+          "SUCCESS": 43,
+          "SKIPPED": 9,
+          "FAILURE": 2
+        },
+        "blockers": [
+          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS",
+          "CI / build-artifacts:IN_PROGRESS",
+          "CI / checks-fast-contracts-plugins:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-1:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-2:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-5:IN_PROGRESS",
+          "CI / checks-node-core-fast-support:IN_PROGRESS",
+          "CI / checks-node-core-runtime-infra:IN_PROGRESS",
+          "CI / checks-node-core-runtime-media-ui:IN_PROGRESS",
+          "CI / checks-node-agentic-control-plane:IN_PROGRESS",
+          "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-dispatch:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-commands-state-routing:IN_PROGRESS",
+          "CI / check-test-types:FAILURE",
+          "CI / check-additional-extension-package-boundary:IN_PROGRESS",
+          "CI / check:FAILURE",
+          "Greptile Review:IN_PROGRESS"
+        ]
+      },
+      "review_threads": {
+        "status": "clean",
+        "reason": null,
+        "unresolved_count": 0,
+        "examples": []
+      },
+      "review_bots": {
+        "count": 0,
+        "latest": []
+      },
+      "latest_record": null,
+      "blockers": [
+        "needs_merge_state:UNSTABLE",
+        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS; CI / build-artifacts:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],
@@ -125,23 +186,21 @@
       "review_decision": "",
       "security_hold": false,
       "checks": {
-        "total": 69,
+        "total": 74,
         "counts": {
+          "FAILURE": 5,
           "CANCELLED": 1,
-          "IN_PROGRESS": 6,
-          "SUCCESS": 52,
+          "SUCCESS": 59,
           "SKIPPED": 8,
-          "FAILURE": 2
+          "IN_PROGRESS": 1
         },
         "blockers": [
-          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS",
-          "CI / build-artifacts:IN_PROGRESS",
-          "CI / checks-fast-contracts-plugins:IN_PROGRESS",
+          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE",
           "CI / checks-node-extensions-shard-2:IN_PROGRESS",
-          "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
-          "CI / checks-node-auto-reply-reply-commands-state-routing:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE",
           "CI / check-test-types:FAILURE",
-          "CI / check:FAILURE"
+          "CI / check:FAILURE",
+          "CI / checks-node-core:FAILURE"
         ]
       },
       "review_threads": {
@@ -164,7 +223,7 @@
       "latest_record": null,
       "blockers": [
         "needs_merge_state:UNSTABLE",
-        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS; CI / build-artifacts:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS",
+        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-extensions-shard-2:IN_PROGRESS; CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],

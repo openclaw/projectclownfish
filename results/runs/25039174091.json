@@ -1,0 +1,150 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156751-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25039174091",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25039174091",
+  "head_sha": "7b7cd357b72747a995afa2067b62caaa3f133941",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156751-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:19:11.118Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/70010",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/70010",
+  "summary": "Hydrated state shows the original representative #69257 is already closed and superseded by the still-open, narrower gog Tasks docs PR #70010. The Copilot-model refs in the same ghcrawl cluster are a separate closed historical subfamily already handled by merged #69818 and current main behavior. No close or merge is safe in this worker result: #70010 is open and useful but has failing checks, unknown mergeability, and no clean Codex /review preflight, so the planned path is to repair the contributor branch and validate before any merge or post-merge closeout.",
+  "actions": [
+    {
+      "target": "#69094",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#70010",
+      "candidate_fix": "#70010",
+      "reason": "Historical closed issue; no mutation planned."
+    },
+    {
+      "target": "#69241",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#69818",
+      "candidate_fix": "#69818",
+      "reason": "Closed Copilot-model issue already handled outside the gog Tasks canonical path."
+    },
+    {
+      "target": "#69244",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#69818",
+      "candidate_fix": "#69818",
+      "reason": "Closed historical Copilot PR; no mutation planned."
+    },
+    {
+      "target": "#69257",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#70010",
+      "candidate_fix": "#70010",
+      "reason": "Original representative is obsolete; #70010 is the better live canonical PR."
+    },
+    {
+      "target": "#69259",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#69818",
+      "candidate_fix": "#69818",
+      "reason": "Closed historical Copilot PR; no mutation planned."
+    },
+    {
+      "target": "#69318",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#69818",
+      "candidate_fix": "#69818",
+      "reason": "Closed historical Copilot PR; no mutation planned."
+    },
+    {
+      "target": "#69818",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#69818",
+      "candidate_fix": null,
+      "reason": "Merged historical Copilot canonical; no mutation planned."
+    },
+    {
+      "target": "#70010",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#70010",
+      "candidate_fix": "#70010",
+      "reason": "Repair the useful open contributor branch, rerun review, and validate before any merge or post-merge closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-156751-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#70010",
+      "candidate_fix": "#70010",
+      "reason": "Executable fix artifact required because the canonical PR is not merge-ready."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 7,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 7,
+    "planned": 2
+  },
+  "fix_counts": {
+    "pushed": 1
+  },
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "pushed",
+      "target": "https://github.com/openclaw/openclaw/pull/70010",
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#70010",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "docs(gog): include Google Tasks clear command",
+      "idempotency_key": null,
+      "reason": "merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
