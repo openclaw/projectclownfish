@@ -55,12 +55,14 @@ jobs:
     outputs:
       allow_execute: ${{ steps.capture_gates.outputs.allow_execute }}
       allow_fix_pr: ${{ steps.capture_gates.outputs.allow_fix_pr }}
+      allow_merge: ${{ steps.capture_gates.outputs.allow_merge }}
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       CODEX_API_KEY: ${{ secrets.CODEX_API_KEY || secrets.OPENAI_API_KEY }}
       CLOWNFISH_ALLOWED_OWNER: ${{ vars.CLOWNFISH_ALLOWED_OWNER || 'openclaw' }}
       CLOWNFISH_ALLOW_EXECUTE: ${{ (inputs.mode == 'execute' || inputs.mode == 'autonomous') && (vars.CLOWNFISH_ALLOW_EXECUTE || '1') || '0' }}
       CLOWNFISH_ALLOW_FIX_PR: ${{ (inputs.mode == 'execute' || inputs.mode == 'autonomous') && (vars.CLOWNFISH_ALLOW_FIX_PR || '1') || '0' }}
+      CLOWNFISH_ALLOW_MERGE: ${{ (inputs.mode == 'execute' || inputs.mode == 'autonomous') && (vars.CLOWNFISH_ALLOW_MERGE || '0') || '0' }}
       CLOWNFISH_HYDRATE_CLUSTER_REFS: ${{ vars.CLOWNFISH_HYDRATE_CLUSTER_REFS || '1' }}
       CLOWNFISH_HYDRATE_COMMENTS: ${{ vars.CLOWNFISH_HYDRATE_COMMENTS || '1' }}
       CLOWNFISH_MAX_COMMENTS_PER_ITEM: ${{ vars.CLOWNFISH_MAX_COMMENTS_PER_ITEM || '30' }}
@@ -80,6 +82,7 @@ jobs:
           {
             echo "allow_execute=${CLOWNFISH_ALLOW_EXECUTE}"
             echo "allow_fix_pr=${CLOWNFISH_ALLOW_FIX_PR}"
+            echo "allow_merge=${CLOWNFISH_ALLOW_MERGE}"
           } >> "$GITHUB_OUTPUT"
 
       - uses: actions/setup-node@v5
@@ -174,6 +177,7 @@ jobs:
       CLOWNFISH_ALLOWED_OWNER: ${{ vars.CLOWNFISH_ALLOWED_OWNER || 'openclaw' }}
       CLOWNFISH_ALLOW_EXECUTE: ${{ needs.cluster.outputs.allow_execute || '1' }}
       CLOWNFISH_ALLOW_FIX_PR: ${{ needs.cluster.outputs.allow_fix_pr || '1' }}
+      CLOWNFISH_ALLOW_MERGE: ${{ needs.cluster.outputs.allow_merge || '0' }}
       CLOWNFISH_CODEX_REASONING_EFFORT: ${{ vars.CLOWNFISH_CODEX_REASONING_EFFORT || 'medium' }}
       CLOWNFISH_CODEX_REVIEW_ATTEMPTS: ${{ vars.CLOWNFISH_CODEX_REVIEW_ATTEMPTS || '2' }}
       CLOWNFISH_REBASE_REPAIR_ATTEMPTS: ${{ vars.CLOWNFISH_REBASE_REPAIR_ATTEMPTS || '4' }}

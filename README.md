@@ -225,7 +225,7 @@ Full worker prompts, Codex transcripts, and raw artifacts stay in GitHub Actions
 - `route_security`: quarantines true security-sensitive refs without poisoning unrelated cluster work.
 - `needs_human`: only product-direction, trust-boundary, canonical-choice, merge-path, or contributor-credit decisions that remain unclear after the hydrated artifact and single-item review/check/decide pass.
 - Automated reviewer feedback must be cleared during autonomous PR work. Greptile, Codex, Asile, CodeRabbit, Copilot, and similar bot comments must be addressed, proven non-actionable, or escalated before any merge or post-merge closeout recommendation.
-- Merge preflight: no PR can merge until security issues are cleared, comments are resolved, Codex `/review` has passed, findings are addressed, and changed-surface validation is clean.
+- Merge preflight: no PR can merge until `CLOWNFISH_ALLOW_MERGE=1`, security issues are cleared, comments are resolved, Codex `/review` has passed, findings are addressed, and changed-surface validation is clean. With the merge gate closed, ProjectClownfish labels merge-ready targets for human review instead of merging.
 - Repair ladder: make the useful contributor PR mergeable when its branch is maintainer-editable; otherwise replace draft, stale, unmergeable, uneditable, or unsafe branches with a narrow credited fix PR. When fix PR mode is enabled, "wait or replace" is already answered: replace, preserve credit, then supersede only the source PR that could not be safely updated.
 
 ## Local Run
@@ -255,7 +255,8 @@ npm run import-gitcrawl -- --from-gitcrawl --limit 40 --mode autonomous --suffix
 
 # Dispatch reviewed jobs. Dispatch, requeue, and self-heal refuse to exceed
 # 50 live cluster-worker runs by default; tune with CLOWNFISH_MAX_LIVE_WORKERS
-# or --max-live-workers.
+# or --max-live-workers. With --wait-for-capacity, dispatch can drain a larger
+# file list in capacity-sized waves instead of refusing the whole batch.
 CLOWNFISH_MAX_LIVE_WORKERS=50 npm run dispatch -- jobs/openclaw/inbox/cluster-example.md \
   --mode autonomous \
   --runner blacksmith-4vcpu-ubuntu-2404 \
@@ -289,11 +290,14 @@ npm run sweep-openclaw-jobs -- --live
 # jobs/openclaw/outbox/stuck; it never dispatches workers.
 npm run sweep-openclaw-jobs -- --live --apply-delete-tests --apply-outbox --apply-stuck
 
-# Dry-run a small parked-backlog promotion from outbox/stuck back into inbox.
+# Dry-run a parked-backlog promotion from outbox/stuck back into inbox.
 npm run promote-stuck-jobs -- --limit 20
 
-# Promote a reviewed parked-backlog batch into the active queue.
-npm run promote-stuck-jobs -- --limit 20 --apply
+# Promote the largest parked-backlog jobs into the active queue.
+npm run promote-stuck-jobs -- --sort size --limit 20 --apply
+
+# Promote every parked-backlog job, largest clusters first.
+npm run promote-stuck-jobs -- --sort size --limit all --apply
 
 # Dry-run the Clownfish label backfill. This verifies live GitHub state and
 # reports the exact PRs/issues that would receive the "clownfish" label.
@@ -328,6 +332,7 @@ The workflow needs:
 - a read-only GitHub token for worker inspection
 - a separate write-scoped GitHub token for the deterministic applicator
 - execution gates that default on for execute/autonomous jobs: set `CLOWNFISH_ALLOW_EXECUTE=0` or `CLOWNFISH_ALLOW_FIX_PR=0` only when intentionally pausing live work
+- merge is separately gated by `CLOWNFISH_ALLOW_MERGE`; it defaults to `0`, and merge-ready PRs are labeled `clownfish:human-review` and `clownfish:merge-ready` for a maintainer to merge manually
 - optional `CLOWNFISH_CODEX_CLI_VERSION` variable to pin and refresh the cached Codex CLI
 - optional `CLOWNFISH_MODEL` override for dispatch scripts; default Codex model is `gpt-5.5`
 - optional `CLOWNFISH_MAX_LIVE_WORKERS` variable for dispatch/requeue/self-heal worker fan-out; default is `50`

@@ -11,6 +11,8 @@ const FIX_PR_ACTIONS = new Set(["open_fix_pr", "repair_contributor_branch"]);
 const FIX_PR_READY_STATUSES = new Set(["opened", "pushed"]);
 const POST_MERGE_CLOSE_ACTIONS = new Set(["close_duplicate", "close_superseded", "close_fixed_by_candidate", "post_merge_close"]);
 const DEFAULT_IGNORED_CHECKS = ["auto-response", "Labeler", "Stale"];
+const HUMAN_REVIEW_LABEL = "clownfish:human-review";
+const MERGE_READY_LABEL = "clownfish:merge-ready";
 const POST_FLIGHT_WAIT_MS = numberEnv("CLOWNFISH_POST_FLIGHT_WAIT_MS", 10 * 60 * 1000);
 const POST_FLIGHT_POLL_MS = numberEnv("CLOWNFISH_POST_FLIGHT_POLL_MS", 15 * 1000);
 
@@ -158,6 +160,17 @@ function finalizeFixPr(action) {
     };
   }
 
+  if (process.env.CLOWNFISH_ALLOW_MERGE !== "1") {
+    labelForHumanMergeReview(result.repo, parsed.number);
+    return {
+      ...prBase,
+      status: "blocked",
+      reason: "merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review",
+      merge_method: "squash",
+      waited_ms: waitedMs,
+    };
+  }
+
   try {
     ghWithRetry(["pr", "merge", String(parsed.number), "--repo", result.repo, "--squash"]);
   } catch (error) {
@@ -273,6 +286,21 @@ function validateMergePolicy() {
   if ((job.frontmatter.blocked_actions ?? []).includes("merge")) return "merge is blocked by job frontmatter";
   if (job.frontmatter.allow_merge !== true) return "merge requires allow_merge: true";
   return "";
+}
+
+function labelForHumanMergeReview(repo, number) {
+  ensureLabel(repo, HUMAN_REVIEW_LABEL, "B60205", "Needs maintainer review before ProjectClownfish can finish");
+  ensureLabel(repo, MERGE_READY_LABEL, "0E8A16", "ProjectClownfish found a merge-ready candidate; human owns the final merge");
+  ghBestEffort(["issue", "edit", String(number), "--repo", repo, "--add-label", HUMAN_REVIEW_LABEL]);
+  ghBestEffort(["issue", "edit", String(number), "--repo", repo, "--add-label", MERGE_READY_LABEL]);
+}
+
+function ensureLabel(repo, name, color, description) {
+  try {
+    ghWithRetry(["label", "create", name, "--repo", repo, "--color", color, "--description", description], 2);
+  } catch (error) {
+    if (!/already exists/i.test(commandErrorText(error))) return;
+  }
 }
 
 function validateMergeableFixPr({ pull, view, preflight }) {

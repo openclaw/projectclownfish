@@ -8,15 +8,15 @@ const repo = String(args.repo ?? "openclaw");
 const inboxDir = path.resolve(String(args.inbox ?? path.join(repoRoot(), "jobs", repo, "inbox")));
 const stuckDir = path.resolve(String(args.stuck ?? path.join(repoRoot(), "jobs", repo, "outbox", "stuck")));
 const reportPath = path.resolve(String(args.report ?? path.join(repoRoot(), "results", "stuck-job-promotion.json")));
-const limit = numberArg("limit", 20);
 const apply = Boolean(args.apply || args.execute);
 const sort = String(args.sort ?? "name");
 
-if (!["name", "mtime"].includes(sort)) {
-  throw new Error("sort must be name or mtime");
+if (!["name", "mtime", "size"].includes(sort)) {
+  throw new Error("sort must be name, mtime, or size");
 }
 
-const candidates = listJobs(stuckDir).sort(sort === "mtime" ? sortOldestFirst : sortByName);
+const candidates = listJobs(stuckDir).sort(sort === "mtime" ? sortOldestFirst : sort === "size" ? sortLargestFirst : sortByName);
+const limit = limitArg("limit", 20, candidates.length);
 const selected = candidates.slice(0, limit);
 const rows = selected.map((job) => promoteJob(job));
 const report = {
@@ -24,6 +24,8 @@ const report = {
   repo,
   inbox_dir: path.relative(repoRoot(), inboxDir),
   stuck_dir: path.relative(repoRoot(), stuckDir),
+  sort,
+  limit,
   generated_at: new Date().toISOString(),
   totals: {
     available: candidates.length,
@@ -52,6 +54,7 @@ function listJobs(dir) {
         source: filePath,
         destination: path.join(inboxDir, entry.name),
         mtimeMs: fs.statSync(filePath).mtimeMs,
+        ...readJobSummary(filePath),
       };
     });
 }
@@ -61,6 +64,9 @@ function promoteJob(job) {
     job: job.name,
     source: path.relative(repoRoot(), job.source),
     destination: path.relative(repoRoot(), job.destination),
+    total_members: job.totalMembers,
+    open_candidates: job.openCandidates,
+    title: job.title,
   };
   if (fs.existsSync(job.destination)) {
     return { ...base, status: "blocked", reason: "destination already exists" };
@@ -80,16 +86,30 @@ function sortOldestFirst(left, right) {
   return left.mtimeMs - right.mtimeMs || sortByName(left, right);
 }
 
-function numberArg(name, fallback) {
+function sortLargestFirst(left, right) {
+  return right.totalMembers - left.totalMembers || right.openCandidates - left.openCandidates || sortByName(left, right);
+}
+
+function readJobSummary(filePath) {
+  const raw = fs.readFileSync(filePath, "utf8");
+  return {
+    totalMembers: Number(raw.match(/- total members:\s*(\d+)/)?.[1] ?? 0),
+    openCandidates: Number(raw.match(/- open candidates in local store:\s*(\d+)/)?.[1] ?? 0),
+    title: raw.match(/Display title:\n\n>\s*(.+)/)?.[1] ?? "",
+  };
+}
+
+function limitArg(name, fallback, allCount) {
   const raw = args[name];
   if (raw === undefined || raw === true) return fallback;
+  if (String(raw).toLowerCase() === "all") return allCount;
   const value = Number(raw);
   return Number.isFinite(value) && value >= 0 ? value : fallback;
 }
 
 function writeMarkdownReport(report, filePath) {
   const rows = report.jobs
-    .map((job) => `| ${job.job} | ${job.status} | ${job.source} | ${job.destination} | ${job.reason} |`)
+    .map((job) => `| ${job.job} | ${job.total_members ?? 0} | ${job.open_candidates ?? 0} | ${job.status} | ${job.source} | ${job.destination} | ${job.reason} |`)
     .join("\n");
   const body = `# Stuck Job Promotion
 
@@ -103,9 +123,9 @@ Mode: ${report.status}
 | Promoted | ${report.totals.promoted} |
 | Blocked | ${report.totals.blocked} |
 
-| Job | Status | Source | Destination | Reason |
-| --- | --- | --- | --- | --- |
-${rows || "| _None_ |  |  |  |  |"}
+| Job | Members | Open | Status | Source | Destination | Reason |
+| --- | ---: | ---: | --- | --- | --- | --- |
+${rows || "| _None_ |  |  |  |  |  |  |"}
 `;
   fs.writeFileSync(filePath, body, "utf8");
 }

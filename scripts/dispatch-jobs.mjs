@@ -5,6 +5,7 @@ import { spawnSync } from "node:child_process";
 import {
   assertLiveWorkerCapacity,
   currentProjectRepo,
+  liveWorkerCapacity,
   parseArgs,
   parseJob,
   readMaxLiveWorkers,
@@ -24,6 +25,7 @@ const repo = String(args.repo ?? currentProjectRepo());
 const model = String(args.model ?? process.env.CLOWNFISH_MODEL ?? "gpt-5.5");
 const maxLiveWorkers = readMaxLiveWorkers(args);
 const waitForCapacity = Boolean(args["wait-for-capacity"]);
+const ref = args.ref ? String(args.ref) : "";
 const files = args._;
 
 if (files.length === 0) {
@@ -55,16 +57,44 @@ for (const file of files) {
 }
 
 if (!failed) {
-  const capacityOptions = { repo, workflow, requested: jobs.length, maxLiveWorkers };
+  const requested = waitForCapacity ? Math.min(jobs.length, 1) : jobs.length;
+  const capacityOptions = { repo, workflow, requested, maxLiveWorkers };
   const capacity = waitForCapacity ? waitForLiveWorkerCapacity(capacityOptions) : assertLiveWorkerCapacity(capacityOptions);
   console.log(
     `live worker capacity: ${capacity.active}/${capacity.max_live_workers} active; dispatching ${jobs.length} ${workflow} run(s)`,
   );
 }
 
-for (const relative of jobs) {
-  if (failed) break;
+let dispatched = 0;
+let index = 0;
+while (!failed && index < jobs.length) {
+  let batchSize = jobs.length - index;
+  if (waitForCapacity) {
+    const capacity = waitForLiveWorkerCapacity({
+      repo,
+      workflow,
+      requested: 1,
+      maxLiveWorkers,
+    });
+    const refreshed = liveWorkerCapacity({ repo, workflow, requested: 1, maxLiveWorkers });
+    batchSize = Math.min(batchSize, Math.max(1, refreshed.available || capacity.available || 1));
+    console.log(
+      `live worker capacity: ${refreshed.active}/${refreshed.max_live_workers} active; dispatching next ${batchSize} run(s)`,
+    );
+  }
 
+  for (const relative of jobs.slice(index, index + batchSize)) {
+    if (failed) break;
+    dispatched += 1;
+    dispatchJob(relative, dispatched, jobs.length);
+  }
+  index += batchSize;
+  if (waitForCapacity && !failed && index < jobs.length) {
+    sleepMs(15_000);
+  }
+}
+
+function dispatchJob(relative, position, total) {
   const result = spawnSync(
     "gh",
     [
@@ -73,6 +103,7 @@ for (const relative of jobs) {
       workflow,
       "--repo",
       repo,
+      ...(ref ? ["--ref", ref] : []),
       "-f",
       `job=${relative}`,
       "-f",
@@ -90,8 +121,12 @@ for (const relative of jobs) {
     failed = true;
     console.error(result.stderr || result.stdout);
   } else {
-    console.log(`dispatched ${relative} (${mode}) on ${runner}; execution on ${executionRunner}`);
+    console.log(`dispatched ${position}/${total} ${relative} (${mode}) on ${runner}; execution on ${executionRunner}`);
   }
+}
+
+function sleepMs(milliseconds) {
+  Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, milliseconds);
 }
 
 if (failed) process.exit(1);
