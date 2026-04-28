@@ -3,18 +3,18 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-28T07:41:57.548Z",
-  "count": 13,
+  "generated_at": "2026-04-28T07:44:01.030Z",
+  "count": 14,
   "summary": {
-    "open_prs": 13,
+    "open_prs": 14,
     "ready_candidates": 0,
     "security_hold": 5,
     "needs_rebase": 10,
     "mergeability_unknown": 0,
-    "needs_checks": 12,
+    "needs_checks": 13,
     "needs_review": 6,
-    "needs_merge_preflight": 13,
-    "needs_result_backfill": 8
+    "needs_merge_preflight": 14,
+    "needs_result_backfill": 9
   },
   "dispatch": {
     "enabled": false,
@@ -809,35 +809,32 @@
       "recommended_next_action": "route to central security triage"
     },
     {
-      "number": 73385,
-      "title": "fix: gate sandbox write tools on writable workspace access",
-      "url": "https://github.com/openclaw/openclaw/pull/73385",
-      "branch": "clownfish/ghcrawl-156881-autonomous-smoke",
-      "head_sha": "dbc94e890fe3b7858e064f2c2f19310f3366de44",
-      "cluster_id": "ghcrawl-156881-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-156881-autonomous-smoke.md",
-      "updated_at": "2026-04-28T07:41:26Z",
+      "number": 73388,
+      "title": "Fix Trinity main-session compatibility mismatch",
+      "url": "https://github.com/openclaw/openclaw/pull/73388",
+      "branch": "clownfish/ghcrawl-156908-autonomous-smoke",
+      "head_sha": "853179feee5cffe8decb3270a4cd7045e1085f97",
+      "cluster_id": "ghcrawl-156908-autonomous-smoke",
+      "job_path": "jobs/openclaw/inbox/ghcrawl-156908-autonomous-smoke.md",
+      "updated_at": "2026-04-28T07:43:51Z",
       "mergeable": "MERGEABLE",
       "merge_state_status": "UNSTABLE",
       "review_decision": "",
       "security_hold": false,
       "checks": {
-        "total": 71,
+        "total": 67,
         "counts": {
-          "CANCELLED": 4,
-          "IN_PROGRESS": 42,
-          "SUCCESS": 17,
-          "SKIPPED": 8
+          "CANCELLED": 2,
+          "SUCCESS": 26,
+          "SKIPPED": 8,
+          "IN_PROGRESS": 31
         },
         "blockers": [
-          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS",
           "CI / build-artifacts:IN_PROGRESS",
-          "CI / checks-fast-bundled:IN_PROGRESS",
           "CI / checks-fast-contracts-plugins:IN_PROGRESS",
           "CI / checks-fast-contracts-channels-a:IN_PROGRESS",
           "CI / checks-fast-contracts-channels-b:IN_PROGRESS",
           "CI / checks-fast-contracts-channels-c:IN_PROGRESS",
-          "CI / checks-fast-protocol:IN_PROGRESS",
           "CI / checks-node-extensions-shard-1:IN_PROGRESS",
           "CI / checks-node-extensions-shard-2:IN_PROGRESS",
           "CI / checks-node-extensions-shard-3:IN_PROGRESS",
@@ -845,33 +842,25 @@
           "CI / checks-node-extensions-shard-5:IN_PROGRESS",
           "CI / checks-node-extensions-shard-6:IN_PROGRESS",
           "CI / checks-node-core-fast-support:IN_PROGRESS",
-          "CI / checks-node-core-src-security:IN_PROGRESS",
           "CI / checks-node-core-ui:IN_PROGRESS",
           "CI / checks-node-core-runtime-infra:IN_PROGRESS",
           "CI / checks-node-core-runtime-media-ui:IN_PROGRESS",
           "CI / checks-node-core-runtime-shared:IN_PROGRESS",
           "CI / checks-node-agentic-control-plane:IN_PROGRESS",
           "CI / checks-node-agentic-commands:IN_PROGRESS",
-          "CI / checks-node-agentic-agents:IN_PROGRESS",
           "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
           "CI / checks-node-agentic-plugins:IN_PROGRESS",
-          "CI / checks-node-auto-reply-core-top-level:IN_PROGRESS",
           "CI / checks-node-auto-reply-reply-agent-runner:IN_PROGRESS",
           "CI / checks-node-auto-reply-reply-dispatch:IN_PROGRESS",
           "CI / checks-node-auto-reply-reply-commands-state-routing:IN_PROGRESS",
-          "CI / check-preflight-guards:IN_PROGRESS",
-          "CI / check-prod-types:IN_PROGRESS",
           "CI / check-lint:IN_PROGRESS",
           "CI / check-policy-guards:IN_PROGRESS",
-          "CI / check-test-types:IN_PROGRESS",
-          "CI / check-strict-smoke:IN_PROGRESS",
           "CI / check-additional-boundaries:IN_PROGRESS",
           "CI / check-additional-extension-channels:IN_PROGRESS",
           "CI / check-additional-extension-bundled:IN_PROGRESS",
           "CI / check-additional-extension-package-boundary:IN_PROGRESS",
           "CI / check-additional-runtime-topology-architecture:IN_PROGRESS",
-          "CI / check-docs:IN_PROGRESS",
-          "Greptile Review:IN_PROGRESS"
+          "CI / check-docs:IN_PROGRESS"
         ]
       },
       "review_threads": {
@@ -881,13 +870,74 @@
         "examples": []
       },
       "review_bots": {
-        "count": 0,
-        "latest": []
+        "count": 1,
+        "latest": [
+          {
+            "source": "comment",
+            "author": "greptile-apps",
+            "url": "https://github.com/openclaw/openclaw/pull/73388#issuecomment-4333285081",
+            "submitted_at": "2026-04-28T07:43:51Z"
+          }
+        ]
       },
       "latest_record": null,
       "blockers": [
         "needs_merge_state:UNSTABLE",
-        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS; CI / build-artifacts:IN_PROGRESS; CI / checks-fast-bundled:IN_PROGRESS",
+        "needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS; CI / checks-fast-contracts-channels-a:IN_PROGRESS",
+        "needs_merge_preflight",
+        "needs_result_backfill"
+      ],
+      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
+    },
+    {
+      "number": 73385,
+      "title": "fix: gate sandbox write tools on writable workspace access",
+      "url": "https://github.com/openclaw/openclaw/pull/73385",
+      "branch": "clownfish/ghcrawl-156881-autonomous-smoke",
+      "head_sha": "dbc94e890fe3b7858e064f2c2f19310f3366de44",
+      "cluster_id": "ghcrawl-156881-autonomous-smoke",
+      "job_path": "jobs/openclaw/inbox/ghcrawl-156881-autonomous-smoke.md",
+      "updated_at": "2026-04-28T07:43:56Z",
+      "mergeable": "MERGEABLE",
+      "merge_state_status": "UNSTABLE",
+      "review_decision": "",
+      "security_hold": false,
+      "checks": {
+        "total": 79,
+        "counts": {
+          "CANCELLED": 4,
+          "IN_PROGRESS": 4,
+          "SUCCESS": 62,
+          "SKIPPED": 9
+        },
+        "blockers": [
+          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS",
+          "CI / checks-node-core-fast-support:IN_PROGRESS",
+          "CI / checks-node-agentic-control-plane:IN_PROGRESS",
+          "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS"
+        ]
+      },
+      "review_threads": {
+        "status": "clean",
+        "reason": null,
+        "unresolved_count": 0,
+        "examples": []
+      },
+      "review_bots": {
+        "count": 1,
+        "latest": [
+          {
+            "source": "comment",
+            "author": "greptile-apps",
+            "url": "https://github.com/openclaw/openclaw/pull/73385#issuecomment-4333281677",
+            "submitted_at": "2026-04-28T07:43:14Z"
+          }
+        ]
+      },
+      "latest_record": null,
+      "blockers": [
+        "needs_merge_state:UNSTABLE",
+        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS; CI / checks-node-core-fast-support:IN_PROGRESS; CI / checks-node-agentic-control-plane:IN_PROGRESS",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],

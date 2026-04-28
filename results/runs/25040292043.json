@@ -1,0 +1,68 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156959-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25040292043",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25040292043",
+  "head_sha": "4b7fe7a90dde09257bf7e112b5aadb93751bdb1b",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156959-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:42:26.211Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/34252",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/34252",
+  "canonical_pr": null,
+  "summary": "Hydrated live state shows the original canonical #34252 and candidate #63441 are already closed. No GitHub mutations are planned. #34252 remains the historical canonical issue for the multiple Ollama provider capability, and maintainer evidence says the capability is fixed on current main 0b82a7e718e3f8fc228d020d05ef0ff84e1dd6ff. #63441 was a duplicate of #34252 and is already closed. Linked closed refs #62735 and #69703 are historical context only.",
+  "actions": [
+    {
+      "target": "#34252",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#34252",
+      "candidate_fix": null,
+      "reason": "Already closed canonical issue; closed refs must not receive close/comment/label actions."
+    },
+    {
+      "target": "#63441",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#34252",
+      "candidate_fix": null,
+      "reason": "Duplicate candidate is already closed; no closure action is valid."
+    },
+    {
+      "target": "#62735",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#34252",
+      "candidate_fix": null,
+      "reason": "Closed linked context ref; related evidence only, not a mutation target."
+    },
+    {
+      "target": "#69703",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#34252",
+      "candidate_fix": null,
+      "reason": "Closed superseded contributor PR; no merge or close action is valid."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 4
+  },
+  "action_status_counts": {
+    "skipped": 4
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
