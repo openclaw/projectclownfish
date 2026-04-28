@@ -1,0 +1,111 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156664-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25032431366",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25032431366",
+  "head_sha": "0852e05762885fe6da21185d648223890d556917",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156664-autonomous-smoke.md",
+  "published_at": "2026-04-28T04:06:57.803Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/41861",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/41862",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/41861",
+  "summary": "Representative #50001 is closed and obsolete. The best live canonical path is repairable PR #41861, paired with canonical issue #41862. Merge is not recommended because #41861 lacks clean merge preflight, has mergeability unknown, has a failing aggregate check in the artifact, and needs regression-test coverage before finalization. Duplicate/superseded closeouts are blocked by require_fix_before_close until #41861 is repaired and landed.",
+  "actions": [
+    {
+      "target": "#41861",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41861",
+      "candidate_fix": "#41861",
+      "reason": "Repair #41861 instead of merging now: it is the best canonical PR but still needs executor repair/rebase, focused regression coverage, pnpm check:changed, and clean Codex /review before merge."
+    },
+    {
+      "target": "#41862",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41862",
+      "candidate_fix": "#41861",
+      "reason": "Use #41862 as the live canonical issue while #41861 is repaired as the canonical implementation path."
+    },
+    {
+      "target": "#49957",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#41862",
+      "candidate_fix": "#41861",
+      "reason": "Duplicate closeout is high confidence but blocked on the canonical fix path landing."
+    },
+    {
+      "target": "#49961",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#41861",
+      "candidate_fix": "#41861",
+      "reason": "Superseded by #41861, but close is blocked until the canonical repair lands."
+    },
+    {
+      "target": "#68947",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#41861",
+      "candidate_fix": "#41861",
+      "reason": "Useful but superseded by the more complete #41861 repair path; close is blocked until #41861 lands."
+    },
+    {
+      "target": "#43634",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#41861",
+      "candidate_fix": "#41861",
+      "reason": "Historical evidence only; no mutation planned for an already-closed PR."
+    },
+    {
+      "target": "#50001",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#41861",
+      "candidate_fix": "#41861",
+      "reason": "Representative is obsolete; keep as closed historical evidence only."
+    },
+    {
+      "target": "cluster:ghcrawl-156664-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#41861",
+      "candidate_fix": "#41861",
+      "reason": "A repair artifact is required because the canonical PR is useful but not merge-ready."
+    }
+  ],
+  "action_counts": {
+    "fix_needed": 1,
+    "keep_canonical": 1,
+    "close_duplicate": 1,
+    "close_superseded": 2,
+    "keep_closed": 2,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 3,
+    "blocked": 3,
+    "skipped": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
