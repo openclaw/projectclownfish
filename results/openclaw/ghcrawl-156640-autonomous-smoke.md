@@ -2,22 +2,22 @@
 repo: "openclaw/openclaw"
 cluster_id: "ghcrawl-156640-autonomous-smoke"
 mode: "autonomous"
-run_id: "25023005456"
-run_url: "https://github.com/openclaw/clownfish/actions/runs/25023005456"
-head_sha: "416b225d73239870f6704a4eeb6d95f026ba00e9"
+run_id: "25032429918"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/25032429918"
+head_sha: "0852e05762885fe6da21185d648223890d556917"
 workflow_conclusion: "failure"
 result_status: "planned"
-published_at: "2026-04-27T22:50:36.167Z"
+published_at: "2026-04-28T03:54:39.040Z"
 canonical: "https://github.com/openclaw/openclaw/pull/68225"
-canonical_issue: "https://github.com/openclaw/openclaw/issues/9795"
+canonical_issue: null
 canonical_pr: "https://github.com/openclaw/openclaw/pull/68225"
 actions_total: 11
 fix_executed: 0
-fix_failed: 0
+fix_failed: 1
 fix_blocked: 0
 apply_executed: 0
 apply_blocked: 0
-apply_skipped: 0
+apply_skipped: 2
 needs_human_count: 0
 ---
 
@@ -25,7 +25,7 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/clownfish/actions/runs/25023005456](https://github.com/openclaw/clownfish/actions/runs/25023005456)
+Run: [https://github.com/openclaw/clownfish/actions/runs/25032429918](https://github.com/openclaw/clownfish/actions/runs/25032429918)
 
 Workflow conclusion: failure
 
@@ -35,7 +35,7 @@ Canonical: https://github.com/openclaw/openclaw/pull/68225
 
 ## Summary
 
-Hydrated state shows the representative #68456 is already closed. The cluster contains two related but distinct media fixes: legacy Word/OLE binary handling centered on #54176/#54380, and sanitizeMimeType anchoring centered on open PR #68225. No GitHub mutations are emitted directly. The sanitizer path should repair #68225 before any duplicate closeout; doc/OLE refs are kept or blocked as a related follow-up path.
+Representative #68456 is already closed, so the live canonical path for the sanitizer subcluster is open PR #68225, but it is not merge-ready: it has an actionable Greptile review note and a failing check bucket in the hydrated artifact. The legacy Word/OLE MIME PRs are a related but distinct subcluster centered on #54380/#54176 and should not be closed as duplicates of the sanitizer work.
 
 ## Impact
 
@@ -43,40 +43,43 @@ Hydrated state shows the representative #68456 is already closed. The cluster co
 | --- | ---: |
 | Worker actions | 11 |
 | Fix executed | 0 |
-| Fix failed | 0 |
+| Fix failed | 1 |
 | Fix blocked | 0 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
-| Apply skipped | 0 |
+| Apply skipped | 2 |
 | Needs human | 0 |
 
 ## Fix Execution Actions
 
 | Action | Status | Target | Branch | Reason |
 | --- | --- | --- | --- | --- |
-| _None_ |  |  |  |  |
+| repair_contributor_branch | failed |  |  | remote: Permission to security-for-agent/openclaw.git denied to vincentkoc.
+fatal: unable to access 'https://github.com/security-for-agent/openclaw.git/': The requested URL returned error: 403 |
+| open_fix_pr | opened | https://github.com/openclaw/openclaw/pull/73229 | clownfish/ghcrawl-156640-autonomous-smoke |  |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| _None_ |  |  |  |  |
+| #61016 | close_superseded | skipped | superseded | action status is blocked |
+| #44068 | close_superseded | skipped | superseded | action status is blocked |
 
 ## Worker Action Matrix
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| #9795 | keep_closed | skipped | related | Closed historical sanitizer issue retained only as evidence for the #68225 repair path. |
-| #10257 | keep_closed | skipped | related | Already closed broader prior PR; current live sanitizer repair should proceed through #68225. |
-| #44068 | close_superseded | blocked | superseded | Superseded by the broader #54176/#54380 doc/OLE fix path, but closeout is blocked until that fix is merged or otherwise shipped. |
-| #54176 | keep_related | planned | related | Separate doc/OLE binary handling subcluster; keep open and handle in a follow-up path rather than mixing it into sanitizer repair. |
-| #54190 | keep_closed | skipped | superseded | Already closed as superseded by #54380. |
-| #54234 | keep_closed | skipped | superseded | Closed historical doc/OLE PR retained only as evidence for the #54176/#54380 follow-up path. |
-| #54380 | keep_related | planned | related | Related doc/OLE binary canonical PR; leave open for a separate repair/merge pass. |
-| #61016 | close_superseded | blocked | superseded | Superseded by #68225, but closeout is blocked until the canonical sanitizer repair path is pushed or merged. |
-| #68225 | fix_needed | planned | canonical | Repair the contributor branch for #68225, address the remaining bot finding, rerun validation and Codex review, then let post-flight decide merge/closeout. |
-| #68456 | keep_closed | skipped | superseded | Representative is obsolete because it is already closed; open #68225 is the live sanitizer canonical path. |
-| cluster:ghcrawl-156640-autonomous-smoke | build_fix_artifact | planned |  | Executable repair plan required before duplicate closeout or merge can proceed. |
+| #68225 | fix_needed | planned | canonical | Repair the contributor branch before any merge or duplicate closeout. |
+| cluster:ghcrawl-156640-autonomous-smoke | build_fix_artifact | planned |  | Canonical PR is useful and editable but not merge-ready. |
+| #61016 | close_superseded | blocked | superseded | require_fix_before_close blocks closing until #68225 or an equivalent fix is repaired and validated. |
+| #68456 | keep_closed | skipped | superseded | Already closed; closed refs are historical evidence only. |
+| #44068 | close_superseded | blocked | superseded | Different subcluster from sanitizer; require_fix_before_close blocks closeout until #54380 or equivalent lands. |
+| #54380 | keep_related | planned | related | Related media-understanding area, distinct root cause and canonical path from #68225. |
+| #54176 | keep_related | planned | related | Keep open for the related legacy Word/OLE fix path. |
+| #54190 | keep_closed | skipped | superseded | Already closed. |
+| #54234 | keep_closed | skipped | superseded | Already closed. |
+| #9795 | keep_closed | skipped | related | Already closed; no mutation planned. |
+| #10257 | keep_closed | skipped | related | Already closed; closed context refs are evidence only. |
 
 ## Needs Human
 

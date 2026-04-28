@@ -1,0 +1,200 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156640-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25032429918",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25032429918",
+  "head_sha": "0852e05762885fe6da21185d648223890d556917",
+  "workflow_conclusion": "failure",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156640-autonomous-smoke.md",
+  "published_at": "2026-04-28T03:54:39.040Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/68225",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/68225",
+  "summary": "Representative #68456 is already closed, so the live canonical path for the sanitizer subcluster is open PR #68225, but it is not merge-ready: it has an actionable Greptile review note and a failing check bucket in the hydrated artifact. The legacy Word/OLE MIME PRs are a related but distinct subcluster centered on #54380/#54176 and should not be closed as duplicates of the sanitizer work.",
+  "actions": [
+    {
+      "target": "#68225",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#68225",
+      "candidate_fix": "#68225",
+      "reason": "Repair the contributor branch before any merge or duplicate closeout."
+    },
+    {
+      "target": "cluster:ghcrawl-156640-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#68225",
+      "candidate_fix": "#68225",
+      "reason": "Canonical PR is useful and editable but not merge-ready."
+    },
+    {
+      "target": "#61016",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#68225",
+      "candidate_fix": "#68225",
+      "reason": "require_fix_before_close blocks closing until #68225 or an equivalent fix is repaired and validated."
+    },
+    {
+      "target": "#68456",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#68225",
+      "candidate_fix": "#68225",
+      "reason": "Already closed; closed refs are historical evidence only."
+    },
+    {
+      "target": "#44068",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#54380",
+      "candidate_fix": "#54380",
+      "reason": "Different subcluster from sanitizer; require_fix_before_close blocks closeout until #54380 or equivalent lands."
+    },
+    {
+      "target": "#54380",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#68225",
+      "candidate_fix": null,
+      "reason": "Related media-understanding area, distinct root cause and canonical path from #68225."
+    },
+    {
+      "target": "#54176",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#68225",
+      "candidate_fix": null,
+      "reason": "Keep open for the related legacy Word/OLE fix path."
+    },
+    {
+      "target": "#54190",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54380",
+      "candidate_fix": "#54380",
+      "reason": "Already closed."
+    },
+    {
+      "target": "#54234",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54380",
+      "candidate_fix": "#54380",
+      "reason": "Already closed."
+    },
+    {
+      "target": "#9795",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#68225",
+      "candidate_fix": "#68225",
+      "reason": "Already closed; no mutation planned."
+    },
+    {
+      "target": "#10257",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#68225",
+      "candidate_fix": null,
+      "reason": "Already closed; closed context refs are evidence only."
+    }
+  ],
+  "action_counts": {
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "close_superseded": 2,
+    "keep_closed": 5,
+    "keep_related": 2
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "blocked": 2,
+    "skipped": 5
+  },
+  "fix_counts": {
+    "failed": 1,
+    "opened": 1
+  },
+  "apply_counts": {
+    "skipped": 2
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "failed",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": "remote: Permission to security-for-agent/openclaw.git denied to vincentkoc.\nfatal: unable to access 'https://github.com/security-for-agent/openclaw.git/': The requested URL returned error: 403",
+      "title": null,
+      "url": null
+    },
+    {
+      "action": "open_fix_pr",
+      "status": "opened",
+      "target": null,
+      "pr": "https://github.com/openclaw/openclaw/pull/73229",
+      "branch": "clownfish/ghcrawl-156640-autonomous-smoke",
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": "https://github.com/openclaw/openclaw/pull/73229"
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#61016",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#68225",
+      "candidate_fix": "#68225",
+      "title": null,
+      "idempotency_key": "ghcrawl-156640-autonomous-smoke:#61016:close-superseded-by-68225:blocked-fix-first",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#44068",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54380",
+      "candidate_fix": "#54380",
+      "title": null,
+      "idempotency_key": "ghcrawl-156640-autonomous-smoke:#44068:close-superseded-by-54380:blocked-fix-first",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
