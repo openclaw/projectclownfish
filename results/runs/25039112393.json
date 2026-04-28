@@ -1,0 +1,107 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156733-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25039112393",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25039112393",
+  "head_sha": "866a71962207327a1ba4de2aa40ac326ff0e2ae7",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156733-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:12:44.376Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/57952",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/57952",
+  "canonical_pr": null,
+  "summary": "Hydrated state shows the original representative #52682 is already closed as superseded. The surviving non-security canonical tracker is open #57952. #55516 is security-sensitive and must be quarantined only. No close or merge action is valid in this run; the remaining open canonical needs a narrow fix artifact for configurable nested-lane concurrency.",
+  "actions": [
+    {
+      "target": "#52682",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#57952",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive closure actions. #52682 is historical evidence and is superseded by open canonical #57952."
+    },
+    {
+      "target": "#55516",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "#55516 is out of scope for ProjectClownfish mutation and should be routed to central OpenClaw security handling only."
+    },
+    {
+      "target": "#57952",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#57952",
+      "candidate_fix": null,
+      "reason": "#57952 is the best live canonical issue after the representative #52682 became closed."
+    },
+    {
+      "target": "#65470",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#57952",
+      "candidate_fix": null,
+      "reason": "Already closed refs must not receive closure actions. #65470's sessions_send-specific report is historical fixed-by-current-main evidence, while #57952 remains the broader canonical tracker for remaining configurable nested-lane concurrency work."
+    },
+    {
+      "target": "cluster:ghcrawl-156733-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#57952",
+      "candidate_fix": null,
+      "reason": "A narrow implementation plan is needed for the surviving open canonical issue because there is no hydrated PR to merge."
+    },
+    {
+      "target": "cluster:ghcrawl-156733-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#57952",
+      "candidate_fix": null,
+      "reason": "ProjectClownfish can prepare a narrow new fix PR plan for #57952 without closing any already-closed refs or touching the quarantined security-sensitive item."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 2,
+    "route_security": 1,
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 2,
+    "planned": 4
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "new_fix_pr",
+      "reason": "fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}
