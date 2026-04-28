@@ -150,7 +150,12 @@ function applyAction({ job, result, action, dryRun, allowMissingUpdatedAt }) {
 
   if (!target) return { ...base, status: "failed", reason: "target must look like #123" };
   if (action.status !== "planned") {
-    return { ...base, status: "skipped", reason: `action status is ${action.status}` };
+    return {
+      ...base,
+      status: "skipped",
+      source_status: action.status ?? null,
+      reason: action.reason ?? `action status is ${action.status}`,
+    };
   }
   if (MERGE_ACTIONS.has(actionName)) {
     return applyMergeAction({ job, result, action, dryRun, allowMissingUpdatedAt, target, base });

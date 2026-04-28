@@ -175,6 +175,26 @@ fs.mkdirSync(workRoot, { recursive: true });
 ensureTargetCheckout(result.repo, targetDir);
 setupGitIdentity(targetDir);
 
+const validationPreflight = preflightTargetValidationPlan({ fixArtifact, targetDir, baseBranch: DEFAULT_BASE_BRANCH });
+report.validation_preflight = validationPreflight;
+if (validationPreflight.status === "blocked") {
+  report.status = "blocked";
+  report.reason = validationPreflight.reason;
+  report.actions.push({
+    action: "execute_fix",
+    status: "blocked",
+    code: validationPreflight.code,
+    repair_strategy: fixArtifact.repair_strategy,
+    reason: validationPreflight.reason,
+    required: validationPreflight.required,
+    available_scripts: validationPreflight.available_scripts,
+    target_branch: validationPreflight.target_branch,
+    source_pr: validationPreflight.source_pr,
+  });
+  writeReport(report, resultPath);
+  process.exit(0);
+}
+
 const writePreflight = runCodexWritePreflight();
 report.preflight = writePreflight;
 if (writePreflight.status === "blocked") {
@@ -1455,6 +1475,57 @@ function runAllowedValidationCommands(commands, cwd, baseBranch = DEFAULT_BASE_B
     }
   }
   return executed;
+}
+
+function preflightTargetValidationPlan({ fixArtifact, targetDir, baseBranch = DEFAULT_BASE_BRANCH }) {
+  const scripts = readPackageScriptSet(targetDir);
+  const availableScripts = [...scripts].sort();
+  const resolved = [];
+  const requiredScripts = [];
+  for (const command of fixArtifact.validation_commands ?? []) {
+    const resolvedCommands = resolveAllowedValidationCommands(command, targetDir, baseBranch);
+    for (const parts of resolvedCommands) {
+      const rendered = parts.join(" ");
+      if (!resolved.includes(rendered)) resolved.push(rendered);
+      const script = packageScriptRequirement(parts);
+      if (script) requiredScripts.push(script);
+    }
+  }
+
+  const missing = requiredScripts.find((script) => !scripts.has(script.name));
+  if (!missing) {
+    return {
+      status: "passed",
+      resolved_commands: resolved,
+      available_scripts: availableScripts,
+    };
+  }
+
+  const sourcePr = (fixArtifact.source_prs ?? []).find((source) => parsePullRequestUrl(source)?.repo === result.repo) ?? null;
+  return {
+    status: "blocked",
+    code: "validation_script_missing",
+    required: missing.command,
+    missing_script: missing.name,
+    available_scripts: availableScripts,
+    target_branch: fixArtifact.branch ?? fixArtifact.head_branch ?? null,
+    source_pr: sourcePr,
+    resolved_commands: resolved,
+    reason: `validation_script_missing: required ${missing.command} is unavailable in target checkout`,
+  };
+}
+
+function packageScriptRequirement(parts) {
+  if (parts[0] === "npm" && parts[1] === "run" && parts[2]) {
+    return { name: parts[2], command: parts.slice(0, 3).join(" ") };
+  }
+  if (parts[0] !== "pnpm") return null;
+  let index = 1;
+  if (parts[index] === "-s" || parts[index] === "--silent") index += 1;
+  if (parts[index] === "run") index += 1;
+  const script = parts[index];
+  if (!script || ["exec", "dlx", "install", "add", "remove"].includes(script)) return null;
+  return { name: script, command: ["pnpm", script].join(" ") };
 }
 
 function validationFallbackCommands({ parts, error, cwd, baseBranch }) {
