@@ -1,0 +1,145 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156879-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25039930706",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25039930706",
+  "head_sha": "9fff25109fedd0a6983588f78c57d6ac62e0da26",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156879-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:33:11.810Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/56720",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/56635",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/56720",
+  "summary": "Hydrated preflight state is sufficient for non-mutating classification. #56720 is the best canonical repair path for #56635 because it restores Gmail watcher exclude labels, threads configuration support, adds focused tests, and has maintainer_can_modify=true. It is not merge-ready: mergeability is unknown, checks-node-test and check-additional failed, and no Codex /review preflight is present. #56726 and #56736 overlap the same #56635 fix and are superseded by the richer canonical path, but require_fix_before_close blocks closure until #56720 is repaired and merged or a ProjectClownfish fix PR exists.",
+  "actions": [
+    {
+      "target": "#56635",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#56720",
+      "candidate_fix": "#56720",
+      "reason": "The linked issue is covered by the canonical PR path but cannot be closed before that fix lands."
+    },
+    {
+      "target": "#56720",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#56720",
+      "candidate_fix": "#56720",
+      "reason": "Repair the contributor branch before any merge: rebase against current main, verify the Greptile fixes remain present, run Codex /review, run pnpm check:changed, and only then allow a merge decision."
+    },
+    {
+      "target": "#56726",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#56720",
+      "candidate_fix": "#56720",
+      "reason": "Clearly superseded by the canonical PR path, but closure is blocked until the canonical fix lands."
+    },
+    {
+      "target": "#56736",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#56720",
+      "candidate_fix": "#56720",
+      "reason": "Clearly superseded by the canonical PR path, but closure is blocked until the canonical fix lands."
+    },
+    {
+      "target": "cluster:ghcrawl-156879-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#56720",
+      "candidate_fix": "#56720",
+      "reason": "Autonomous execution should repair and validate the canonical contributor branch before merge or closeout replay."
+    }
+  ],
+  "action_counts": {
+    "close_fixed_by_candidate": 1,
+    "fix_needed": 1,
+    "close_superseded": 2,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "blocked": 3,
+    "planned": 2
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {
+    "skipped": 3
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "repair_contributor_branch",
+      "reason": "fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#56635",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#56720",
+      "candidate_fix": "#56720",
+      "title": null,
+      "idempotency_key": "ghcrawl-156879-autonomous-smoke:#56635:close-fixed-by-candidate:#56720:2026-03-28T21:54:52Z",
+      "reason": "The linked issue is covered by the canonical PR path but cannot be closed before that fix lands.",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#56726",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#56720",
+      "candidate_fix": "#56720",
+      "title": null,
+      "idempotency_key": "ghcrawl-156879-autonomous-smoke:#56726:close-superseded-by:#56720:2026-03-29T02:30:37Z",
+      "reason": "Clearly superseded by the canonical PR path, but closure is blocked until the canonical fix lands.",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#56736",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#56720",
+      "candidate_fix": "#56720",
+      "title": null,
+      "idempotency_key": "ghcrawl-156879-autonomous-smoke:#56736:close-superseded-by:#56720:2026-03-29T02:52:00Z",
+      "reason": "Clearly superseded by the canonical PR path, but closure is blocked until the canonical fix lands.",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
