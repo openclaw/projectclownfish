@@ -1,0 +1,166 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156636-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25032428566",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25032428566",
+  "head_sha": "0852e05762885fe6da21185d648223890d556917",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156636-autonomous-smoke.md",
+  "published_at": "2026-04-28T03:54:12.865Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/68667",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/24693",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/68667",
+  "summary": "Classified the hydrated cluster using the preflight artifact. The clearest non-security canonical fix path is repair/validate PR #68667 for the #24693 cross-agent hook completion routing bug. PR #55761 is quarantined exactly as the preflight artifact's security-sensitive item. Closed refs remain skipped evidence only. No merge is recommended because Codex /review and fresh merge preflight are missing.",
+  "actions": [
+    {
+      "target": "#24693",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#68667",
+      "candidate_fix": "#68667",
+      "reason": "Closeout is blocked on the canonical fix path #68667 being repaired, reviewed, validated, and merged."
+    },
+    {
+      "target": "#39046",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#68667",
+      "candidate_fix": "#68667",
+      "reason": "Keep the maintainer draft open as related/superseded context while the executable repair path proceeds through #68667."
+    },
+    {
+      "target": "#49234",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#55761",
+      "reason": "Already closed; no mutation is valid."
+    },
+    {
+      "target": "#55704",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#55761",
+      "reason": "Already closed; no mutation is valid."
+    },
+    {
+      "target": "#55761",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item must be routed to central OpenClaw security triage and not mutated by ProjectClownfish."
+    },
+    {
+      "target": "#68667",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#68667",
+      "candidate_fix": "#68667",
+      "reason": "Repair the contributor branch rather than merging directly: run fresh checkout/rebase as needed, Codex /review, address findings, run pnpm check:changed, then merge only if all gates pass."
+    },
+    {
+      "target": "cluster:ghcrawl-156636-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#68667",
+      "candidate_fix": "#68667",
+      "reason": "A canonical fix path exists but needs executor repair/review validation before merge or post-merge closeout."
+    }
+  ],
+  "action_counts": {
+    "close_fixed_by_candidate": 1,
+    "keep_related": 1,
+    "keep_closed": 2,
+    "route_security": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "blocked": 1,
+    "planned": 4,
+    "skipped": 2
+  },
+  "fix_counts": {
+    "failed": 1,
+    "opened": 1
+  },
+  "apply_counts": {
+    "skipped": 1,
+    "executed": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "failed",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": "remote: Permission to security-for-ai-agent/openclaw.git denied to vincentkoc.\nfatal: unable to access 'https://github.com/security-for-ai-agent/openclaw.git/': The requested URL returned error: 403",
+      "title": null,
+      "url": null
+    },
+    {
+      "action": "open_fix_pr",
+      "status": "opened",
+      "target": null,
+      "pr": "https://github.com/openclaw/openclaw/pull/73228",
+      "branch": "clownfish/ghcrawl-156636-autonomous-smoke",
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": "https://github.com/openclaw/openclaw/pull/73228"
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#24693",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#68667",
+      "candidate_fix": "#68667",
+      "title": null,
+      "idempotency_key": "ghcrawl-156636-autonomous-smoke:#24693:close-fixed-by-68667:2026-03-04T04:18:05Z",
+      "reason": "action status is blocked",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#73228",
+      "action": "merge_canonical",
+      "status": "executed",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "security(gateway): route hook completion events to target agent session",
+      "idempotency_key": null,
+      "reason": "merged by ProjectClownfish post-flight",
+      "merged_at": "2026-04-28T03:53:52Z",
+      "merge_commit_sha": "6f38425e5c18ac9773e0802b56ab7e7302838411",
+      "live_state": "merged",
+      "live_updated_at": null
+    }
+  ]
+}
