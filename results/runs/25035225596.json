@@ -1,0 +1,169 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156579-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25035225596",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25035225596",
+  "head_sha": "11314bb0977e829eeb62cc0be17e0c531c9fe13a",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "blocked",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156579-autonomous-smoke.md",
+  "published_at": "2026-04-28T05:17:32.388Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72615",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72615",
+  "summary": "All job-provided candidate refs are already closed in the hydrated preflight state, so no close/comment/merge action is valid for them. The only open hydrated replacement path is #72615, but it is marked security-sensitive and has a hydrated Aisle security analysis plus failing relevant checks, so it is routed to central OpenClaw security handling and no ProjectClownfish fix, merge, or closeout is planned in this run.",
+  "actions": [
+    {
+      "target": "#65722",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#72615",
+      "candidate_fix": null,
+      "reason": "Already closed; retain as historical duplicate evidence only."
+    },
+    {
+      "target": "#65976",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#72615",
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation is valid."
+    },
+    {
+      "target": "#66082",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#72615",
+      "candidate_fix": null,
+      "reason": "Already closed; keep as historical duplicate evidence."
+    },
+    {
+      "target": "#67979",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#72615",
+      "candidate_fix": null,
+      "reason": "Representative is obsolete because it is already closed."
+    },
+    {
+      "target": "#68371",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#72615",
+      "candidate_fix": null,
+      "reason": "Already closed; keep related historical context only."
+    },
+    {
+      "target": "#68586",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72615",
+      "candidate_fix": "#72615",
+      "reason": "Already closed superseded PR; no mutation is valid."
+    },
+    {
+      "target": "#68828",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#72615",
+      "candidate_fix": null,
+      "reason": "Already closed; keep as duplicate evidence."
+    },
+    {
+      "target": "#69019",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#72615",
+      "candidate_fix": null,
+      "reason": "Already closed; no ProjectClownfish action remains."
+    },
+    {
+      "target": "#69952",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72615",
+      "candidate_fix": "#72615",
+      "reason": "Already closed superseded PR; retain credit/evidence only."
+    },
+    {
+      "target": "#70181",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#72615",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate; no mutation is valid."
+    },
+    {
+      "target": "#70185",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72615",
+      "candidate_fix": "#72615",
+      "reason": "Already closed superseded by credited replacement path."
+    },
+    {
+      "target": "#70242",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#72615",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate; retain as evidence."
+    },
+    {
+      "target": "#70842",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#72615",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate; no action remains."
+    },
+    {
+      "target": "#71479",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72615",
+      "candidate_fix": "#72615",
+      "reason": "Already closed superseded by replacement PR; no mutation is valid."
+    },
+    {
+      "target": "#72615",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route #72615 to central OpenClaw security triage; do not merge, close, label, comment, or open a ProjectClownfish fix PR for this security-sensitive PR in this run."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 14,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "skipped": 14,
+    "planned": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
