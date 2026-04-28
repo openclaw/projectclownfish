@@ -1,6 +1,6 @@
 # Open ProjectClownfish PR Finalizer
 
-Generated: 2026-04-28T05:43:59.276Z
+Generated: 2026-04-28T07:10:00.348Z
 
 ## Summary
 
@@ -18,9 +18,9 @@ Generated: 2026-04-28T05:43:59.276Z
 
 ## Dispatch
 
-Enabled: yes
+Enabled: no
 
-Status: dry_run
+Status: report_only
 
 | PR | Cluster | Job | Mode | Blockers |
 | --- | --- | --- | --- | --- |

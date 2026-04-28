@@ -3,7 +3,7 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-28T05:43:59.276Z",
+  "generated_at": "2026-04-28T07:10:00.348Z",
   "count": 5,
   "summary": {
     "open_prs": 5,
@@ -17,7 +17,7 @@
     "needs_result_backfill": 0
   },
   "dispatch": {
-    "enabled": true,
+    "enabled": false,
     "execute": false,
     "workflow": "cluster-worker.yml",
     "runner": "blacksmith-4vcpu-ubuntu-2404",

@@ -1,0 +1,98 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156677-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25038979341",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25038979341",
+  "head_sha": "da036e490846162aa84e5b443cfc870a58f935a1",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156677-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:09:07.192Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/55726",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/55612",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/55726",
+  "summary": "Hydrated preflight shows the representative #55726, linked issue #55612, closed PR #50042, and linked closed issue #55578 are security-sensitive and must be routed to central OpenClaw security handling without ProjectClownfish mutation. Closed non-security PRs #50041 and #56255 remain historical evidence only. Open PR #56923 is a separate non-security audit false-positive fix, not a duplicate of the dmPolicy exposure-matrix cluster, and is kept open as independent because merge gates are missing or incomplete.",
+  "actions": [
+    {
+      "target": "#50041",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; keep as historical related context only."
+    },
+    {
+      "target": "#50042",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item is out of ProjectClownfish mutation scope even though it is already closed."
+    },
+    {
+      "target": "#55578",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked issue; route only, no close or comment action."
+    },
+    {
+      "target": "#55612",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Open security-sensitive issue must be quarantined to central OpenClaw security handling."
+    },
+    {
+      "target": "#55726",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Representative PR is security-sensitive and not merge-ready; route to central security handling instead of ProjectClownfish fix or merge."
+    },
+    {
+      "target": "#56255",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed and superseded historical context; no mutation."
+    },
+    {
+      "target": "#56923",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate audit false-positive fix, not covered by the security-sensitive dmPolicy canonical family."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 2,
+    "route_security": 4,
+    "keep_independent": 1
+  },
+  "action_status_counts": {
+    "skipped": 2,
+    "planned": 5
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
