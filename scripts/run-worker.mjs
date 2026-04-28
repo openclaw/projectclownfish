@@ -21,6 +21,7 @@ const codexTimeoutMs = Number(process.env.CLOWNFISH_CODEX_TIMEOUT_MS ?? 30 * 60 
 const resultRepairAttempts = Math.max(0, Number(process.env.CLOWNFISH_RESULT_REPAIR_ATTEMPTS ?? 1));
 const resultRepairTimeoutMs = Number(process.env.CLOWNFISH_RESULT_REPAIR_TIMEOUT_MS ?? 10 * 60 * 1000);
 const codexReasoningEffort = String(process.env.CLOWNFISH_CODEX_REASONING_EFFORT ?? "medium");
+const codexServiceTier = String(process.env.CLOWNFISH_CODEX_SERVICE_TIER ?? "fast").trim();
 
 if (!jobPath) {
   console.error("usage: node scripts/run-worker.mjs <job.md> --mode plan|execute|autonomous [--dry-run]");
@@ -136,10 +137,7 @@ function runCodex({ input, outputPath, transcriptPath: codexTranscriptPath, stde
     model,
     "--sandbox",
     "read-only",
-    "-c",
-    'approval_policy="never"',
-    "-c",
-    `model_reasoning_effort=${JSON.stringify(codexReasoningEffort)}`,
+    ...codexConfigArgs(),
     "--output-schema",
     path.join(repoRoot(), "schemas", "codex-result.schema.json"),
     "--output-last-message",
@@ -160,6 +158,12 @@ function runCodex({ input, outputPath, transcriptPath: codexTranscriptPath, stde
   fs.writeFileSync(codexTranscriptPath, child.stdout ?? "");
   if (child.stderr) fs.writeFileSync(stderrPath, child.stderr);
   return child;
+}
+
+function codexConfigArgs() {
+  const configs = ['approval_policy="never"', `model_reasoning_effort=${JSON.stringify(codexReasoningEffort)}`];
+  if (codexServiceTier) configs.push(`service_tier=${JSON.stringify(codexServiceTier)}`);
+  return configs.flatMap((config) => ["-c", config]);
 }
 
 function repairResultIfNeeded() {

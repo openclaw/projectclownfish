@@ -22,6 +22,7 @@ const fixTimeoutReserveMs = Number(process.env.CLOWNFISH_FIX_TIMEOUT_RESERVE_MS 
 const codexTimeoutMs = Math.min(requestedCodexTimeoutMs, Math.max(60 * 1000, fixStepTimeoutMs - fixTimeoutReserveMs));
 const codexPreflightTimeoutMs = Number(process.env.CLOWNFISH_FIX_PREFLIGHT_TIMEOUT_MS ?? 2 * 60 * 1000);
 const codexReasoningEffort = String(process.env.CLOWNFISH_CODEX_REASONING_EFFORT ?? "medium");
+const codexServiceTier = String(process.env.CLOWNFISH_CODEX_SERVICE_TIER ?? "fast").trim();
 const maxEditAttempts = Math.max(1, Number(process.env.CLOWNFISH_FIX_EDIT_ATTEMPTS ?? 3));
 const maxReviewAttempts = Math.max(1, Number(process.env.CLOWNFISH_CODEX_REVIEW_ATTEMPTS ?? 2));
 const maxRebaseAttempts = Math.max(4, Number(process.env.CLOWNFISH_REBASE_REPAIR_ATTEMPTS ?? 4));
@@ -553,10 +554,7 @@ function editValidatePrepareMerge({
           "--sandbox",
           codexWriteSandbox,
           ...codexWriteSandboxConfigArgs(),
-          "-c",
-          'approval_policy="never"',
-          "-c",
-          `model_reasoning_effort=${JSON.stringify(codexReasoningEffort)}`,
+          ...codexConfigArgs(),
           "--output-last-message",
           summaryPath,
           "--ephemeral",
@@ -858,10 +856,7 @@ function runCodexWritePreflight() {
       "--sandbox",
       codexWriteSandbox,
       ...codexWriteSandboxConfigArgs(),
-      "-c",
-      'approval_policy="never"',
-      "-c",
-      `model_reasoning_effort=${JSON.stringify(codexReasoningEffort)}`,
+      ...codexConfigArgs(),
       "--output-last-message",
       summaryPath,
       "--ephemeral",
@@ -934,6 +929,12 @@ function codexWriteSandboxConfigArgs() {
 
 function codexReviewSandboxConfigArgs() {
   return codexWorkspaceSandboxConfigArgs(codexReviewSandbox, codexReviewNetworkAccess);
+}
+
+function codexConfigArgs() {
+  const configs = ['approval_policy="never"', `model_reasoning_effort=${JSON.stringify(codexReasoningEffort)}`];
+  if (codexServiceTier) configs.push(`service_tier=${JSON.stringify(codexServiceTier)}`);
+  return configs.flatMap((config) => ["-c", config]);
 }
 
 function codexWorkspaceSandboxConfigArgs(sandbox, networkAccess) {
@@ -1014,10 +1015,7 @@ function runCodexReview({ fixArtifact, targetDir, mode, attempt, baseBranch = DE
       "--sandbox",
       codexReviewSandbox,
       ...codexReviewSandboxConfigArgs(),
-      "-c",
-      'approval_policy="never"',
-      "-c",
-      `model_reasoning_effort=${JSON.stringify(codexReasoningEffort)}`,
+      ...codexConfigArgs(),
       "--output-schema",
       schemaPath,
       "--output-last-message",
@@ -1124,10 +1122,7 @@ function runCodexReviewFix({ fixArtifact, targetDir, mode, review, attempt }) {
       "--sandbox",
       codexWriteSandbox,
       ...codexWriteSandboxConfigArgs(),
-      "-c",
-      'approval_policy="never"',
-      "-c",
-      `model_reasoning_effort=${JSON.stringify(codexReasoningEffort)}`,
+      ...codexConfigArgs(),
       "--output-last-message",
       path.join(workRoot, `${mode}-codex-review-fix-${attempt}.md`),
       "--ephemeral",
@@ -1845,10 +1840,7 @@ function resolveRecoverableRebaseConflicts({ targetDir, branch, baseRef, fixArti
         "--sandbox",
         codexWriteSandbox,
         ...codexWriteSandboxConfigArgs(),
-        "-c",
-        'approval_policy="never"',
-        "-c",
-        `model_reasoning_effort=${JSON.stringify(codexReasoningEffort)}`,
+        ...codexConfigArgs(),
         "--output-last-message",
         summaryPath,
         "--ephemeral",
