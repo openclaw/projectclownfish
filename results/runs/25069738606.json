@@ -1,0 +1,207 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156593-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25069738606",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25069738606",
+  "head_sha": "2a04089b3cf2fdf8500369cf552da7581e8f16f0",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156593-autonomous-smoke.md",
+  "published_at": "2026-04-28T18:29:23.097Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/38808",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/38806",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/38808",
+  "summary": "Classified the hydrated Feishu cluster against current preflight state. #38808 remains the canonical repairable PR for the P2P direct-message thread reply regression, but merge is blocked until the executor refreshes mergeability, runs a clean Codex /review, and completes merge preflight. Security-sensitive #38996 and linked #38757 are quarantined only. No close actions are planned because require_fix_before_close blocks duplicate closeout until the canonical fix lands.",
+  "actions": [
+    {
+      "target": "#38808",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#38808",
+      "candidate_fix": "#38808",
+      "reason": "Canonical PR is useful and repairable, but autonomous merge is blocked by missing clean Codex /review proof and unknown mergeability."
+    },
+    {
+      "target": "cluster:ghcrawl-156593-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#38808",
+      "candidate_fix": "#38808",
+      "reason": "A canonical fix path exists, but it needs deterministic executor repair and review before any merge or duplicate closeout."
+    },
+    {
+      "target": "#38806",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#38808",
+      "candidate_fix": "#38808",
+      "reason": "Duplicate closeout is blocked on the canonical fix path #38808."
+    },
+    {
+      "target": "#38996",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked work must be routed to central OpenClaw security handling and not processed by ProjectClownfish cleanup."
+    },
+    {
+      "target": "#38757",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked ref is quarantined without poisoning unrelated non-security Feishu routing work."
+    },
+    {
+      "target": "#39507",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#38808",
+      "candidate_fix": null,
+      "reason": "Related Feishu thread behavior, but different root cause and blocked merge gates."
+    },
+    {
+      "target": "#42296",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed and independent of the canonical P2P thread regression."
+    },
+    {
+      "target": "#44118",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate Feishu command-routing work, outside the canonical P2P thread reply cluster."
+    },
+    {
+      "target": "#47961",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate Feishu direct-message UX feature, not a duplicate or merge candidate for this cluster."
+    },
+    {
+      "target": "#55521",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent feature with unresolved review-bot findings and failing checks."
+    },
+    {
+      "target": "#67068",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; retained only as related historical evidence."
+    },
+    {
+      "target": "#67069",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#38808",
+      "candidate_fix": null,
+      "reason": "Related thread metadata PR with unresolved correctness findings and failing checks, not mergeable or closable in this cluster."
+    },
+    {
+      "target": "#60848",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#38808",
+      "candidate_fix": null,
+      "reason": "Related but distinct topic/outbound thread anchoring work with failing checks."
+    }
+  ],
+  "action_counts": {
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "close_duplicate": 1,
+    "route_security": 2,
+    "keep_related": 3,
+    "keep_closed": 2,
+    "keep_independent": 3
+  },
+  "action_status_counts": {
+    "planned": 10,
+    "blocked": 1,
+    "skipped": 2
+  },
+  "fix_counts": {
+    "pushed": 1
+  },
+  "apply_counts": {
+    "skipped": 1,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "pushed",
+      "target": "https://github.com/openclaw/openclaw/pull/38808",
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#38806",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#38808",
+      "candidate_fix": "#38808",
+      "title": null,
+      "idempotency_key": "ghcrawl-156593-autonomous-smoke:#38806:blocked-duplicate-of-38808",
+      "reason": "Duplicate closeout is blocked on the canonical fix path #38808.",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#38808",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(feishu): reply inside thread for P2P direct messages",
+      "idempotency_key": null,
+      "reason": "merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}

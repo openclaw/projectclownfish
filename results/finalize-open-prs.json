@@ -3,17 +3,17 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-28T18:28:46.653Z",
-  "count": 15,
+  "generated_at": "2026-04-28T18:30:00.803Z",
+  "count": 16,
   "summary": {
-    "open_prs": 15,
+    "open_prs": 16,
     "ready_candidates": 0,
     "security_hold": 3,
     "needs_rebase": 12,
     "mergeability_unknown": 0,
-    "needs_checks": 12,
+    "needs_checks": 13,
     "needs_review": 7,
-    "needs_merge_preflight": 15,
+    "needs_merge_preflight": 16,
     "needs_result_backfill": 12
   },
   "dispatch": {
@@ -41,13 +41,12 @@
       "review_decision": "",
       "security_hold": true,
       "checks": {
-        "total": 72,
+        "total": 73,
         "counts": {
           "CANCELLED": 3,
           "SKIPPED": 10,
           "SUCCESS": 50,
-          "FAILURE": 8,
-          "IN_PROGRESS": 1
+          "FAILURE": 10
         },
         "blockers": [
           "CI / checks-fast-bundled:FAILURE",
@@ -55,10 +54,11 @@
           "CI / checks-node-core-runtime-infra:FAILURE",
           "CI / checks-node-agentic-control-plane:FAILURE",
           "CI / checks-node-agentic-plugin-sdk:FAILURE",
-          "CI / checks-node-agentic-plugins:IN_PROGRESS",
+          "CI / checks-node-agentic-plugins:FAILURE",
           "CI / checks-node-channels:FAILURE",
           "CI / checks-node-core-support-boundary:FAILURE",
-          "CI / checks-node-extensions:FAILURE"
+          "CI / checks-node-extensions:FAILURE",
+          "CI / checks-node-core:FAILURE"
         ]
       },
       "review_threads": {
@@ -752,6 +752,97 @@
       "recommended_next_action": "route to central security triage"
     },
     {
+      "number": 73732,
+      "title": "fix(whatsapp): recover group inbound after reconnect churn",
+      "url": "https://github.com/openclaw/openclaw/pull/73732",
+      "branch": "clownfish/ghcrawl-156581-autonomous-smoke",
+      "head_sha": "288c98d9bbbd17692fb2759cb0d961ce91672219",
+      "cluster_id": "ghcrawl-156581-autonomous-smoke",
+      "job_path": "jobs/openclaw/inbox/ghcrawl-156581-autonomous-smoke.md",
+      "updated_at": "2026-04-28T18:29:30Z",
+      "mergeable": "MERGEABLE",
+      "merge_state_status": "UNSTABLE",
+      "review_decision": "",
+      "security_hold": false,
+      "checks": {
+        "total": 61,
+        "counts": {
+          "CANCELLED": 1,
+          "IN_PROGRESS": 42,
+          "SUCCESS": 10,
+          "SKIPPED": 8
+        },
+        "blockers": [
+          "ClawSweeper Dispatch / dispatch:IN_PROGRESS",
+          "CI / build-artifacts:IN_PROGRESS",
+          "CI / checks-fast-bundled:IN_PROGRESS",
+          "CI / checks-fast-contracts-plugins:IN_PROGRESS",
+          "CI / checks-fast-contracts-channels-a:IN_PROGRESS",
+          "CI / checks-fast-contracts-channels-b:IN_PROGRESS",
+          "CI / checks-fast-contracts-channels-c:IN_PROGRESS",
+          "CI / checks-fast-protocol:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-1:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-2:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-3:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-4:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-5:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-6:IN_PROGRESS",
+          "CI / checks-node-core-fast-support:IN_PROGRESS",
+          "CI / checks-node-core-src-security:IN_PROGRESS",
+          "CI / checks-node-core-ui:IN_PROGRESS",
+          "CI / checks-node-core-runtime-infra:IN_PROGRESS",
+          "CI / checks-node-core-runtime-media-ui:IN_PROGRESS",
+          "CI / checks-node-core-runtime-shared:IN_PROGRESS",
+          "CI / checks-node-agentic-control-plane:IN_PROGRESS",
+          "CI / checks-node-agentic-commands:IN_PROGRESS",
+          "CI / checks-node-agentic-agents:IN_PROGRESS",
+          "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
+          "CI / checks-node-agentic-plugins:IN_PROGRESS",
+          "CI / checks-node-auto-reply-core-top-level:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-agent-runner:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-dispatch:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-commands-state-routing:IN_PROGRESS",
+          "CI / check-preflight-guards:IN_PROGRESS",
+          "CI / check-prod-types:IN_PROGRESS",
+          "CI / check-lint:IN_PROGRESS",
+          "CI / check-policy-guards:IN_PROGRESS",
+          "CI / check-test-types:IN_PROGRESS",
+          "CI / check-strict-smoke:IN_PROGRESS",
+          "CI / check-additional-boundaries:IN_PROGRESS",
+          "CI / check-additional-extension-channels:IN_PROGRESS",
+          "CI / check-additional-extension-bundled:IN_PROGRESS",
+          "CI / check-additional-extension-package-boundary:IN_PROGRESS",
+          "CI / check-additional-runtime-topology-architecture:IN_PROGRESS",
+          "CI / check-docs:IN_PROGRESS",
+          "Greptile Review:IN_PROGRESS"
+        ]
+      },
+      "review_threads": {
+        "status": "clean",
+        "reason": null,
+        "unresolved_count": 0,
+        "examples": []
+      },
+      "review_bots": {
+        "count": 0,
+        "latest": []
+      },
+      "latest_record": {
+        "run_id": "25035224236",
+        "run_url": "https://github.com/openclaw/clownfish/actions/runs/25035224236",
+        "cluster_id": "ghcrawl-156581-autonomous-smoke",
+        "published_at": "2026-04-28T05:17:58.755Z",
+        "workflow_conclusion": "success",
+        "apply_action": null
+      },
+      "blockers": [
+        "needs_merge_state:UNSTABLE",
+        "needs_checks:ClawSweeper Dispatch / dispatch:IN_PROGRESS; CI / build-artifacts:IN_PROGRESS; CI / checks-fast-bundled:IN_PROGRESS",
+        "needs_merge_preflight"
+      ],
+      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
+    },
+    {
       "number": 73725,
       "title": "fix(webchat): create dashboard sessions from New Chat",
       "url": "https://github.com/openclaw/openclaw/pull/73725",
@@ -765,13 +856,12 @@
       "review_decision": "",
       "security_hold": false,
       "checks": {
-        "total": 70,
+        "total": 71,
         "counts": {
           "CANCELLED": 1,
           "SKIPPED": 10,
           "SUCCESS": 50,
-          "FAILURE": 8,
-          "IN_PROGRESS": 1
+          "FAILURE": 10
         },
         "blockers": [
           "CI / checks-fast-bundled:FAILURE",
@@ -779,10 +869,11 @@
           "CI / checks-node-core-runtime-infra:FAILURE",
           "CI / checks-node-agentic-control-plane:FAILURE",
           "CI / checks-node-agentic-plugin-sdk:FAILURE",
-          "CI / checks-node-agentic-plugins:IN_PROGRESS",
+          "CI / checks-node-agentic-plugins:FAILURE",
           "CI / checks-node-channels:FAILURE",
           "CI / checks-node-core-support-boundary:FAILURE",
-          "CI / checks-node-extensions:FAILURE"
+          "CI / checks-node-extensions:FAILURE",
+          "CI / checks-node-core:FAILURE"
         ]
       },
       "review_threads": {
