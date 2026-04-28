@@ -1,0 +1,121 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156741-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25039129783",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25039129783",
+  "head_sha": "866a71962207327a1ba4de2aa40ac326ff0e2ae7",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156741-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:28:59.682Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/59382",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/59382",
+  "summary": "Hydrated state shows #59382 remains the best canonical PR for the cluster root topic, but it is not merge-ready: it has an actionable Greptile review comment, unknown mergeability, a failing CI job, and no clean Codex /review preflight. #59046 is already closed and must not receive a close action. #59397 and #59484 are related but distinct PRs with separate behavior surfaces and should remain open outside this canonical path.",
+  "actions": [
+    {
+      "target": "#59046",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed before this run; no mutation is valid."
+    },
+    {
+      "target": "#59382",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#59382",
+      "candidate_fix": "#59382",
+      "reason": "Best canonical PR for the cluster, but it needs branch repair and review cleanup before merge."
+    },
+    {
+      "target": "#59382",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#59382",
+      "candidate_fix": "#59382",
+      "reason": "Canonical contributor PR is useful and editable but not merge-ready."
+    },
+    {
+      "target": "cluster:ghcrawl-156741-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#59382",
+      "candidate_fix": "#59382",
+      "reason": "Executable repair plan is needed before merge can be considered."
+    },
+    {
+      "target": "#59397",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#59382",
+      "candidate_fix": null,
+      "reason": "Related timeout-validation family, but distinct code surface and unresolved review finding."
+    },
+    {
+      "target": "#59484",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#59382",
+      "candidate_fix": null,
+      "reason": "Related channels status work, but a different root cause with its own review/check blockers."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 1,
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_related": 2
+  },
+  "action_status_counts": {
+    "skipped": 1,
+    "planned": 5
+  },
+  "fix_counts": {
+    "failed": 1,
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "failed",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": "base branch advanced after validation and projectclownfish/repair-ghcrawl-156741-autonomous-smoke-59382 needs a fresh rebase pass: Rebasing (1/3) Rebasing (2/3) error: could not apply 6b9d5d0988... Validate channels status timeout values hint: Resolve all conflicts manually, mark them as resolved with hint: \"git add/rm <conflicted_files>\", then run \"git rebase --continue\". hint: You can instead skip this commit: run \"git rebase --skip\". hint: To abort and get back to the state before \"git rebase\", run \"git rebase --abort\". hint: Disable this message with \"git config set advice.mergeConflict false\" Could not apply 6b9d5d0988... # Validate channels status timeout values",
+      "title": null,
+      "url": null
+    },
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "repair_contributor_branch",
+      "reason": "base branch advanced after validation and projectclownfish/repair-ghcrawl-156741-autonomous-smoke-59382 needs a fresh rebase pass: Rebasing (1/3) Rebasing (2/3) error: could not apply 6b9d5d0988... Validate channels status timeout values hint: Resolve all conflicts manually, mark them as resolved with hint: \"git add/rm <conflicted_files>\", then run \"git rebase --continue\". hint: You can instead skip this commit: run \"git rebase --skip\". hint: To abort and get back to the state before \"git rebase\", run \"git rebase --abort\". hint: Disable this message with \"git config set advice.mergeConflict false\" Could not apply 6b9d5d0988... # Validate channels status timeout values",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}

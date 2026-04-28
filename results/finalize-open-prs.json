@@ -3,13 +3,13 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-28T07:28:30.579Z",
+  "generated_at": "2026-04-28T07:29:47.010Z",
   "count": 10,
   "summary": {
     "open_prs": 10,
     "ready_candidates": 0,
     "security_hold": 5,
-    "needs_rebase": 6,
+    "needs_rebase": 10,
     "mergeability_unknown": 0,
     "needs_checks": 9,
     "needs_review": 5,
@@ -36,8 +36,8 @@
       "cluster_id": "ghcrawl-156725-autonomous-smoke",
       "job_path": "jobs/openclaw/inbox/ghcrawl-156725-autonomous-smoke.md",
       "updated_at": "2026-04-28T07:26:46Z",
-      "mergeable": "MERGEABLE",
-      "merge_state_status": "UNSTABLE",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -83,13 +83,14 @@
       },
       "latest_record": null,
       "blockers": [
-        "needs_merge_state:UNSTABLE",
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
         "unresolved review threads remain",
         "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-fast-support:IN_PROGRESS; CI / checks-node-agentic-commands:FAILURE",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],
-      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     },
     {
       "number": 73368,
@@ -100,8 +101,8 @@
       "cluster_id": "ghcrawl-156728-autonomous-smoke",
       "job_path": "jobs/openclaw/inbox/ghcrawl-156728-autonomous-smoke.md",
       "updated_at": "2026-04-28T07:22:33Z",
-      "mergeable": "MERGEABLE",
-      "merge_state_status": "UNSTABLE",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -146,13 +147,14 @@
       },
       "latest_record": null,
       "blockers": [
-        "needs_merge_state:UNSTABLE",
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
         "unresolved review threads remain",
         "needs_checks:CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE; CI / check-test-types:FAILURE; CI / check:FAILURE",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],
-      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     },
     {
       "number": 73365,
@@ -163,8 +165,8 @@
       "cluster_id": "ghcrawl-156681-autonomous-smoke",
       "job_path": "jobs/openclaw/inbox/ghcrawl-156681-autonomous-smoke.md",
       "updated_at": "2026-04-28T07:20:14Z",
-      "mergeable": "MERGEABLE",
-      "merge_state_status": "UNSTABLE",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -210,13 +212,14 @@
       },
       "latest_record": null,
       "blockers": [
-        "needs_merge_state:UNSTABLE",
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
         "unresolved review threads remain",
         "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE; CI / check-test-types:FAILURE",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],
-      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     },
     {
       "number": 73362,
@@ -227,8 +230,8 @@
       "cluster_id": "ghcrawl-156718-autonomous-smoke",
       "job_path": "jobs/openclaw/inbox/ghcrawl-156718-autonomous-smoke.md",
       "updated_at": "2026-04-28T07:17:40Z",
-      "mergeable": "MERGEABLE",
-      "merge_state_status": "UNSTABLE",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -266,12 +269,13 @@
       },
       "latest_record": null,
       "blockers": [
-        "needs_merge_state:UNSTABLE",
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
         "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE; CI / check-test-types:FAILURE",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],
-      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     },
     {
       "number": 73361,
