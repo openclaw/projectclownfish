@@ -1,0 +1,244 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-165998-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "25035233181",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25035233181",
+  "head_sha": "11314bb0977e829eeb62cc0be17e0c531c9fe13a",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-165998-agentic-merge.md",
+  "published_at": "2026-04-28T05:28:04.206Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/59069",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/59069",
+  "summary": "The hydrated artifact shows the original representative #40571 is already closed and the replacement #72326 is security-sensitive, so #72326 is quarantined only. The remaining open refs split into related cron subfamilies rather than one canonical merge path: missing-agent UX (#42196/#42245), Telegram topic target normalization (#43808/#49704/#59069), and draft reminder promotion (#58893). #59069 is the narrowest repairable Telegram topic-target PR, but it still needs branch repair, review-bot resolution, Codex /review, and validation before any merge or closeout.",
+  "actions": [
+    {
+      "target": "#40571",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed targets must not receive close actions."
+    },
+    {
+      "target": "#42196",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#42245",
+      "candidate_fix": null,
+      "reason": "Same missing-agent UX family as #42245, but no safe closeout before a canonical fix lands."
+    },
+    {
+      "target": "#42245",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#42245",
+      "candidate_fix": null,
+      "reason": "Canonical for the missing-agent warning subfamily, but merge gates are not satisfied."
+    },
+    {
+      "target": "#43469",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Out of scope for this cron cluster."
+    },
+    {
+      "target": "#43695",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed context ref; no mutation allowed."
+    },
+    {
+      "target": "#43808",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#59069",
+      "candidate_fix": null,
+      "reason": "Related Telegram topic-delivery work; keep open while the narrower #59069 repair path is prepared."
+    },
+    {
+      "target": "#44240",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed context ref; no mutation allowed."
+    },
+    {
+      "target": "#44270",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed context ref; no mutation allowed."
+    },
+    {
+      "target": "#44325",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; historical evidence only."
+    },
+    {
+      "target": "#44351",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no close action allowed."
+    },
+    {
+      "target": "#44412",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed context ref; no mutation allowed."
+    },
+    {
+      "target": "#49704",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#59069",
+      "candidate_fix": null,
+      "reason": "Useful related evidence, but too broad and not merge-ready; keep open while the narrower #59069 path is repaired."
+    },
+    {
+      "target": "#54307",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation allowed."
+    },
+    {
+      "target": "#58893",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Draft broader behavior change; keep open as related follow-up, not a merge/close target."
+    },
+    {
+      "target": "#59069",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#59069",
+      "candidate_fix": "#59069",
+      "reason": "Repair the contributor branch, address the review-bot finding, run Codex /review and `pnpm check:changed`, then reassess merge."
+    },
+    {
+      "target": "#64708",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation allowed."
+    },
+    {
+      "target": "#72326",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route this exact PR to central OpenClaw security handling; do not close, merge, label, comment, or fix it through ProjectClownfish."
+    },
+    {
+      "target": "#72657",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed context ref; no mutation allowed."
+    },
+    {
+      "target": "cluster:ghcrawl-165998-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#59069",
+      "candidate_fix": "#59069",
+      "reason": "A mergeable canonical path exists only after branch repair and review validation."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 10,
+    "keep_related": 4,
+    "keep_canonical": 1,
+    "keep_independent": 1,
+    "fix_needed": 1,
+    "route_security": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 10,
+    "planned": 9
+  },
+  "fix_counts": {
+    "pushed": 1
+  },
+  "apply_counts": {
+    "executed": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "pushed",
+      "target": "https://github.com/openclaw/openclaw/pull/59069",
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#59069",
+      "action": "merge_canonical",
+      "status": "executed",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "Normalize telegram topic targets in delivery resolution",
+      "idempotency_key": null,
+      "reason": "merged by ProjectClownfish post-flight",
+      "merged_at": "2026-04-28T05:27:43Z",
+      "merge_commit_sha": "a3fd97570f8e07edcf184b0239b46235b1a4175c",
+      "live_state": "merged",
+      "live_updated_at": null
+    }
+  ]
+}

@@ -5298,5 +5298,25 @@
     "merge_commit_sha": "4c72e605cdc74c5990c68f196a6c1e040122cea2",
     "live_state": "merged",
     "live_updated_at": null
+  },
+  {
+    "repo": "openclaw/openclaw",
+    "run_id": "25035233181",
+    "run_url": "https://github.com/openclaw/clownfish/actions/runs/25035233181",
+    "cluster_id": "ghcrawl-165998-agentic-merge",
+    "published_at": "2026-04-28T05:28:04.206Z",
+    "target": "#59069",
+    "action": "merge_canonical",
+    "status": "executed",
+    "classification": "fix_pr",
+    "canonical": null,
+    "candidate_fix": null,
+    "title": "Normalize telegram topic targets in delivery resolution",
+    "idempotency_key": null,
+    "reason": "merged by ProjectClownfish post-flight",
+    "merged_at": "2026-04-28T05:27:43Z",
+    "merge_commit_sha": "a3fd97570f8e07edcf184b0239b46235b1a4175c",
+    "live_state": "merged",
+    "live_updated_at": null
   }
 ]
