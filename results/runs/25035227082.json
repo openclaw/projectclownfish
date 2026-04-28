@@ -1,0 +1,117 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-207039-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "25035227082",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25035227082",
+  "head_sha": "11314bb0977e829eeb62cc0be17e0c531c9fe13a",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-207039-agentic-merge.md",
+  "published_at": "2026-04-28T05:16:04.646Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/42099",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/42099",
+  "canonical_pr": null,
+  "summary": "Classified the hydrated plugin duplicate-warning cluster without direct GitHub mutation. The original representative #42192 is closed and already replaced historically; the live non-security canonical tracker is #42099. Security-sensitive PR #72409 must be quarantined. Open PR #58796 is related but not mergeable or closable in this pass because it is broad and has an unresolved P1 Codex review finding. Closed refs are retained as historical evidence only.",
+  "actions": [
+    {
+      "target": "#42099",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#42099",
+      "candidate_fix": null,
+      "reason": "Best live non-security canonical path is the open issue tracker; no close or merge action is safe for it."
+    },
+    {
+      "target": "#42192",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#42099",
+      "candidate_fix": null,
+      "reason": "Already-closed historical source PR; retained only as evidence and source-credit context."
+    },
+    {
+      "target": "#45900",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#42099",
+      "candidate_fix": null,
+      "reason": "Already-closed superseded PR for a different channel-registration theory."
+    },
+    {
+      "target": "#48673",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#42099",
+      "candidate_fix": null,
+      "reason": "Already-closed source PR for a related but narrower bug family."
+    },
+    {
+      "target": "#58796",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#42099",
+      "candidate_fix": null,
+      "reason": "Related open PR, but broad delta and unresolved P1 review block merge or autonomous closeout."
+    },
+    {
+      "target": "#72409",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive hydrated ref; no ProjectClownfish comment, close, merge, or fix action is allowed for this item."
+    },
+    {
+      "target": "#45805",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#42099",
+      "candidate_fix": null,
+      "reason": "Closed context issue for a related but different root-cause theory."
+    },
+    {
+      "target": "#45951",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#42099",
+      "candidate_fix": null,
+      "reason": "Closed context issue already handled on main for same-physical-root duplicates."
+    },
+    {
+      "target": "#48605",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#42099",
+      "candidate_fix": null,
+      "reason": "Closed context issue for the installed-plugin override/same-physical-root family, not an open close target."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_closed": 6,
+    "keep_related": 1,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "planned": 3,
+    "skipped": 6
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
