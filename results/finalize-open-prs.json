@@ -3,18 +3,18 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-28T07:25:16.615Z",
-  "count": 9,
+  "generated_at": "2026-04-28T07:26:48.408Z",
+  "count": 10,
   "summary": {
-    "open_prs": 9,
+    "open_prs": 10,
     "ready_candidates": 0,
     "security_hold": 5,
     "needs_rebase": 5,
     "mergeability_unknown": 0,
-    "needs_checks": 8,
+    "needs_checks": 9,
     "needs_review": 4,
-    "needs_merge_preflight": 9,
-    "needs_result_backfill": 4
+    "needs_merge_preflight": 10,
+    "needs_result_backfill": 5
   },
   "dispatch": {
     "enabled": false,
@@ -27,6 +27,63 @@
     "candidates": []
   },
   "prs": [
+    {
+      "number": 73374,
+      "title": "fix: retry same model on transient fallback errors",
+      "url": "https://github.com/openclaw/openclaw/pull/73374",
+      "branch": "clownfish/ghcrawl-156725-autonomous-smoke",
+      "head_sha": "01379e2d44e0ea919710877d60d33a81bcf1c81d",
+      "cluster_id": "ghcrawl-156725-autonomous-smoke",
+      "job_path": "jobs/openclaw/inbox/ghcrawl-156725-autonomous-smoke.md",
+      "updated_at": "2026-04-28T07:24:23Z",
+      "mergeable": "MERGEABLE",
+      "merge_state_status": "UNSTABLE",
+      "review_decision": "",
+      "security_hold": false,
+      "checks": {
+        "total": 71,
+        "counts": {
+          "CANCELLED": 1,
+          "IN_PROGRESS": 12,
+          "SUCCESS": 48,
+          "SKIPPED": 9,
+          "FAILURE": 1
+        },
+        "blockers": [
+          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS",
+          "CI / build-artifacts:IN_PROGRESS",
+          "CI / checks-fast-contracts-plugins:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-1:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-2:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-5:IN_PROGRESS",
+          "CI / checks-node-core-fast-support:IN_PROGRESS",
+          "CI / checks-node-core-runtime-infra:IN_PROGRESS",
+          "CI / checks-node-core-runtime-media-ui:IN_PROGRESS",
+          "CI / checks-node-agentic-commands:FAILURE",
+          "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-commands-state-routing:IN_PROGRESS",
+          "Greptile Review:IN_PROGRESS"
+        ]
+      },
+      "review_threads": {
+        "status": "clean",
+        "reason": null,
+        "unresolved_count": 0,
+        "examples": []
+      },
+      "review_bots": {
+        "count": 0,
+        "latest": []
+      },
+      "latest_record": null,
+      "blockers": [
+        "needs_merge_state:UNSTABLE",
+        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS; CI / build-artifacts:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS",
+        "needs_merge_preflight",
+        "needs_result_backfill"
+      ],
+      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
+    },
     {
       "number": 73368,
       "title": "fix(ui): clear webchat pending state only for completed active run",
@@ -106,14 +163,13 @@
       "checks": {
         "total": 78,
         "counts": {
+          "FAILURE": 5,
           "CANCELLED": 3,
-          "IN_PROGRESS": 1,
           "SUCCESS": 61,
-          "SKIPPED": 9,
-          "FAILURE": 4
+          "SKIPPED": 9
         },
         "blockers": [
-          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS",
+          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE",
           "CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE",
           "CI / check-test-types:FAILURE",
           "CI / check:FAILURE",
@@ -149,7 +205,7 @@
       "blockers": [
         "needs_merge_state:UNSTABLE",
         "unresolved review threads remain",
-        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS; CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE; CI / check-test-types:FAILURE",
+        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE; CI / check-test-types:FAILURE",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],

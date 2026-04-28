@@ -1,0 +1,169 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156706-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25039040776",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25039040776",
+  "head_sha": "da036e490846162aa84e5b443cfc870a58f935a1",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156706-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:25:52.950Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/71478",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/71478",
+  "summary": "Hydrated preflight shows the original heartbeat setTimeout overflow family is already fixed on current main by merged PR #71478 at d525d6486d305482906b974136b8d25395211709, and the older overflow PRs are already closed. The remaining open refs are a related but distinct heartbeat reliability/App Nap subfamily. #62310 is useful and maintainer-editable but not merge-ready because actionable Greptile/Codex review comments and failing checks remain, so this result plans a repair-contributor-branch fix artifact instead of merge or close actions.",
+  "actions": [
+    {
+      "target": "#41240",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#71478",
+      "candidate_fix": "#71478",
+      "reason": "Already closed refs are historical evidence only and must not receive close actions."
+    },
+    {
+      "target": "#41290",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#71478",
+      "candidate_fix": "#71478",
+      "reason": "The representative is obsolete because the canonical fix is already merged as #71478."
+    },
+    {
+      "target": "#61386",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#71478",
+      "candidate_fix": "#71478",
+      "reason": "No mutation is valid for this already-closed duplicate/fixed-by-candidate PR."
+    },
+    {
+      "target": "#61546",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#71478",
+      "candidate_fix": "#71478",
+      "reason": "Already closed historical context; no close/comment/label action is planned."
+    },
+    {
+      "target": "#61638",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#71478",
+      "candidate_fix": "#71478",
+      "reason": "The observable bug is fixed by #71478; the schema-policy question remains separate product work if maintainers want it later."
+    },
+    {
+      "target": "#62294",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#62310",
+      "candidate_fix": "#62310",
+      "reason": "Related follow-up subfamily with unique reproduction details and remaining open work; not a duplicate closeout target."
+    },
+    {
+      "target": "#62308",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#62294",
+      "candidate_fix": null,
+      "reason": "Keep as related follow-up PR; do not merge or close in the heartbeat overflow cleanup path."
+    },
+    {
+      "target": "#62310",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#62310",
+      "candidate_fix": "#62310",
+      "reason": "Repair the contributor branch before any merge recommendation."
+    },
+    {
+      "target": "cluster:ghcrawl-156706-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#62310",
+      "candidate_fix": "#62310",
+      "reason": "A deterministic executor can repair #62310's existing branch while preserving contributor credit."
+    },
+    {
+      "target": "#71414",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#71478",
+      "candidate_fix": "#71478",
+      "reason": "Already closed canonical issue context for the merged overflow fix."
+    },
+    {
+      "target": "#71478",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#71478",
+      "candidate_fix": "#71478",
+      "reason": "Canonical merged fix for the original heartbeat setTimeout overflow family."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 7,
+    "keep_related": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 7,
+    "planned": 4
+  },
+  "fix_counts": {
+    "pushed": 1
+  },
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "pushed",
+      "target": "https://github.com/openclaw/openclaw/pull/62310",
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#62310",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(heartbeat): enforce minimum interval for non-interval wake triggers",
+      "idempotency_key": null,
+      "reason": "merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}
