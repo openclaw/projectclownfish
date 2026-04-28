@@ -41,31 +41,31 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 28, 2026, 07:51 UTC
+Last dashboard update: Apr 28, 2026, 07:54 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 210 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 211 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 210 | 100% |
+| Latest clusters reviewed | 211 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 95 | 45.2% |
-| Needs-human clusters | 42 | 20.0% |
-| Latest successful clusters | 208 | 99.0% |
-| Latest failed clusters | 2 | 1.0% |
+| Clean completed clusters | 95 | 45.0% |
+| Needs-human clusters | 42 | 19.9% |
+| Latest successful clusters | 209 | 99.1% |
+| Latest failed clusters | 2 | 0.9% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 435 | audit |
-| Fix action attempts | 137 | audit |
+| Run attempts archived | 436 | audit |
+| Fix action attempts | 139 | audit |
 | Fix actions executed | 0 | 0.0% |
-| Fix actions failed | 31 | 22.6% |
-| Fix actions blocked | 39 | 28.5% |
-| Latest clusters with fix failures | 35 | 16.7% |
-| Distinct PRs touched | 792 | 100% |
-| Open PRs tracked | 345 | 43.6% |
-| Closed unmerged PRs tracked | 361 | 45.6% |
+| Fix actions failed | 32 | 23.0% |
+| Fix actions blocked | 40 | 28.8% |
+| Latest clusters with fix failures | 36 | 17.1% |
+| Distinct PRs touched | 795 | 100% |
+| Open PRs tracked | 348 | 43.8% |
+| Closed unmerged PRs tracked | 361 | 45.4% |
 | Completed close actions | 30 | 11.4% |
 | Completed merge actions | 23 | 8.7% |
 | Duplicate closes | 22 | 73.3% |
@@ -79,6 +79,7 @@ Scope: 210 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 
 | Cluster | State | Source job | Reason | Report | Run |
 | --- | --- | --- | --- | --- | --- |
+| [ghcrawl-157006-autonomous-smoke](results/openclaw/ghcrawl-157006-autonomous-smoke.md) | fix failed | jobs/openclaw/inbox/ghcrawl-157006-autonomous-smoke.md | Codex /review failed: structured output was not written to repair-codex-review-1.json; stdout={"type":"thread.started","thread_id":"019dd... | [report](results/openclaw/ghcrawl-157006-autonomous-smoke.md) | [25040511075](https://github.com/openclaw/clownfish/actions/runs/25040511075) |
 | [ghcrawl-156843-autonomous-smoke](results/openclaw/ghcrawl-156843-autonomous-smoke.md) | fix failed | jobs/openclaw/inbox/ghcrawl-156843-autonomous-smoke.md | base branch advanced after validation and projectclownfish/repair-ghcrawl-156843-autonomous-smoke-49981 needs a fresh rebase pass: Rebasi... | [report](results/openclaw/ghcrawl-156843-autonomous-smoke.md) | [25039684300](https://github.com/openclaw/clownfish/actions/runs/25039684300) |
 | [ghcrawl-156899-autonomous-smoke](results/openclaw/ghcrawl-156899-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156899-autonomous-smoke.md | merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review | [report](results/openclaw/ghcrawl-156899-autonomous-smoke.md) | [25040053806](https://github.com/openclaw/clownfish/actions/runs/25040053806) |
 | [ghcrawl-156914-autonomous-smoke](results/openclaw/ghcrawl-156914-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156914-autonomous-smoke.md | merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review | [report](results/openclaw/ghcrawl-156914-autonomous-smoke.md) | [25040098128](https://github.com/openclaw/clownfish/actions/runs/25040098128) |
@@ -103,12 +104,13 @@ Scope: 210 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | [ghcrawl-156617-autonomous-smoke](results/openclaw/ghcrawl-156617-autonomous-smoke.md) | fix blocked | jobs/openclaw/inbox/ghcrawl-156617-autonomous-smoke.md | base branch advanced after validation and clownfish/ghcrawl-156617-autonomous-smoke needs a fresh rebase pass: Rebasing (1/2) error: coul... | [report](results/openclaw/ghcrawl-156617-autonomous-smoke.md) | [25035222674](https://github.com/openclaw/clownfish/actions/runs/25035222674) |
 | [ghcrawl-156636-autonomous-smoke](results/openclaw/ghcrawl-156636-autonomous-smoke.md) | fix failed | jobs/openclaw/inbox/ghcrawl-156636-autonomous-smoke.md | remote: Permission to security-for-ai-agent/openclaw.git denied to vincentkoc. fatal: unable to access 'https://github.com/security-for-a... | [report](results/openclaw/ghcrawl-156636-autonomous-smoke.md) | [25032428566](https://github.com/openclaw/clownfish/actions/runs/25032428566) |
 | [ghcrawl-156651-autonomous-smoke](results/openclaw/ghcrawl-156651-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156651-autonomous-smoke.md | mergeable state is CONFLICTING | [report](results/openclaw/ghcrawl-156651-autonomous-smoke.md) | [25023019730](https://github.com/openclaw/clownfish/actions/runs/25023019730) |
-| [ghcrawl-156647-autonomous-smoke](results/openclaw/ghcrawl-156647-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156647-autonomous-smoke.md | merge state status is UNSTABLE | [report](results/openclaw/ghcrawl-156647-autonomous-smoke.md) | [25023014227](https://github.com/openclaw/clownfish/actions/runs/25023014227) |
 
 ### Fix Failure Queue
 
 | Cluster | Status | Target | Branch/PR | Reason | Run |
 | --- | --- | --- | --- | --- | --- |
+| [ghcrawl-157006-autonomous-smoke](results/openclaw/ghcrawl-157006-autonomous-smoke.md) | failed |  |  | Codex /review failed: structured output was not written to repair-codex-review-1.json; stdout={"type":"thread.started","thread_id":"019dd... | [25040511075](https://github.com/openclaw/clownfish/actions/runs/25040511075) |
+| [ghcrawl-157006-autonomous-smoke](results/openclaw/ghcrawl-157006-autonomous-smoke.md) | blocked |  |  | Codex /review failed: structured output was not written to repair-codex-review-1.json; stdout={"type":"thread.started","thread_id":"019dd... | [25040511075](https://github.com/openclaw/clownfish/actions/runs/25040511075) |
 | [ghcrawl-156843-autonomous-smoke](results/openclaw/ghcrawl-156843-autonomous-smoke.md) | failed |  |  | base branch advanced after validation and projectclownfish/repair-ghcrawl-156843-autonomous-smoke-49981 needs a fresh rebase pass: Rebasi... | [25039684300](https://github.com/openclaw/clownfish/actions/runs/25039684300) |
 | [ghcrawl-156843-autonomous-smoke](results/openclaw/ghcrawl-156843-autonomous-smoke.md) | blocked |  |  | base branch advanced after validation and projectclownfish/repair-ghcrawl-156843-autonomous-smoke-49981 needs a fresh rebase pass: Rebasi... | [25039684300](https://github.com/openclaw/clownfish/actions/runs/25039684300) |
 | [ghcrawl-156832-autonomous-smoke](results/openclaw/ghcrawl-156832-autonomous-smoke.md) | failed |  |  | Codex /review did not pass after 2 attempt(s): Blocked: the branch is narrow and `pnpm check:changed` plus `git diff --check` pass, but t... | [25039623993](https://github.com/openclaw/clownfish/actions/runs/25039623993) |
@@ -132,8 +134,6 @@ Scope: 210 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | [ghcrawl-156642-autonomous-smoke](results/openclaw/ghcrawl-156642-autonomous-smoke.md) | blocked |  |  | Codex /review failed: structured output was not written to repair-codex-review-1.json; stdout={"type":"thread.started","thread_id":"019dd... | [25023008984](https://github.com/openclaw/clownfish/actions/runs/25023008984) |
 | [ghcrawl-156665-autonomous-smoke](results/openclaw/ghcrawl-156665-autonomous-smoke.md) | failed |  |  | validation command failed (pnpm check:changed): [check:changed] lanes=core, coreTests, docs [check:changed] src/cron/isolated-agent/run-e... | [25023036489](https://github.com/openclaw/clownfish/actions/runs/25023036489) |
 | [ghcrawl-156665-autonomous-smoke](results/openclaw/ghcrawl-156665-autonomous-smoke.md) | blocked |  |  | validation command failed (pnpm check:changed): [check:changed] lanes=core, coreTests, docs [check:changed] src/cron/isolated-agent/run-e... | [25023036489](https://github.com/openclaw/clownfish/actions/runs/25023036489) |
-| [ghcrawl-156648-autonomous-smoke](results/openclaw/ghcrawl-156648-autonomous-smoke.md) | blocked |  |  | Codex /review failed: structured output was not written to replacement-codex-review-2.json; stdout={"type":"thread.started","thread_id":"... | [25023016010](https://github.com/openclaw/clownfish/actions/runs/25023016010) |
-| [ghcrawl-156657-autonomous-smoke](results/openclaw/ghcrawl-156657-autonomous-smoke.md) | blocked |  |  | validation command failed (pnpm check:changed): [check:changed] lanes=core, coreTests, docs [check:changed] src/agents/workspace.load-ext... | [25023025041](https://github.com/openclaw/clownfish/actions/runs/25023025041) |
 
 ### Top Blocked Reasons
 
@@ -159,7 +159,9 @@ Scope: 210 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 
 | PR | Title | Cluster | Branch | Blockers | Next action |
 | --- | --- | --- | --- | --- | --- |
-| [#73393](https://github.com/openclaw/openclaw/pull/73393) | feat(whatsapp): support newsletter targets in message tool | ghcrawl-156943-autonomous-smoke | clownfish/ghcrawl-156943-autonomous-smoke | needs_merge_state:UNSTABLE, needs_checks:CI / checks-node-agentic-control-plane:IN_PROGRESS; CI / checks-node-agentic-plugin-sdk:IN_PROGR... | repair failing checks or document unrelated main flake with touched-surface proof |
+| [#73396](https://github.com/openclaw/openclaw/pull/73396) | fix: resolve providerless configured image models | ghcrawl-156977-autonomous-smoke | clownfish/ghcrawl-156977-autonomous-smoke | needs_merge_state:UNSTABLE, needs_checks:ClawSweeper Dispatch / dispatch:FAILURE; ClawSweeper Dispatch / dispatch:FAILURE; ClawSweeper Di... | repair failing checks or document unrelated main flake with touched-surface proof |
+| [#73395](https://github.com/openclaw/openclaw/pull/73395) | fix(discord): cool down Cloudflare HTML 429 REST failures | ghcrawl-156979-autonomous-smoke | clownfish/ghcrawl-156979-autonomous-smoke | security_hold, needs_merge_state:UNSTABLE, needs_checks:ClawSweeper Dispatch / dispatch:FAILURE; ClawSweeper Dispatch / dispatch:FAILURE;... | route to central security triage |
+| [#73393](https://github.com/openclaw/openclaw/pull/73393) | feat(whatsapp): support newsletter targets in message tool | ghcrawl-156943-autonomous-smoke | clownfish/ghcrawl-156943-autonomous-smoke | needs_merge_preflight, needs_result_backfill | backfill merge preflight: security cleared, comments resolved, Codex /review passed, validation recorded |
 | [#73388](https://github.com/openclaw/openclaw/pull/73388) | Fix Trinity main-session compatibility mismatch | ghcrawl-156908-autonomous-smoke | clownfish/ghcrawl-156908-autonomous-smoke | needs_merge_state:UNSTABLE, needs_checks:CI / checks-node-core-fast-support:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight... | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73380](https://github.com/openclaw/openclaw/pull/73380) | fix(memory): keep pre-compaction flush prompt out of user transcript | ghcrawl-156869-autonomous-smoke | clownfish/ghcrawl-156869-autonomous-smoke | needs_merge_state:UNSTABLE, needs_checks:CI / checks-node-core-fast-support:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight... | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73379](https://github.com/openclaw/openclaw/pull/73379) | fix(cron): support Telegram thread IDs in cron add/edit | ghcrawl-156855-autonomous-smoke | clownfish/ghcrawl-156855-autonomous-smoke | needs_merge_state:UNSTABLE, unresolved review threads remain, needs_checks:CI / checks-node-core-fast-support:FAILURE; CI / checks-node-a... | repair failing checks or document unrelated main flake with touched-surface proof |

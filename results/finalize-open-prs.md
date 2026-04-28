@@ -1,20 +1,20 @@
 # Open ProjectClownfish PR Finalizer
 
-Generated: 2026-04-28T07:51:09.441Z
+Generated: 2026-04-28T07:54:07.531Z
 
 ## Summary
 
 | Metric | Count |
 | --- | ---: |
-| open_prs | 17 |
+| open_prs | 19 |
 | ready_candidates | 0 |
-| security_hold | 5 |
+| security_hold | 6 |
 | needs_rebase | 10 |
 | mergeability_unknown | 0 |
-| needs_checks | 14 |
+| needs_checks | 15 |
 | needs_review | 7 |
-| needs_merge_preflight | 17 |
-| needs_result_backfill | 12 |
+| needs_merge_preflight | 19 |
+| needs_result_backfill | 14 |
 
 ## Dispatch
 
@@ -30,7 +30,9 @@ Status: report_only
 
 | PR | Title | Cluster | Mergeable | Merge State | Checks | Blockers | Next action |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [#73393](https://github.com/openclaw/openclaw/pull/73393) | feat(whatsapp): support newsletter targets in message tool | ghcrawl-156943-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:3 SUCCESS:62 SKIPPED:9 IN_PROGRESS:3; blockers:3 | needs_merge_state:UNSTABLE, needs_checks:CI / checks-node-agentic-control-plane:IN_PROGRESS; CI / checks-node-agentic-plugin-sdk:IN_PROGRESS; Greptile Review:IN_PROGRESS, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
+| [#73396](https://github.com/openclaw/openclaw/pull/73396) | fix: resolve providerless configured image models | ghcrawl-156977-autonomous-smoke | MERGEABLE | UNSTABLE | FAILURE:7 CANCELLED:2 QUEUED:1 IN_PROGRESS:43 SUCCESS:7 SKIPPED:9; blockers:50 | needs_merge_state:UNSTABLE, needs_checks:ClawSweeper Dispatch / dispatch:FAILURE; ClawSweeper Dispatch / dispatch:FAILURE; ClawSweeper Dispatch / dispatch:FAILURE, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
+| [#73395](https://github.com/openclaw/openclaw/pull/73395) | fix(discord): cool down Cloudflare HTML 429 REST failures | ghcrawl-156979-autonomous-smoke | MERGEABLE | UNSTABLE | FAILURE:5 CANCELLED:4 SUCCESS:9 SKIPPED:9 IN_PROGRESS:41; blockers:46 | security_hold, needs_merge_state:UNSTABLE, needs_checks:ClawSweeper Dispatch / dispatch:FAILURE; ClawSweeper Dispatch / dispatch:FAILURE; ClawSweeper Dispatch / dispatch:FAILURE, needs_merge_preflight, needs_result_backfill | route to central security triage |
+| [#73393](https://github.com/openclaw/openclaw/pull/73393) | feat(whatsapp): support newsletter targets in message tool | ghcrawl-156943-autonomous-smoke | MERGEABLE | CLEAN | CANCELLED:3 SUCCESS:66 SKIPPED:9 | needs_merge_preflight, needs_result_backfill | backfill merge preflight: security cleared, comments resolved, Codex /review passed, validation recorded |
 | [#73388](https://github.com/openclaw/openclaw/pull/73388) | Fix Trinity main-session compatibility mismatch | ghcrawl-156908-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:2 SUCCESS:63 SKIPPED:9 FAILURE:2; blockers:2 | needs_merge_state:UNSTABLE, needs_checks:CI / checks-node-core-fast-support:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73380](https://github.com/openclaw/openclaw/pull/73380) | fix(memory): keep pre-compaction flush prompt out of user transcript | ghcrawl-156869-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:4 SUCCESS:62 SKIPPED:9 FAILURE:2; blockers:2 | needs_merge_state:UNSTABLE, needs_checks:CI / checks-node-core-fast-support:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73379](https://github.com/openclaw/openclaw/pull/73379) | fix(cron): support Telegram thread IDs in cron add/edit | ghcrawl-156855-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:4 SUCCESS:63 SKIPPED:9 FAILURE:3; blockers:3 | needs_merge_state:UNSTABLE, unresolved review threads remain, needs_checks:CI / checks-node-core-fast-support:FAILURE; CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |

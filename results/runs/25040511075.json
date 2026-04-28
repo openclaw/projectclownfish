@@ -1,0 +1,120 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-157006-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25040511075",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25040511075",
+  "head_sha": "4a6a5a91768ab65b3b6e9cf342833a4010fc84b7",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-157006-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:52:15.303Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/40200",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/40200",
+  "summary": "Classified the hydrated cluster without mutations. #40200 remains the canonical repairable contributor PR for shell startup-file suppression, but it is not merge-ready because mergeability is unknown and the artifact does not include a clean post-fix Codex /review on the latest head. #65271 and linked #39413 are related custom-shell work, not duplicates of #40200. A narrow repair artifact is planned for #40200.",
+  "actions": [
+    {
+      "target": "#39",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical context; no mutation planned."
+    },
+    {
+      "target": "#40179",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#40200",
+      "candidate_fix": null,
+      "reason": "Historical issue evidence for #40200, but already closed and not a target for ProjectClownfish mutation."
+    },
+    {
+      "target": "#39413",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related shell execution work, but not the same root cause or user-visible failure as #40200."
+    },
+    {
+      "target": "#40200",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#40200",
+      "candidate_fix": "#40200",
+      "reason": "Canonical PR is useful and repairable, but needs branch repair/review preflight before any merge."
+    },
+    {
+      "target": "#65271",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related but distinct Windows/custom shell feature work; keep open for separate maintainer consolidation."
+    },
+    {
+      "target": "cluster:ghcrawl-157006-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#40200",
+      "candidate_fix": "#40200",
+      "reason": "Autonomous mode can plan branch repair, but direct GitHub mutation is reserved for ProjectClownfish executors."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 2,
+    "keep_related": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 2,
+    "planned": 4
+  },
+  "fix_counts": {
+    "failed": 1,
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "failed",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": "Codex /review failed: structured output was not written to repair-codex-review-1.json; stdout={\"type\":\"thread.started\",\"thread_id\":\"019dd312-7112-7801-85bd-b682e5661a25\"} {\"type\":\"turn.started\"} {\"type\":\"item.started\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/bash -lc \\\"sed -n '1,220p' .agents/skills/openclaw-pr-maintainer/SKILL.md\\\"\",\"aggregated_output\":\"\",\"exit_code\":null,\"status\":\"in_progress\"}} {\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/bash -lc \\\"sed -n '1,220p' .agents/skills/openclaw-pr-maintainer/SKILL.md\\\"\",\"aggregated_output\":\"---\\nname: openclaw-pr-maintainer\\ndescription: Review, triage, close, label, comment on, or land OpenClaw PRs/issues with maintainer evidence checks.\\n---\\n\\n# OpenClaw PR Maintainer\\n\\nUse this skill for maintainer-facing GitHub workflow, not for ordinary code changes.\\n\\n## ...; stderr=empty",
+      "title": null,
+      "url": null
+    },
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "repair_contributor_branch",
+      "reason": "Codex /review failed: structured output was not written to repair-codex-review-1.json; stdout={\"type\":\"thread.started\",\"thread_id\":\"019dd312-7112-7801-85bd-b682e5661a25\"} {\"type\":\"turn.started\"} {\"type\":\"item.started\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/bash -lc \\\"sed -n '1,220p' .agents/skills/openclaw-pr-maintainer/SKILL.md\\\"\",\"aggregated_output\":\"\",\"exit_code\":null,\"status\":\"in_progress\"}} {\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/bash -lc \\\"sed -n '1,220p' .agents/skills/openclaw-pr-maintainer/SKILL.md\\\"\",\"aggregated_output\":\"---\\nname: openclaw-pr-maintainer\\ndescription: Review, triage, close, label, comment on, or land OpenClaw PRs/issues with maintainer evidence checks.\\n---\\n\\n# OpenClaw PR Maintainer\\n\\nUse this skill for maintainer-facing GitHub workflow, not for ordinary code changes.\\n\\n## ...; stderr=empty",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}
