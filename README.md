@@ -41,31 +41,31 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 28, 2026, 07:30 UTC
+Last dashboard update: Apr 28, 2026, 07:31 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 196 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 197 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 196 | 100% |
+| Latest clusters reviewed | 197 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 90 | 45.9% |
-| Needs-human clusters | 42 | 21.4% |
-| Latest successful clusters | 194 | 99.0% |
+| Clean completed clusters | 90 | 45.7% |
+| Needs-human clusters | 42 | 21.3% |
+| Latest successful clusters | 195 | 99.0% |
 | Latest failed clusters | 2 | 1.0% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 421 | audit |
-| Fix action attempts | 126 | audit |
+| Run attempts archived | 422 | audit |
+| Fix action attempts | 127 | audit |
 | Fix actions executed | 0 | 0.0% |
-| Fix actions failed | 29 | 23.0% |
-| Fix actions blocked | 33 | 26.2% |
-| Latest clusters with fix failures | 29 | 14.8% |
-| Distinct PRs touched | 762 | 100% |
-| Open PRs tracked | 331 | 43.4% |
-| Closed unmerged PRs tracked | 348 | 45.7% |
+| Fix actions failed | 29 | 22.8% |
+| Fix actions blocked | 34 | 26.8% |
+| Latest clusters with fix failures | 30 | 15.2% |
+| Distinct PRs touched | 766 | 100% |
+| Open PRs tracked | 333 | 43.5% |
+| Closed unmerged PRs tracked | 350 | 45.7% |
 | Completed close actions | 30 | 11.7% |
 | Completed merge actions | 23 | 9.0% |
 | Duplicate closes | 22 | 73.3% |
@@ -79,6 +79,7 @@ Scope: 196 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 
 | Cluster | State | Source job | Reason | Report | Run |
 | --- | --- | --- | --- | --- | --- |
+| [ghcrawl-156864-autonomous-smoke](results/openclaw/ghcrawl-156864-autonomous-smoke.md) | fix blocked | jobs/openclaw/inbox/ghcrawl-156864-autonomous-smoke.md | fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1 | [report](results/openclaw/ghcrawl-156864-autonomous-smoke.md) | [25039821052](https://github.com/openclaw/clownfish/actions/runs/25039821052) |
 | [ghcrawl-156741-autonomous-smoke](results/openclaw/ghcrawl-156741-autonomous-smoke.md) | fix failed | jobs/openclaw/inbox/ghcrawl-156741-autonomous-smoke.md | base branch advanced after validation and projectclownfish/repair-ghcrawl-156741-autonomous-smoke-59382 needs a fresh rebase pass: Rebasi... | [report](results/openclaw/ghcrawl-156741-autonomous-smoke.md) | [25039129783](https://github.com/openclaw/clownfish/actions/runs/25039129783) |
 | [ghcrawl-156805-autonomous-smoke](results/openclaw/ghcrawl-156805-autonomous-smoke.md) | fix blocked | jobs/openclaw/inbox/ghcrawl-156805-autonomous-smoke.md | validation command failed (pnpm check:changed): [check:changed] lanes=extensions, extensionTests, docs [check:changed] extensions/telegra... | [report](results/openclaw/ghcrawl-156805-autonomous-smoke.md) | [25039479679](https://github.com/openclaw/clownfish/actions/runs/25039479679) |
 | [ghcrawl-156706-autonomous-smoke](results/openclaw/ghcrawl-156706-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156706-autonomous-smoke.md | merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review | [report](results/openclaw/ghcrawl-156706-autonomous-smoke.md) | [25039040776](https://github.com/openclaw/clownfish/actions/runs/25039040776) |
@@ -103,12 +104,12 @@ Scope: 196 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | [ghcrawl-156665-autonomous-smoke](results/openclaw/ghcrawl-156665-autonomous-smoke.md) | fix failed | jobs/openclaw/inbox/ghcrawl-156665-autonomous-smoke.md | validation command failed (pnpm check:changed): [check:changed] lanes=core, coreTests, docs [check:changed] src/cron/isolated-agent/run-e... | [report](results/openclaw/ghcrawl-156665-autonomous-smoke.md) | [25023036489](https://github.com/openclaw/clownfish/actions/runs/25023036489) |
 | [ghcrawl-156648-autonomous-smoke](results/openclaw/ghcrawl-156648-autonomous-smoke.md) | fix blocked | jobs/openclaw/inbox/ghcrawl-156648-autonomous-smoke.md | Codex /review failed: structured output was not written to replacement-codex-review-2.json; stdout={"type":"thread.started","thread_id":"... | [report](results/openclaw/ghcrawl-156648-autonomous-smoke.md) | [25023016010](https://github.com/openclaw/clownfish/actions/runs/25023016010) |
 | [ghcrawl-156657-autonomous-smoke](results/openclaw/ghcrawl-156657-autonomous-smoke.md) | fix blocked | jobs/openclaw/inbox/ghcrawl-156657-autonomous-smoke.md | validation command failed (pnpm check:changed): [check:changed] lanes=core, coreTests, docs [check:changed] src/agents/workspace.load-ext... | [report](results/openclaw/ghcrawl-156657-autonomous-smoke.md) | [25023025041](https://github.com/openclaw/clownfish/actions/runs/25023025041) |
-| [ghcrawl-156671-autonomous-smoke](results/openclaw/ghcrawl-156671-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156671-autonomous-smoke.md | no PR checks found | [report](results/openclaw/ghcrawl-156671-autonomous-smoke.md) | [25023044075](https://github.com/openclaw/clownfish/actions/runs/25023044075) |
 
 ### Fix Failure Queue
 
 | Cluster | Status | Target | Branch/PR | Reason | Run |
 | --- | --- | --- | --- | --- | --- |
+| [ghcrawl-156864-autonomous-smoke](results/openclaw/ghcrawl-156864-autonomous-smoke.md) | blocked |  |  | fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1 | [25039821052](https://github.com/openclaw/clownfish/actions/runs/25039821052) |
 | [ghcrawl-156741-autonomous-smoke](results/openclaw/ghcrawl-156741-autonomous-smoke.md) | failed |  |  | base branch advanced after validation and projectclownfish/repair-ghcrawl-156741-autonomous-smoke-59382 needs a fresh rebase pass: Rebasi... | [25039129783](https://github.com/openclaw/clownfish/actions/runs/25039129783) |
 | [ghcrawl-156741-autonomous-smoke](results/openclaw/ghcrawl-156741-autonomous-smoke.md) | blocked |  |  | base branch advanced after validation and projectclownfish/repair-ghcrawl-156741-autonomous-smoke-59382 needs a fresh rebase pass: Rebasi... | [25039129783](https://github.com/openclaw/clownfish/actions/runs/25039129783) |
 | [ghcrawl-156805-autonomous-smoke](results/openclaw/ghcrawl-156805-autonomous-smoke.md) | blocked |  |  | validation command failed (pnpm check:changed): [check:changed] lanes=extensions, extensionTests, docs [check:changed] extensions/telegra... | [25039479679](https://github.com/openclaw/clownfish/actions/runs/25039479679) |
@@ -133,7 +134,6 @@ Scope: 196 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | [ghcrawl-156629-autonomous-smoke](results/openclaw/ghcrawl-156629-autonomous-smoke.md) | blocked |  |  | branch projectclownfish/repair-ghcrawl-156629-autonomous-smoke-72660 could not rebase onto origin/main: Codex could not repair rebase con... | [24989070557](https://github.com/openclaw/clownfish/actions/runs/24989070557) |
 | [ghcrawl-156626-autonomous-smoke](results/openclaw/ghcrawl-156626-autonomous-smoke.md) | failed |  |  | validation command failed (pnpm test:serial extensions/memory-lancedb/index.test.ts): undefined ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL Comman... | [24980262624](https://github.com/openclaw/clownfish/actions/runs/24980262624) |
 | [ghcrawl-156599-autonomous-smoke](results/openclaw/ghcrawl-156599-autonomous-smoke.md) | failed |  |  | source PR #44325 is closed | [24980225169](https://github.com/openclaw/clownfish/actions/runs/24980225169) |
-| [ghcrawl-156622-autonomous-smoke](results/openclaw/ghcrawl-156622-autonomous-smoke.md) | failed |  |  | validation command failed (pnpm check:changed): undefined ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL Command "check:changed" not found Did you me... | [24980256758](https://github.com/openclaw/clownfish/actions/runs/24980256758) |
 
 ### Top Blocked Reasons
 
