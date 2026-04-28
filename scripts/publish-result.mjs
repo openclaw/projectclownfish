@@ -266,8 +266,16 @@ function updateDashboard() {
   const blockedRows = applyRows.filter((row) => row.action.status === "blocked");
   const skippedRows = applyRows.filter((row) => row.action.status === "skipped");
   const latestBlockedRows = latestApplyRows.filter((row) => row.action.status === "blocked");
+  const latestSkippedRows = latestApplyRows.filter((row) => row.action.status === "skipped");
   const latestFailedFixRows = latestFixRows.filter((row) => ["blocked", "failed"].includes(String(row.action.status ?? "")));
   const needsHumanRows = latestByCluster.filter((record) => (record.needs_human ?? []).length > 0);
+  const inspectionRows = buildInspectionRows({
+    latestByCluster,
+    latestFailedFixRows,
+    latestBlockedRows,
+    latestSkippedRows,
+  });
+  const finalizerReport = readFinalizerReport();
   const cleanClusters = latestByCluster.filter(
     (record) =>
       record.workflow_conclusion === "success" &&
@@ -368,6 +376,30 @@ ${renderMetricRow(
 ${renderMetricRow("Low-signal PR closes", totals.lowSignalCloses, percent(totals.lowSignalCloses, totals.closed))}
 ${renderMetricRow("Blocked mutation attempts", totals.blocked, percent(totals.blocked, totals.mutationAttempts))}
 ${renderMetricRow("Skipped mutation attempts", totals.skipped, percent(totals.skipped, totals.mutationAttempts))}
+
+### Clusters Needing Inspection
+
+| Cluster | State | Source job | Reason | Report | Run |
+| --- | --- | --- | --- | --- | --- |
+${renderInspectionRows(inspectionRows.slice(0, 25))}
+
+### Fix Failure Queue
+
+| Cluster | Status | Target | Branch/PR | Reason | Run |
+| --- | --- | --- | --- | --- | --- |
+${renderFixFailureRows(latestFailedFixRows.slice(0, 25))}
+
+### Top Blocked Reasons
+
+| Reason | Latest count | Example cluster |
+| --- | ---: | --- |
+${renderBlockedReasonRows([...latestBlockedRows, ...latestSkippedRows])}
+
+### Open PR Finalizer Queue
+
+| PR | Title | Cluster | Branch | Blockers | Next action |
+| --- | --- | --- | --- | --- | --- |
+${renderFinalizerRows(finalizerReport)}
 
 ### Latest ProjectClownfish Closures
 
@@ -628,6 +660,154 @@ function renderRecentClosureRows(rows) {
     )
     .map((row) => `| ${row} |`)
     .join("\n");
+}
+
+function buildInspectionRows({ latestByCluster, latestFailedFixRows, latestBlockedRows, latestSkippedRows }) {
+  const byCluster = new Map();
+  for (const record of latestByCluster) {
+    if (record.workflow_conclusion === "failure") {
+      addInspectionRow(byCluster, record, "workflow failure", record.summary || "cluster worker failed");
+    }
+    for (const item of record.needs_human ?? []) {
+      addInspectionRow(byCluster, record, "needs human", inspectionReason(item) || record.summary);
+    }
+  }
+  for (const row of latestFailedFixRows) {
+    addInspectionRow(byCluster, row.record, `fix ${row.action.status}`, actionReason(row.action));
+  }
+  for (const row of [...latestBlockedRows, ...latestSkippedRows]) {
+    addInspectionRow(byCluster, row.record, `apply ${row.action.status}`, actionReason(row.action));
+  }
+  return [...byCluster.values()].sort((left, right) =>
+    String(right.record.published_at ?? "").localeCompare(String(left.record.published_at ?? "")),
+  );
+}
+
+function addInspectionRow(byCluster, record, state, reason) {
+  if (!record?.cluster_id) return;
+  const current = byCluster.get(record.cluster_id);
+  const next = { record, state, reason: compactReason(reason || record.summary || "inspection needed") };
+  if (!current || inspectionRank(next.state) > inspectionRank(current.state)) {
+    byCluster.set(record.cluster_id, next);
+  }
+}
+
+function inspectionRank(state) {
+  if (String(state).startsWith("workflow")) return 5;
+  if (String(state).startsWith("fix failed")) return 4;
+  if (String(state).startsWith("fix blocked")) return 3;
+  if (String(state).startsWith("apply blocked")) return 2;
+  return 1;
+}
+
+function renderInspectionRows(rows) {
+  if (rows.length === 0) return "| _None_ |  |  |  |  |  |";
+  return rows
+    .map(({ record, state, reason }) =>
+      [
+        markdownTableLink(record.cluster_id, clusterReportPath(record)),
+        tableCell(state),
+        tableCell(record.source_job ?? ""),
+        tableCell(reason),
+        markdownTableLink("report", clusterReportPath(record)),
+        markdownTableLink(record.run_id || "run", record.run_url),
+      ].join(" | "),
+    )
+    .map((row) => `| ${row} |`)
+    .join("\n");
+}
+
+function renderFixFailureRows(rows) {
+  if (rows.length === 0) return "| _None_ |  |  |  |  |  |";
+  return rows
+    .map(({ record, action }) =>
+      [
+        markdownTableLink(record.cluster_id, clusterReportPath(record)),
+        tableCell(action.status),
+        tableCell(action.target ?? ""),
+        tableCell(action.pr ?? action.url ?? action.branch ?? ""),
+        tableCell(actionReason(action)),
+        markdownTableLink(record.run_id || "run", record.run_url),
+      ].join(" | "),
+    )
+    .map((row) => `| ${row} |`)
+    .join("\n");
+}
+
+function renderBlockedReasonRows(rows) {
+  const counts = new Map();
+  for (const row of rows) {
+    const reason = compactReason(actionReason(row.action) || "unknown");
+    const current = counts.get(reason);
+    counts.set(reason, {
+      reason,
+      count: (current?.count ?? 0) + 1,
+      record: current?.record ?? row.record,
+    });
+  }
+  const ranked = [...counts.values()].sort((left, right) => right.count - left.count || left.reason.localeCompare(right.reason));
+  if (ranked.length === 0) return "| _None_ | 0 |  |";
+  return ranked
+    .slice(0, 15)
+    .map((row) =>
+      [
+        tableCell(row.reason),
+        row.count,
+        markdownTableLink(row.record.cluster_id, clusterReportPath(row.record)),
+      ].join(" | "),
+    )
+    .map((row) => `| ${row} |`)
+    .join("\n");
+}
+
+function renderFinalizerRows(report) {
+  const prs = Array.isArray(report?.prs) ? report.prs : [];
+  if (prs.length === 0) return "| _None_ |  |  |  |  |  |";
+  return prs
+    .slice(0, 25)
+    .map((pr) =>
+      [
+        markdownTableLink(`#${pr.number}`, pr.url),
+        tableCell(pr.title),
+        tableCell(pr.cluster_id ?? ""),
+        tableCell(pr.branch ?? ""),
+        tableCell((pr.blockers ?? []).join(", ") || "ready"),
+        tableCell(pr.recommended_next_action ?? ""),
+      ].join(" | "),
+    )
+    .map((row) => `| ${row} |`)
+    .join("\n");
+}
+
+function actionReason(action) {
+  return compactReason(
+    [
+      action?.code,
+      action?.reason,
+    ]
+      .filter(Boolean)
+      .join(": "),
+  );
+}
+
+function inspectionReason(item) {
+  if (typeof item === "string") return item;
+  if (!item || typeof item !== "object") return "";
+  return item.reason ?? item.summary ?? item.title ?? item.ref ?? JSON.stringify(item);
+}
+
+function compactReason(value) {
+  return truncate(String(value ?? "").replace(/\s+/g, " ").trim(), 160);
+}
+
+function readFinalizerReport() {
+  const filePath = path.join(repoRoot(), "results", "finalize-open-prs.json");
+  if (!fs.existsSync(filePath)) return null;
+  try {
+    return readJson(filePath);
+  } catch {
+    return null;
+  }
 }
 
 function buildTrackedPrRows(records) {

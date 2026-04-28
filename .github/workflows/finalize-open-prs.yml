@@ -1,0 +1,87 @@
+name: finalize open PRs
+
+on:
+  workflow_dispatch:
+    inputs:
+      execute:
+        description: "Dispatch repair workers for actionable open PRs"
+        required: true
+        default: false
+        type: boolean
+      max_prs:
+        description: "Maximum open PRs to dispatch"
+        required: true
+        default: "5"
+        type: string
+      runner:
+        description: "Runner label for cluster planning/review work"
+        required: true
+        default: blacksmith-4vcpu-ubuntu-2404
+        type: string
+      execution_runner:
+        description: "Runner label for fix/apply execution work"
+        required: true
+        default: blacksmith-16vcpu-ubuntu-2404
+        type: string
+
+permissions:
+  contents: write
+  actions: write
+  pull-requests: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  finalize:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+
+      - name: Finalize open ProjectClownfish PRs
+        env:
+          GH_TOKEN: ${{ secrets.CLOWNFISH_GH_TOKEN || github.token }}
+          CLOWNFISH_ALLOW_EXECUTE: ${{ inputs.execute && (vars.CLOWNFISH_ALLOW_EXECUTE || '1') || '0' }}
+          CLOWNFISH_ALLOW_FIX_PR: ${{ inputs.execute && (vars.CLOWNFISH_ALLOW_FIX_PR || '1') || '0' }}
+        run: |
+          args=(
+            --write-report
+            --dispatch-repairs
+            --max-prs "${{ inputs.max_prs }}"
+            --runner "${{ inputs.runner }}"
+            --execution-runner "${{ inputs.execution_runner }}"
+          )
+          if [ "${{ inputs.execute }}" = "true" ]; then
+            args+=(--execute)
+          fi
+          npm run finalize-open-prs -- "${args[@]}"
+          npm run publish-result
+
+      - name: Commit finalizer ledger
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md apply-report.json results/finalize-open-prs.json results/finalize-open-prs.md
+          if [ -f results/finalize-open-prs-dispatch.json ]; then
+            git add results/finalize-open-prs-dispatch.json
+          fi
+          if git diff --cached --quiet; then
+            echo "No finalizer changes"
+            exit 0
+          fi
+          git commit -m "chore: record open PR finalizer"
+          for attempt in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            git fetch origin main
+            git rebase -X theirs origin/main
+          done
+          git push
