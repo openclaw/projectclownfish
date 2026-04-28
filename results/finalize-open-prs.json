@@ -3,17 +3,17 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-28T18:33:51.864Z",
-  "count": 16,
+  "generated_at": "2026-04-28T18:35:05.228Z",
+  "count": 17,
   "summary": {
-    "open_prs": 16,
+    "open_prs": 17,
     "ready_candidates": 0,
     "security_hold": 3,
     "needs_rebase": 14,
     "mergeability_unknown": 0,
-    "needs_checks": 13,
+    "needs_checks": 14,
     "needs_review": 7,
-    "needs_merge_preflight": 16,
+    "needs_merge_preflight": 17,
     "needs_result_backfill": 12
   },
   "dispatch": {
@@ -27,6 +27,96 @@
     "candidates": []
   },
   "prs": [
+    {
+      "number": 73737,
+      "title": "fix(gateway): reduce session-store clone memory growth",
+      "url": "https://github.com/openclaw/openclaw/pull/73737",
+      "branch": "clownfish/ghcrawl-156648-autonomous-smoke",
+      "head_sha": "3e528fc2ca5aea95c0d86e5a0b0ff8c73ebde545",
+      "cluster_id": "ghcrawl-156648-autonomous-smoke",
+      "job_path": "jobs/openclaw/inbox/ghcrawl-156648-autonomous-smoke.md",
+      "updated_at": "2026-04-28T18:34:15Z",
+      "mergeable": "MERGEABLE",
+      "merge_state_status": "UNSTABLE",
+      "review_decision": "",
+      "security_hold": false,
+      "checks": {
+        "total": 65,
+        "counts": {
+          "CANCELLED": 3,
+          "SKIPPED": 10,
+          "SUCCESS": 11,
+          "IN_PROGRESS": 41
+        },
+        "blockers": [
+          "CI / build-artifacts:IN_PROGRESS",
+          "CI / checks-fast-bundled:IN_PROGRESS",
+          "CI / checks-fast-contracts-plugins:IN_PROGRESS",
+          "CI / checks-fast-contracts-channels-a:IN_PROGRESS",
+          "CI / checks-fast-contracts-channels-b:IN_PROGRESS",
+          "CI / checks-fast-contracts-channels-c:IN_PROGRESS",
+          "CI / checks-fast-protocol:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-1:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-2:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-3:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-4:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-5:IN_PROGRESS",
+          "CI / checks-node-extensions-shard-6:IN_PROGRESS",
+          "CI / checks-node-core-fast-support:IN_PROGRESS",
+          "CI / checks-node-core-src-security:IN_PROGRESS",
+          "CI / checks-node-core-ui:IN_PROGRESS",
+          "CI / checks-node-core-runtime-infra:IN_PROGRESS",
+          "CI / checks-node-core-runtime-media-ui:IN_PROGRESS",
+          "CI / checks-node-core-runtime-shared:IN_PROGRESS",
+          "CI / checks-node-agentic-control-plane:IN_PROGRESS",
+          "CI / checks-node-agentic-commands:IN_PROGRESS",
+          "CI / checks-node-agentic-agents:IN_PROGRESS",
+          "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
+          "CI / checks-node-agentic-plugins:IN_PROGRESS",
+          "CI / checks-node-auto-reply-core-top-level:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-agent-runner:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-dispatch:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-commands-state-routing:IN_PROGRESS",
+          "CI / check-preflight-guards:IN_PROGRESS",
+          "CI / check-prod-types:IN_PROGRESS",
+          "CI / check-lint:IN_PROGRESS",
+          "CI / check-policy-guards:IN_PROGRESS",
+          "CI / check-test-types:IN_PROGRESS",
+          "CI / check-strict-smoke:IN_PROGRESS",
+          "CI / check-additional-boundaries:IN_PROGRESS",
+          "CI / check-additional-extension-channels:IN_PROGRESS",
+          "CI / check-additional-extension-bundled:IN_PROGRESS",
+          "CI / check-additional-extension-package-boundary:IN_PROGRESS",
+          "CI / check-additional-runtime-topology-architecture:IN_PROGRESS",
+          "CI / check-docs:IN_PROGRESS",
+          "Greptile Review:IN_PROGRESS"
+        ]
+      },
+      "review_threads": {
+        "status": "clean",
+        "reason": null,
+        "unresolved_count": 0,
+        "examples": []
+      },
+      "review_bots": {
+        "count": 0,
+        "latest": []
+      },
+      "latest_record": {
+        "run_id": "25023016010",
+        "run_url": "https://github.com/openclaw/clownfish/actions/runs/25023016010",
+        "cluster_id": "ghcrawl-156648-autonomous-smoke",
+        "published_at": "2026-04-27T22:42:25.780Z",
+        "workflow_conclusion": "success",
+        "apply_action": null
+      },
+      "blockers": [
+        "needs_merge_state:UNSTABLE",
+        "needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-fast-bundled:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS",
+        "needs_merge_preflight"
+      ],
+      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
+    },
     {
       "number": 73724,
       "title": "fix(cli): avoid false local gateway unreachable on probe timeout",
@@ -771,14 +861,14 @@
           "CANCELLED": 1,
           "SKIPPED": 9,
           "SUCCESS": 50,
-          "IN_PROGRESS": 3,
-          "FAILURE": 6
+          "FAILURE": 8,
+          "IN_PROGRESS": 1
         },
         "blockers": [
-          "CI / checks-fast-bundled:IN_PROGRESS",
+          "CI / checks-fast-bundled:FAILURE",
           "CI / checks-node-extensions-shard-4:FAILURE",
           "CI / checks-node-core-runtime-infra:FAILURE",
-          "CI / checks-node-agentic-control-plane:IN_PROGRESS",
+          "CI / checks-node-agentic-control-plane:FAILURE",
           "CI / checks-node-agentic-plugin-sdk:FAILURE",
           "CI / checks-node-agentic-plugins:IN_PROGRESS",
           "CI / checks-node-channels:FAILURE",
@@ -813,7 +903,7 @@
       },
       "blockers": [
         "needs_merge_state:UNSTABLE",
-        "needs_checks:CI / checks-fast-bundled:IN_PROGRESS; CI / checks-node-extensions-shard-4:FAILURE; CI / checks-node-core-runtime-infra:FAILURE",
+        "needs_checks:CI / checks-fast-bundled:FAILURE; CI / checks-node-extensions-shard-4:FAILURE; CI / checks-node-core-runtime-infra:FAILURE",
         "needs_merge_preflight"
       ],
       "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"

@@ -1,0 +1,124 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156706-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25070735598",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25070735598",
+  "head_sha": "4560303d9b416b8c1cc00cdb9c2164d194700894",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156706-autonomous-smoke.md",
+  "published_at": "2026-04-28T18:34:25.209Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/71478",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/71414",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/71478",
+  "summary": "Hydrated state shows the original overflow representative #41290 and same-root PRs #61386/#61638 are already closed, and the heartbeat setTimeout overflow was already fixed on main by merged PR #71478. The remaining open refs #62294, #62308, and #62310 are related heartbeat reliability/App Nap/interval-enforcement work, not true duplicates of the overflow fix. No merge or close action is planned because the only open implementation candidate in this cluster family (#62310) is related work with failing checks and review-follow-up context, and already-closed refs are evidence only.",
+  "actions": [
+    {
+      "target": "#41240",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#71478",
+      "candidate_fix": "#71478",
+      "reason": "Already closed; retained only as historical evidence for the merged overflow fix."
+    },
+    {
+      "target": "#41290",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71478",
+      "candidate_fix": "#71478",
+      "reason": "Original representative is obsolete and already closed; canonical path is merged PR #71478."
+    },
+    {
+      "target": "#61386",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71478",
+      "candidate_fix": "#71478",
+      "reason": "Already closed and superseded by the merged canonical overflow implementation."
+    },
+    {
+      "target": "#61546",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#71478",
+      "candidate_fix": "#71478",
+      "reason": "Already closed as fixed by the merged overflow scheduler clamp."
+    },
+    {
+      "target": "#61638",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#71478",
+      "candidate_fix": "#71478",
+      "reason": "Already closed; schema rejection is a superseded policy approach, while current main contains the maintained scheduler fix."
+    },
+    {
+      "target": "#62294",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": "#62310",
+      "reason": "Related follow-up issue with distinct root cause and active implementation candidates."
+    },
+    {
+      "target": "#62308",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related launchd/App Nap follow-up, not part of the overflow closeout path."
+    },
+    {
+      "target": "#62310",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Useful related contributor PR remains open but is not merge-ready under the merge policy."
+    },
+    {
+      "target": "#71414",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#71478",
+      "candidate_fix": "#71478",
+      "reason": "Already closed by the merged canonical overflow PR."
+    },
+    {
+      "target": "#71478",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#71478",
+      "candidate_fix": "#71478",
+      "reason": "Merged canonical path for the original heartbeat timer overflow family."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 7,
+    "keep_related": 3
+  },
+  "action_status_counts": {
+    "skipped": 7,
+    "planned": 3
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
