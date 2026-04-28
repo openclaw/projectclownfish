@@ -1,0 +1,198 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156582-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25069721873",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25069721873",
+  "head_sha": "2a04089b3cf2fdf8500369cf552da7581e8f16f0",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156582-autonomous-smoke.md",
+  "published_at": "2026-04-28T18:24:30.739Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/30759",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/30759",
+  "canonical_pr": null,
+  "summary": "Canonical hint #41985 is now closed as implemented. The surviving ordinary follow-up is #30759 for remaining document extraction behavior; #48700 is related but broader because it adds Excel/PPT scope. Security-sensitive hydrated refs #30389 and #72299 are quarantined to central security handling. No direct GitHub mutations were performed.",
+  "actions": [
+    {
+      "target": "#30389",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive item must be routed to central OpenClaw security handling without ProjectClownfish close/comment/label/fix mutation."
+    },
+    {
+      "target": "#30759",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#30759",
+      "candidate_fix": null,
+      "reason": "Best surviving ordinary canonical for the residual document extraction gap."
+    },
+    {
+      "target": "#48700",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#30759",
+      "candidate_fix": null,
+      "reason": "Same feature family as #30759, but not a high-confidence duplicate because it has unique Office format scope."
+    },
+    {
+      "target": "cluster:ghcrawl-156582-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#30759",
+      "candidate_fix": null,
+      "reason": "Build a narrow follow-up fix artifact for the remaining document extraction behavior instead of closing related open issues."
+    },
+    {
+      "target": "cluster:ghcrawl-156582-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#30759",
+      "candidate_fix": null,
+      "reason": "A concrete non-mutating fix plan is needed for the surviving ordinary bug/feature gap."
+    },
+    {
+      "target": "#41985",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#30759",
+      "candidate_fix": "#72299",
+      "reason": "Historical canonical hint is already closed; retain as evidence only."
+    },
+    {
+      "target": "#41992",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Closed duplicate evidence only."
+    },
+    {
+      "target": "#43242",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Closed duplicate evidence only."
+    },
+    {
+      "target": "#47933",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#30759",
+      "candidate_fix": "#72299",
+      "reason": "Already closed as implemented for the core upload/download transport request."
+    },
+    {
+      "target": "#54199",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#30759",
+      "candidate_fix": "#72299",
+      "reason": "Already closed as implemented for non-image file selection/upload."
+    },
+    {
+      "target": "#56298",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Closed duplicate evidence only."
+    },
+    {
+      "target": "#63094",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Closed duplicate evidence only."
+    },
+    {
+      "target": "#67622",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#41985",
+      "candidate_fix": null,
+      "reason": "Closed duplicate evidence only."
+    },
+    {
+      "target": "#69185",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#30759",
+      "candidate_fix": "#72299",
+      "reason": "Closed superseded/fixed context only."
+    },
+    {
+      "target": "#70947",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#72299",
+      "reason": "Useful contributor PR was already superseded by replacement PR #72299 with credit preserved."
+    },
+    {
+      "target": "#72299",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive linked PR must be routed to central OpenClaw security handling; no ProjectClownfish mutation should target it."
+    }
+  ],
+  "action_counts": {
+    "route_security": 2,
+    "keep_canonical": 1,
+    "keep_related": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_closed": 10
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "skipped": 10
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "new_fix_pr",
+      "reason": "validation command failed (pnpm check:changed): [check:changed] lanes=all [check:changed] extension-impacting surface; extension typecheck included [check:changed] extensions/document-extract/document-extractor.test.ts: extension test [check:changed] extensions/document-extract/document-extractor.ts: extension production [check:changed] extensions/document-extract/package.json: extension production [check:changed] pnpm-lock.yaml: root config/package surface [check:changed] src/gateway/server-methods/chat.directive-tags.test.ts: core test [check:changed] src/media-understanding/apply.test.ts: core test [check:changed] src/media-understanding/apply.ts: core production [check:changed] src/media/input-files.ts: core production [check:changed] conflict markers [check:changed] changelog attributions [check:changed] guarded extension wildcard re-exports [check:changed] plugin-sdk wildcard re-exports [check:changed] runtime sidecar loader guard [check:changed] typecheck all [check:changed] summary 537ms ok conflict markers 208ms ok changelog attributions 225ms ok guarded extension wildcard re-exports 214ms ok plugin-sdk wildcard re-exports 3.13s ok runtime sidecar loader guard 22.18s failed:2 typecheck all",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}
