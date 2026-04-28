@@ -19,14 +19,10 @@ require_human_for:
   - unclear_canonical
   - broad_code_delta
 canonical:
-  - "#53626"
+  - "#53667"
 candidates:
-  - "#52178"
-  - "#53626"
   - "#53667"
 cluster_refs:
-  - "#52178"
-  - "#53626"
   - "#53667"
 security_policy: central_security_only
 security_sensitive: false
@@ -35,8 +31,8 @@ allow_fix_pr: true
 allow_merge: true
 allow_post_merge_close: true
 require_fix_before_close: true
-canonical_hint: "ghcrawl representative #53626 is open; worker must verify it is still the best live canonical."
-notes: "Generated from ghcrawl run cluster 156860 on 2026-04-26."
+canonical_hint: "Fresh preflight found #53667 as the only live candidate; worker must verify it is still merge/fix-ready before any planned action."
+notes: "Generated from ghcrawl run cluster 156860 on 2026-04-26. Requeued after the previous run failed stale preflight: #53626 no longer resolves and #52178 is closed."
 ---
 
 # GHCrawl Cluster 156860
@@ -52,8 +48,8 @@ Cluster shape from ghcrawl:
 - total members: 3
 - issues: 0
 - pull requests: 3
-- open candidates in local store: 3
-- representative: #53626, currently open in local store
+- open candidates in live store: 1
+- representative: #53667, currently open in live GitHub
 - latest member update: 2026-04-24T18:56:29.383Z
 
 ## Goal
@@ -62,12 +58,11 @@ Run one live autonomous classification pass. Classify open candidates only, veri
 
 ## Member Inventory
 
-Closed context refs:
+Closed or stale context refs:
 
-- none
+- #52178 fix(gateway): recognize control-ui and webchat clients as valid exec …
+- #53626 warn on startup when legacy CLAWDBOT_* env vars are present (no longer resolves in live GitHub)
 
 Open candidates:
 
-- #52178 fix(gateway): recognize control-ui and webchat clients as valid exec …
-- #53626 warn on startup when legacy CLAWDBOT_* env vars are present
 - #53667 fix: warn when legacy CLAWDBOT_*/MOLTBOT_* env vars are detected
