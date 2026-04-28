@@ -1,0 +1,170 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156617-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25035222674",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25035222674",
+  "head_sha": "11314bb0977e829eeb62cc0be17e0c531c9fe13a",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156617-autonomous-smoke.md",
+  "published_at": "2026-04-28T05:28:32.128Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/63654",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/63654",
+  "canonical_pr": null,
+  "summary": "Classified the Qwen Coding Plan qwen3.6-plus cluster from the hydrated preflight artifact. #63654 remains the live canonical issue; closed duplicate/superseded refs stay closed; #66367 and #72664 are quarantined to central security handling; a narrow credited replacement fix artifact is needed because no non-quarantined merge-ready PR is available.",
+  "actions": [
+    {
+      "target": "#19054",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": "#63654",
+      "candidate_fix": null,
+      "reason": "Already closed and independent of the canonical Coding Plan qwen3.6-plus endpoint filtering issue."
+    },
+    {
+      "target": "#63654",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#63654",
+      "candidate_fix": null,
+      "reason": "#63654 is the best surviving non-security canonical issue for the shared user-visible failure."
+    },
+    {
+      "target": "#63987",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#63654",
+      "candidate_fix": null,
+      "reason": "Already closed; useful source work should be credited in the replacement fix path, not mutated directly."
+    },
+    {
+      "target": "#64672",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63654",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate of the canonical Coding Plan qwen3.6-plus blockage."
+    },
+    {
+      "target": "#66095",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#63654",
+      "candidate_fix": null,
+      "reason": "Already closed related context with a different resolved root cause."
+    },
+    {
+      "target": "#66367",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": "#63654",
+      "candidate_fix": null,
+      "reason": "Quarantine exact security-sensitive PR to central OpenClaw security handling while continuing non-security classification."
+    },
+    {
+      "target": "#69027",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63654",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate within the canonical Qwen Coding Plan qwen3.6-plus cluster."
+    },
+    {
+      "target": "#69274",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63654",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate of the canonical Coding Plan qwen3.6-plus blockage."
+    },
+    {
+      "target": "#70927",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#63654",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate within the canonical Qwen Coding Plan qwen3.6-plus cluster."
+    },
+    {
+      "target": "#70957",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#63654",
+      "candidate_fix": null,
+      "reason": "Already closed superseded contributor PR; keep as historical credit/evidence only."
+    },
+    {
+      "target": "#72664",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": "#63654",
+      "candidate_fix": null,
+      "reason": "Quarantine exact security-sensitive replacement PR to central OpenClaw security handling."
+    },
+    {
+      "target": "cluster:ghcrawl-156617-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#63654",
+      "candidate_fix": null,
+      "reason": "A narrow credited replacement fix path is needed for the non-security canonical issue because no non-quarantined merge-ready PR exists."
+    },
+    {
+      "target": "cluster:ghcrawl-156617-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#63654",
+      "candidate_fix": null,
+      "reason": "The executor needs a concrete fix artifact to create or repair a safe non-security branch for #63654."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 8,
+    "keep_canonical": 1,
+    "route_security": 2,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 8,
+    "planned": 5
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "replace_uneditable_branch",
+      "reason": "base branch advanced after validation and clownfish/ghcrawl-156617-autonomous-smoke needs a fresh rebase pass: Rebasing (1/2) error: could not apply a6e56b2e2f... fix(qwen): allow explicit qwen3.6-plus on Coding Plan hint: Resolve all conflicts manually, mark them as resolved with hint: \"git add/rm <conflicted_files>\", then run \"git rebase --continue\". hint: You can instead skip this commit: run \"git rebase --skip\". hint: To abort and get back to the state before \"git rebase\", run \"git rebase --abort\". hint: Disable this message with \"git config set advice.mergeConflict false\" Could not apply a6e56b2e2f... # fix(qwen): allow explicit qwen3.6-plus on Coding Plan",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}
