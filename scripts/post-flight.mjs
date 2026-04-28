@@ -152,7 +152,25 @@ function finalizeFixPr(action) {
     };
   }
 
-  ghWithRetry(["pr", "merge", String(parsed.number), "--repo", result.repo, "--squash"]);
+  try {
+    ghWithRetry(["pr", "merge", String(parsed.number), "--repo", result.repo, "--squash"]);
+  } catch (error) {
+    const detail = commandErrorText(error);
+    if (isRecoverableMergeRace(detail)) {
+      const latestView = fetchPullRequestView(result.repo, parsed.number);
+      return {
+        ...prBase,
+        status: "blocked",
+        reason: `merge attempt needs branch refresh: ${compactText(detail, 500)}`,
+        mergeable: latestView.mergeable ?? null,
+        merge_state_status: latestView.mergeStateStatus ?? null,
+        review_decision: latestView.reviewDecision ?? null,
+        retry_recommended: true,
+        waited_ms: waitedMs,
+      };
+    }
+    throw error;
+  }
   const merged = fetchPullRequest(result.repo, parsed.number);
   return {
     ...prBase,
@@ -387,17 +405,19 @@ function parsePullRequestUrl(value) {
 
 function ghJson(ghArgs) {
   const text = ghWithRetry(ghArgs);
-  return JSON.parse(text || "null");
+  return JSON.parse(stripAnsi(text) || "null");
 }
 
 function ghWithRetry(ghArgs, attempts = 6) {
+  const env = { ...process.env, NO_COLOR: "1", CLICOLOR: "0" };
+  delete env.FORCE_COLOR;
   let lastError;
   for (let attempt = 0; attempt < attempts; attempt += 1) {
     try {
       return execFileSync("gh", ghArgs, {
         cwd: repoRoot(),
         encoding: "utf8",
-        env: process.env,
+        env,
         maxBuffer: 64 * 1024 * 1024,
         stdio: ["ignore", "pipe", "pipe"],
       }).trim();
@@ -408,6 +428,33 @@ function ghWithRetry(ghArgs, attempts = 6) {
     }
   }
   throw lastError;
+}
+
+function stripAnsi(text) {
+  return String(text ?? "").replace(/\u001b\[[0-?]*[ -/]*[@-~]/g, "");
+}
+
+function compactText(text, maxChars) {
+  const value = stripAnsi(String(text ?? "")).replace(/\s+/g, " ").trim();
+  if (value.length <= maxChars) return value;
+  return `${value.slice(0, maxChars - 3)}...`;
+}
+
+function commandErrorText(error) {
+  return [
+    error?.stderr,
+    error?.stdout,
+    error instanceof Error ? error.message : String(error ?? ""),
+  ]
+    .filter(Boolean)
+    .join("\n")
+    .trim();
+}
+
+function isRecoverableMergeRace(message) {
+  return /pull request has merge conflicts|merge conflict|base branch was modified|head branch was modified|not mergeable/i.test(
+    String(message ?? ""),
+  );
 }
 
 function shouldRetryGh(error) {
