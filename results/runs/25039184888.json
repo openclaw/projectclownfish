@@ -1,0 +1,128 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156756-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25039184888",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25039184888",
+  "head_sha": "9f4dbb74ad3575c098e74949579df9d60841c3bb",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156756-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:14:59.116Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/13616",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/13616",
+  "canonical_pr": null,
+  "summary": "Classified the hydrated backup/restore cluster without direct GitHub mutation. The original representative #62461 is already closed; #13616 is the best live canonical umbrella based on the latest maintainer signal. #45993 is overlapping migration/import scope but fix-first policy blocks duplicate closeout until the canonical native restore/import path has a concrete fix. Security-sensitive linked PRs are quarantined only for central security handling.",
+  "actions": [
+    {
+      "target": "#13616",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#13616",
+      "candidate_fix": null,
+      "reason": "Best live canonical issue for first-party backup restore/import and disaster recovery scope."
+    },
+    {
+      "target": "#45993",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#13616",
+      "candidate_fix": null,
+      "reason": "Clear duplicate of the live canonical umbrella, but closeout is blocked on the canonical fix path or fix PR because require_fix_before_close is enabled."
+    },
+    {
+      "target": "#62461",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#13616",
+      "candidate_fix": null,
+      "reason": "Already closed; no mutation planned."
+    },
+    {
+      "target": "#18104",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine this exact security-sensitive linked PR for central OpenClaw security handling only."
+    },
+    {
+      "target": "#19052",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine this exact security-sensitive linked PR for central OpenClaw security handling only."
+    },
+    {
+      "target": "#18106",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#13616",
+      "candidate_fix": null,
+      "reason": "Already closed historical context; no mutation planned."
+    },
+    {
+      "target": "#57515",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed independent bug context; no mutation planned."
+    },
+    {
+      "target": "#67417",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#13616",
+      "candidate_fix": null,
+      "reason": "Related backup-create reliability bug; leave open outside this dedupe closeout."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_duplicate": 1,
+    "keep_closed": 3,
+    "route_security": 2,
+    "keep_related": 1
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "blocked": 1,
+    "skipped": 3
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "skipped": 1
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#45993",
+      "action": "close_duplicate",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#13616",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "ghcrawl-156756-autonomous-smoke:#45993:close_duplicate_blocked_by_fix_first:2026-03-14T10:34:42Z",
+      "reason": "Clear duplicate of the live canonical umbrella, but closeout is blocked on the canonical fix path or fix PR because require_fix_before_close is enabled.",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}

@@ -1,20 +1,20 @@
 # Open ProjectClownfish PR Finalizer
 
-Generated: 2026-04-28T07:14:29.297Z
+Generated: 2026-04-28T07:15:25.587Z
 
 ## Summary
 
 | Metric | Count |
 | --- | ---: |
-| open_prs | 5 |
+| open_prs | 6 |
 | ready_candidates | 0 |
 | security_hold | 5 |
 | needs_rebase | 5 |
 | mergeability_unknown | 0 |
-| needs_checks | 4 |
+| needs_checks | 5 |
 | needs_review | 1 |
-| needs_merge_preflight | 5 |
-| needs_result_backfill | 0 |
+| needs_merge_preflight | 6 |
+| needs_result_backfill | 1 |
 
 ## Dispatch
 
@@ -35,3 +35,4 @@ Status: report_only
 | [#72615](https://github.com/openclaw/openclaw/pull/72615) | fix(memory-wiki): route bridge CLI through gateway | ghcrawl-156579-autonomous-smoke | CONFLICTING | DIRTY | SUCCESS:55 SKIPPED:9 FAILURE:2; blockers:2 | security_route, needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight | route to central security triage |
 | [#72409](https://github.com/openclaw/openclaw/pull/72409) | fix(plugins): suppress false duplicate-id warnings across origins | ghcrawl-207039-agentic-merge | CONFLICTING | DIRTY | SUCCESS:54 SKIPPED:9 FAILURE:3; blockers:3 | security_route, needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / checks-fast-bundled:FAILURE; CI / checks-node-agentic-plugins:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight | route to central security triage |
 | [#72326](https://github.com/openclaw/openclaw/pull/72326) | fix(cron): infer session agentId when omitted | ghcrawl-165998-agentic-merge | CONFLICTING | DIRTY | SUCCESS:56 SKIPPED:9 FAILURE:2; blockers:2 | security_route, needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / checks-node-agentic-agents:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight | route to central security triage |
+| [#73361](https://github.com/openclaw/openclaw/pull/73361) | fix(ui): confirm button-triggered new session resets | ghcrawl-156695-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:1 QUEUED:2 IN_PROGRESS:42 SUCCESS:13 SKIPPED:9; blockers:43 | needs_merge_state:UNSTABLE, needs_checks:ClawSweeper Dispatch / dispatch:IN_PROGRESS; CI / build-artifacts:IN_PROGRESS; CI / checks-fast-bundled:IN_PROGRESS, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |

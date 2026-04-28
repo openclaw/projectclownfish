@@ -5338,5 +5338,25 @@
     "merge_commit_sha": null,
     "live_state": null,
     "live_updated_at": null
+  },
+  {
+    "repo": "openclaw/openclaw",
+    "run_id": "25039184888",
+    "run_url": "https://github.com/openclaw/clownfish/actions/runs/25039184888",
+    "cluster_id": "ghcrawl-156756-autonomous-smoke",
+    "published_at": "2026-04-28T07:14:59.116Z",
+    "target": "#45993",
+    "action": "close_duplicate",
+    "status": "skipped",
+    "classification": "duplicate",
+    "canonical": "#13616",
+    "candidate_fix": null,
+    "title": null,
+    "idempotency_key": "ghcrawl-156756-autonomous-smoke:#45993:close_duplicate_blocked_by_fix_first:2026-03-14T10:34:42Z",
+    "reason": "Clear duplicate of the live canonical umbrella, but closeout is blocked on the canonical fix path or fix PR because require_fix_before_close is enabled.",
+    "merged_at": null,
+    "merge_commit_sha": null,
+    "live_state": null,
+    "live_updated_at": null
   }
 ]
