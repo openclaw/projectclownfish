@@ -1,0 +1,97 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156782-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25039337140",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25039337140",
+  "head_sha": "e6453a9d093e9f8918562116fbd0af7d87aceafc",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156782-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:18:16.637Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/40880",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/40880",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/40950",
+  "summary": "Canonical drift resolved from closed #55068 to earlier open issue #40880, with open PR #40950 as the useful but not merge-ready implementation path. No GitHub mutations should be applied yet: #40950 needs branch repair, bot-review fixes, validation, and clean review before merge or post-merge closeout. Already-closed duplicates #55068 and #55074 remain historical evidence only.",
+  "actions": [
+    {
+      "target": "#40880",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#40880",
+      "candidate_fix": "#40950",
+      "reason": "#40880 is the earliest open focused tracker for the unresolved MEDIA_MAX_BYTES configurability bug and should remain the canonical issue."
+    },
+    {
+      "target": "#40950",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#40880",
+      "candidate_fix": "#40950",
+      "reason": "#40950 is useful and repairable, but not merge-ready. ProjectClownfish should repair the contributor branch rather than close or replace it."
+    },
+    {
+      "target": "cluster:ghcrawl-156782-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#40880",
+      "candidate_fix": "#40950",
+      "reason": "Build an executable repair artifact for the existing contributor PR branch so the executor can rebase, address bot findings, run review, validate, and then merge only if clean."
+    },
+    {
+      "target": "#55068",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#40880",
+      "candidate_fix": "#40950",
+      "reason": "Already closed duplicate; no mutation is valid."
+    },
+    {
+      "target": "#55074",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#40880",
+      "candidate_fix": "#40950",
+      "reason": "Already closed duplicate; no mutation is valid."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_closed": 2
+  },
+  "action_status_counts": {
+    "planned": 3,
+    "skipped": 2
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "repair_contributor_branch",
+      "reason": "fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}

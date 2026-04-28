@@ -1,20 +1,20 @@
 # Open ProjectClownfish PR Finalizer
 
-Generated: 2026-04-28T07:17:43.696Z
+Generated: 2026-04-28T07:18:43.537Z
 
 ## Summary
 
 | Metric | Count |
 | --- | ---: |
-| open_prs | 7 |
+| open_prs | 8 |
 | ready_candidates | 0 |
 | security_hold | 5 |
 | needs_rebase | 5 |
 | mergeability_unknown | 0 |
-| needs_checks | 6 |
-| needs_review | 1 |
-| needs_merge_preflight | 7 |
-| needs_result_backfill | 2 |
+| needs_checks | 7 |
+| needs_review | 2 |
+| needs_merge_preflight | 8 |
+| needs_result_backfill | 3 |
 
 ## Dispatch
 
@@ -30,8 +30,9 @@ Status: report_only
 
 | PR | Title | Cluster | Mergeable | Merge State | Checks | Blockers | Next action |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [#73362](https://github.com/openclaw/openclaw/pull/73362) | Fix default sandbox image fallback for python3-dependent mutations | ghcrawl-156718-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:1 IN_PROGRESS:25 SUCCESS:32 SKIPPED:8 FAILURE:1; blockers:26 | needs_merge_state:UNSTABLE, needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS; CI / build-artifacts:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
-| [#73361](https://github.com/openclaw/openclaw/pull/73361) | fix(ui): confirm button-triggered new session resets | ghcrawl-156695-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:1 SUCCESS:57 SKIPPED:9 IN_PROGRESS:3 FAILURE:3; blockers:6 | needs_merge_state:UNSTABLE, needs_checks:CI / checks-node-extensions-shard-5:IN_PROGRESS; CI / checks-node-agentic-plugin-sdk:IN_PROGRESS; CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
+| [#73365](https://github.com/openclaw/openclaw/pull/73365) | fix: allow steer messages during active non-streaming runs | ghcrawl-156681-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:3 IN_PROGRESS:39 SUCCESS:18 SKIPPED:8 FAILURE:1; blockers:40 | needs_merge_state:UNSTABLE, needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS; CI / build-artifacts:IN_PROGRESS; CI / checks-fast-bundled:IN_PROGRESS, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
+| [#73362](https://github.com/openclaw/openclaw/pull/73362) | Fix default sandbox image fallback for python3-dependent mutations | ghcrawl-156718-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:1 IN_PROGRESS:6 SUCCESS:52 SKIPPED:8 FAILURE:2; blockers:8 | needs_merge_state:UNSTABLE, needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS; CI / build-artifacts:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
+| [#73361](https://github.com/openclaw/openclaw/pull/73361) | fix(ui): confirm button-triggered new session resets | ghcrawl-156695-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:1 SUCCESS:61 SKIPPED:9 FAILURE:4; blockers:4 | needs_merge_state:UNSTABLE, unresolved review threads remain, needs_checks:CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE; CI / check-test-types:FAILURE; CI / check:FAILURE, needs_merge_preflight, needs_result_backfill | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#72664](https://github.com/openclaw/openclaw/pull/72664) | fix(qwen): allow explicit qwen3.6-plus on Coding Plan | ghcrawl-156617-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:1 SUCCESS:3 SKIPPED:2 | security_route, needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_merge_preflight | route to central security triage |
 | [#72621](https://github.com/openclaw/openclaw/pull/72621) | fix(whatsapp): recover stale listener after auth conflict churn | ghcrawl-156581-autonomous-smoke | CONFLICTING | DIRTY | SUCCESS:55 SKIPPED:9 FAILURE:2; blockers:2 | security_route, needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / checks-node-agentic-agents:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight | route to central security triage |
 | [#72615](https://github.com/openclaw/openclaw/pull/72615) | fix(memory-wiki): route bridge CLI through gateway | ghcrawl-156579-autonomous-smoke | CONFLICTING | DIRTY | SUCCESS:55 SKIPPED:9 FAILURE:2; blockers:2 | security_route, needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight | route to central security triage |
