@@ -1,18 +1,19 @@
 {
   "repo": "openclaw/openclaw",
   "head_prefix": "clownfish/",
-  "generated_at": "2026-04-27T06:57:21.916Z",
-  "count": 25,
+  "label": "clownfish",
+  "generated_at": "2026-04-28T05:12:52.225Z",
+  "count": 8,
   "summary": {
-    "open_prs": 25,
+    "open_prs": 8,
     "ready_candidates": 0,
-    "security_hold": 1,
-    "needs_rebase": 0,
-    "mergeability_unknown": 23,
-    "needs_checks": 15,
-    "needs_review": 8,
-    "needs_merge_preflight": 25,
-    "needs_result_backfill": 5
+    "security_hold": 0,
+    "needs_rebase": 7,
+    "mergeability_unknown": 0,
+    "needs_checks": 8,
+    "needs_review": 2,
+    "needs_merge_preflight": 8,
+    "needs_result_backfill": 0
   },
   "prs": [
     {
@@ -24,16 +25,15 @@
       "cluster_id": "ghcrawl-156617-autonomous-smoke",
       "job_path": "jobs/openclaw/inbox/ghcrawl-156617-autonomous-smoke.md",
       "updated_at": "2026-04-27T06:56:13Z",
-      "mergeable": "MERGEABLE",
-      "merge_state_status": "UNSTABLE",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
       "review_decision": "",
       "security_hold": false,
       "checks": {
         "total": 71,
         "counts": {
           "CANCELLED": 2,
-          "QUEUED": 1,
-          "SUCCESS": 57,
+          "SUCCESS": 58,
           "SKIPPED": 9,
           "FAILURE": 2
         },
@@ -68,532 +68,30 @@
           }
         ]
       },
-      "latest_record": null,
-      "blockers": [
-        "needs_merge_state:UNSTABLE",
-        "unresolved review threads remain",
-        "needs_checks:CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-core:FAILURE",
-        "needs_merge_preflight",
-        "needs_result_backfill"
-      ],
-      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
-    },
-    {
-      "number": 72662,
-      "title": "fix(docker): repair named-volume state directory ownership",
-      "url": "https://github.com/openclaw/openclaw/pull/72662",
-      "branch": "clownfish/ghcrawl-156624-autonomous-smoke",
-      "head_sha": "351eddc0d5922bf9dabf9d7f1b10351d88e4e26f",
-      "cluster_id": "ghcrawl-156624-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-156624-autonomous-smoke.md",
-      "updated_at": "2026-04-27T06:53:08Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 69,
-        "counts": {
-          "CANCELLED": 1,
-          "SUCCESS": 57,
-          "SKIPPED": 9,
-          "FAILURE": 2
-        },
-        "blockers": [
-          "CI / checks-node-core-runtime-shared:FAILURE",
-          "CI / checks-node-core:FAILURE"
-        ]
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 1,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72662#issuecomment-4324836431",
-            "submitted_at": "2026-04-27T06:50:26Z"
-          }
-        ]
-      },
-      "latest_record": null,
-      "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "needs_checks:CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-core:FAILURE",
-        "needs_merge_preflight",
-        "needs_result_backfill"
-      ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
-    },
-    {
-      "number": 72660,
-      "title": "fix(cli): tighten Windows restart policy-close health checks",
-      "url": "https://github.com/openclaw/openclaw/pull/72660",
-      "branch": "clownfish/ghcrawl-156629-autonomous-smoke",
-      "head_sha": "2372df95fe82bcd7415a6c0946acda3ce938864f",
-      "cluster_id": "ghcrawl-156629-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-156629-autonomous-smoke.md",
-      "updated_at": "2026-04-27T06:51:42Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 70,
-        "counts": {
-          "CANCELLED": 2,
-          "SUCCESS": 57,
-          "SKIPPED": 9,
-          "FAILURE": 2
-        },
-        "blockers": [
-          "CI / checks-node-core-runtime-shared:FAILURE",
-          "CI / checks-node-core:FAILURE"
-        ]
-      },
-      "review_threads": {
-        "status": "blocked",
-        "reason": "unresolved review threads remain",
-        "unresolved_count": 1,
-        "examples": [
-          "https://github.com/openclaw/openclaw/pull/72660#discussion_r3145356910"
-        ]
-      },
-      "review_bots": {
-        "count": 2,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72660#issuecomment-4324830048",
-            "submitted_at": "2026-04-27T06:49:14Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-27T06:49:18Z"
-          }
-        ]
-      },
-      "latest_record": null,
-      "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "unresolved review threads remain",
-        "needs_checks:CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-core:FAILURE",
-        "needs_merge_preflight",
-        "needs_result_backfill"
-      ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
-    },
-    {
-      "number": 72659,
-      "title": "fix(mattermost): prevent DM replies from creating threads",
-      "url": "https://github.com/openclaw/openclaw/pull/72659",
-      "branch": "clownfish/ghcrawl-156602-autonomous-smoke",
-      "head_sha": "2db932d8f6a00f0844a9389bc55e08e0b2f5d558",
-      "cluster_id": "ghcrawl-156602-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-156602-autonomous-smoke.md",
-      "updated_at": "2026-04-27T06:50:51Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 69,
-        "counts": {
-          "CANCELLED": 1,
-          "SUCCESS": 57,
-          "SKIPPED": 9,
-          "FAILURE": 2
-        },
-        "blockers": [
-          "CI / checks-node-core-runtime-shared:FAILURE",
-          "CI / checks-node-core:FAILURE"
-        ]
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 1,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72659#issuecomment-4324829176",
-            "submitted_at": "2026-04-27T06:49:03Z"
-          }
-        ]
-      },
-      "latest_record": null,
-      "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "needs_checks:CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-core:FAILURE",
-        "needs_merge_preflight",
-        "needs_result_backfill"
-      ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
-    },
-    {
-      "number": 72658,
-      "title": "fix(feishu): do not treat @all as a bot mention",
-      "url": "https://github.com/openclaw/openclaw/pull/72658",
-      "branch": "clownfish/ghcrawl-156610-autonomous-smoke",
-      "head_sha": "ac790c99ec9a4e6b8db4af7362a41b718f8ca1ff",
-      "cluster_id": "ghcrawl-156610-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-156610-autonomous-smoke.md",
-      "updated_at": "2026-04-27T06:51:33Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 70,
-        "counts": {
-          "CANCELLED": 2,
-          "SUCCESS": 57,
-          "SKIPPED": 9,
-          "FAILURE": 2
-        },
-        "blockers": [
-          "CI / checks-node-core-runtime-shared:FAILURE",
-          "CI / checks-node-core:FAILURE"
-        ]
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 1,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72658#issuecomment-4324826818",
-            "submitted_at": "2026-04-27T06:48:39Z"
-          }
-        ]
-      },
-      "latest_record": null,
-      "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "needs_checks:CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-core:FAILURE",
-        "needs_merge_preflight",
-        "needs_result_backfill"
-      ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
-    },
-    {
-      "number": 72657,
-      "title": "fix(cron): preserve Telegram direct-thread cron delivery inference",
-      "url": "https://github.com/openclaw/openclaw/pull/72657",
-      "branch": "clownfish/ghcrawl-156599-autonomous-smoke",
-      "head_sha": "769e50377fac3c5109a81e6815edb57feb1fd544",
-      "cluster_id": "ghcrawl-156599-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-156599-autonomous-smoke.md",
-      "updated_at": "2026-04-27T06:50:17Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 72,
-        "counts": {
-          "CANCELLED": 3,
-          "SUCCESS": 58,
-          "SKIPPED": 9,
-          "FAILURE": 2
-        },
-        "blockers": [
-          "CI / checks-node-core-runtime-shared:FAILURE",
-          "CI / checks-node-core:FAILURE"
-        ]
-      },
-      "review_threads": {
-        "status": "blocked",
-        "reason": "unresolved review threads remain",
-        "unresolved_count": 1,
-        "examples": [
-          "https://github.com/openclaw/openclaw/pull/72657#discussion_r3145354136"
-        ]
-      },
-      "review_bots": {
-        "count": 2,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72657#issuecomment-4324826116",
-            "submitted_at": "2026-04-27T06:48:34Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-27T06:48:38Z"
-          }
-        ]
-      },
       "latest_record": {
-        "run_id": "24980225169",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24980225169",
-        "cluster_id": "ghcrawl-156599-autonomous-smoke",
-        "published_at": "2026-04-27T06:50:55.969Z",
+        "run_id": "24982545424",
+        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24982545424",
+        "cluster_id": "ghcrawl-156617-autonomous-smoke",
+        "published_at": "2026-04-27T07:42:09.779Z",
         "workflow_conclusion": "success",
         "apply_action": {
-          "target": "#72657",
-          "action": "merge_canonical",
-          "status": "blocked",
-          "classification": "fix_pr",
-          "canonical": null,
-          "candidate_fix": null,
-          "title": "fix(cron): preserve Telegram direct-thread cron delivery inference",
-          "idempotency_key": null,
-          "reason": "merge state status is UNSTABLE",
-          "merged_at": null,
-          "merge_commit_sha": null,
-          "live_state": null,
-          "live_updated_at": null
-        }
-      },
-      "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "unresolved review threads remain",
-        "needs_checks:CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-core:FAILURE",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
-    },
-    {
-      "number": 72655,
-      "title": "fix(daemon): handle sudo user-systemd gateway install failures",
-      "url": "https://github.com/openclaw/openclaw/pull/72655",
-      "branch": "clownfish/ghcrawl-156597-autonomous-smoke",
-      "head_sha": "37421667d41413a653e5fbd92840176de0b8aba8",
-      "cluster_id": "ghcrawl-156597-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-156597-autonomous-smoke.md",
-      "updated_at": "2026-04-27T06:44:57Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": true,
-      "checks": {
-        "total": 71,
-        "counts": {
-          "CANCELLED": 4,
-          "SUCCESS": 55,
-          "SKIPPED": 9,
-          "FAILURE": 3
-        },
-        "blockers": [
-          "CI / checks-fast-bundled:FAILURE",
-          "CI / checks-node-agentic-plugins:FAILURE",
-          "CI / checks-node-core:FAILURE"
-        ]
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 1,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72655#issuecomment-4324800050",
-            "submitted_at": "2026-04-27T06:44:57Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24979998468",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979998468",
-        "cluster_id": "ghcrawl-156597-autonomous-smoke",
-        "published_at": "2026-04-27T06:43:04.963Z",
-        "workflow_conclusion": "success",
-        "apply_action": {
-          "target": "#72655",
-          "action": "merge_canonical",
-          "status": "blocked",
-          "classification": "fix_pr",
-          "canonical": null,
-          "candidate_fix": null,
-          "title": "fix(daemon): handle sudo user-systemd gateway install failures",
-          "idempotency_key": null,
-          "reason": "security-sensitive PR requires central security triage",
-          "merged_at": null,
-          "merge_commit_sha": null,
-          "live_state": null,
-          "live_updated_at": null
-        }
-      },
-      "blockers": [
-        "security_hold",
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "needs_checks:CI / checks-fast-bundled:FAILURE; CI / checks-node-agentic-plugins:FAILURE; CI / checks-node-core:FAILURE",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "route to central security triage"
-    },
-    {
-      "number": 72626,
-      "title": "fix(slack): preserve button blocks in final updates",
-      "url": "https://github.com/openclaw/openclaw/pull/72626",
-      "branch": "clownfish/ghcrawl-156586-autonomous-smoke",
-      "head_sha": "d1dc484277a5d4b77d12aac95a1103a2fff3c2d4",
-      "cluster_id": "ghcrawl-156586-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-156586-autonomous-smoke.md",
-      "updated_at": "2026-04-27T05:53:27Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 9,
-        "counts": {
-          "CANCELLED": 3,
-          "SUCCESS": 4,
-          "SKIPPED": 2
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "blocked",
-        "reason": "unresolved review threads remain",
-        "unresolved_count": 1,
-        "examples": [
-          "https://github.com/openclaw/openclaw/pull/72626#discussion_r3145116741"
-        ]
-      },
-      "review_bots": {
-        "count": 2,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72626#issuecomment-4324486382",
-            "submitted_at": "2026-04-27T05:53:22Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-27T05:53:27Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24978145396",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978145396",
-        "cluster_id": "ghcrawl-156586-autonomous-smoke",
-        "published_at": "2026-04-27T05:51:32.627Z",
-        "workflow_conclusion": "success",
-        "apply_action": {
-          "target": "#72626",
-          "action": "merge_canonical",
-          "status": "blocked",
-          "classification": "fix_pr",
-          "canonical": null,
-          "candidate_fix": null,
-          "title": "fix(slack): preserve button blocks in final updates",
-          "idempotency_key": null,
-          "reason": "mergeable state is CONFLICTING",
-          "merged_at": null,
-          "merge_commit_sha": null,
-          "live_state": null,
-          "live_updated_at": null
-        }
-      },
-      "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "unresolved review threads remain",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
-    },
-    {
-      "number": 72624,
-      "title": "fix(ui): discard stale config state on explicit reload",
-      "url": "https://github.com/openclaw/openclaw/pull/72624",
-      "branch": "clownfish/ghcrawl-156594-autonomous-smoke",
-      "head_sha": "9936f9302d974e6ce9336a608a960452bc0214b9",
-      "cluster_id": "ghcrawl-156594-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-156594-autonomous-smoke.md",
-      "updated_at": "2026-04-27T05:52:34Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 10,
-        "counts": {
-          "CANCELLED": 4,
-          "SUCCESS": 4,
-          "SKIPPED": 2
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 1,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72624#issuecomment-4324483448",
-            "submitted_at": "2026-04-27T05:52:34Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24979996819",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979996819",
-        "cluster_id": "ghcrawl-156594-autonomous-smoke",
-        "published_at": "2026-04-27T06:32:48.038Z",
-        "workflow_conclusion": "success",
-        "apply_action": {
-          "target": "#72624",
+          "target": "#72664",
           "action": "route_security",
           "status": "planned",
           "classification": "security_sensitive",
           "canonical": null,
           "candidate_fix": null,
-          "reason": "Quarantine exact replacement PR to central OpenClaw security handling."
+          "reason": "Route only this PR to central OpenClaw security handling; do not comment, close, merge, or repair it through ProjectClownfish."
         }
       },
       "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
+        "unresolved review threads remain",
+        "needs_checks:CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-core:FAILURE",
         "needs_merge_preflight"
       ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     },
     {
       "number": 72621,
@@ -604,8 +102,8 @@
       "cluster_id": "ghcrawl-156581-autonomous-smoke",
       "job_path": "jobs/openclaw/inbox/ghcrawl-156581-autonomous-smoke.md",
       "updated_at": "2026-04-27T06:06:39Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -638,111 +136,28 @@
         ]
       },
       "latest_record": {
-        "run_id": "24978948275",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978948275",
+        "run_id": "24982556691",
+        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24982556691",
         "cluster_id": "ghcrawl-156581-autonomous-smoke",
-        "published_at": "2026-04-27T06:08:50.817Z",
+        "published_at": "2026-04-27T08:02:14.842Z",
         "workflow_conclusion": "success",
         "apply_action": {
           "target": "#72621",
-          "action": "merge_canonical",
-          "status": "blocked",
-          "classification": "fix_pr",
+          "action": "route_security",
+          "status": "planned",
+          "classification": "security_sensitive",
           "canonical": null,
           "candidate_fix": null,
-          "title": "fix(whatsapp): recover stale listener after auth conflict churn",
-          "idempotency_key": null,
-          "reason": "merge state status is UNSTABLE",
-          "merged_at": null,
-          "merge_commit_sha": null,
-          "live_state": null,
-          "live_updated_at": null
+          "reason": "Security-sensitive PR must be handled by central security triage."
         }
       },
       "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
         "needs_checks:CI / checks-node-agentic-agents:FAILURE; CI / checks-node-core:FAILURE",
         "needs_merge_preflight"
       ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
-    },
-    {
-      "number": 72619,
-      "title": "fix(cli): keep nodes list aligned with nodes status",
-      "url": "https://github.com/openclaw/openclaw/pull/72619",
-      "branch": "clownfish/ghcrawl-156588-autonomous-smoke",
-      "head_sha": "a742fd6afec05f8ea50b092c8084f4f8e3e425bc",
-      "cluster_id": "ghcrawl-156588-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-156588-autonomous-smoke.md",
-      "updated_at": "2026-04-27T05:44:12Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 9,
-        "counts": {
-          "CANCELLED": 3,
-          "SUCCESS": 4,
-          "SKIPPED": 2
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "blocked",
-        "reason": "unresolved review threads remain",
-        "unresolved_count": 1,
-        "examples": [
-          "https://github.com/openclaw/openclaw/pull/72619#discussion_r3145087148"
-        ]
-      },
-      "review_bots": {
-        "count": 2,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72619#issuecomment-4324450999",
-            "submitted_at": "2026-04-27T05:43:26Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-27T05:43:36Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24978148005",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978148005",
-        "cluster_id": "ghcrawl-156588-autonomous-smoke",
-        "published_at": "2026-04-27T05:41:51.042Z",
-        "workflow_conclusion": "success",
-        "apply_action": {
-          "target": "#72619",
-          "action": "merge_canonical",
-          "status": "blocked",
-          "classification": "fix_pr",
-          "canonical": null,
-          "candidate_fix": null,
-          "title": "fix(cli): keep nodes list aligned with nodes status",
-          "idempotency_key": null,
-          "reason": "mergeable state is CONFLICTING",
-          "merged_at": null,
-          "merge_commit_sha": null,
-          "live_state": null,
-          "live_updated_at": null
-        }
-      },
-      "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "unresolved review threads remain",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     },
     {
       "number": 72615,
@@ -752,26 +167,21 @@
       "head_sha": "9f7be2f87495f78c2fc15f5ae0f6490676c49645",
       "cluster_id": "ghcrawl-156579-autonomous-smoke",
       "job_path": "jobs/openclaw/inbox/ghcrawl-156579-autonomous-smoke.md",
-      "updated_at": "2026-04-27T06:55:59Z",
-      "mergeable": "MERGEABLE",
-      "merge_state_status": "UNSTABLE",
+      "updated_at": "2026-04-27T15:07:33Z",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
       "review_decision": "",
       "security_hold": false,
       "checks": {
-        "total": 65,
+        "total": 66,
         "counts": {
-          "SUCCESS": 51,
+          "SUCCESS": 55,
           "SKIPPED": 9,
-          "IN_PROGRESS": 3,
-          "FAILURE": 1,
-          "QUEUED": 1
+          "FAILURE": 2
         },
         "blockers": [
-          "CI / checks-node-extensions-shard-5:IN_PROGRESS",
           "CI / checks-node-core-runtime-shared:FAILURE",
-          "CI / checks-node-agentic-agents:IN_PROGRESS",
-          "CI / checks-node-auto-reply-reply-dispatch:IN_PROGRESS",
-          "CI / checks-node-extensions:QUEUED"
+          "CI / checks-node-core:FAILURE"
         ]
       },
       "review_threads": {
@@ -798,305 +208,28 @@
         ]
       },
       "latest_record": {
-        "run_id": "24979702593",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979702593",
+        "run_id": "24982560484",
+        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24982560484",
         "cluster_id": "ghcrawl-156579-autonomous-smoke",
-        "published_at": "2026-04-27T06:34:47.349Z",
+        "published_at": "2026-04-27T08:02:54.887Z",
         "workflow_conclusion": "success",
         "apply_action": {
           "target": "#72615",
-          "action": "merge_canonical",
-          "status": "blocked",
-          "classification": "fix_pr",
-          "canonical": null,
-          "candidate_fix": null,
-          "title": "fix(memory-wiki): route bridge CLI through gateway",
-          "idempotency_key": null,
-          "reason": "mergeable state is CONFLICTING",
-          "merged_at": null,
-          "merge_commit_sha": null,
-          "live_state": null,
-          "live_updated_at": null
-        }
-      },
-      "blockers": [
-        "needs_merge_state:UNSTABLE",
-        "needs_checks:CI / checks-node-extensions-shard-5:IN_PROGRESS; CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-agentic-agents:IN_PROGRESS",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
-    },
-    {
-      "number": 72614,
-      "title": "fix(sessions_spawn): tolerate ACP-only fields for subagent runtime",
-      "url": "https://github.com/openclaw/openclaw/pull/72614",
-      "branch": "clownfish/ghcrawl-156598-autonomous-smoke",
-      "head_sha": "69446c6bc8427957753d277adaf78659a211d3b8",
-      "cluster_id": "ghcrawl-156598-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-156598-autonomous-smoke.md",
-      "updated_at": "2026-04-27T06:17:50Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 5,
-        "counts": {
-          "SUCCESS": 3,
-          "SKIPPED": 2
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 1,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72614#issuecomment-4324439688",
-            "submitted_at": "2026-04-27T05:40:03Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24979742859",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979742859",
-        "cluster_id": "ghcrawl-156598-autonomous-smoke",
-        "published_at": "2026-04-27T06:26:40.861Z",
-        "workflow_conclusion": "success",
-        "apply_action": {
-          "target": "#72614",
-          "action": "close_superseded",
-          "status": "blocked",
-          "classification": "superseded",
-          "canonical": null,
-          "candidate_fix": "#72331",
-          "title": null,
-          "idempotency_key": "ghcrawl-156598-autonomous-smoke:#72614:close_superseded:#72331",
-          "reason": "close requires ProjectClownfish fix PR opened/pushed or merge executed first",
-          "merged_at": null,
-          "merge_commit_sha": null,
-          "live_state": null,
-          "live_updated_at": null
-        }
-      },
-      "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
-    },
-    {
-      "number": 72417,
-      "title": "fix(gateway): preserve runtime-backed health state",
-      "url": "https://github.com/openclaw/openclaw/pull/72417",
-      "branch": "clownfish/ghcrawl-207035-agentic-merge",
-      "head_sha": "2397a253a9eca26674b18c1a02161439875222c1",
-      "cluster_id": "ghcrawl-207035-agentic-merge",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-207035-agentic-merge.md",
-      "updated_at": "2026-04-27T04:37:02Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 9,
-        "counts": {
-          "CANCELLED": 2,
-          "SUCCESS": 5,
-          "SKIPPED": 2
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 1,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72417#issuecomment-4323286154",
-            "submitted_at": "2026-04-26T23:20:03Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24979704210",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979704210",
-        "cluster_id": "ghcrawl-207035-agentic-merge",
-        "published_at": "2026-04-27T06:22:21.740Z",
-        "workflow_conclusion": "success",
-        "apply_action": {
-          "target": "#72417",
           "action": "route_security",
           "status": "planned",
           "classification": "security_sensitive",
           "canonical": null,
           "candidate_fix": null,
-          "reason": "Route #72417 to central OpenClaw security handling; do not process it through backlog cleanup automation."
+          "reason": "Security-sensitive PRs must be routed to central OpenClaw security handling and not mutated by ProjectClownfish."
         }
       },
       "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
+        "needs_checks:CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-core:FAILURE",
         "needs_merge_preflight"
       ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
-    },
-    {
-      "number": 72414,
-      "title": "fix(agent): preserve default-agent session routing compatibility",
-      "url": "https://github.com/openclaw/openclaw/pull/72414",
-      "branch": "clownfish/ghcrawl-207038-agentic-merge",
-      "head_sha": "b028d731169164380ede2d1fd388c1708a7893cb",
-      "cluster_id": "ghcrawl-207038-agentic-merge",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-207038-agentic-merge.md",
-      "updated_at": "2026-04-27T04:36:58Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 9,
-        "counts": {
-          "CANCELLED": 2,
-          "SUCCESS": 5,
-          "SKIPPED": 2
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "blocked",
-        "reason": "unresolved review threads remain",
-        "unresolved_count": 1,
-        "examples": [
-          "https://github.com/openclaw/openclaw/pull/72414#discussion_r3144330573"
-        ]
-      },
-      "review_bots": {
-        "count": 2,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72414#issuecomment-4323276655",
-            "submitted_at": "2026-04-26T23:14:43Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-26T23:14:48Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24978956018",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978956018",
-        "cluster_id": "ghcrawl-207038-agentic-merge",
-        "published_at": "2026-04-27T05:58:50.803Z",
-        "workflow_conclusion": "success",
-        "apply_action": {
-          "target": "#72414",
-          "action": "route_security",
-          "status": "planned",
-          "classification": "security_sensitive",
-          "canonical": null,
-          "candidate_fix": null,
-          "reason": "Open PR has a security-sensitive review finding and must be routed to central OpenClaw security handling without ProjectClownfish merge/close/fix action."
-        }
-      },
-      "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "unresolved review threads remain",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
-    },
-    {
-      "number": 72411,
-      "title": "fix(feishu): repair WebSocket reconnect and heartbeat config",
-      "url": "https://github.com/openclaw/openclaw/pull/72411",
-      "branch": "clownfish/ghcrawl-207048-agentic-merge",
-      "head_sha": "7dfabab60859004f46a8dc5d80317b39e0a6d594",
-      "cluster_id": "ghcrawl-207048-agentic-merge",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-207048-agentic-merge.md",
-      "updated_at": "2026-04-27T04:36:53Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 9,
-        "counts": {
-          "CANCELLED": 2,
-          "SUCCESS": 5,
-          "SKIPPED": 2
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "blocked",
-        "reason": "unresolved review threads remain",
-        "unresolved_count": 2,
-        "examples": [
-          "https://github.com/openclaw/openclaw/pull/72411#discussion_r3144328755",
-          "https://github.com/openclaw/openclaw/pull/72411#discussion_r3144328770"
-        ]
-      },
-      "review_bots": {
-        "count": 2,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72411#issuecomment-4323273672",
-            "submitted_at": "2026-04-26T23:13:02Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-26T23:13:08Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24978957258",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978957258",
-        "cluster_id": "ghcrawl-207048-agentic-merge",
-        "published_at": "2026-04-27T06:05:15.242Z",
-        "workflow_conclusion": "success",
-        "apply_action": {
-          "target": "#72411",
-          "action": "route_security",
-          "status": "planned",
-          "classification": "security_sensitive",
-          "canonical": null,
-          "candidate_fix": null,
-          "reason": "Route only this PR to central security handling; continue non-security classification for unrelated refs."
-        }
-      },
-      "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "unresolved review threads remain",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     },
     {
       "number": 72409,
@@ -1107,8 +240,8 @@
       "cluster_id": "ghcrawl-207039-agentic-merge",
       "job_path": "jobs/openclaw/inbox/ghcrawl-207039-agentic-merge.md",
       "updated_at": "2026-04-27T06:40:38Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -1170,12 +303,12 @@
         }
       },
       "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
         "needs_checks:CI / checks-fast-bundled:FAILURE; CI / checks-node-agentic-plugins:FAILURE; CI / checks-node-core:FAILURE",
         "needs_merge_preflight"
       ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     },
     {
       "number": 72405,
@@ -1186,8 +319,8 @@
       "cluster_id": "ghcrawl-207050-agentic-merge",
       "job_path": "jobs/openclaw/inbox/ghcrawl-207050-agentic-merge.md",
       "updated_at": "2026-04-27T06:06:41Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -1248,85 +381,24 @@
         }
       },
       "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
         "needs_checks:CI / checks-node-agentic-agents:FAILURE; CI / checks-node-core:FAILURE",
         "needs_merge_preflight"
       ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
-    },
-    {
-      "number": 72400,
-      "title": "fix(gateway): preserve repeated characters in chat stream merge",
-      "url": "https://github.com/openclaw/openclaw/pull/72400",
-      "branch": "clownfish/ghcrawl-199237-agentic-merge",
-      "head_sha": "a67e540c0edc8684b1ef212e0a094d22dfebd3dd",
-      "cluster_id": "ghcrawl-199237-agentic-merge",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-199237-agentic-merge.md",
-      "updated_at": "2026-04-27T06:08:48Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 5,
-        "counts": {
-          "SUCCESS": 3,
-          "SKIPPED": 2
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 1,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72400#issuecomment-4323215050",
-            "submitted_at": "2026-04-26T22:39:02Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24980228607",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24980228607",
-        "cluster_id": "ghcrawl-156601-autonomous-smoke",
-        "published_at": "2026-04-27T06:47:09.895Z",
-        "workflow_conclusion": "success",
-        "apply_action": {
-          "target": "#72400",
-          "action": "route_security",
-          "status": "planned",
-          "classification": "security_sensitive",
-          "canonical": null,
-          "candidate_fix": null,
-          "reason": "Quarantine #72400 only; do not close, merge, label, comment, or use it as candidate_fix in ProjectClownfish."
-        }
-      },
-      "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     },
     {
       "number": 72389,
       "title": "fix(tui): clear stale streaming after orphaned finals",
       "url": "https://github.com/openclaw/openclaw/pull/72389",
       "branch": "clownfish/ghcrawl-199270-agentic-merge",
-      "head_sha": "790556068887ecd3894b9b8820d7d9b3540df994",
+      "head_sha": "eb72137b8f2d560d21d4f4495ac4ae45f6ffb9c6",
       "cluster_id": "ghcrawl-199270-agentic-merge",
       "job_path": "jobs/openclaw/inbox/ghcrawl-199270-agentic-merge.md",
-      "updated_at": "2026-04-27T06:03:53Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
+      "updated_at": "2026-04-27T22:48:06Z",
+      "mergeable": "MERGEABLE",
+      "merge_state_status": "UNSTABLE",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -1337,7 +409,7 @@
           "FAILURE": 2
         },
         "blockers": [
-          "CI / checks-node-agentic-agents:FAILURE",
+          "CI / checks-node-core-support-boundary:FAILURE",
           "CI / checks-node-core:FAILURE"
         ]
       },
@@ -1365,28 +437,33 @@
         ]
       },
       "latest_record": {
-        "run_id": "24979716608",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979716608",
-        "cluster_id": "ghcrawl-199270-agentic-merge",
-        "published_at": "2026-04-27T06:23:08.917Z",
+        "run_id": "25023014227",
+        "run_url": "https://github.com/openclaw/clownfish/actions/runs/25023014227",
+        "cluster_id": "ghcrawl-156647-autonomous-smoke",
+        "published_at": "2026-04-27T22:51:03.818Z",
         "workflow_conclusion": "success",
         "apply_action": {
           "target": "#72389",
-          "action": "fix_needed",
+          "action": "merge_canonical",
           "status": "blocked",
-          "classification": "canonical",
-          "canonical": "#72389",
-          "candidate_fix": "#72389",
-          "reason": "Canonical replacement PR exists but is not merge-ready because checks fail and an actionable bot review finding remains unresolved."
+          "classification": "fix_pr",
+          "canonical": null,
+          "candidate_fix": null,
+          "title": "fix(tui): clear stale streaming after orphaned finals",
+          "idempotency_key": null,
+          "reason": "merge state status is UNSTABLE",
+          "merged_at": null,
+          "merge_commit_sha": null,
+          "live_state": null,
+          "live_updated_at": null
         }
       },
       "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "needs_checks:CI / checks-node-agentic-agents:FAILURE; CI / checks-node-core:FAILURE",
+        "needs_merge_state:UNSTABLE",
+        "needs_checks:CI / checks-node-core-support-boundary:FAILURE; CI / checks-node-core:FAILURE",
         "needs_merge_preflight"
       ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
+      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
     },
     {
       "number": 72388,
@@ -1397,8 +474,8 @@
       "cluster_id": "ghcrawl-199239-agentic-merge",
       "job_path": "jobs/openclaw/inbox/ghcrawl-199239-agentic-merge.md",
       "updated_at": "2026-04-27T04:36:12Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -1457,86 +534,13 @@
         }
       },
       "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
         "unresolved review threads remain",
         "needs_checks:CI / checks-node-core-src-security:FAILURE; CI / checks-node-core-support-boundary:FAILURE; CI / checks-node-core:FAILURE",
         "needs_merge_preflight"
       ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
-    },
-    {
-      "number": 72328,
-      "title": "fix(ui): stabilize agent model selection on switch",
-      "url": "https://github.com/openclaw/openclaw/pull/72328",
-      "branch": "clownfish/ghcrawl-165997-agentic-merge",
-      "head_sha": "ff30dccdb6b23ec4b1e8056ad49491c5170f117d",
-      "cluster_id": "ghcrawl-165997-agentic-merge",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-165997-agentic-merge.md",
-      "updated_at": "2026-04-27T04:35:58Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 68,
-        "counts": {
-          "SUCCESS": 58,
-          "SKIPPED": 10
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 2,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72328#issuecomment-4322761716",
-            "submitted_at": "2026-04-26T18:59:43Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-26T18:59:47Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24966557775",
-        "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24966557775",
-        "cluster_id": "ghcrawl-165997-agentic-merge",
-        "published_at": "2026-04-26T20:50:10.438Z",
-        "workflow_conclusion": "success",
-        "apply_action": {
-          "target": "#72328",
-          "action": "merge_canonical",
-          "status": "blocked",
-          "classification": "fix_pr",
-          "canonical": null,
-          "candidate_fix": null,
-          "title": "fix(ui): stabilize agent model selection on switch",
-          "idempotency_key": null,
-          "reason": "merge state status is UNSTABLE",
-          "merged_at": null,
-          "merge_commit_sha": null,
-          "live_state": null,
-          "live_updated_at": null
-        }
-      },
-      "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     },
     {
       "number": 72326,
@@ -1547,8 +551,8 @@
       "cluster_id": "ghcrawl-165998-agentic-merge",
       "job_path": "jobs/openclaw/inbox/ghcrawl-165998-agentic-merge.md",
       "updated_at": "2026-04-27T06:06:23Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -1597,150 +601,12 @@
         }
       },
       "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
         "needs_checks:CI / checks-node-agentic-agents:FAILURE; CI / checks-node-core:FAILURE",
         "needs_merge_preflight"
       ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
-    },
-    {
-      "number": 72325,
-      "title": "fix(ui): stabilize WebChat final reload reconciliation",
-      "url": "https://github.com/openclaw/openclaw/pull/72325",
-      "branch": "clownfish/ghcrawl-165991-agentic-merge",
-      "head_sha": "0203dade0c129d2da71f02c80c8c7c64af6b0f1d",
-      "cluster_id": "ghcrawl-165991-agentic-merge",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-165991-agentic-merge.md",
-      "updated_at": "2026-04-27T06:34:02Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 67,
-        "counts": {
-          "CANCELLED": 1,
-          "SUCCESS": 57,
-          "SKIPPED": 9
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 2,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72325#issuecomment-4322758353",
-            "submitted_at": "2026-04-26T18:57:43Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-26T18:57:47Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24980392987",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24980392987",
-        "cluster_id": "ghcrawl-165991-agentic-merge",
-        "published_at": "2026-04-27T06:43:40.803Z",
-        "workflow_conclusion": "success",
-        "apply_action": {
-          "target": "#72325",
-          "action": "route_security",
-          "status": "planned",
-          "classification": "security_sensitive",
-          "canonical": "#66875",
-          "candidate_fix": null,
-          "reason": "Open candidate fix is quarantined to central OpenClaw security handling; no merge, fixed-by-candidate closeout, or post-merge closeout is planned."
-        }
-      },
-      "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
-    },
-    {
-      "number": 72305,
-      "title": "fix(mattermost): prevent DM replies from creating threads",
-      "url": "https://github.com/openclaw/openclaw/pull/72305",
-      "branch": "clownfish/ghcrawl-166016-agentic-merge",
-      "head_sha": "8afe7098664063cd49b41aac3984f25da32b241d",
-      "cluster_id": "ghcrawl-166016-agentic-merge",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-166016-agentic-merge.md",
-      "updated_at": "2026-04-27T05:01:13Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 67,
-        "counts": {
-          "SUCCESS": 52,
-          "SKIPPED": 9,
-          "FAILURE": 6
-        },
-        "blockers": [
-          "CI / checks-node-core-fast-support:FAILURE",
-          "CI / checks-node-agentic-commands:FAILURE",
-          "CI / check-additional-runtime-topology-architecture:FAILURE",
-          "CI / check-docs:FAILURE",
-          "CI / check-additional:FAILURE",
-          "CI / checks-node-core:FAILURE"
-        ]
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 1,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/72305#issuecomment-4322640039",
-            "submitted_at": "2026-04-26T17:55:27Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24979724509",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24979724509",
-        "cluster_id": "ghcrawl-166016-agentic-merge",
-        "published_at": "2026-04-27T06:25:06.196Z",
-        "workflow_conclusion": "success",
-        "apply_action": {
-          "target": "#72305",
-          "action": "keep_canonical",
-          "status": "planned",
-          "classification": "canonical",
-          "canonical": "#72305",
-          "candidate_fix": null,
-          "reason": "Canonical replacement PR exists but merge and fixed-by-candidate closeout are blocked on failing checks and required merge preflight."
-        }
-      },
-      "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
-        "needs_checks:CI / checks-node-core-fast-support:FAILURE; CI / checks-node-agentic-commands:FAILURE; CI / check-additional-runtime-topology-architecture:FAILURE",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     }
   ]
 }

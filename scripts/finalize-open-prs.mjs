@@ -16,6 +16,7 @@ const MERGEABILITY_POLL_ATTEMPTS = numberEnv("CLOWNFISH_FINALIZER_MERGEABILITY_P
 const args = parseArgs(process.argv.slice(2));
 const repo = String(args.repo ?? process.env.CLOWNFISH_TARGET_REPO ?? DEFAULT_TARGET_REPO);
 const headPrefix = String(args["head-prefix"] ?? DEFAULT_HEAD_PREFIX);
+const label = String(args.label ?? process.env.CLOWNFISH_LABEL ?? "clownfish");
 const writeReport = Boolean(args["write-report"]);
 
 if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repo)) {
@@ -28,6 +29,7 @@ const prs = openPulls.map((pull) => classifyPullRequest(hydratePullRequest(repo,
 const report = {
   repo,
   head_prefix: headPrefix,
+  label,
   generated_at: new Date().toISOString(),
   count: prs.length,
   summary: summarize(prs),
@@ -38,19 +40,41 @@ if (writeReport) writeReports(report);
 console.log(JSON.stringify(report, null, 2));
 
 function listOpenPullRequests(targetRepo, prefix) {
-  const pulls = ghJson([
-    "pr",
-    "list",
-    "--repo",
-    targetRepo,
-    "--state",
-    "open",
-    "--limit",
-    "200",
-    "--json",
-    ["number", "title", "url", "headRefName", "updatedAt"].join(","),
-  ]);
-  return pulls.filter((pull) => String(pull.headRefName ?? "").startsWith(prefix));
+  const fields = ["number", "title", "url", "headRefName", "updatedAt", "labels"].join(",");
+  const pullsByNumber = new Map();
+  for (const pull of [
+    ...ghJson([
+      "pr",
+      "list",
+      "--repo",
+      targetRepo,
+      "--state",
+      "open",
+      "--label",
+      label,
+      "--limit",
+      "200",
+      "--json",
+      fields,
+    ]),
+    ...ghJson([
+      "pr",
+      "list",
+      "--repo",
+      targetRepo,
+      "--state",
+      "open",
+      "--limit",
+      "200",
+      "--json",
+      fields,
+    ]),
+  ]) {
+    pullsByNumber.set(pull.number, pull);
+  }
+  return [...pullsByNumber.values()].filter(
+    (pull) => String(pull.headRefName ?? "").startsWith(prefix) || hasLabel(pull.labels ?? [], label),
+  );
 }
 
 function hydratePullRequest(targetRepo, pull) {
@@ -470,6 +494,10 @@ function markdownLink(label, url) {
 
 function uniqueStrings(values) {
   return [...new Set(values.filter(Boolean).map(String))];
+}
+
+function hasLabel(labels, expected) {
+  return labels.some((item) => String(item.name ?? item).toLowerCase() === expected.toLowerCase());
 }
 
 function compactText(value, maxLength) {
