@@ -1,0 +1,176 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156720-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25039066365",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25039066365",
+  "head_sha": "da036e490846162aa84e5b443cfc870a58f935a1",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156720-autonomous-smoke.md",
+  "published_at": "2026-04-28T07:20:08.281Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/45270",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/45268",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/45270",
+  "summary": "Classified the mixed status cluster into two non-security subfamilies. #45270 remains the canonical open PR for stale totalTokensFresh context display and should stay open until merge gates are complete. #65109/#65381/#52329 are a separate cache-cost subcluster: #65381 is the narrow repairable implementation candidate, #52329 is broader draft work superseded only after the repair path lands, and #65109 should stay open until validation. #63238 is scoped to security routing only and receives no close/merge action.",
+  "actions": [
+    {
+      "target": "#45270",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#45270",
+      "candidate_fix": null,
+      "reason": "Best surviving canonical for the stale context-usage display bug, but merge gates are incomplete."
+    },
+    {
+      "target": "#45268",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#45270",
+      "candidate_fix": "#45270",
+      "reason": "Clear fixed-by-candidate relationship, but closeout is blocked until #45270 lands."
+    },
+    {
+      "target": "#63238",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Quarantine only the listed security-sensitive ref and continue classifying unrelated non-security items."
+    },
+    {
+      "target": "#65109",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45270",
+      "candidate_fix": "#65381",
+      "reason": "Related status-rendering area, but a distinct cache-cost bug that needs its own fix path."
+    },
+    {
+      "target": "#65381",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#45270",
+      "candidate_fix": "#65381",
+      "reason": "Separate cache-cost implementation candidate; repair branch rather than merge directly from stale diff."
+    },
+    {
+      "target": "#52329",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#65109",
+      "candidate_fix": "#65381",
+      "reason": "Superseded by the narrower repairable cache-cost candidate, but closeout is blocked on the canonical cache-cost fix path."
+    },
+    {
+      "target": "cluster:ghcrawl-156720-autonomous-smoke",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#65109",
+      "candidate_fix": "#65381",
+      "reason": "Repair the narrow contributor branch for the cache-cost subcluster before any closeout or merge recommendation."
+    },
+    {
+      "target": "cluster:ghcrawl-156720-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#65109",
+      "candidate_fix": "#65381",
+      "reason": "Executor-ready fix artifact for the separate cache-cost subcluster."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_fixed_by_candidate": 1,
+    "route_security": 1,
+    "keep_related": 2,
+    "close_superseded": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 6,
+    "blocked": 2
+  },
+  "fix_counts": {
+    "pushed": 1
+  },
+  "apply_counts": {
+    "skipped": 2,
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "repair_contributor_branch",
+      "status": "pushed",
+      "target": "https://github.com/openclaw/openclaw/pull/65381",
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": null,
+      "reason": null,
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": [
+    {
+      "target": "#45268",
+      "action": "close_fixed_by_candidate",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#45270",
+      "candidate_fix": "#45270",
+      "title": null,
+      "idempotency_key": "ghcrawl-156720-autonomous-smoke:#45268:close_fixed_by_candidate:#45270",
+      "reason": "Clear fixed-by-candidate relationship, but closeout is blocked until #45270 lands.",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#52329",
+      "action": "close_superseded",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#65109",
+      "candidate_fix": "#65381",
+      "title": null,
+      "idempotency_key": "ghcrawl-156720-autonomous-smoke:#52329:close_superseded:#65381",
+      "reason": "Superseded by the narrower repairable cache-cost candidate, but closeout is blocked on the canonical cache-cost fix path.",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    },
+    {
+      "target": "#65381",
+      "action": "merge_canonical",
+      "status": "blocked",
+      "classification": "fix_pr",
+      "canonical": null,
+      "candidate_fix": null,
+      "title": "fix(status): include cache tokens in cost estimate",
+      "idempotency_key": null,
+      "reason": "merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": null,
+      "live_updated_at": null
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-28T07:19:39.326Z",
+  "generated_at": "2026-04-28T07:20:36.457Z",
   "count": 9,
   "summary": {
     "open_prs": 9,
@@ -12,7 +12,7 @@
     "needs_rebase": 5,
     "mergeability_unknown": 0,
     "needs_checks": 8,
-    "needs_review": 2,
+    "needs_review": 3,
     "needs_merge_preflight": 9,
     "needs_result_backfill": 4
   },
@@ -41,21 +41,17 @@
       "review_decision": "",
       "security_hold": false,
       "checks": {
-        "total": 67,
+        "total": 69,
         "counts": {
           "CANCELLED": 1,
-          "SUCCESS": 16,
+          "SUCCESS": 38,
           "SKIPPED": 9,
-          "IN_PROGRESS": 41
+          "IN_PROGRESS": 19,
+          "FAILURE": 2
         },
         "blockers": [
           "CI / build-artifacts:IN_PROGRESS",
-          "CI / checks-fast-bundled:IN_PROGRESS",
           "CI / checks-fast-contracts-plugins:IN_PROGRESS",
-          "CI / checks-fast-contracts-channels-a:IN_PROGRESS",
-          "CI / checks-fast-contracts-channels-b:IN_PROGRESS",
-          "CI / checks-fast-contracts-channels-c:IN_PROGRESS",
-          "CI / checks-fast-protocol:IN_PROGRESS",
           "CI / checks-node-extensions-shard-1:IN_PROGRESS",
           "CI / checks-node-extensions-shard-2:IN_PROGRESS",
           "CI / checks-node-extensions-shard-3:IN_PROGRESS",
@@ -63,92 +59,16 @@
           "CI / checks-node-extensions-shard-5:IN_PROGRESS",
           "CI / checks-node-extensions-shard-6:IN_PROGRESS",
           "CI / checks-node-core-fast-support:IN_PROGRESS",
-          "CI / checks-node-core-src-security:IN_PROGRESS",
-          "CI / checks-node-core-ui:IN_PROGRESS",
           "CI / checks-node-core-runtime-infra:IN_PROGRESS",
           "CI / checks-node-core-runtime-media-ui:IN_PROGRESS",
-          "CI / checks-node-core-runtime-shared:IN_PROGRESS",
-          "CI / checks-node-agentic-control-plane:IN_PROGRESS",
           "CI / checks-node-agentic-commands:IN_PROGRESS",
-          "CI / checks-node-agentic-agents:IN_PROGRESS",
           "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
           "CI / checks-node-agentic-plugins:IN_PROGRESS",
-          "CI / checks-node-auto-reply-core-top-level:IN_PROGRESS",
-          "CI / checks-node-auto-reply-reply-agent-runner:IN_PROGRESS",
-          "CI / checks-node-auto-reply-reply-dispatch:IN_PROGRESS",
-          "CI / checks-node-auto-reply-reply-commands-state-routing:IN_PROGRESS",
-          "CI / check-preflight-guards:IN_PROGRESS",
-          "CI / check-prod-types:IN_PROGRESS",
-          "CI / check-lint:IN_PROGRESS",
-          "CI / check-policy-guards:IN_PROGRESS",
-          "CI / check-test-types:IN_PROGRESS",
-          "CI / check-strict-smoke:IN_PROGRESS",
-          "CI / check-additional-boundaries:IN_PROGRESS",
-          "CI / check-additional-extension-channels:IN_PROGRESS",
-          "CI / check-additional-extension-bundled:IN_PROGRESS",
-          "CI / check-additional-extension-package-boundary:IN_PROGRESS",
-          "CI / check-additional-runtime-topology-architecture:IN_PROGRESS",
-          "CI / check-docs:IN_PROGRESS",
-          "Greptile Review:IN_PROGRESS"
-        ]
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 0,
-        "latest": []
-      },
-      "latest_record": null,
-      "blockers": [
-        "needs_merge_state:UNSTABLE",
-        "needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-fast-bundled:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS",
-        "needs_merge_preflight",
-        "needs_result_backfill"
-      ],
-      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
-    },
-    {
-      "number": 73365,
-      "title": "fix: allow steer messages during active non-streaming runs",
-      "url": "https://github.com/openclaw/openclaw/pull/73365",
-      "branch": "clownfish/ghcrawl-156681-autonomous-smoke",
-      "head_sha": "26490eab0959da72beb8566125672875ff412552",
-      "cluster_id": "ghcrawl-156681-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-156681-autonomous-smoke.md",
-      "updated_at": "2026-04-28T07:17:56Z",
-      "mergeable": "MERGEABLE",
-      "merge_state_status": "UNSTABLE",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 72,
-        "counts": {
-          "CANCELLED": 3,
-          "IN_PROGRESS": 15,
-          "SUCCESS": 43,
-          "SKIPPED": 9,
-          "FAILURE": 2
-        },
-        "blockers": [
-          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS",
-          "CI / build-artifacts:IN_PROGRESS",
-          "CI / checks-fast-contracts-plugins:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-1:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-2:IN_PROGRESS",
-          "CI / checks-node-extensions-shard-5:IN_PROGRESS",
-          "CI / checks-node-core-fast-support:IN_PROGRESS",
-          "CI / checks-node-core-runtime-infra:IN_PROGRESS",
-          "CI / checks-node-core-runtime-media-ui:IN_PROGRESS",
-          "CI / checks-node-agentic-control-plane:IN_PROGRESS",
-          "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
           "CI / checks-node-auto-reply-reply-dispatch:IN_PROGRESS",
           "CI / checks-node-auto-reply-reply-commands-state-routing:IN_PROGRESS",
           "CI / check-test-types:FAILURE",
-          "CI / check-additional-extension-package-boundary:IN_PROGRESS",
+          "CI / check-additional-extension-bundled:IN_PROGRESS",
+          "CI / checks-fast-contracts-channels:IN_PROGRESS",
           "CI / check:FAILURE",
           "Greptile Review:IN_PROGRESS"
         ]
@@ -166,7 +86,73 @@
       "latest_record": null,
       "blockers": [
         "needs_merge_state:UNSTABLE",
-        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS; CI / build-artifacts:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS",
+        "needs_checks:CI / build-artifacts:IN_PROGRESS; CI / checks-fast-contracts-plugins:IN_PROGRESS; CI / checks-node-extensions-shard-1:IN_PROGRESS",
+        "needs_merge_preflight",
+        "needs_result_backfill"
+      ],
+      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
+    },
+    {
+      "number": 73365,
+      "title": "fix: allow steer messages during active non-streaming runs",
+      "url": "https://github.com/openclaw/openclaw/pull/73365",
+      "branch": "clownfish/ghcrawl-156681-autonomous-smoke",
+      "head_sha": "26490eab0959da72beb8566125672875ff412552",
+      "cluster_id": "ghcrawl-156681-autonomous-smoke",
+      "job_path": "jobs/openclaw/inbox/ghcrawl-156681-autonomous-smoke.md",
+      "updated_at": "2026-04-28T07:20:14Z",
+      "mergeable": "MERGEABLE",
+      "merge_state_status": "UNSTABLE",
+      "review_decision": "",
+      "security_hold": false,
+      "checks": {
+        "total": 77,
+        "counts": {
+          "CANCELLED": 3,
+          "IN_PROGRESS": 3,
+          "SUCCESS": 59,
+          "SKIPPED": 9,
+          "FAILURE": 3
+        },
+        "blockers": [
+          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS",
+          "CI / checks-node-agentic-control-plane:IN_PROGRESS",
+          "CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
+          "CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE",
+          "CI / check-test-types:FAILURE",
+          "CI / check:FAILURE"
+        ]
+      },
+      "review_threads": {
+        "status": "blocked",
+        "reason": "unresolved review threads remain",
+        "unresolved_count": 1,
+        "examples": [
+          "https://github.com/openclaw/openclaw/pull/73365#discussion_r3152237127"
+        ]
+      },
+      "review_bots": {
+        "count": 2,
+        "latest": [
+          {
+            "source": "comment",
+            "author": "greptile-apps",
+            "url": "https://github.com/openclaw/openclaw/pull/73365#issuecomment-4333147107",
+            "submitted_at": "2026-04-28T07:19:34Z"
+          },
+          {
+            "source": "review",
+            "author": "greptile-apps",
+            "url": null,
+            "submitted_at": "2026-04-28T07:19:45Z"
+          }
+        ]
+      },
+      "latest_record": null,
+      "blockers": [
+        "needs_merge_state:UNSTABLE",
+        "unresolved review threads remain",
+        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS; CI / checks-node-agentic-control-plane:IN_PROGRESS; CI / checks-node-agentic-plugin-sdk:IN_PROGRESS",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],
@@ -186,17 +172,15 @@
       "review_decision": "",
       "security_hold": false,
       "checks": {
-        "total": 74,
+        "total": 75,
         "counts": {
           "FAILURE": 5,
           "CANCELLED": 1,
-          "SUCCESS": 59,
-          "SKIPPED": 8,
-          "IN_PROGRESS": 1
+          "SUCCESS": 61,
+          "SKIPPED": 8
         },
         "blockers": [
           "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE",
-          "CI / checks-node-extensions-shard-2:IN_PROGRESS",
           "CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE",
           "CI / check-test-types:FAILURE",
           "CI / check:FAILURE",
@@ -223,7 +207,7 @@
       "latest_record": null,
       "blockers": [
         "needs_merge_state:UNSTABLE",
-        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-extensions-shard-2:IN_PROGRESS; CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE",
+        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-auto-reply-reply-commands-state-routing:FAILURE; CI / check-test-types:FAILURE",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],
