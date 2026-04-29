@@ -1,0 +1,234 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-166004-agentic-merge",
+  "mode": "autonomous",
+  "run_id": "25087637821",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25087637821",
+  "head_sha": "f235dafeb1f490ef92624e6c83444fc0d6e6d65e",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-166004-agentic-merge.md",
+  "published_at": "2026-04-29T02:31:20.345Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/41330",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/41330",
+  "canonical_pr": null,
+  "summary": "Representative #60429 is already closed, so #41330 is the live canonical issue for the remaining iMessage delayed/corrupted-prefix echo path. Most original candidates are already closed as implemented. #59973 remains a related narrow open repro. Security-sensitive #38440 and #63666 are quarantined only. No close or merge action is safe until the remaining normalization fix path is hydrated or landed.",
+  "actions": [
+    {
+      "target": "#1649",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical context only."
+    },
+    {
+      "target": "#32166",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed historical self-chat tracker."
+    },
+    {
+      "target": "#38440",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route only this security-sensitive ref to central OpenClaw security handling."
+    },
+    {
+      "target": "#41330",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41330",
+      "candidate_fix": null,
+      "reason": "Best live canonical issue for the unresolved iMessage echo-loop family."
+    },
+    {
+      "target": "#42546",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed stale contributor PR, superseded by current main and later extension-layout work."
+    },
+    {
+      "target": "#47830",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed regression context only."
+    },
+    {
+      "target": "#58695",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented."
+    },
+    {
+      "target": "#58794",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented."
+    },
+    {
+      "target": "#59354",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented."
+    },
+    {
+      "target": "#59363",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented."
+    },
+    {
+      "target": "#59973",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#41330",
+      "candidate_fix": null,
+      "reason": "Related narrow repro with unique normalization evidence; keep open until a hydrated fix path lands."
+    },
+    {
+      "target": "#60045",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented."
+    },
+    {
+      "target": "#60429",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Representative is obsolete because it is already closed."
+    },
+    {
+      "target": "#60525",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented."
+    },
+    {
+      "target": "#60940",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented."
+    },
+    {
+      "target": "#62191",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed source PR superseded by an unhydrated replacement path; preserve credit in the fix artifact."
+    },
+    {
+      "target": "#63666",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route only this security-sensitive ref to central OpenClaw security handling."
+    },
+    {
+      "target": "#65420",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed as implemented."
+    },
+    {
+      "target": "cluster:ghcrawl-166004-agentic-merge",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#41330",
+      "candidate_fix": null,
+      "reason": "A narrow fix path is still needed before closing remaining open issue reports."
+    },
+    {
+      "target": "cluster:ghcrawl-166004-agentic-merge",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#41330",
+      "candidate_fix": null,
+      "reason": "Fix artifact gives the applicator an auditable repair path while preserving contributor credit."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 14,
+    "route_security": 2,
+    "keep_canonical": 1,
+    "keep_related": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 14,
+    "planned": 6
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "replace_uneditable_branch",
+      "reason": "Codex /review did not pass after 2 attempt(s): Cannot perform the review without inspecting the repository diff and validation state.",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}
