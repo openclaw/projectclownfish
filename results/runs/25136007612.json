@@ -1,0 +1,99 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-4745-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25136007612",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25136007612",
+  "head_sha": "ed3c070f16b94246f3b571063f0ecb9ffa228dd1",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-4745-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T22:05:34.161Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/40991",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/40991",
+  "canonical_pr": null,
+  "summary": "Canonical non-security tracking stays with open issue #40991. Open PR #41048 is quarantined for central security handling, while #55970 and #55917 remain related document-fallback work with unresolved review/check blockers. No close, merge, or fix-PR action is safe for this dedupe-only job.",
+  "actions": [
+    {
+      "target": "#40991",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#40991",
+      "candidate_fix": null,
+      "reason": "#40991 is the best open non-security canonical issue after #41048 is quarantined."
+    },
+    {
+      "target": "#41048",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PRs are out of ProjectClownfish mutation scope."
+    },
+    {
+      "target": "#55917",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#40991",
+      "candidate_fix": null,
+      "reason": "Related follow-up subfamily; not a duplicate suitable for closure."
+    },
+    {
+      "target": "#55970",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#55917",
+      "candidate_fix": null,
+      "reason": "Useful related contributor PR, but not merge-ready and not safe to close as duplicate or superseded."
+    },
+    {
+      "target": "#7116",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed context item."
+    },
+    {
+      "target": "#55953",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed context PR; no action."
+    },
+    {
+      "target": "#59948",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already merged related historical fix; not a target for this dedupe pass."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "route_security": 1,
+    "keep_related": 2,
+    "keep_closed": 3
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "skipped": 3
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
