@@ -41,30 +41,30 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 29, 2026, 03:27 UTC
+Last dashboard update: Apr 29, 2026, 03:45 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 226 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 227 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 226 | 100% |
+| Latest clusters reviewed | 227 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 99 | 43.8% |
-| Needs-human clusters | 40 | 17.7% |
-| Latest successful clusters | 223 | 98.7% |
+| Clean completed clusters | 99 | 43.6% |
+| Needs-human clusters | 40 | 17.6% |
+| Latest successful clusters | 224 | 98.7% |
 | Latest failed clusters | 3 | 1.3% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 461 | audit |
-| Fix action attempts | 158 | audit |
+| Run attempts archived | 462 | audit |
+| Fix action attempts | 159 | audit |
 | Fix actions executed | 0 | 0.0% |
-| Fix actions failed | 35 | 22.2% |
-| Fix actions blocked | 48 | 30.4% |
-| Latest clusters with fix failures | 44 | 19.5% |
-| Distinct PRs touched | 820 | 100% |
-| Open PRs tracked | 296 | 36.1% |
+| Fix actions failed | 35 | 22.0% |
+| Fix actions blocked | 48 | 30.2% |
+| Latest clusters with fix failures | 44 | 19.4% |
+| Distinct PRs touched | 821 | 100% |
+| Open PRs tracked | 297 | 36.2% |
 | Closed unmerged PRs tracked | 429 | 52.3% |
 | Completed close actions | 30 | 10.9% |
 | Completed merge actions | 23 | 8.4% |
@@ -72,13 +72,14 @@ Scope: 226 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | Superseded closes | 0 | 0.0% |
 | Fixed-by-candidate closes | 0 | 0.0% |
 | Low-signal PR closes | 0 | 0.0% |
-| Blocked mutation attempts | 102 | 37.2% |
-| Skipped mutation attempts | 119 | 43.4% |
+| Blocked mutation attempts | 103 | 37.5% |
+| Skipped mutation attempts | 119 | 43.3% |
 
 ### Clusters Needing Inspection
 
 | Cluster | State | Source job | Reason | Report | Run |
 | --- | --- | --- | --- | --- | --- |
+| [clawsweeper-commit-openclaw-openclaw-d130a77a3b1e](results/openclaw/clawsweeper-commit-openclaw-openclaw-d130a77a3b1e.md) | apply blocked | jobs/openclaw/inbox/clawsweeper-commit-openclaw-openclaw-d130a77a3b1e.md | job does not allow merge | [report](results/openclaw/clawsweeper-commit-openclaw-openclaw-d130a77a3b1e.md) | [25089704776](https://github.com/openclaw/clownfish/actions/runs/25089704776) |
 | [clawsweeper-commit-openclaw-openclaw-5435591f6a1a](results/openclaw/clawsweeper-commit-openclaw-openclaw-5435591f6a1a.md) | fix blocked | jobs/openclaw/inbox/clawsweeper-commit-openclaw-openclaw-5435591f6a1a.md | active Clownfish PR cap reached for src/agents: 18/3 open PRs | [report](results/openclaw/clawsweeper-commit-openclaw-openclaw-5435591f6a1a.md) | [25089378171](https://github.com/openclaw/clownfish/actions/runs/25089378171) |
 | [ghcrawl-166004-agentic-merge](results/openclaw/ghcrawl-166004-agentic-merge.md) | fix blocked | jobs/openclaw/inbox/ghcrawl-166004-agentic-merge.md | Codex /review did not pass after 2 attempt(s): Cannot perform the review without inspecting the repository diff and validation state. | [report](results/openclaw/ghcrawl-166004-agentic-merge.md) | [25087637821](https://github.com/openclaw/clownfish/actions/runs/25087637821) |
 | [ghcrawl-156863-autonomous-smoke](results/openclaw/ghcrawl-156863-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156863-autonomous-smoke.md | merge requires CLOWNFISH_ALLOW_MERGE=1; labeled clownfish | [report](results/openclaw/ghcrawl-156863-autonomous-smoke.md) | [25086686616](https://github.com/openclaw/clownfish/actions/runs/25086686616) |
@@ -103,7 +104,6 @@ Scope: 226 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | [ghcrawl-156899-autonomous-smoke](results/openclaw/ghcrawl-156899-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156899-autonomous-smoke.md | merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review | [report](results/openclaw/ghcrawl-156899-autonomous-smoke.md) | [25040053806](https://github.com/openclaw/clownfish/actions/runs/25040053806) |
 | [ghcrawl-156914-autonomous-smoke](results/openclaw/ghcrawl-156914-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156914-autonomous-smoke.md | merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review | [report](results/openclaw/ghcrawl-156914-autonomous-smoke.md) | [25040098128](https://github.com/openclaw/clownfish/actions/runs/25040098128) |
 | [ghcrawl-156832-autonomous-smoke](results/openclaw/ghcrawl-156832-autonomous-smoke.md) | fix failed | jobs/openclaw/inbox/ghcrawl-156832-autonomous-smoke.md | Codex /review did not pass after 2 attempt(s): Blocked: the branch is narrow and `pnpm check:changed` plus `git diff --check` pass, but t... | [report](results/openclaw/ghcrawl-156832-autonomous-smoke.md) | [25039623993](https://github.com/openclaw/clownfish/actions/runs/25039623993) |
-| [ghcrawl-156946-autonomous-smoke](results/openclaw/ghcrawl-156946-autonomous-smoke.md) | fix blocked | jobs/openclaw/inbox/ghcrawl-156946-autonomous-smoke.md | fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1 | [report](results/openclaw/ghcrawl-156946-autonomous-smoke.md) | [25040211577](https://github.com/openclaw/clownfish/actions/runs/25040211577) |
 
 ### Fix Failure Queue
 
@@ -149,11 +149,11 @@ Scope: 226 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | canonical is not listed in job refs | 2 | [ghcrawl-156658-autonomous-smoke](results/openclaw/ghcrawl-156658-autonomous-smoke.md) |
 | Clearly superseded by the canonical PR path, but closure is blocked until the canonical fix lands. | 2 | [ghcrawl-156879-autonomous-smoke](results/openclaw/ghcrawl-156879-autonomous-smoke.md) |
 | Fix-first policy blocks superseded closeout until #49430 is repaired and merged. | 2 | [ghcrawl-156585-autonomous-smoke](results/openclaw/ghcrawl-156585-autonomous-smoke.md) |
+| job does not allow merge | 2 | [clawsweeper-commit-openclaw-openclaw-d130a77a3b1e](results/openclaw/clawsweeper-commit-openclaw-openclaw-d130a77a3b1e.md) |
 | maintainer issue comment blocks low-signal auto-close | 2 | [low-signal-pr-sweep-20260425T2346-01](results/openclaw/low-signal-pr-sweep-20260425t2346-01.md) |
 | require_fix_before_close blocks superseded PR closeout until the canonical fix path is landed or opened as a concrete fix PR. | 2 | [ghcrawl-156789-autonomous-smoke](results/openclaw/ghcrawl-156789-autonomous-smoke.md) |
 | candidate fix is not merged | 1 | [ghcrawl-191459-agentic-merge](results/openclaw/ghcrawl-191459-agentic-merge.md) |
 | Clear covered issue, but closeout is blocked on the canonical fix path landing. | 1 | [ghcrawl-156739-autonomous-smoke](results/openclaw/ghcrawl-156739-autonomous-smoke.md) |
-| Clear duplicate of the live canonical umbrella, but closeout is blocked on the canonical fix path or fix PR because require_fix_before_cl... | 1 | [ghcrawl-156756-autonomous-smoke](results/openclaw/ghcrawl-156756-autonomous-smoke.md) |
 
 ### Open PR Finalizer Queue
 
