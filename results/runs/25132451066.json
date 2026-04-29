@@ -1,0 +1,154 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-2271-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25132451066",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25132451066",
+  "head_sha": "8b6ee7ffa77533bbae10cb97289fd78b142edfab",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-2271-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T20:38:56.396Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/62120",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/62120",
+  "canonical_pr": null,
+  "summary": "Hydrated state shows the representative #59797 is closed and is not the live canonical. The current open canonical is #62120, a distinct host-side channel auth startup/preload bug; no duplicate closeout is safe. #62095 remains related but separate. A narrow fix artifact is planned for #62120, with no PR, merge, or close mutation planned by this worker.",
+  "actions": [
+    {
+      "target": "#62120",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#62120",
+      "candidate_fix": null,
+      "reason": "This is the best surviving open canonical for the host-side channel auth startup/preload root cause."
+    },
+    {
+      "target": "cluster:gitcrawl-2271-dedupe-only-20260429-remote",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#62120",
+      "candidate_fix": null,
+      "reason": "A narrow host CLI fix is needed, but this worker may only emit a plan/artifact."
+    },
+    {
+      "target": "cluster:gitcrawl-2271-dedupe-only-20260429-remote",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#62120",
+      "candidate_fix": null,
+      "reason": "Produce an executable narrow fix plan for a later guarded executor run."
+    },
+    {
+      "target": "#62095",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#62120",
+      "candidate_fix": null,
+      "reason": "Related but not a duplicate or close target; keep it open for its own triage path."
+    },
+    {
+      "target": "#59797",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#62120",
+      "candidate_fix": null,
+      "reason": "Closed representative is historical evidence only and must not receive a close action."
+    },
+    {
+      "target": "#56552",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#62120",
+      "candidate_fix": null,
+      "reason": "Closed context only; no mutation planned."
+    },
+    {
+      "target": "#53365",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#62120",
+      "candidate_fix": null,
+      "reason": "Closed historical Weixin context only."
+    },
+    {
+      "target": "#52885",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#62120",
+      "candidate_fix": null,
+      "reason": "Closed historical context only."
+    },
+    {
+      "target": "#52341",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#62120",
+      "candidate_fix": null,
+      "reason": "Closed context only; no close action is valid."
+    },
+    {
+      "target": "#53254",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#62120",
+      "candidate_fix": null,
+      "reason": "Closed historical PR only; no merge or fixed-by-candidate action is available."
+    },
+    {
+      "target": "#61283",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#62120",
+      "candidate_fix": null,
+      "reason": "Closed related context only."
+    },
+    {
+      "target": "#62076",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#62120",
+      "candidate_fix": null,
+      "reason": "Closed context only."
+    },
+    {
+      "target": "#15",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed independent first-hop context only."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_related": 1,
+    "keep_closed": 9
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "skipped": 9
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
