@@ -4,6 +4,7 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { assertAllowedOwner, hasSecuritySignalText, parseArgs, parseJob, repoRoot, validateJob } from "./lib.mjs";
+import { defaultCloseComment } from "./external-messages.mjs";
 
 const MAINTAINER_AUTHOR_ASSOCIATIONS = new Set(["OWNER", "MEMBER", "COLLABORATOR"]);
 const CLOSE_ACTIONS = new Set([
@@ -695,45 +696,17 @@ function renderCloseComment({ action, classification, result, target, live }) {
   const canonical = normalizeIssueRef(action.canonical ?? action.duplicate_of);
   const candidateFix = normalizeIssueRef(action.candidate_fix ?? action.fixed_by ?? action.fix_candidate);
   const title = typeof live.title === "string" ? live.title : `#${target}`;
-  const evidence = Array.isArray(action.evidence) ? action.evidence : [];
-  const evidenceLines = evidence
-    .slice(0, 5)
-    .map((item) => `- ${typeof item === "string" ? item : (item.detail ?? JSON.stringify(item))}`);
   const reason = action.reason ? String(action.reason).trim() : closeReasonText(classification);
-  const lines = [`Thanks for this. Projectclownfish reviewed this cluster and is closing #${target}.`];
-  lines.push("");
-  if (classification === "duplicate" && canonical) {
-    lines.push(
-      `This appears to duplicate #${canonical}. I'm keeping #${canonical} as the canonical thread so fixes, validation, and follow-up stay in one place.`,
-    );
-  } else if (classification === "superseded" && canonical) {
-    lines.push(
-      `This is superseded by #${canonical}. I'm keeping that thread as the canonical path so the useful context and contributor credit stay visible.`,
-    );
-  } else if (classification === "superseded" && candidateFix) {
-    lines.push(
-      `This is superseded by landed fix #${candidateFix}. I'm closing this older overlap so validation and follow-up stay attached to the shipped path.`,
-    );
-  } else if (classification === "fixed_by_candidate" && candidateFix) {
-    lines.push(
-      `This is covered by candidate fix #${candidateFix}. I'm closing this thread so validation and follow-up stay attached to that fix path.`,
-    );
-  } else if (classification === "low_signal") {
-    lines.push(
-      "This falls under the low-signal PR cleanup policy: the PR does not currently present a reviewable OpenClaw fix with maintainer signal, current validation, or a focused product path. Please reopen from a clean branch with a scoped summary, linked issue or rationale, and validation if this is still needed.",
-    );
-  } else {
-    lines.push(reason);
-  }
-  lines.push("");
-  lines.push(`Cluster: \`${result.cluster_id}\``);
-  lines.push(`Reviewed item: #${target} - ${title}`);
-  if (evidenceLines.length) lines.push("", "Evidence:", ...evidenceLines);
-  lines.push(
-    "",
-    "If this has a different reproduction path or still reproduces after the canonical fix lands, reply and we can reopen or split it back out.",
-  );
-  return lines.join("\n");
+  return defaultCloseComment({
+    action,
+    classification,
+    clusterId: result.cluster_id,
+    target,
+    title,
+    canonical,
+    candidateFix,
+    reason,
+  });
 }
 
 function closeReasonText(classification) {

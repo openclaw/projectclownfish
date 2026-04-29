@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { assertAllowedOwner, hasSecuritySignalText, parseArgs, parseJob, repoRoot, validateJob } from "./lib.mjs";
+import { postMergeCloseoutComment } from "./external-messages.mjs";
 
 const PASSING_CHECK_CONCLUSIONS = new Set(["SUCCESS", "SKIPPED", "NEUTRAL"]);
 const CLEAN_MERGE_STATES = new Set(["CLEAN", "HAS_HOOKS"]);
@@ -256,7 +257,7 @@ function finalizePostMergeCloseout({ action, actionName, target, fixRef, fixUrl,
     "--repo",
     result.repo,
     "--body",
-    closeoutBody({ actionName, fixUrl }),
+    postMergeCloseoutComment({ actionName, fixUrl }),
   ]);
   if (live.pull_request) {
     ghWithRetry(["pr", "close", String(target), "--repo", result.repo]);
@@ -271,15 +272,6 @@ function finalizePostMergeCloseout({ action, actionName, target, fixRef, fixUrl,
     live_state: after.state,
     merge_commit_sha: finalized.merge_commit_sha ?? null,
   };
-}
-
-function closeoutBody({ actionName, fixUrl }) {
-  const relation = actionName === "close_superseded" ? "superseded by" : "covered by";
-  return [
-    `This is ${relation} ${fixUrl}, which has landed as the canonical ProjectClownfish fix path for this cluster.`,
-    "",
-    "Closing this now that the validated fix is merged. If this still reproduces on current main with a different path, reply here and we can reopen or split it back out.",
-  ].join("\n");
 }
 
 function validateMergePolicy() {

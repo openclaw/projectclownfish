@@ -4,6 +4,12 @@ import os from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { assertAllowedOwner, parseArgs, parseJob, repoRoot, validateJob } from "./lib.mjs";
+import {
+  repairContributorBranchComment,
+  replacementPrBody,
+  replacementSourceCloseComment,
+  replacementSourceLinkComment,
+} from "./external-messages.mjs";
 
 const FIX_ACTIONS = new Set(["fix_needed", "build_fix_artifact", "open_fix_pr"]);
 const REPAIR_STRATEGIES = new Set(["repair_contributor_branch", "replace_uneditable_branch", "new_fix_pr"]);
@@ -364,13 +370,10 @@ function executeRepairBranch({ fixArtifact, targetDir }) {
   const pushArgs = repairBranchPushArgs({ pull, rebased });
   run("git", pushArgs, { cwd: targetDir });
   const threadResolution = prepareReviewThreadsForMerge({ repo: result.repo, number: sourcePr.number, targetDir });
-  const comment = [
-    "ProjectClownfish pushed a narrow repair to this branch so the original contributor path can stay canonical.",
-    "",
-    `Source PR: ${sourcePr.url}`,
-    `Validation: ${fixArtifact.validation_commands.join("; ")}`,
-    "Contributor credit is preserved in the branch history and PR context.",
-  ].join("\n");
+  const comment = repairContributorBranchComment({
+    sourcePrUrl: sourcePr.url,
+    validationCommands: fixArtifact.validation_commands,
+  });
   run("gh", ["pr", "comment", String(sourcePr.number), "--repo", result.repo, "--body", comment], { cwd: targetDir, env: ghEnv() });
   return {
     action: "repair_contributor_branch",
@@ -429,7 +432,7 @@ function executeReplacementBranch({ fixArtifact, targetDir, supersedeSources, fa
   if (refreshValidatedBranchBase({ targetDir, branch, baseBranch })) {
     prep.commit = currentHead(targetDir);
   }
-  const body = replacementPrBody(fixArtifact, fallbackReason);
+  const body = replacementPrBody({ fixArtifact, fallbackReason, clusterId: result.cluster_id });
   if (dryRun) {
     return {
       action: "open_fix_pr",
@@ -501,14 +504,7 @@ function linkReplacementSourcePr({ source, parsed, replacementPrUrl, targetDir }
     return { ...base, status: "skipped", reason: "already closed" };
   }
 
-  const comment = [
-    "ProjectClownfish could not safely update this branch, so it opened a narrow replacement PR instead.",
-    "",
-    `Replacement PR: ${replacementPrUrl}`,
-    `Source PR: ${source}`,
-    "This source PR is being left open for maintainer and contributor review; automatic source-PR closing is disabled.",
-    "Contributor credit is preserved in the replacement PR body and changelog plan.",
-  ].join("\n");
+  const comment = replacementSourceLinkComment({ replacementPrUrl, sourcePrUrl: source });
   run("gh", ["pr", "comment", String(parsed.number), "--repo", result.repo, "--body", comment], {
     cwd: targetDir,
     env: ghEnv(),
@@ -526,14 +522,7 @@ function closeSupersededSourcePr({ source, parsed, replacementPrUrl, targetDir }
     return { ...base, status: "skipped", reason: "already closed" };
   }
 
-  const comment = [
-    "ProjectClownfish could not safely update this branch, so it opened a narrow replacement PR instead.",
-    "",
-    `Replacement PR: ${replacementPrUrl}`,
-    `Source PR: ${source}`,
-    "Automatic source-PR closing is explicitly enabled for this run.",
-    "Contributor credit is preserved in the replacement PR body and changelog plan.",
-  ].join("\n");
+  const comment = replacementSourceCloseComment({ replacementPrUrl, sourcePrUrl: source });
   run("gh", ["pr", "comment", String(parsed.number), "--repo", result.repo, "--body", comment], {
     cwd: targetDir,
     env: ghEnv(),
@@ -1268,20 +1257,6 @@ function codexReviewSchemaPath() {
     )}\n`,
   );
   return schemaPath;
-}
-
-function replacementPrBody(fixArtifact, fallbackReason) {
-  const lines = [
-    fixArtifact.pr_body.trim(),
-    "",
-    "ProjectClownfish replacement details:",
-    `- Cluster: ${result.cluster_id}`,
-    `- Source PRs: ${(fixArtifact.source_prs ?? []).join(", ") || "none"}`,
-    `- Credit: ${fixArtifact.credit_notes.join("; ")}`,
-    `- Validation: ${fixArtifact.validation_commands.join("; ")}`,
-  ];
-  if (fallbackReason) lines.push(`- Repair fallback: ${fallbackReason}`);
-  return `${lines.join("\n")}\n`;
 }
 
 function supersededReplacementSources(fixArtifact) {

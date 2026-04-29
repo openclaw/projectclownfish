@@ -25,7 +25,8 @@
     "requeue": "node scripts/requeue-job.mjs",
     "self-heal": "node scripts/self-heal-failed-runs.mjs",
     "publish-result": "node scripts/publish-result.mjs",
-    "review-results": "node scripts/review-results.mjs"
+    "review-results": "node scripts/review-results.mjs",
+    "message-samples": "node scripts/render-message-samples.mjs"
   },
   "engines": {
     "node": ">=24"
