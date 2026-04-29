@@ -24,6 +24,39 @@
 10. Dispatch execute/autonomous jobs for reviewed clusters only. Workers still return JSON; `execute-fix-artifact` owns branch repair/replacement PR creation, and `apply-result` performs remaining safe GitHub mutations afterward.
 11. Reset `CLOWNFISH_ALLOW_EXECUTE=0` and `CLOWNFISH_ALLOW_FIX_PR=0`.
 
+## Manual Fix PR From Issue or PR Refs
+
+Use `scripts/create-job.mjs` when ClawSweeper or a maintainer has identified a
+valid issue/PR cluster that should get one implementation PR. It writes one
+idempotent job file and checks for an existing open PR or branch before creating
+another job.
+
+```bash
+npm run create-job -- \
+  --repo openclaw/openclaw \
+  --refs 123,456 \
+  --prompt-file /tmp/clownfish-prompt.md
+```
+
+From a ClawSweeper report, reuse the stored work prompt, related refs,
+validation, and likely files:
+
+```bash
+npm run create-job -- --from-report ../clawsweeper/records/openclaw-openclaw/items/123.md
+```
+
+The generated job defaults to `mode: autonomous`, `allow_fix_pr: true`,
+`allow_instant_close: false`, `allow_merge: false`, and
+`require_fix_before_close: true`. Commit and push the new job file, then
+dispatch it:
+
+```bash
+npm run validate:job -- jobs/openclaw/inbox/clawsweeper-openclaw-openclaw-123.md
+npm run dispatch -- jobs/openclaw/inbox/clawsweeper-openclaw-openclaw-123.md --mode autonomous
+```
+
+Keep `CLOWNFISH_ALLOW_MERGE=0` unless a human explicitly opens the merge gate.
+
 ## Security Boundary
 
 Security-sensitive work is centrally managed outside ProjectClownfish. The importer skips those clusters by default, the job schema rejects `security_sensitive: true`, the planner marks any hydrated security-sensitive item, `review-results` fails mutating recommendations against those items, and `apply-result` blocks live targets with security-sensitive labels/title/body.
