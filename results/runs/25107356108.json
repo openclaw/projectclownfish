@@ -1,0 +1,81 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156784-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25107356108",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25107356108",
+  "head_sha": "a746142e846c8487ff6cabaafd172955050d63c3",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156784-autonomous-smoke.md",
+  "published_at": "2026-04-29T11:58:25.380Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/41265",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/41256",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/41265",
+  "summary": "Canonical path is the open repairable contributor PR #41265 for linked issue #41256. It is not merge-ready because mergeability is unknown, relevant checks are failing, and hydrated review-bot findings still need to be addressed or proven stale at the current head. Closed overlapping PRs #41419 and #41714 were already superseded by #41265 and receive no close actions.",
+  "actions": [
+    {
+      "target": "#41256",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41256",
+      "candidate_fix": "#41265",
+      "reason": "Keep the root bug issue open until the canonical PR path lands and validation can close it cleanly."
+    },
+    {
+      "target": "#41265",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41265",
+      "candidate_fix": "#41265",
+      "reason": "Repair the canonical contributor branch before any merge recommendation; current evidence does not satisfy merge preflight."
+    },
+    {
+      "target": "cluster:ghcrawl-156784-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#41265",
+      "candidate_fix": "#41265",
+      "reason": "The cluster has a clear canonical branch but needs executor repair and validation before merge or post-merge closeout."
+    },
+    {
+      "target": "#41419",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#41265",
+      "candidate_fix": "#41265",
+      "reason": "Historical closed context only; no mutation is allowed or needed."
+    },
+    {
+      "target": "#41714",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#41265",
+      "candidate_fix": "#41265",
+      "reason": "Historical closed context only; no mutation is allowed or needed."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1,
+    "keep_closed": 2
+  },
+  "action_status_counts": {
+    "planned": 3,
+    "skipped": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}

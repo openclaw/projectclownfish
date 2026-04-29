@@ -3,14 +3,14 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-29T11:57:53.356Z",
+  "generated_at": "2026-04-29T12:04:53.362Z",
   "count": 45,
   "summary": {
     "open_prs": 45,
     "ready_candidates": 0,
     "security_hold": 1,
-    "needs_rebase": 38,
-    "mergeability_unknown": 2,
+    "needs_rebase": 40,
+    "mergeability_unknown": 0,
     "needs_checks": 17,
     "needs_review": 16,
     "needs_merge_preflight": 45,
@@ -206,8 +206,8 @@
       "cluster_id": "clawsweeper-commit-openclaw-openclaw-d130a77a3b1e",
       "job_path": "jobs/openclaw/inbox/clawsweeper-commit-openclaw-openclaw-d130a77a3b1e.md",
       "updated_at": "2026-04-29T03:46:52Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -279,12 +279,12 @@
         }
       },
       "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
         "needs_checks:CI / checks-node-agentic-commands:FAILURE; CI / check-lint:FAILURE; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (npm-onboard-channel-agent):FAILURE",
         "needs_merge_preflight"
       ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     },
     {
       "number": 74010,
@@ -361,8 +361,8 @@
       "cluster_id": "ghcrawl-166009-agentic-merge",
       "job_path": "jobs/openclaw/inbox/ghcrawl-166009-agentic-merge.md",
       "updated_at": "2026-04-29T06:13:06Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -418,13 +418,13 @@
         "apply_action": null
       },
       "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
         "unresolved review threads remain",
         "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-fast-support:FAILURE; CI / checks-node-core:FAILURE",
         "needs_merge_preflight"
       ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     },
     {
       "number": 74008,
@@ -2795,7 +2795,7 @@
       "head_sha": "7199f05a656400d300086f2c28b6e832146050f4",
       "cluster_id": "ghcrawl-156636-autonomous-smoke",
       "job_path": "jobs/openclaw/inbox/ghcrawl-156636-autonomous-smoke.md",
-      "updated_at": "2026-04-29T11:55:54Z",
+      "updated_at": "2026-04-29T11:58:28Z",
       "mergeable": "MERGEABLE",
       "merge_state_status": "UNSTABLE",
       "review_decision": "",
