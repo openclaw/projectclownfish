@@ -110,6 +110,7 @@ group, so repeated dispatches queue instead of racing the same branch.
 The router does not dispatch when:
 
 - the comment author is not trusted automation and is not a maintainer;
+- the issue or PR is closed;
 - the target is not a PR;
 - the PR is not marked as a Clownfish PR;
 - the branch cannot be mapped back to a job file;

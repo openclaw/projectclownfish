@@ -181,6 +181,9 @@ function classifyCommand(command) {
   if (!REPAIR_INTENTS.has(command.intent)) {
     return { ...next, status: "ready", actions: [{ action: "comment", status: execute ? "pending" : "planned" }] };
   }
+  if (String(issue.state ?? "").toLowerCase() !== "open") {
+    return repairBlocked(next, "repair commands require an open issue or PR");
+  }
   if (!pull) {
     return repairBlocked(next, "repair commands currently require an existing Clownfish PR");
   }
