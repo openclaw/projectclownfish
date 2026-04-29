@@ -2,8 +2,10 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import {
+  AUTOCLOSE_INTENTS,
   MERGE_INTENTS,
   REPAIR_INTENTS,
+  autocloseReasonFromCommand,
   automergeClusterId,
   automergeGateBlockReason,
   automergeJobBranch,
@@ -38,6 +40,23 @@ test("parseCommand recognizes maintainer slash commands", () => {
     command: "automerge",
     intent: "automerge",
   });
+  assert.deepEqual(parseCommand("/autoclose We do not plan to support this feature"), {
+    trigger: "slash",
+    command: "autoclose we do not plan to support this feature",
+    intent: "autoclose",
+    autoclose_message: "We do not plan to support this feature",
+  });
+  assert.deepEqual(parseCommand("/clownfish autoclose Not a direction for OpenClaw"), {
+    trigger: "slash",
+    command: "autoclose not a direction for openclaw",
+    intent: "autoclose",
+    autoclose_message: "Not a direction for OpenClaw",
+  });
+});
+
+test("autoclose reason parser preserves maintainer wording", () => {
+  assert.equal(autocloseReasonFromCommand("autoclose We don't want this feature"), "We don't want this feature");
+  assert.equal(autocloseReasonFromCommand("autoclose"), "");
 });
 
 test("automerge job helpers create stable adopted PR job identity", () => {
@@ -229,6 +248,31 @@ test("renderResponse reports automerge resume actions", () => {
   assert.match(body, /repair\/rebase/);
 });
 
+test("renderResponse reports maintainer autoclose results", () => {
+  const body = renderResponse(
+    {
+      comment_id: "460",
+      intent: "autoclose",
+      autoclose_reason: "We do not plan to support this feature.",
+      target: { head_sha: null },
+    },
+    {
+      autoclose: {
+        status: "executed",
+        targets: [
+          { ref: "#123", title: "Add unsupported provider", status: "closed" },
+          { ref: "#124", title: "Same unsupported provider", status: "closed" },
+        ],
+      },
+    },
+  );
+
+  assert.match(body, /autoclose is complete/);
+  assert.match(body, /We do not plan to support this feature/);
+  assert.match(body, /Closed #123/);
+  assert.doesNotMatch(body, /ProjectClownfish/i);
+});
+
 test("renderResponse reports needs-human automerge repair dispatches", () => {
   const body = renderResponse(
     {
@@ -304,6 +348,10 @@ test("repair intent set documents executable repair commands", () => {
 
 test("merge intent set documents ClawSweeper pass automerge", () => {
   assert.deepEqual([...MERGE_INTENTS], ["clawsweeper_auto_merge"]);
+});
+
+test("autoclose intent set documents destructive maintainer commands", () => {
+  assert.deepEqual([...AUTOCLOSE_INTENTS], ["autoclose"]);
 });
 
 test("automerge merge args pin the reviewed head SHA", () => {

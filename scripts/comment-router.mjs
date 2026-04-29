@@ -13,9 +13,11 @@ import {
   waitForLiveWorkerCapacity,
 } from "./lib.mjs";
 import {
+  AUTOCLOSE_INTENTS,
   MERGE_INTENTS,
   REPAIR_INTENTS,
   DEFAULT_ALLOWED_REPOSITORY_PERMISSIONS,
+  autocloseReasonFromCommand,
   automergeGateBlockReason,
   automergeClusterId,
   automergeJobPath,
@@ -44,6 +46,7 @@ const DEFAULT_TARGET_REPO = "openclaw/openclaw";
 const DEFAULT_HEAD_PREFIX = "clownfish/";
 const DEFAULT_LABEL = "clownfish";
 const AUTOMERGE_LABEL = "clownfish:automerge";
+const HUMAN_REVIEW_LABEL = "clownfish:human-review";
 const DEFAULT_LABEL_COLOR = "F97316";
 const DEFAULT_LABEL_DESCRIPTION = "Tracked by Clownfish automation";
 const DEFAULT_ALLOWED_ASSOCIATIONS = ["OWNER", "MEMBER", "COLLABORATOR"];
@@ -68,6 +71,10 @@ const writeReport = Boolean(args["write-report"] || execute);
 const waitForCapacity = Boolean(args["wait-for-capacity"]);
 const maxLiveWorkers = readMaxLiveWorkers(args);
 const maxComments = positiveInteger(args["max-comments"] ?? process.env.CLOWNFISH_COMMENT_MAX_COMMENTS ?? 100, "max-comments");
+const maxAutocloseTargets = positiveInteger(
+  args["max-autoclose-targets"] ?? process.env.CLOWNFISH_AUTOCLOSE_MAX_TARGETS ?? 8,
+  "max-autoclose-targets",
+);
 const maxAutoRepairsPerHead = positiveInteger(
   args["max-auto-repairs-per-head"] ?? process.env.CLOWNFISH_CLAWSWEEPER_MAX_REPAIRS_PER_HEAD ?? 1,
   "max-auto-repairs-per-head",
@@ -131,6 +138,7 @@ for (const comment of comments) {
     trigger: parsed.trigger,
     command: parsed.command,
     intent: parsed.intent,
+    autoclose_message: parsed.autoclose_message ?? null,
     trusted_bot: Boolean(parsed.trusted_bot),
     trusted_bot_author: parsed.trusted_bot_author ?? null,
     automation_source: parsed.automation_source ?? null,
@@ -153,6 +161,7 @@ const report = {
   since,
   execute,
   max_comments: maxComments,
+  max_autoclose_targets: maxAutocloseTargets,
   scanned_comments: comments.length,
   commands_seen: commands.length,
   actionable: actionable.length,
@@ -219,6 +228,9 @@ function classifyCommand(command) {
 
   if (["status", "explain", "help"].includes(command.intent)) {
     return { ...next, status: "ready", actions: [{ action: "comment", status: execute ? "pending" : "planned" }] };
+  }
+  if (AUTOCLOSE_INTENTS.has(command.intent)) {
+    return classifyAutoclose(next, issue, pull);
   }
   if (command.intent === "automerge") {
     if (String(issue.state ?? "").toLowerCase() !== "open") {
@@ -312,6 +324,52 @@ function classifyCommand(command) {
     actions: [
       ...actions,
       { action: "dispatch_repair", workflow, job_path: repairJobPath, mode: target.mode, status: execute ? "pending" : "planned" },
+      { action: "comment", status: execute ? "pending" : "planned" },
+    ],
+  };
+}
+
+function classifyAutoclose(command, issue, pull) {
+  const reason = autocloseReason(command);
+  if (!reason) {
+    return {
+      ...command,
+      status: "ready",
+      reason: "autoclose requires a maintainer close reason",
+      actions: [{ action: "comment", status: execute ? "pending" : "planned" }],
+    };
+  }
+  if (String(issue.state ?? "").toLowerCase() !== "open") {
+    return {
+      ...command,
+      autoclose_reason: reason,
+      status: "ready",
+      reason: "autoclose requires an open issue or PR",
+      actions: [{ action: "comment", status: execute ? "pending" : "planned" }],
+    };
+  }
+  const targets = discoverAutocloseTargets({ command, issue, pull });
+  if (targets.length === 0) {
+    return {
+      ...command,
+      autoclose_reason: reason,
+      status: "ready",
+      reason: "autoclose found no open same-repo targets",
+      actions: [{ action: "comment", status: execute ? "pending" : "planned" }],
+    };
+  }
+  return {
+    ...command,
+    autoclose_reason: reason,
+    autoclose_targets: targets,
+    status: "ready",
+    actions: [
+      {
+        action: "autoclose",
+        reason,
+        targets: targets.map((target) => ({ ref: target.ref, kind: target.kind, title: target.title })),
+        status: execute ? "pending" : "planned",
+      },
       { action: "comment", status: execute ? "pending" : "planned" },
     ],
   };
@@ -503,6 +561,13 @@ function executeCommand(command) {
       }
       return action;
     });
+  }
+  if (AUTOCLOSE_INTENTS.has(command.intent) && command.issue_number && command.autoclose_targets?.length > 0) {
+    const autoclose = executeAutoclose(command);
+    dispatched = { ...(dispatched ?? {}), autoclose };
+    command.actions = command.actions.map((action) =>
+      action.action === "autoclose" ? { ...action, ...autoclose, completed_at: new Date().toISOString() } : action,
+    );
   }
   if (MERGE_INTENTS.has(command.intent) && command.issue_number) {
     const merge = executeAutomerge(command);
@@ -703,6 +768,147 @@ function dispatchRepair(command) {
   };
 }
 
+function executeAutoclose(command) {
+  const reason = autocloseReason(command);
+  const currentNumber = Number(command.issue_number);
+  const targets = [...(command.autoclose_targets ?? [])].sort((left, right) => {
+    if (Number(left.number) === currentNumber) return 1;
+    if (Number(right.number) === currentNumber) return -1;
+    return Number(left.number) - Number(right.number);
+  });
+  const results = [];
+  for (const target of targets) {
+    let liveTarget = target;
+    try {
+      liveTarget = issueTargetFromIssue(fetchIssue(target.number));
+      if (String(liveTarget.state ?? "").toLowerCase() !== "open") {
+        results.push({ ...liveTarget, status: "skipped", reason: "already closed" });
+        continue;
+      }
+      if (Number(liveTarget.number) !== currentNumber) {
+        postIssueComment(command.repo, liveTarget.number, renderAutocloseLinkedComment(command, liveTarget, reason));
+      }
+      closeIssueOrPullRequest(command.repo, liveTarget.number, liveTarget.kind);
+      results.push({ ...liveTarget, status: "closed", closed_at: new Date().toISOString() });
+    } catch (error) {
+      results.push({
+        ...liveTarget,
+        status: "blocked",
+        reason: stripAnsi(error?.message ?? error).trim() || "close command failed",
+      });
+    }
+  }
+  return {
+    action: "autoclose",
+    status: results.some((target) => target.status === "closed") ? "executed" : "blocked",
+    reason,
+    targets: results,
+  };
+}
+
+function discoverAutocloseTargets({ command, issue, pull }) {
+  const numbers = collectAutocloseCandidateNumbers({ command, issue, pull });
+  const targets = [];
+  for (const number of numbers) {
+    if (targets.length >= maxAutocloseTargets) break;
+    try {
+      const candidate = Number(number) === Number(issue.number) ? issue : fetchIssue(number);
+      const target = issueTargetFromIssue(candidate);
+      if (target.state !== "open") continue;
+      targets.push(target);
+    } catch {
+      // Broken or private references should not block the explicit target close.
+    }
+  }
+  return targets;
+}
+
+function collectAutocloseCandidateNumbers({ command, issue, pull }) {
+  const numbers = new Set();
+  const add = (value) => {
+    const number = Number(value);
+    if (Number.isInteger(number) && number > 0) numbers.add(number);
+  };
+  add(command.issue_number);
+  addAutocloseNumbersFromText(numbers, command.autoclose_message);
+  addAutocloseNumbersFromText(numbers, issue.body);
+  addAutocloseNumbersFromText(numbers, pull?.body);
+  for (const linked of pull?.closingIssuesReferences ?? []) add(linked.number);
+  for (const number of fetchTimelineLinkedNumbers(command.issue_number)) add(number);
+  return [...numbers];
+}
+
+function fetchTimelineLinkedNumbers(number) {
+  try {
+    const timeline = ghPaged(`repos/${targetRepo}/issues/${number}/timeline?per_page=100`);
+    const numbers = new Set();
+    for (const event of timeline) {
+      addAutocloseNumbersFromText(numbers, event?.body);
+      addAutocloseNumbersFromText(numbers, event?.source?.issue?.html_url);
+    }
+    return [...numbers];
+  } catch {
+    return [];
+  }
+}
+
+function addAutocloseNumbersFromText(numbers, text) {
+  const value = String(text ?? "");
+  if (!value) return;
+  const urlPattern = new RegExp(`https://github\\.com/${escapeRegExp(targetRepo)}/(?:issues|pull)/(\\d+)`, "gi");
+  for (const match of value.matchAll(urlPattern)) numbers.add(Number(match[1]));
+  for (const match of value.matchAll(/(?:^|[\s(])#(\d+)\b/g)) numbers.add(Number(match[1]));
+}
+
+function issueTargetFromIssue(issue) {
+  const number = Number(issue.number);
+  return {
+    number,
+    ref: `#${number}`,
+    kind: issue.pull_request ? "pull_request" : "issue",
+    state: String(issue.state ?? "").toLowerCase(),
+    title: issue.title ?? null,
+    url: issue.html_url ?? `https://github.com/${targetRepo}/${issue.pull_request ? "pull" : "issues"}/${number}`,
+  };
+}
+
+function autocloseReason(command) {
+  return String(command.autoclose_message ?? autocloseReasonFromCommand(command.command)).trim();
+}
+
+function renderAutocloseLinkedComment(command, target, reason) {
+  return [
+    `<!-- clownfish-autoclose:${command.comment_version_key ?? command.comment_id}:#${target.number} -->`,
+    "🐠 Clownfish is closing this as not planned based on maintainer direction on a linked item.",
+    "",
+    `Source: #${command.issue_number}`,
+    "",
+    "Maintainer reason:",
+    `> ${reason.replace(/\n/g, "\n> ")}`,
+  ].join("\n");
+}
+
+function postIssueComment(repo, number, body) {
+  const payloadPath = writePayload(repoRoot(), `autoclose-comment-${number}`, { body });
+  ghText(["api", `repos/${repo}/issues/${number}/comments`, "--method", "POST", "--input", payloadPath]);
+}
+
+function closeIssueOrPullRequest(repo, number, kind) {
+  if (kind === "pull_request") {
+    ghText(["pr", "close", String(number), "--repo", repo]);
+    return;
+  }
+  const payloadPath = writePayload(repoRoot(), `autoclose-close-${number}`, {
+    state: "closed",
+    state_reason: "not_planned",
+  });
+  ghText(["api", `repos/${repo}/issues/${number}`, "--method", "PATCH", "--input", payloadPath]);
+}
+
+function escapeRegExp(value) {
+  return String(value ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function executeAutomerge(command) {
   const view = fetchPullRequestView(command.issue_number);
   const labels = (view.labels ?? []).map((item) => item.name ?? item);
@@ -882,6 +1088,8 @@ function fetchPullRequestView(number) {
       "headRefOid",
       "author",
       "baseRefName",
+      "body",
+      "closingIssuesReferences",
       "isDraft",
       "labels",
       "mergeable",

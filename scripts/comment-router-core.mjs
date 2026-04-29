@@ -1,5 +1,6 @@
 export const REPAIR_INTENTS = new Set(["fix_ci", "address_review", "rebase", "clawsweeper_auto_repair"]);
 export const MERGE_INTENTS = new Set(["clawsweeper_auto_merge"]);
+export const AUTOCLOSE_INTENTS = new Set(["autoclose"]);
 export const AUTOMERGE_JOB_SOURCE = "pr_automerge";
 export const DEFAULT_ALLOWED_REPOSITORY_PERMISSIONS = ["admin", "maintain", "write"];
 
@@ -112,6 +113,8 @@ export function buildAutomergeMergeArgs({ issueNumber, repo, expectedHeadSha }) 
 
 export function parseCommand(body) {
   for (const line of String(body ?? "").split(/\r?\n/)) {
+    const autoclose = line.match(/^\s*\/autoclose(?:\s+(.+))?\s*$/i);
+    if (autoclose) return commandFromText("slash", `autoclose ${autoclose[1] ?? ""}`.trim());
     const slash = line.match(/^\s*\/clownfish(?:\s+(.+))?\s*$/i);
     if (slash) return commandFromText("slash", slash[1] ?? "status");
     const mention = line.match(/^\s*@openclaw-clownfish(?:\[bot\])?(?:\s+(.+))?\s*$/i);
@@ -178,7 +181,7 @@ export function renderResponse(command, dispatched) {
       marker,
       "Clownfish is here and listening for maintainer commands.",
       "",
-      "Supported commands: `/clownfish status`, `/clownfish fix ci`, `/clownfish address review`, `/clownfish rebase`, `/clownfish automerge`, `/clownfish explain`, `/clownfish stop`.",
+      "Supported commands: `/clownfish status`, `/clownfish fix ci`, `/clownfish address review`, `/clownfish rebase`, `/clownfish automerge`, `/autoclose <reason>`, `/clownfish explain`, `/clownfish stop`.",
       "",
       "I only act for maintainers, or for trusted ClawSweeper feedback on a Clownfish PR or PR opted into `clownfish:automerge`.",
     ].join("\n");
@@ -207,6 +210,29 @@ export function renderResponse(command, dispatched) {
         : `Reason: ${command.reason ?? "automerge requires a pull request"}.`,
       "",
       "A maintainer can pause this with `/clownfish stop`.",
+    ].join("\n");
+  }
+  if (command.intent === "autoclose") {
+    const result = dispatched?.autoclose;
+    const closed = (result?.targets ?? []).filter((target) => target.status === "closed");
+    const skipped = (result?.targets ?? []).filter((target) => target.status !== "closed");
+    const closedLines = closed.map((target) => `- Closed ${target.ref}: ${target.title ?? "untitled"}`);
+    const skippedLines = skipped.map((target) => `- Skipped ${target.ref}: ${target.reason ?? target.status}`);
+    return [
+      marker,
+      result?.status === "executed"
+        ? "Clownfish autoclose is complete."
+        : "Clownfish could not autoclose this item.",
+      "",
+      `Reason: ${command.autoclose_reason ?? command.autoclose_message ?? command.reason ?? "autoclose requires a maintainer close reason"}`,
+      ...(closedLines.length > 0 ? ["", "Closed:", ...closedLines] : []),
+      ...(skippedLines.length > 0 ? ["", "Skipped:", ...skippedLines] : []),
+      ...(result
+        ? []
+        : [
+            "",
+            "Usage: `/autoclose <maintainer close reason>`. I will close this item and bounded linked open same-repo items.",
+          ]),
     ].join("\n");
   }
   if (command.intent === "clawsweeper_auto_repair") {
@@ -262,6 +288,7 @@ export function renderResponse(command, dispatched) {
       "",
       "Supported repair commands work on existing Clownfish PRs and PRs opted into `clownfish:automerge`: `/clownfish fix ci`, `/clownfish address review`, `/clownfish rebase`.",
       "A maintainer can opt a PR in with `/clownfish automerge` and I can take another pass.",
+      "A maintainer can close unsupported or declined work with `/autoclose <reason>`.",
     ].join("\n");
   }
   return [
@@ -277,9 +304,17 @@ export function renderResponse(command, dispatched) {
 }
 
 function commandFromText(trigger, value) {
-  const command = String(value ?? "status").trim().replace(/\s+/g, " ").toLowerCase();
+  const rawCommand = String(value ?? "status").trim().replace(/\s+/g, " ");
+  const command = rawCommand.toLowerCase();
   const intent = normalizeIntent(command);
-  return { trigger, command, intent };
+  const parsed = { trigger, command, intent };
+  if (intent === "autoclose") parsed.autoclose_message = autocloseReasonFromCommand(rawCommand);
+  return parsed;
+}
+
+export function autocloseReasonFromCommand(command) {
+  const match = String(command ?? "").trim().match(/^autoclose(?:\s+([\s\S]+))?$/i);
+  return String(match?.[1] ?? "").trim();
 }
 
 function normalizeIntent(command) {
@@ -292,6 +327,7 @@ function normalizeIntent(command) {
   if (["automerge", "auto merge", "merge when clean", "merge when ready", "automerge on"].includes(command)) {
     return "automerge";
   }
+  if (command === "autoclose" || command.startsWith("autoclose ")) return "autoclose";
   if (["stop", "pause", "human review", "handoff"].includes(command)) return "stop";
   return "help";
 }
