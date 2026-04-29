@@ -24,6 +24,7 @@ const limit = numberArg("limit", 40);
 const minSize = numberArg("min-size", 2);
 let clusterIds = args._.map((value) => Number(value)).filter(Boolean);
 const selectingFromGitcrawl = clusterIds.length === 0 && fromGitcrawl;
+const clusterSource = detectClusterSource();
 
 if (selectingFromGitcrawl) {
   clusterIds = selectClusterIds();
@@ -44,6 +45,7 @@ fs.mkdirSync(outDir, { recursive: true });
 
 const existingClusterIds = skipExisting ? existingGitcrawlClusterIds(outDir) : new Set();
 const existingMemberRefs = skipExisting ? existingGitcrawlMemberRefs(outDir, suffix) : new Map();
+const prefetchedMembers = selectingFromGitcrawl ? prefetchMembers(clusterIds) : null;
 let createdCount = 0;
 
 for (const clusterId of clusterIds) {
@@ -53,31 +55,7 @@ for (const clusterId of clusterIds) {
     continue;
   }
 
-  const members = sqliteJson(`
-    select
-      c.id as cluster_id,
-      c.member_count,
-      c.created_at as cluster_created_at,
-      c.closed_at_local,
-      c.close_reason_local,
-      rt.number as representative_number,
-      rt.kind as representative_kind,
-      rt.state as representative_state,
-      rt.title as representative_title,
-      t.number,
-      t.kind,
-      t.state,
-      t.title,
-      t.body,
-      t.labels_json,
-      t.updated_at
-    from clusters c
-    join cluster_members cm on cm.cluster_id = c.id
-    join threads t on t.id = cm.thread_id
-    left join threads rt on rt.id = c.representative_thread_id
-    where c.id = ${sqlNumber(clusterId)}
-    order by t.number;
-  `);
+  const members = prefetchedMembers?.get(clusterId) ?? sqliteJson(memberSql(clusterId));
 
   if (members.length === 0) {
     console.error(`cluster not found: ${clusterId}`);
@@ -120,6 +98,10 @@ for (const clusterId of clusterIds) {
     title: first.representative_title,
   };
   const openMembers = members.filter((member) => member.state === "open");
+  if (openMembers.length === 0) {
+    console.error(`skip closed-only cluster: ${clusterId} ${representative.title ?? ""}`);
+    continue;
+  }
   const closedMembers = members.filter((member) => member.state !== "open");
   const issueCount = members.filter((member) => member.kind === "issue").length;
   const pullRequestCount = members.filter((member) => member.kind === "pull_request").length;
@@ -145,19 +127,16 @@ for (const clusterId of clusterIds) {
     "  - force_push",
     "  - bypass_checks",
     ...(allowMerge ? [] : ["  - merge"]),
-    ...(allowFixPr ? [] : ["  - fix"]),
+    ...(allowFixPr ? [] : ["  - fix", "  - raise_pr"]),
     "require_human_for:",
     "  - security_sensitive",
     "  - failing_checks",
     "  - conflicting_prs",
     "  - unclear_canonical",
     "  - broad_code_delta",
-    "canonical:",
-    ...yamlList(canonical),
-    "candidates:",
-    ...yamlList(openMembers.map((member) => `#${member.number}`)),
-    "cluster_refs:",
-    ...yamlList(members.map((member) => `#${member.number}`)),
+    ...yamlField("canonical", canonical),
+    ...yamlField("candidates", openMembers.map((member) => `#${member.number}`)),
+    ...yamlField("cluster_refs", members.map((member) => `#${member.number}`)),
     "security_policy: central_security_only",
     "security_sensitive: false",
     ...(mode === "autonomous" || mode === "execute"
@@ -207,11 +186,31 @@ for (const clusterId of clusterIds) {
   ].join("\n");
 
   fs.writeFileSync(filePath, markdown);
+  for (const member of members) {
+    const number = Number(member.number);
+    if (!Number.isSafeInteger(number)) continue;
+    const files = existingMemberRefs.get(number) ?? [];
+    files.push(path.relative(repoRoot(), filePath));
+    existingMemberRefs.set(number, files);
+  }
   createdCount += 1;
   console.log(path.relative(repoRoot(), filePath));
 }
 
 function selectClusterIds() {
+  if (clusterSource === "portable") {
+    return sqliteJson(`
+      select
+        cg.id,
+        count(*) as member_count
+      from cluster_groups cg
+      join cluster_memberships cm on cm.cluster_id = cg.id and cm.state = 'active'
+      where cg.status = 'active'
+      group by cg.id
+      having member_count >= ${sqlNumber(minSize)}
+      order by member_count desc, cg.id asc
+    `).map((row) => Number(row.id)).filter(Boolean);
+  }
   return sqliteJson(`
     select
       c.id,
@@ -223,13 +222,111 @@ function selectClusterIds() {
   `).map((row) => Number(row.id)).filter(Boolean);
 }
 
+function memberSql(clusterId) {
+  return memberSqlForClusterIds([clusterId]);
+}
+
+function memberSqlForClusterIds(clusterIds) {
+  const idList = clusterIds.map(sqlNumber).join(",");
+  if (clusterSource === "portable") {
+    return `
+      select
+        cg.id as cluster_id,
+        (
+          select count(*)
+          from cluster_memberships cm_count
+          where cm_count.cluster_id = cg.id
+            and cm_count.state = 'active'
+        ) as member_count,
+        cg.created_at as cluster_created_at,
+        cg.closed_at as closed_at_local,
+        cg.status as close_reason_local,
+        rt.number as representative_number,
+        rt.kind as representative_kind,
+        rt.state as representative_state,
+        rt.title as representative_title,
+        t.number,
+        t.kind,
+        t.state,
+        t.title,
+        t.body,
+        t.labels_json,
+        t.updated_at
+      from cluster_groups cg
+      join cluster_memberships cm on cm.cluster_id = cg.id and cm.state = 'active'
+      join threads t on t.id = cm.thread_id
+      left join threads rt on rt.id = cg.representative_thread_id
+      where cg.id in (${idList})
+      order by cg.id, t.number;
+    `;
+  }
+  return `
+    select
+      c.id as cluster_id,
+      c.member_count,
+      c.created_at as cluster_created_at,
+      c.closed_at_local,
+      c.close_reason_local,
+      rt.number as representative_number,
+      rt.kind as representative_kind,
+      rt.state as representative_state,
+      rt.title as representative_title,
+      t.number,
+      t.kind,
+      t.state,
+      t.title,
+      t.body,
+      t.labels_json,
+      t.updated_at
+    from clusters c
+    join cluster_members cm on cm.cluster_id = c.id
+    join threads t on t.id = cm.thread_id
+    left join threads rt on rt.id = c.representative_thread_id
+    where c.id in (${idList})
+    order by c.id, t.number;
+  `;
+}
+
+function prefetchMembers(clusterIds) {
+  const rows = sqliteJson(memberSqlForClusterIds(clusterIds));
+  const byCluster = new Map();
+  for (const row of rows) {
+    const id = Number(row.cluster_id);
+    const members = byCluster.get(id) ?? [];
+    members.push(row);
+    byCluster.set(id, members);
+  }
+  return byCluster;
+}
+
 function sqliteJson(sql) {
   const output = execFileSync("sqlite3", ["-json", dbPath, sql], {
     cwd: repoRoot(),
     encoding: "utf8",
-    maxBuffer: 64 * 1024 * 1024,
+    maxBuffer: 256 * 1024 * 1024,
   }).trim();
   return JSON.parse(output || "[]");
+}
+
+function sqliteScalar(sql) {
+  const output = execFileSync("sqlite3", [dbPath, sql], {
+    cwd: repoRoot(),
+    encoding: "utf8",
+    maxBuffer: 1024 * 1024,
+  }).trim();
+  return output;
+}
+
+function detectClusterSource() {
+  const legacyRows = Number(sqliteScalar("select count(*) from sqlite_master where type = 'table' and name = 'clusters';")) > 0
+    ? Number(sqliteScalar("select count(*) from clusters;"))
+    : 0;
+  if (legacyRows > 0) return "legacy";
+  const portableRows = Number(sqliteScalar("select count(*) from sqlite_master where type = 'table' and name = 'cluster_groups';")) > 0
+    ? Number(sqliteScalar("select count(*) from cluster_groups;"))
+    : 0;
+  if (portableRows > 0) return "portable";
+  return "legacy";
 }
 
 function numberArg(name, fallback) {
@@ -277,14 +374,12 @@ function existingGitcrawlClusterIds(dir) {
   return ids;
 }
 
-function existingGitcrawlMemberRefs(dir, suffix) {
+function existingGitcrawlMemberRefs(dir) {
   const refs = new Map();
   if (!fs.existsSync(dir)) return refs;
-  const suffixSlug = suffix ? slugify(suffix) : "";
   for (const entry of fs.readdirSync(dir, { recursive: true })) {
     const file = path.join(dir, String(entry));
     if (!file.endsWith(".md") || !fs.statSync(file).isFile()) continue;
-    if (suffixSlug && !path.basename(file).endsWith(`-${suffixSlug}.md`)) continue;
     const text = fs.readFileSync(file, "utf8");
     const frontmatter = text.match(/^---\n([\s\S]*?)\n---/);
     const clusterRefs = frontmatter?.[1].match(/^cluster_refs:\n((?:  - .+\n?)*)/m)?.[1] ?? "";
@@ -299,9 +394,9 @@ function existingGitcrawlMemberRefs(dir, suffix) {
   return refs;
 }
 
-function yamlList(values) {
-  if (values.length === 0) return ["  []"];
-  return values.map((value) => `  - ${quoteYaml(value)}`);
+function yamlField(name, values) {
+  if (values.length === 0) return [`${name}: []`];
+  return [`${name}:`, ...values.map((value) => `  - ${quoteYaml(value)}`)];
 }
 
 function quoteYaml(value) {
