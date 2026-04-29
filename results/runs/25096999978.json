@@ -1,0 +1,41 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "clawsweeper-commit-openclaw-openclaw-1d0e9a907e6d",
+  "mode": "autonomous",
+  "run_id": "25096999978",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25096999978",
+  "head_sha": "e5ce0a229bbfd9887cecab0bd7bec0fac80645bf",
+  "workflow_conclusion": "skipped",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/clawsweeper-commit-openclaw-openclaw-1d0e9a907e6d.md",
+  "published_at": "2026-04-29T07:46:43.720Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Found one concrete migration bug in the new TTS enabled-toggle repair. The cron schema deprecation metadata change looks safe.",
+  "actions": [
+    {
+      "target": "cluster:clawsweeper-commit-openclaw-openclaw-1d0e9a907e6d",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "ClawSweeper found an actionable commit-level bug/regression candidate."
+    }
+  ],
+  "action_counts": {
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
