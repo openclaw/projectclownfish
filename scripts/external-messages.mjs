@@ -77,7 +77,7 @@ const automergeNoChangeOpeners = [
   "Clownfish finished this automerge repair swim without changing the branch.",
   "No new branch changes from this lap. Clownfish kept the current tidy instead of splashing around.",
   "This pass ended as a no-op: no narrow repair surfaced, so Clownfish left the branch untouched.",
-  "Clownfish took another look and did not find a safe branch change to make on this pass.",
+  "Clownfish took another look: no safe branch change to make on this pass.",
 ];
 
 const automergeNoChangeClosers = [
