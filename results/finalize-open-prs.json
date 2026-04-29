@@ -3,18 +3,18 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-29T21:26:48.531Z",
-  "count": 18,
+  "generated_at": "2026-04-29T21:30:15.518Z",
+  "count": 17,
   "summary": {
-    "open_prs": 18,
+    "open_prs": 17,
     "ready_candidates": 0,
     "security_hold": 0,
-    "needs_rebase": 17,
+    "needs_rebase": 16,
     "mergeability_unknown": 0,
-    "needs_checks": 8,
-    "needs_review": 9,
-    "needs_merge_preflight": 18,
-    "needs_result_backfill": 10
+    "needs_checks": 7,
+    "needs_review": 8,
+    "needs_merge_preflight": 17,
+    "needs_result_backfill": 9
   },
   "dispatch": {
     "enabled": false,
@@ -1169,81 +1169,6 @@
         "needs_rebase:CONFLICTING",
         "needs_merge_state:DIRTY",
         "needs_checks:CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (kitchen-sink-plugin):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-0):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-1):CANCELLED",
-        "needs_merge_preflight",
-        "needs_result_backfill"
-      ],
-      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
-    },
-    {
-      "number": 73981,
-      "title": "fix(streaming): preserve markdown boundaries across block chunks",
-      "url": "https://github.com/openclaw/openclaw/pull/73981",
-      "branch": "clownfish/ghcrawl-157042-autonomous-smoke",
-      "head_sha": "403fcf338e149312f4a8b84e2ed545b868610623",
-      "cluster_id": "ghcrawl-157042-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-157042-autonomous-smoke.md",
-      "updated_at": "2026-04-29T02:48:09Z",
-      "mergeable": "CONFLICTING",
-      "merge_state_status": "DIRTY",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 216,
-        "counts": {
-          "CANCELLED": 10,
-          "SKIPPED": 41,
-          "SUCCESS": 165
-        },
-        "blockers": [
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-0):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-1):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-2):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-3):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-4):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-5):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-6):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-7):CANCELLED",
-          "CI / plugin-prerelease-suite:CANCELLED"
-        ]
-      },
-      "review_threads": {
-        "status": "blocked",
-        "reason": "unresolved review threads remain",
-        "unresolved_count": 2,
-        "examples": [
-          "https://github.com/openclaw/openclaw/pull/73981#discussion_r3158293176",
-          "https://github.com/openclaw/openclaw/pull/73981#discussion_r3158293212"
-        ]
-      },
-      "review_bots": {
-        "count": 4,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "clawsweeper",
-            "url": "https://github.com/openclaw/openclaw/pull/73981#issuecomment-4340472994",
-            "submitted_at": "2026-04-29T02:43:52Z"
-          },
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/73981#issuecomment-4340487573",
-            "submitted_at": "2026-04-29T02:48:09Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-29T02:35:15Z"
-          }
-        ]
-      },
-      "latest_record": null,
-      "blockers": [
-        "needs_rebase:CONFLICTING",
-        "needs_merge_state:DIRTY",
-        "unresolved review threads remain",
-        "needs_checks:CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-0):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-1):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-2):CANCELLED",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],

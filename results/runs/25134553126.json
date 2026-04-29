@@ -1,0 +1,99 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-2880-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25134553126",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25134553126",
+  "head_sha": "b9f5ebae325b39171f8129a731bbca8bf5b88966",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-2880-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T21:27:27.619Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/59287",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/59287",
+  "canonical_pr": null,
+  "summary": "Hydrated live state shows the representative #44539 and prior candidate #44354 are already closed. #59287 is the best current open canonical for the Telegram health/status mismatch family; #46494 is a same-root duplicate that can be closed to #59287. #62763 is a separate Signal doctor multi-account config corruption report and should remain open as related follow-up work. No security-sensitive refs were detected, and no fix, merge, or post-merge action is planned because this job blocks fix/raise_pr/merge/post-merge closeout.",
+  "actions": [
+    {
+      "target": "#44539",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed representative is historical evidence only."
+    },
+    {
+      "target": "#44354",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Live state is closed; no mutation planned."
+    },
+    {
+      "target": "#59287",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#59287",
+      "candidate_fix": null,
+      "reason": "Best surviving open canonical issue for the remaining health/status mismatch family."
+    },
+    {
+      "target": "#46494",
+      "action": "close_duplicate",
+      "status": "planned",
+      "classification": "duplicate",
+      "canonical": "#59287",
+      "candidate_fix": null,
+      "reason": "Same root cause and same user-visible failure as the open canonical #59287, with no unique remaining work that needs a separate issue."
+    },
+    {
+      "target": "#62763",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate related doctor multi-account config subcluster; leave open for focused follow-up."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 2,
+    "keep_canonical": 1,
+    "close_duplicate": 1,
+    "keep_related": 1
+  },
+  "action_status_counts": {
+    "skipped": 2,
+    "planned": 3
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#46494",
+      "action": "close_duplicate",
+      "status": "blocked",
+      "classification": "duplicate",
+      "canonical": "#59287",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "gitcrawl-2880-dedupe-only-20260429-remote:#46494:close_duplicate:#59287:2026-04-29T07:41:24Z",
+      "reason": "target changed since worker review",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": "closed",
+      "live_updated_at": "2026-04-29T21:26:32Z"
+    }
+  ]
+}
