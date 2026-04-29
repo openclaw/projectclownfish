@@ -1,0 +1,71 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-1316-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25109680253",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25109680253",
+  "head_sha": "7ac7590296085c93e29434b3af3e919aa257e029",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-1316-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T13:14:36.299Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/43938",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/43935",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/43938",
+  "summary": "Hydrated representative #70720 is already merged and closed, so it is historical evidence only. The current open canonical path for the account-scoped reload family is #43935 / #43938. #55473 is a separate gateway startup-secret degradation PR with unresolved review and failing checks, so no close/comment/label mutation is planned.",
+  "actions": [
+    {
+      "target": "#43935",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#43935",
+      "candidate_fix": "#43938",
+      "reason": "Keep the issue open as the canonical report for the account-scoped channel reload problem while #43938 or an equivalent fix is reviewed."
+    },
+    {
+      "target": "#43938",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#43938",
+      "candidate_fix": null,
+      "reason": "#43938 is the clearest open canonical implementation candidate for the account-scoped reload root cause, but this dedupe-only job should not merge or repair it."
+    },
+    {
+      "target": "#55473",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#43938",
+      "candidate_fix": null,
+      "reason": "Related gateway/channel lifecycle work, but it is a distinct root cause and must stay open rather than be closed as a duplicate or superseded item."
+    },
+    {
+      "target": "#70720",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already-closed representative is obsolete as the active canonical path and is retained only as historical cluster context."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 2,
+    "keep_related": 1,
+    "keep_closed": 1
+  },
+  "action_status_counts": {
+    "planned": 3,
+    "skipped": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}

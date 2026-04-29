@@ -3,7 +3,7 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-29T13:05:00.412Z",
+  "generated_at": "2026-04-29T13:20:59.176Z",
   "count": 44,
   "summary": {
     "open_prs": 44,
@@ -294,7 +294,7 @@
       "head_sha": "e2f01691c8eb6297dfe78c7e1aeec093c1440480",
       "cluster_id": "ghcrawl-199269-agentic-merge",
       "job_path": "jobs/openclaw/inbox/ghcrawl-199269-agentic-merge.md",
-      "updated_at": "2026-04-29T08:28:48Z",
+      "updated_at": "2026-04-29T13:04:18Z",
       "mergeable": "CONFLICTING",
       "merge_state_status": "DIRTY",
       "review_decision": "",
