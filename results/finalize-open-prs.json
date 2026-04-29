@@ -3,17 +3,17 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-29T19:53:51.201Z",
-  "count": 9,
+  "generated_at": "2026-04-29T20:06:04.318Z",
+  "count": 7,
   "summary": {
-    "open_prs": 9,
+    "open_prs": 7,
     "ready_candidates": 0,
     "security_hold": 0,
-    "needs_rebase": 8,
+    "needs_rebase": 6,
     "mergeability_unknown": 0,
     "needs_checks": 3,
-    "needs_review": 4,
-    "needs_merge_preflight": 9,
+    "needs_review": 3,
+    "needs_merge_preflight": 7,
     "needs_result_backfill": 3
   },
   "dispatch": {
@@ -485,136 +485,6 @@
         "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24967648150",
         "cluster_id": "ghcrawl-191457-agentic-merge",
         "published_at": "2026-04-26T21:52:47.374Z",
-        "workflow_conclusion": "success",
-        "apply_action": null
-      },
-      "blockers": [
-        "needs_rebase:CONFLICTING",
-        "needs_merge_state:DIRTY",
-        "unresolved review threads remain",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
-    },
-    {
-      "number": 74001,
-      "title": "fix(feishu): reply inside P2P direct-message threads",
-      "url": "https://github.com/openclaw/openclaw/pull/74001",
-      "branch": "clownfish/ghcrawl-165996-agentic-merge",
-      "head_sha": "51f9f8c3d71ccab3a5983207fc028829d8b2a615",
-      "cluster_id": "ghcrawl-165996-agentic-merge",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-165996-agentic-merge.md",
-      "updated_at": "2026-04-29T02:49:39Z",
-      "mergeable": "CONFLICTING",
-      "merge_state_status": "DIRTY",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 110,
-        "counts": {
-          "CANCELLED": 2,
-          "SKIPPED": 22,
-          "SUCCESS": 86
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 2,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/74001#issuecomment-4340474353",
-            "submitted_at": "2026-04-29T02:44:15Z"
-          },
-          {
-            "source": "comment",
-            "author": "clawsweeper",
-            "url": "https://github.com/openclaw/openclaw/pull/74001#issuecomment-4340483701",
-            "submitted_at": "2026-04-29T02:46:52Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24964233962",
-        "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24964233962",
-        "cluster_id": "ghcrawl-165996-agentic-merge",
-        "published_at": "2026-04-26T18:59:15.386Z",
-        "workflow_conclusion": "success",
-        "apply_action": null
-      },
-      "blockers": [
-        "needs_rebase:CONFLICTING",
-        "needs_merge_state:DIRTY",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
-    },
-    {
-      "number": 73998,
-      "title": "fix(feishu): reconcile WebSocket reconnect backoff",
-      "url": "https://github.com/openclaw/openclaw/pull/73998",
-      "branch": "clownfish/ghcrawl-207048-agentic-merge",
-      "head_sha": "255e1262454d7ecc04c656afebfb7bc7d887d3f8",
-      "cluster_id": "ghcrawl-207048-agentic-merge",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-207048-agentic-merge.md",
-      "updated_at": "2026-04-29T02:43:45Z",
-      "mergeable": "CONFLICTING",
-      "merge_state_status": "DIRTY",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 109,
-        "counts": {
-          "CANCELLED": 1,
-          "SKIPPED": 22,
-          "SUCCESS": 86
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "blocked",
-        "reason": "unresolved review threads remain",
-        "unresolved_count": 2,
-        "examples": [
-          "https://github.com/openclaw/openclaw/pull/73998#discussion_r3158312143",
-          "https://github.com/openclaw/openclaw/pull/73998#discussion_r3158312189"
-        ]
-      },
-      "review_bots": {
-        "count": 3,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/73998#issuecomment-4340468011",
-            "submitted_at": "2026-04-29T02:42:44Z"
-          },
-          {
-            "source": "comment",
-            "author": "clawsweeper",
-            "url": "https://github.com/openclaw/openclaw/pull/73998#issuecomment-4340472432",
-            "submitted_at": "2026-04-29T02:43:45Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-29T02:42:49Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24978957258",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/24978957258",
-        "cluster_id": "ghcrawl-207048-agentic-merge",
-        "published_at": "2026-04-27T06:05:15.242Z",
         "workflow_conclusion": "success",
         "apply_action": null
       },

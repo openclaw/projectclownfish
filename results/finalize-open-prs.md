@@ -1,19 +1,19 @@
 # Open ProjectClownfish PR Finalizer
 
-Generated: 2026-04-29T19:53:51.201Z
+Generated: 2026-04-29T20:06:04.318Z
 
 ## Summary
 
 | Metric | Count |
 | --- | ---: |
-| open_prs | 9 |
+| open_prs | 7 |
 | ready_candidates | 0 |
 | security_hold | 0 |
-| needs_rebase | 8 |
+| needs_rebase | 6 |
 | mergeability_unknown | 0 |
 | needs_checks | 3 |
-| needs_review | 4 |
-| needs_merge_preflight | 9 |
+| needs_review | 3 |
+| needs_merge_preflight | 7 |
 | needs_result_backfill | 3 |
 
 ## Dispatch
@@ -37,5 +37,3 @@ Status: report_only
 | [#74010](https://github.com/openclaw/openclaw/pull/74010) | fix(compaction): respect effective reserve tokens in compaction gates | ghcrawl-199269-agentic-merge | CONFLICTING | DIRTY | FAILURE:4 SUCCESS:55 SKIPPED:9; blockers:4 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-agentic-control-plane:FAILURE, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#74009](https://github.com/openclaw/openclaw/pull/74009) | fix(agents): prefer sessionKey in sessions_send | ghcrawl-166009-agentic-merge | CONFLICTING | DIRTY | FAILURE:3 SUCCESS:55 SKIPPED:14; blockers:3 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-fast-support:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#74002](https://github.com/openclaw/openclaw/pull/74002) | fix(exec): respect OPENCLAW_STATE_DIR for exec approvals | ghcrawl-191457-agentic-merge | CONFLICTING | DIRTY | CANCELLED:2 SKIPPED:22 SUCCESS:86 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
-| [#74001](https://github.com/openclaw/openclaw/pull/74001) | fix(feishu): reply inside P2P direct-message threads | ghcrawl-165996-agentic-merge | CONFLICTING | DIRTY | CANCELLED:2 SKIPPED:22 SUCCESS:86 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
-| [#73998](https://github.com/openclaw/openclaw/pull/73998) | fix(feishu): reconcile WebSocket reconnect backoff | ghcrawl-207048-agentic-merge | CONFLICTING | DIRTY | CANCELLED:1 SKIPPED:22 SUCCESS:86 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |

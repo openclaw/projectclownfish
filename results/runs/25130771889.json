@@ -1,0 +1,71 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-16847-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25130771889",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25130771889",
+  "head_sha": "e60ec11ddea49c43b3b3d13770368f7be20dc559",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-16847-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T20:04:51.969Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/41993",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/41993",
+  "canonical_pr": null,
+  "summary": "Hydrated state makes #41993 the current open canonical issue for the remaining mixed-DNS web_fetch SSRF resolver bug. #57290 and #66493 are already-closed RFC2544 fake-IP/config-wiring context and must not receive closure actions. No close/comment/label mutation is planned; a narrow future fix artifact is included for #41993, but this job must not open a PR.",
+  "actions": [
+    {
+      "target": "#41993",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41993",
+      "candidate_fix": null,
+      "reason": "#41993 is the best surviving canonical issue, and the artifact indicates a narrow code fix is still needed. The current job blocks fix and raise_pr, so no PR-opening action is planned."
+    },
+    {
+      "target": "#57290",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical context; no mutation is valid or needed."
+    },
+    {
+      "target": "#66493",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical context; keep as related evidence and do not mutate."
+    },
+    {
+      "target": "cluster:gitcrawl-16847-dedupe-only-20260429-remote",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#41993",
+      "candidate_fix": null,
+      "reason": "A narrow fix path is clear, but PR creation is out of scope for this dedupe-only run."
+    }
+  ],
+  "action_counts": {
+    "fix_needed": 1,
+    "keep_closed": 2,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 2,
+    "skipped": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
