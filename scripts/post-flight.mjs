@@ -275,7 +275,7 @@ function finalizePostMergeCloseout({ action, actionName, target, fixRef, fixUrl,
 function closeoutBody({ actionName, fixUrl }) {
   const relation = actionName === "close_superseded" ? "superseded by" : "covered by";
   return [
-    `This is ${relation} ${fixUrl}, which has landed as the canonical ProjectClownfish fix path for this cluster.`,
+    `Thanks for this. Clownfish sees this as ${relation} ${fixUrl}, which has landed as the canonical fix path for this cluster.`,
     "",
     "Closing this now that the validated fix is merged. If this still reproduces on current main with a different path, reply here and we can reopen or split it back out.",
   ].join("\n");
@@ -289,8 +289,8 @@ function validateMergePolicy() {
 }
 
 function labelForHumanMergeReview(repo, number) {
-  ensureLabel(repo, HUMAN_REVIEW_LABEL, "B60205", "Needs maintainer review before ProjectClownfish can finish");
-  ensureLabel(repo, MERGE_READY_LABEL, "0E8A16", "ProjectClownfish found a merge-ready candidate; human owns the final merge");
+  ensureLabel(repo, HUMAN_REVIEW_LABEL, "B60205", "Needs maintainer review before Clownfish can finish");
+  ensureLabel(repo, MERGE_READY_LABEL, "0E8A16", "Clownfish found a merge-ready candidate; human owns the final merge");
   ghBestEffort(["issue", "edit", String(number), "--repo", repo, "--add-label", HUMAN_REVIEW_LABEL]);
   ghBestEffort(["issue", "edit", String(number), "--repo", repo, "--add-label", MERGE_READY_LABEL]);
 }

@@ -35,9 +35,11 @@ export function renderResponse(command, dispatched) {
   if (command.intent === "help") {
     return [
       marker,
-      "Clownfish is listening for maintainer commands.",
+      "Clownfish is here and listening for maintainer commands.",
       "",
       "Supported commands: `/clownfish status`, `/clownfish fix ci`, `/clownfish address review`, `/clownfish rebase`, `/clownfish explain`, `/clownfish stop`.",
+      "",
+      "I only act for maintainers, or for trusted ClawSweeper repair feedback on an existing Clownfish PR.",
     ].join("\n");
   }
   if (["status", "explain"].includes(command.intent)) {
@@ -46,25 +48,26 @@ export function renderResponse(command, dispatched) {
   if (command.intent === "stop") {
     return [
       marker,
-      "Clownfish will leave this item for human review.",
+      "Got it. Clownfish will leave this item for human review.",
       "",
-      "I added `clownfish:human-review` when permissions allowed it. Future automation should treat this as a maintainer handoff signal.",
+      "I added `clownfish:human-review` when permissions allowed it. Future automation should treat this as a maintainer handoff signal, so this stays out of the repair lane until someone asks again.",
     ].join("\n");
   }
   if (!dispatched) {
     return [
       marker,
-      "Clownfish did not dispatch a repair worker.",
+      "Clownfish did not dispatch a repair worker for this one.",
       "",
       `Reason: ${command.reason ?? "unsupported command or target"}.`,
       "",
       "Supported repair commands currently work on existing Clownfish PRs only: `/clownfish fix ci`, `/clownfish address review`, `/clownfish rebase`.",
+      "A maintainer can point me at one of those PRs and I can take another pass.",
     ].join("\n");
   }
   if (command.intent === "clawsweeper_auto_repair") {
     return [
       marker,
-      "Clownfish picked up ClawSweeper feedback.",
+      "Thanks, ClawSweeper. Clownfish picked up the repair feedback.",
       "",
       `Source: \`${command.trusted_bot_author ?? command.author ?? "trusted automation"}\``,
       `Action: dispatched \`${dispatched.workflow}\` for \`${dispatched.job_path}\` in \`${dispatched.mode}\` mode.`,
@@ -81,7 +84,7 @@ export function renderResponse(command, dispatched) {
     `Action: dispatched \`${dispatched.workflow}\` for \`${dispatched.job_path}\` in \`${dispatched.mode}\` mode.`,
     `Model: \`${dispatched.model}\``,
     "",
-    "I will update the PR branch if the repair worker finds a safe, narrow fix.",
+    "I will keep the change narrow and update the PR branch if the repair worker finds a safe fix.",
   ].join("\n");
 }
 

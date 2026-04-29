@@ -393,7 +393,7 @@ function buildFixArtifact(plan, job) {
           : "Post-merge closure disabled by job frontmatter.",
       fix_first_close:
         job.frontmatter.require_fix_before_close === true
-          ? "Do not emit close actions until ProjectClownfish has opened/pushed a fix PR or merged a canonical PR in this run."
+          ? "Do not emit close actions until Clownfish has opened/pushed a fix PR or merged a canonical PR in this run."
           : "Close actions may run independently when their own safety gates pass.",
     },
     required_validation: [
@@ -411,7 +411,7 @@ function buildFixArtifact(plan, job) {
       "use canonical/duplicate_of/candidate_fix refs only when those refs are hydrated preflight items; unhydrated PR refs found in comments belong in evidence or fix_artifact until hydrated",
       "include targeted tests and changelog plan for fix artifacts",
       "do not plan executable fix PRs for broad feature/config/docs rewrites; split them into narrower follow-up jobs or mark implementation blocked with exact sub-scopes",
-      "if replacing a contributor PR, include source PR credit and the exact close comment that says ProjectClownfish will preserve attribution",
+      "if replacing a contributor PR, include source PR credit and the exact close comment that says Clownfish will preserve attribution",
       "include full GitHub URLs in closure rationale",
     ],
   };

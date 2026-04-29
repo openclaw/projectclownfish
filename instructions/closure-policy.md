@@ -30,7 +30,7 @@ Never close:
 Useful contributor PR replacement exception:
 
 - close or supersede the PR only after the run has a concrete replacement fix plan or PR path;
-- the close comment must say why ProjectClownfish cannot safely update or land the branch;
+- the close comment must say why Clownfish cannot safely update or land the branch;
 - the comment must name the replacement path and state that the contributor will be credited;
 - the comment must explicitly contain credit wording such as `credit`, `attribution`, `Thanks @user`, or `source PR`;
 - the fix artifact must include the contributor username, original PR URL, validation plan, and changelog attribution when the fix is user-facing.

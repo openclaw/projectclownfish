@@ -500,8 +500,8 @@ function validateMergePolicy({ job, action }) {
 }
 
 function labelForHumanMergeReview(repo, target) {
-  ensureLabel(repo, HUMAN_REVIEW_LABEL, "B60205", "Needs maintainer review before ProjectClownfish can finish");
-  ensureLabel(repo, MERGE_READY_LABEL, "0E8A16", "ProjectClownfish found a merge-ready candidate; human owns the final merge");
+  ensureLabel(repo, HUMAN_REVIEW_LABEL, "B60205", "Needs maintainer review before Clownfish can finish");
+  ensureLabel(repo, MERGE_READY_LABEL, "0E8A16", "Clownfish found a merge-ready candidate; human owns the final merge");
   ghBestEffort(["issue", "edit", String(target), "--repo", repo, "--add-label", HUMAN_REVIEW_LABEL]);
   ghBestEffort(["issue", "edit", String(target), "--repo", repo, "--add-label", MERGE_READY_LABEL]);
 }
@@ -706,7 +706,7 @@ function renderCloseComment({ action, classification, result, target, live }) {
     .slice(0, 5)
     .map((item) => `- ${typeof item === "string" ? item : (item.detail ?? JSON.stringify(item))}`);
   const reason = action.reason ? String(action.reason).trim() : closeReasonText(classification);
-  const lines = [`Thanks for this. Projectclownfish reviewed this cluster and is closing #${target}.`];
+  const lines = [`Thanks for this. Clownfish reviewed this cluster and is closing #${target}.`];
   lines.push("");
   if (classification === "duplicate" && canonical) {
     lines.push(

@@ -288,7 +288,7 @@ function executableReplacementFixArtifact(fixArtifact, workerResult) {
     repair_strategy: "replace_uneditable_branch",
     branch_update_blockers: uniqueStrings([
       ...(fixArtifact.branch_update_blockers ?? []),
-      "ProjectClownfish policy: useful uneditable or unsafe source PRs are replaced with a narrow credited PR when fix execution is explicitly enabled.",
+      "Clownfish policy: useful uneditable or unsafe source PRs are replaced with a narrow credited PR when fix execution is explicitly enabled.",
     ]),
     credit_notes: uniqueStrings([
       ...(fixArtifact.credit_notes ?? []),
@@ -368,11 +368,11 @@ function executeRepairBranch({ fixArtifact, targetDir }) {
   run("git", pushArgs, { cwd: targetDir });
   const threadResolution = prepareReviewThreadsForMerge({ repo: result.repo, number: sourcePr.number, targetDir });
   const comment = [
-    "ProjectClownfish pushed a narrow repair to this branch so the original contributor path can stay canonical.",
+    "Thanks for the work here. Clownfish pushed a narrow repair to this branch so the original contributor path can stay canonical.",
     "",
     `Source PR: ${sourcePr.url}`,
     `Validation: ${fixArtifact.validation_commands.join("; ")}`,
-    "Contributor credit is preserved in the branch history and PR context.",
+    "Contributor credit stays preserved in the branch history and PR context.",
   ].join("\n");
   run("gh", ["pr", "comment", String(sourcePr.number), "--repo", result.repo, "--body", comment], { cwd: targetDir, env: ghEnv() });
   return {
@@ -546,12 +546,13 @@ function closeSupersededSourcePr({ source, parsed, replacementPrUrl, targetDir, 
 
   const carriedCredit = sourceCreditLines({ source, contributorCredits });
   const comment = [
-    "Clownfish could not safely update this branch, so it opened a narrow replacement PR instead.",
+    "Thanks for the source work here. Clownfish could not safely update this branch, so I opened a narrow replacement PR instead.",
     "",
     `Replacement PR: ${replacementPrUrl}`,
     `Source PR: ${source}`,
     ...carriedCredit,
     "Closing this PR to keep review focused on the replacement. The contribution is carried forward, not discarded.",
+    "If the replacement misses any intent from this PR, please carry that context over there and I can adjust it.",
   ].join("\n");
   run("gh", ["pr", "comment", String(parsed.number), "--repo", result.repo, "--body", comment], {
     cwd: targetDir,
@@ -1386,7 +1387,7 @@ function sourceCreditLines({ source, contributorCredits }) {
   if (matching.length === 0) {
     return ["Contributor credit is preserved in the replacement PR body and changelog plan."];
   }
-  return matching.map((credit) => `Credit preserved: @${credit.login} is carried forward as co-author in the replacement PR.`);
+  return matching.map((credit) => `Credit preserved: thanks @${credit.login}; they are carried forward as co-author in the replacement PR.`);
 }
 
 function validateActivePrAreaCapacity({ fixArtifact, targetDir, branch }) {
