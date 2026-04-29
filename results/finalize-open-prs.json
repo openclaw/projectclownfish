@@ -3,17 +3,17 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-29T21:01:35.097Z",
-  "count": 4,
+  "generated_at": "2026-04-29T21:03:08.286Z",
+  "count": 5,
   "summary": {
-    "open_prs": 4,
+    "open_prs": 5,
     "ready_candidates": 0,
     "security_hold": 0,
-    "needs_rebase": 3,
+    "needs_rebase": 4,
     "mergeability_unknown": 0,
-    "needs_checks": 1,
+    "needs_checks": 2,
     "needs_review": 1,
-    "needs_merge_preflight": 4,
+    "needs_merge_preflight": 5,
     "needs_result_backfill": 3
   },
   "dispatch": {
@@ -282,6 +282,72 @@
         "needs_rebase:CONFLICTING",
         "needs_merge_state:DIRTY",
         "needs_checks:CI / checks-node-agentic-commands:FAILURE; CI / check-lint:FAILURE; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (npm-onboard-channel-agent):FAILURE",
+        "needs_merge_preflight"
+      ],
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
+    },
+    {
+      "number": 74010,
+      "title": "fix(compaction): respect effective reserve tokens in compaction gates",
+      "url": "https://github.com/openclaw/openclaw/pull/74010",
+      "branch": "clownfish/ghcrawl-199269-agentic-merge",
+      "head_sha": "e2f01691c8eb6297dfe78c7e1aeec093c1440480",
+      "cluster_id": "ghcrawl-199269-agentic-merge",
+      "job_path": "jobs/openclaw/inbox/ghcrawl-199269-agentic-merge.md",
+      "updated_at": "2026-04-29T13:04:18Z",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
+      "review_decision": "",
+      "security_hold": false,
+      "checks": {
+        "total": 68,
+        "counts": {
+          "FAILURE": 4,
+          "SUCCESS": 55,
+          "SKIPPED": 9
+        },
+        "blockers": [
+          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE",
+          "CI / checks-node-core-runtime-shared:FAILURE",
+          "CI / checks-node-agentic-control-plane:FAILURE",
+          "CI / checks-node-core:FAILURE"
+        ]
+      },
+      "review_threads": {
+        "status": "clean",
+        "reason": null,
+        "unresolved_count": 0,
+        "examples": []
+      },
+      "review_bots": {
+        "count": 2,
+        "latest": [
+          {
+            "source": "comment",
+            "author": "greptile-apps",
+            "url": "https://github.com/openclaw/openclaw/pull/74010#issuecomment-4340507206",
+            "submitted_at": "2026-04-29T02:54:56Z"
+          },
+          {
+            "source": "comment",
+            "author": "clawsweeper",
+            "url": "https://github.com/openclaw/openclaw/pull/74010#issuecomment-4340514534",
+            "submitted_at": "2026-04-29T02:57:29Z"
+          }
+        ]
+      },
+      "latest_record": {
+        "run_id": "24968264055",
+        "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24968264055",
+        "cluster_id": "ghcrawl-199269-agentic-merge",
+        "published_at": "2026-04-26T22:26:13.922Z",
+        "workflow_conclusion": "success",
+        "apply_action": null
+      },
+      "blockers": [
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
+        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-agentic-control-plane:FAILURE",
         "needs_merge_preflight"
       ],
       "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
