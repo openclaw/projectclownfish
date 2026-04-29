@@ -113,6 +113,8 @@ export function buildAutomergeMergeArgs({ issueNumber, repo, expectedHeadSha }) 
 
 export function parseCommand(body) {
   for (const line of String(body ?? "").split(/\r?\n/)) {
+    const automerge = line.match(/^\s*\/automerge\s*$/i);
+    if (automerge) return commandFromText("slash", "automerge");
     const autoclose = line.match(/^\s*\/autoclose(?:\s+(.+))?\s*$/i);
     if (autoclose) return commandFromText("slash", `autoclose ${autoclose[1] ?? ""}`.trim());
     const slash = line.match(/^\s*\/clownfish(?:\s+(.+))?\s*$/i);

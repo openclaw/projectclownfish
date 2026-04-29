@@ -505,6 +505,7 @@ function autoRepairHeadKey(command) {
 
 function executeCommand(command) {
   let dispatched = null;
+  if (!command.trusted_bot) reactToComment(command, "eyes");
   if (REPAIR_INTENTS.has(command.intent) && canRepairPullTarget(command.target)) {
     const job = ensureAutomergeJob(command);
     if (job.status_detail === "written") {
@@ -596,6 +597,7 @@ function executeCommand(command) {
   }
 
   postComment(command, renderResponse(command, dispatched));
+  if (!command.trusted_bot) reactToComment(command, "+1");
   command.actions = command.actions.map((action) =>
     action.action === "comment" ? { ...action, status: "executed", commented_at: new Date().toISOString() } : action,
   );
@@ -1145,6 +1147,25 @@ function hasExistingResponse(number, commentId, intent, headSha) {
 function postComment(command, body) {
   const payloadPath = writePayload(repoRoot(), `comment-router-${command.comment_id}`, { body });
   ghText(["api", `repos/${command.repo}/issues/${command.issue_number}/comments`, "--method", "POST", "--input", payloadPath]);
+}
+
+function reactToComment(command, content) {
+  if (!command.comment_id) return;
+  const payloadPath = writePayload(repoRoot(), `comment-router-reaction-${command.comment_id}-${content}`, { content });
+  try {
+    ghText([
+      "api",
+      `repos/${command.repo}/issues/comments/${command.comment_id}/reactions`,
+      "--method",
+      "POST",
+      "--input",
+      payloadPath,
+    ]);
+  } catch (error) {
+    const message = stripAnsi(error?.message ?? error);
+    if (/already exists/i.test(message) || /\b422\b/.test(message)) return;
+    console.warn(`warning: failed to add ${content} reaction to comment ${command.comment_id}: ${message}`);
+  }
 }
 
 function ensureDefaultLabel(repo) {

@@ -40,6 +40,11 @@ test("parseCommand recognizes maintainer slash commands", () => {
     command: "automerge",
     intent: "automerge",
   });
+  assert.deepEqual(parseCommand("/automerge"), {
+    trigger: "slash",
+    command: "automerge",
+    intent: "automerge",
+  });
   assert.deepEqual(parseCommand("/autoclose We do not plan to support this feature"), {
     trigger: "slash",
     command: "autoclose we do not plan to support this feature",
