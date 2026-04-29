@@ -1,11 +1,11 @@
 {
-  "status": "dry_run",
-  "generated_at": "2026-04-29T06:56:14.536Z",
+  "status": "executed",
+  "generated_at": "2026-04-29T06:56:59.493Z",
   "repo": "openclaw/openclaw",
   "clownfish_repo": "openclaw/clownfish",
   "clawsweeper_repo": "openclaw/clawsweeper",
   "since": "2026-04-29T06:55:46Z",
-  "execute": false,
+  "execute": true,
   "max_comments": 10,
   "scanned_comments": 2,
   "commands_seen": 2,
@@ -42,21 +42,26 @@
       "repair_reason": null,
       "expected_head_sha": null,
       "finding_id": null,
-      "status": "ready",
+      "status": "executed",
       "actions": [
         {
           "action": "label",
           "label": "clownfish:automerge",
-          "status": "planned"
+          "status": "executed"
         },
         {
           "action": "dispatch_clawsweeper",
           "workflow": "sweep.yml",
-          "status": "planned"
+          "status": "executed",
+          "dispatched_at": "2026-04-29T06:57:01.690Z",
+          "event": "repository_dispatch",
+          "repo": "openclaw/clawsweeper",
+          "item_number": 74156
         },
         {
           "action": "comment",
-          "status": "planned"
+          "status": "executed",
+          "commented_at": "2026-04-29T06:57:02.364Z"
         }
       ],
       "author_repository_permission": "admin",
@@ -123,7 +128,7 @@
         "kind": "pull_request",
         "title": "fix(session-repair): drop trailing errored assistant entries to break Anthropic prefill 400 loop",
         "branch": "fix/session-repair-trailing-errored-assistant",
-        "head_sha": "dc371014d7164a59239bbf3df955018eeb4d4950",
+        "head_sha": "7a79499811c1341cae2604d692982508e399a6c3",
         "author": "ebarkhordar",
         "labels": [
           "docs",
@@ -139,16 +144,21 @@
         "merge_state_status": "UNSTABLE",
         "review_decision": "",
         "checks": {
-          "total": 73,
+          "total": 11,
           "counts": {
-            "CANCELLED": 1,
-            "IN_PROGRESS": 1,
-            "SKIPPED": 14,
-            "SUCCESS": 57
+            "IN_PROGRESS": 5,
+            "SUCCESS": 2,
+            "QUEUED": 2,
+            "SKIPPED": 2
           },
           "blockers": [
-            "auto-response:CANCELLED",
-            "Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS"
+            "auto-response:IN_PROGRESS",
+            "preflight:IN_PROGRESS",
+            "label:IN_PROGRESS",
+            "no-tabs:IN_PROGRESS",
+            "security-scm-fast:QUEUED",
+            "actionlint:IN_PROGRESS",
+            "security-dependency-audit:QUEUED"
           ]
         }
       },
