@@ -17,7 +17,8 @@ The loop is intentionally small:
 
 1. Clownfish opens `clownfish/<cluster-id>` or a maintainer comments
    `/clownfish automerge` on any open PR.
-2. ClawSweeper reviews that PR head.
+2. Clownfish dispatches ClawSweeper's item-specific `repository_dispatch` lane
+   to review that PR head.
 3. The comment router sees trusted ClawSweeper feedback.
 4. Clownfish dispatches the existing or adopted job through
    `cluster-worker.yml`.

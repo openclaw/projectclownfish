@@ -531,18 +531,23 @@ function ensureAutomergeJob(command) {
 }
 
 function dispatchClawSweeperReview(command) {
+  const payload = JSON.stringify({
+    event_type: "clawsweeper_item",
+    client_payload: {
+      target_repo: command.repo,
+      item_number: String(command.issue_number),
+      item_kind: "pull_request",
+    },
+  });
   const result = spawnSync(
     "gh",
     [
-      "workflow",
-      "run",
-      clawsweeperWorkflow,
-      "--repo",
-      clawsweeperRepo,
-      "-f",
-      `target_repo=${command.repo}`,
-      "-f",
-      `item_number=${command.issue_number}`,
+      "api",
+      `repos/${clawsweeperRepo}/dispatches`,
+      "--method",
+      "POST",
+      "--input",
+      "-",
     ],
     {
       cwd: repoRoot(),
@@ -552,6 +557,7 @@ function dispatchClawSweeperReview(command) {
           ? { GH_TOKEN: process.env.CLOWNFISH_CLAWSWEEPER_GH_TOKEN }
           : {},
       ),
+      input: payload,
       stdio: "pipe",
     },
   );
@@ -560,6 +566,7 @@ function dispatchClawSweeperReview(command) {
   }
   return {
     workflow: clawsweeperWorkflow,
+    event: "repository_dispatch",
     repo: clawsweeperRepo,
     item_number: command.issue_number,
   };
