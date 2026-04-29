@@ -1,0 +1,41 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "clawsweeper-commit-openclaw-openclaw-450607847b7b",
+  "mode": "autonomous",
+  "run_id": "25092523967",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25092523967",
+  "head_sha": "25ed93de7e4e78e41755de007288832d4e945d9f",
+  "workflow_conclusion": "skipped",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/clawsweeper-commit-openclaw-openclaw-450607847b7b.md",
+  "published_at": "2026-04-29T05:29:13.910Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Found one low-severity parity bug in the new REM harness preview.",
+  "actions": [
+    {
+      "target": "cluster:clawsweeper-commit-openclaw-openclaw-450607847b7b",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "ClawSweeper found an actionable commit-level bug/regression candidate."
+    }
+  ],
+  "action_counts": {
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
