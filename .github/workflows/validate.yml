@@ -24,6 +24,9 @@ jobs:
       - name: Validate job specs
         run: npm run validate
 
+      - name: Run script tests
+        run: npm test
+
       - name: Render example prompt
         run: npm run render -- jobs/openclaw/inbox/cluster-example.md --mode plan > /tmp/projectclownfish-prompt.md
 

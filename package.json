@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test": "node --test test/*.test.mjs",
     "validate": "node scripts/validate-all.mjs",
     "validate:job": "node scripts/validate-job.mjs",
     "render": "node scripts/render-prompt.mjs",
