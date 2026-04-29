@@ -127,6 +127,7 @@ for (const comment of comments) {
   const command = {
     idempotency_key: idempotencyKey(parsed, issueNumber, comment.id, comment.updated_at),
     comment_id: String(comment.id),
+    comment_node_id: comment.node_id ?? null,
     comment_version_key: commentVersionKey({ comment_id: comment.id, comment_updated_at: comment.updated_at }),
     comment_url: comment.html_url,
     repo: targetRepo,
@@ -597,7 +598,10 @@ function executeCommand(command) {
   }
 
   postComment(command, renderResponse(command, dispatched));
-  if (!command.trusted_bot) reactToComment(command, "+1");
+  if (!command.trusted_bot) {
+    clearCommentReaction(command, "EYES");
+    reactToComment(command, "+1");
+  }
   command.actions = command.actions.map((action) =>
     action.action === "comment" ? { ...action, status: "executed", commented_at: new Date().toISOString() } : action,
   );
@@ -1165,6 +1169,30 @@ function reactToComment(command, content) {
     const message = stripAnsi(error?.message ?? error);
     if (/already exists/i.test(message) || /\b422\b/.test(message)) return;
     console.warn(`warning: failed to add ${content} reaction to comment ${command.comment_id}: ${message}`);
+  }
+}
+
+function clearCommentReaction(command, content) {
+  if (!command.comment_node_id) return;
+  try {
+    ghText([
+      "api",
+      "graphql",
+      "-f",
+      `query=mutation($subjectId: ID!, $content: ReactionContent!) {
+        removeReaction(input: { subjectId: $subjectId, content: $content }) {
+          subject { id }
+        }
+      }`,
+      "-F",
+      `subjectId=${command.comment_node_id}`,
+      "-F",
+      `content=${content}`,
+    ]);
+  } catch (error) {
+    const message = stripAnsi(error?.message ?? error);
+    if (/not found|does not exist|could not resolve/i.test(message)) return;
+    console.warn(`warning: failed to clear ${content} reaction from comment ${command.comment_id}: ${message}`);
   }
 }
 
