@@ -76,6 +76,18 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - name: Create GitHub App token
+        id: app_token
+        continue-on-error: true
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ vars.CLOWNFISH_APP_ID }}
+          private-key: ${{ secrets.CLOWNFISH_APP_PRIVATE_KEY }}
+          owner: ${{ vars.CLOWNFISH_ALLOWED_OWNER || github.repository_owner }}
+          permission-contents: read
+          permission-issues: read
+          permission-pull-requests: read
+
       - name: Capture execution gates
         id: capture_gates
         run: |
@@ -101,7 +113,7 @@ jobs:
 
       - name: Verify GitHub read token
         env:
-          GH_TOKEN: ${{ secrets.CLOWNFISH_READ_GH_TOKEN }}
+          GH_TOKEN: ${{ steps.app_token.outputs.token || secrets.CLOWNFISH_READ_GH_TOKEN || github.token }}
         run: |
           if [ -z "${GH_TOKEN:-}" ]; then
             echo "CLOWNFISH_READ_GH_TOKEN is required"
@@ -133,7 +145,7 @@ jobs:
 
       - name: Run worker
         env:
-          GH_TOKEN: ${{ secrets.CLOWNFISH_READ_GH_TOKEN }}
+          GH_TOKEN: ${{ steps.app_token.outputs.token || secrets.CLOWNFISH_READ_GH_TOKEN || github.token }}
         run: |
           args=("${{ inputs.job }}" --mode "${{ inputs.mode }}")
           if [ "${{ inputs.dry_run }}" = "true" ]; then
@@ -196,6 +208,18 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - name: Create GitHub App token
+        id: app_token
+        continue-on-error: true
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ vars.CLOWNFISH_APP_ID }}
+          private-key: ${{ secrets.CLOWNFISH_APP_PRIVATE_KEY }}
+          owner: ${{ vars.CLOWNFISH_ALLOWED_OWNER || github.repository_owner }}
+          permission-contents: write
+          permission-issues: write
+          permission-pull-requests: write
+
       - uses: actions/setup-node@v5
         with:
           node-version: "24"
@@ -245,31 +269,31 @@ jobs:
         if: ${{ env.CLOWNFISH_ALLOW_EXECUTE == '1' && env.CLOWNFISH_ALLOW_FIX_PR == '1' }}
         timeout-minutes: 30
         env:
-          GH_TOKEN: ${{ secrets.CLOWNFISH_GH_TOKEN }}
+          GH_TOKEN: ${{ steps.app_token.outputs.token || secrets.CLOWNFISH_GH_TOKEN || github.token }}
         run: npm run execute-fix -- "${{ inputs.job }}" --latest
 
       - name: Apply safe closure actions
         if: ${{ env.CLOWNFISH_ALLOW_EXECUTE == '1' }}
         env:
-          GH_TOKEN: ${{ secrets.CLOWNFISH_GH_TOKEN }}
+          GH_TOKEN: ${{ steps.app_token.outputs.token || secrets.CLOWNFISH_GH_TOKEN || github.token }}
         run: npm run apply-result -- "${{ inputs.job }}" --latest
 
       - name: Post-flight finalize fix PRs
         if: ${{ env.CLOWNFISH_ALLOW_EXECUTE == '1' && env.CLOWNFISH_ALLOW_FIX_PR == '1' }}
         env:
-          GH_TOKEN: ${{ secrets.CLOWNFISH_GH_TOKEN }}
+          GH_TOKEN: ${{ steps.app_token.outputs.token || secrets.CLOWNFISH_GH_TOKEN || github.token }}
         run: npm run post-flight -- "${{ inputs.job }}" --latest
 
       - name: Apply post-flight closeouts
         if: ${{ env.CLOWNFISH_ALLOW_EXECUTE == '1' }}
         env:
-          GH_TOKEN: ${{ secrets.CLOWNFISH_GH_TOKEN }}
+          GH_TOKEN: ${{ steps.app_token.outputs.token || secrets.CLOWNFISH_GH_TOKEN || github.token }}
         run: npm run apply-result -- "${{ inputs.job }}" --latest
 
       - name: Tag Clownfish targets
         if: ${{ always() && env.CLOWNFISH_ALLOW_EXECUTE == '1' }}
         env:
-          GH_TOKEN: ${{ secrets.CLOWNFISH_GH_TOKEN }}
+          GH_TOKEN: ${{ steps.app_token.outputs.token || secrets.CLOWNFISH_GH_TOKEN || github.token }}
         run: npm run tag-clownfish -- .projectclownfish/runs --apply --live --open-branches false --report .projectclownfish/runs/clownfish-label-report.json
 
       - name: Upload final worker artifacts
