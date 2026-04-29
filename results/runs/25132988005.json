@@ -1,0 +1,61 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-2375-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25132988005",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25132988005",
+  "head_sha": "e5e8212693f31b1f59eff0d60675a97be8c33e90",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-2375-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T20:50:05.076Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/51371",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/51371",
+  "summary": "Hydrated live state shows the representative #41653 and overlapping #51311 are already closed, both superseded by #51371. #51371 is the only open focused PR in this cluster and remains the canonical path; no close, merge, or fix mutation is planned.",
+  "actions": [
+    {
+      "target": "#41653",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#51371",
+      "candidate_fix": "#51371",
+      "reason": "Already closed in live preflight state; keep as closed historical source PR credited by the #51371 canonical path."
+    },
+    {
+      "target": "#51311",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#51371",
+      "candidate_fix": "#51371",
+      "reason": "Already closed in live preflight state; keep as closed historical source PR credited by the #51371 canonical path."
+    },
+    {
+      "target": "#51371",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#51371",
+      "candidate_fix": null,
+      "reason": "Keep #51371 as the canonical open PR for maintainer validation; merge/fix actions are outside this job's allowed actions and no duplicate close remains open."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 2,
+    "keep_canonical": 1
+  },
+  "action_status_counts": {
+    "skipped": 2,
+    "planned": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
