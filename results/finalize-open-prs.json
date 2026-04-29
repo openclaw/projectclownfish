@@ -3,17 +3,17 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-29T20:06:04.318Z",
-  "count": 7,
+  "generated_at": "2026-04-29T20:07:06.156Z",
+  "count": 6,
   "summary": {
-    "open_prs": 7,
+    "open_prs": 6,
     "ready_candidates": 0,
     "security_hold": 0,
-    "needs_rebase": 6,
+    "needs_rebase": 5,
     "mergeability_unknown": 0,
     "needs_checks": 3,
-    "needs_review": 3,
-    "needs_merge_preflight": 7,
+    "needs_review": 2,
+    "needs_merge_preflight": 6,
     "needs_result_backfill": 3
   },
   "dispatch": {
@@ -422,76 +422,6 @@
         "needs_merge_state:DIRTY",
         "unresolved review threads remain",
         "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-fast-support:FAILURE; CI / checks-node-core:FAILURE",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
-    },
-    {
-      "number": 74002,
-      "title": "fix(exec): respect OPENCLAW_STATE_DIR for exec approvals",
-      "url": "https://github.com/openclaw/openclaw/pull/74002",
-      "branch": "clownfish/ghcrawl-191457-agentic-merge",
-      "head_sha": "3acd66879e0a5cd14b9827eb2677077c37985072",
-      "cluster_id": "ghcrawl-191457-agentic-merge",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-191457-agentic-merge.md",
-      "updated_at": "2026-04-29T02:48:06Z",
-      "mergeable": "CONFLICTING",
-      "merge_state_status": "DIRTY",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 110,
-        "counts": {
-          "CANCELLED": 2,
-          "SKIPPED": 22,
-          "SUCCESS": 86
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "blocked",
-        "reason": "unresolved review threads remain",
-        "unresolved_count": 2,
-        "examples": [
-          "https://github.com/openclaw/openclaw/pull/74002#discussion_r3158321399",
-          "https://github.com/openclaw/openclaw/pull/74002#discussion_r3158321432"
-        ]
-      },
-      "review_bots": {
-        "count": 3,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/74002#issuecomment-4340480548",
-            "submitted_at": "2026-04-29T02:45:51Z"
-          },
-          {
-            "source": "comment",
-            "author": "clawsweeper",
-            "url": "https://github.com/openclaw/openclaw/pull/74002#issuecomment-4340487410",
-            "submitted_at": "2026-04-29T02:48:06Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-29T02:45:56Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24967648150",
-        "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24967648150",
-        "cluster_id": "ghcrawl-191457-agentic-merge",
-        "published_at": "2026-04-26T21:52:47.374Z",
-        "workflow_conclusion": "success",
-        "apply_action": null
-      },
-      "blockers": [
-        "needs_rebase:CONFLICTING",
-        "needs_merge_state:DIRTY",
-        "unresolved review threads remain",
         "needs_merge_preflight"
       ],
       "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
