@@ -3,17 +3,17 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-29T22:23:04.056Z",
-  "count": 16,
+  "generated_at": "2026-04-29T22:26:05.013Z",
+  "count": 15,
   "summary": {
-    "open_prs": 16,
+    "open_prs": 15,
     "ready_candidates": 0,
     "security_hold": 0,
-    "needs_rebase": 15,
+    "needs_rebase": 14,
     "mergeability_unknown": 0,
-    "needs_checks": 6,
+    "needs_checks": 5,
     "needs_review": 8,
-    "needs_merge_preflight": 16,
+    "needs_merge_preflight": 15,
     "needs_result_backfill": 8
   },
   "dispatch": {
@@ -1025,86 +1025,6 @@
         "needs_checks:CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (npm-onboard-channel-agent):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (doctor-switch):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (update-channel-switch):CANCELLED",
         "needs_merge_preflight",
         "needs_result_backfill"
-      ],
-      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
-    },
-    {
-      "number": 73986,
-      "title": "fix(feishu): fallback to media when file download returns 502",
-      "url": "https://github.com/openclaw/openclaw/pull/73986",
-      "branch": "clownfish/ghcrawl-199239-agentic-merge",
-      "head_sha": "2e61395d4fde8ef742871651cf7db61386b74572",
-      "cluster_id": "ghcrawl-199239-agentic-merge",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-199239-agentic-merge.md",
-      "updated_at": "2026-04-29T08:36:06Z",
-      "mergeable": "CONFLICTING",
-      "merge_state_status": "DIRTY",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 212,
-        "counts": {
-          "CANCELLED": 19,
-          "SKIPPED": 39,
-          "SUCCESS": 154
-        },
-        "blockers": [
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (npm-onboard-channel-agent):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (doctor-switch):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (update-channel-switch):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-channel-deps-compat):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (plugins-offline):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (plugins):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (kitchen-sink-plugin):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (mcp-channels):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (cron-mcp-cleanup):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-0):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-1):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-2):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-3):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-4):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-5):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-6):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-7):CANCELLED",
-          "CI / plugin-prerelease-suite:CANCELLED"
-        ]
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 2,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/73986#issuecomment-4340453399",
-            "submitted_at": "2026-04-29T02:39:26Z"
-          },
-          {
-            "source": "comment",
-            "author": "clawsweeper",
-            "url": "https://github.com/openclaw/openclaw/pull/73986#issuecomment-4340474276",
-            "submitted_at": "2026-04-29T02:44:13Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "25035231796",
-        "run_url": "https://github.com/openclaw/clownfish/actions/runs/25035231796",
-        "cluster_id": "ghcrawl-199239-agentic-merge",
-        "published_at": "2026-04-28T05:23:59.860Z",
-        "workflow_conclusion": "success",
-        "apply_action": null
-      },
-      "blockers": [
-        "needs_rebase:CONFLICTING",
-        "needs_merge_state:DIRTY",
-        "needs_checks:CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (npm-onboard-channel-agent):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (doctor-switch):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (update-channel-switch):CANCELLED",
-        "needs_merge_preflight"
       ],
       "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     }

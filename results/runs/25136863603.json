@@ -1,0 +1,90 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-745-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25136863603",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25136863603",
+  "head_sha": "c207d367ab088fb89ca96c77cc23dd9c55875cc5",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-745-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T22:23:36.925Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/63412",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/63412",
+  "summary": "Autonomous dedupe-only pass kept #63412 as the live canonical PR for the Discord blockquote chunk-boundary cluster. No mutating close, label, or comment actions are planned: #63460 is related but too broad and carries unique table/inline-splitting scope plus unresolved bot findings, while #71384 is already closed and covered by merged #73960 for the separate CJK long-line fallback family.",
+  "actions": [
+    {
+      "target": "#63412",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#63412",
+      "candidate_fix": null,
+      "reason": "Best live canonical for the blockquote chunk-boundary family, but this run is dedupe-only and cannot merge or repair it."
+    },
+    {
+      "target": "#63460",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#63412",
+      "candidate_fix": null,
+      "reason": "Leave open as related; broad delta and unique scope make close_superseded unsafe without a separate canonical replacement for the broader work."
+    },
+    {
+      "target": "#71384",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": null,
+      "candidate_fix": "#73960",
+      "reason": "Already closed; keep as historical evidence only."
+    },
+    {
+      "target": "#66344",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related table-streaming follow-up; not a duplicate of #63412."
+    },
+    {
+      "target": "#73981",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related streaming/table follow-up; not a duplicate of #63412 and not a merge or close target in this job."
+    },
+    {
+      "target": "#55512",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Different root cause and channels; not a duplicate of #63412."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 3,
+    "keep_closed": 1,
+    "keep_independent": 1
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "skipped": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}

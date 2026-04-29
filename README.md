@@ -41,31 +41,31 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 29, 2026, 22:23 UTC
+Last dashboard update: Apr 29, 2026, 22:26 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 323 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 324 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 323 | 100% |
+| Latest clusters reviewed | 324 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 150 | 46.4% |
-| Needs-human clusters | 47 | 14.6% |
-| Latest successful clusters | 295 | 91.3% |
+| Clean completed clusters | 151 | 46.6% |
+| Needs-human clusters | 47 | 14.5% |
+| Latest successful clusters | 296 | 91.4% |
 | Latest failed clusters | 4 | 1.2% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 576 | audit |
+| Run attempts archived | 577 | audit |
 | Fix action attempts | 164 | audit |
 | Fix actions executed | 0 | 0.0% |
 | Fix actions failed | 35 | 21.3% |
 | Fix actions blocked | 50 | 30.5% |
 | Latest clusters with fix failures | 44 | 13.6% |
-| Distinct PRs touched | 1013 | 100% |
-| Open PRs tracked | 378 | 37.3% |
-| Closed unmerged PRs tracked | 519 | 51.2% |
+| Distinct PRs touched | 1019 | 100% |
+| Open PRs tracked | 382 | 37.5% |
+| Closed unmerged PRs tracked | 520 | 51.0% |
 | Completed close actions | 30 | 10.4% |
 | Completed merge actions | 23 | 8.0% |
 | Duplicate closes | 22 | 73.3% |
@@ -174,7 +174,6 @@ Scope: 323 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | [#73989](https://github.com/openclaw/openclaw/pull/73989) | fix(health-monitor): add reconnect grace for gateway reconnects | ghcrawl-157023-autonomous-smoke | clownfish/ghcrawl-157023-autonomous-smoke | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#73988](https://github.com/openclaw/openclaw/pull/73988) | fix(agents): load symlinked workspace bootstrap files | ghcrawl-157010-autonomous-smoke | clownfish/ghcrawl-157010-autonomous-smoke | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_checks:CI / plugin-prerelease-docker-suite / p... | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#73987](https://github.com/openclaw/openclaw/pull/73987) | fix(control-ui): share gateway token scope across loopback hosts | ghcrawl-157066-autonomous-smoke | clownfish/ghcrawl-157066-autonomous-smoke | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_checks:CI / plugin-prerelease-docker-suite / D... | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
-| [#73986](https://github.com/openclaw/openclaw/pull/73986) | fix(feishu): fallback to media when file download returns 502 | ghcrawl-199239-agentic-merge | clownfish/ghcrawl-199239-agentic-merge | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (npm-onbo... | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 
 ### Latest ProjectClownfish Closures
 
