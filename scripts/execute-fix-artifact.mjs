@@ -5,6 +5,7 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { assertAllowedOwner, parseArgs, parseJob, repoRoot, validateJob } from "./lib.mjs";
 import {
+  automergeRepairOutcomeComment,
   externalMessageProvenance,
   repairContributorBranchComment,
   replacementPrBody,
@@ -2420,6 +2421,7 @@ function findLatestResultPath() {
 }
 
 function writeReport(report, resultPath) {
+  appendAutomergeRepairOutcomeComment(report, resultPath);
   const reportPath =
     typeof args.report === "string"
       ? path.resolve(args.report)
@@ -2430,6 +2432,123 @@ function writeReport(report, resultPath) {
   }
   fs.writeFileSync(reportPath, `${JSON.stringify(report, null, 2)}\n`);
   console.log(JSON.stringify(report, null, 2));
+}
+
+function appendAutomergeRepairOutcomeComment(report, resultPath) {
+  if (!isAutomergeRepairJob()) return;
+  if (!job.frontmatter.allowed_actions.includes("comment")) return;
+  if (report.actions?.some((action) => action.action === "automerge_repair_outcome_comment")) return;
+  if (hasSuccessfulFixMutation(report)) return;
+
+  const target = automergeOutcomeTargetPrNumber();
+  const base = {
+    action: "automerge_repair_outcome_comment",
+    target: target ? `#${target}` : null,
+  };
+  if (!target) {
+    report.actions.push({ ...base, status: "skipped", reason: "missing automerge target PR" });
+    return;
+  }
+
+  const marker = automergeOutcomeMarker({ target, resultPath });
+  if (dryRun) {
+    report.actions.push({ ...base, status: "planned", marker });
+    return;
+  }
+  if (issueHasCommentMarker(target, marker)) {
+    report.actions.push({ ...base, status: "skipped", reason: "matching outcome comment already exists", marker });
+    return;
+  }
+
+  const body = automergeRepairOutcomeComment({
+    marker,
+    result,
+    report,
+    target,
+    provenance: externalMessageProvenance({
+      model,
+      reasoning: codexReasoningEffort,
+      reviewedSha: automergeOutcomeReviewedSha(),
+    }),
+  });
+  postIssueComment(target, body);
+  report.actions.push({ ...base, status: "executed", marker, commented_at: new Date().toISOString() });
+}
+
+function isAutomergeRepairJob() {
+  return job.frontmatter.source === "pr_automerge" || String(result.cluster_id ?? "").startsWith("automerge-");
+}
+
+function hasSuccessfulFixMutation(report) {
+  return (report.actions ?? []).some((action) => {
+    const name = String(action.action ?? "");
+    const status = String(action.status ?? "");
+    return (
+      (name === "repair_contributor_branch" && ["planned", "pushed"].includes(status)) ||
+      (name === "open_fix_pr" && ["planned", "opened"].includes(status))
+    );
+  });
+}
+
+function automergeOutcomeTargetPrNumber() {
+  const canonicalPr = parsePullRequestUrl(result.canonical_pr);
+  if (canonicalPr?.repo === result.repo) return canonicalPr.number;
+  for (const source of result.fix_artifact?.source_prs ?? []) {
+    const parsed = parsePullRequestUrl(source);
+    if (parsed?.repo === result.repo) return parsed.number;
+  }
+  for (const ref of job.frontmatter.canonical ?? []) {
+    const match = String(ref).match(/^#(\d+)$/);
+    if (match) return Number(match[1]);
+  }
+  const clusterMatch = String(result.cluster_id ?? "").match(/-(\d+)$/);
+  return clusterMatch ? Number(clusterMatch[1]) : 0;
+}
+
+function automergeOutcomeReviewedSha() {
+  return (
+    result.reviewed_sha ??
+    result.head_sha ??
+    result.canonical?.pull_request?.head_sha ??
+    result.canonical_item?.pull_request?.head_sha ??
+    null
+  );
+}
+
+function automergeOutcomeMarker({ target, resultPath }) {
+  const runName = path.basename(path.dirname(resultPath)).replace(/[^A-Za-z0-9_.-]+/g, "-");
+  return `<!-- clownfish-repair-outcome:${result.cluster_id}:${runName}:#${target} -->`;
+}
+
+function issueHasCommentMarker(number, marker) {
+  const bodies = run("gh", ["api", `repos/${result.repo}/issues/${number}/comments?per_page=100`, "--paginate", "--jq", ".[].body"], {
+    cwd: repoRoot(),
+    env: ghEnv(),
+  });
+  return bodies.includes(marker);
+}
+
+function postIssueComment(number, body) {
+  const payloadPath = writePayload(`automerge-outcome-${number}`, { body });
+  run("gh", ["api", `repos/${result.repo}/issues/${number}/comments`, "--method", "POST", "--input", payloadPath], {
+    cwd: repoRoot(),
+    env: ghEnv(),
+  });
+}
+
+function writePayload(name, value) {
+  const dir = path.join(repoRoot(), ".projectclownfish", "payloads");
+  fs.mkdirSync(dir, { recursive: true });
+  const file = path.join(dir, `${safeFileName(name)}-${Date.now()}.json`);
+  fs.writeFileSync(file, `${JSON.stringify(value)}\n`);
+  return file;
+}
+
+function safeFileName(value) {
+  return String(value)
+    .replace(/[^A-Za-z0-9_.-]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 80);
 }
 
 function copyFixDebugArtifacts(reportDir) {

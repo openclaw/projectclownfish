@@ -93,6 +93,11 @@ repair worker update the contributor branch when GitHub says that is safe, or
 open a credited replacement when it is not. `/clownfish stop` pauses the loop
 by adding `clownfish:human-review`.
 
+If the repair worker completes without an executable fix artifact, the executor
+posts an idempotent outcome comment on the opted-in PR. That comment records
+that no branch push, rebase, replacement PR, merge, or ClawSweeper re-review
+was started, and includes the worker summary plus planned/skipped actions.
+
 Automerge has two explicit gates:
 
 ```bash

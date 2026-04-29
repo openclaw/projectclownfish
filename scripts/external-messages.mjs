@@ -182,6 +182,26 @@ export function repairContributorBranchComment({ sourcePrUrl, validationCommands
   ], provenance);
 }
 
+export function automergeRepairOutcomeComment({ marker, result, report, target, provenance }) {
+  const lines = [
+    marker,
+    `${SIGNATURE} automerge status`,
+    "",
+    "Repair pass finished without changing this PR.",
+    "",
+    `Target: #${target}`,
+    `Executor outcome: ${compactForComment(report?.reason ?? "no executable fix action", 260)}.`,
+  ];
+  const summary = compactForComment(result?.summary, 900);
+  if (summary) lines.push(`Worker summary: ${summary}`);
+  const actionLines = automergeOutcomeActionLines(result?.actions);
+  if (actionLines.length > 0) {
+    lines.push("", "Worker actions:", ...actionLines);
+  }
+  lines.push("", "No branch push, rebase, replacement PR, merge, or ClawSweeper re-review was started by this pass.");
+  return withFishNotes(lines, provenance);
+}
+
 export function replacementSourceLinkComment({ replacementPrUrl, sourcePrUrl, provenance }) {
   return withFishNotes([
     `${SIGNATURE} reef update`,
@@ -193,6 +213,26 @@ export function replacementSourceLinkComment({ replacementPrUrl, sourcePrUrl, pr
     variant(sourceStaysOpenLines),
     variant(carriedCreditLines),
   ], provenance);
+}
+
+function automergeOutcomeActionLines(actions) {
+  if (!Array.isArray(actions)) return [];
+  return actions.slice(0, 6).map((action) => {
+    const name = compactForComment(action?.action ?? "unknown", 80);
+    const target = compactForComment(action?.target ?? "unknown", 80);
+    const status = compactForComment(action?.status ?? "unknown", 80);
+    const reason = compactForComment(action?.reason, 220);
+    return `- \`${name}\` on \`${target}\`: ${status}${reason ? ` - ${reason}` : ""}`;
+  });
+}
+
+function compactForComment(value, max) {
+  const text = String(value ?? "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!text) return "";
+  if (text.length <= max) return text;
+  return `${text.slice(0, Math.max(0, max - 1)).trimEnd()}...`;
 }
 
 export function replacementSourceCloseComment({ replacementPrUrl, sourcePrUrl, provenance }) {

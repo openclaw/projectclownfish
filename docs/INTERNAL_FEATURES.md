@@ -150,6 +150,8 @@ It can:
 - run Codex `/review`
 - address Codex review findings
 - open or update the target PR
+- post an idempotent adopted-automerge outcome comment when no executable fix
+  artifact is available
 - preserve contributor credit in co-author trailers, PR body, and closeout comments
 
 The executor prepares a temporary checkout of the target repo. Codex edits that

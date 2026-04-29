@@ -198,6 +198,12 @@ include the target PR head SHA. That lets edited ClawSweeper comments wake
 Clownfish again after the PR branch changes while unchanged comment versions
 remain idempotent.
 
+If the adopted automerge worker returns no executable fix artifact, the
+executor posts one idempotent outcome comment on the opted-in PR. That status
+comment is the audit trail for no-op repair passes: it says no branch update,
+replacement PR, merge, or new ClawSweeper review was started, then lists the
+worker summary and actions.
+
 The router also has a trusted automation path for ClawSweeper comments on
 Clownfish PRs and PRs labeled `clownfish:automerge`. Default trusted authors
 are `clawsweeper[bot]` and `openclaw-clawsweeper[bot]`; override with
