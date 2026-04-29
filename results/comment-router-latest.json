@@ -1,11 +1,11 @@
 {
-  "status": "dry_run",
-  "generated_at": "2026-04-29T07:02:12.948Z",
+  "status": "executed",
+  "generated_at": "2026-04-29T07:02:57.252Z",
   "repo": "openclaw/openclaw",
   "clownfish_repo": "openclaw/clownfish",
   "clawsweeper_repo": "openclaw/clawsweeper",
   "since": "2026-04-29T06:58:00Z",
-  "execute": false,
+  "execute": true,
   "max_comments": 100,
   "scanned_comments": 100,
   "commands_seen": 7,
@@ -202,16 +202,17 @@
       "repair_reason": "structured ClawSweeper verdict: needs-human (sha=2122b19ae300850ba92cf612167af5b4d2568efa)",
       "expected_head_sha": "2122b19ae300850ba92cf612167af5b4d2568efa",
       "finding_id": null,
-      "status": "ready",
+      "status": "executed",
       "actions": [
         {
           "action": "label",
           "label": "clownfish:human-review",
-          "status": "planned"
+          "status": "executed"
         },
         {
           "action": "comment",
-          "status": "planned"
+          "status": "executed",
+          "commented_at": "2026-04-29T07:03:00.213Z"
         }
       ],
       "target": {
