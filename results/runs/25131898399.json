@@ -1,0 +1,107 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-2082-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25131898399",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25131898399",
+  "head_sha": "d8a032e46d7a5449946bb8a8f542719694995636",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-2082-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T20:25:02.222Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/65374",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/65374",
+  "canonical_pr": null,
+  "summary": "Autonomous classification only; no GitHub mutations performed. Closed representative #66430 is obsolete as a canonical target. The live canonical path for the shared-workspace identity-pollution family is open issue #65374, with adjacent implementation/review paths kept separate.",
+  "actions": [
+    {
+      "target": "#65374",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#65374",
+      "candidate_fix": null,
+      "reason": "Best surviving canonical issue for the cluster's shared-workspace cross-agent dreaming identity contamination report."
+    },
+    {
+      "target": "#70014",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65374",
+      "candidate_fix": null,
+      "reason": "Related memory-core dreaming workspace enumeration bug, not a duplicate of the shared-workspace isolation canonical."
+    },
+    {
+      "target": "#67413",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65374",
+      "candidate_fix": null,
+      "reason": "Related product/configuration work, not a duplicate closeout target for this cluster."
+    },
+    {
+      "target": "#68408",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65374",
+      "candidate_fix": null,
+      "reason": "Useful related PR requiring normal maintainer review/fixes; not merge-ready and merge/fix actions are blocked by job frontmatter."
+    },
+    {
+      "target": "#65367",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#67413",
+      "candidate_fix": null,
+      "reason": "Closed context evidence only."
+    },
+    {
+      "target": "#66430",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "low_signal",
+      "canonical": "#65374",
+      "candidate_fix": null,
+      "reason": "Obsolete closed representative; #65374 replaces it as canonical."
+    },
+    {
+      "target": "#68367",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed context for the daily-memory block leakage subfamily."
+    },
+    {
+      "target": "#68674",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Closed context for a distinct already-implemented fan-out behavior."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 3,
+    "keep_closed": 4
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "skipped": 4
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
