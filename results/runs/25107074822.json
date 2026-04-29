@@ -1,0 +1,68 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "automerge-openclaw-openclaw-74156",
+  "mode": "autonomous",
+  "run_id": "25107074822",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25107074822",
+  "head_sha": "a14a8befafcf4ce9dbd30c48c74f79b09a1342fe",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/automerge-openclaw-openclaw-74156.md",
+  "published_at": "2026-04-29T11:51:11.724Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/74156",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/74156",
+  "summary": "Hydrated preflight shows the automerge source PR #74156 is already merged and closed, with no security-sensitive signal and no open branch target left for a Clownfish repair. All linked refs are already closed historical context, so no close, merge, comment, label, or fix PR action is planned.",
+  "actions": [
+    {
+      "target": "#73682",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical context; no mutation is valid or needed in this #74156 automerge repair job."
+    },
+    {
+      "target": "#73908",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#74156",
+      "candidate_fix": "#74156",
+      "reason": "Already closed and covered by the merged canonical PR path; no post-merge close action is allowed or needed."
+    },
+    {
+      "target": "#73952",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#74156",
+      "candidate_fix": "#74156",
+      "reason": "Already closed historical contributor PR superseded by the merged canonical path; no mutation is valid."
+    },
+    {
+      "target": "#74156",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#74156",
+      "candidate_fix": null,
+      "reason": "Canonical source PR already merged and closed before this worker result; no repair or replacement PR is supported from the hydrated state."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 4
+  },
+  "action_status_counts": {
+    "skipped": 4
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}

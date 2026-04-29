@@ -3,17 +3,17 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-29T11:39:11.959Z",
-  "count": 44,
+  "generated_at": "2026-04-29T11:57:53.356Z",
+  "count": 45,
   "summary": {
-    "open_prs": 44,
+    "open_prs": 45,
     "ready_candidates": 0,
     "security_hold": 1,
-    "needs_rebase": 39,
-    "mergeability_unknown": 0,
-    "needs_checks": 16,
+    "needs_rebase": 38,
+    "mergeability_unknown": 2,
+    "needs_checks": 17,
     "needs_review": 16,
-    "needs_merge_preflight": 44,
+    "needs_merge_preflight": 45,
     "needs_result_backfill": 25
   },
   "dispatch": {
@@ -206,8 +206,8 @@
       "cluster_id": "clawsweeper-commit-openclaw-openclaw-d130a77a3b1e",
       "job_path": "jobs/openclaw/inbox/clawsweeper-commit-openclaw-openclaw-d130a77a3b1e.md",
       "updated_at": "2026-04-29T03:46:52Z",
-      "mergeable": "MERGEABLE",
-      "merge_state_status": "UNSTABLE",
+      "mergeable": "UNKNOWN",
+      "merge_state_status": "UNKNOWN",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -279,11 +279,12 @@
         }
       },
       "blockers": [
-        "needs_merge_state:UNSTABLE",
+        "mergeability_unknown",
+        "merge_state_unknown",
         "needs_checks:CI / checks-node-agentic-commands:FAILURE; CI / check-lint:FAILURE; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (npm-onboard-channel-agent):FAILURE",
         "needs_merge_preflight"
       ],
-      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
+      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
     },
     {
       "number": 74010,
@@ -360,8 +361,8 @@
       "cluster_id": "ghcrawl-166009-agentic-merge",
       "job_path": "jobs/openclaw/inbox/ghcrawl-166009-agentic-merge.md",
       "updated_at": "2026-04-29T06:13:06Z",
-      "mergeable": "CONFLICTING",
-      "merge_state_status": "DIRTY",
+      "mergeable": "UNKNOWN",
+      "merge_state_status": "UNKNOWN",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -417,13 +418,13 @@
         "apply_action": null
       },
       "blockers": [
-        "needs_rebase:CONFLICTING",
-        "needs_merge_state:DIRTY",
+        "mergeability_unknown",
+        "merge_state_unknown",
         "unresolved review threads remain",
         "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-fast-support:FAILURE; CI / checks-node-core:FAILURE",
         "needs_merge_preflight"
       ],
-      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
+      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
     },
     {
       "number": 74008,
@@ -2785,6 +2786,74 @@
         "needs_merge_preflight"
       ],
       "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
+    },
+    {
+      "number": 73800,
+      "title": "fix(hooks): repair shared-hook announcement policy",
+      "url": "https://github.com/openclaw/openclaw/pull/73800",
+      "branch": "clownfish/ghcrawl-156636-autonomous-smoke",
+      "head_sha": "7199f05a656400d300086f2c28b6e832146050f4",
+      "cluster_id": "ghcrawl-156636-autonomous-smoke",
+      "job_path": "jobs/openclaw/inbox/ghcrawl-156636-autonomous-smoke.md",
+      "updated_at": "2026-04-29T11:55:54Z",
+      "mergeable": "MERGEABLE",
+      "merge_state_status": "UNSTABLE",
+      "review_decision": "",
+      "security_hold": false,
+      "checks": {
+        "total": 76,
+        "counts": {
+          "IN_PROGRESS": 1,
+          "SUCCESS": 66,
+          "SKIPPED": 9
+        },
+        "blockers": [
+          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS"
+        ]
+      },
+      "review_threads": {
+        "status": "clean",
+        "reason": null,
+        "unresolved_count": 0,
+        "examples": []
+      },
+      "review_bots": {
+        "count": 3,
+        "latest": [
+          {
+            "source": "comment",
+            "author": "greptile-apps",
+            "url": "https://github.com/openclaw/openclaw/pull/73800#issuecomment-4339080870",
+            "submitted_at": "2026-04-28T21:10:05Z"
+          },
+          {
+            "source": "comment",
+            "author": "clawsweeper",
+            "url": "https://github.com/openclaw/openclaw/pull/73800#issuecomment-4339087936",
+            "submitted_at": "2026-04-28T21:11:21Z"
+          },
+          {
+            "source": "review",
+            "author": "greptile-apps",
+            "url": null,
+            "submitted_at": "2026-04-28T21:10:10Z"
+          }
+        ]
+      },
+      "latest_record": {
+        "run_id": "25032428566",
+        "run_url": "https://github.com/openclaw/clownfish/actions/runs/25032428566",
+        "cluster_id": "ghcrawl-156636-autonomous-smoke",
+        "published_at": "2026-04-28T03:54:12.865Z",
+        "workflow_conclusion": "success",
+        "apply_action": null
+      },
+      "blockers": [
+        "needs_merge_state:UNSTABLE",
+        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS",
+        "needs_merge_preflight"
+      ],
+      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
     },
     {
       "number": 73799,
