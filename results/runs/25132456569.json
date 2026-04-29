@@ -1,0 +1,388 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-2277-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25132456569",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25132456569",
+  "head_sha": "8b6ee7ffa77533bbae10cb97289fd78b142edfab",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-2277-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T20:42:36.686Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/65177",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/65177",
+  "canonical_pr": null,
+  "summary": "Autonomous classification only. The closed representative #56942 is superseded by #65177 for the Feishu botName migration gap, but the hydrated cluster is over-broad, so unrelated open issues are kept in their own subfamilies. No close, merge, or fix-PR action is safe from this run; security-sensitive evidence is scoped to #51623, #51803, and #63101.",
+  "actions": [
+    {
+      "target": "#56942",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#65177",
+      "candidate_fix": null,
+      "reason": "Closed historical representative; not a mutation target."
+    },
+    {
+      "target": "#65177",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#65177",
+      "candidate_fix": null,
+      "reason": "Best open canonical for the obsolete #56942 representative family."
+    },
+    {
+      "target": "#39138",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#55564",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action allowed."
+    },
+    {
+      "target": "#55231",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#55564",
+      "candidate_fix": null,
+      "reason": "Already closed; no close action allowed."
+    },
+    {
+      "target": "#63897",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#50248",
+      "candidate_fix": "#69954",
+      "reason": "Already closed; no close action allowed."
+    },
+    {
+      "target": "#55564",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#55564",
+      "candidate_fix": null,
+      "reason": "Canonical for the stale outbound delivery-recovery replay subfamily."
+    },
+    {
+      "target": "#42157",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#51620",
+      "candidate_fix": null,
+      "reason": "Same restart-loss family as #51620, but Telegram webhook durability is a distinct provider-specific root cause."
+    },
+    {
+      "target": "#42273",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#42273",
+      "candidate_fix": "#44288",
+      "reason": "Canonical for the backup large-state exclusion/progress subfamily."
+    },
+    {
+      "target": "#44288",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#42273",
+      "candidate_fix": null,
+      "reason": "Useful implementation candidate, but not merge-ready and this job cannot fix or merge."
+    },
+    {
+      "target": "#45573",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#45573",
+      "candidate_fix": null,
+      "reason": "Distinct Telegram group session persistence bug; not a duplicate of the delivery or Feishu families."
+    },
+    {
+      "target": "#50248",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#50248",
+      "candidate_fix": "#69954",
+      "reason": "Canonical for the stale sessionFile cleanup-pruning subfamily."
+    },
+    {
+      "target": "#69954",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#50248",
+      "candidate_fix": null,
+      "reason": "Active candidate PR should stay open for author/maintainer revision; merge is blocked by unresolved review and job policy."
+    },
+    {
+      "target": "#50442",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#42273",
+      "candidate_fix": null,
+      "reason": "Related backup reliability issue, but not the same root cause as #42273 large-state exclusion handling."
+    },
+    {
+      "target": "#51620",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#51620",
+      "candidate_fix": null,
+      "reason": "Canonical for the broad inbound/followup restart-loss subfamily."
+    },
+    {
+      "target": "#51623",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route exact PR to central OpenClaw security handling; do not mutate it in Clownfish."
+    },
+    {
+      "target": "#51803",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route exact PR to central OpenClaw security handling; do not mutate it in Clownfish."
+    },
+    {
+      "target": "#54200",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Config discovery migration bug, not a duplicate of Feishu schema, backup, or session cleanup issues."
+    },
+    {
+      "target": "#54877",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#50248",
+      "candidate_fix": null,
+      "reason": "Related sessions cleanup UX defect, but not the destructive stale sessionFile root cause tracked by #50248."
+    },
+    {
+      "target": "#55792",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#51620",
+      "candidate_fix": null,
+      "reason": "Related to inbound restart reliability but broader product/API work than #51620."
+    },
+    {
+      "target": "#56609",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related session-history preservation topic; not a high-confidence duplicate of any hydrated canonical issue."
+    },
+    {
+      "target": "#73471",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related to #56609 session-history preservation, but it is a distinct doctor orphan-classification bug."
+    },
+    {
+      "target": "#56827",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Distinct large-session-store diagnostic scalability issue."
+    },
+    {
+      "target": "#57562",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65177",
+      "candidate_fix": null,
+      "reason": "Related Feishu strict-schema migration failure, but not enough evidence for duplicate closeout to #65177."
+    },
+    {
+      "target": "#57567",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65177",
+      "candidate_fix": null,
+      "reason": "Related to Feishu botName migration but too broad for duplicate closeout."
+    },
+    {
+      "target": "#58626",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent upgrade path-rewrite issue."
+    },
+    {
+      "target": "#61321",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#61321",
+      "candidate_fix": "#61322",
+      "reason": "Canonical for the same-agent stale-root sessionFile remap subfamily."
+    },
+    {
+      "target": "#61322",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#61321",
+      "candidate_fix": null,
+      "reason": "Useful candidate PR, but not merge-ready and this job cannot repair or merge it."
+    },
+    {
+      "target": "#63101",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Route exact item to central OpenClaw security handling due to leaked-secret evidence in the hydrated discussion."
+    },
+    {
+      "target": "#63266",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related workspace migration diagnostic issue; not security-sensitive by itself and not a duplicate of stale absolute sessionFile handling."
+    },
+    {
+      "target": "#63572",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related workspace migration path-detection issue; not duplicative enough for closure."
+    },
+    {
+      "target": "#63998",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#63998",
+      "candidate_fix": null,
+      "reason": "Canonical for the transcript crash-loop recovery subfamily."
+    },
+    {
+      "target": "#64707",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65177",
+      "candidate_fix": null,
+      "reason": "Related Feishu config/status regression, but distinct from #65177."
+    },
+    {
+      "target": "#65353",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65358",
+      "candidate_fix": null,
+      "reason": "Related to #65358 but includes unique stale CLI path work; do not close one half of the unresolved paired report."
+    },
+    {
+      "target": "#65358",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#65358",
+      "candidate_fix": null,
+      "reason": "Canonical for the 2026.4.10 memory/session continuity hardening subfamily."
+    },
+    {
+      "target": "#65564",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#50248",
+      "candidate_fix": null,
+      "reason": "Related sessionFile/transcript integrity issue, but not the same cleanup prune path as #50248."
+    },
+    {
+      "target": "#65786",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65177",
+      "candidate_fix": null,
+      "reason": "Related Feishu strict-schema migration family, but not a duplicate of #65177."
+    },
+    {
+      "target": "#66360",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#63998",
+      "candidate_fix": null,
+      "reason": "Related transcript growth/OOM issue with unique maintenance configuration scope."
+    },
+    {
+      "target": "#67417",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent backup archiver race, not the same root cause as large-state exclusion or temp cleanup."
+    },
+    {
+      "target": "#68191",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Independent cron task-registry audit/status bug; do not fold into inbound or delivery restart-loss issues."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 4,
+    "keep_canonical": 9,
+    "keep_related": 18,
+    "route_security": 3,
+    "keep_independent": 5
+  },
+  "action_status_counts": {
+    "skipped": 4,
+    "planned": 35
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
