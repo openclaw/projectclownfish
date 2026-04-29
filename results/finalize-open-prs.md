@@ -1,20 +1,20 @@
 # Open ProjectClownfish PR Finalizer
 
-Generated: 2026-04-29T22:18:47.183Z
+Generated: 2026-04-29T22:23:04.056Z
 
 ## Summary
 
 | Metric | Count |
 | --- | ---: |
-| open_prs | 18 |
+| open_prs | 16 |
 | ready_candidates | 0 |
 | security_hold | 0 |
-| needs_rebase | 17 |
+| needs_rebase | 15 |
 | mergeability_unknown | 0 |
-| needs_checks | 8 |
-| needs_review | 9 |
-| needs_merge_preflight | 18 |
-| needs_result_backfill | 10 |
+| needs_checks | 6 |
+| needs_review | 8 |
+| needs_merge_preflight | 16 |
+| needs_result_backfill | 8 |
 
 ## Dispatch
 
@@ -46,5 +46,3 @@ Status: report_only
 | [#73988](https://github.com/openclaw/openclaw/pull/73988) | fix(agents): load symlinked workspace bootstrap files | ghcrawl-157010-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:9 SKIPPED:36 SUCCESS:151; blockers:5 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_checks:CI / plugin-prerelease-docker-suite / prepare_docker_e2e_image:CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E (${{ matrix.label }}):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (${{ matrix.group.label }}):CANCELLED, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#73987](https://github.com/openclaw/openclaw/pull/73987) | fix(control-ui): share gateway token scope across loopback hosts | ghcrawl-157066-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:25 SKIPPED:38 SUCCESS:150; blockers:21 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_checks:CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (npm-onboard-channel-agent):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (doctor-switch):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (update-channel-switch):CANCELLED, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#73986](https://github.com/openclaw/openclaw/pull/73986) | fix(feishu): fallback to media when file download returns 502 | ghcrawl-199239-agentic-merge | CONFLICTING | DIRTY | CANCELLED:19 SKIPPED:39 SUCCESS:154; blockers:18 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (npm-onboard-channel-agent):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (doctor-switch):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (update-channel-switch):CANCELLED, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
-| [#73982](https://github.com/openclaw/openclaw/pull/73982) | fix(chat-bash): inherit exec policy defaults | ghcrawl-157029-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:12 SKIPPED:37 SUCCESS:161; blockers:10 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (kitchen-sink-plugin):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-0):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-1):CANCELLED, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
-| [#73981](https://github.com/openclaw/openclaw/pull/73981) | fix(streaming): preserve markdown boundaries across block chunks | ghcrawl-157042-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:10 SKIPPED:41 SUCCESS:165; blockers:9 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_checks:CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-0):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-1):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-2):CANCELLED, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |

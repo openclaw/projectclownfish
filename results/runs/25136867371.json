@@ -1,0 +1,51 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-77-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25136867371",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25136867371",
+  "head_sha": "c207d367ab088fb89ca96c77cc23dd9c55875cc5",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-77-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T22:22:18.533Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/69305",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/69305",
+  "summary": "Hydrated preflight supports #69305 as the open canonical PR for zsh positional-argument completion. #64490 is related zsh completion work for option-description escaping, not a duplicate or superseded PR, so no close/comment/label mutation is planned.",
+  "actions": [
+    {
+      "target": "#69305",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#69305",
+      "candidate_fix": null,
+      "reason": "#69305 remains the best live canonical path for completing zsh positional arguments."
+    },
+    {
+      "target": "#64490",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#69305",
+      "candidate_fix": null,
+      "reason": "#64490 is related zsh completion work with unique remaining scope and should remain open."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 1
+  },
+  "action_status_counts": {
+    "planned": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
