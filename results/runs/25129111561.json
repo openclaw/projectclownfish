@@ -1,0 +1,152 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-14054-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25129111561",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25129111561",
+  "head_sha": "c6792f0250a6710fb4bca0bf6ba7777e5c4f0fbc",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-14054-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T19:26:55.563Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/73799",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/54176",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/73799",
+  "summary": "Non-mutating classification only. The live preflight shows job candidates #44068 and #61016 are already closed, and the hinted representative #68456 is obsolete/closed. #73799 is the live canonical PR for the legacy Word/OLE .doc MIME guard with #54176 kept open, while #73229 is the landed sanitizer-anchoring fix; security-sensitive #9791 and #9795 are routed to central security handling.",
+  "actions": [
+    {
+      "target": "#9791",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive closed issue is out of scope for ProjectClownfish mutation and should be routed to central OpenClaw security handling."
+    },
+    {
+      "target": "#9795",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive closed issue is quarantined; no ProjectClownfish closeout or fix action is planned."
+    },
+    {
+      "target": "#10257",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already-closed context PR; no action beyond recording it as historical related evidence."
+    },
+    {
+      "target": "#44068",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54176",
+      "candidate_fix": "#73799",
+      "reason": "Already closed as superseded by the current canonical legacy Word/OLE PR #73799."
+    },
+    {
+      "target": "#54176",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#54176",
+      "candidate_fix": "#73799",
+      "reason": "Canonical open issue for the legacy Word/OLE MIME guard subfamily; keep open for #73799 validation and follow-up."
+    },
+    {
+      "target": "#54190",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54176",
+      "candidate_fix": "#73799",
+      "reason": "Already-closed superseded contributor PR; preserve as credited historical context for #73799."
+    },
+    {
+      "target": "#54234",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54176",
+      "candidate_fix": "#73799",
+      "reason": "Already-closed superseded legacy Word/OLE PR; no mutation is valid."
+    },
+    {
+      "target": "#54380",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#54176",
+      "candidate_fix": "#73799",
+      "reason": "Already closed as superseded by credited replacement PR #73799."
+    },
+    {
+      "target": "#61016",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#73229",
+      "reason": "Already closed after the merged sanitizer fix #73229 became the canonical path."
+    },
+    {
+      "target": "#68225",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#73229",
+      "reason": "Already closed as replaced by the landed sanitizer fix #73229."
+    },
+    {
+      "target": "#68456",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#73229",
+      "reason": "Obsolete closed representative; sanitizer subfamily is historically covered by merged #73229."
+    },
+    {
+      "target": "#73229",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "canonical",
+      "canonical": "#73229",
+      "candidate_fix": null,
+      "reason": "Merged sanitizer anchoring fix; no worker mutation is planned."
+    },
+    {
+      "target": "#73799",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#73799",
+      "candidate_fix": null,
+      "reason": "Current open canonical PR for the legacy Word/OLE .doc bug; keep open for maintainer review/merge outside this dedupe-only job."
+    }
+  ],
+  "action_counts": {
+    "route_security": 2,
+    "keep_closed": 9,
+    "keep_canonical": 2
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "skipped": 9
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
