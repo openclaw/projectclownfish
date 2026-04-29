@@ -1,0 +1,70 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-2202-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25132418694",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25132418694",
+  "head_sha": "2a25e72cd9df0710ef893de8f25823a6a78be854",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-2202-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T20:37:32.826Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/55401",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/55401",
+  "canonical_pr": null,
+  "summary": "The closed representative #62700 is obsolete as a canonical target. The only open hydrated item, #55401, should remain open as the canonical issue for per-agent plugin configuration overrides. The closed scoping/lifecycle refs are related historical context, not closure targets, and no comments, labels, fixes, PRs, or merges are planned.",
+  "actions": [
+    {
+      "target": "#55401",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#55401",
+      "candidate_fix": null,
+      "reason": "#55401 is not a high-confidence duplicate of the closed plugin scoping/lifecycle issues; it is the surviving open canonical for the per-agent plugin config override problem."
+    },
+    {
+      "target": "#40208",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#55401",
+      "candidate_fix": null,
+      "reason": "Already closed; related to #55401 through per-agent plugin behavior, but the root ask is lifecycle scoping rather than per-agent config override semantics."
+    },
+    {
+      "target": "#58201",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#55401",
+      "candidate_fix": null,
+      "reason": "Already closed; related to #55401 but previously resolved as a narrower plugin-owned isolation case, so it is not a live duplicate target."
+    },
+    {
+      "target": "#62700",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#55401",
+      "candidate_fix": null,
+      "reason": "Already closed; obsolete as canonical and related rather than duplicative of the surviving config override issue."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_closed": 3
+  },
+  "action_status_counts": {
+    "planned": 1,
+    "skipped": 3
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
