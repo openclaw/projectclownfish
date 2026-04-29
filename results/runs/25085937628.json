@@ -1,0 +1,97 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "ghcrawl-156717-autonomous-smoke",
+  "mode": "autonomous",
+  "run_id": "25085937628",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25085937628",
+  "head_sha": "f235dafeb1f490ef92624e6c83444fc0d6e6d65e",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/ghcrawl-156717-autonomous-smoke.md",
+  "published_at": "2026-04-29T01:15:03.655Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/46398",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/46398",
+  "canonical_pr": null,
+  "summary": "Current live preflight makes #46398 the surviving canonical issue. #45048 and #50071 are already closed duplicate context and must not receive new close actions. #62167 overlaps the persistent chat token indicator request but carries broader provider quota, cost, and per-message token display scope, so it should stay open as related. No PR exists for the canonical feature, so the executable path is a narrow new fix PR for #46398.",
+  "actions": [
+    {
+      "target": "#45048",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#46398",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate context; do not emit a close action for a closed issue."
+    },
+    {
+      "target": "#46398",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#46398",
+      "candidate_fix": null,
+      "reason": "The original canonical hint #45048 is now closed; #46398 is the best live canonical tracker and needs a narrow fix PR."
+    },
+    {
+      "target": "#50071",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#46398",
+      "candidate_fix": null,
+      "reason": "Already closed duplicate context; do not emit a close action for a closed issue."
+    },
+    {
+      "target": "#62167",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#46398",
+      "candidate_fix": null,
+      "reason": "Keep open as related follow-up scope; do not close under the #46398 duplicate path."
+    },
+    {
+      "target": "cluster:ghcrawl-156717-autonomous-smoke",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#46398",
+      "candidate_fix": null,
+      "reason": "Create a narrow credited fix plan for the surviving canonical feature."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 2,
+    "fix_needed": 1,
+    "keep_related": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 2,
+    "planned": 3
+  },
+  "fix_counts": {
+    "blocked": 1
+  },
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [
+    {
+      "action": "execute_fix",
+      "status": "blocked",
+      "target": null,
+      "pr": null,
+      "branch": null,
+      "source_action": null,
+      "source_status": null,
+      "repair_strategy": "new_fix_pr",
+      "reason": "validation command failed (pnpm check:changed): [check:changed] lanes=core, coreTests, docs [check:changed] ui/src/styles/chat/layout.css: core production [check:changed] ui/src/ui/chat/context-notice.ts: core production [check:changed] ui/src/ui/chat/run-controls.test.ts: core test [check:changed] conflict markers Found unresolved merge conflict markers: - CHANGELOG.md:12,14,16 [check:changed] summary 964ms failed:1 conflict markers",
+      "title": null,
+      "url": null
+    }
+  ],
+  "apply_actions": []
+}

@@ -3,18 +3,18 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-29T01:14:33.747Z",
+  "generated_at": "2026-04-29T01:27:57.526Z",
   "count": 123,
   "summary": {
     "open_prs": 123,
     "ready_candidates": 0,
     "security_hold": 3,
-    "needs_rebase": 100,
+    "needs_rebase": 101,
     "mergeability_unknown": 0,
-    "needs_checks": 103,
+    "needs_checks": 102,
     "needs_review": 11,
     "needs_merge_preflight": 123,
-    "needs_result_backfill": 77
+    "needs_result_backfill": 76
   },
   "dispatch": {
     "enabled": false,
@@ -35,23 +35,19 @@
       "head_sha": "ff1e82875820bd18abc03fcb343fb9e1c544c691",
       "cluster_id": "clawsweeper-openclaw-openclaw-73880",
       "job_path": "jobs/openclaw/inbox/clawsweeper-openclaw-openclaw-73880.md",
-      "updated_at": "2026-04-29T01:00:02Z",
+      "updated_at": "2026-04-29T01:01:53Z",
       "mergeable": "MERGEABLE",
-      "merge_state_status": "UNSTABLE",
+      "merge_state_status": "CLEAN",
       "review_decision": "",
       "security_hold": false,
       "checks": {
-        "total": 89,
+        "total": 108,
         "counts": {
           "CANCELLED": 2,
-          "SKIPPED": 21,
-          "SUCCESS": 64,
-          "FAILURE": 2
+          "SKIPPED": 20,
+          "SUCCESS": 86
         },
-        "blockers": [
-          "CI / plugin-prerelease-docker-suite / prepare_docker_e2e_image:FAILURE",
-          "CI / plugin-prerelease-suite:FAILURE"
-        ]
+        "blockers": []
       },
       "review_threads": {
         "status": "clean",
@@ -60,13 +56,19 @@
         "examples": []
       },
       "review_bots": {
-        "count": 1,
+        "count": 2,
         "latest": [
           {
             "source": "comment",
             "author": "greptile-apps",
             "url": "https://github.com/openclaw/openclaw/pull/73902#issuecomment-4340152520",
             "submitted_at": "2026-04-29T01:00:02Z"
+          },
+          {
+            "source": "comment",
+            "author": "clawsweeper",
+            "url": "https://github.com/openclaw/openclaw/pull/73902#issuecomment-4340158452",
+            "submitted_at": "2026-04-29T01:01:53Z"
           }
         ]
       },
@@ -93,11 +95,9 @@
         }
       },
       "blockers": [
-        "needs_merge_state:UNSTABLE",
-        "needs_checks:CI / plugin-prerelease-docker-suite / prepare_docker_e2e_image:FAILURE; CI / plugin-prerelease-suite:FAILURE",
         "needs_merge_preflight"
       ],
-      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
+      "recommended_next_action": "backfill merge preflight: security cleared, comments resolved, Codex /review passed, validation recorded"
     },
     {
       "number": 73891,
@@ -762,13 +762,19 @@
           }
         ]
       },
-      "latest_record": null,
+      "latest_record": {
+        "run_id": "25085937628",
+        "run_url": "https://github.com/openclaw/clownfish/actions/runs/25085937628",
+        "cluster_id": "ghcrawl-156717-autonomous-smoke",
+        "published_at": "2026-04-29T01:15:03.655Z",
+        "workflow_conclusion": "success",
+        "apply_action": null
+      },
       "blockers": [
         "needs_rebase:CONFLICTING",
         "needs_merge_state:DIRTY",
         "needs_checks:CI / checks-fast-bundled:FAILURE; CI / checks-node-extensions-shard-4:FAILURE; CI / checks-node-core-runtime-infra:FAILURE",
-        "needs_merge_preflight",
-        "needs_result_backfill"
+        "needs_merge_preflight"
       ],
       "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     },
@@ -1022,8 +1028,8 @@
       "cluster_id": "ghcrawl-156619-autonomous-smoke",
       "job_path": "jobs/openclaw/inbox/ghcrawl-156619-autonomous-smoke.md",
       "updated_at": "2026-04-29T00:28:19Z",
-      "mergeable": "MERGEABLE",
-      "merge_state_status": "UNSTABLE",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -1076,11 +1082,12 @@
         "apply_action": null
       },
       "blockers": [
-        "needs_merge_state:UNSTABLE",
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
         "needs_checks:CI / checks-node-agentic-commands:FAILURE; CI / checks-node-core:FAILURE",
         "needs_merge_preflight"
       ],
-      "recommended_next_action": "repair failing checks or document unrelated main flake with touched-surface proof"
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     },
     {
       "number": 73724,
