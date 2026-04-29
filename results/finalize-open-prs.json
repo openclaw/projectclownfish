@@ -3,18 +3,18 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-29T22:26:05.013Z",
-  "count": 15,
+  "generated_at": "2026-04-29T22:28:12.278Z",
+  "count": 13,
   "summary": {
-    "open_prs": 15,
+    "open_prs": 13,
     "ready_candidates": 0,
     "security_hold": 0,
-    "needs_rebase": 14,
+    "needs_rebase": 12,
     "mergeability_unknown": 0,
-    "needs_checks": 5,
-    "needs_review": 8,
-    "needs_merge_preflight": 15,
-    "needs_result_backfill": 8
+    "needs_checks": 3,
+    "needs_review": 6,
+    "needs_merge_preflight": 13,
+    "needs_result_backfill": 6
   },
   "dispatch": {
     "enabled": false,
@@ -867,162 +867,6 @@
       "blockers": [
         "needs_rebase:CONFLICTING",
         "needs_merge_state:DIRTY",
-        "needs_merge_preflight",
-        "needs_result_backfill"
-      ],
-      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
-    },
-    {
-      "number": 73988,
-      "title": "fix(agents): load symlinked workspace bootstrap files",
-      "url": "https://github.com/openclaw/openclaw/pull/73988",
-      "branch": "clownfish/ghcrawl-157010-autonomous-smoke",
-      "head_sha": "7e84b2259445a6d989e03a798febc4f9d93621ee",
-      "cluster_id": "ghcrawl-157010-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-157010-autonomous-smoke.md",
-      "updated_at": "2026-04-29T02:46:47Z",
-      "mergeable": "CONFLICTING",
-      "merge_state_status": "DIRTY",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 196,
-        "counts": {
-          "CANCELLED": 9,
-          "SKIPPED": 36,
-          "SUCCESS": 151
-        },
-        "blockers": [
-          "CI / plugin-prerelease-docker-suite / prepare_docker_e2e_image:CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E (${{ matrix.label }}):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (${{ matrix.group.label }}):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E (openwebui):CANCELLED",
-          "CI / plugin-prerelease-suite:CANCELLED"
-        ]
-      },
-      "review_threads": {
-        "status": "blocked",
-        "reason": "unresolved review threads remain",
-        "unresolved_count": 1,
-        "examples": [
-          "https://github.com/openclaw/openclaw/pull/73988#discussion_r3158314763"
-        ]
-      },
-      "review_bots": {
-        "count": 3,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/73988#issuecomment-4340471699",
-            "submitted_at": "2026-04-29T02:43:35Z"
-          },
-          {
-            "source": "comment",
-            "author": "clawsweeper",
-            "url": "https://github.com/openclaw/openclaw/pull/73988#issuecomment-4340474510",
-            "submitted_at": "2026-04-29T02:44:17Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-29T02:43:39Z"
-          }
-        ]
-      },
-      "latest_record": null,
-      "blockers": [
-        "needs_rebase:CONFLICTING",
-        "needs_merge_state:DIRTY",
-        "unresolved review threads remain",
-        "needs_checks:CI / plugin-prerelease-docker-suite / prepare_docker_e2e_image:CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E (${{ matrix.label }}):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (${{ matrix.group.label }}):CANCELLED",
-        "needs_merge_preflight",
-        "needs_result_backfill"
-      ],
-      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
-    },
-    {
-      "number": 73987,
-      "title": "fix(control-ui): share gateway token scope across loopback hosts",
-      "url": "https://github.com/openclaw/openclaw/pull/73987",
-      "branch": "clownfish/ghcrawl-157066-autonomous-smoke",
-      "head_sha": "2057d4113898b18e3a8eb11685d79e52c3a13347",
-      "cluster_id": "ghcrawl-157066-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-157066-autonomous-smoke.md",
-      "updated_at": "2026-04-29T02:46:21Z",
-      "mergeable": "CONFLICTING",
-      "merge_state_status": "DIRTY",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 213,
-        "counts": {
-          "CANCELLED": 25,
-          "SKIPPED": 38,
-          "SUCCESS": 150
-        },
-        "blockers": [
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (npm-onboard-channel-agent):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (doctor-switch):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (update-channel-switch):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-channel-deps-compat):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (plugins-offline):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (plugins):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (kitchen-sink-plugin):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (plugin-update):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (config-reload):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (gateway-network):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (mcp-channels):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (cron-mcp-cleanup):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-0):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-1):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-2):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-3):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-4):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-5):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-6):CANCELLED",
-          "CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (bundled-plugin-install-uninstall-7):CANCELLED",
-          "CI / plugin-prerelease-suite:CANCELLED"
-        ]
-      },
-      "review_threads": {
-        "status": "blocked",
-        "reason": "unresolved review threads remain",
-        "unresolved_count": 1,
-        "examples": [
-          "https://github.com/openclaw/openclaw/pull/73987#discussion_r3158311644"
-        ]
-      },
-      "review_bots": {
-        "count": 3,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/73987#issuecomment-4340467488",
-            "submitted_at": "2026-04-29T02:42:34Z"
-          },
-          {
-            "source": "comment",
-            "author": "clawsweeper",
-            "url": "https://github.com/openclaw/openclaw/pull/73987#issuecomment-4340475501",
-            "submitted_at": "2026-04-29T02:44:32Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-29T02:42:42Z"
-          }
-        ]
-      },
-      "latest_record": null,
-      "blockers": [
-        "needs_rebase:CONFLICTING",
-        "needs_merge_state:DIRTY",
-        "unresolved review threads remain",
-        "needs_checks:CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (npm-onboard-channel-agent):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (doctor-switch):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (update-channel-switch):CANCELLED",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],
