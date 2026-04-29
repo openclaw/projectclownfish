@@ -41,44 +41,45 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 29, 2026, 20:33 UTC
+Last dashboard update: Apr 29, 2026, 20:34 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 295 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 296 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 295 | 100% |
+| Latest clusters reviewed | 296 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 128 | 43.4% |
-| Needs-human clusters | 46 | 15.6% |
-| Latest successful clusters | 267 | 90.5% |
+| Clean completed clusters | 128 | 43.2% |
+| Needs-human clusters | 46 | 15.5% |
+| Latest successful clusters | 268 | 90.5% |
 | Latest failed clusters | 4 | 1.4% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 548 | audit |
+| Run attempts archived | 549 | audit |
 | Fix action attempts | 164 | audit |
 | Fix actions executed | 0 | 0.0% |
 | Fix actions failed | 35 | 21.3% |
 | Fix actions blocked | 50 | 30.5% |
 | Latest clusters with fix failures | 44 | 14.9% |
-| Distinct PRs touched | 940 | 100% |
-| Open PRs tracked | 345 | 36.7% |
-| Closed unmerged PRs tracked | 487 | 51.8% |
+| Distinct PRs touched | 943 | 100% |
+| Open PRs tracked | 348 | 36.9% |
+| Closed unmerged PRs tracked | 487 | 51.6% |
 | Completed close actions | 30 | 10.5% |
-| Completed merge actions | 23 | 8.1% |
+| Completed merge actions | 23 | 8.0% |
 | Duplicate closes | 22 | 73.3% |
 | Superseded closes | 0 | 0.0% |
 | Fixed-by-candidate closes | 0 | 0.0% |
 | Low-signal PR closes | 0 | 0.0% |
-| Blocked mutation attempts | 114 | 40.0% |
-| Skipped mutation attempts | 118 | 41.4% |
+| Blocked mutation attempts | 115 | 40.2% |
+| Skipped mutation attempts | 118 | 41.3% |
 
 ### Clusters Needing Inspection
 
 | Cluster | State | Source job | Reason | Report | Run |
 | --- | --- | --- | --- | --- | --- |
+| [gitcrawl-2111-dedupe-only-20260429-remote](results/openclaw/gitcrawl-2111-dedupe-only-20260429-remote.md) | apply blocked | jobs/openclaw/inbox/gitcrawl-2111-dedupe-only-20260429-remote.md | target changed since worker review | [report](results/openclaw/gitcrawl-2111-dedupe-only-20260429-remote.md) | [25131909532](https://github.com/openclaw/clownfish/actions/runs/25131909532) |
 | [gitcrawl-1972-dedupe-only-20260429-remote](results/openclaw/gitcrawl-1972-dedupe-only-20260429-remote.md) | needs human | jobs/openclaw/inbox/gitcrawl-1972-dedupe-only-20260429-remote.md | #43443: maintainer decision needed on launchd EIO retry plus SIGKILL/PID identity semantics before any automated replacement or rebase. | [report](results/openclaw/gitcrawl-1972-dedupe-only-20260429-remote.md) | [25131315944](https://github.com/openclaw/clownfish/actions/runs/25131315944) |
 | [gitcrawl-1998-dedupe-only-20260429-remote](results/openclaw/gitcrawl-1998-dedupe-only-20260429-remote.md) | needs human | jobs/openclaw/inbox/gitcrawl-1998-dedupe-only-20260429-remote.md | #64731 requires maintainer product-direction choice: Telegram-specific fallback notices outside verbose mode versus the broader unhydrate... | [report](results/openclaw/gitcrawl-1998-dedupe-only-20260429-remote.md) | [25131329587](https://github.com/openclaw/clownfish/actions/runs/25131329587) |
 | [gitcrawl-1957-dedupe-only-20260429-remote](results/openclaw/gitcrawl-1957-dedupe-only-20260429-remote.md) | needs human | jobs/openclaw/inbox/gitcrawl-1957-dedupe-only-20260429-remote.md | #49408 requires maintainer policy judgment on whether root-escaping symlinked managed skills should be supported or explicitly documented... | [report](results/openclaw/gitcrawl-1957-dedupe-only-20260429-remote.md) | [25131311478](https://github.com/openclaw/clownfish/actions/runs/25131311478) |
@@ -103,7 +104,6 @@ Scope: 295 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | [ghcrawl-166004-agentic-merge](results/openclaw/ghcrawl-166004-agentic-merge.md) | fix blocked | jobs/openclaw/inbox/ghcrawl-166004-agentic-merge.md | Codex /review did not pass after 2 attempt(s): Cannot perform the review without inspecting the repository diff and validation state. | [report](results/openclaw/ghcrawl-166004-agentic-merge.md) | [25087637821](https://github.com/openclaw/clownfish/actions/runs/25087637821) |
 | [ghcrawl-156863-autonomous-smoke](results/openclaw/ghcrawl-156863-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156863-autonomous-smoke.md | merge requires CLOWNFISH_ALLOW_MERGE=1; labeled clownfish | [report](results/openclaw/ghcrawl-156863-autonomous-smoke.md) | [25086686616](https://github.com/openclaw/clownfish/actions/runs/25086686616) |
 | [ghcrawl-156715-autonomous-smoke](results/openclaw/ghcrawl-156715-autonomous-smoke.md) | workflow failure | jobs/openclaw/inbox/ghcrawl-156715-autonomous-smoke.md | Hydrated preflight keeps #59752 as the non-security canonical repair path for the media-only same-target messaging reply suppression bug ... | [report](results/openclaw/ghcrawl-156715-autonomous-smoke.md) | [25085923969](https://github.com/openclaw/clownfish/actions/runs/25085923969) |
-| [ghcrawl-156717-autonomous-smoke](results/openclaw/ghcrawl-156717-autonomous-smoke.md) | fix blocked | jobs/openclaw/inbox/ghcrawl-156717-autonomous-smoke.md | validation command failed (pnpm check:changed): [check:changed] lanes=core, coreTests, docs [check:changed] ui/src/styles/chat/layout.css... | [report](results/openclaw/ghcrawl-156717-autonomous-smoke.md) | [25085937628](https://github.com/openclaw/clownfish/actions/runs/25085937628) |
 
 ### Fix Failure Queue
 
@@ -140,7 +140,7 @@ Scope: 295 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | Reason | Latest count | Example cluster |
 | --- | ---: | --- |
 | action status is blocked | 89 | [ghcrawl-156636-autonomous-smoke](results/openclaw/ghcrawl-156636-autonomous-smoke.md) |
-| target changed since worker review | 15 | [gitcrawl-238843-dedupe-only-20260429c](results/openclaw/gitcrawl-238843-dedupe-only-20260429c.md) |
+| target changed since worker review | 16 | [gitcrawl-2111-dedupe-only-20260429-remote](results/openclaw/gitcrawl-2111-dedupe-only-20260429-remote.md) |
 | close requires ProjectClownfish fix PR opened/pushed or merge executed first | 13 | [ghcrawl-156593-autonomous-smoke](results/openclaw/ghcrawl-156593-autonomous-smoke.md) |
 | merge state status is UNSTABLE | 10 | [ghcrawl-156647-autonomous-smoke](results/openclaw/ghcrawl-156647-autonomous-smoke.md) |
 | merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review | 9 | [ghcrawl-156679-autonomous-smoke](results/openclaw/ghcrawl-156679-autonomous-smoke.md) |

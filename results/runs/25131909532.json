@@ -1,0 +1,88 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-2111-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25131909532",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25131909532",
+  "head_sha": "d8a032e46d7a5449946bb8a8f542719694995636",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-2111-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T20:34:11.576Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/47613",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/47613",
+  "summary": "Selected #47613 as the non-security canonical PR for the callback-coupled Gateway reasoning stream bug. Planned one issue closeout for #42261 as covered by #47613, and routed #52642 and #61469 to central security handling because hydrated review comments describe trust/visibility boundary regressions. No merge or fix PR is planned because this job blocks merge, fix, and raise_pr actions.",
+  "actions": [
+    {
+      "target": "#47613",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#47613",
+      "candidate_fix": null,
+      "reason": "Best surviving non-security canonical PR for the root cause; merge/fix are blocked by job policy and remaining review work is pre-merge, not a dedupe ambiguity."
+    },
+    {
+      "target": "#42261",
+      "action": "close_fixed_by_candidate",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#47613",
+      "candidate_fix": "#47613",
+      "reason": "The issue is covered by the canonical PR #47613 and can be consolidated there for validation and follow-up."
+    },
+    {
+      "target": "#52642",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Hydrated review comments contain security-shaped trust-boundary findings, so this exact PR must be quarantined for central OpenClaw security handling and not mutated by Clownfish."
+    },
+    {
+      "target": "#61469",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Hydrated review comments describe sensitive visibility-boundary leakage introduced by this PR, so the exact item is routed to central security handling instead of being closed or otherwise mutated."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_fixed_by_candidate": 1,
+    "route_security": 2
+  },
+  "action_status_counts": {
+    "planned": 4
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#42261",
+      "action": "close_fixed_by_candidate",
+      "status": "blocked",
+      "classification": "fixed_by_candidate",
+      "canonical": "#47613",
+      "candidate_fix": "#47613",
+      "title": null,
+      "idempotency_key": "gitcrawl-2111-dedupe-only-20260429-remote:#42261:close_fixed_by_candidate:#47613:2026-04-28T18:42:11Z",
+      "reason": "target changed since worker review",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": "closed",
+      "live_updated_at": "2026-04-29T20:33:06Z"
+    }
+  ]
+}

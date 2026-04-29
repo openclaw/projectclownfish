@@ -6218,5 +6218,25 @@
     "merge_commit_sha": null,
     "live_state": null,
     "live_updated_at": null
+  },
+  {
+    "repo": "openclaw/openclaw",
+    "run_id": "25131909532",
+    "run_url": "https://github.com/openclaw/clownfish/actions/runs/25131909532",
+    "cluster_id": "gitcrawl-2111-dedupe-only-20260429-remote",
+    "published_at": "2026-04-29T20:34:11.576Z",
+    "target": "#42261",
+    "action": "close_fixed_by_candidate",
+    "status": "blocked",
+    "classification": "fixed_by_candidate",
+    "canonical": "#47613",
+    "candidate_fix": "#47613",
+    "title": null,
+    "idempotency_key": "gitcrawl-2111-dedupe-only-20260429-remote:#42261:close_fixed_by_candidate:#47613:2026-04-28T18:42:11Z",
+    "reason": "target changed since worker review",
+    "merged_at": null,
+    "merge_commit_sha": null,
+    "live_state": "closed",
+    "live_updated_at": "2026-04-29T20:33:06Z"
   }
 ]
