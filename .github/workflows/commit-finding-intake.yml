@@ -1,0 +1,224 @@
+name: commit finding intake
+
+on:
+  repository_dispatch:
+    types: [clawsweeper_commit_finding]
+  workflow_dispatch:
+    inputs:
+      enabled:
+        description: "Run commit finding intake"
+        required: false
+        default: "true"
+        type: string
+      target_repo:
+        description: "Target repository"
+        required: true
+        default: "openclaw/openclaw"
+        type: string
+      commit_sha:
+        description: "Commit SHA with a ClawSweeper finding"
+        required: true
+        type: string
+      report_repo:
+        description: "Repository containing the ClawSweeper report"
+        required: false
+        default: "openclaw/clawsweeper"
+        type: string
+      report_path:
+        description: "Path to the ClawSweeper report"
+        required: false
+        default: ""
+        type: string
+      report_url:
+        description: "Public report URL"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: write
+  actions: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+  CODEX_CLI_VERSION: ${{ vars.CLOWNFISH_CODEX_CLI_VERSION || '0.125.0' }}
+  CLOWNFISH_ALLOWED_OWNER: ${{ vars.CLOWNFISH_ALLOWED_OWNER || 'openclaw' }}
+  CLOWNFISH_ALLOW_EXECUTE: ${{ vars.CLOWNFISH_ALLOW_EXECUTE || '1' }}
+  CLOWNFISH_ALLOW_FIX_PR: ${{ vars.CLOWNFISH_ALLOW_FIX_PR || '1' }}
+  CLOWNFISH_ALLOW_MERGE: "0"
+  CLOWNFISH_CODEX_REASONING_EFFORT: ${{ vars.CLOWNFISH_CODEX_REASONING_EFFORT || 'medium' }}
+  CLOWNFISH_CODEX_REVIEW_ATTEMPTS: ${{ vars.CLOWNFISH_CODEX_REVIEW_ATTEMPTS || '2' }}
+  CLOWNFISH_REBASE_REPAIR_ATTEMPTS: ${{ vars.CLOWNFISH_REBASE_REPAIR_ATTEMPTS || '4' }}
+  CLOWNFISH_FIX_CODEX_TIMEOUT_MS: ${{ vars.CLOWNFISH_FIX_CODEX_TIMEOUT_MS || '1200000' }}
+  CLOWNFISH_FIX_STEP_TIMEOUT_MS: "1500000"
+  CLOWNFISH_FIX_TIMEOUT_RESERVE_MS: ${{ vars.CLOWNFISH_FIX_TIMEOUT_RESERVE_MS || '300000' }}
+  CLOWNFISH_FIX_PREFLIGHT_TIMEOUT_MS: ${{ vars.CLOWNFISH_FIX_PREFLIGHT_TIMEOUT_MS || '120000' }}
+  CLOWNFISH_MODEL: ${{ vars.CLOWNFISH_MODEL || 'gpt-5.5' }}
+  CLOWNFISH_TARGET_VALIDATION_MODE: ${{ vars.CLOWNFISH_TARGET_VALIDATION_MODE || 'changed-only' }}
+  CLOWNFISH_RESOLVE_REVIEW_THREADS: ${{ vars.CLOWNFISH_RESOLVE_REVIEW_THREADS || '1' }}
+  CLOWNFISH_GIT_USER_NAME: ${{ vars.CLOWNFISH_GIT_USER_NAME || 'openclaw-clownfish[bot]' }}
+  CLOWNFISH_GIT_USER_EMAIL: ${{ vars.CLOWNFISH_GIT_USER_EMAIL || '280122609+openclaw-clownfish[bot]@users.noreply.github.com' }}
+
+concurrency:
+  group: commit-finding-${{ github.event.inputs.target_repo || github.event.client_payload.target_repo || 'openclaw/openclaw' }}-${{ github.event.inputs.commit_sha || github.event.client_payload.commit_sha || github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  intake:
+    runs-on: ${{ vars.CLOWNFISH_COMMIT_FINDING_RUNNER || 'blacksmith-16vcpu-ubuntu-2404' }}
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+
+      - name: Create GitHub App token
+        id: app_token
+        continue-on-error: true
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ vars.CLOWNFISH_APP_ID }}
+          private-key: ${{ secrets.CLOWNFISH_APP_PRIVATE_KEY }}
+          owner: ${{ vars.CLOWNFISH_ALLOWED_OWNER || github.repository_owner }}
+          permission-contents: write
+          permission-issues: write
+          permission-pull-requests: write
+          permission-actions: read
+
+      - name: Prepare commit finding intake
+        id: prepare
+        env:
+          GH_TOKEN: ${{ steps.app_token.outputs.token || secrets.CLOWNFISH_READ_GH_TOKEN || github.token }}
+          ENABLED: ${{ github.event.inputs.enabled || github.event.client_payload.enabled || vars.CLOWNFISH_COMMIT_FINDING_INTAKE_ENABLED || 'true' }}
+          TARGET_REPO: ${{ github.event.inputs.target_repo || github.event.client_payload.target_repo || 'openclaw/openclaw' }}
+          COMMIT_SHA: ${{ github.event.inputs.commit_sha || github.event.client_payload.commit_sha }}
+          REPORT_REPO: ${{ github.event.inputs.report_repo || github.event.client_payload.report_repo || 'openclaw/clawsweeper' }}
+          REPORT_PATH: ${{ github.event.inputs.report_path || github.event.client_payload.report_path }}
+          REPORT_URL: ${{ github.event.inputs.report_url || github.event.client_payload.report_url }}
+        run: |
+          set -euo pipefail
+          args=(
+            prepare
+            --enabled "$ENABLED"
+            --target-repo "$TARGET_REPO"
+            --commit-sha "$COMMIT_SHA"
+            --report-repo "$REPORT_REPO"
+          )
+          if [ -n "${REPORT_PATH:-}" ]; then
+            args+=(--report-path "$REPORT_PATH")
+          fi
+          if [ -n "${REPORT_URL:-}" ]; then
+            args+=(--report-url "$REPORT_URL")
+          fi
+          npm run commit-finding-intake -- "${args[@]}"
+
+      - name: Cache Codex CLI, npm, and target pnpm downloads
+        if: ${{ steps.prepare.outputs.should_repair == 'true' }}
+        uses: actions/cache@v5
+        with:
+          path: |
+            ~/.npm
+            ~/.cache/node/corepack
+            ~/.local/share/pnpm/store
+            ~/.projectclownfish/codex
+          key: ${{ runner.os }}-node24-codex-${{ env.CODEX_CLI_VERSION }}-target-pnpm-v1
+          restore-keys: |
+            ${{ runner.os }}-node24-codex-${{ env.CODEX_CLI_VERSION }}-target-pnpm-
+            ${{ runner.os }}-node24-codex-
+
+      - name: Install Codex CLI
+        if: ${{ steps.prepare.outputs.should_repair == 'true' }}
+        run: |
+          set -euo pipefail
+          npm config set prefix "$HOME/.projectclownfish/codex"
+          npm config set cache "$HOME/.npm"
+          echo "$HOME/.projectclownfish/codex/bin" >> "$GITHUB_PATH"
+          export PATH="$HOME/.projectclownfish/codex/bin:$PATH"
+
+          if ! command -v codex >/dev/null 2>&1 || ! codex --version | grep -Fq "$CODEX_CLI_VERSION"; then
+            npm install -g "@openai/codex@$CODEX_CLI_VERSION" --prefer-offline --no-audit --no-fund
+          fi
+          codex --version
+
+      - name: Authenticate Codex
+        if: ${{ steps.prepare.outputs.should_repair == 'true' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_API_KEY: ${{ secrets.CODEX_API_KEY || secrets.OPENAI_API_KEY }}
+        run: |
+          test -n "${OPENAI_API_KEY:-}"
+          test -n "${CODEX_API_KEY:-}"
+          printenv OPENAI_API_KEY | codex login --with-api-key >/dev/null
+
+      - name: Review synthetic result
+        if: ${{ steps.prepare.outputs.should_repair == 'true' }}
+        run: npm run review-results -- "${{ steps.prepare.outputs.result_path }}"
+
+      - name: Execute credited fix artifact
+        id: execute
+        if: ${{ steps.prepare.outputs.should_repair == 'true' }}
+        continue-on-error: true
+        timeout-minutes: 35
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_API_KEY: ${{ secrets.CODEX_API_KEY || secrets.OPENAI_API_KEY }}
+          GH_TOKEN: ${{ steps.app_token.outputs.token || secrets.CLOWNFISH_GH_TOKEN || github.token }}
+        run: npm run execute-fix -- "${{ steps.prepare.outputs.job_path }}" "${{ steps.prepare.outputs.result_path }}"
+
+      - name: Post-flight finalize fix PRs
+        if: ${{ steps.prepare.outputs.should_repair == 'true' && steps.execute.outcome == 'success' }}
+        env:
+          GH_TOKEN: ${{ steps.app_token.outputs.token || secrets.CLOWNFISH_GH_TOKEN || github.token }}
+        run: npm run post-flight -- "${{ steps.prepare.outputs.job_path }}" "${{ steps.prepare.outputs.result_path }}"
+
+      - name: Publish local result ledger
+        if: ${{ always() && steps.prepare.outputs.should_repair == 'true' }}
+        env:
+          GH_TOKEN: ${{ steps.app_token.outputs.token || secrets.CLOWNFISH_READ_GH_TOKEN || github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          npm run publish-result -- "${{ steps.prepare.outputs.run_dir }}" \
+            --run-id "${{ github.run_id }}" \
+            --run-url "$RUN_URL" \
+            --head-sha "${{ github.sha }}" \
+            --conclusion "${{ steps.execute.outcome == 'success' && 'success' || 'failure' }}"
+
+      - name: Finalize commit finding audit
+        if: always()
+        run: |
+          if [ -n "${{ steps.prepare.outputs.audit_path }}" ]; then
+            npm run commit-finding-intake -- finalize \
+              --audit-path "${{ steps.prepare.outputs.audit_path }}" \
+              --run-dir "${{ steps.prepare.outputs.run_dir }}" \
+              --status "${{ steps.prepare.outputs.should_repair == 'true' && steps.execute.outcome || steps.prepare.outputs.status }}"
+          fi
+
+      - name: Commit intake ledger
+        if: always()
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add jobs results README.md apply-report.json
+          if git diff --cached --quiet; then
+            echo "No intake ledger changes"
+            exit 0
+          fi
+          git commit -m "chore: record commit finding intake"
+          for _attempt in 1 2 3; do
+            if git pull --rebase && git push; then
+              exit 0
+            fi
+            git rebase --abort || true
+            git fetch origin main
+            git rebase origin/main
+          done
+          git push
+
+      - name: Fail on repair failure
+        if: ${{ steps.prepare.outputs.should_repair == 'true' && steps.execute.outcome == 'failure' }}
+        run: exit 1

@@ -346,6 +346,9 @@
                 "needs_human"
               ]
             },
+            "allow_no_pr": {
+              "type": "boolean"
+            },
             "branch_update_blockers": {
               "type": "array",
               "items": {

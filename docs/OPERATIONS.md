@@ -7,6 +7,12 @@ commands, finalizers, self-heal, gates, and ledgers, see
 For the trusted ClawSweeper-to-Clownfish PR repair loop, see
 [`docs/auto-update-prs.md`](auto-update-prs.md).
 
+For commit-review findings, ClawSweeper dispatches
+`clawsweeper_commit_finding` to this repository. Clownfish fetches the latest
+markdown report, writes `results/commit-findings/<repo-slug>/<sha>.md`, and
+only opens a PR when the finding is an ordinary narrow bug/regression candidate.
+Security/privacy/supply-chain and broad findings are audit-only.
+
 ## Batch Flow
 
 1. Create or export cluster job markdown files under `jobs/<repo>/`.
@@ -63,6 +69,25 @@ npm run dispatch -- jobs/openclaw/inbox/clawsweeper-openclaw-openclaw-123.md --m
 ```
 
 Keep `CLOWNFISH_ALLOW_MERGE=0` unless a human explicitly opens the merge gate.
+
+## Manual Fix PR From Commit Finding
+
+Use the `commit finding intake` workflow for a ClawSweeper commit report:
+
+```bash
+gh workflow run commit-finding-intake.yml \
+  --repo openclaw/clownfish \
+  -f target_repo=openclaw/openclaw \
+  -f commit_sha=<sha> \
+  -f report_repo=openclaw/clawsweeper \
+  -f report_path=records/openclaw-openclaw/commits/<sha>.md
+```
+
+The workflow is idempotent for the commit SHA. It updates the same audit file,
+job file, branch, and PR path on rerun.
+
+If latest `main` no longer needs a fix, the generated artifact allows a clean
+no-PR outcome and the audit file records the skip.
 
 ## Security Boundary
 

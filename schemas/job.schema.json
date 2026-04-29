@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Projectclownfish cluster job",
   "type": "object",
-  "required": ["repo", "cluster_id", "mode", "allowed_actions", "candidates"],
+  "required": ["repo", "cluster_id", "mode", "allowed_actions"],
   "additionalProperties": true,
   "properties": {
     "repo": {
@@ -43,7 +43,6 @@
     },
     "candidates": {
       "type": "array",
-      "minItems": 1,
       "items": {
         "type": "string",
         "pattern": "^#?[0-9]+$"
@@ -89,6 +88,19 @@
       "enum": ["low_signal_prs"]
     },
     "notes": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "commit_sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "clawsweeper_report_repo": {
+      "type": "string"
+    },
+    "clawsweeper_report_path": {
       "type": "string"
     }
   }

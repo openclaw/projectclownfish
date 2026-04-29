@@ -5,6 +5,11 @@ Autonomous mode is stricter than execute mode. You may do broader reasoning, but
 Scope:
 
 - Start only from refs in the job file and refs linked from those item bodies, comments, review threads, closing refs, commits, or PR descriptions.
+- For `source: clawsweeper_commit` jobs, start from the embedded ClawSweeper
+  commit report instead of issue/PR refs. Do not perform a broad second audit of
+  the commit; verify the reported finding on latest `main`, then either emit one
+  cluster-scoped `build_fix_artifact` for a narrow PR or return
+  `needs_human`/blocked evidence explaining why no PR should be created.
 - Do not run broad GitHub search unless the job explicitly says so.
 - If the job includes `maintainer_calibration`, treat it as an explicit maintainer decision for that cluster. Use it to avoid stale `needs_human` outcomes, but do not bypass the normal merge gates, security boundary, review comments, Codex `/review`, or validation requirements.
 - For a maintainer-calibrated open canonical PR that is not merge-ready yet, do not return only `keep_canonical`. Emit `fix_needed` plus `build_fix_artifact` with `status: "planned"`, `repair_strategy: "repair_contributor_branch"`, and `source_prs` containing that PR URL so the executor can rebase, fix, review, and push the existing PR branch.

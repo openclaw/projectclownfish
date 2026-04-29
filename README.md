@@ -224,6 +224,12 @@ For a maintainer-facing architecture map of the automation lanes, see
 For the ClawSweeper feedback loop that updates existing generated PRs, see
 [`docs/auto-update-prs.md`](docs/auto-update-prs.md).
 
+ClawSweeper commit findings have a separate intake lane. A
+`clawsweeper_commit_finding` dispatch fetches the latest markdown commit report,
+writes an audit record under `results/commit-findings/`, and only sends the
+finding into the PR executor when the issue is narrow, non-security, and still
+worth repairing on latest `main`.
+
 Each cluster job:
 
 1. Starts from one markdown job file under `jobs/`.

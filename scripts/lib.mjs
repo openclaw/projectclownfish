@@ -279,12 +279,13 @@ function parseScalar(value) {
 export function validateJob(job) {
   const errors = [];
   const fm = job.frontmatter;
+  const commitFindingJob = fm.source === "clawsweeper_commit";
 
   requireString(errors, fm, "repo");
   requireString(errors, fm, "cluster_id");
   requireString(errors, fm, "mode");
   requireArray(errors, fm, "allowed_actions");
-  requireArray(errors, fm, "candidates");
+  if (!commitFindingJob) requireArray(errors, fm, "candidates");
 
   if (typeof fm.repo === "string" && !/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(fm.repo)) {
     errors.push("repo must be owner/repo");
@@ -339,10 +340,22 @@ export function validateJob(job) {
       errors.push(`${key} must be true or false`);
     }
   }
-  for (const key of ["canonical_hint", "target_checkout", "triage_policy", "security_policy"]) {
+  for (const key of [
+    "canonical_hint",
+    "target_checkout",
+    "triage_policy",
+    "security_policy",
+    "source",
+    "commit_sha",
+    "clawsweeper_report_repo",
+    "clawsweeper_report_path",
+  ]) {
     if (fm[key] !== undefined && typeof fm[key] !== "string") {
       errors.push(`${key} must be a string`);
     }
+  }
+  if (commitFindingJob && !/^[0-9a-f]{40}$/i.test(String(fm.commit_sha ?? ""))) {
+    errors.push("commit finding jobs require commit_sha");
   }
   if (fm.security_sensitive === true) {
     errors.push("security_sensitive jobs are out of scope for ProjectClownfish; route them to central security triage");

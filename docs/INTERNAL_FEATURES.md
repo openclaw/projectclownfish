@@ -167,6 +167,38 @@ Clownfish app author has more than 10 active PRs. That is a target-repo policy
 interaction, not evidence that the generated PR is invalid. Reduce or land the
 active Clownfish queue before reopening those PRs.
 
+## ClawSweeper Commit Findings
+
+Workflow: `.github/workflows/commit-finding-intake.yml`
+Script: `scripts/commit-finding-intake.mjs`
+
+ClawSweeper can dispatch `clawsweeper_commit_finding` when a main-branch commit
+review report has `result: findings`. Clownfish treats that report as a source
+finding, not as an order to open a PR.
+
+The intake step fetches the report from latest `openclaw/clawsweeper@main`,
+writes one audit file, and then decides whether an automatic repair PR is
+allowed:
+
+- audit path: `results/commit-findings/<repo-slug>/<sha>.md`
+- job path: `jobs/<owner>/inbox/clawsweeper-commit-<repo-slug>-<shortsha>.md`
+- branch: `clownfish/clawsweeper-commit-<repo-slug>-<shortsha>`
+
+Non-finding, disabled, security/privacy/supply-chain, and broad findings stop
+at the audit record. Eligible ordinary bug/regression/reliability findings get a
+deterministic synthetic Clownfish result and fix artifact. That skips the normal
+cluster-planning Codex pass and sends the report straight to
+`execute-fix-artifact`, where Codex is used for the repair loop against latest
+target `main`.
+
+Commit-finding fix artifacts set `allow_no_pr: true`. If the repair loop
+verifies the report but produces no target-repo diff, Clownfish records a clean
+skipped no-PR outcome instead of failing the workflow.
+
+The generated job uses `source: clawsweeper_commit` and may have no issue/PR
+`candidates`. The fix artifact uses `repair_strategy: new_fix_pr`; merge and
+close actions remain blocked.
+
 ## Applying Comments, Closures, And Merges
 
 Script: `scripts/apply-result.mjs`

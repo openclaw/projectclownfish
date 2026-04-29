@@ -234,13 +234,22 @@ try {
     });
   }
 } catch (error) {
-  if (!isBlockedFixError(error)) throw error;
-  outcome = {
-    action: "execute_fix",
-    status: "blocked",
-    repair_strategy: fixArtifact.repair_strategy,
-    reason: error.message,
-  };
+  if (fixArtifact.allow_no_pr === true && /Codex produced no target repo changes/i.test(String(error?.message ?? error))) {
+    outcome = {
+      action: "open_fix_pr",
+      status: "skipped",
+      repair_strategy: fixArtifact.repair_strategy,
+      reason: "Codex produced no target repo changes; treating this allow_no_pr artifact as an audited no-PR outcome",
+    };
+  } else {
+    if (!isBlockedFixError(error)) throw error;
+    outcome = {
+      action: "execute_fix",
+      status: "blocked",
+      repair_strategy: fixArtifact.repair_strategy,
+      reason: error.message,
+    };
+  }
 }
 
 report.status = outcome.status;

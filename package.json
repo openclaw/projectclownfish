@@ -20,6 +20,7 @@
     "post-flight": "node scripts/post-flight.mjs",
     "finalize-open-prs": "node scripts/finalize-open-prs.mjs",
     "comment-router": "node scripts/comment-router.mjs",
+    "commit-finding-intake": "node scripts/commit-finding-intake.mjs",
     "promote-stuck-jobs": "node scripts/promote-stuck-jobs.mjs",
     "sweep-openclaw-jobs": "node scripts/sweep-openclaw-jobs.mjs",
     "tag-clownfish": "node scripts/tag-clownfish-targets.mjs",
