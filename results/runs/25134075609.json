@@ -1,0 +1,144 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-2733-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25134075609",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25134075609",
+  "head_sha": "d0688cc86ec05c840c9f64b264bd897e9b409ff3",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-2733-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T21:23:37.495Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/41957",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/41957",
+  "summary": "Hydrated autonomous pass found no security-sensitive refs. #41957 is the current canonical auto-reply timing PR; #40760 is superseded by that same-author, later repaired branch. Telegram watchdog, TTL-expiry feedback, and configurable TTL work remain related but separate open subfamilies.",
+  "actions": [
+    {
+      "target": "#41957",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41957",
+      "candidate_fix": null,
+      "reason": "#41957 is the clearest canonical path for the auto-reply typing-timeout fix, but this dedupe-only job cannot merge or repair it."
+    },
+    {
+      "target": "#40760",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#41957",
+      "candidate_fix": null,
+      "reason": "#40760 is superseded by the current canonical #41957 path; closing keeps validation and follow-up on one branch while preserving credit."
+    },
+    {
+      "target": "#41956",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related Telegram watchdog work should stay open or move to its own follow-up cluster; it is not a duplicate of the auto-reply timing canonical."
+    },
+    {
+      "target": "#43204",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "This is related typing UX work, but it has unique scope and unresolved review blockers, so it should not be closed into #41957."
+    },
+    {
+      "target": "#72009",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Keep the configurable TTL feature open as a related subfamily, not as the canonical fix for this auto-reply timing cluster."
+    },
+    {
+      "target": "#41011",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical Telegram context; no mutation planned."
+    },
+    {
+      "target": "#41153",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical Telegram context; no mutation planned."
+    },
+    {
+      "target": "#41286",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed historical Telegram context; no mutation planned."
+    },
+    {
+      "target": "#42105",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72009",
+      "candidate_fix": null,
+      "reason": "Already closed configurable-TTL context superseded by #72009; no mutation planned."
+    },
+    {
+      "target": "#42851",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#72009",
+      "candidate_fix": null,
+      "reason": "Already closed broad configurable-TTL attempt superseded by the focused #72009 thread; no mutation planned."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "close_superseded": 1,
+    "keep_related": 3,
+    "keep_closed": 5
+  },
+  "action_status_counts": {
+    "planned": 5,
+    "skipped": 5
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 1
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#40760",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#41957",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "gitcrawl-2733-dedupe-only-20260429-remote:#40760:close_superseded_by:#41957",
+      "reason": "target changed since worker review",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": "closed",
+      "live_updated_at": "2026-04-29T21:19:40Z"
+    }
+  ]
+}
