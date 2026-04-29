@@ -15,10 +15,12 @@ import {
 import {
   MERGE_INTENTS,
   REPAIR_INTENTS,
+  DEFAULT_ALLOWED_REPOSITORY_PERMISSIONS,
   automergeGateBlockReason,
   automergeClusterId,
   automergeJobPath,
   buildAutomergeMergeArgs,
+  isMaintainerCommandAllowed,
   parseCommand,
   parseTrustedAutomation,
   renderAutomergeJob,
@@ -85,6 +87,16 @@ const allowedAssociations = new Set(
     .map((value) => value.trim().toUpperCase())
     .filter(Boolean),
 );
+const allowedRepositoryPermissions = new Set(
+  String(
+    args["allowed-repository-permissions"] ??
+      process.env.CLOWNFISH_COMMENT_ALLOWED_REPOSITORY_PERMISSIONS ??
+      DEFAULT_ALLOWED_REPOSITORY_PERMISSIONS.join(","),
+  )
+    .split(",")
+    .map((value) => value.trim().toLowerCase())
+    .filter(Boolean),
+);
 const trustedBots = commaSet(args["trusted-bots"] ?? process.env.CLOWNFISH_TRUSTED_BOTS ?? DEFAULT_TRUSTED_BOTS.join(","));
 const clownfishAuthors = commaSet(
   args["clownfish-authors"] ?? process.env.CLOWNFISH_AUTHOR_LOGINS ?? DEFAULT_CLOWNFISH_AUTHORS.join(","),
@@ -97,6 +109,7 @@ assertRepo(clawsweeperRepo, "clawsweeper-repo");
 const ledger = readLedger(ledgerPath());
 const processedCommentVersions = new Set((ledger.commands ?? []).map(commentVersionKey).filter(Boolean));
 const plannedAutoRepairHeads = new Set();
+const collaboratorPermissionCache = new Map();
 const comments = listRecentComments().slice(0, maxComments);
 const commands = [];
 
@@ -144,6 +157,7 @@ const report = {
   commands_seen: commands.length,
   actionable: actionable.length,
   trusted_bots: [...trustedBots],
+  allowed_repository_permissions: [...allowedRepositoryPermissions],
   max_auto_repairs_per_head: maxAutoRepairsPerHead,
   max_auto_repairs_per_pr: maxAutoRepairsPerPr,
   commands,
@@ -169,12 +183,16 @@ function classifyCommand(command) {
     if (!trustedBots.has(String(command.author ?? "").toLowerCase())) {
       return { ...command, status: "ignored", reason: "trusted automation author is not allowed" };
     }
-  } else if (!allowedAssociations.has(command.author_association)) {
-    return {
-      ...command,
-      status: "ignored",
-      reason: `author association ${command.author_association || "unknown"} is not allowed`,
-    };
+  } else {
+    const authorization = resolveMaintainerCommandAuthorization(command);
+    command.author_repository_permission = authorization.repositoryPermission;
+    if (!authorization.allowed) {
+      return {
+        ...command,
+        status: "ignored",
+        reason: authorization.reason,
+      };
+    }
   }
   if (!command.issue_number) {
     return { ...command, status: "ignored", reason: "could not resolve issue or PR number" };
@@ -766,6 +784,39 @@ function fetchPullRequestView(number) {
       "title",
     ].join(","),
   ]);
+}
+
+function resolveMaintainerCommandAuthorization(command) {
+  const login = String(command.author ?? "").trim();
+  const repositoryPermission = login ? fetchCollaboratorPermission(login) : null;
+  const allowed = isMaintainerCommandAllowed({
+    authorAssociation: command.author_association,
+    repositoryPermission,
+    allowedAssociations,
+    allowedRepositoryPermissions,
+  });
+  if (allowed) return { allowed: true, repositoryPermission };
+  const association = command.author_association || "unknown";
+  const permission = repositoryPermission || "unknown";
+  return {
+    allowed: false,
+    repositoryPermission,
+    reason: `author association ${association} and repository permission ${permission} are not allowed`,
+  };
+}
+
+function fetchCollaboratorPermission(login) {
+  const key = login.toLowerCase();
+  if (collaboratorPermissionCache.has(key)) return collaboratorPermissionCache.get(key);
+  let permission = null;
+  try {
+    const result = ghJson(["api", `repos/${targetRepo}/collaborators/${encodeURIComponent(login)}/permission`]);
+    permission = result?.permission ? String(result.permission).toLowerCase() : null;
+  } catch {
+    permission = null;
+  }
+  collaboratorPermissionCache.set(key, permission);
+  return permission;
 }
 
 function hasExistingResponse(number, commentId, intent, headSha) {

@@ -9,6 +9,7 @@ import {
   automergeJobBranch,
   automergeJobPath,
   buildAutomergeMergeArgs,
+  isMaintainerCommandAllowed,
   parseCommand,
   parseTrustedAutomation,
   renderAutomergeJob,
@@ -244,4 +245,32 @@ test("automerge gate block only reports closed merge policy gates", () => {
     "automerge requires CLOWNFISH_ALLOW_AUTOMERGE=1",
   );
   assert.equal(automergeGateBlockReason({ CLOWNFISH_ALLOW_MERGE: "1", CLOWNFISH_ALLOW_AUTOMERGE: "1" }), "");
+});
+
+test("maintainer command authorization falls back to repository permission", () => {
+  const allowedAssociations = new Set(["OWNER", "MEMBER", "COLLABORATOR"]);
+  assert.equal(
+    isMaintainerCommandAllowed({
+      authorAssociation: "MEMBER",
+      repositoryPermission: null,
+      allowedAssociations,
+    }),
+    true,
+  );
+  assert.equal(
+    isMaintainerCommandAllowed({
+      authorAssociation: "CONTRIBUTOR",
+      repositoryPermission: "admin",
+      allowedAssociations,
+    }),
+    true,
+  );
+  assert.equal(
+    isMaintainerCommandAllowed({
+      authorAssociation: "CONTRIBUTOR",
+      repositoryPermission: "read",
+      allowedAssociations,
+    }),
+    false,
+  );
 });

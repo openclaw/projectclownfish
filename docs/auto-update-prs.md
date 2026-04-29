@@ -33,6 +33,9 @@ There are two accepted input lanes.
 Maintainer commands:
 
 - author association must be `OWNER`, `MEMBER`, or `COLLABORATOR` by default;
+- when GitHub App tokens return a weaker association for a maintainer, the
+  router falls back to repository collaborator permission and accepts `admin`,
+  `maintain`, or `write` by default;
 - supported commands are `/clownfish fix ci`, `/clownfish address review`,
   `/clownfish rebase`, `/clownfish automerge`, `/clownfish status`,
   `/clownfish explain`, and `/clownfish stop`;

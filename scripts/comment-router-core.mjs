@@ -1,6 +1,7 @@
 export const REPAIR_INTENTS = new Set(["fix_ci", "address_review", "rebase", "clawsweeper_auto_repair"]);
 export const MERGE_INTENTS = new Set(["clawsweeper_auto_merge"]);
 export const AUTOMERGE_JOB_SOURCE = "pr_automerge";
+export const DEFAULT_ALLOWED_REPOSITORY_PERMISSIONS = ["admin", "maintain", "write"];
 
 export function repoSlug(repo) {
   return String(repo ?? "")
@@ -82,6 +83,23 @@ export function automergeGateBlockReason(env = process.env) {
   if (env.CLOWNFISH_ALLOW_MERGE !== "1") return "merge requires CLOWNFISH_ALLOW_MERGE=1";
   if (env.CLOWNFISH_ALLOW_AUTOMERGE !== "1") return "automerge requires CLOWNFISH_ALLOW_AUTOMERGE=1";
   return "";
+}
+
+export function isMaintainerCommandAllowed({
+  authorAssociation,
+  repositoryPermission = null,
+  allowedAssociations,
+  allowedRepositoryPermissions = DEFAULT_ALLOWED_REPOSITORY_PERMISSIONS,
+}) {
+  const association = String(authorAssociation ?? "").trim().toUpperCase();
+  const associationSet = new Set([...allowedAssociations].map((value) => String(value).trim().toUpperCase()).filter(Boolean));
+  if (associationSet.has(association)) return true;
+
+  const permission = String(repositoryPermission ?? "").trim().toLowerCase();
+  const permissionSet = new Set(
+    [...allowedRepositoryPermissions].map((value) => String(value).trim().toLowerCase()).filter(Boolean),
+  );
+  return permission ? permissionSet.has(permission) : false;
 }
 
 export function buildAutomergeMergeArgs({ issueNumber, repo, expectedHeadSha }) {
