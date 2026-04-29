@@ -1,0 +1,41 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "clawsweeper-commit-openclaw-openclaw-7877182b6f59",
+  "mode": "autonomous",
+  "run_id": "25098390975",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25098390975",
+  "head_sha": "9885ef4ae6b856ecc82a89624bce2aeeb34630da",
+  "workflow_conclusion": "skipped",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/clawsweeper-commit-openclaw-openclaw-7877182b6f59.md",
+  "published_at": "2026-04-29T08:21:25.652Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Found one concrete regression: a focused gateway test file now fails because its module mock was not updated for the new runtime-deps cleanup export.",
+  "actions": [
+    {
+      "target": "cluster:clawsweeper-commit-openclaw-openclaw-7877182b6f59",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "ClawSweeper found an actionable commit-level bug/regression candidate."
+    }
+  ],
+  "action_counts": {
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
