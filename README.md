@@ -41,31 +41,31 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 29, 2026, 20:07 UTC
+Last dashboard update: Apr 29, 2026, 20:15 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 288 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 289 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 288 | 100% |
+| Latest clusters reviewed | 289 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 125 | 43.4% |
-| Needs-human clusters | 42 | 14.6% |
-| Latest successful clusters | 260 | 90.3% |
+| Clean completed clusters | 126 | 43.6% |
+| Needs-human clusters | 42 | 14.5% |
+| Latest successful clusters | 261 | 90.3% |
 | Latest failed clusters | 4 | 1.4% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 541 | audit |
+| Run attempts archived | 542 | audit |
 | Fix action attempts | 164 | audit |
 | Fix actions executed | 0 | 0.0% |
 | Fix actions failed | 35 | 21.3% |
 | Fix actions blocked | 50 | 30.5% |
-| Latest clusters with fix failures | 44 | 15.3% |
-| Distinct PRs touched | 898 | 100% |
-| Open PRs tracked | 310 | 34.5% |
-| Closed unmerged PRs tracked | 482 | 53.7% |
+| Latest clusters with fix failures | 44 | 15.2% |
+| Distinct PRs touched | 899 | 100% |
+| Open PRs tracked | 311 | 34.6% |
+| Closed unmerged PRs tracked | 482 | 53.6% |
 | Completed close actions | 30 | 10.5% |
 | Completed merge actions | 23 | 8.1% |
 | Duplicate closes | 22 | 73.3% |
@@ -165,6 +165,7 @@ Scope: 288 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | [#74049](https://github.com/openclaw/openclaw/pull/74049) | fix: The executable defaults now use `openai/gpt-5.5`, and the pinned | clawsweeper-commit-openclaw-openclaw-d130a77a3b1e | clownfish/clawsweeper-commit-openclaw-openclaw-d130a77a3b1e | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / checks-node-agentic-commands:FAILURE; CI / check-lint:FAILURE; CI / ... | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#74010](https://github.com/openclaw/openclaw/pull/74010) | fix(compaction): respect effective reserve tokens in compaction gates | ghcrawl-199269-agentic-merge | clownfish/ghcrawl-199269-agentic-merge | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mo... | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#74009](https://github.com/openclaw/openclaw/pull/74009) | fix(agents): prefer sessionKey in sessions_send | ghcrawl-166009-agentic-merge | clownfish/ghcrawl-166009-agentic-merge | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_checks:Parity gate / Run the OpenAI / Opus 4.6... | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
+| [#74002](https://github.com/openclaw/openclaw/pull/74002) | fix(exec): respect OPENCLAW_STATE_DIR for exec approvals | ghcrawl-191457-agentic-merge | clownfish/ghcrawl-191457-agentic-merge | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 
 ### Latest ProjectClownfish Closures
 
