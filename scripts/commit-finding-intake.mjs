@@ -300,7 +300,7 @@ function writeSyntheticRun(context) {
           ? `Original commit author: ${stripEmailIdentity(context.report.author)}.`
           : "Original commit author unknown.",
       ],
-      pr_title: prTitle(summary),
+      pr_title: prTitle(summary, context.report.body),
       pr_body: prBody({ ...context, summary, likelyFiles, validation }),
       source_prs: [],
       repair_strategy: "new_fix_pr",
@@ -440,9 +440,17 @@ function validationCommands(repo) {
   return repo === "openclaw/openclaw" ? ["pnpm check:changed"] : ["git diff --check"];
 }
 
-function prTitle(summary) {
-  const title = compact(summary.replace(/^[-*\s]+/, ""), 68).replace(/[.!?]+$/, "");
-  return /^fix(?:\(|:)/i.test(title) ? title : `fix: ${title || "address ClawSweeper finding"}`;
+function prTitle(summary, markdown = "") {
+  const text = [summary, markdown].join("\n");
+  if (/extension[- ]shard matrix|extension shard|run_checks_node_extensions|checks-node-extensions/i.test(text)) {
+    return "fix(ci): gate extension aggregate on shard matrix";
+  }
+
+  let title = summary.replace(/^[-*\s]+/, "");
+  title = title.replace(/^Found (?:one|an?|the)?\s*(?:high|medium|low|critical)?\s*(?:CI\s+)?(?:regression|bug|issue|finding):\s*/i, "");
+  title = compact(title, 68).replace(/[.!?]+$/, "");
+  const prefix = /\b(?:CI|workflow|check|job|matrix|GitHub Actions)\b/i.test(summary) ? "fix(ci):" : "fix:";
+  return /^fix(?:\(|:)/i.test(title) ? title : `${prefix} ${title || "address ClawSweeper finding"}`;
 }
 
 function prBody(context) {

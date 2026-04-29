@@ -45,6 +45,9 @@ const maxActivePrsPerArea = Number(process.env.CLOWNFISH_MAX_ACTIVE_PRS_PER_AREA
 const CLOWNFISH_LABEL = "clownfish";
 const CLOWNFISH_LABEL_COLOR = "F97316";
 const CLOWNFISH_LABEL_DESCRIPTION = "Tracked by Clownfish automation";
+const COMMIT_FINDING_LABEL = "clownfish:commit-finding";
+const COMMIT_FINDING_LABEL_COLOR = "1D76DB";
+const COMMIT_FINDING_LABEL_DESCRIPTION = "PR created from a ClawSweeper commit finding";
 const strictTargetValidation =
   process.env.CLOWNFISH_STRICT_TARGET_VALIDATION === "1" ||
   String(process.env.CLOWNFISH_TARGET_VALIDATION_MODE ?? "changed-only") === "strict";
@@ -528,6 +531,10 @@ function executeReplacementBranch({ fixArtifact, targetDir, supersedeSources, fa
 function labelReplacementPullRequest({ number, targetDir }) {
   ensureLabel(result.repo, CLOWNFISH_LABEL, CLOWNFISH_LABEL_COLOR, CLOWNFISH_LABEL_DESCRIPTION, targetDir);
   addLabel(result.repo, number, CLOWNFISH_LABEL, targetDir);
+  if (job.frontmatter.source === "clawsweeper_commit" || job.frontmatter.commit_sha) {
+    ensureLabel(result.repo, COMMIT_FINDING_LABEL, COMMIT_FINDING_LABEL_COLOR, COMMIT_FINDING_LABEL_DESCRIPTION, targetDir);
+    addLabel(result.repo, number, COMMIT_FINDING_LABEL, targetDir);
+  }
 }
 
 function ensureLabel(repo, name, color, description, targetDir) {
