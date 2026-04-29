@@ -1,19 +1,19 @@
 # Open ProjectClownfish PR Finalizer
 
-Generated: 2026-04-29T20:25:33.148Z
+Generated: 2026-04-29T20:33:38.950Z
 
 ## Summary
 
 | Metric | Count |
 | --- | ---: |
-| open_prs | 6 |
+| open_prs | 4 |
 | ready_candidates | 0 |
 | security_hold | 0 |
-| needs_rebase | 5 |
+| needs_rebase | 3 |
 | mergeability_unknown | 0 |
-| needs_checks | 3 |
-| needs_review | 2 |
-| needs_merge_preflight | 6 |
+| needs_checks | 1 |
+| needs_review | 1 |
+| needs_merge_preflight | 4 |
 | needs_result_backfill | 3 |
 
 ## Dispatch
@@ -34,5 +34,3 @@ Status: report_only
 | [#73389](https://github.com/openclaw/openclaw/pull/73389) | feat(slack): publish App Home tab views | ghcrawl-156940-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:3 SUCCESS:71 SKIPPED:9 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#73385](https://github.com/openclaw/openclaw/pull/73385) | fix: gate sandbox write tools on writable workspace access | ghcrawl-156881-autonomous-smoke | MERGEABLE | CLEAN | SUCCESS:86 SKIPPED:17 | needs_merge_preflight, needs_result_backfill | backfill merge preflight: security cleared, comments resolved, Codex /review passed, validation recorded |
 | [#74049](https://github.com/openclaw/openclaw/pull/74049) | fix: The executable defaults now use `openai/gpt-5.5`, and the pinned | clawsweeper-commit-openclaw-openclaw-d130a77a3b1e | CONFLICTING | DIRTY | CANCELLED:1 SKIPPED:20 SUCCESS:67 FAILURE:18; blockers:18 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / checks-node-agentic-commands:FAILURE; CI / check-lint:FAILURE; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (npm-onboard-channel-agent):FAILURE, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
-| [#74010](https://github.com/openclaw/openclaw/pull/74010) | fix(compaction): respect effective reserve tokens in compaction gates | ghcrawl-199269-agentic-merge | CONFLICTING | DIRTY | FAILURE:4 SUCCESS:55 SKIPPED:9; blockers:4 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-agentic-control-plane:FAILURE, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
-| [#74009](https://github.com/openclaw/openclaw/pull/74009) | fix(agents): prefer sessionKey in sessions_send | ghcrawl-166009-agentic-merge | CONFLICTING | DIRTY | FAILURE:3 SUCCESS:55 SKIPPED:14; blockers:3 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-fast-support:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |

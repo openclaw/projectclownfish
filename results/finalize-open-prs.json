@@ -3,17 +3,17 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-29T20:25:33.148Z",
-  "count": 6,
+  "generated_at": "2026-04-29T20:33:38.950Z",
+  "count": 4,
   "summary": {
-    "open_prs": 6,
+    "open_prs": 4,
     "ready_candidates": 0,
     "security_hold": 0,
-    "needs_rebase": 5,
+    "needs_rebase": 3,
     "mergeability_unknown": 0,
-    "needs_checks": 3,
-    "needs_review": 2,
-    "needs_merge_preflight": 6,
+    "needs_checks": 1,
+    "needs_review": 1,
+    "needs_merge_preflight": 4,
     "needs_result_backfill": 3
   },
   "dispatch": {
@@ -282,146 +282,6 @@
         "needs_rebase:CONFLICTING",
         "needs_merge_state:DIRTY",
         "needs_checks:CI / checks-node-agentic-commands:FAILURE; CI / check-lint:FAILURE; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (npm-onboard-channel-agent):FAILURE",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
-    },
-    {
-      "number": 74010,
-      "title": "fix(compaction): respect effective reserve tokens in compaction gates",
-      "url": "https://github.com/openclaw/openclaw/pull/74010",
-      "branch": "clownfish/ghcrawl-199269-agentic-merge",
-      "head_sha": "e2f01691c8eb6297dfe78c7e1aeec093c1440480",
-      "cluster_id": "ghcrawl-199269-agentic-merge",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-199269-agentic-merge.md",
-      "updated_at": "2026-04-29T13:04:18Z",
-      "mergeable": "CONFLICTING",
-      "merge_state_status": "DIRTY",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 68,
-        "counts": {
-          "FAILURE": 4,
-          "SUCCESS": 55,
-          "SKIPPED": 9
-        },
-        "blockers": [
-          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE",
-          "CI / checks-node-core-runtime-shared:FAILURE",
-          "CI / checks-node-agentic-control-plane:FAILURE",
-          "CI / checks-node-core:FAILURE"
-        ]
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 2,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/74010#issuecomment-4340507206",
-            "submitted_at": "2026-04-29T02:54:56Z"
-          },
-          {
-            "source": "comment",
-            "author": "clawsweeper",
-            "url": "https://github.com/openclaw/openclaw/pull/74010#issuecomment-4340514534",
-            "submitted_at": "2026-04-29T02:57:29Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24968264055",
-        "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24968264055",
-        "cluster_id": "ghcrawl-199269-agentic-merge",
-        "published_at": "2026-04-26T22:26:13.922Z",
-        "workflow_conclusion": "success",
-        "apply_action": null
-      },
-      "blockers": [
-        "needs_rebase:CONFLICTING",
-        "needs_merge_state:DIRTY",
-        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-runtime-shared:FAILURE; CI / checks-node-agentic-control-plane:FAILURE",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
-    },
-    {
-      "number": 74009,
-      "title": "fix(agents): prefer sessionKey in sessions_send",
-      "url": "https://github.com/openclaw/openclaw/pull/74009",
-      "branch": "clownfish/ghcrawl-166009-agentic-merge",
-      "head_sha": "115455ea22243061f4e180d983908e66ba104aad",
-      "cluster_id": "ghcrawl-166009-agentic-merge",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-166009-agentic-merge.md",
-      "updated_at": "2026-04-29T06:13:06Z",
-      "mergeable": "CONFLICTING",
-      "merge_state_status": "DIRTY",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 72,
-        "counts": {
-          "FAILURE": 3,
-          "SUCCESS": 55,
-          "SKIPPED": 14
-        },
-        "blockers": [
-          "Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE",
-          "CI / checks-node-core-fast-support:FAILURE",
-          "CI / checks-node-core:FAILURE"
-        ]
-      },
-      "review_threads": {
-        "status": "blocked",
-        "reason": "unresolved review threads remain",
-        "unresolved_count": 1,
-        "examples": [
-          "https://github.com/openclaw/openclaw/pull/74009#discussion_r3158339869"
-        ]
-      },
-      "review_bots": {
-        "count": 3,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/74009#issuecomment-4340501852",
-            "submitted_at": "2026-04-29T02:53:11Z"
-          },
-          {
-            "source": "comment",
-            "author": "clawsweeper",
-            "url": "https://github.com/openclaw/openclaw/pull/74009#issuecomment-4340509095",
-            "submitted_at": "2026-04-29T02:55:32Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-29T02:53:16Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24946042760",
-        "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24946042760",
-        "cluster_id": "ghcrawl-166009-agentic-merge",
-        "published_at": "2026-04-26T02:19:57.417Z",
-        "workflow_conclusion": "success",
-        "apply_action": null
-      },
-      "blockers": [
-        "needs_rebase:CONFLICTING",
-        "needs_merge_state:DIRTY",
-        "unresolved review threads remain",
-        "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-fast-support:FAILURE; CI / checks-node-core:FAILURE",
         "needs_merge_preflight"
       ],
       "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"

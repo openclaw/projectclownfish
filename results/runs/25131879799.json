@@ -1,0 +1,41 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-2049-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25131879799",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25131879799",
+  "head_sha": "d8a032e46d7a5449946bb8a8f542719694995636",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-2049-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T20:32:47.123Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/41866",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/41866",
+  "summary": "Classified the only live open candidate, #41866, as the canonical PR for the remaining leading to=... JSON user-facing sanitizer gap. No close, merge, label, or fix action is planned: the other cluster members are already closed context, and #41866 still has actionable bot review feedback while this dedupe-only job blocks merge and fix work.",
+  "actions": [
+    {
+      "target": "#41866",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#41866",
+      "candidate_fix": null,
+      "reason": "#41866 remains the best live canonical path for this narrow sanitizer gap, but it should stay open because the job is dedupe-only, merge/fix actions are blocked, and the PR still needs review-feedback repair before any landing decision."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1
+  },
+  "action_status_counts": {
+    "planned": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
