@@ -206,7 +206,14 @@ function classifyCommand(command) {
   const target = pull ? classifyPullTarget(pull, command.issue_number) : classifyIssueTarget(issue);
   const next = { ...command, target };
 
-  if (hasExistingResponse(command.issue_number, command.comment_id, command.intent, target.head_sha)) {
+  if (
+    hasExistingResponse(
+      command.issue_number,
+      command.comment_version_key ?? command.comment_id,
+      command.intent,
+      target.head_sha,
+    )
+  ) {
     return { ...next, status: "skipped", reason: "matching Clownfish response comment already exists" };
   }
 
@@ -376,13 +383,15 @@ function canRepairPullTarget(target) {
 function autoRepairAlreadyPlanned(command) {
   const headKey = autoRepairHeadKey(command);
   if (!headKey) return null;
+  const resumeBoundary = latestAutomergeResumeAt(command);
 
   const priorPrDispatches = (ledger.commands ?? []).filter(
     (entry) =>
       entry.repo === command.repo &&
       Number(entry.issue_number) === Number(command.issue_number) &&
       entry.intent === "clawsweeper_auto_repair" &&
-      entry.status === "executed",
+      entry.status === "executed" &&
+      isAfterResumeBoundary(entry, resumeBoundary),
   );
   if (priorPrDispatches.length >= maxAutoRepairsPerPr) {
     return `ClawSweeper auto repair already dispatched ${priorPrDispatches.length} total time(s) for this PR`;
@@ -398,7 +407,8 @@ function autoRepairAlreadyPlanned(command) {
       Number(entry.issue_number) === Number(command.issue_number) &&
       entry.intent === "clawsweeper_auto_repair" &&
       entry.status === "executed" &&
-      entry.target?.head_sha === command.target?.head_sha,
+      entry.target?.head_sha === command.target?.head_sha &&
+      isAfterResumeBoundary(entry, resumeBoundary),
   );
   if (priorDispatches.length >= maxAutoRepairsPerHead) {
     return `ClawSweeper auto repair already dispatched ${priorDispatches.length} time(s) for this PR head`;
@@ -406,6 +416,27 @@ function autoRepairAlreadyPlanned(command) {
 
   plannedAutoRepairHeads.add(headKey);
   return null;
+}
+
+function latestAutomergeResumeAt(command) {
+  let latest = 0;
+  for (const entry of ledger.commands ?? []) {
+    if (
+      entry.repo === command.repo &&
+      Number(entry.issue_number) === Number(command.issue_number) &&
+      entry.intent === "automerge" &&
+      entry.status === "executed"
+    ) {
+      latest = Math.max(latest, Date.parse(entry.comment_updated_at ?? "") || 0);
+    }
+  }
+  return latest;
+}
+
+function isAfterResumeBoundary(entry, boundary) {
+  if (!boundary) return true;
+  const updatedAt = Date.parse(entry.comment_updated_at ?? "") || 0;
+  return updatedAt > boundary;
 }
 
 function autoRepairHeadKey(command) {

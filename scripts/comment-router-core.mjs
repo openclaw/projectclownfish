@@ -171,7 +171,8 @@ export function parseTrustedAutomation(comment, { trustedAuthors = new Set() } =
 }
 
 export function renderResponse(command, dispatched) {
-  const marker = `<!-- clownfish-command:${command.comment_id}:${command.intent}:${command.target?.head_sha ?? "na"} -->`;
+  const markerId = command.comment_version_key ?? command.comment_id;
+  const marker = `<!-- clownfish-command:${markerId}:${command.intent}:${command.target?.head_sha ?? "na"} -->`;
   if (command.intent === "help") {
     return [
       marker,
@@ -194,6 +195,7 @@ export function renderResponse(command, dispatched) {
     ].join("\n");
   }
   if (command.intent === "automerge") {
+    const clearedHumanReview = (command.actions ?? []).some((action) => action.action === "remove_label");
     return [
       marker,
       dispatched?.clawsweeper
@@ -201,7 +203,7 @@ export function renderResponse(command, dispatched) {
         : "Clownfish could not enable automerge for this PR.",
       "",
       dispatched?.clawsweeper
-        ? `I added \`clownfish:automerge\` and asked ClawSweeper to review this head. If ClawSweeper requests changes, I will repair the branch and ask for another review, up to the configured round limit.`
+        ? `I ${clearedHumanReview ? "cleared `clownfish:human-review`, " : ""}added \`clownfish:automerge\` and asked ClawSweeper to review this head. If ClawSweeper requests changes or returns \`needs-human\`, I will repair/rebase the branch and ask for another review, up to the configured round limit.`
         : `Reason: ${command.reason ?? "automerge requires a pull request"}.`,
       "",
       "A maintainer can pause this with `/clownfish stop`.",

@@ -187,6 +187,7 @@ test("renderResponse reports trusted repair dispatches without losing guardrails
   const body = renderResponse(
     {
       comment_id: "456",
+      comment_version_key: "456:2026-04-29T07:12:31Z",
       intent: "clawsweeper_auto_repair",
       trusted_bot_author: "clawsweeper[bot]",
       repair_reason: "structured ClawSweeper marker: fix-required",
@@ -201,10 +202,31 @@ test("renderResponse reports trusted repair dispatches without losing guardrails
   );
 
   assert.match(body, /Thanks, ClawSweeper/);
+  assert.match(body, /clownfish-command:456:2026-04-29T07:12:31Z:clawsweeper_auto_repair:def456/);
   assert.match(body, /cluster-worker\.yml/);
   assert.match(body, /safe credited replacement/);
   assert.match(body, /narrow fix/);
   assert.doesNotMatch(body, /ProjectClownfish/i);
+});
+
+test("renderResponse reports automerge resume actions", () => {
+  const body = renderResponse(
+    {
+      comment_id: "459",
+      intent: "automerge",
+      target: { head_sha: "def459" },
+      actions: [{ action: "remove_label", label: "clownfish:human-review", status: "executed" }],
+    },
+    {
+      clawsweeper: {
+        workflow: "sweep.yml",
+        event: "repository_dispatch",
+      },
+    },
+  );
+
+  assert.match(body, /cleared `clownfish:human-review`/);
+  assert.match(body, /repair\/rebase/);
 });
 
 test("renderResponse reports needs-human automerge repair dispatches", () => {
