@@ -2,19 +2,19 @@
 repo: "openclaw/openclaw"
 cluster_id: "clawsweeper-commit-openclaw-openclaw-5435591f6a1a"
 mode: "autonomous"
-run_id: "25089378171"
-run_url: "https://github.com/openclaw/clownfish/actions/runs/25089378171"
-head_sha: "0624869fcf106fed629d5ee545f272247aec8207"
-workflow_conclusion: "success"
+run_id: "25090182506"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/25090182506"
+head_sha: "d850a3471d7633558446f53a8d8b54fc577df05c"
+workflow_conclusion: "skipped"
 result_status: "planned"
-published_at: "2026-04-29T03:27:28.912Z"
+published_at: "2026-04-29T03:59:32.320Z"
 canonical: null
 canonical_issue: null
 canonical_pr: null
 actions_total: 1
 fix_executed: 0
 fix_failed: 0
-fix_blocked: 1
+fix_blocked: 0
 apply_executed: 0
 apply_blocked: 0
 apply_skipped: 0
@@ -25,9 +25,9 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/clownfish/actions/runs/25089378171](https://github.com/openclaw/clownfish/actions/runs/25089378171)
+Run: [https://github.com/openclaw/clownfish/actions/runs/25090182506](https://github.com/openclaw/clownfish/actions/runs/25090182506)
 
-Workflow conclusion: success
+Workflow conclusion: skipped
 
 Worker result: planned
 
@@ -44,7 +44,7 @@ Found one low-severity block-reply edge case in the new split-tag buffering. The
 | Worker actions | 1 |
 | Fix executed | 0 |
 | Fix failed | 0 |
-| Fix blocked | 1 |
+| Fix blocked | 0 |
 | Applied executions | 0 |
 | Apply blocked | 0 |
 | Apply skipped | 0 |
@@ -54,7 +54,7 @@ Found one low-severity block-reply edge case in the new split-tag buffering. The
 
 | Action | Status | Target | Branch | Reason |
 | --- | --- | --- | --- | --- |
-| open_fix_pr | blocked |  | clownfish/clawsweeper-commit-openclaw-openclaw-5435591f6a1a | active Clownfish PR cap reached for src/agents: 18/3 open PRs |
+| _None_ |  |  |  |  |
 
 ## Apply Actions
 
