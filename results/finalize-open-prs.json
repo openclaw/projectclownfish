@@ -3,18 +3,18 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-29T19:47:14.827Z",
-  "count": 12,
+  "generated_at": "2026-04-29T19:48:35.074Z",
+  "count": 10,
   "summary": {
-    "open_prs": 12,
+    "open_prs": 10,
     "ready_candidates": 0,
     "security_hold": 0,
-    "needs_rebase": 11,
+    "needs_rebase": 9,
     "mergeability_unknown": 0,
     "needs_checks": 3,
-    "needs_review": 6,
-    "needs_merge_preflight": 12,
-    "needs_result_backfill": 5
+    "needs_review": 4,
+    "needs_merge_preflight": 10,
+    "needs_result_backfill": 4
   },
   "dispatch": {
     "enabled": false,
@@ -675,139 +675,6 @@
       "blockers": [
         "needs_rebase:CONFLICTING",
         "needs_merge_state:DIRTY",
-        "needs_merge_preflight",
-        "needs_result_backfill"
-      ],
-      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
-    },
-    {
-      "number": 73993,
-      "title": "fix(telegram): avoid silent polling drops for in-flight updates",
-      "url": "https://github.com/openclaw/openclaw/pull/73993",
-      "branch": "clownfish/ghcrawl-191453-agentic-merge",
-      "head_sha": "ffd4efc2569ad976d9994f7e7fcf8bd93d53fe2b",
-      "cluster_id": "ghcrawl-191453-agentic-merge",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-191453-agentic-merge.md",
-      "updated_at": "2026-04-29T02:44:38Z",
-      "mergeable": "CONFLICTING",
-      "merge_state_status": "DIRTY",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 112,
-        "counts": {
-          "CANCELLED": 4,
-          "SKIPPED": 22,
-          "SUCCESS": 86
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "blocked",
-        "reason": "unresolved review threads remain",
-        "unresolved_count": 1,
-        "examples": [
-          "https://github.com/openclaw/openclaw/pull/73993#discussion_r3158317700"
-        ]
-      },
-      "review_bots": {
-        "count": 3,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "clawsweeper",
-            "url": "https://github.com/openclaw/openclaw/pull/73993#issuecomment-4340467586",
-            "submitted_at": "2026-04-29T02:42:36Z"
-          },
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/73993#issuecomment-4340475587",
-            "submitted_at": "2026-04-29T02:44:34Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-29T02:44:38Z"
-          }
-        ]
-      },
-      "latest_record": {
-        "run_id": "24967645694",
-        "run_url": "https://github.com/openclaw/projectclownfish/actions/runs/24967645694",
-        "cluster_id": "ghcrawl-191453-agentic-merge",
-        "published_at": "2026-04-26T21:39:30.325Z",
-        "workflow_conclusion": "success",
-        "apply_action": null
-      },
-      "blockers": [
-        "needs_rebase:CONFLICTING",
-        "needs_merge_state:DIRTY",
-        "unresolved review threads remain",
-        "needs_merge_preflight"
-      ],
-      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
-    },
-    {
-      "number": 73991,
-      "title": "Add per-agent command lane isolation",
-      "url": "https://github.com/openclaw/openclaw/pull/73991",
-      "branch": "clownfish/ghcrawl-157052-autonomous-smoke",
-      "head_sha": "776fa55369296e34a94fdb3a0df01ccd70e5b9cd",
-      "cluster_id": "ghcrawl-157052-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-157052-autonomous-smoke.md",
-      "updated_at": "2026-04-29T02:41:50Z",
-      "mergeable": "CONFLICTING",
-      "merge_state_status": "DIRTY",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 114,
-        "counts": {
-          "CANCELLED": 4,
-          "SKIPPED": 23,
-          "SUCCESS": 87
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "blocked",
-        "reason": "unresolved review threads remain",
-        "unresolved_count": 2,
-        "examples": [
-          "https://github.com/openclaw/openclaw/pull/73991#discussion_r3158304367",
-          "https://github.com/openclaw/openclaw/pull/73991#discussion_r3158304402"
-        ]
-      },
-      "review_bots": {
-        "count": 3,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/73991#issuecomment-4340455311",
-            "submitted_at": "2026-04-29T02:39:53Z"
-          },
-          {
-            "source": "comment",
-            "author": "clawsweeper",
-            "url": "https://github.com/openclaw/openclaw/pull/73991#issuecomment-4340464217",
-            "submitted_at": "2026-04-29T02:41:49Z"
-          },
-          {
-            "source": "review",
-            "author": "greptile-apps",
-            "url": null,
-            "submitted_at": "2026-04-29T02:39:58Z"
-          }
-        ]
-      },
-      "latest_record": null,
-      "blockers": [
-        "needs_rebase:CONFLICTING",
-        "needs_merge_state:DIRTY",
-        "unresolved review threads remain",
         "needs_merge_preflight",
         "needs_result_backfill"
       ],

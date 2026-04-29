@@ -1,20 +1,20 @@
 # Open ProjectClownfish PR Finalizer
 
-Generated: 2026-04-29T19:47:14.827Z
+Generated: 2026-04-29T19:48:35.074Z
 
 ## Summary
 
 | Metric | Count |
 | --- | ---: |
-| open_prs | 12 |
+| open_prs | 10 |
 | ready_candidates | 0 |
 | security_hold | 0 |
-| needs_rebase | 11 |
+| needs_rebase | 9 |
 | mergeability_unknown | 0 |
 | needs_checks | 3 |
-| needs_review | 6 |
-| needs_merge_preflight | 12 |
-| needs_result_backfill | 5 |
+| needs_review | 4 |
+| needs_merge_preflight | 10 |
+| needs_result_backfill | 4 |
 
 ## Dispatch
 
@@ -40,5 +40,3 @@ Status: report_only
 | [#74001](https://github.com/openclaw/openclaw/pull/74001) | fix(feishu): reply inside P2P direct-message threads | ghcrawl-165996-agentic-merge | CONFLICTING | DIRTY | CANCELLED:2 SKIPPED:22 SUCCESS:86 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#73998](https://github.com/openclaw/openclaw/pull/73998) | fix(feishu): reconcile WebSocket reconnect backoff | ghcrawl-207048-agentic-merge | CONFLICTING | DIRTY | CANCELLED:1 SKIPPED:22 SUCCESS:86 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#73996](https://github.com/openclaw/openclaw/pull/73996) | fix: interpolate responsePrefix template variables in heartbeat replies | ghcrawl-157060-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:3 SKIPPED:22 SUCCESS:87 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
-| [#73993](https://github.com/openclaw/openclaw/pull/73993) | fix(telegram): avoid silent polling drops for in-flight updates | ghcrawl-191453-agentic-merge | CONFLICTING | DIRTY | CANCELLED:4 SKIPPED:22 SUCCESS:86 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
-| [#73991](https://github.com/openclaw/openclaw/pull/73991) | Add per-agent command lane isolation | ghcrawl-157052-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:4 SKIPPED:23 SUCCESS:87 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |

@@ -1,0 +1,89 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-14117-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25129767633",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25129767633",
+  "head_sha": "57b657bc4ce868d681ea2ae867230254e2cbce60",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-14117-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T19:47:50.740Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/57091",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/57091",
+  "canonical_pr": null,
+  "summary": "Closed representative #57678 is obsolete for live routing. #57091 is the current open canonical for the remaining workspace SKILL.md frontmatter error-visibility and validation request. No close, label, merge, or fix action is high-confidence for this dedupe-only job; unrelated linked session and gateway issues are kept out of this cluster.",
+  "actions": [
+    {
+      "target": "#57091",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#57091",
+      "candidate_fix": null,
+      "reason": "The closed representative is obsolete; #57091 is the best surviving open canonical for remaining workspace skill-loading error-visibility and validation work, so duplicate closeout is not appropriate."
+    },
+    {
+      "target": "#47975",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Separate session-retention and Control UI behavior issue; keep it open and independent of this skill frontmatter dedupe cluster."
+    },
+    {
+      "target": "#47888",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed unrelated linked context; no mutation planned."
+    },
+    {
+      "target": "#47916",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Already closed unrelated linked context; no mutation planned."
+    },
+    {
+      "target": "#47989",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#57091",
+      "candidate_fix": null,
+      "reason": "Already closed related context; current main evidence supports leaving it closed while #57091 remains open for broader diagnostics and validation."
+    },
+    {
+      "target": "#57678",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": "#57091",
+      "candidate_fix": null,
+      "reason": "Obsolete closed representative; keep closed and route remaining open work through #57091."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_independent": 1,
+    "keep_closed": 4
+  },
+  "action_status_counts": {
+    "planned": 2,
+    "skipped": 4
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
