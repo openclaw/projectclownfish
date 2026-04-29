@@ -3,14 +3,14 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-29T20:16:47.834Z",
+  "generated_at": "2026-04-29T20:18:43.916Z",
   "count": 7,
   "summary": {
     "open_prs": 7,
     "ready_candidates": 0,
     "security_hold": 0,
-    "needs_rebase": 5,
-    "mergeability_unknown": 1,
+    "needs_rebase": 6,
+    "mergeability_unknown": 0,
     "needs_checks": 3,
     "needs_review": 3,
     "needs_merge_preflight": 7,
@@ -361,8 +361,8 @@
       "cluster_id": "ghcrawl-166009-agentic-merge",
       "job_path": "jobs/openclaw/inbox/ghcrawl-166009-agentic-merge.md",
       "updated_at": "2026-04-29T06:13:06Z",
-      "mergeable": "UNKNOWN",
-      "merge_state_status": "UNKNOWN",
+      "mergeable": "CONFLICTING",
+      "merge_state_status": "DIRTY",
       "review_decision": "",
       "security_hold": false,
       "checks": {
@@ -418,13 +418,13 @@
         "apply_action": null
       },
       "blockers": [
-        "mergeability_unknown",
-        "merge_state_unknown",
+        "needs_rebase:CONFLICTING",
+        "needs_merge_state:DIRTY",
         "unresolved review threads remain",
         "needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:FAILURE; CI / checks-node-core-fast-support:FAILURE; CI / checks-node-core:FAILURE",
         "needs_merge_preflight"
       ],
-      "recommended_next_action": "refresh exact PR mergeability before deciding; do not merge while GitHub reports unknown"
+      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     },
     {
       "number": 74002,
