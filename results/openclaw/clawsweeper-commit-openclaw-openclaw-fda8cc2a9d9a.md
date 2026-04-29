@@ -2,21 +2,21 @@
 repo: "openclaw/openclaw"
 cluster_id: "clawsweeper-commit-openclaw-openclaw-fda8cc2a9d9a"
 mode: "autonomous"
-run_id: "25095630144"
-run_url: "https://github.com/openclaw/clownfish/actions/runs/25095630144"
-head_sha: "7855b57dab2e045cadd7d0fb3b0389a74f4b0bda"
+run_id: "25095715904"
+run_url: "https://github.com/openclaw/clownfish/actions/runs/25095715904"
+head_sha: "53ad7921f74d4e2afe090f914a8ec4f1663582b5"
 workflow_conclusion: "success"
 result_status: "planned"
-published_at: "2026-04-29T07:09:10.873Z"
+published_at: "2026-04-29T07:17:06.839Z"
 canonical: null
 canonical_issue: null
 canonical_pr: null
 actions_total: 1
 fix_executed: 0
 fix_failed: 0
-fix_blocked: 1
+fix_blocked: 0
 apply_executed: 0
-apply_blocked: 0
+apply_blocked: 1
 apply_skipped: 0
 needs_human_count: 0
 ---
@@ -25,7 +25,7 @@ needs_human_count: 0
 
 Repo: openclaw/openclaw
 
-Run: [https://github.com/openclaw/clownfish/actions/runs/25095630144](https://github.com/openclaw/clownfish/actions/runs/25095630144)
+Run: [https://github.com/openclaw/clownfish/actions/runs/25095715904](https://github.com/openclaw/clownfish/actions/runs/25095715904)
 
 Workflow conclusion: success
 
@@ -44,9 +44,9 @@ Found one CI regression: normal full Node CI now emits an empty extension-shard 
 | Worker actions | 1 |
 | Fix executed | 0 |
 | Fix failed | 0 |
-| Fix blocked | 1 |
+| Fix blocked | 0 |
 | Applied executions | 0 |
-| Apply blocked | 0 |
+| Apply blocked | 1 |
 | Apply skipped | 0 |
 | Needs human | 0 |
 
@@ -54,13 +54,13 @@ Found one CI regression: normal full Node CI now emits an empty extension-shard 
 
 | Action | Status | Target | Branch | Reason |
 | --- | --- | --- | --- | --- |
-| execute_fix | blocked |  |  | fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1 |
+| open_fix_pr | opened | https://github.com/openclaw/openclaw/pull/74180 | clownfish/clawsweeper-commit-openclaw-openclaw-fda8cc2a9d9a |  |
 
 ## Apply Actions
 
 | Target | Action | Status | Classification | Reason |
 | --- | --- | --- | --- | --- |
-| _None_ |  |  |  |  |
+| #74180 | merge_canonical | blocked | fix_pr | job does not allow merge |
 
 ## Worker Action Matrix
 

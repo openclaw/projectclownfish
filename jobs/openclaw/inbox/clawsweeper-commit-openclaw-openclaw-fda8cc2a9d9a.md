@@ -50,7 +50,7 @@ this lane.
 
 - Commit: https://github.com/openclaw/openclaw/commit/fda8cc2a9d9ab1e3b9c6a254a884e26a6e68e809
 - Report: https://github.com/openclaw/clawsweeper/blob/main/records/openclaw-openclaw/commits/fda8cc2a9d9ab1e3b9c6a254a884e26a6e68e809.md
-- Latest main at intake: 81f490f26a752000b185aaa7e5aea36c01e2e0e4
+- Latest main at intake: 023d3371a533266dd465c34102f86768726f173b
 
 ## ClawSweeper Report
 
