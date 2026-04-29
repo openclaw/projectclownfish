@@ -1,0 +1,139 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-9101-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25137271613",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25137271613",
+  "head_sha": "ca8a3303df8e547d7f06bee2c26da230fe0cdb72",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-9101-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T22:36:38.390Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/55978",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/55978",
+  "summary": "Hydrated preflight shows no security-sensitive refs and current main at 8f50920c4565017679f99d6a7e0a2ebbd2021eb9. No GitHub mutations are planned. #55978 remains the narrow canonical path for the cron sticky-offset subfamily, but #47582 is a conflicting normal-flow Cron editor direction that needs maintainer choice before either PR is superseded or closed. Other open refs are separate UI/CSS subclusters or issue-to-PR pairs, and live-closed candidate refs are skipped.",
+  "actions": [
+    {
+      "target": "#55978",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#55978",
+      "candidate_fix": null,
+      "reason": "Best surviving canonical for the narrow cron sticky-offset root cause; keep it open for maintainer review and repair/merge outside this dedupe-only run."
+    },
+    {
+      "target": "#47582",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": "#55978",
+      "candidate_fix": null,
+      "reason": "Maintainer must choose the intended desktop Cron editor layout before Clownfish can mark #47582 superseded or canonical."
+    },
+    {
+      "target": "#39060",
+      "action": "keep_independent",
+      "status": "planned",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Useful independent Agent Files UI feature/repair; not a duplicate or superseded by the cron sticky-offset canonical path."
+    },
+    {
+      "target": "#45114",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related web-UI CSS cleanup subcluster; keep open and do not close as part of the cron sticky-offset cluster."
+    },
+    {
+      "target": "#45020",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#45114",
+      "reason": "Issue is covered by open candidate #45114, but closure is not safe until the fix lands and post-merge closeout is allowed."
+    },
+    {
+      "target": "#47245",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related web-UI CSS subcluster with distinct root cause; keep open for design/review follow-up."
+    },
+    {
+      "target": "#53916",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related responsive UI scroll subcluster; keep open and do not dedupe into #55978."
+    },
+    {
+      "target": "#53881",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#53916",
+      "reason": "Issue is covered by open candidate #53916, but closure is not safe until that fix lands and post-merge closeout is allowed."
+    },
+    {
+      "target": "#50980",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#67082",
+      "reason": "Already closed candidate; skipped to avoid mutating a closed PR."
+    },
+    {
+      "target": "#60031",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#67082",
+      "reason": "Already closed candidate; skipped to avoid mutating a closed PR."
+    },
+    {
+      "target": "#66658",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "fixed_by_candidate",
+      "canonical": null,
+      "candidate_fix": "#67082",
+      "reason": "Already closed candidate; skipped to avoid mutating a closed PR."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "needs_human": 1,
+    "keep_independent": 1,
+    "keep_related": 5,
+    "keep_closed": 3
+  },
+  "action_status_counts": {
+    "planned": 7,
+    "blocked": 1,
+    "skipped": 3
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [
+    "Choose the intended desktop Cron editor layout before superseding or closing either #55978 or #47582: preserve sticky New/Edit Job behavior with the #55978 offset fix, or switch the form to normal document flow with #47582."
+  ],
+  "fix_actions": [],
+  "apply_actions": []
+}
