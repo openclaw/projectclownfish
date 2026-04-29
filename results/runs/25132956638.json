@@ -1,0 +1,70 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-2326-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25132956638",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25132956638",
+  "head_sha": "e5e8212693f31b1f59eff0d60675a97be8c33e90",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-2326-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T20:48:39.881Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/58147",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/58147",
+  "canonical_pr": null,
+  "summary": "Classified #58147 as the current open canonical issue for the remaining Control UI/WebChat time-format concern. The closed representative #53952 and closed context refs #37148/#53975 remain historical evidence only. No close/comment/label mutation is planned because #58147 is not a high-confidence duplicate of a live open canonical item and is not proven fixed by the closed, unmerged PR.",
+  "actions": [
+    {
+      "target": "#37148",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#58147",
+      "candidate_fix": null,
+      "reason": "Already closed historical context; no mutation is valid or needed."
+    },
+    {
+      "target": "#53952",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#58147",
+      "candidate_fix": null,
+      "reason": "Representative #53952 is obsolete as a closed canonical; keep it as related context and use #58147 as the surviving open canonical issue."
+    },
+    {
+      "target": "#53975",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#58147",
+      "candidate_fix": null,
+      "reason": "Closed unmerged PR is useful historical evidence but is not a viable candidate_fix or mutation target."
+    },
+    {
+      "target": "#58147",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#58147",
+      "candidate_fix": null,
+      "reason": "Keep #58147 open as the current canonical issue; duplicate or fixed-by-candidate closeout is not high-confidence."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 3,
+    "keep_canonical": 1
+  },
+  "action_status_counts": {
+    "skipped": 3,
+    "planned": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
