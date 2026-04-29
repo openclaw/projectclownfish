@@ -1,0 +1,41 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "clawsweeper-commit-openclaw-openclaw-1c4262ef87e9",
+  "mode": "autonomous",
+  "run_id": "25097577122",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25097577122",
+  "head_sha": "b6fe63da2d5ba27f177f77ab917d57963f8236e2",
+  "workflow_conclusion": "skipped",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/clawsweeper-commit-openclaw-openclaw-1c4262ef87e9.md",
+  "published_at": "2026-04-29T08:01:35.462Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Found one regression in the extracted Docker wait helper usage: the Open WebUI smoke now fails before the Open WebUI container is ever started.",
+  "actions": [
+    {
+      "target": "cluster:clawsweeper-commit-openclaw-openclaw-1c4262ef87e9",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "ClawSweeper found an actionable commit-level bug/regression candidate."
+    }
+  ],
+  "action_counts": {
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
