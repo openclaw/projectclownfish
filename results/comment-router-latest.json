@@ -1,14 +1,14 @@
 {
-  "status": "dry_run",
-  "generated_at": "2026-04-29T07:14:46.132Z",
+  "status": "executed",
+  "generated_at": "2026-04-29T07:16:11.686Z",
   "repo": "openclaw/openclaw",
   "clownfish_repo": "openclaw/clownfish",
   "clawsweeper_repo": "openclaw/clawsweeper",
   "since": "2026-04-29T07:12:00Z",
-  "execute": false,
+  "execute": true,
   "max_comments": 50,
-  "scanned_comments": 11,
-  "commands_seen": 6,
+  "scanned_comments": 14,
+  "commands_seen": 7,
   "actionable": 1,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -22,6 +22,60 @@
   "max_auto_repairs_per_head": 1,
   "max_auto_repairs_per_pr": 5,
   "commands": [
+    {
+      "idempotency_key": "clawsweeper-repair:openclaw/openclaw:74173:4341623616:2026-04-29T07:15:07Z:clawsweeper_auto_repair",
+      "comment_id": "4341623616",
+      "comment_version_key": "4341623616:2026-04-29T07:15:07Z",
+      "comment_url": "https://github.com/openclaw/openclaw/pull/74173#issuecomment-4341623616",
+      "repo": "openclaw/openclaw",
+      "issue_number": 74173,
+      "author": "clawsweeper[bot]",
+      "author_association": "NONE",
+      "comment_created_at": "2026-04-29T07:15:07Z",
+      "comment_updated_at": "2026-04-29T07:15:07Z",
+      "trigger": "trusted_bot",
+      "command": "clawsweeper auto repair",
+      "intent": "clawsweeper_auto_repair",
+      "trusted_bot": true,
+      "trusted_bot_author": "clawsweeper[bot]",
+      "automation_source": "clawsweeper",
+      "repair_reason": "structured ClawSweeper verdict: needs-human (sha=bf08cb21663d07fe3b60c87a23befb94c151548d)",
+      "expected_head_sha": "bf08cb21663d07fe3b60c87a23befb94c151548d",
+      "finding_id": null,
+      "status": "skipped",
+      "actions": [],
+      "target": {
+        "kind": "pull_request",
+        "title": "fix: enable native require fast path on Windows for bundled plugins",
+        "branch": "galin/68656",
+        "head_sha": "bf08cb21663d07fe3b60c87a23befb94c151548d",
+        "author": "galiniliev",
+        "labels": [
+          "maintainer",
+          "size: XS"
+        ],
+        "is_clownfish_pr": false,
+        "cluster_id": null,
+        "job_path": null,
+        "automerge_cluster_id": "automerge-openclaw-openclaw-74173",
+        "automerge_job_path": "jobs/openclaw/inbox/automerge-openclaw-openclaw-74173.md",
+        "mode": "autonomous",
+        "merge_state_status": "CLEAN",
+        "review_decision": "",
+        "checks": {
+          "total": 42,
+          "counts": {
+            "CANCELLED": 1,
+            "SKIPPED": 35,
+            "SUCCESS": 6
+          },
+          "blockers": [
+            "auto-response:CANCELLED"
+          ]
+        }
+      },
+      "reason": "repair commands require a Clownfish PR or a PR opted into Clownfish automerge"
+    },
     {
       "idempotency_key": "clawsweeper-repair:openclaw/openclaw:74171:4341615876:2026-04-29T07:13:29Z:clawsweeper_auto_repair",
       "comment_id": "4341615876",
@@ -60,7 +114,7 @@
         "automerge_cluster_id": "automerge-openclaw-openclaw-74171",
         "automerge_job_path": "jobs/openclaw/inbox/automerge-openclaw-openclaw-74171.md",
         "mode": "autonomous",
-        "merge_state_status": "UNKNOWN",
+        "merge_state_status": "UNSTABLE",
         "review_decision": "",
         "checks": {
           "total": 76,
@@ -102,18 +156,20 @@
       "repair_reason": "structured ClawSweeper verdict: needs-human (sha=2122b19ae300850ba92cf612167af5b4d2568efa)",
       "expected_head_sha": "2122b19ae300850ba92cf612167af5b4d2568efa",
       "finding_id": null,
-      "status": "ready",
+      "status": "executed",
       "actions": [
         {
           "action": "dispatch_repair",
           "workflow": "cluster-worker.yml",
           "job_path": "jobs/openclaw/inbox/automerge-openclaw-openclaw-74156.md",
           "mode": "autonomous",
-          "status": "planned"
+          "status": "executed",
+          "dispatched_at": "2026-04-29T07:16:14.424Z"
         },
         {
           "action": "comment",
-          "status": "planned"
+          "status": "executed",
+          "commented_at": "2026-04-29T07:16:15.034Z"
         }
       ],
       "target": {
@@ -136,7 +192,7 @@
         "automerge_cluster_id": "automerge-openclaw-openclaw-74156",
         "automerge_job_path": "jobs/openclaw/inbox/automerge-openclaw-openclaw-74156.md",
         "mode": "autonomous",
-        "merge_state_status": "UNKNOWN",
+        "merge_state_status": "DIRTY",
         "review_decision": "",
         "checks": {
           "total": 83,
@@ -193,7 +249,7 @@
         "automerge_cluster_id": "automerge-openclaw-openclaw-74134",
         "automerge_job_path": "jobs/openclaw/inbox/automerge-openclaw-openclaw-74134.md",
         "mode": "autonomous",
-        "merge_state_status": "UNKNOWN",
+        "merge_state_status": "UNSTABLE",
         "review_decision": "",
         "checks": {
           "total": 72,
@@ -313,7 +369,7 @@
         "automerge_cluster_id": "automerge-openclaw-openclaw-73767",
         "automerge_job_path": "jobs/openclaw/inbox/automerge-openclaw-openclaw-73767.md",
         "mode": "autonomous",
-        "merge_state_status": "UNKNOWN",
+        "merge_state_status": "DIRTY",
         "review_decision": "",
         "checks": {
           "total": 7,
@@ -372,7 +428,7 @@
         "automerge_cluster_id": "automerge-openclaw-openclaw-73384",
         "automerge_job_path": "jobs/openclaw/inbox/automerge-openclaw-openclaw-73384.md",
         "mode": "autonomous",
-        "merge_state_status": "UNKNOWN",
+        "merge_state_status": "BLOCKED",
         "review_decision": "",
         "checks": {
           "total": 78,
@@ -393,5 +449,14 @@
       },
       "reason": "repair commands require a Clownfish PR or a PR opted into Clownfish automerge"
     }
-  ]
+  ],
+  "live_worker_capacity_before_dispatch": {
+    "repo": "openclaw/clownfish",
+    "workflow": "cluster-worker.yml",
+    "active": 0,
+    "requested": 1,
+    "max_live_workers": 50,
+    "available": 50,
+    "active_runs": []
+  }
 }
