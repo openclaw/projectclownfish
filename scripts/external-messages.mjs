@@ -51,7 +51,7 @@ export function replacementSourceLinkComment({ replacementPrUrl, sourcePrUrl, pr
   return withFishNotes([
     `${SIGNATURE} reef update`,
     "",
-    "Thanks for the work on this. This branch had a rough tide, so Clownfish opened a narrow replacement PR to keep the fix swimming forward without losing the contributor trail.",
+    "Thanks for the work on this. Clownfish could not push to this branch with the permissions available, so it opened a narrow replacement PR to keep the fix swimming forward without losing the contributor trail. not your fault, just GitHub branch-permission tides.",
     "",
     `Replacement PR: ${replacementPrUrl}`,
     `Source PR: ${sourcePrUrl}`,
@@ -64,7 +64,7 @@ export function replacementSourceCloseComment({ replacementPrUrl, sourcePrUrl, p
   return withFishNotes([
     `${SIGNATURE} reef update`,
     "",
-    "Thanks for the work on this. This branch had a rough tide, so Clownfish opened a narrow replacement PR and is closing this source PR only because source-PR closing was explicitly enabled for this run.",
+    "Thanks for the work on this. Clownfish could not push to this branch with the permissions available, so it opened a narrow replacement PR and is closing this source PR only because source-PR closing was explicitly enabled for this run. not your fault, just GitHub branch-permission tides.",
     "",
     `Replacement PR: ${replacementPrUrl}`,
     `Source PR: ${sourcePrUrl}`,
