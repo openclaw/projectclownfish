@@ -1,0 +1,51 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-9322-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25137272917",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25137272917",
+  "head_sha": "ca8a3303df8e547d7f06bee2c26da230fe0cdb72",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-9322-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T22:33:49.226Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/56650",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/56650",
+  "summary": "Classified open candidates only. #56650 remains the canonical open PR for the GitHub Copilot PAT auth plus non-interactive paste-token family, but it is not merge-ready and no merge/fix action is allowed by this job. #63050 is related, not a duplicate or superseding PR, because it covers the paste-token/validTypes sub-scope and should remain open for maintainer review. No close/comment/label mutations are planned; closed refs were used only as evidence.",
+  "actions": [
+    {
+      "target": "#56650",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#56650",
+      "candidate_fix": null,
+      "reason": "Keep #56650 as canonical for the broader Copilot PAT auth cluster, but do not merge or close anything against it because relevant checks and review-bot findings are unresolved and the job disallows merge/fix actions."
+    },
+    {
+      "target": "#63050",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#56650",
+      "candidate_fix": null,
+      "reason": "Keep #63050 open as related work rather than closing it. It is narrower and currently cleaner than #56650 for paste-token/validTypes, but it is not a replacement for the broader GitHub Copilot PAT auth canonical path."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 1
+  },
+  "action_status_counts": {
+    "planned": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}

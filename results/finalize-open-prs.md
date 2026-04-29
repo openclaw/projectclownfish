@@ -1,20 +1,20 @@
 # Open ProjectClownfish PR Finalizer
 
-Generated: 2026-04-29T22:28:12.278Z
+Generated: 2026-04-29T22:36:03.430Z
 
 ## Summary
 
 | Metric | Count |
 | --- | ---: |
-| open_prs | 13 |
+| open_prs | 15 |
 | ready_candidates | 0 |
 | security_hold | 0 |
-| needs_rebase | 12 |
+| needs_rebase | 14 |
 | mergeability_unknown | 0 |
-| needs_checks | 3 |
-| needs_review | 6 |
-| needs_merge_preflight | 13 |
-| needs_result_backfill | 6 |
+| needs_checks | 5 |
+| needs_review | 8 |
+| needs_merge_preflight | 15 |
+| needs_result_backfill | 8 |
 
 ## Dispatch
 
@@ -43,3 +43,5 @@ Status: report_only
 | [#73993](https://github.com/openclaw/openclaw/pull/73993) | fix(telegram): avoid silent polling drops for in-flight updates | ghcrawl-191453-agentic-merge | CONFLICTING | DIRTY | CANCELLED:4 SKIPPED:22 SUCCESS:86 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#73991](https://github.com/openclaw/openclaw/pull/73991) | Add per-agent command lane isolation | ghcrawl-157052-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:4 SKIPPED:23 SUCCESS:87 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#73989](https://github.com/openclaw/openclaw/pull/73989) | fix(health-monitor): add reconnect grace for gateway reconnects | ghcrawl-157023-autonomous-smoke | CONFLICTING | DIRTY | SKIPPED:3 SUCCESS:5 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
+| [#73988](https://github.com/openclaw/openclaw/pull/73988) | fix(agents): load symlinked workspace bootstrap files | ghcrawl-157010-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:9 SKIPPED:36 SUCCESS:151; blockers:5 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_checks:CI / plugin-prerelease-docker-suite / prepare_docker_e2e_image:CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E (${{ matrix.label }}):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (${{ matrix.group.label }}):CANCELLED, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
+| [#73987](https://github.com/openclaw/openclaw/pull/73987) | fix(control-ui): share gateway token scope across loopback hosts | ghcrawl-157066-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:25 SKIPPED:38 SUCCESS:150; blockers:21 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_checks:CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (npm-onboard-channel-agent):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (doctor-switch):CANCELLED; CI / plugin-prerelease-docker-suite / Docker E2E targeted lanes (update-channel-switch):CANCELLED, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
