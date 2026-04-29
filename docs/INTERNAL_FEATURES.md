@@ -354,6 +354,8 @@ Behavior:
 - `fix ci`: dispatch the existing Clownfish PR's job for repair.
 - `address review`: dispatch the existing Clownfish PR's job for repair.
 - `rebase`: dispatch the existing Clownfish PR's job for repair.
+- `automerge`: label an existing Clownfish PR with `clownfish:automerge`
+  and dispatch a ClawSweeper review for the current head.
 - `stop`: label the item for human review.
 
 Repair commands currently apply only to existing Clownfish PRs. The router
@@ -368,6 +370,13 @@ default caps are five automatic repair iterations per PR and one dispatch per
 PR head SHA. The per-PR cap is total across head SHA changes, so repeated
 findings on the same commit do not stampede the branch and a single PR cannot
 loop forever.
+
+For PRs labeled `clownfish:automerge`, trusted ClawSweeper `pass`, `approved`,
+or `no-changes` verdict markers become `clawsweeper_auto_merge`. The router
+merges only when the marker SHA matches the current PR head, checks are green,
+GitHub mergeability is clean, no human-review label is present, and both
+`CLOWNFISH_ALLOW_MERGE=1` and `CLOWNFISH_ALLOW_AUTOMERGE=1` are set. Otherwise
+it leaves the PR open and labels it `clownfish:merge-ready` when appropriate.
 
 The scheduled workflow is dry by default. Set
 `CLOWNFISH_COMMENT_ROUTER_EXECUTE=1` to let scheduled runs post replies and
@@ -431,6 +440,9 @@ Important gates:
   Workflows treat any value except literal `1` as closed.
 - `CLOWNFISH_ALLOW_MERGE`: allows Clownfish to merge. Keep this `0` unless a
   maintainer explicitly opens it.
+- `CLOWNFISH_ALLOW_AUTOMERGE`: allows the comment router to merge a
+  `clownfish:automerge` PR after ClawSweeper passes the exact current head.
+  Keep this `0` unless a maintainer explicitly opens an automerge window.
 - `CLOWNFISH_COMMENT_ROUTER_EXECUTE`: lets scheduled comment routing post
   replies and dispatch workers.
 

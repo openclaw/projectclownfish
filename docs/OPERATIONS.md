@@ -208,6 +208,16 @@ one auto-repair per PR head SHA by default, controlled by
 head SHA changes, so the automatic loop stops after five ClawSweeper-triggered
 repair passes.
 
+Maintainers can start the bounded review/fix/merge loop on an existing
+Clownfish PR with `/clownfish automerge`. The router adds
+`clownfish:automerge`, dispatches ClawSweeper for the current head, and then
+reacts to trusted ClawSweeper markers. `needs-changes` repairs the same branch;
+`pass`, `approved`, or `no-changes` may merge only when the marker SHA matches
+the current head, checks and mergeability are clean, no human-review label is
+present, and both `CLOWNFISH_ALLOW_MERGE=1` and
+`CLOWNFISH_ALLOW_AUTOMERGE=1` are set. `/clownfish stop` or a
+`needs-human` verdict adds `clownfish:human-review` and pauses the loop.
+
 The scheduled workflow is dry by default. Set
 `CLOWNFISH_COMMENT_ROUTER_EXECUTE=1` in repo variables to let scheduled runs
 post replies and dispatch workers. Manual workflow dispatch can also pass
@@ -222,7 +232,7 @@ Minimum useful permissions depend on action tier:
 
 - `CLOWNFISH_READ_GH_TOKEN`: metadata, issues read, pull requests read, contents read; do not use a broad PAT here
 - `CLOWNFISH_GH_TOKEN`: issues write, pull requests write
-- merge: contents write and pull requests write
+- merge/automerge: contents write, pull requests write, issues write
 - fix PRs: contents write, pull requests write, issues write
 
 Do not put tokens in job files. Codex receives no GitHub token; the read token is scoped to preflight, and the write token is scoped to the deterministic apply step.

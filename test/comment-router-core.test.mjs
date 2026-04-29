@@ -2,7 +2,10 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import {
+  MERGE_INTENTS,
   REPAIR_INTENTS,
+  automergeGateBlockReason,
+  buildAutomergeMergeArgs,
   parseCommand,
   parseTrustedAutomation,
   renderResponse,
@@ -23,6 +26,11 @@ test("parseCommand recognizes maintainer slash commands", () => {
     trigger: "slash",
     command: "status",
     intent: "status",
+  });
+  assert.deepEqual(parseCommand("/clownfish automerge"), {
+    trigger: "slash",
+    command: "automerge",
+    intent: "automerge",
   });
 });
 
@@ -58,6 +66,35 @@ test("parseTrustedAutomation accepts only trusted ClawSweeper repair signals", (
   assert.match(parsed.repair_reason, /structured ClawSweeper/);
 
   assert.equal(parseTrustedAutomation({ ...comment, user: { login: "random-user" } }, { trustedAuthors }), null);
+});
+
+test("parseTrustedAutomation accepts trusted ClawSweeper pass verdicts for automerge", () => {
+  const trustedAuthors = new Set(["clawsweeper[bot]"]);
+  const parsed = parseTrustedAutomation(
+    {
+      user: { login: "clawsweeper[bot]" },
+      body: "ClawSweeper review passed.\n<!-- clawsweeper-verdict:pass sha=abc123 -->",
+    },
+    { trustedAuthors },
+  );
+
+  assert.equal(parsed.intent, "clawsweeper_auto_merge");
+  assert.equal(parsed.expected_head_sha, "abc123");
+  assert.match(parsed.repair_reason, /verdict: pass/);
+});
+
+test("parseTrustedAutomation accepts trusted ClawSweeper human-review verdicts", () => {
+  const trustedAuthors = new Set(["clawsweeper[bot]"]);
+  const parsed = parseTrustedAutomation(
+    {
+      user: { login: "clawsweeper[bot]" },
+      body: "ClawSweeper needs maintainer judgment.\n<!-- clawsweeper-verdict:needs-human sha=abc123 -->",
+    },
+    { trustedAuthors },
+  );
+
+  assert.equal(parsed.intent, "clawsweeper_needs_human");
+  assert.equal(parsed.expected_head_sha, "abc123");
 });
 
 test("parseTrustedAutomation falls back to actionable ClawSweeper review text", () => {
@@ -119,6 +156,29 @@ test("renderResponse reports trusted repair dispatches without losing guardrails
   assert.doesNotMatch(body, /ProjectClownfish/i);
 });
 
+test("renderResponse reports automerge completion", () => {
+  const body = renderResponse(
+    {
+      comment_id: "789",
+      intent: "clawsweeper_auto_merge",
+      trusted_bot_author: "clawsweeper[bot]",
+      repair_reason: "structured ClawSweeper verdict: pass",
+      target: { head_sha: "abc789" },
+    },
+    {
+      merge: {
+        status: "executed",
+        reason: "merged by Clownfish automerge",
+        merged_at: "2026-04-29T05:00:00Z",
+      },
+    },
+  );
+
+  assert.match(body, /merged this PR/);
+  assert.match(body, /automerge loop is complete/);
+  assert.doesNotMatch(body, /ProjectClownfish/i);
+});
+
 test("repair intent set documents executable repair commands", () => {
   assert.deepEqual([...REPAIR_INTENTS].sort(), [
     "address_review",
@@ -126,4 +186,27 @@ test("repair intent set documents executable repair commands", () => {
     "fix_ci",
     "rebase",
   ]);
+});
+
+test("merge intent set documents ClawSweeper pass automerge", () => {
+  assert.deepEqual([...MERGE_INTENTS], ["clawsweeper_auto_merge"]);
+});
+
+test("automerge merge args pin the reviewed head SHA", () => {
+  assert.deepEqual(
+    buildAutomergeMergeArgs({ issueNumber: 123, repo: "openclaw/openclaw", expectedHeadSha: "abc123" }),
+    ["pr", "merge", "123", "--repo", "openclaw/openclaw", "--squash", "--match-head-commit", "abc123"],
+  );
+});
+
+test("automerge gate block only reports closed merge policy gates", () => {
+  assert.equal(
+    automergeGateBlockReason({ CLOWNFISH_ALLOW_MERGE: "0", CLOWNFISH_ALLOW_AUTOMERGE: "1" }),
+    "merge requires CLOWNFISH_ALLOW_MERGE=1",
+  );
+  assert.equal(
+    automergeGateBlockReason({ CLOWNFISH_ALLOW_MERGE: "1", CLOWNFISH_ALLOW_AUTOMERGE: "0" }),
+    "automerge requires CLOWNFISH_ALLOW_AUTOMERGE=1",
+  );
+  assert.equal(automergeGateBlockReason({ CLOWNFISH_ALLOW_MERGE: "1", CLOWNFISH_ALLOW_AUTOMERGE: "1" }), "");
 });

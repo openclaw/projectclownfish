@@ -30,8 +30,8 @@ Maintainer commands:
 
 - author association must be `OWNER`, `MEMBER`, or `COLLABORATOR` by default;
 - supported commands are `/clownfish fix ci`, `/clownfish address review`,
-  `/clownfish rebase`, `/clownfish status`, `/clownfish explain`, and
-  `/clownfish stop`;
+  `/clownfish rebase`, `/clownfish automerge`, `/clownfish status`,
+  `/clownfish explain`, and `/clownfish stop`;
 - commands from contributors are ignored without a reply.
 
 Trusted automation:
@@ -69,6 +69,31 @@ The branch prefix is the durable identity because it maps directly back to the
 cluster id and job path. The label and author checks are compatibility markers
 for already-open PRs and dashboard tools.
 
+## Automerge Opt-In
+
+Maintainers can opt an existing Clownfish PR into the bounded merge loop with:
+
+```text
+/clownfish automerge
+```
+
+The command adds `clownfish:automerge`, asks ClawSweeper to review the current
+PR head, and leaves an idempotent comment. It currently applies only to
+existing Clownfish PRs because the repair loop must map the PR branch back to
+one cluster job. `/clownfish stop` pauses the loop by adding
+`clownfish:human-review`.
+
+Automerge has two explicit gates:
+
+```bash
+CLOWNFISH_ALLOW_MERGE=1
+CLOWNFISH_ALLOW_AUTOMERGE=1
+```
+
+If ClawSweeper passes the exact current head while either gate is closed,
+Clownfish labels the PR `clownfish:merge-ready` and comments instead of
+merging.
+
 ## ClawSweeper Trigger
 
 Preferred ClawSweeper comments should include hidden verdict and action
@@ -101,8 +126,11 @@ Accepted repair verdicts:
 - `fix-required`
 - `repair-required`
 
-Non-repair verdicts such as `pass`, `approved`, `no-changes`, and
-`needs-human` never dispatch Clownfish.
+`pass`, `approved`, and `no-changes` verdicts never repair. On a PR opted into
+`clownfish:automerge`, a pass verdict for the exact current head can merge only
+after required checks, mergeability, review state, and both merge gates are
+green. `needs-human` and `human-review` pause automerge by adding
+`clownfish:human-review`.
 
 The router also has a conservative fallback for current ClawSweeper review
 comments. It only applies to trusted bot authors and looks for phrases like
@@ -160,6 +188,15 @@ The router does not dispatch when:
 - the same PR already reached the total auto-repair cap;
 - the same PR head SHA already reached the per-head auto-repair cap;
 - the ClawSweeper marker names a stale PR head SHA.
+
+Automerge also refuses to merge when:
+
+- `clownfish:automerge` is missing;
+- `clownfish:human-review` is present;
+- the pass marker does not name the reviewed head SHA;
+- the PR is draft, not based on `main`, not mergeable, or has non-green checks;
+- GitHub reports requested changes or required review;
+- `CLOWNFISH_ALLOW_MERGE` or `CLOWNFISH_ALLOW_AUTOMERGE` is not `1`.
 
 For trusted automation comments, these blocked cases are silent skips. That
 keeps Clownfish from replying to every ordinary contributor PR that

@@ -74,6 +74,8 @@ jobs:
       - name: Route Clownfish comments
         env:
           GH_TOKEN: ${{ steps.app_token.outputs.token || secrets.CLOWNFISH_GH_TOKEN || github.token }}
+          CLOWNFISH_ALLOW_AUTOMERGE: ${{ vars.CLOWNFISH_ALLOW_AUTOMERGE || '0' }}
+          CLOWNFISH_ALLOW_MERGE: ${{ vars.CLOWNFISH_ALLOW_MERGE || '0' }}
         run: |
           set -euo pipefail
           target_repo="${{ github.event_name == 'workflow_dispatch' && inputs.target_repo || vars.CLOWNFISH_TARGET_REPO || 'openclaw/openclaw' }}"

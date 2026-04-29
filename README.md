@@ -226,9 +226,16 @@ For the ClawSweeper feedback loop that updates existing generated PRs, see
 
 That loop is marker-driven. ClawSweeper comments use hidden
 `clawsweeper-verdict:*` markers, and only actionable PR feedback includes
-`clawsweeper-action:fix-required`. Clownfish ignores pass/human-only verdicts,
-skips stale head SHAs, and caps automatic repairs at five per PR and one per PR
-head SHA.
+`clawsweeper-action:fix-required`. Clownfish skips stale head SHAs and caps
+automatic repairs at five per PR and one per PR head SHA.
+
+Maintainers can opt an existing Clownfish PR into the bounded merge loop with
+`/clownfish automerge`. That adds `clownfish:automerge`, dispatches
+ClawSweeper for the current head, lets Clownfish repair trusted
+`needs-changes` findings for up to five rounds, and merges only after a trusted
+pass verdict for the exact current head plus green checks, clean mergeability,
+and explicit `CLOWNFISH_ALLOW_MERGE=1` and `CLOWNFISH_ALLOW_AUTOMERGE=1`
+gates.
 
 ClawSweeper commit findings have a separate intake lane. A
 `clawsweeper_commit_finding` dispatch fetches the latest markdown commit report,
@@ -421,7 +428,7 @@ The workflow needs:
 - a read-only GitHub token for worker inspection
 - a separate write-scoped GitHub token for the deterministic applicator
 - execution gates that default closed: set `CLOWNFISH_ALLOW_EXECUTE=1` and `CLOWNFISH_ALLOW_FIX_PR=1` only for an intentional execution window; otherwise execute/autonomous dispatches render plan-only output and skip mutation steps
-- merge is separately gated by `CLOWNFISH_ALLOW_MERGE`; it defaults to `0`, and merge-ready PRs are labeled `clownfish:human-review` and `clownfish:merge-ready` for a maintainer to merge manually
+- merge is separately gated by `CLOWNFISH_ALLOW_MERGE`; automerge additionally requires `CLOWNFISH_ALLOW_AUTOMERGE`; both default to `0`, and merge-ready PRs are labeled `clownfish:human-review` and `clownfish:merge-ready` for a maintainer to merge manually
 - optional `CLOWNFISH_CODEX_CLI_VERSION` variable to pin and refresh the cached Codex CLI
 - optional `CLOWNFISH_MODEL` override for dispatch scripts; default Codex model is `gpt-5.5`
 - optional `CLOWNFISH_MAX_LIVE_WORKERS` variable for dispatch/requeue/self-heal worker fan-out; default is `50`

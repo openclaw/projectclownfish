@@ -12,7 +12,15 @@ import {
   validateJob,
   waitForLiveWorkerCapacity,
 } from "./lib.mjs";
-import { parseCommand, parseTrustedAutomation, renderResponse, REPAIR_INTENTS } from "./comment-router-core.mjs";
+import {
+  MERGE_INTENTS,
+  REPAIR_INTENTS,
+  automergeGateBlockReason,
+  buildAutomergeMergeArgs,
+  parseCommand,
+  parseTrustedAutomation,
+  renderResponse,
+} from "./comment-router-core.mjs";
 import {
   appendLedger,
   assertRepo,
@@ -30,6 +38,9 @@ import {
 const DEFAULT_TARGET_REPO = "openclaw/openclaw";
 const DEFAULT_HEAD_PREFIX = "clownfish/";
 const DEFAULT_LABEL = "clownfish";
+const AUTOMERGE_LABEL = "clownfish:automerge";
+const HUMAN_REVIEW_LABEL = "clownfish:human-review";
+const MERGE_READY_LABEL = "clownfish:merge-ready";
 const DEFAULT_ALLOWED_ASSOCIATIONS = ["OWNER", "MEMBER", "COLLABORATOR"];
 const DEFAULT_TRUSTED_BOTS = ["clawsweeper[bot]", "openclaw-clawsweeper[bot]"];
 const DEFAULT_CLOWNFISH_AUTHORS = ["openclaw-clownfish", "openclaw-clownfish[bot]"];
@@ -38,6 +49,8 @@ const args = parseArgs(process.argv.slice(2));
 const targetRepo = String(args.repo ?? process.env.CLOWNFISH_TARGET_REPO ?? DEFAULT_TARGET_REPO);
 const clownfishRepo = String(args["clownfish-repo"] ?? process.env.CLOWNFISH_REPO ?? currentProjectRepo());
 const workflow = String(args.workflow ?? process.env.CLOWNFISH_COMMENT_WORKFLOW ?? "cluster-worker.yml");
+const clawsweeperRepo = String(args["clawsweeper-repo"] ?? process.env.CLOWNFISH_CLAWSWEEPER_REPO ?? "openclaw/clawsweeper");
+const clawsweeperWorkflow = String(args["clawsweeper-workflow"] ?? process.env.CLOWNFISH_CLAWSWEEPER_WORKFLOW ?? "sweep.yml");
 const runner = String(args.runner ?? process.env.CLOWNFISH_WORKER_RUNNER ?? "blacksmith-4vcpu-ubuntu-2404");
 const executionRunner = String(
   args["execution-runner"] ?? args.execution_runner ?? process.env.CLOWNFISH_EXECUTION_RUNNER ?? "blacksmith-16vcpu-ubuntu-2404",
@@ -76,6 +89,7 @@ const clownfishAuthors = commaSet(
 
 assertRepo(targetRepo, "repo");
 assertRepo(clownfishRepo, "clownfish-repo");
+assertRepo(clawsweeperRepo, "clawsweeper-repo");
 
 const ledger = readLedger(ledgerPath());
 const processedCommentVersions = new Set((ledger.commands ?? []).map(commentVersionKey).filter(Boolean));
@@ -119,6 +133,7 @@ const report = {
   generated_at: new Date().toISOString(),
   repo: targetRepo,
   clownfish_repo: clownfishRepo,
+  clawsweeper_repo: clawsweeperRepo,
   since,
   execute,
   max_comments: maxComments,
@@ -177,17 +192,42 @@ function classifyCommand(command) {
   if (["status", "explain", "help"].includes(command.intent)) {
     return { ...next, status: "ready", actions: [{ action: "comment", status: execute ? "pending" : "planned" }] };
   }
+  if (command.intent === "automerge") {
+    if (String(issue.state ?? "").toLowerCase() !== "open") {
+      return automergeBlocked(next, "automerge requires an open PR");
+    }
+    if (!pull) {
+      return automergeBlocked(next, "automerge requires a pull request");
+    }
+    if (!target.is_clownfish_pr) {
+      return automergeBlocked(next, "automerge currently requires an existing Clownfish PR");
+    }
+    if (!target.job_path) {
+      return automergeBlocked(next, "could not find the Clownfish job for this PR branch");
+    }
+    return {
+      ...next,
+      status: "ready",
+      actions: [
+        { action: "label", label: AUTOMERGE_LABEL, status: execute ? "pending" : "planned" },
+        { action: "dispatch_clawsweeper", workflow: clawsweeperWorkflow, status: execute ? "pending" : "planned" },
+        { action: "comment", status: execute ? "pending" : "planned" },
+      ],
+    };
+  }
   if (command.intent === "stop") {
     return {
       ...next,
       status: "ready",
       actions: [
-        { action: "label", label: "clownfish:human-review", status: execute ? "pending" : "planned" },
+        { action: "label", label: HUMAN_REVIEW_LABEL, status: execute ? "pending" : "planned" },
         { action: "comment", status: execute ? "pending" : "planned" },
       ],
     };
   }
   if (!REPAIR_INTENTS.has(command.intent)) {
+    if (MERGE_INTENTS.has(command.intent)) return classifyAutomergePass(next, issue, pull);
+    if (command.intent === "clawsweeper_needs_human") return classifyNeedsHuman(next, issue, pull);
     return { ...next, status: "ready", actions: [{ action: "comment", status: execute ? "pending" : "planned" }] };
   }
   if (String(issue.state ?? "").toLowerCase() !== "open") {
@@ -222,6 +262,56 @@ function classifyCommand(command) {
       { action: "dispatch_repair", workflow, job_path: target.job_path, mode: target.mode, status: execute ? "pending" : "planned" },
       { action: "comment", status: execute ? "pending" : "planned" },
     ],
+  };
+}
+
+function classifyAutomergePass(command, issue, pull) {
+  if (String(issue.state ?? "").toLowerCase() !== "open") return { ...command, status: "skipped", reason: "PR is not open" };
+  if (!pull) return { ...command, status: "skipped", reason: "ClawSweeper pass marker is not on a PR" };
+  if (!hasLabel(command.target, AUTOMERGE_LABEL)) return { ...command, status: "skipped", reason: "PR is not opted into Clownfish automerge" };
+  if (hasLabel(command.target, HUMAN_REVIEW_LABEL)) return { ...command, status: "skipped", reason: "PR is paused for human review" };
+  if (!command.target?.is_clownfish_pr) return { ...command, status: "skipped", reason: "automerge currently requires a Clownfish PR" };
+  if (!command.expected_head_sha || command.expected_head_sha === "unknown") {
+    return { ...command, status: "skipped", reason: "ClawSweeper pass marker must include the reviewed PR head SHA" };
+  }
+  if (
+    command.expected_head_sha &&
+    command.expected_head_sha !== "unknown" &&
+    command.target?.head_sha &&
+    command.expected_head_sha !== command.target.head_sha
+  ) {
+    return { ...command, status: "skipped", reason: "ClawSweeper pass marker targets a stale PR head SHA" };
+  }
+  return {
+    ...command,
+    status: "ready",
+    actions: [
+      { action: "merge", status: execute ? "pending" : "planned" },
+      { action: "comment", status: execute ? "pending" : "planned" },
+    ],
+  };
+}
+
+function classifyNeedsHuman(command, issue, pull) {
+  if (String(issue.state ?? "").toLowerCase() !== "open") return { ...command, status: "skipped", reason: "target is not open" };
+  if (!pull) return { ...command, status: "skipped", reason: "needs-human marker is not on a PR" };
+  if (!hasLabel(command.target, AUTOMERGE_LABEL)) return { ...command, status: "skipped", reason: "PR is not opted into Clownfish automerge" };
+  return {
+    ...command,
+    status: "ready",
+    actions: [
+      { action: "label", label: HUMAN_REVIEW_LABEL, status: execute ? "pending" : "planned" },
+      { action: "comment", status: execute ? "pending" : "planned" },
+    ],
+  };
+}
+
+function automergeBlocked(command, reason) {
+  return {
+    ...command,
+    status: "ready",
+    actions: [{ action: "comment", status: execute ? "pending" : "planned" }],
+    reason,
   };
 }
 
@@ -284,11 +374,42 @@ function executeCommand(command) {
       action.action === "dispatch_repair" ? { ...action, status: "executed", dispatched_at: new Date().toISOString() } : action,
     );
   }
+  if (command.intent === "automerge" && command.issue_number) {
+    ensureAutomergeLabel(command.repo);
+    ghBestEffort(["issue", "edit", String(command.issue_number), "--repo", command.repo, "--add-label", AUTOMERGE_LABEL]);
+    const clawsweeper = dispatchClawSweeperReview(command);
+    dispatched = { ...(dispatched ?? {}), clawsweeper };
+    command.actions = command.actions.map((action) => {
+      if (action.action === "label") return { ...action, status: "executed", label: AUTOMERGE_LABEL };
+      if (action.action === "dispatch_clawsweeper") {
+        return { ...action, status: "executed", dispatched_at: new Date().toISOString(), ...clawsweeper };
+      }
+      return action;
+    });
+  }
+  if (MERGE_INTENTS.has(command.intent) && command.issue_number) {
+    const merge = executeAutomerge(command);
+    dispatched = { ...(dispatched ?? {}), merge };
+    command.actions = command.actions.map((action) =>
+      action.action === "merge" ? { ...action, ...merge, completed_at: new Date().toISOString() } : action,
+    );
+    if (merge.status === "waiting") {
+      command.status = "waiting";
+      return;
+    }
+  }
+  if (command.intent === "clawsweeper_needs_human" && command.issue_number) {
+    ensureHumanReviewLabel(command.repo);
+    ghBestEffort(["issue", "edit", String(command.issue_number), "--repo", command.repo, "--add-label", HUMAN_REVIEW_LABEL]);
+    command.actions = command.actions.map((action) =>
+      action.action === "label" ? { ...action, status: "executed", label: HUMAN_REVIEW_LABEL } : action,
+    );
+  }
   if (command.intent === "stop" && command.issue_number) {
     ensureHumanReviewLabel(command.repo);
-    ghBestEffort(["issue", "edit", String(command.issue_number), "--repo", command.repo, "--add-label", "clownfish:human-review"]);
+    ghBestEffort(["issue", "edit", String(command.issue_number), "--repo", command.repo, "--add-label", HUMAN_REVIEW_LABEL]);
     command.actions = command.actions.map((action) =>
-      action.action === "label" ? { ...action, status: "executed", label: "clownfish:human-review" } : action,
+      action.action === "label" ? { ...action, status: "executed", label: HUMAN_REVIEW_LABEL } : action,
     );
   }
 
@@ -297,6 +418,32 @@ function executeCommand(command) {
     action.action === "comment" ? { ...action, status: "executed", commented_at: new Date().toISOString() } : action,
   );
   command.status = "executed";
+}
+
+function dispatchClawSweeperReview(command) {
+  const result = spawnSync(
+    "gh",
+    [
+      "workflow",
+      "run",
+      clawsweeperWorkflow,
+      "--repo",
+      clawsweeperRepo,
+      "-f",
+      `target_repo=${command.repo}`,
+      "-f",
+      `item_number=${command.issue_number}`,
+    ],
+    { cwd: repoRoot(), encoding: "utf8", env: ghEnv(), stdio: "pipe" },
+  );
+  if (result.status !== 0) {
+    throw new Error(`failed to dispatch ClawSweeper review for #${command.issue_number}: ${result.stderr || result.stdout}`);
+  }
+  return {
+    workflow: clawsweeperWorkflow,
+    repo: clawsweeperRepo,
+    item_number: command.issue_number,
+  };
 }
 
 function dispatchRepair(command) {
@@ -333,6 +480,106 @@ function dispatchRepair(command) {
     execution_runner: executionRunner,
     model,
   };
+}
+
+function executeAutomerge(command) {
+  const view = fetchPullRequestView(command.issue_number);
+  const labels = (view.labels ?? []).map((item) => item.name ?? item);
+  const latestTarget = { ...command.target, ...view, labels, head_sha: view.headRefOid ?? command.target?.head_sha ?? null };
+  const block = validateAutomergeReadiness({ command, view, target: latestTarget });
+  if (block) {
+    if (isTransientAutomergeBlock(block, view)) {
+      return { action: "merge", status: "waiting", reason: block, merge_method: "squash" };
+    }
+    return { action: "merge", status: "blocked", reason: block, merge_method: "squash" };
+  }
+  const gateBlock = automergeGateBlockReason(process.env);
+  if (gateBlock) {
+    ensureMergeReadyLabel(command.repo);
+    ghBestEffort(["issue", "edit", String(command.issue_number), "--repo", command.repo, "--add-label", MERGE_READY_LABEL]);
+    return { action: "merge", status: "blocked", reason: gateBlock, merge_method: "squash" };
+  }
+  const result = spawnSync(
+    "gh",
+    buildAutomergeMergeArgs({
+      issueNumber: command.issue_number,
+      repo: command.repo,
+      expectedHeadSha: command.expected_head_sha,
+    }),
+    {
+      cwd: repoRoot(),
+      encoding: "utf8",
+      env: ghEnv(),
+      stdio: "pipe",
+    },
+  );
+  if (result.status !== 0) {
+    return {
+      action: "merge",
+      status: "blocked",
+      reason: `merge command failed: ${stripAnsi(result.stderr || result.stdout).trim()}`,
+      merge_method: "squash",
+    };
+  }
+  const merged = fetchPullRequestView(command.issue_number);
+  return {
+    action: "merge",
+    status: "executed",
+    reason: "merged by Clownfish automerge",
+    merged_at: merged.mergedAt ?? new Date().toISOString(),
+    merge_commit_sha: merged.mergeCommit?.oid ?? null,
+    merge_method: "squash",
+  };
+}
+
+function validateAutomergeReadiness({ command, view, target }) {
+  if (!hasLabel(target, AUTOMERGE_LABEL)) return "PR is not opted into Clownfish automerge";
+  if (hasLabel(target, HUMAN_REVIEW_LABEL)) return "PR is paused for human review";
+  if (view.state && view.state !== "OPEN") return `pull request is ${String(view.state).toLowerCase()}`;
+  if (view.isDraft) return "pull request is draft";
+  if (String(view.baseRefName ?? "") !== "main") return "pull request base is not main";
+  if (!command.expected_head_sha || command.expected_head_sha === "unknown") {
+    return "ClawSweeper pass marker must include the reviewed PR head SHA";
+  }
+  if (
+    command.expected_head_sha &&
+    command.expected_head_sha !== "unknown" &&
+    view.headRefOid &&
+    command.expected_head_sha !== view.headRefOid
+  ) {
+    return "ClawSweeper pass marker targets a stale PR head SHA";
+  }
+  if (view.mergeable !== "MERGEABLE") return `mergeable state is ${view.mergeable || "unknown"}`;
+  if (!["CLEAN", "HAS_HOOKS"].includes(String(view.mergeStateStatus ?? ""))) {
+    return `merge state status is ${view.mergeStateStatus || "unknown"}`;
+  }
+  if (["CHANGES_REQUESTED", "REVIEW_REQUIRED"].includes(String(view.reviewDecision ?? ""))) {
+    return `review decision is ${view.reviewDecision}`;
+  }
+  const checks = summarizeChecks(view.statusCheckRollup ?? []);
+  if (checks.blockers.length > 0) return `checks are not green: ${checks.blockers.slice(0, 8).join(", ")}`;
+  if (checks.total === 0) return "no PR checks found";
+  return "";
+}
+
+function isTransientAutomergeBlock(reason, view) {
+  const text = String(reason ?? "").toLowerCase();
+  if (text.includes("checks are not green")) return hasPendingChecks(view.statusCheckRollup ?? []);
+  return (
+    text.includes("mergeable state is unknown") ||
+    text.includes("merge state status is unknown") ||
+    text.includes("merge state status is unstable") ||
+    text.includes("review decision is review_required") ||
+    text.includes("no pr checks found")
+  );
+}
+
+function hasPendingChecks(checks) {
+  return (checks ?? []).some((check) => {
+    const status = String(check.status ?? check.state ?? "").toUpperCase();
+    const conclusion = String(check.conclusion ?? "").toUpperCase();
+    return status && !["COMPLETED", "SUCCESS"].includes(status) && !conclusion;
+  });
 }
 
 function classifyIssueTarget(issue) {
@@ -407,9 +654,15 @@ function fetchPullRequestView(number) {
       "headRefName",
       "headRefOid",
       "author",
+      "baseRefName",
+      "isDraft",
       "labels",
+      "mergeable",
+      "mergeCommit",
       "mergeStateStatus",
+      "mergedAt",
       "reviewDecision",
+      "state",
       "statusCheckRollup",
       "title",
     ].join(","),
@@ -430,7 +683,7 @@ function ensureHumanReviewLabel(repo) {
   ghBestEffort([
     "label",
     "create",
-    "clownfish:human-review",
+    HUMAN_REVIEW_LABEL,
     "--repo",
     repo,
     "--color",
@@ -438,6 +691,38 @@ function ensureHumanReviewLabel(repo) {
     "--description",
     "Needs maintainer review before Clownfish can continue",
   ]);
+}
+
+function ensureAutomergeLabel(repo) {
+  ghBestEffort([
+    "label",
+    "create",
+    AUTOMERGE_LABEL,
+    "--repo",
+    repo,
+    "--color",
+    "0E8A16",
+    "--description",
+    "Maintainer opted this Clownfish PR into bounded ClawSweeper-reviewed automerge",
+  ]);
+}
+
+function ensureMergeReadyLabel(repo) {
+  ghBestEffort([
+    "label",
+    "create",
+    MERGE_READY_LABEL,
+    "--repo",
+    repo,
+    "--color",
+    "0E8A16",
+    "--description",
+    "Clownfish found a merge-ready candidate; human owns the final merge",
+  ]);
+}
+
+function hasLabel(target, name) {
+  return (target?.labels ?? []).some((labelName) => String(labelName).toLowerCase() === String(name).toLowerCase());
 }
 
 function ledgerPath() {
