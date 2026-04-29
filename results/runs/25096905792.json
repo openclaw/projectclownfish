@@ -1,0 +1,41 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "clawsweeper-commit-openclaw-openclaw-c01244e85927",
+  "mode": "autonomous",
+  "run_id": "25096905792",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25096905792",
+  "head_sha": "7f528ef450b45f8036e13bcee900d56092c11ad8",
+  "workflow_conclusion": "skipped",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/clawsweeper-commit-openclaw-openclaw-c01244e85927.md",
+  "published_at": "2026-04-29T07:43:57.128Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Found one concrete CI/boundary regression. The helper behavior still works in a targeted browser test, but the new filename is still treated as channel/plugin runtime source by the raw-fetch guard, so the boundaries check now fails.",
+  "actions": [
+    {
+      "target": "cluster:clawsweeper-commit-openclaw-openclaw-c01244e85927",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "ClawSweeper found an actionable commit-level bug/regression candidate."
+    }
+  ],
+  "action_counts": {
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
