@@ -1,0 +1,41 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "clawsweeper-commit-openclaw-openclaw-be445dd1c128",
+  "mode": "autonomous",
+  "run_id": "25090412098",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25090412098",
+  "head_sha": "621cfdeb4c1df565501c2994fb4f4eb616e076c2",
+  "workflow_conclusion": "skipped",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/clawsweeper-commit-openclaw-openclaw-be445dd1c128.md",
+  "published_at": "2026-04-29T04:08:38.043Z",
+  "canonical": null,
+  "canonical_issue": null,
+  "canonical_pr": null,
+  "summary": "Found one concrete incomplete-fix bug: the merged normalizer handles leading `U+FFFD/U+FFFE/U+FFFF/FEFF`, but the linked issue and carried-forward PR evidence also describe leading C0/C1 control bytes from `imsg` attributedBody extraction. Those still miss the echo cache and can re-trigger duplicate/looping iMessage replies.",
+  "actions": [
+    {
+      "target": "cluster:clawsweeper-commit-openclaw-openclaw-be445dd1c128",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "ClawSweeper found an actionable commit-level bug/regression candidate."
+    }
+  ],
+  "action_counts": {
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "planned": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
