@@ -3,18 +3,18 @@
   "clownfish_repo": "openclaw/clownfish",
   "head_prefix": "clownfish/",
   "label": "clownfish",
-  "generated_at": "2026-04-29T19:52:45.199Z",
-  "count": 10,
+  "generated_at": "2026-04-29T19:53:51.201Z",
+  "count": 9,
   "summary": {
-    "open_prs": 10,
+    "open_prs": 9,
     "ready_candidates": 0,
     "security_hold": 0,
-    "needs_rebase": 9,
+    "needs_rebase": 8,
     "mergeability_unknown": 0,
     "needs_checks": 3,
     "needs_review": 4,
-    "needs_merge_preflight": 10,
-    "needs_result_backfill": 4
+    "needs_merge_preflight": 9,
+    "needs_result_backfill": 3
   },
   "dispatch": {
     "enabled": false,
@@ -623,60 +623,6 @@
         "needs_merge_state:DIRTY",
         "unresolved review threads remain",
         "needs_merge_preflight"
-      ],
-      "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
-    },
-    {
-      "number": 73996,
-      "title": "fix: interpolate responsePrefix template variables in heartbeat replies",
-      "url": "https://github.com/openclaw/openclaw/pull/73996",
-      "branch": "clownfish/ghcrawl-157060-autonomous-smoke",
-      "head_sha": "faab6d051dd361fc95095918c1e35e2b6c435d65",
-      "cluster_id": "ghcrawl-157060-autonomous-smoke",
-      "job_path": "jobs/openclaw/inbox/ghcrawl-157060-autonomous-smoke.md",
-      "updated_at": "2026-04-29T08:35:48Z",
-      "mergeable": "CONFLICTING",
-      "merge_state_status": "DIRTY",
-      "review_decision": "",
-      "security_hold": false,
-      "checks": {
-        "total": 112,
-        "counts": {
-          "CANCELLED": 3,
-          "SKIPPED": 22,
-          "SUCCESS": 87
-        },
-        "blockers": []
-      },
-      "review_threads": {
-        "status": "clean",
-        "reason": null,
-        "unresolved_count": 0,
-        "examples": []
-      },
-      "review_bots": {
-        "count": 2,
-        "latest": [
-          {
-            "source": "comment",
-            "author": "greptile-apps",
-            "url": "https://github.com/openclaw/openclaw/pull/73996#issuecomment-4340459343",
-            "submitted_at": "2026-04-29T02:40:50Z"
-          },
-          {
-            "source": "comment",
-            "author": "clawsweeper",
-            "url": "https://github.com/openclaw/openclaw/pull/73996#issuecomment-4340462635",
-            "submitted_at": "2026-04-29T02:41:32Z"
-          }
-        ]
-      },
-      "latest_record": null,
-      "blockers": [
-        "needs_rebase:CONFLICTING",
-        "needs_merge_state:DIRTY",
-        "needs_merge_preflight",
-        "needs_result_backfill"
       ],
       "recommended_next_action": "resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review"
     }

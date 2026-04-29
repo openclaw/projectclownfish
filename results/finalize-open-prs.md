@@ -1,20 +1,20 @@
 # Open ProjectClownfish PR Finalizer
 
-Generated: 2026-04-29T19:52:45.199Z
+Generated: 2026-04-29T19:53:51.201Z
 
 ## Summary
 
 | Metric | Count |
 | --- | ---: |
-| open_prs | 10 |
+| open_prs | 9 |
 | ready_candidates | 0 |
 | security_hold | 0 |
-| needs_rebase | 9 |
+| needs_rebase | 8 |
 | mergeability_unknown | 0 |
 | needs_checks | 3 |
 | needs_review | 4 |
-| needs_merge_preflight | 10 |
-| needs_result_backfill | 4 |
+| needs_merge_preflight | 9 |
+| needs_result_backfill | 3 |
 
 ## Dispatch
 
@@ -39,4 +39,3 @@ Status: report_only
 | [#74002](https://github.com/openclaw/openclaw/pull/74002) | fix(exec): respect OPENCLAW_STATE_DIR for exec approvals | ghcrawl-191457-agentic-merge | CONFLICTING | DIRTY | CANCELLED:2 SKIPPED:22 SUCCESS:86 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#74001](https://github.com/openclaw/openclaw/pull/74001) | fix(feishu): reply inside P2P direct-message threads | ghcrawl-165996-agentic-merge | CONFLICTING | DIRTY | CANCELLED:2 SKIPPED:22 SUCCESS:86 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#73998](https://github.com/openclaw/openclaw/pull/73998) | fix(feishu): reconcile WebSocket reconnect backoff | ghcrawl-207048-agentic-merge | CONFLICTING | DIRTY | CANCELLED:1 SKIPPED:22 SUCCESS:86 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
-| [#73996](https://github.com/openclaw/openclaw/pull/73996) | fix: interpolate responsePrefix template variables in heartbeat replies | ghcrawl-157060-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:3 SKIPPED:22 SUCCESS:87 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |

@@ -41,23 +41,23 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 29, 2026, 19:53 UTC
+Last dashboard update: Apr 29, 2026, 19:54 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 285 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 286 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 285 | 100% |
+| Latest clusters reviewed | 286 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 123 | 43.2% |
+| Clean completed clusters | 123 | 43.0% |
 | Needs-human clusters | 42 | 14.7% |
-| Latest successful clusters | 257 | 90.2% |
+| Latest successful clusters | 258 | 90.2% |
 | Latest failed clusters | 4 | 1.4% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 538 | audit |
+| Run attempts archived | 539 | audit |
 | Fix action attempts | 164 | audit |
 | Fix actions executed | 0 | 0.0% |
 | Fix actions failed | 35 | 21.3% |
@@ -66,19 +66,20 @@ Scope: 285 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | Distinct PRs touched | 890 | 100% |
 | Open PRs tracked | 303 | 34.0% |
 | Closed unmerged PRs tracked | 482 | 54.2% |
-| Completed close actions | 30 | 10.6% |
+| Completed close actions | 30 | 10.5% |
 | Completed merge actions | 23 | 8.1% |
 | Duplicate closes | 22 | 73.3% |
 | Superseded closes | 0 | 0.0% |
 | Fixed-by-candidate closes | 0 | 0.0% |
 | Low-signal PR closes | 0 | 0.0% |
-| Blocked mutation attempts | 113 | 39.8% |
-| Skipped mutation attempts | 118 | 41.5% |
+| Blocked mutation attempts | 114 | 40.0% |
+| Skipped mutation attempts | 118 | 41.4% |
 
 ### Clusters Needing Inspection
 
 | Cluster | State | Source job | Reason | Report | Run |
 | --- | --- | --- | --- | --- | --- |
+| [gitcrawl-16529-dedupe-only-20260429-remote](results/openclaw/gitcrawl-16529-dedupe-only-20260429-remote.md) | apply blocked | jobs/openclaw/inbox/gitcrawl-16529-dedupe-only-20260429-remote.md | candidate fix is not listed in job refs | [report](results/openclaw/gitcrawl-16529-dedupe-only-20260429-remote.md) | [25130299053](https://github.com/openclaw/clownfish/actions/runs/25130299053) |
 | [gitcrawl-12535-dedupe-only-20260429-remote](results/openclaw/gitcrawl-12535-dedupe-only-20260429-remote.md) | needs human | jobs/openclaw/inbox/gitcrawl-12535-dedupe-only-20260429-remote.md | Codex worker timed out after 1800000ms | [report](results/openclaw/gitcrawl-12535-dedupe-only-20260429-remote.md) | [25109664831](https://github.com/openclaw/clownfish/actions/runs/25109664831) |
 | [gitcrawl-12851-dedupe-only-20260429-remote](results/openclaw/gitcrawl-12851-dedupe-only-20260429-remote.md) | workflow failure | jobs/openclaw/inbox/gitcrawl-12851-dedupe-only-20260429-remote.md | No close, merge, label, or fix action is safe from this dedupe-only pass. The canonical hint #67816 and related QR follow-up #67820 have ... | [report](results/openclaw/gitcrawl-12851-dedupe-only-20260429-remote.md) | [25109675769](https://github.com/openclaw/clownfish/actions/runs/25109675769) |
 | [gitcrawl-238838-dedupe-only-20260429c](results/openclaw/gitcrawl-238838-dedupe-only-20260429c.md) | apply blocked | jobs/openclaw/inbox/gitcrawl-238838-dedupe-only-20260429c.md | target is not listed in job candidates | [report](results/openclaw/gitcrawl-238838-dedupe-only-20260429c.md) | [25108831266](https://github.com/openclaw/clownfish/actions/runs/25108831266) |
@@ -103,7 +104,6 @@ Scope: 285 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | [ghcrawl-156593-autonomous-smoke](results/openclaw/ghcrawl-156593-autonomous-smoke.md) | fix failed | jobs/openclaw/inbox/ghcrawl-156593-autonomous-smoke.md | To https://github.com/LiaoyuanNing/openclaw.git ! [remote rejected] HEAD -> fix/feishu-p2p-thread-reply (refusing to allow a GitHub App t... | [report](results/openclaw/ghcrawl-156593-autonomous-smoke.md) | [25084314903](https://github.com/openclaw/clownfish/actions/runs/25084314903) |
 | [ghcrawl-156679-autonomous-smoke](results/openclaw/ghcrawl-156679-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156679-autonomous-smoke.md | merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review | [report](results/openclaw/ghcrawl-156679-autonomous-smoke.md) | [25070625859](https://github.com/openclaw/clownfish/actions/runs/25070625859) |
 | [ghcrawl-156682-autonomous-smoke](results/openclaw/ghcrawl-156682-autonomous-smoke.md) | apply blocked | jobs/openclaw/inbox/ghcrawl-156682-autonomous-smoke.md | target is not listed in job candidates | [report](results/openclaw/ghcrawl-156682-autonomous-smoke.md) | [25070632559](https://github.com/openclaw/clownfish/actions/runs/25070632559) |
-| [ghcrawl-156720-autonomous-smoke](results/openclaw/ghcrawl-156720-autonomous-smoke.md) | apply skipped | jobs/openclaw/inbox/ghcrawl-156720-autonomous-smoke.md | Closeout is blocked on the canonical fix path landing. | [report](results/openclaw/ghcrawl-156720-autonomous-smoke.md) | [25070819579](https://github.com/openclaw/clownfish/actions/runs/25070819579) |
 
 ### Fix Failure Queue
 
@@ -152,8 +152,8 @@ Scope: 285 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | Fix-first policy blocks superseded closeout until #49430 is repaired and merged. | 2 | [ghcrawl-156585-autonomous-smoke](results/openclaw/ghcrawl-156585-autonomous-smoke.md) |
 | maintainer issue comment blocks low-signal auto-close | 2 | [low-signal-pr-sweep-20260425T2346-01](results/openclaw/low-signal-pr-sweep-20260425t2346-01.md) |
 | require_fix_before_close blocks superseded PR closeout until the canonical fix path is landed or opened as a concrete fix PR. | 2 | [ghcrawl-156789-autonomous-smoke](results/openclaw/ghcrawl-156789-autonomous-smoke.md) |
+| candidate fix is not listed in job refs | 1 | [gitcrawl-16529-dedupe-only-20260429-remote](results/openclaw/gitcrawl-16529-dedupe-only-20260429-remote.md) |
 | candidate fix is not merged | 1 | [ghcrawl-191459-agentic-merge](results/openclaw/ghcrawl-191459-agentic-merge.md) |
-| Clear covered issue, but closeout is blocked on the canonical fix path landing. | 1 | [ghcrawl-156739-autonomous-smoke](results/openclaw/ghcrawl-156739-autonomous-smoke.md) |
 
 ### Open PR Finalizer Queue
 
@@ -168,7 +168,6 @@ Scope: 285 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | [#74002](https://github.com/openclaw/openclaw/pull/74002) | fix(exec): respect OPENCLAW_STATE_DIR for exec approvals | ghcrawl-191457-agentic-merge | clownfish/ghcrawl-191457-agentic-merge | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#74001](https://github.com/openclaw/openclaw/pull/74001) | fix(feishu): reply inside P2P direct-message threads | ghcrawl-165996-agentic-merge | clownfish/ghcrawl-165996-agentic-merge | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#73998](https://github.com/openclaw/openclaw/pull/73998) | fix(feishu): reconcile WebSocket reconnect backoff | ghcrawl-207048-agentic-merge | clownfish/ghcrawl-207048-agentic-merge | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, unresolved review threads remain, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
-| [#73996](https://github.com/openclaw/openclaw/pull/73996) | fix: interpolate responsePrefix template variables in heartbeat replies | ghcrawl-157060-autonomous-smoke | clownfish/ghcrawl-157060-autonomous-smoke | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_merge_preflight, needs_result_backfill | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 
 ### Latest ProjectClownfish Closures
 
