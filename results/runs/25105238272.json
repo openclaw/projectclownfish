@@ -1,0 +1,103 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-238843-dedupe-only-20260429c",
+  "mode": "autonomous",
+  "run_id": "25105238272",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25105238272",
+  "head_sha": "195790bbe8a80284a2d1f7ba4ba947b141428867",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-238843-dedupe-only-20260429c.md",
+  "published_at": "2026-04-29T11:08:21.015Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/59752",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/59743",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/59752",
+  "summary": "Classified the four open cluster PRs from the hydrated preflight artifact. #59752 remains the canonical open PR for the #59743 media-only/same-target reply suppression bug; #44391 is related but distinct cross-target follow-up work; #59787 and #59795 are superseded alternative #59743 fixes and can be closed with contributor-credit comments. No merge, fix PR, or post-merge closeout is planned because the job blocks merge/fix actions and the canonical PR is still open.",
+  "actions": [
+    {
+      "target": "#59752",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#59752",
+      "candidate_fix": null,
+      "reason": "#59752 is the best live canonical PR for the same-target/media-only reply suppression cluster, but it remains open for validation and maintainer follow-up."
+    },
+    {
+      "target": "#44391",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#59752",
+      "candidate_fix": null,
+      "reason": "Related messaging dedupe work with a different user-visible failure and broad unresolved implementation scope; keep open outside this dedupe closeout."
+    },
+    {
+      "target": "#59787",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#59752",
+      "candidate_fix": null,
+      "reason": "Superseded by the hydrated canonical PR #59752 for the same #59743 media-only reply suppression root cause."
+    },
+    {
+      "target": "#59795",
+      "action": "close_superseded",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#59752",
+      "candidate_fix": null,
+      "reason": "Superseded by the hydrated canonical PR #59752 for the same #59743 media-only reply suppression root cause."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 1,
+    "close_superseded": 2
+  },
+  "action_status_counts": {
+    "planned": 4
+  },
+  "fix_counts": {},
+  "apply_counts": {
+    "blocked": 2
+  },
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": [
+    {
+      "target": "#59787",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#59752",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "gitcrawl-238843-dedupe-only-20260429c:close_superseded:#59787:#59752:2026-04-29T09:20:54Z",
+      "reason": "target changed since worker review",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": "closed",
+      "live_updated_at": "2026-04-29T11:07:44Z"
+    },
+    {
+      "target": "#59795",
+      "action": "close_superseded",
+      "status": "blocked",
+      "classification": "superseded",
+      "canonical": "#59752",
+      "candidate_fix": null,
+      "title": null,
+      "idempotency_key": "gitcrawl-238843-dedupe-only-20260429c:close_superseded:#59795:#59752:2026-04-09T02:23:45Z",
+      "reason": "target changed since worker review",
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "live_state": "closed",
+      "live_updated_at": "2026-04-29T11:07:48Z"
+    }
+  ]
+}

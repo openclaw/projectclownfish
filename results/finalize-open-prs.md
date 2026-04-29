@@ -1,19 +1,19 @@
 # Open ProjectClownfish PR Finalizer
 
-Generated: 2026-04-29T11:07:48.387Z
+Generated: 2026-04-29T11:15:05.055Z
 
 ## Summary
 
 | Metric | Count |
 | --- | ---: |
-| open_prs | 44 |
+| open_prs | 45 |
 | ready_candidates | 0 |
 | security_hold | 1 |
 | needs_rebase | 38 |
 | mergeability_unknown | 0 |
-| needs_checks | 16 |
+| needs_checks | 17 |
 | needs_review | 16 |
-| needs_merge_preflight | 44 |
+| needs_merge_preflight | 45 |
 | needs_result_backfill | 26 |
 
 ## Dispatch
@@ -73,4 +73,5 @@ Status: report_only
 | [#73890](https://github.com/openclaw/openclaw/pull/73890) | fix(installer): warn before npm prefix redirection | ghcrawl-156595-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:2 SKIPPED:21 SUCCESS:87 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
 | [#73889](https://github.com/openclaw/openclaw/pull/73889) | fix(cli): stabilize Windows scheduled-task restart health after ready | ghcrawl-156629-autonomous-smoke | MERGEABLE | UNSTABLE | CANCELLED:1 SKIPPED:20 SUCCESS:84 FAILURE:2; blockers:2 | needs_merge_state:UNSTABLE, needs_checks:CI / checks-node-agentic-commands:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73888](https://github.com/openclaw/openclaw/pull/73888) | fix(daemon): recover systemctl user bus env for gateway commands | ghcrawl-156597-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:1 SKIPPED:20 SUCCESS:84 FAILURE:2; blockers:2 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_checks:CI / checks-node-agentic-commands:FAILURE; CI / checks-node-core:FAILURE, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
+| [#73800](https://github.com/openclaw/openclaw/pull/73800) | fix(hooks): repair shared-hook announcement policy | ghcrawl-156636-autonomous-smoke | MERGEABLE | UNSTABLE | IN_PROGRESS:1 SUCCESS:66 SKIPPED:9; blockers:1 | needs_merge_state:UNSTABLE, needs_checks:Parity gate / Run the OpenAI / Opus 4.6 parity gate against the qa-lab mock:IN_PROGRESS, needs_merge_preflight | repair failing checks or document unrelated main flake with touched-surface proof |
 | [#73799](https://github.com/openclaw/openclaw/pull/73799) | fix(media): treat legacy Word docs as binary attachments | ghcrawl-156640-autonomous-smoke | CONFLICTING | DIRTY | CANCELLED:2 SKIPPED:11 SUCCESS:59 | needs_rebase:CONFLICTING, needs_merge_state:DIRTY, needs_merge_preflight | resume branch, rebase onto current main, repair conflicts, run changed checks, rerun review |
