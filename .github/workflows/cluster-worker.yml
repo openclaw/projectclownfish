@@ -111,15 +111,29 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node24-codex-
 
-      - name: Verify GitHub read token
+      - name: Select GitHub read token
         env:
-          GH_TOKEN: ${{ steps.app_token.outputs.token || secrets.CLOWNFISH_READ_GH_TOKEN || github.token }}
+          CLOWNFISH_APP_GH_TOKEN: ${{ steps.app_token.outputs.token }}
+          CLOWNFISH_READ_GH_TOKEN: ${{ secrets.CLOWNFISH_READ_GH_TOKEN }}
+          CLOWNFISH_WRITE_GH_TOKEN: ${{ secrets.CLOWNFISH_GH_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
-          if [ -z "${GH_TOKEN:-}" ]; then
-            echo "CLOWNFISH_READ_GH_TOKEN is required"
-            exit 1
-          fi
-          gh api "repos/${CLOWNFISH_ALLOWED_OWNER}/openclaw" --jq .full_name >/dev/null
+          set -euo pipefail
+          for candidate in CLOWNFISH_READ_GH_TOKEN CLOWNFISH_WRITE_GH_TOKEN CLOWNFISH_APP_GH_TOKEN GITHUB_TOKEN; do
+            token="${!candidate:-}"
+            if [ -z "$token" ]; then
+              continue
+            fi
+            if GH_TOKEN="$token" gh api "repos/${CLOWNFISH_ALLOWED_OWNER}/openclaw" --jq .full_name >/dev/null 2>/tmp/clownfish-gh-token-check.err; then
+              echo "GH_TOKEN=$token" >> "$GITHUB_ENV"
+              echo "selected $candidate for GitHub read access"
+              exit 0
+            fi
+            echo "::warning::$candidate failed GitHub read probe"
+            sed 's/./*/g' /tmp/clownfish-gh-token-check.err | head -n 1 || true
+          done
+          echo "no GitHub token could read repos/${CLOWNFISH_ALLOWED_OWNER}/openclaw"
+          exit 1
 
       - name: Install Codex CLI
         run: |
@@ -144,8 +158,6 @@ jobs:
         run: npm run validate:job -- "${{ inputs.job }}"
 
       - name: Run worker
-        env:
-          GH_TOKEN: ${{ steps.app_token.outputs.token || secrets.CLOWNFISH_READ_GH_TOKEN || github.token }}
         run: |
           worker_mode="${{ inputs.mode }}"
           if [ "$worker_mode" != "plan" ] && [ "${CLOWNFISH_ALLOW_EXECUTE}" != "1" ]; then
