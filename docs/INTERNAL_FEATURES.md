@@ -179,6 +179,8 @@ new `clownfish/*` replacement branch, `execute-fix-artifact` groups the proposed
 `docs`, reads open Clownfish PRs in the target repo, and blocks if the same area
 already has `CLOWNFISH_MAX_ACTIVE_PRS_PER_AREA` open Clownfish PRs. The default
 limit is `50`; set it to `0` only for a deliberately uncapped execution window.
+Common changelog and release-note files are ignored for this backpressure check
+because they are shared support files rather than a meaningful repair area.
 
 ## ClawSweeper Commit Findings
 

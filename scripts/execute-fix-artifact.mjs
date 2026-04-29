@@ -1472,6 +1472,7 @@ function affectedAreasForFiles(files) {
 function affectedAreaForFile(file) {
   const normalized = String(file ?? "").replaceAll("\\", "/").replace(/^\.\/+/, "");
   if (!normalized || normalized.includes("*")) return "";
+  if (isBackpressureIgnoredFile(normalized)) return "";
   const parts = normalized.split("/").filter(Boolean);
   if (parts.length === 0) return "";
   if (["apps", "extensions", "packages"].includes(parts[0]) && parts[1]) return `${parts[0]}/${parts[1]}`;
@@ -1479,6 +1480,10 @@ function affectedAreaForFile(file) {
   if (parts[0] === "test" || parts[0] === "tests") return parts[0];
   if (parts[0] === "docs" || parts[0] === ".github" || parts[0] === "scripts") return parts[0];
   return parts[0];
+}
+
+function isBackpressureIgnoredFile(file) {
+  return /(^|\/)(CHANGELOG|CHANGES|HISTORY|RELEASES|RELEASE_NOTES)(\.[A-Za-z0-9_-]+)?$/i.test(String(file ?? ""));
 }
 
 function supersededReplacementSources(fixArtifact) {
