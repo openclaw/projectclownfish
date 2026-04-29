@@ -190,7 +190,7 @@ export function renderResponse(command, dispatched) {
       marker,
       "Got it. Clownfish will leave this item for human review.",
       "",
-      "I added `clownfish:human-review` when permissions allowed it. Future automation should treat this as a maintainer handoff signal, so this stays out of the repair lane until someone asks again.",
+      "I kept the regular `clownfish` label on it and paused the automation trail until a maintainer asks again.",
     ].join("\n");
   }
   if (command.intent === "automerge") {
@@ -248,7 +248,7 @@ export function renderResponse(command, dispatched) {
       `Source: \`${command.trusted_bot_author ?? command.author ?? "trusted automation"}\``,
       `Reason: ${command.repair_reason ?? "ClawSweeper requested human review."}`,
       "",
-      "I added `clownfish:human-review` when permissions allowed it.",
+      "I kept the regular `clownfish` label on it and left the final call with a maintainer.",
     ].join("\n");
   }
   if (!dispatched) {

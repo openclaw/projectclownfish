@@ -4,6 +4,7 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { assertAllowedOwner, hasSecuritySignalText, parseArgs, parseJob, repoRoot, validateJob } from "./lib.mjs";
+import { defaultCloseComment, externalMessageProvenance } from "./external-messages.mjs";
 
 const MAINTAINER_AUTHOR_ASSOCIATIONS = new Set(["OWNER", "MEMBER", "COLLABORATOR"]);
 const CLOSE_ACTIONS = new Set([
@@ -18,8 +19,9 @@ const MERGE_ACTIONS = new Set(["merge_candidate", "merge_canonical"]);
 const CLOSE_CLASSIFICATIONS = new Set(["duplicate", "superseded", "fixed_by_candidate", "low_signal"]);
 const PASSING_CHECK_CONCLUSIONS = new Set(["SUCCESS", "SKIPPED", "NEUTRAL"]);
 const CLEAN_MERGE_STATES = new Set(["CLEAN"]);
-const HUMAN_REVIEW_LABEL = "clownfish:human-review";
-const MERGE_READY_LABEL = "clownfish:merge-ready";
+const CLOWNFISH_LABEL = "clownfish";
+const CLOWNFISH_LABEL_COLOR = "F97316";
+const CLOWNFISH_LABEL_DESCRIPTION = "Tracked by Clownfish automation";
 
 const args = parseArgs(process.argv.slice(2));
 const jobPath = args._[0];
@@ -406,11 +408,11 @@ function applyMergeAction({ job, result, action, dryRun, allowMissingUpdatedAt, 
   }
 
   if (process.env.CLOWNFISH_ALLOW_MERGE !== "1") {
-    if (!dryRun) labelForHumanMergeReview(result.repo, target);
+    if (!dryRun) labelForClownfishReview(result.repo, target);
     return {
       ...base,
       status: "blocked",
-      reason: "merge requires CLOWNFISH_ALLOW_MERGE=1; labeled for human review",
+      reason: "merge requires CLOWNFISH_ALLOW_MERGE=1; labeled clownfish",
       live_state: live.state,
       live_updated_at: live.updated_at,
       merge_method: "squash",
@@ -499,11 +501,9 @@ function validateMergePolicy({ job, action }) {
   return "";
 }
 
-function labelForHumanMergeReview(repo, target) {
-  ensureLabel(repo, HUMAN_REVIEW_LABEL, "B60205", "Needs maintainer review before Clownfish can finish");
-  ensureLabel(repo, MERGE_READY_LABEL, "0E8A16", "Clownfish found a merge-ready candidate; human owns the final merge");
-  ghBestEffort(["issue", "edit", String(target), "--repo", repo, "--add-label", HUMAN_REVIEW_LABEL]);
-  ghBestEffort(["issue", "edit", String(target), "--repo", repo, "--add-label", MERGE_READY_LABEL]);
+function labelForClownfishReview(repo, target) {
+  ensureLabel(repo, CLOWNFISH_LABEL, CLOWNFISH_LABEL_COLOR, CLOWNFISH_LABEL_DESCRIPTION);
+  ghBestEffort(["issue", "edit", String(target), "--repo", repo, "--add-label", CLOWNFISH_LABEL]);
 }
 
 function ensureLabel(repo, name, color, description) {
@@ -701,45 +701,20 @@ function renderCloseComment({ action, classification, result, target, live }) {
   const canonical = normalizeIssueRef(action.canonical ?? action.duplicate_of);
   const candidateFix = normalizeIssueRef(action.candidate_fix ?? action.fixed_by ?? action.fix_candidate);
   const title = typeof live.title === "string" ? live.title : `#${target}`;
-  const evidence = Array.isArray(action.evidence) ? action.evidence : [];
-  const evidenceLines = evidence
-    .slice(0, 5)
-    .map((item) => `- ${typeof item === "string" ? item : (item.detail ?? JSON.stringify(item))}`);
   const reason = action.reason ? String(action.reason).trim() : closeReasonText(classification);
-  const lines = [`Thanks for this. Clownfish reviewed this cluster and is closing #${target}.`];
-  lines.push("");
-  if (classification === "duplicate" && canonical) {
-    lines.push(
-      `This appears to duplicate #${canonical}. I'm keeping #${canonical} as the canonical thread so fixes, validation, and follow-up stay in one place.`,
-    );
-  } else if (classification === "superseded" && canonical) {
-    lines.push(
-      `This is superseded by #${canonical}. I'm keeping that thread as the canonical path so the useful context and contributor credit stay visible.`,
-    );
-  } else if (classification === "superseded" && candidateFix) {
-    lines.push(
-      `This is superseded by landed fix #${candidateFix}. I'm closing this older overlap so validation and follow-up stay attached to the shipped path.`,
-    );
-  } else if (classification === "fixed_by_candidate" && candidateFix) {
-    lines.push(
-      `This is covered by candidate fix #${candidateFix}. I'm closing this thread so validation and follow-up stay attached to that fix path.`,
-    );
-  } else if (classification === "low_signal") {
-    lines.push(
-      "This falls under the low-signal PR cleanup policy: the PR does not currently present a reviewable OpenClaw fix with maintainer signal, current validation, or a focused product path. Please reopen from a clean branch with a scoped summary, linked issue or rationale, and validation if this is still needed.",
-    );
-  } else {
-    lines.push(reason);
-  }
-  lines.push("");
-  lines.push(`Cluster: \`${result.cluster_id}\``);
-  lines.push(`Reviewed item: #${target} - ${title}`);
-  if (evidenceLines.length) lines.push("", "Evidence:", ...evidenceLines);
-  lines.push(
-    "",
-    "If this has a different reproduction path or still reproduces after the canonical fix lands, reply and we can reopen or split it back out.",
-  );
-  return lines.join("\n");
+  return defaultCloseComment({
+    action,
+    classification,
+    clusterId: result.cluster_id,
+    target,
+    title,
+    canonical,
+    candidateFix,
+    reason,
+    provenance: externalMessageProvenance({
+      reviewedSha: action.reviewed_sha ?? action.head_sha ?? result.reviewed_sha ?? result.head_sha,
+    }),
+  });
 }
 
 function closeReasonText(classification) {

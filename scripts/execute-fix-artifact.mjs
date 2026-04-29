@@ -4,6 +4,13 @@ import os from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { assertAllowedOwner, parseArgs, parseJob, repoRoot, validateJob } from "./lib.mjs";
+import {
+  externalMessageProvenance,
+  repairContributorBranchComment,
+  replacementPrBody,
+  replacementSourceCloseComment,
+  replacementSourceLinkComment,
+} from "./external-messages.mjs";
 
 const FIX_ACTIONS = new Set(["fix_needed", "build_fix_artifact", "open_fix_pr"]);
 const REPAIR_STRATEGIES = new Set(["repair_contributor_branch", "replace_uneditable_branch", "new_fix_pr"]);
@@ -31,11 +38,13 @@ const skipCodexWritePreflight = process.env.CLOWNFISH_SKIP_CODEX_WRITE_PREFLIGHT
 const allowExpensiveValidation = process.env.CLOWNFISH_ALLOW_EXPENSIVE_VALIDATION === "1";
 const installTargetDeps = process.env.CLOWNFISH_INSTALL_TARGET_DEPS !== "0";
 const allowBroadFixArtifacts = process.env.CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS === "1";
+const closeSupersededSourcePrs = process.env.CLOWNFISH_CLOSE_SUPERSEDED_SOURCE_PRS === "1";
 const maxAutonomousFixFiles = Math.max(1, Number(process.env.CLOWNFISH_MAX_AUTONOMOUS_FIX_FILES ?? 8));
 const maxAutonomousFixSurfaces = Math.max(1, Number(process.env.CLOWNFISH_MAX_AUTONOMOUS_FIX_SURFACES ?? 4));
 const maxActivePrsPerArea = Number(process.env.CLOWNFISH_MAX_ACTIVE_PRS_PER_AREA ?? 50);
 const CLOWNFISH_LABEL = "clownfish";
-const COMMIT_FINDING_LABEL = "clownfish:commit-finding";
+const CLOWNFISH_LABEL_COLOR = "F97316";
+const CLOWNFISH_LABEL_DESCRIPTION = "Tracked by Clownfish automation";
 const strictTargetValidation =
   process.env.CLOWNFISH_STRICT_TARGET_VALIDATION === "1" ||
   String(process.env.CLOWNFISH_TARGET_VALIDATION_MODE ?? "changed-only") === "strict";
@@ -367,13 +376,15 @@ function executeRepairBranch({ fixArtifact, targetDir }) {
   const pushArgs = repairBranchPushArgs({ pull, rebased });
   run("git", pushArgs, { cwd: targetDir });
   const threadResolution = prepareReviewThreadsForMerge({ repo: result.repo, number: sourcePr.number, targetDir });
-  const comment = [
-    "Thanks for the work here. Clownfish pushed a narrow repair to this branch so the original contributor path can stay canonical.",
-    "",
-    `Source PR: ${sourcePr.url}`,
-    `Validation: ${fixArtifact.validation_commands.join("; ")}`,
-    "Contributor credit stays preserved in the branch history and PR context.",
-  ].join("\n");
+  const comment = repairContributorBranchComment({
+    sourcePrUrl: sourcePr.url,
+    validationCommands: fixArtifact.validation_commands,
+    provenance: externalMessageProvenance({
+      model,
+      reasoning: codexReasoningEffort,
+      reviewedSha: prep.commit,
+    }),
+  });
   run("gh", ["pr", "comment", String(sourcePr.number), "--repo", result.repo, "--body", comment], { cwd: targetDir, env: ghEnv() });
   return {
     action: "repair_contributor_branch",
@@ -444,7 +455,12 @@ function executeReplacementBranch({ fixArtifact, targetDir, supersedeSources, fa
   if (refreshValidatedBranchBase({ targetDir, branch, baseBranch })) {
     prep.commit = currentHead(targetDir);
   }
-  const body = replacementPrBody(fixArtifact, fallbackReason, contributorCredits);
+  const provenance = externalMessageProvenance({
+    model,
+    reasoning: codexReasoningEffort,
+    reviewedSha: prep.commit,
+  });
+  const body = replacementPrBody({ fixArtifact, fallbackReason, clusterId: result.cluster_id, provenance });
   if (dryRun) {
     return {
       action: "open_fix_pr",
@@ -486,7 +502,9 @@ function executeReplacementBranch({ fixArtifact, targetDir, supersedeSources, fa
       const parsed = parsePullRequestUrl(source);
       if (!parsed || parsed.repo !== result.repo) continue;
       supersededSourceActions.push(
-        closeSupersededSourcePr({ source, parsed, replacementPrUrl: prUrl, targetDir, contributorCredits }),
+        closeSupersededSourcePrs
+          ? closeSupersededSourcePr({ source, parsed, replacementPrUrl: prUrl, targetDir, contributorCredits, provenance })
+          : linkReplacementSourcePr({ source, parsed, replacementPrUrl: prUrl, targetDir, provenance }),
       );
     }
   }
@@ -508,12 +526,8 @@ function executeReplacementBranch({ fixArtifact, targetDir, supersedeSources, fa
 }
 
 function labelReplacementPullRequest({ number, targetDir }) {
-  ensureLabel(result.repo, CLOWNFISH_LABEL, "0E8A16", "Tracked by Clownfish automation", targetDir);
+  ensureLabel(result.repo, CLOWNFISH_LABEL, CLOWNFISH_LABEL_COLOR, CLOWNFISH_LABEL_DESCRIPTION, targetDir);
   addLabel(result.repo, number, CLOWNFISH_LABEL, targetDir);
-  if (job.frontmatter.source === "clawsweeper_commit" || job.frontmatter.commit_sha) {
-    ensureLabel(result.repo, COMMIT_FINDING_LABEL, "1D76DB", "PR created from a ClawSweeper commit finding", targetDir);
-    addLabel(result.repo, number, COMMIT_FINDING_LABEL, targetDir);
-  }
 }
 
 function ensureLabel(repo, name, color, description, targetDir) {
@@ -534,7 +548,25 @@ function addLabel(repo, number, name, targetDir) {
   });
 }
 
-function closeSupersededSourcePr({ source, parsed, replacementPrUrl, targetDir, contributorCredits }) {
+function linkReplacementSourcePr({ source, parsed, replacementPrUrl, targetDir, provenance }) {
+  const base = { source, pr: `#${parsed.number}`, action: "link_replacement_source" };
+  const view = fetchSourcePullRequestView({ repo: result.repo, number: parsed.number, targetDir });
+  if (view.mergedAt || view.state === "MERGED") {
+    return { ...base, status: "skipped", reason: "already merged", merged_at: view.mergedAt ?? null };
+  }
+  if (view.state === "CLOSED") {
+    return { ...base, status: "skipped", reason: "already closed" };
+  }
+
+  const comment = replacementSourceLinkComment({ replacementPrUrl, sourcePrUrl: source, provenance });
+  run("gh", ["pr", "comment", String(parsed.number), "--repo", result.repo, "--body", comment], {
+    cwd: targetDir,
+    env: ghEnv(),
+  });
+  return { ...base, status: "executed", reason: "linked replacement PR without closing source PR" };
+}
+
+function closeSupersededSourcePr({ source, parsed, replacementPrUrl, targetDir, contributorCredits, provenance }) {
   const base = { source, pr: `#${parsed.number}`, action: "close_superseded_source" };
   const view = fetchSourcePullRequestView({ repo: result.repo, number: parsed.number, targetDir });
   if (view.mergedAt || view.state === "MERGED") {
@@ -544,16 +576,7 @@ function closeSupersededSourcePr({ source, parsed, replacementPrUrl, targetDir, 
     return { ...base, status: "skipped", reason: "already closed" };
   }
 
-  const carriedCredit = sourceCreditLines({ source, contributorCredits });
-  const comment = [
-    "Thanks for the source work here. Clownfish could not safely update this branch, so I opened a narrow replacement PR instead.",
-    "",
-    `Replacement PR: ${replacementPrUrl}`,
-    `Source PR: ${source}`,
-    ...carriedCredit,
-    "Closing this PR to keep review focused on the replacement. The contribution is carried forward, not discarded.",
-    "If the replacement misses any intent from this PR, please carry that context over there and I can adjust it.",
-  ].join("\n");
+  const comment = replacementSourceCloseComment({ replacementPrUrl, sourcePrUrl: source, provenance });
   run("gh", ["pr", "comment", String(parsed.number), "--repo", result.repo, "--body", comment], {
     cwd: targetDir,
     env: ghEnv(),
@@ -1302,22 +1325,6 @@ function codexReviewSchemaPath() {
   return schemaPath;
 }
 
-function replacementPrBody(fixArtifact, fallbackReason, contributorCredits = []) {
-  const creditLines = contributorCredits.map((credit) => `- ${publicCreditLabel(credit)} from ${credit.sources.join(", ")}`);
-  const lines = [
-    fixArtifact.pr_body.trim(),
-    "",
-    "Clownfish replacement details:",
-    `- Cluster: ${result.cluster_id}`,
-    `- Source PRs: ${(fixArtifact.source_prs ?? []).join(", ") || "none"}`,
-    `- Credit: ${fixArtifact.credit_notes.join("; ")}`,
-    ...(creditLines.length > 0 ? ["", "Carried-forward contributor credit:", ...creditLines] : []),
-    `- Validation: ${fixArtifact.validation_commands.join("; ")}`,
-  ];
-  if (fallbackReason) lines.push(`- Repair fallback: ${fallbackReason}`);
-  return `${lines.join("\n")}\n`;
-}
-
 function sourceContributorCredits({ fixArtifact, targetDir }) {
   const byLogin = new Map();
   for (const source of fixArtifact.source_prs ?? []) {
@@ -1367,10 +1374,6 @@ function publicContributorCredit(credit) {
   };
 }
 
-function publicCreditLabel(credit) {
-  return `@${credit.login} (${credit.name || credit.login})`;
-}
-
 function safeTrailerName(value, fallback = "Contributor") {
   const name = String(value ?? "")
     .replace(/[<>\r\n]/g, "")
@@ -1380,14 +1383,6 @@ function safeTrailerName(value, fallback = "Contributor") {
 
 function isBotLogin(login) {
   return /\[bot\]$|bot$/i.test(String(login ?? ""));
-}
-
-function sourceCreditLines({ source, contributorCredits }) {
-  const matching = contributorCredits.filter((credit) => credit.sources.includes(source));
-  if (matching.length === 0) {
-    return ["Contributor credit is preserved in the replacement PR body and changelog plan."];
-  }
-  return matching.map((credit) => `Credit preserved: thanks @${credit.login}; they are carried forward as co-author in the replacement PR.`);
 }
 
 function validateActivePrAreaCapacity({ fixArtifact, targetDir, branch }) {
