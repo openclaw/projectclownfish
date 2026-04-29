@@ -118,12 +118,27 @@ test("parseTrustedAutomation accepts trusted ClawSweeper pass verdicts for autom
   assert.match(parsed.repair_reason, /verdict: pass/);
 });
 
-test("parseTrustedAutomation accepts trusted ClawSweeper human-review verdicts", () => {
+test("parseTrustedAutomation treats trusted ClawSweeper needs-human as automerge repair input", () => {
   const trustedAuthors = new Set(["clawsweeper[bot]"]);
   const parsed = parseTrustedAutomation(
     {
       user: { login: "clawsweeper[bot]" },
       body: "ClawSweeper needs maintainer judgment.\n<!-- clawsweeper-verdict:needs-human sha=abc123 -->",
+    },
+    { trustedAuthors },
+  );
+
+  assert.equal(parsed.intent, "clawsweeper_auto_repair");
+  assert.equal(parsed.expected_head_sha, "abc123");
+  assert.match(parsed.repair_reason, /needs-human/);
+});
+
+test("parseTrustedAutomation preserves explicit human-review verdicts as pauses", () => {
+  const trustedAuthors = new Set(["clawsweeper[bot]"]);
+  const parsed = parseTrustedAutomation(
+    {
+      user: { login: "clawsweeper[bot]" },
+      body: "ClawSweeper needs explicit human review.\n<!-- clawsweeper-verdict:human-review sha=abc123 -->",
     },
     { trustedAuthors },
   );
@@ -190,6 +205,46 @@ test("renderResponse reports trusted repair dispatches without losing guardrails
   assert.match(body, /safe credited replacement/);
   assert.match(body, /narrow fix/);
   assert.doesNotMatch(body, /ProjectClownfish/i);
+});
+
+test("renderResponse reports needs-human automerge repair dispatches", () => {
+  const body = renderResponse(
+    {
+      comment_id: "457",
+      intent: "clawsweeper_auto_repair",
+      trusted_bot_author: "clawsweeper[bot]",
+      repair_reason: "structured ClawSweeper verdict: needs-human",
+      target: { head_sha: "def457" },
+    },
+    {
+      workflow: "cluster-worker.yml",
+      job_path: "jobs/openclaw/inbox/automerge-openclaw-openclaw-74156.md",
+      mode: "autonomous",
+      model: "gpt-5.5",
+    },
+  );
+
+  assert.match(body, /continuing the automerge repair loop/);
+  assert.match(body, /cluster-worker\.yml/);
+  assert.match(body, /automerge-openclaw-openclaw-74156/);
+  assert.doesNotMatch(body, /did not dispatch/);
+});
+
+test("renderResponse reports explicit human-review pause actions", () => {
+  const body = renderResponse(
+    {
+      comment_id: "458",
+      intent: "clawsweeper_needs_human",
+      trusted_bot_author: "clawsweeper[bot]",
+      repair_reason: "structured ClawSweeper verdict: human-review",
+      target: { head_sha: "def458" },
+    },
+    null,
+  );
+
+  assert.match(body, /pausing automerge/);
+  assert.match(body, /clownfish:human-review/);
+  assert.doesNotMatch(body, /did not dispatch/);
 });
 
 test("renderResponse reports automerge completion", () => {

@@ -369,11 +369,13 @@ the backing job, posts one idempotent response marker, and dispatches
 
 Trusted ClawSweeper comments become `clawsweeper_auto_repair`. Preferred
 comments use hidden `clawsweeper-verdict:*` markers and include
-`clawsweeper-action:fix-required` only when Clownfish should wake up. The
-default caps are five automatic repair iterations per PR and one dispatch per
-PR head SHA. The per-PR cap is total across head SHA changes, so repeated
-findings on the same commit do not stampede the branch and a single PR cannot
-loop forever.
+`clawsweeper-action:fix-required` only when Clownfish should wake up. For PRs
+already opted into `clownfish:automerge`, a trusted `needs-human` verdict also
+wakes the bounded repair/rebase loop; explicit `human-review` still pauses the
+loop. The default caps are five automatic repair iterations per PR and one
+dispatch per PR head SHA. The per-PR cap is total across head SHA changes, so
+repeated findings on the same commit do not stampede the branch and a single PR
+cannot loop forever.
 
 For PRs labeled `clownfish:automerge`, trusted ClawSweeper `pass`, `approved`,
 or `no-changes` verdict markers become `clawsweeper_auto_merge`. The router

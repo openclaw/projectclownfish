@@ -228,6 +228,13 @@ function classifyCommand(command) {
         status: execute ? "pending" : "planned",
       });
     }
+    if (hasLabel(target, HUMAN_REVIEW_LABEL)) {
+      actions.push({
+        action: "remove_label",
+        label: HUMAN_REVIEW_LABEL,
+        status: execute ? "pending" : "planned",
+      });
+    }
     return {
       ...next,
       status: "ready",
@@ -281,6 +288,13 @@ function classifyCommand(command) {
     actions.push({
       action: "ensure_automerge_job",
       job_path: repairJobPath,
+      status: execute ? "pending" : "planned",
+    });
+  }
+  if (!command.trusted_bot && hasLabel(target, HUMAN_REVIEW_LABEL)) {
+    actions.push({
+      action: "remove_label",
+      label: HUMAN_REVIEW_LABEL,
       status: execute ? "pending" : "planned",
     });
   }
@@ -423,8 +437,12 @@ function executeCommand(command) {
       return;
     }
     dispatched = dispatchRepair(command);
+    if (!command.trusted_bot && hasLabel(command.target, HUMAN_REVIEW_LABEL)) {
+      ghBestEffort(["issue", "edit", String(command.issue_number), "--repo", command.repo, "--remove-label", HUMAN_REVIEW_LABEL]);
+    }
     command.actions = command.actions.map((action) => {
       if (action.action === "ensure_automerge_job") return { ...action, status: "executed", ...job };
+      if (action.action === "remove_label") return { ...action, status: "executed", label: HUMAN_REVIEW_LABEL };
       if (action.action === "dispatch_repair") {
         return {
           ...action,
@@ -440,11 +458,15 @@ function executeCommand(command) {
   if (command.intent === "automerge" && command.issue_number) {
     const job = ensureAutomergeJob(command);
     ensureAutomergeLabel(command.repo);
+    if (hasLabel(command.target, HUMAN_REVIEW_LABEL)) {
+      ghBestEffort(["issue", "edit", String(command.issue_number), "--repo", command.repo, "--remove-label", HUMAN_REVIEW_LABEL]);
+    }
     ghBestEffort(["issue", "edit", String(command.issue_number), "--repo", command.repo, "--add-label", AUTOMERGE_LABEL]);
     const clawsweeper = dispatchClawSweeperReview(command);
     dispatched = { ...(dispatched ?? {}), clawsweeper };
     command.actions = command.actions.map((action) => {
       if (action.action === "label") return { ...action, status: "executed", label: AUTOMERGE_LABEL };
+      if (action.action === "remove_label") return { ...action, status: "executed", label: HUMAN_REVIEW_LABEL };
       if (action.action === "ensure_automerge_job") return { ...action, status: "executed", ...job };
       if (action.action === "dispatch_clawsweeper") {
         return { ...action, status: "executed", dispatched_at: new Date().toISOString(), ...clawsweeper };

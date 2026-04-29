@@ -72,7 +72,7 @@ Title: ${safeTitle}
 
 Clownfish should use this job only for the bounded ClawSweeper review/fix loop:
 
-- If ClawSweeper requests changes and the PR branch is safe to update, emit a fix artifact with \`repair_strategy: "repair_contributor_branch"\` and \`source_prs: ["${prUrl}"]\`.
+- If ClawSweeper requests changes, returns \`needs-human\`, or finds failing checks/rebase work, and the PR branch is safe to update, emit a fix artifact with \`repair_strategy: "repair_contributor_branch"\` and \`source_prs: ["${prUrl}"]\`.
 - If the PR branch cannot be safely updated, emit a narrow credited replacement only when the artifact can preserve the original contributor credit; otherwise return \`needs_human\`.
 - Do not merge, close, or bypass review gates from the worker. The comment router owns final merge only after a passing ClawSweeper verdict for the exact current head.
 - Keep repair scope limited to actionable ClawSweeper findings, failing relevant checks, and required review feedback on this PR.
@@ -134,7 +134,14 @@ export function parseTrustedAutomation(comment, { trustedAuthors = new Set() } =
       marker: verdict,
     });
   }
-  if (verdict && ["needs-human", "human-review"].includes(verdict.action)) {
+  if (verdict && verdict.action === "needs-human") {
+    return trustedRepair({
+      author,
+      reason: `structured ClawSweeper verdict: ${verdict.action}${markerReasonSuffix(verdict.attrs)}`,
+      marker: verdict,
+    });
+  }
+  if (verdict && verdict.action === "human-review") {
     return trustedHumanReview({
       author,
       reason: `structured ClawSweeper verdict: ${verdict.action}${markerReasonSuffix(verdict.attrs)}`,
@@ -200,21 +207,13 @@ export function renderResponse(command, dispatched) {
       "A maintainer can pause this with `/clownfish stop`.",
     ].join("\n");
   }
-  if (!dispatched) {
-    return [
-      marker,
-      "Clownfish did not dispatch a repair worker for this one.",
-      "",
-      `Reason: ${command.reason ?? "unsupported command or target"}.`,
-      "",
-      "Supported repair commands work on existing Clownfish PRs and PRs opted into `clownfish:automerge`: `/clownfish fix ci`, `/clownfish address review`, `/clownfish rebase`.",
-      "A maintainer can opt a PR in with `/clownfish automerge` and I can take another pass.",
-    ].join("\n");
-  }
   if (command.intent === "clawsweeper_auto_repair") {
+    const fromNeedsHuman = String(command.repair_reason ?? "").includes("needs-human");
     return [
       marker,
-      "Thanks, ClawSweeper. Clownfish picked up the repair feedback.",
+      fromNeedsHuman
+        ? "Thanks, ClawSweeper. Clownfish is continuing the automerge repair loop for this PR."
+        : "Thanks, ClawSweeper. Clownfish picked up the repair feedback.",
       "",
       `Source: \`${command.trusted_bot_author ?? command.author ?? "trusted automation"}\``,
       `Feedback: ${command.repair_reason ?? "ClawSweeper requested another repair pass."}`,
@@ -250,6 +249,17 @@ export function renderResponse(command, dispatched) {
       `Reason: ${command.repair_reason ?? "ClawSweeper requested human review."}`,
       "",
       "I added `clownfish:human-review` when permissions allowed it.",
+    ].join("\n");
+  }
+  if (!dispatched) {
+    return [
+      marker,
+      "Clownfish did not dispatch a repair worker for this one.",
+      "",
+      `Reason: ${command.reason ?? "unsupported command or target"}.`,
+      "",
+      "Supported repair commands work on existing Clownfish PRs and PRs opted into `clownfish:automerge`: `/clownfish fix ci`, `/clownfish address review`, `/clownfish rebase`.",
+      "A maintainer can opt a PR in with `/clownfish automerge` and I can take another pass.",
     ].join("\n");
   }
   return [

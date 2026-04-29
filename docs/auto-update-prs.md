@@ -139,8 +139,10 @@ Accepted repair verdicts:
 `pass`, `approved`, and `no-changes` verdicts never repair. On a PR opted into
 `clownfish:automerge`, a pass verdict for the exact current head can merge only
 after required checks, mergeability, review state, and both merge gates are
-green. `needs-human` and `human-review` pause automerge by adding
-`clownfish:human-review`.
+green. `needs-human` still wakes the bounded repair/rebase loop for an opted-in
+PR so Clownfish can reconcile conflicts, failing checks, and review follow-up
+before asking again. `human-review` and `/clownfish stop` pause automerge by
+adding `clownfish:human-review`.
 
 The router also has a conservative fallback for current ClawSweeper review
 comments. It only applies to trusted bot authors and looks for phrases like

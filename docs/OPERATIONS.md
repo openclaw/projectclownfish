@@ -219,7 +219,9 @@ branch when safe or opens a credited replacement when it is not; `pass`,
 `approved`, or `no-changes` may merge only when the marker SHA matches the
 current head, checks and mergeability are clean, no human-review label is
 present, and both `CLOWNFISH_ALLOW_MERGE=1` and
-`CLOWNFISH_ALLOW_AUTOMERGE=1` are set. `/clownfish stop` or a `needs-human`
+`CLOWNFISH_ALLOW_AUTOMERGE=1` are set. A trusted `needs-human` verdict on an
+opted-in PR dispatches the repair/rebase loop so Clownfish can reconcile the
+branch before asking again. `/clownfish stop` or an explicit `human-review`
 verdict adds `clownfish:human-review` and pauses the loop.
 
 The scheduled workflow is dry by default. Set
