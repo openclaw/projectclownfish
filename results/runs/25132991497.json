@@ -1,0 +1,90 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-2389-dedupe-only-20260429-remote",
+  "mode": "autonomous",
+  "run_id": "25132991497",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25132991497",
+  "head_sha": "e5e8212693f31b1f59eff0d60675a97be8c33e90",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-2389-dedupe-only-20260429-remote.md",
+  "published_at": "2026-04-29T20:58:01.239Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/43095",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/43095",
+  "canonical_pr": null,
+  "summary": "#43095 remains the live canonical issue for the sessions_send accepted/delivered versus reply-wait timeout contract. The closed refs are evidence-only, no close/comment/label mutation is needed, and a non-mutating fix artifact captures the narrow follow-up implementation because current main still has the ambiguity and no viable PR is hydrated.",
+  "actions": [
+    {
+      "target": "#20939",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#43095",
+      "candidate_fix": null,
+      "reason": "Closed fallback-specific context issue; keep as historical evidence only."
+    },
+    {
+      "target": "#42233",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#43095",
+      "candidate_fix": null,
+      "reason": "Closed related implementation context; no mutation is valid for this run."
+    },
+    {
+      "target": "#43095",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#43095",
+      "candidate_fix": null,
+      "reason": "Best surviving open canonical for the remaining sessions_send result-contract ambiguity."
+    },
+    {
+      "target": "#53527",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "duplicate",
+      "canonical": "#43095",
+      "candidate_fix": null,
+      "reason": "Already-closed duplicate of #43095; keep as evidence only."
+    },
+    {
+      "target": "cluster:gitcrawl-2389-dedupe-only-20260429-remote",
+      "action": "fix_needed",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#43095",
+      "candidate_fix": null,
+      "reason": "A canonical fix path is needed, but this run is non-mutating and cannot raise a PR."
+    },
+    {
+      "target": "cluster:gitcrawl-2389-dedupe-only-20260429-remote",
+      "action": "build_fix_artifact",
+      "status": "planned",
+      "classification": null,
+      "canonical": "#43095",
+      "candidate_fix": null,
+      "reason": "Build a non-mutating follow-up artifact for the canonical contract fix without opening a PR in this job."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 3,
+    "keep_canonical": 1,
+    "fix_needed": 1,
+    "build_fix_artifact": 1
+  },
+  "action_status_counts": {
+    "skipped": 3,
+    "planned": 3
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
