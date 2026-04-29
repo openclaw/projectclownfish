@@ -1,0 +1,43 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "automerge-openclaw-openclaw-74126",
+  "mode": "autonomous",
+  "run_id": "25101630563",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25101630563",
+  "head_sha": "d9e3c14fa23a71b76a4116e7b20f27399c6b4825",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/inbox/automerge-openclaw-openclaw-74126.md",
+  "published_at": "2026-04-29T09:46:35.179Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/74126",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/74126",
+  "summary": "#74126 is the only hydrated item and remains the canonical PR, but the ClawSweeper finding is an operational/manual blocker rather than a repairable source change. The PR has no file changes, says not to merge, and the branch cannot be updated by maintainers, so no narrow fix artifact or replacement PR is appropriate from this worker run.",
+  "actions": [
+    {
+      "target": "#74126",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "canonical",
+      "canonical": "#74126",
+      "candidate_fix": null,
+      "reason": "The only required next step is maintainer-owned completion/closure of an operational smoke-test PR. Automation should not merge, close, or open an empty replacement PR."
+    }
+  ],
+  "action_counts": {
+    "needs_human": 1
+  },
+  "action_status_counts": {
+    "blocked": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [
+    "#74126: maintainer needs to complete the live automerge adoption smoke check and close the PR manually if appropriate; the hydrated artifact provides no narrow code repair or replacement PR path for Clownfish."
+  ],
+  "fix_actions": [],
+  "apply_actions": []
+}
