@@ -104,7 +104,7 @@ no-PR outcome and the audit file records the skip.
 
 ## Security Boundary
 
-Security-sensitive work is centrally managed outside ProjectClownfish. The importer skips those clusters by default, the job schema rejects `security_sensitive: true`, the planner marks hydrated security-sensitive items only from explicit security labels or structured ClawSweeper security markers, `review-results` fails mutating recommendations against those items, and `apply-result` blocks live targets with security-sensitive labels/title/body.
+Security-sensitive work is centrally managed outside ProjectClownfish. The importer skips those clusters by default, the job schema rejects `security_sensitive: true`, the planner marks hydrated security-sensitive items only from explicit security labels or structured ClawSweeper security markers, `review-results` fails mutating recommendations against those items, and live merge/close finalizers re-check those deterministic signals before mutating.
 
 Use the central OpenClaw security path for:
 
@@ -113,7 +113,7 @@ Use the central OpenClaw security path for:
 - SSRF, XSS, CSRF, RCE, auth-token leakage, or similar security-class bugs.
 
 This boundary is intentionally conservative. If a cluster is borderline, do not stage it here.
-For adopted automerge jobs, do not classify security from review prose. ClawSweeper must emit a deterministic marker such as `<!-- clawsweeper-security:security-sensitive item=<pr> sha=<head-sha> -->` when the automerge loop should route the PR to central security handling.
+For adopted automerge jobs, do not classify security from review prose at planning, repair, merge, or closeout time. ClawSweeper must emit a deterministic marker such as `<!-- clawsweeper-security:security-sensitive item=<pr> sha=<head-sha> -->` when the automerge loop should route the PR to central security handling.
 
 ## Auto-Closure
 

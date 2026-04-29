@@ -2,7 +2,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
-import { assertAllowedOwner, hasSecuritySignalText, parseArgs, parseJob, repoRoot, validateJob } from "./lib.mjs";
+import { assertAllowedOwner, hasDeterministicSecuritySignal, parseArgs, parseJob, repoRoot, validateJob } from "./lib.mjs";
 import { externalMessageProvenance, postMergeCloseoutComment } from "./external-messages.mjs";
 
 const PASSING_CHECK_CONCLUSIONS = new Set(["SUCCESS", "SKIPPED", "NEUTRAL"]);
@@ -242,7 +242,7 @@ function finalizePostMergeCloseout({ action, actionName, target, fixRef, fixUrl,
       merge_commit_sha: finalized.merge_commit_sha ?? null,
     };
   }
-  if (hasSecuritySignalText(live.title, live.body, live.labels ?? [])) {
+  if (hasLiveSecuritySignal(target, live.labels ?? [])) {
     return { ...base, status: "blocked", reason: "security-sensitive target requires central security triage" };
   }
   if (dryRun) {
@@ -300,11 +300,23 @@ function ensureLabel(repo, name, color, description) {
   }
 }
 
+function hasLiveSecuritySignal(number, labels) {
+  if (hasDeterministicSecuritySignal({ labels })) return true;
+  const bodies = ghWithRetry([
+    "api",
+    `repos/${result.repo}/issues/${number}/comments?per_page=100`,
+    "--paginate",
+    "--jq",
+    ".[].body",
+  ]);
+  return hasDeterministicSecuritySignal({ comments: [bodies] });
+}
+
 function validateMergeableFixPr({ pull, view, preflight }) {
   if (pull.state !== "open") return `pull request is ${pull.state}`;
   if (pull.draft || view.isDraft) return "pull request is draft";
   if (String(view.baseRefName ?? pull.base?.ref ?? "") !== "main") return "pull request base is not main";
-  if (hasSecuritySignalText(pull.title, pull.body, pull.labels ?? [])) {
+  if (hasLiveSecuritySignal(pull.number, pull.labels ?? [])) {
     return "security-sensitive PR requires central security triage";
   }
   if (view.mergeable !== "MERGEABLE") return `mergeable state is ${view.mergeable || "unknown"}`;

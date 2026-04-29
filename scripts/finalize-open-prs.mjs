@@ -5,7 +5,7 @@ import { execFileSync } from "node:child_process";
 import {
   assertLiveWorkerCapacity,
   currentProjectRepo,
-  hasSecuritySignalText,
+  hasDeterministicSecuritySignal,
   parseArgs,
   parseJob,
   readMaxLiveWorkers,
@@ -170,7 +170,7 @@ function classifyPullRequest(pull, publishedRecords) {
 
   if (pull.isDraft) blockers.push("draft");
   if (String(pull.baseRefName ?? "") !== "main") blockers.push(`base is ${pull.baseRefName || "unknown"}`);
-  if (hasSecuritySignalText(pull.title, pull.body, pull.labels ?? [])) blockers.push("security_hold");
+  if (hasDeterministicPullSecuritySignal(pull)) blockers.push("security_hold");
   if (isSecurityRoutedAction(latestApplyAction)) blockers.push("security_route");
   if (pull.mergeable === "UNKNOWN") {
     blockers.push("mergeability_unknown");
@@ -296,6 +296,16 @@ function summarizeChecks(checks) {
     counts,
     blockers,
   };
+}
+
+function hasDeterministicPullSecuritySignal(pull) {
+  return hasDeterministicSecuritySignal({
+    labels: pull.labels ?? [],
+    comments: [
+      (pull.comments ?? []).map((comment) => comment.body),
+      (pull.reviews ?? []).map((review) => review.body),
+    ],
+  });
 }
 
 function displayCheckName(check) {

@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { assertAllowedOwner, hasSecuritySignalText, parseArgs, parseJob, repoRoot, validateJob } from "./lib.mjs";
+import { assertAllowedOwner, hasDeterministicSecuritySignal, parseArgs, parseJob, repoRoot, validateJob } from "./lib.mjs";
 import { defaultCloseComment, externalMessageProvenance } from "./external-messages.mjs";
 
 const MAINTAINER_AUTHOR_ASSOCIATIONS = new Set(["OWNER", "MEMBER", "COLLABORATOR"]);
@@ -774,7 +774,9 @@ function validateLowSignalLiveState(repo, target, live, kind) {
 }
 
 function hasSecuritySignal(issue) {
-  return hasSecuritySignalText(issue.title, issue.body, issue.labels ?? []);
+  if (hasDeterministicSecuritySignal({ labels: issue.labels ?? [] })) return true;
+  const comments = ghPaged(`repos/${result.repo}/issues/${issue.number}/comments?per_page=100`).map((comment) => comment.body ?? "");
+  return hasDeterministicSecuritySignal({ comments });
 }
 
 function fetchIssue(repo, number) {
