@@ -4,7 +4,7 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 import {
   assertAllowedOwner,
-  hasSecuritySignalText,
+  hasDeterministicSecuritySignal,
   makeRunDir,
   parseArgs,
   parseJob,
@@ -447,13 +447,14 @@ function classificationHint(item, job) {
 
 function itemSecuritySensitive(item, job) {
   if (securityOverrideRefs(job).has(`#${item.number}`)) return false;
-  return hasSecuritySignalText(
-    item.title,
-    item.body,
-    item.labels,
-    item.comments.map((comment) => comment.body),
-    item.pull_request?.files?.map((file) => file.filename),
-  );
+  return hasDeterministicSecuritySignal({
+    labels: item.labels,
+    comments: [
+      item.comments.map((comment) => comment.body),
+      item.pull_request?.reviews?.map((review) => review.body ?? review.body_excerpt),
+      item.pull_request?.review_comments?.map((comment) => comment.body),
+    ],
+  });
 }
 
 function securityOverrideRefs(job) {
