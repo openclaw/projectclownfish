@@ -1,0 +1,50 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-12882-dedupe-only-20260429d",
+  "mode": "autonomous",
+  "run_id": "25143489238",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25143489238",
+  "head_sha": "1ec0acac1fb4111b0e6e83564a87181cc117f225",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-12882-dedupe-only-20260429d.md",
+  "published_at": "2026-04-30T02:03:59.104Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/67943",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/67943",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/67946",
+  "summary": "Classified the hydrated two-item cluster without GitHub mutation. #67943 remains the best live canonical issue for the stale subagent lineage bug, and #67946 remains the focused same-author implementation candidate. No close, merge, fix, or PR-opening action is planned because instant close, merge, fix, raise_pr, and post-merge closeout are disabled for this job, and the issue should stay open until #67946 or an equivalent fix lands.",
+  "actions": [
+    {
+      "target": "#67943",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#67943",
+      "candidate_fix": "#67946",
+      "reason": "#67943 is the canonical open report for this root cause and should remain open until the linked implementation candidate lands or is replaced."
+    },
+    {
+      "target": "#67946",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#67946",
+      "candidate_fix": "#67946",
+      "reason": "#67946 is the focused canonical implementation candidate for #67943, but this dedupe-only job should keep it open for maintainer review rather than close, merge, or replace it."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 2
+  },
+  "action_status_counts": {
+    "planned": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
