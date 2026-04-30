@@ -1,0 +1,52 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-3127-dedupe-only-20260429d",
+  "mode": "autonomous",
+  "run_id": "25142564981",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25142564981",
+  "head_sha": "635e49e8d0f5f1f39d5a829d2a709a0e61ee5f73",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-3127-dedupe-only-20260429d.md",
+  "published_at": "2026-04-30T01:28:02.725Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/68926",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/68926",
+  "summary": "Classified the hydrated cluster without GitHub mutations. The original representative #52656 is already closed and should stay historical evidence only; the only live canonical path is #68926, which remains open but is not merge-ready.",
+  "actions": [
+    {
+      "target": "#52656",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "superseded",
+      "canonical": "#68926",
+      "candidate_fix": null,
+      "reason": "Closed historical PR only. The gitcrawl representative is obsolete as a live canonical target."
+    },
+    {
+      "target": "#68926",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#68926",
+      "candidate_fix": null,
+      "reason": "#68926 is the current canonical PR for the remaining feature scope, but it needs maintainer/contributor follow-up before any merge or closeout path."
+    }
+  ],
+  "action_counts": {
+    "keep_closed": 1,
+    "keep_canonical": 1
+  },
+  "action_status_counts": {
+    "skipped": 1,
+    "planned": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
