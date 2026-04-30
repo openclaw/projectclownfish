@@ -1,0 +1,60 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-15323-dedupe-only-20260429d",
+  "mode": "autonomous",
+  "run_id": "25143529289",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25143529289",
+  "head_sha": "1ec0acac1fb4111b0e6e83564a87181cc117f225",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-15323-dedupe-only-20260429d.md",
+  "published_at": "2026-04-30T02:07:32.302Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/51208",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/51208",
+  "canonical_pr": null,
+  "summary": "Using the hydrated preflight artifact as live state, #51208 remains the best open canonical for the mapped-hook codex-cli resume bug. #70894 is related and has its own open candidate fix #70895, but it is not a true duplicate of #51208 and should stay open until that PR or an equivalent lands. No close/comment/label mutation is planned because instant close and post-merge close are disabled, #70895 is unmerged, and its hydrated checks include failures.",
+  "actions": [
+    {
+      "target": "#51208",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#51208",
+      "candidate_fix": null,
+      "reason": "Best surviving open canonical for the mapped-hook codex-cli resume/root session-continuation report."
+    },
+    {
+      "target": "#70894",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#51208",
+      "candidate_fix": "#70895",
+      "reason": "Related direct-webhook session continuity issue covered by candidate PR #70895, but not safe to close in this dedupe-only run."
+    },
+    {
+      "target": "#70895",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#51208",
+      "candidate_fix": "#70895",
+      "reason": "Useful open candidate for the related #70894 subpath; keep it open for maintainer review, repair, or replacement outside this dedupe-only job."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 2
+  },
+  "action_status_counts": {
+    "planned": 3
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
