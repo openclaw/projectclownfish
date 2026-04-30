@@ -1,0 +1,60 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-3442-dedupe-only-20260429d",
+  "mode": "autonomous",
+  "run_id": "25142589656",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25142589656",
+  "head_sha": "635e49e8d0f5f1f39d5a829d2a709a0e61ee5f73",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-3442-dedupe-only-20260429d.md",
+  "published_at": "2026-04-30T01:29:59.689Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/65785",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/65768",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/65785",
+  "summary": "Classified the MiniMax web_search credential cluster from the hydrated preflight artifact at main cab86dc32541a664b8048f62bd47a0ada294fc41. #65768 remains the canonical bug issue, #65785 remains the canonical open PR for the MINIMAX_OAUTH_TOKEN runtime fallback but is not merge-ready, and #65828 is a related MINIMAX_API_KEY metadata/onboarding PR rather than a duplicate. No close, merge, or fix actions are planned because the cluster is dedupe-only, instant close is disabled, merge/fix are blocked, and the related PR has unresolved review and credential-policy questions.",
+  "actions": [
+    {
+      "target": "#65768",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#65768",
+      "candidate_fix": "#65785",
+      "reason": "Canonical issue for the MINIMAX_OAUTH_TOKEN web_search bug remains open; no close action is valid."
+    },
+    {
+      "target": "#65785",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#65785",
+      "candidate_fix": "#65785",
+      "reason": "Best canonical PR for the OAuth-token bug, but it is not merge-ready; keep it open for repair, review, and validation."
+    },
+    {
+      "target": "#65828",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#65785",
+      "candidate_fix": null,
+      "reason": "Related MiniMax credential metadata/onboarding work, not a true duplicate of the OAuth-token runtime bug; keep open as its own review path."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 2,
+    "keep_related": 1
+  },
+  "action_status_counts": {
+    "planned": 3
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
