@@ -1,0 +1,62 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-7472-dedupe-only-20260429d",
+  "mode": "autonomous",
+  "run_id": "25142725803",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25142725803",
+  "head_sha": "8a3c4b53d7ee7d2fb198d1574bbacd17ea63af32",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-7472-dedupe-only-20260429d.md",
+  "published_at": "2026-04-30T01:35:01.083Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/50522",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/41355",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/50522",
+  "summary": "Classified #50522 as the open canonical Discord ThreadStarterBody fix path. #41355 stays open as the paired issue covered by #50522, and #61156 is already closed and independent because it handled Discord ack reaction account context, not ThreadStarterBody re-injection. No close, merge, or fix action is planned because instant close, merge, and fix PR creation are disabled for this job, and #50522 still lacks merge-ready proof.",
+  "actions": [
+    {
+      "target": "#50522",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#50522",
+      "candidate_fix": null,
+      "reason": "#50522 remains the best live canonical PR, but this job is limited to non-merge/non-fix classification."
+    },
+    {
+      "target": "#41355",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#50522",
+      "candidate_fix": "#50522",
+      "reason": "#41355 is covered by the canonical candidate #50522 but should not be closed before the fix lands."
+    },
+    {
+      "target": "#61156",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "independent",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "#61156 is already closed and is not a duplicate of the canonical ThreadStarterBody cluster."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 1,
+    "keep_closed": 1
+  },
+  "action_status_counts": {
+    "planned": 2,
+    "skipped": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
