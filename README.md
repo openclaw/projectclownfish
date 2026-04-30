@@ -41,31 +41,31 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 30, 2026, 01:47 UTC
+Last dashboard update: Apr 30, 2026, 01:48 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 349 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 350 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 349 | 100% |
+| Latest clusters reviewed | 350 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 172 | 49.3% |
+| Clean completed clusters | 173 | 49.4% |
 | Needs-human clusters | 51 | 14.6% |
-| Latest successful clusters | 321 | 92.0% |
+| Latest successful clusters | 322 | 92.0% |
 | Latest failed clusters | 4 | 1.1% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 602 | audit |
+| Run attempts archived | 603 | audit |
 | Fix action attempts | 164 | audit |
 | Fix actions executed | 0 | 0.0% |
 | Fix actions failed | 35 | 21.3% |
 | Fix actions blocked | 50 | 30.5% |
 | Latest clusters with fix failures | 44 | 12.6% |
-| Distinct PRs touched | 1067 | 100% |
-| Open PRs tracked | 420 | 39.4% |
-| Closed unmerged PRs tracked | 528 | 49.5% |
+| Distinct PRs touched | 1068 | 100% |
+| Open PRs tracked | 421 | 39.4% |
+| Closed unmerged PRs tracked | 528 | 49.4% |
 | Completed close actions | 30 | 10.4% |
 | Completed merge actions | 23 | 8.0% |
 | Duplicate closes | 22 | 73.3% |

@@ -1,0 +1,50 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-10299-dedupe-only-20260429d",
+  "mode": "autonomous",
+  "run_id": "25143074492",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25143074492",
+  "head_sha": "409422518ec79d91a76943837b4592abd04b8a86",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-10299-dedupe-only-20260429d.md",
+  "published_at": "2026-04-30T01:48:08.658Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/59913",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/59913",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/62070",
+  "summary": "No GitHub mutations are planned. #59913 remains the canonical open issue; #62070 is the focused same-author canonical repair PR, but merge/fix execution is unavailable in this dedupe-only job and current PR gates are not clean.",
+  "actions": [
+    {
+      "target": "#59913",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#59913",
+      "candidate_fix": "#62070",
+      "reason": "Keep #59913 open as the canonical issue until #62070 or an equivalent fix lands; fixed-by-candidate closeout is not safe because the candidate PR remains open and has failing/unknown merge gates."
+    },
+    {
+      "target": "#62070",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#59913",
+      "candidate_fix": "#62070",
+      "reason": "Keep #62070 open as the canonical repair path for #59913. Do not merge, close, or supersede it in this dedupe-only run; failing checks, unknown mergeability, and blocked merge/fix permissions require fresh validation outside this job."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 2
+  },
+  "action_status_counts": {
+    "planned": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
