@@ -1,0 +1,51 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-5552-dedupe-only-20260429d",
+  "mode": "autonomous",
+  "run_id": "25142676229",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25142676229",
+  "head_sha": "e997b655a004e15bb7c2622ec2ff5314326ca887",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-5552-dedupe-only-20260429d.md",
+  "published_at": "2026-04-30T01:31:58.580Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/43866",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/43866",
+  "canonical_pr": null,
+  "summary": "Classified the two open cluster refs from the hydrated preflight artifact. #43866 remains the canonical open issue for the /hooks/agent accountId bug. #43951 is an open implementation PR for the same area but is explicitly marked security-sensitive in preflight, has unresolved ClawSweeper security/review findings, is dirty, and has maintainer_can_modify=false, so it is quarantined to central security handling rather than merged, closed, or used as a fix path.",
+  "actions": [
+    {
+      "target": "#43866",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#43866",
+      "candidate_fix": null,
+      "reason": "#43866 is the best surviving non-security canonical issue. No close, merge, post-merge close, or fix PR is allowed for this run."
+    },
+    {
+      "target": "#43951",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PR is out of ProjectClownfish mutation scope and must be routed to central OpenClaw security handling."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "planned": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
