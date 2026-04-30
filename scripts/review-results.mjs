@@ -475,8 +475,16 @@ function evidenceHasExternalUrl(evidence) {
   return evidence.some((item) => {
     const text = typeof item === "string" ? item : JSON.stringify(item);
     const urls = text.match(/https?:\/\/[^\s)\]"']+/g) ?? [];
-    return urls.some((url) => !url.includes("github.com/"));
+    return urls.some(isExternalUrl);
   });
+}
+
+function isExternalUrl(value) {
+  try {
+    return new URL(value).hostname !== "github.com";
+  } catch {
+    return false;
+  }
 }
 
 function normalizeRef(ref) {

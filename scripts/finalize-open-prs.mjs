@@ -733,6 +733,7 @@ function checkSummaryCell(checks) {
 
 function tableCell(value) {
   return String(value ?? "")
+    .replace(/\\/g, "\\\\")
     .replace(/\r?\n/g, " ")
     .replace(/\|/g, "\\|")
     .trim();
