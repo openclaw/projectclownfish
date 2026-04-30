@@ -41,31 +41,31 @@ The default workflow is proposal-first. It does not comment or close unless a jo
 
 ## Dashboard
 
-Last dashboard update: Apr 30, 2026, 01:11 UTC
+Last dashboard update: Apr 30, 2026, 01:12 UTC
 
 <!-- projectclownfish-dashboard:start -->
 State: Failed clusters need inspection
 
-Scope: 329 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
+Scope: 330 active latest cluster reports. 1 policy-archived cluster(s) are excluded from health stats; run attempts are tracked as audit history only.
 
 | Metric | Count | Rate |
 | --- | ---: | ---: |
-| Latest clusters reviewed | 329 | 100% |
+| Latest clusters reviewed | 330 | 100% |
 | Policy-archived clusters | 1 | audit |
-| Clean completed clusters | 154 | 46.8% |
-| Needs-human clusters | 49 | 14.9% |
-| Latest successful clusters | 301 | 91.5% |
+| Clean completed clusters | 154 | 46.7% |
+| Needs-human clusters | 50 | 15.2% |
+| Latest successful clusters | 302 | 91.5% |
 | Latest failed clusters | 4 | 1.2% |
 | Latest cancelled clusters | 0 | 0.0% |
-| Run attempts archived | 582 | audit |
+| Run attempts archived | 583 | audit |
 | Fix action attempts | 164 | audit |
 | Fix actions executed | 0 | 0.0% |
 | Fix actions failed | 35 | 21.3% |
 | Fix actions blocked | 50 | 30.5% |
-| Latest clusters with fix failures | 44 | 13.4% |
-| Distinct PRs touched | 1030 | 100% |
-| Open PRs tracked | 389 | 37.8% |
-| Closed unmerged PRs tracked | 523 | 50.8% |
+| Latest clusters with fix failures | 44 | 13.3% |
+| Distinct PRs touched | 1034 | 100% |
+| Open PRs tracked | 392 | 37.9% |
+| Closed unmerged PRs tracked | 523 | 50.6% |
 | Completed close actions | 30 | 10.4% |
 | Completed merge actions | 23 | 8.0% |
 | Duplicate closes | 22 | 73.3% |
@@ -79,6 +79,7 @@ Scope: 329 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 
 | Cluster | State | Source job | Reason | Report | Run |
 | --- | --- | --- | --- | --- | --- |
+| [gitcrawl-17200-dedupe-only-20260429d](results/openclaw/gitcrawl-17200-dedupe-only-20260429d.md) | needs human | jobs/openclaw/inbox/gitcrawl-17200-dedupe-only-20260429d.md | Maintainer decision needed before merge or automated repair: choose the canonical Firecrawl self-hosting network-policy shape for #63877,... | [report](results/openclaw/gitcrawl-17200-dedupe-only-20260429d.md) | [25142106015](https://github.com/openclaw/clownfish/actions/runs/25142106015) |
 | [gitcrawl-3154-dedupe-only-20260429d](results/openclaw/gitcrawl-3154-dedupe-only-20260429d.md) | needs human | jobs/openclaw/inbox/gitcrawl-3154-dedupe-only-20260429d.md | #53522 requires maintainer branch/split decision: it overlaps the focused #53441 Synology fix, includes already-shipped web_fetch/status ... | [report](results/openclaw/gitcrawl-3154-dedupe-only-20260429d.md) | [25142072560](https://github.com/openclaw/clownfish/actions/runs/25142072560) |
 | [gitcrawl-9101-dedupe-only-20260429-remote](results/openclaw/gitcrawl-9101-dedupe-only-20260429-remote.md) | needs human | jobs/openclaw/inbox/gitcrawl-9101-dedupe-only-20260429-remote.md | Choose the intended desktop Cron editor layout before superseding or closing either #55978 or #47582: preserve sticky New/Edit Job behavi... | [report](results/openclaw/gitcrawl-9101-dedupe-only-20260429-remote.md) | [25137271613](https://github.com/openclaw/clownfish/actions/runs/25137271613) |
 | [gitcrawl-5707-dedupe-only-20260429-remote](results/openclaw/gitcrawl-5707-dedupe-only-20260429-remote.md) | needs human | jobs/openclaw/inbox/gitcrawl-5707-dedupe-only-20260429-remote.md | #40044 and #66312 need maintainer product/API direction on the prompt-visible Runtime session identifier before either PR can be treated ... | [report](results/openclaw/gitcrawl-5707-dedupe-only-20260429-remote.md) | [25136426946](https://github.com/openclaw/clownfish/actions/runs/25136426946) |
@@ -103,7 +104,6 @@ Scope: 329 active latest cluster reports. 1 policy-archived cluster(s) are exclu
 | [automerge-openclaw-openclaw-74126](results/openclaw/automerge-openclaw-openclaw-74126.md) | needs human | jobs/openclaw/inbox/automerge-openclaw-openclaw-74126.md | #74126: maintainer needs to complete the live automerge adoption smoke check and close the PR manually if appropriate; the hydrated artif... | [report](results/openclaw/automerge-openclaw-openclaw-74126.md) | [25101630563](https://github.com/openclaw/clownfish/actions/runs/25101630563) |
 | [gitcrawl-238884-dedupe-only-20260429c](results/openclaw/gitcrawl-238884-dedupe-only-20260429c.md) | apply blocked | jobs/openclaw/inbox/gitcrawl-238884-dedupe-only-20260429c.md | target changed since worker review | [report](results/openclaw/gitcrawl-238884-dedupe-only-20260429c.md) | [25100259952](https://github.com/openclaw/clownfish/actions/runs/25100259952) |
 | [clawsweeper-commit-openclaw-openclaw-fda8cc2a9d9a](results/openclaw/clawsweeper-commit-openclaw-openclaw-fda8cc2a9d9a.md) | apply blocked | jobs/openclaw/inbox/clawsweeper-commit-openclaw-openclaw-fda8cc2a9d9a.md | job does not allow merge | [report](results/openclaw/clawsweeper-commit-openclaw-openclaw-fda8cc2a9d9a.md) | [25095715904](https://github.com/openclaw/clownfish/actions/runs/25095715904) |
-| [clawsweeper-commit-openclaw-openclaw-6a4c866b6a8b](results/openclaw/clawsweeper-commit-openclaw-openclaw-6a4c866b6a8b.md) | fix blocked | jobs/openclaw/inbox/clawsweeper-commit-openclaw-openclaw-6a4c866b6a8b.md | fix artifact is too broad for autonomous execution; split into narrower jobs or explicitly set CLOWNFISH_ALLOW_BROAD_FIX_ARTIFACTS=1 | [report](results/openclaw/clawsweeper-commit-openclaw-openclaw-6a4c866b6a8b.md) | [25094690632](https://github.com/openclaw/clownfish/actions/runs/25094690632) |
 
 ### Fix Failure Queue
 

@@ -1,0 +1,83 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-17200-dedupe-only-20260429d",
+  "mode": "autonomous",
+  "run_id": "25142106015",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25142106015",
+  "head_sha": "a0b870a07f2988db4b233d32e6ac2590b6afdb2d",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-17200-dedupe-only-20260429d.md",
+  "published_at": "2026-04-30T01:11:41.291Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/63941",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/63877",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/63941",
+  "summary": "Classified #63877 as the canonical open bug report and #63941 as the best live canonical implementation PR. No close, merge, or fix actions are planned: #63941 is still unmerged with an unresolved Firecrawl network-policy review decision, #59666 is superseded but should stay open while the canonical path is unsettled, and linked #74013 needs maintainer direction before it can be treated as a replacement or follow-up.",
+  "actions": [
+    {
+      "target": "#63877",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#63877",
+      "candidate_fix": "#63941",
+      "reason": "Keep the user report open as the canonical issue until a canonical Firecrawl self-hosting fix lands."
+    },
+    {
+      "target": "#63941",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#63941",
+      "candidate_fix": null,
+      "reason": "Best live canonical implementation PR, but merge and fix lanes are disabled and the remaining network-policy decision blocks any merge recommendation."
+    },
+    {
+      "target": "#59666",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#63941",
+      "candidate_fix": "#63941",
+      "reason": "Superseded by the current canonical PR family, but keep open because closeout is disabled and the canonical fix has not landed."
+    },
+    {
+      "target": "#74013",
+      "action": "needs_human",
+      "status": "planned",
+      "classification": "needs_human",
+      "canonical": "#63941",
+      "candidate_fix": null,
+      "reason": "Maintainers need to decide whether the explicit allowSelfHosted policy from #74013 should be part of the canonical Firecrawl self-hosting fix or remain a separate follow-up."
+    },
+    {
+      "target": "#59465",
+      "action": "keep_closed",
+      "status": "skipped",
+      "classification": "related",
+      "canonical": "#63941",
+      "candidate_fix": null,
+      "reason": "Closed historical context only; no mutation is valid for an already-closed ref."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 2,
+    "keep_related": 1,
+    "needs_human": 1,
+    "keep_closed": 1
+  },
+  "action_status_counts": {
+    "planned": 4,
+    "skipped": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [
+    "Maintainer decision needed before merge or automated repair: choose the canonical Firecrawl self-hosting network-policy shape for #63877, specifically whether #63941's private/local detection should be strengthened with DNS-backed validation or whether #74013's explicit allowSelfHosted flag should be incorporated after fixing its per-operation scoping bug."
+  ],
+  "fix_actions": [],
+  "apply_actions": []
+}
