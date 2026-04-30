@@ -1,0 +1,51 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-895-dedupe-only-20260429d",
+  "mode": "autonomous",
+  "run_id": "25142174989",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25142174989",
+  "head_sha": "648ee3e7433ac16b20750c3504e698d7c9252763",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-895-dedupe-only-20260429d.md",
+  "published_at": "2026-04-30T01:14:04.021Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/71862",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/71862",
+  "summary": "Hydrated state makes #71862 the current canonical implementation candidate. #68621 is an older overlapping PR and is superseded by #71862, but no close action is planned in this run because instant closeout is disabled and #71862 has not landed.",
+  "actions": [
+    {
+      "target": "#71862",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#71862",
+      "candidate_fix": null,
+      "reason": "#71862 is newer, more complete, and explicitly identified by the hydrated ClawSweeper comment as the active implementation path; merge/fix actions are out of scope for this job."
+    },
+    {
+      "target": "#68621",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "superseded",
+      "canonical": "#71862",
+      "candidate_fix": "#71862",
+      "reason": "Superseded by #71862, but kept open in this run because closeout is not currently permitted and the canonical PR has not landed."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 1
+  },
+  "action_status_counts": {
+    "planned": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
