@@ -1,0 +1,51 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-7619-dedupe-only-20260429d",
+  "mode": "autonomous",
+  "run_id": "25142993698",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25142993698",
+  "head_sha": "409422518ec79d91a76943837b4592abd04b8a86",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-7619-dedupe-only-20260429d.md",
+  "published_at": "2026-04-30T01:44:41.742Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/50998",
+  "canonical_issue": null,
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/50998",
+  "summary": "Hydrated preflight state keeps #50998 as the open representative for the permission-prompt bug family, but #50998 is security-sensitive and must be routed only to central OpenClaw security handling. #51011 is a related iOS Privacy & Access settings PR with distinct feature/UI scope and unresolved review/product blockers, so it stays open; no close, merge, fix, label, or public comment action is planned.",
+  "actions": [
+    {
+      "target": "#50998",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive PR is out of Clownfish backlog mutation scope and must be routed to central OpenClaw security handling."
+    },
+    {
+      "target": "#51011",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#50998",
+      "candidate_fix": null,
+      "reason": "Related iOS permission UX work with distinct feature scope and unresolved review/product questions; not eligible for duplicate or superseded closure in this dedupe-only job."
+    }
+  ],
+  "action_counts": {
+    "route_security": 1,
+    "keep_related": 1
+  },
+  "action_status_counts": {
+    "planned": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
