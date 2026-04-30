@@ -1,0 +1,69 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-15220-dedupe-only-20260429d",
+  "mode": "autonomous",
+  "run_id": "25143521082",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25143521082",
+  "head_sha": "1ec0acac1fb4111b0e6e83564a87181cc117f225",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-15220-dedupe-only-20260429d.md",
+  "published_at": "2026-04-30T02:04:59.029Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/72004",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/71992",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/72004",
+  "summary": "Canonical path is the focused open PR #72004 for the Control UI assistant-final duplicate-render race. PR #49332 is adjacent but not the best canonical: it mixes unrelated runtime/provider/Discord/ops changes and still has unresolved review findings, so it should remain open as related maintainer follow-up rather than be closed or merged in this dedupe-only job. No close, merge, fix, or PR-opening actions are planned.",
+  "actions": [
+    {
+      "target": "#72004",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#72004",
+      "candidate_fix": null,
+      "reason": "Best current canonical PR for the duplicate-render race; merge is out of scope for this job."
+    },
+    {
+      "target": "#49332",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#72004",
+      "candidate_fix": null,
+      "reason": "Related follow-up, not a strict duplicate of #72004 and not safe to close or merge from this job."
+    },
+    {
+      "target": "#71992",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#72004",
+      "candidate_fix": "#72004",
+      "reason": "Covered by canonical candidate #72004, but no closeout is allowed before merge."
+    },
+    {
+      "target": "#69208",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Related umbrella context only; not a duplicate target for this PR-only dedupe job."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 3
+  },
+  "action_status_counts": {
+    "planned": 4
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
