@@ -1,0 +1,64 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-2955-dedupe-only-20260429d",
+  "mode": "autonomous",
+  "run_id": "25142253912",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25142253912",
+  "head_sha": "4685439e0115b00b3c3895ee6c31b79d8ae00252",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "needs_human",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-2955-dedupe-only-20260429d.md",
+  "published_at": "2026-04-30T01:17:07.612Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/46748",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/46748",
+  "canonical_pr": null,
+  "summary": "Classified the live hydrated cluster without GitHub mutation. The representative PR #46782 is quarantined as security-sensitive because its diff includes an unrelated security-observability regression. The canonical non-security tracker is the open linked issue #46748. The remaining non-security implementation PR #47365 targets the same issue but needs maintainer judgment before repair or merge because it has failing checks and an unresolved CLI backward-compatibility decision around the released --local-time flag.",
+  "actions": [
+    {
+      "target": "#46748",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#46748",
+      "candidate_fix": null,
+      "reason": "Keep the open issue as the canonical non-security tracker for the log timestamp default behavior."
+    },
+    {
+      "target": "#46782",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-sensitive evidence is scoped to #46782, so it should be routed to central OpenClaw security handling and not used as the canonical automation path."
+    },
+    {
+      "target": "#47365",
+      "action": "needs_human",
+      "status": "blocked",
+      "classification": "needs_human",
+      "canonical": "#46748",
+      "candidate_fix": null,
+      "reason": "A maintainer needs to choose the CLI compatibility path for #47365 before it can become a repairable canonical PR or be superseded."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "route_security": 1,
+    "needs_human": 1
+  },
+  "action_status_counts": {
+    "planned": 2,
+    "blocked": 1
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [
+    "#47365: decide whether the fix must preserve the released --local-time flag alongside --utc, use an explicit deprecation path, or be replaced by another implementation before any repair or merge lane proceeds."
+  ],
+  "fix_actions": [],
+  "apply_actions": []
+}
