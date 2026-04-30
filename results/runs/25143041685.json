@@ -1,0 +1,51 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-8847-dedupe-only-20260429d",
+  "mode": "autonomous",
+  "run_id": "25143041685",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25143041685",
+  "head_sha": "409422518ec79d91a76943837b4592abd04b8a86",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-8847-dedupe-only-20260429d.md",
+  "published_at": "2026-04-30T01:47:08.288Z",
+  "canonical": "https://github.com/openclaw/openclaw/issues/55126",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/55126",
+  "canonical_pr": null,
+  "summary": "Canonical issue #55126 is still open and remains the best live canonical for the OpenAI memorySearch outputDimensionality bug. PR #55507 is a useful open related candidate fix for the same root cause, but this dedupe-only job blocks merge, fix, and raise_pr actions, and the PR lacks merge preflight proof, so no close, merge, or fix action is planned.",
+  "actions": [
+    {
+      "target": "#55126",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#55126",
+      "candidate_fix": "#55507",
+      "reason": "Representative #55126 is still open, hydrated, non-security-sensitive, and is the canonical issue for this root cause."
+    },
+    {
+      "target": "#55507",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "related",
+      "canonical": "#55126",
+      "candidate_fix": null,
+      "reason": "PR #55507 tracks the same root cause and should remain open for maintainer review or refresh; this job cannot merge, repair, replace, or close it."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 1
+  },
+  "action_status_counts": {
+    "planned": 2
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
