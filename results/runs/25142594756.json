@@ -1,0 +1,61 @@
+{
+  "repo": "openclaw/openclaw",
+  "cluster_id": "gitcrawl-3466-dedupe-only-20260429d",
+  "mode": "autonomous",
+  "run_id": "25142594756",
+  "run_url": "https://github.com/openclaw/clownfish/actions/runs/25142594756",
+  "head_sha": "635e49e8d0f5f1f39d5a829d2a709a0e61ee5f73",
+  "workflow_conclusion": "success",
+  "workflow_status": null,
+  "workflow_created_at": null,
+  "workflow_updated_at": null,
+  "result_status": "planned",
+  "source_job": "jobs/openclaw/inbox/gitcrawl-3466-dedupe-only-20260429d.md",
+  "published_at": "2026-04-30T01:30:59.266Z",
+  "canonical": "https://github.com/openclaw/openclaw/pull/67660",
+  "canonical_issue": "https://github.com/openclaw/openclaw/issues/67659",
+  "canonical_pr": "https://github.com/openclaw/openclaw/pull/67660",
+  "summary": "#67660 remains the best canonical path for the MS Teams win32 delegated OAuth bug. #67659 should stay open until that PR lands; #68077 is not a closeout candidate in this run because its hydrated scope and review signal require central security handling. No close, merge, fix, comment, or label mutation is planned.",
+  "actions": [
+    {
+      "target": "#67660",
+      "action": "keep_canonical",
+      "status": "planned",
+      "classification": "canonical",
+      "canonical": "#67660",
+      "candidate_fix": null,
+      "reason": "Canonical only; keep open for maintainer CI and review follow-up."
+    },
+    {
+      "target": "#67659",
+      "action": "keep_related",
+      "status": "planned",
+      "classification": "fixed_by_candidate",
+      "canonical": "#67660",
+      "candidate_fix": "#67660",
+      "reason": "Keep the bug report open; #67660 should own validation, and closure must wait for an accepted landed fix."
+    },
+    {
+      "target": "#68077",
+      "action": "route_security",
+      "status": "planned",
+      "classification": "security_sensitive",
+      "canonical": null,
+      "candidate_fix": null,
+      "reason": "Security-shaped review and credential-redaction scope require central OpenClaw security handling for this exact PR."
+    }
+  ],
+  "action_counts": {
+    "keep_canonical": 1,
+    "keep_related": 1,
+    "route_security": 1
+  },
+  "action_status_counts": {
+    "planned": 3
+  },
+  "fix_counts": {},
+  "apply_counts": {},
+  "needs_human": [],
+  "fix_actions": [],
+  "apply_actions": []
+}
